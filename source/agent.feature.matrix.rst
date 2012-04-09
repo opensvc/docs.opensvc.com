@@ -23,8 +23,8 @@ Features by operating system
 |             | * ovm          |               |               |               |              |              |
 |             | * esx          |               |               |               |              |              |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+
-| scsi        | yes [1][3]     | yes [3]       | yes [2]       | no            | yes [3]      | no           |
-| persistent  |                |               |               |               |              |              |
+| scsi        | yes [#f1]_     | yes           | yes [#f2]_    | no            | yes          | no           |
+| persistent  | (sg_persist)   | (sg_persist)  | (scu)         |               | (sg_persist) |              |
 | reservation |                |               |               |               |              |              |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+
 | rsync on    | lvm2 snaps     | zfs snaps     | vxfs snaps    | jfs2 snaps    | zfs snaps    | n/a          |
@@ -44,11 +44,10 @@ Features by operating system
 | capping     |                |               |               |               |              |              |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+
 
-[1] multipaths with queue_if_no_path active are not supported for clustered services, patches coming
+.. rubric:: Footnotes
 
-[2] with dsf
-
-[3] with sg_persist
+.. [#f1] Multipaths with queue_if_no_path active are not supported for clustered services, patches coming.
+.. [#f2] With dsf devices.
 
 Host and guest operating systems by virtualization product
 ==========================================================
