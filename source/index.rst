@@ -9,6 +9,7 @@ Contents:
    introduction
    agent
    compliance
+   storage
    howto
    manpages
 
