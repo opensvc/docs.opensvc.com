@@ -7,6 +7,8 @@ Contents:
    :maxdepth: 2
 
    storage.dds
+   storage.drbd
    storage.evasnap
    storage.netapp
    storage.symclone
+   storage.zfs
