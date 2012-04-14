@@ -13,6 +13,7 @@ Contents:
    storage
    howto
    manpages
+   collector
 
 
 Indices and tables
