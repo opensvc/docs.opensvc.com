@@ -14,3 +14,4 @@ Contents:
    collector.view.packages
    collector.view.patches
    collector.stats.availability
+   collector.stats.oslifecycle
