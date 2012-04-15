@@ -11,3 +11,4 @@ Contents:
    collector.view.nodes
    collector.view.actions
    collector.view.checks
+   collector.view.packages

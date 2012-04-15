@@ -36,7 +36,7 @@ Typical use cases:
 Screenshot
 ==========
 
-.. figure:: http://www.opensvc.com/init/static/svcmon.png
+.. figure:: _static/collector.view.services.1.png
 
 Fields
 ======
