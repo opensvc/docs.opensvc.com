@@ -10,3 +10,4 @@ Contents:
    collector.view.services
    collector.view.nodes
    collector.view.actions
+   collector.view.checks

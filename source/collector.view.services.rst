@@ -1,6 +1,6 @@
 .. |video-icon| image:: http://www.opensvc.com/init/static/video.png
 
-services view
+Services view
 *************
 
 Usage
