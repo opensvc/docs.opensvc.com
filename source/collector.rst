@@ -12,3 +12,4 @@ Contents:
    collector.view.actions
    collector.view.checks
    collector.view.packages
+   collector.view.patches
