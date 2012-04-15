@@ -1,3 +1,5 @@
+.. _howto.ha:
+
 High Availabity setup
 *********************
 
