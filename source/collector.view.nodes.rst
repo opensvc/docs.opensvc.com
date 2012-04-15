@@ -1,4 +1,4 @@
-.. |video-icon| image:: http://www.opensvc.com/init/static/video.png
+.. |video-icon| image:: _static/video.png
 
 Nodes view
 **********

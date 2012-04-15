@@ -13,3 +13,4 @@ Contents:
    collector.view.checks
    collector.view.packages
    collector.view.patches
+   collector.stats.availability

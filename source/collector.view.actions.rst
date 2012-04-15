@@ -1,4 +1,4 @@
-.. |video-icon| image:: http://www.opensvc.com/init/static/video.png
+.. |video-icon| image:: _static/video.png
 
 Actions view
 ************
@@ -27,7 +27,7 @@ Typical usage:
 Screenshot
 ==========
 
-.. figure:: http://www.opensvc.com/init/static/actions.png
+.. figure:: _static/collector.view.actions.1.png
 
 Fields
 ======
