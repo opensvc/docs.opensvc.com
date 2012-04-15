@@ -11,6 +11,7 @@ Contents:
    agent
    compliance
    storage
+   virtualization
    howto
    manpages
    collector
