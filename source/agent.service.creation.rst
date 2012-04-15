@@ -1,3 +1,5 @@
+.. _agent.service.creation:
+
 Service creation
 ****************
 

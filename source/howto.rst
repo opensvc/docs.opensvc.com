@@ -9,3 +9,4 @@ Contents:
    howto.lxc
    howto.ha
    howto.nfsha
+   howto.vmencap
