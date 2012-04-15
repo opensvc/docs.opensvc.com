@@ -15,3 +15,4 @@ Contents:
    collector.view.patches
    collector.stats.availability
    collector.stats.oslifecycle
+   collector.admin.obsolescence
