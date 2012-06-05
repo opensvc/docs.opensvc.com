@@ -41,6 +41,23 @@ The OpenSVC agent downloads the file pointed by the link named ``current`` under
 
 After the mirror initialization, you have to update the current links according to your own policies. Beware, the mirroring step may have installed current links pointing to the lastest available agent packages.
 
+Set up the agents
+=================
+
+The repository must be known to the agent. This set up is done with either the node.repo or the node.repopkg ``node.conf`` parameters.
+
+**node.repo**
+
+	This parameter allows to set up a URI pointing to a repository hosting both compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC agent packages in the packages/ subdirectory.
+
+**node.repopkg**
+
+	This parameter allows to set up a URI pointing to a pure OpenSVC agent packages repository. If specified node.repopkg overrides node.repo.
+
+Example::
+
+	nodemgr set --value node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
+
 Updating the agent
 ==================
 

@@ -32,6 +32,23 @@ The OpenSVC agent downloads the file pointed by the link named ``current``.
 
 After the mirror initialization, you have to update the current link according to your own policies.
 
+Set up the agents
+=================
+
+The repository must be known to the agent. This set up is done with either the node.repo or the node.repocomp ``node.conf`` parameters.
+
+**node.repo**
+
+        This parameter allows to set up a URI pointing to a repository hosting both compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC agent packages in the packages/ subdirectory.
+
+**node.repocomp**
+
+        This parameter allows to set up a URI pointing to a pure OpenSVC agent compliance repository. If specified node.repocomp overrides node.repo.
+
+Example::
+
+        nodemgr set --value node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
+
 Updating the modules
 ====================
 
