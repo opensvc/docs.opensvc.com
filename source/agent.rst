@@ -12,4 +12,5 @@ Contents:
    agent.service.creation
    agent.service.management
    agent.service.app
+   agent.update
    agent.template.env

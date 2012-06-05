@@ -9,4 +9,5 @@ Contents:
    compliance.concepts
    compliance.usage
    compliance.modules
+   compliance.modules.deploy
    compliance.objects
