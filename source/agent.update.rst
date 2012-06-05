@@ -19,7 +19,7 @@ Initialize the mirror
 
 A mirror can be set up using::
 
-	wget -m -A '*.rpm' -A '*.msi' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
+	wget -m -A '*.deb' -A '*.rpm' -A '*.msi' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
 
 The resulting file tree must organized as::
 
