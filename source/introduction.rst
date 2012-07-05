@@ -18,4 +18,5 @@ The OpenSVC agent is basically a Cluster Resource Manager with extended reportin
 History
 =======
 
-The OpenSVC project is born in November 2009.
+The OpenSVC project was born in November 2009 when Christophe Varoqui and Cyril Galibern decided to develop from scratch a software stack to meet disaster recovery and systems management needs of large datacenters managers. These needs where assessed in major french financial and transports institutions.
+
