@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 6e104f96786e4cb295929afecdf81645
+#: ../../storage.zfs.rst:12
+msgid "Command set"
+msgstr ""
+
+# 706e346a78a642fdafb2cb5b36099771
+#: ../../storage.zfs.rst:45
+msgid "Examples"
+msgstr ""
+
+# e4ff52171e424b0e9ab470f34b555d49
+#: ../../storage.zfs.rst:48
+msgid "Extract of z3.opensvc.com env file"
+msgstr ""
+
+# ce21cd74110342c1aae1a8618815b227
+#: ../../storage.zfs.rst:62
+msgid "Full synchronization"
+msgstr ""
+
+# 85cb775302d8484787b52515bd98d598
+#: ../../storage.zfs.rst:77
+msgid "Incremental synchronization"
+msgstr ""
+
+# 4bddbf61334a452c8f666f99a5318da9
+#: ../../storage.zfs.rst:15
+msgid ""
+"Initial synchronization or incremental synchronisation. First one will be a "
+"Initial synchronisation, next will be incremental"
+msgstr ""
+
+# ef6df0ed126a41edbe1e064ec73fa714
+#: ../../storage.zfs.rst:5
+msgid "Introduction"
+msgstr ""
+
+# e7b94b4ad60c43f7adddecbb25704c11
+#: ../../storage.zfs.rst:24
+msgid "Last synchronization occured less than sync_max_delay minutes ago."
+msgstr ""
+
+# d7eb70ab18e145d988825c313e082d44
+#: ../../storage.zfs.rst:27
+msgid "Last synchronization occured more than sync_max_delay minutes ago."
+msgstr ""
+
+# 113357c5385643039675d7547044b461
+#: ../../storage.zfs.rst:18
+msgid "Same"
+msgstr ""
+
+# 7f2cc27942244beeb12b7879c01bb50b
+#: ../../storage.zfs.rst:30
+msgid "Service configuration"
+msgstr ""
+
+# d601258096334adaae8689f64c9519fe
+#: ../../storage.zfs.rst:33
+msgid "Service configuration file"
+msgstr ""
+
+# 96cd183f098b4487ae4b3d12720b0fff
+#: ../../storage.zfs.rst:9
+msgid ""
+"Source and targets maintain a zfs snapshot @sent to identify the last "
+"incremental synchronization done properly. This state is used to check that "
+"the deltas application sequence is not broken. If broken, alerts are emited "
+"and a full sync must be scheduled"
+msgstr ""
+
+# 5d9041f54df147bd9d2ad94d8b2bf08c
+#: ../../storage.zfs.rst:21
+msgid "Status"
+msgstr ""
+
+# 5540353ba9ff4dfeb4175cb2586d8bab
+#: ../../storage.zfs.rst:7
+msgid ""
+"The zfs replication scheme is based on zfs send/receive. OpenSVC uses ZFS "
+"snapshots to ensure incremental send/receive replication."
+msgstr ""
+
+# a7c3636d18b143f2935c09100aa40e30
+#: ../../storage.zfs.rst:2
+msgid "zfs data replication"
+msgstr ""

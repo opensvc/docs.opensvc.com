@@ -1,0 +1,447 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# b0f52bbb29f24232b8ed0720366e3c86
+#: ../../collector.view.actions.rst:51
+msgid "**Action**"
+msgstr ""
+
+# 83e3e9f1a37949a38f52ade98d611332
+#: ../../collector.view.actions.rst:39
+msgid "**App**"
+msgstr ""
+
+# 32f4a5e59992449da10cd0e7631ceda7
+#: ../../collector.view.actions.rst:89
+msgid "**Begin**"
+msgstr ""
+
+# 0e413d405f35437bb7650f268f925d2f
+#: ../../collector.view.actions.rst:93
+msgid "**End**"
+msgstr ""
+
+# 792e01ca23af4b1589c9ddf249ec5a0e
+#: ../../collector.view.actions.rst:101
+msgid "**Log**"
+msgstr ""
+
+# bc5fbe59f80847efacc6c7144b6e44f0
+#: ../../collector.view.actions.rst:47
+msgid "**Node**"
+msgstr ""
+
+# 79b11394491943259184ce8e2842d87e
+#: ../../collector.view.actions.rst:97
+msgid "**Pid**"
+msgstr ""
+
+# 856ce107a98248eda6085c39723ca395
+#: ../../collector.view.actions.rst:43
+msgid "**Responsible**"
+msgstr ""
+
+# 5d8094a9435749329b68d1f9afcbbab8
+#: ../../collector.view.actions.rst:35
+msgid "**Service**"
+msgstr ""
+
+# a73d8eda5a5a4fafa60b7448b9875d96
+#: ../../collector.view.actions.rst:77
+msgid "**Status**"
+msgstr ""
+
+# aa713f4912fd45e29a0e9197a82881b4
+#: ../../collector.view.actions.rst:25
+msgid "**Trace who was alerted of a problem, and when**"
+msgstr ""
+
+# 098452ef92ce43d8a2dadd16d98e5889
+#: ../../collector.view.actions.rst:56
+msgid "Action"
+msgstr ""
+
+# 9fc9d2eeb9cf4620910af07e0f34ea24
+#: ../../collector.view.actions.rst:4
+msgid "Actions view"
+msgstr ""
+
+# b0b0465dcb0b4957a7c2fc2ca50b2b00
+#: ../../collector.view.actions.rst:91
+msgid "Begin timestamp of the action."
+msgstr ""
+
+# fe5b3c1870e3485ab8c9e3fbc43b9ab4
+#: ../../collector.view.actions.rst:106
+msgid "Dashboard notifications"
+msgstr ""
+
+# e455547e43fb4e52bff2dd6697f70bcb
+#: ../../collector.view.actions.rst:56
+msgid "Description"
+msgstr ""
+
+# ce7f66c9c621498c86b97a3b9f14b438
+#: ../../collector.view.actions.rst:95
+msgid "End timestamp of the action."
+msgstr ""
+
+# ab6d82ed2f2b40dfbc675b45d812646d
+#: ../../collector.view.actions.rst:14
+msgid "Example: ``ack=0 & status=err & responsible=me``"
+msgstr ""
+
+# 2fede88ddca1468d985bf0cb2e2139cc
+#: ../../collector.view.actions.rst:23
+msgid "Example: ``log=%sg_persist%|%scu%``"
+msgstr ""
+
+# ba0d009a7d6c42d0b6538575357735a5
+#: ../../collector.view.actions.rst:20
+msgid "Example: ``service=some_service & action=syncnodes & status!=ok``"
+msgstr ""
+
+# d02b3560054d47288a3ca5392dcb48f8
+#: ../../collector.view.actions.rst:17
+msgid "Example: ``service=some_service & begin>2010-01-10% & end<2010-01-12%``"
+msgstr ""
+
+# 0d4f5a68f49c4f33a0c8cd1f418714f5
+#: ../../collector.view.actions.rst:33
+msgid "Fields"
+msgstr ""
+
+# 1199551cdbda4e28acb34ad358ac7efa
+#: ../../collector.view.actions.rst:49
+msgid ""
+"Node where the action has be executed. The node name is a link to the asset "
+"view."
+msgstr ""
+
+# 70ad6feb7d3343ef851d9209a8c72399
+#: ../../collector.view.actions.rst:99
+msgid ""
+"Process identifier of the session handling the action on the node. Click to "
+"active a pid filter with this value."
+msgstr ""
+
+# f430a237703f4fa59fa6f07e28ba964e
+#: ../../collector.view.actions.rst:28
+msgid "Screenshot"
+msgstr ""
+
+# 6e6a4cadf7834c4292aed571b358236f
+#: ../../collector.view.actions.rst:108
+msgid "Service action error count"
+msgstr ""
+
+# 5fc29edfafe749cfa4be353782baeb3c
+#: ../../collector.view.actions.rst:37
+msgid ""
+"Service name the action applied to. Private collectors usually report "
+"shortnames, shared collectors usually report service names with domain names."
+msgstr ""
+
+# 8654750578d543c5a24f9c3241973b81
+#: ../../collector.view.actions.rst:80
+msgid "Status Description"
+msgstr ""
+
+# b4950f99531c45c98f83d5d8d218ab42
+#: ../../collector.view.actions.rst:82
+msgid "The action completed succesfully."
+msgstr ""
+
+# 480d5644afae4866bb33b86f5eeefbc1
+#: ../../collector.view.actions.rst:85
+msgid "The action completed with some error. Acknowledged by a user."
+msgstr ""
+
+# 63a40b989ecd4eb9a3cf64e5377665ad
+#: ../../collector.view.actions.rst:84
+msgid ""
+"The action completed with some error. Investigation and acknowledgement are "
+"needed."
+msgstr ""
+
+# bc79929d31a24378a6407c683fe8c481
+#: ../../collector.view.actions.rst:83
+msgid "The action completed with some warnings. No acknowledgement needed."
+msgstr ""
+
+# fdf0272812ea485aae573b6da1c643cc
+#: ../../collector.view.actions.rst:103
+msgid "The action log as it is displayed on the node standart output."
+msgstr ""
+
+# 66d266f545f94a59881b2381ad4530f8
+#: ../../collector.view.actions.rst:41
+msgid ""
+"The application code is a way to group services dedicated/paid by some "
+"corporate entity or project. You can setup any application code you want in "
+"your services configuration file, using the app parameter."
+msgstr ""
+
+# 5e8662a991894ac18691fc723a80a7d2
+#: ../../collector.view.actions.rst:86
+msgid ""
+"The collector has been informed of the action begining but has no yet "
+"received ending logs."
+msgstr ""
+
+# 50c63debaa4d400f9529296d0dd11f13
+#: ../../collector.view.actions.rst:53
+msgid ""
+"The executed action name. An action usually aggregates a number of log "
+"lines, plus a line with no log message as a header. The default action view "
+"has an 'empty' log filter active so you are presented only actions without "
+"their logs. You can drill down a specific action by clicking on its pid."
+msgstr ""
+
+# 1616cbc77cf3454caea5dc88752d419b
+#: ../../collector.view.actions.rst:45
+msgid ""
+"The responsibles are persons receiving alerts for a service. Hovering the "
+"mouse over the icon spawns the name of the responsibles. No icon means no "
+"responsible, which is an anomaly, and as such, cause alerts to be emitted to "
+"the site's administrator/manager."
+msgstr ""
+
+# 7c411099d3044a1a80eb35a62a9d42f6
+#: ../../collector.view.actions.rst:9
+msgid ""
+"This view displays the journal of all services events with their status."
+msgstr ""
+
+# 2f9212a9994f4e5aa4d829fcced4a209
+#: ../../collector.view.actions.rst:11
+msgid "Typical usage:"
+msgstr ""
+
+# 04b43f970ea949e0b7d18368a65ff43a
+#: ../../collector.view.actions.rst:7
+msgid "Usage"
+msgstr ""
+
+# 0c3ae0ef680f4dde85604f7f7eaa1365
+#: ../../collector.view.actions.rst:70
+msgid ""
+"acquire scsi persistent reservations on disks of the service (wrapped by "
+"startvg and startdisk)"
+msgstr ""
+
+# 127a56727f4846058ae1378a19689f1d
+#: ../../collector.view.actions.rst:86
+msgid "empty"
+msgstr ""
+
+# 1655060f398b4b48b895658822039ccc
+#: ../../collector.view.actions.rst:84
+msgid "err"
+msgstr ""
+
+# c324e30a5ae3420e9cdc48d3b78a4f63
+#: ../../collector.view.actions.rst:85
+msgid "err (strikethrough)"
+msgstr ""
+
+# d455b714eb684ddb8f4841bf0c7bc085
+#: ../../collector.view.actions.rst:68
+msgid "mount"
+msgstr ""
+
+# fc38938adf734566bc1fec701a4415b8
+#: ../../collector.view.actions.rst:82
+msgid "ok"
+msgstr ""
+
+# 41f7f0c686e6489dbbc6f995cecfadc6
+#: ../../collector.view.actions.rst:74
+msgid "print status of all service resources"
+msgstr ""
+
+# 7670cf0b0c3e4f57a5c76e7642d545b3
+#: ../../collector.view.actions.rst:74
+msgid "print_status"
+msgstr ""
+
+# 3283a71197724f13bbc823c80d100c68
+#: ../../collector.view.actions.rst:70
+msgid "prstart"
+msgstr ""
+
+# 3424c62cdefd4ff7a177c5c19b2c0bde
+#: ../../collector.view.actions.rst:71
+msgid "prstop"
+msgstr ""
+
+# 5c303d6f198947a98b257ab3bbefd11e
+#: ../../collector.view.actions.rst:71
+msgid ""
+"release scsi persistent reservations on disks of the service (wrapped by "
+"stopvg and stopdisk)"
+msgstr ""
+
+# e54185c2ff204eb6bfa1c57645d1d2be
+#: ../../collector.view.actions.rst:58
+msgid "start"
+msgstr ""
+
+# f71c6f345bed4d1797c7b2c88951612a
+#: ../../collector.view.actions.rst:66
+msgid "start resources of type : disk group"
+msgstr ""
+
+# 65b613cac8b54a99997396b691c6ac27
+#: ../../collector.view.actions.rst:68
+msgid "start resources of type : fs"
+msgstr ""
+
+# 5002b36fd1e145b1abbcf097520d33a3
+#: ../../collector.view.actions.rst:62
+msgid "start resources of type : ip"
+msgstr ""
+
+# f78d22a73c7a4c2b8e980ba74cab41a1
+#: ../../collector.view.actions.rst:58
+msgid ""
+"start resources of type : ip, loop, disk group, zpool, fs, container, app"
+msgstr ""
+
+# 04412d927ffc47dd9efd572eb44c3574
+#: ../../collector.view.actions.rst:64
+msgid "start resources of type : loop"
+msgstr ""
+
+# f1d16ada70de4694b1920401ec96e347
+#: ../../collector.view.actions.rst:60
+msgid "start resources of type : loop, disk group, zpool, fs"
+msgstr ""
+
+# 37e1ac58f0194b1fb92200f980c0c38c
+#: ../../collector.view.actions.rst:60
+msgid "startdisk"
+msgstr ""
+
+# 46b87f7716b540a090dfba8c7430a4f8
+#: ../../collector.view.actions.rst:62
+msgid "startip"
+msgstr ""
+
+# 9f5cb3300c424a4086052d5d80437e5b
+#: ../../collector.view.actions.rst:64
+msgid "startloop"
+msgstr ""
+
+# 69c861df7c7d486d8b52e0fb20efa4ce
+#: ../../collector.view.actions.rst:66
+msgid "startvg"
+msgstr ""
+
+# 93517fd7a40a429a899846c632122e01
+#: ../../collector.view.actions.rst:59
+msgid "stop"
+msgstr ""
+
+# f7511333e500443785e4b1c8c0a4f84a
+#: ../../collector.view.actions.rst:59
+msgid ""
+"stop resources of type : app, container, fs, zpool, disk group, loop, ip"
+msgstr ""
+
+# 8c459eeb3e374827a179ac80b1779443
+#: ../../collector.view.actions.rst:67
+msgid "stop resources of type : disk group"
+msgstr ""
+
+# 8d21e43d7c5e44c48d9b519d1b7cc993
+#: ../../collector.view.actions.rst:69
+msgid "stop resources of type : fs"
+msgstr ""
+
+# b3be45b4199e4d8dabc63eb83305a13d
+#: ../../collector.view.actions.rst:61
+msgid "stop resources of type : fs, zpool, disk group, loop"
+msgstr ""
+
+# 45c690b7053842f9af53ab85d6223b7e
+#: ../../collector.view.actions.rst:63
+msgid "stop resources of type : ip"
+msgstr ""
+
+# 8b0c0dafe6cd4b798690401e1253019c
+#: ../../collector.view.actions.rst:65
+msgid "stop resources of type : loop"
+msgstr ""
+
+# eb48a68d6f87442a91dd440de2f5ef2c
+#: ../../collector.view.actions.rst:61
+msgid "stopdisk"
+msgstr ""
+
+# f049877da9094459929b519bfa800c57
+#: ../../collector.view.actions.rst:63
+msgid "stopip"
+msgstr ""
+
+# c8450a89ed904bcf9d8b65390ffa376e
+#: ../../collector.view.actions.rst:65
+msgid "stoploop"
+msgstr ""
+
+# 17abd21d07774e6a8cbef0032e1d1439
+#: ../../collector.view.actions.rst:67
+msgid "stopvg"
+msgstr ""
+
+# 4f0a80e234534dee920fb78194e14395
+#: ../../collector.view.actions.rst:73
+msgid "syncdrp"
+msgstr ""
+
+# a50980a8c815417f874bfe2ded05bbfd
+#: ../../collector.view.actions.rst:72
+msgid "syncnodes"
+msgstr ""
+
+# 96c51a7a4fe6489184ce09accc1c5925
+#: ../../collector.view.actions.rst:73
+msgid ""
+"trigger hard-coded and user-defined file synchronization to disaster "
+"recovery nodes. Optionally creates snapshots to send a coherent file set. No-"
+"op if run from a node not running the service."
+msgstr ""
+
+# c536c216915a4cea8628edf6452ee977
+#: ../../collector.view.actions.rst:72
+msgid ""
+"trigger hard-coded and user-defined file synchronization to secondary nodes. "
+"Optionally creates snapshots to send a coherent file set. No-op if run from "
+"a node not running the service."
+msgstr ""
+
+# 3be62d7b3c904e62bc8ff79aa90957ce
+#: ../../collector.view.actions.rst:69
+msgid "umount"
+msgstr ""
+
+# 4cd63f99e5b1425189bd571dec81806d
+#: ../../collector.view.actions.rst:83
+msgid "warn"
+msgstr ""

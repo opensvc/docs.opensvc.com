@@ -261,3 +261,6 @@ epub_copyright = u'2012, OpenSVC SARL'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
+
+locale_dirs = ["translated/"]
+#language = "fr"

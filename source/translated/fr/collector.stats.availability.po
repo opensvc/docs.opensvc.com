@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# c3a48c82cd07467e943db601cdf9ae3e
+#: ../../collector.stats.availability.rst:22
+msgid ""
+"An acknowledged range will show the ack message, ack author and ack date "
+"when the cursor moves over the range dates."
+msgstr ""
+
+# 1b98867901bb4dd3b1327f52fa5eda6a
+#: ../../collector.stats.availability.rst:24
+msgid ""
+"Clicking on a date will display a state transition graph to help determine "
+"which ressource caused to outage."
+msgstr ""
+
+# 92038c58ece44f298dcc31cdd9be647c
+#: ../../collector.stats.availability.rst:11
+msgid "Each unavailability time range can be either:"
+msgstr ""
+
+# d8ef93f3ac6642819f651faec0f9dfa5
+#: ../../collector.stats.availability.rst:27
+msgid "Screenshot"
+msgstr ""
+
+# 4fdcc22db1e04943af44a27742921992
+#: ../../collector.stats.availability.rst:2
+msgid "Service availability"
+msgstr ""
+
+# 27c9bb84caab4475a3a86ce7c8c38671
+#: ../../collector.stats.availability.rst:9
+msgid "The begin and end points of the analyzed period can be adjusted."
+msgstr ""
+
+# fce0035ca9cd42e9956f54370181a3db
+#: ../../collector.stats.availability.rst:20
+msgid ""
+"The duration of this unvailability does not lowers the availability ratio. "
+"This is used to explain an unavailability range that was either planned or "
+"due to a collection error. The chart draws this state in grey."
+msgstr ""
+
+# 6a1b78c134e042d699b167b5930b6bf8
+#: ../../collector.stats.availability.rst:14
+msgid ""
+"The duration of this unvailability lowers the avail%. The chart draws this "
+"state in red."
+msgstr ""
+
+# c3fd7935a45848b3895d212519f89c7f
+#: ../../collector.stats.availability.rst:17
+msgid ""
+"The duration of this unvailability lowers the availability ratio. This is "
+"used to explain an undue unavailability. The chart draws this state in red."
+msgstr ""
+
+# f472e22fde2844c59d2e36e2854efa16
+#: ../../collector.stats.availability.rst:7
+msgid ""
+"This view presents service availability data the collector collects. A chart "
+"helps detect the problems at a glance, and a table displays each "
+"unavailability time range and aggregate availability ratio on the selected "
+"period."
+msgstr ""
+
+# d155eb77c97c4f3abe6c6d2265e4c226
+#: ../../collector.stats.availability.rst:5
+msgid "Usage"
+msgstr ""

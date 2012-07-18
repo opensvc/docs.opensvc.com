@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# e569d739f2814141a9f423757b9bb7a1
+#: ../../collector.stats.oslifecycle.rst:11
+msgid "Current status of an operating system upgrade compaign"
+msgstr ""
+
+# 490042f4fb34479d8d4187a16ba8b656
+#: ../../collector.stats.oslifecycle.rst:9
+msgid "Operating system dependency"
+msgstr ""
+
+# 116ef3f8fdcd4863ad64d29d2587cde8
+#: ../../collector.stats.oslifecycle.rst:2
+msgid "Operating system lifecycle"
+msgstr ""
+
+# caf4c06d70be4343a91b69ba25bfca75
+#: ../../collector.stats.oslifecycle.rst:14
+msgid "Screenshots"
+msgstr ""
+
+# b253ce094f5a4d9c92515109957d13b3
+#: ../../collector.stats.oslifecycle.rst:7
+msgid ""
+"This view charts the operating system dispatch of all the nodes it collects. "
+"A first chart presents the dispatch per operating system family. Subsequent "
+"charts focus on each family. These charts allow administrators and managers "
+"to analyse:"
+msgstr ""
+
+# 889e1ce462d24bc19014bbd7147d4622
+#: ../../collector.stats.oslifecycle.rst:5
+msgid "Usage"
+msgstr ""
+
+# b2f98381f98f40b8a6281460d71dd3f6
+#: ../../collector.stats.oslifecycle.rst:10
+msgid "Which operating system is gaining ground over the others"
+msgstr ""

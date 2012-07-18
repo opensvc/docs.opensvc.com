@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 662f8e1099a94810bc8bf678a5b228d4
+#: ../../howto.vmencap.rst:75
+msgid "**autostart_node**"
+msgstr ""
+
+# 7b7ba015144640718bb66c408be71dfd
+#: ../../howto.vmencap.rst:79
+msgid "**drpnode**"
+msgstr ""
+
+# 7f2e2a94672e41e9a73815a874c8042f
+#: ../../howto.vmencap.rst:83
+msgid "**drpnodes**"
+msgstr ""
+
+# 7fef970b7526428aa26aa1d0894da35c
+#: ../../howto.vmencap.rst:97
+msgid "**ip resources**"
+msgstr ""
+
+# 5bf28dd9fbbf4cb4a2a019f9a8f3017e
+#: ../../howto.vmencap.rst:67
+msgid "**mode**"
+msgstr ""
+
+# 9b2f3cc25a474a3ab3ffbfac8decaf5f
+#: ../../howto.vmencap.rst:71
+msgid "**nodes**"
+msgstr ""
+
+# 277f6299aaba41a7b74c7dd47efc504b
+#: ../../howto.vmencap.rst:87
+msgid "**scsireserv**"
+msgstr ""
+
+# e81a125be3194ed4a092e5c6b745fe8b
+#: ../../howto.vmencap.rst:63
+msgid "**vm_name**"
+msgstr ""
+
+# 25e13b726e5e4e29a810a102c65f83a1
+#: ../../howto.vmencap.rst:105
+msgid "**vmdg resource**"
+msgstr ""
+
+# 83fa8c0c8f9b450798c0df4a13c7cef3
+#: ../../howto.vmencap.rst:103
+msgid ""
+"*and* execute in the context of the guest operating system a command "
+"verifying the plumbing on the 'ipdev' adapter."
+msgstr ""
+
+# 5de0ad6d37ee4f82b4d1761ce394cef3
+#: ../../howto.vmencap.rst:93
+msgid "*and* the disks are dedicated to the service"
+msgstr ""
+
+# 63f7fc84921e4a7dbd59d362e76e4619
+#: ../../howto.vmencap.rst:95
+msgid "*and* the disks support the scsi3 persistent reservation commands"
+msgstr ""
+
+# 7ddef349d48b40f49594fae0c44182c0
+#: ../../howto.vmencap.rst:43
+msgid "A typical VM service env file should look like::"
+msgstr ""
+
+# 4fe3c3c56afb40eca196376b586370f5
+#: ../../howto.vmencap.rst:107
+msgid ""
+"Add this resource configlet if you pass-through block devices not handled by "
+"a volume manager to the virtual machine. The 'vmdg' resource is a special "
+"kind of 'vg' resource whose disklist is obtained from the virtual machine "
+"configuration. 'start' and 'stop' OpenSVC commands are reduced to scsi "
+"reservation handling for this resource as the necessary operations are taken "
+"care of by the hypervisor software. It is also necessary for disk inventory "
+"completeness."
+msgstr ""
+
+# 60e383aa24e94213b0fc2ee7647f4989
+#: ../../howto.vmencap.rst:99
+msgid ""
+"All OpenSVC VM drivers except 'zone' leave the ip plumbing to the guest "
+"operating system. The ip resources described in the env file are used to "
+"check the resource availability. This checks are:"
+msgstr ""
+
+# 4fb0c4d7dd414ecbb5e9040f4a9e0ce2
+#: ../../howto.vmencap.rst:15
+msgid "Benefit from all the OpenSVC data replication modes"
+msgstr ""
+
+# 340dba51474f466ab4d350820ae36aa8
+#: ../../howto.vmencap.rst:17
+msgid ""
+"Benefit from the OpenSVC Collector performance monitoring, obsolescence "
+"management, alarming, and more."
+msgstr ""
+
+# 00d4a08d998c4202b2e6b423eaa1f4d3
+#: ../../howto.vmencap.rst:69
+msgid "Choose among kvm, xen, esx, hpvm, ldom, vbox, zone, vz and lxc."
+msgstr ""
+
+# 98e58e6e9e4549f98e9b1077717ef467
+#: ../../howto.vmencap.rst:24
+msgid "Configure some ssh key trusts"
+msgstr ""
+
+# 3ff2f79a49e545f7871d69c269770ebb
+#: ../../howto.vmencap.rst:41
+msgid "Customize the service env file"
+msgstr ""
+
+# 2a296bf05116497c9615acc26671c787
+#: ../../howto.vmencap.rst:33
+msgid "Follow the :ref:`agent.install` guide."
+msgstr ""
+
+# 7fb6696e2ab544228bc2ab98dcdcafbe
+#: ../../howto.vmencap.rst:38
+msgid "Follow the :ref:`agent.service.creation` guide."
+msgstr ""
+
+# e97d456ab109481b9a9c343a395e6010
+#: ../../howto.vmencap.rst:65
+msgid ""
+"If this parameter is not set, the VM name defaults to the service name. When "
+"encapsulating an existing VM, chances are that you need to set it to the "
+"existing VM hostname. This name is used by the hypervisor to communicate "
+"with the VM, so you might need to use a fully qualified name if the "
+"hypersisor and the VM do not share the same DNS domain. Communication with "
+"zones use the zlogin utility, so fqdn are never needed in this case."
+msgstr ""
+
+# f65ad4e6508644adbe510e3e76c5abd0
+#: ../../howto.vmencap.rst:22
+msgid "Install a package"
+msgstr ""
+
+# c61601a9854a46e4aaf26813a16ca836
+#: ../../howto.vmencap.rst:5
+msgid "Introduction"
+msgstr ""
+
+# 82d88fd4daef4bf89924ba2553bb22e8
+#: ../../howto.vmencap.rst:7
+msgid "Managing VM as services has many advantages:"
+msgstr ""
+
+# 873c12a489564fe6971b4d5dbcff6cee
+#: ../../howto.vmencap.rst:11
+msgid ""
+"Mix virtualized and non-virtualized services on the same hosts without "
+"increasing complexity (except xen, ldom, esx)"
+msgstr ""
+
+# 701175c3f4d749279619bea48c40a6f6
+#: ../../howto.vmencap.rst:31
+msgid "Nodeware installation"
+msgstr ""
+
+# 3c4f3c8590dc4ad8ad5dc18eb8ad97fe
+#: ../../howto.vmencap.rst:20
+msgid ""
+"OpenSVC deployment on an existing hypervisor is a straight-forward process "
+"which does not require service disruption. This cookbook details the steps "
+"involved:"
+msgstr ""
+
+# 554d8936e99d464299e6053add6c53c8
+#: ../../howto.vmencap.rst:112
+msgid ""
+"OpenSVC use ssh as root to execute commands in the other hypervisors "
+"context. Such commands are limited to:"
+msgstr ""
+
+# 00bc28fd4f5a40fb81666fe511e25196
+#: ../../howto.vmencap.rst:128
+msgid "Populate the application startup scripts directory"
+msgstr ""
+
+# 9245754d69f94adaa427fcb85fa0a154
+#: ../../howto.vmencap.rst:9
+msgid ""
+"Same start/stop/status commands accross non-virtualized services on "
+"different operating systems and services encapsulating virtual machines from "
+"different technologies (kvm, xen, esx, hpvm, zone, lxc, vz, ...)"
+msgstr ""
+
+# ab937b1548e24d4d897c79f15031b5d0
+#: ../../howto.vmencap.rst:13
+msgid "Seemless integration of hypervisors in the disaster recovery plan"
+msgstr ""
+
+# fa8962da79f24b2a96b73e4a1c7d6b37
+#: ../../howto.vmencap.rst:36
+msgid "Service creation"
+msgstr ""
+
+# 2def20044c5149c9881b3dde659bec03
+#: ../../howto.vmencap.rst:89
+msgid "Set this parameter to true if:"
+msgstr ""
+
+# 80672b735ec349dabf508be23447dee8
+#: ../../howto.vmencap.rst:81
+msgid ""
+"Set to the hypervisor where the virtual machine should run in a disaster "
+"recovery situation."
+msgstr ""
+
+# 9df35e6a417a4acbb6b968d5ce2cf352
+#: ../../howto.vmencap.rst:77
+msgid ""
+"Set to the hypervisor where the virtual machine should run in a normal "
+"situation."
+msgstr ""
+
+# cab2c6af59f94a6dbe9113f2db22b4da
+#: ../../howto.vmencap.rst:73
+msgid ""
+"Set to the list of hypervisors able to run the virtual machine in a normal "
+"situation."
+msgstr ""
+
+# 84aa7986ac744175ae9f139daa808830
+#: ../../howto.vmencap.rst:85
+msgid ""
+"Set to the list of hypervisors where the virtual machine may run in a "
+"disaster recovery situation."
+msgstr ""
+
+# 935acac50df241428d90c56b64cd8a41
+#: ../../howto.vmencap.rst:26
+msgid "Setup a node configuration file (single word)"
+msgstr ""
+
+# 183a4175d87a4a248aeaa25ca91186bc
+#: ../../howto.vmencap.rst:28
+msgid "Setup a service configuration file (~15 lines)"
+msgstr ""
+
+# f9007739a1344a798c69a56e8977c168
+#: ../../howto.vmencap.rst:133
+msgid "Test"
+msgstr ""
+
+# 80d3f2d1f8174e0d955b3269c4d81f81
+#: ../../howto.vmencap.rst:121
+msgid ""
+"This step does not apply to zones, as zlogin is always trusted. Other "
+"drivers use ssh as root to execute commands in the guest context. Such "
+"commands are limited to:"
+msgstr ""
+
+# 85a479b424834197948abea2fb0033e4
+#: ../../howto.vmencap.rst:130
+msgid ""
+"This step is recommended but not mandatory. OpenSVC command set allows to "
+"start the virtual machine but not the embedded applications through the "
+"'startapp'/'stopapp' commands. For this feature to work as expected, startup "
+"scripts should not reside in the operating system's proposed infrastructure "
+"(/etc/rcX.d, /sbin/rcX.d, DMF, ...). OpenSVC expects to find app launchers "
+"in /svc/etc/init.d in the guest file hierarchy."
+msgstr ""
+
+# d87c411a81af4164bc2f02e5ce5900c7
+#: ../../howto.vmencap.rst:119
+msgid "Trust the hypervisor-to-guest ssh root sessions"
+msgstr ""
+
+# 3734a408d177423c8d2ce0c68e385c90
+#: ../../howto.vmencap.rst:110
+msgid "Trust the hypervisor-to-hypervisor ssh root sessions"
+msgstr ""
+
+# 5e98da136015460481ed41b3fbf15415
+#: ../../howto.vmencap.rst:2
+msgid "VM encapsulation in a service"
+msgstr ""
+
+# fa24509ed0e24b85aea611e9a43c5481
+#: ../../howto.vmencap.rst:135
+msgid "You should now be able to run succesfully::"
+msgstr ""
+
+# 23586cd746ba432dba49ef58840c8402
+#: ../../howto.vmencap.rst:125
+msgid "application start-up scripts execution in the context of the guest"
+msgstr ""
+
+# cca4f7557d1b463693c41453ea3830ff
+#: ../../howto.vmencap.rst:123
+msgid "ip resources health checking"
+msgstr ""
+
+# ce835a24e4e14e35966c805404137f00
+#: ../../howto.vmencap.rst:101
+msgid "ping 'ipname'"
+msgstr ""
+
+# 0a4381648e414b4ab3679c904b80c88f
+#: ../../howto.vmencap.rst:114
+msgid "remote host mode checking"
+msgstr ""
+
+# 9e2f3bea46714a219830848356bc77a1
+#: ../../howto.vmencap.rst:116
+msgid "remote host replication target mount point checking"
+msgstr ""
+
+# 75bd80a899e946178efa00cd053aa207
+#: ../../howto.vmencap.rst:91
+msgid "the disks are shared amongst hypervisors"
+msgstr ""

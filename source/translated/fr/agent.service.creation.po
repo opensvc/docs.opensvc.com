@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 36a02d66b0ce407489de2bc678604504
+#: ../../agent.service.creation.rst:22
+msgid "Allocate generic account and ip addresses"
+msgstr ""
+
+# afe7b2e4cd644cf7911f42fab7ac7b3e
+#: ../../agent.service.creation.rst:52
+msgid "App launchers in etc/init.d/"
+msgstr ""
+
+# e5dec207c836417ca85dfe9387b8158c
+#: ../../agent.service.creation.rst:60
+msgid "Application data files"
+msgstr ""
+
+# f3e85e6205fb4e869145874de708f197
+#: ../../agent.service.creation.rst:107
+msgid ""
+"At that point you should describe your service's ip addresses, filesystems, "
+"disk groups, file synchronizations ... The ``/opt/opensvc/usr/share/doc/"
+"template.env`` template presents you with all possible configurations "
+"available. The ``svcmgr create -s newsvc -i`` command prompts you about all "
+"possible configurations, explains the role of each keyword, proposes "
+"candidate values and defaults, and validate input sanity. This same command "
+"in non-interactive mode can be used to provision service. In this mode, the "
+"resources are passed as json-serialized keyword-value dictionaries."
+msgstr ""
+
+# 11499d4e2fa74524aca1210870df95b7
+#: ../../agent.service.creation.rst:11
+msgid "Between 8 to 15 characters"
+msgstr ""
+
+# 7a8cfdfd0bab4645896087fc9c39dfe2
+#: ../../agent.service.creation.rst:7
+msgid "Choose a service name"
+msgstr ""
+
+# 1b6d9dbd71204589987f323835d56d9d
+#: ../../agent.service.creation.rst:86
+msgid "Configuration files role"
+msgstr ""
+
+# 2a98650364154b90b397e6d5d07f47ea
+#: ../../agent.service.creation.rst:44
+msgid "Create a filesystem skeleton for the service"
+msgstr ""
+
+# 2666649cfd2043db8bcc16ac699e3259
+#: ../../agent.service.creation.rst:70
+msgid "Create configuration files"
+msgstr ""
+
+# 53ea68d73bb640b594cdedf3f1a8fe68
+#: ../../agent.service.creation.rst:105
+msgid "Customize the service env file"
+msgstr ""
+
+# d4b5dcd9236244d995d6c67aa26c767b
+#: ../../agent.service.creation.rst:19
+msgid ""
+"Following this naming will help grasp importance, clients and role of "
+"service from the output of ``/opt/opensvc/bin/svcmon``"
+msgstr ""
+
+# 075f1406865b468d96568ccad5477e5d
+#: ../../agent.service.creation.rst:62
+msgid ""
+"For hosted service mode, prefer per-service private tools installations to "
+"enhance system/service insulation. This makes the service installation more "
+"painful, but there are no clients at this point, and it will make service "
+"relocation more reliable and operating system upgrades safer."
+msgstr ""
+
+# 4320bea771774e5fb802d0e9fea0aa97
+#: ../../agent.service.creation.rst:48
+msgid ""
+"Give each service dedicated filesystems. Ideally one for data, one for tools "
+"(mysql, apache, ...) and one for launchers and eventually the virtual "
+"operating system instance. We recommand the following layout:"
+msgstr ""
+
+# 266e5ff289784f0f8d908873378fd140
+#: ../../agent.service.creation.rst:9
+msgid "Guidelines:"
+msgstr ""
+
+# ca86b31b353c463d81488690d0c09459
+#: ../../agent.service.creation.rst:46
+msgid "Here is a set of guidelines you should respect."
+msgstr ""
+
+# 320c370e2d30432aaa893bcb1c8bb06a
+#: ../../agent.service.creation.rst:15
+msgid ""
+"In case of multiple instance of similar services, happen a number as a suffix"
+msgstr ""
+
+# 07abac5b071c42b386a0888c217bfc85
+#: ../../agent.service.creation.rst:65
+msgid "Install virtual host and applications"
+msgstr ""
+
+# 09bc02cc769c42b1a9d049ee50188252
+#: ../../agent.service.creation.rst:12
+msgid "Make application code part of the name (first)"
+msgstr ""
+
+# a77c1bb5c8fa4d9dbb977444fd320590
+#: ../../agent.service.creation.rst:13
+msgid "Make service type (PRD, DEV) part of the name (second)"
+msgstr ""
+
+# e7a2833706de4edabe255765d10dd20c
+#: ../../agent.service.creation.rst:14
+msgid "Make the last part descriptive of the application role (web, transco)"
+msgstr ""
+
+# fbad36e83b1944ff9e089b3d0a4dde10
+#: ../../agent.service.creation.rst:41
+msgid ""
+"Perceptible latency and memory overhead. Host system must rely on tcp/ip "
+"communication with the virtual machine to control its resources (change ip "
+"addresses, start service applications, ...)"
+msgstr ""
+
+# fc5d1a1336ed41d489151cbbdefec746
+#: ../../agent.service.creation.rst:37
+msgid ""
+"Prefered mode where it is supported : quite low-latency, low mem and cpu "
+"overhead, good control of virtual system from the host system."
+msgstr ""
+
+# a20c0492040e4a4cb151a047b868b766
+#: ../../agent.service.creation.rst:56
+msgid ""
+"Private installation of tools. Tools must listen only on the private address "
+"to avoid conflicts with same tool of other services running on the same node."
+msgstr ""
+
+# d088c2c941e945c4879ea08a68a784e4
+#: ../../agent.service.creation.rst:29
+msgid "Select a service mode"
+msgstr ""
+
+# 405ee3f3568b455694d9f426eb09b442
+#: ../../agent.service.creation.rst:74
+msgid ""
+"Service configuration files are in ``/opt/opensvc/etc``. Each service must "
+"have these three files present to be fully functional. Services using the "
+"internet shared collector must be named using the domainname as a suffix to "
+"avoid naming conflicts::"
+msgstr ""
+
+# 79e9eb455c3b479da2562bfbf65edf9e
+#: ../../agent.service.creation.rst:4
+msgid "Service creation"
+msgstr ""
+
+# 4b5527a88ce74cc6a8cd89a2462c94b7
+#: ../../agent.service.creation.rst:110
+msgid "Test"
+msgstr ""
+
+# 975c0b7824d341ddaee38a565e4de384
+#: ../../agent.service.creation.rst:67
+msgid "The virtual host is not required for ``hosted`` services."
+msgstr ""
+
+# 07d3c57246d7400eb2583c4bd2e63d90
+#: ../../agent.service.creation.rst:17
+msgid ""
+"This guidelines result in names like gieprdtransco01, infraprddns01, ..."
+msgstr ""
+
+# 444df487e3b4456c846f29aeac26bbe6
+#: ../../agent.service.creation.rst:94
+msgid ""
+"This is the configuration file proper, including service description and "
+"resource definitions. A fully commented template is available on each node "
+"at /opt/opensvc/usr/share/doc/template.env. More on this below."
+msgstr ""
+
+# c2e3d6ad1dfd4de9a1e70c2da52b0fea
+#: ../../agent.service.creation.rst:102
+msgid ""
+"This optional directory can be used to store locally the startup scripts. As "
+"such, it can be linked from /opt/opensvc/etc/unxdevweb01.mydomain.com.d. "
+"OpenSVC synchronize this directory to nodes and drpnodes as part of the "
+"sync#i0 internal sync resource. If you placed your startup script on a "
+"shared volume, this .dir is not needed but you will still have to create a "
+"sync resource to send them to the drpnodes."
+msgstr ""
+
+# 7d9834d4d1f44d5b803c7c3488210d7f
+#: ../../agent.service.creation.rst:90
+msgid ""
+"This symbolic link is meant to be used as a shortcut to pass commands to a "
+"specific service. Like /opt/opensvc/etc/unxdevweb01.mydomain.com start for "
+"example"
+msgstr ""
+
+# 582a85ea79ff4e90b0c9beb10852f110
+#: ../../agent.service.creation.rst:98
+msgid ""
+"This symbolic link points to the directory hosting the service application "
+"launchers. The service is not considered active if this link is not present. "
+"The directory pointed is best hosted on a service-dedicated filesystem. The "
+"service application launchers are expected to be in SysV style: [SK][0-9]"
+"*appname. S for starters, K for stoppers, number for ordering. Starters and "
+"stoppers can be symlink to a single script. Starter are passed 'start' as "
+"first parameter, stoppers are passed 'stop' as first parameter."
+msgstr ""
+
+# 314b46abf9084d6c9e9438c744c88b7e
+#: ../../agent.service.creation.rst:72
+msgid ""
+"Those are created automatically by the ``svcmgr create`` command. "
+"Experienced users will find it easier to start from a copy of the env file "
+"of an existing similar service. The following information describes the "
+"steps needed to create a service manually."
+msgstr ""
+
+# c097e83cad2e4288bae1ce3513d71353
+#: ../../agent.service.creation.rst:26
+msgid ""
+"We recommend to allocate service-dedicated generic accounts (one is ok most "
+"of the time), at least for ``hosted`` services, for better control on "
+"privileges. All service files should be owned by these accounts except the "
+"application launchers, which must be owned by root as they are executed with "
+"root privileges. The generic account home directory should be a link "
+"redirecting to a subdirectory of one of the service-dedicated filesystems "
+"(the one hosting data is a good candidate)."
+msgstr ""
+
+# f2d75356a9544e5fb9086b37c7dd4910
+#: ../../agent.service.creation.rst:24
+msgid ""
+"We recommend to allocate service-dedicated ip addresses, to permit service "
+"failover to secondary nodes."
+msgstr ""
+
+# 2fd304ea81164b278b6ac8f3f8a423c7
+#: ../../agent.service.creation.rst:33
+msgid ""
+"Where virtualisation is unwanted : low-latency applications, restrictive "
+"product compatibility matrices, ..."
+msgstr ""
+
+# a188f11177a64164b031f99e4785a38f
+#: ../../agent.service.creation.rst:112
+msgid "You should now be able to run succesfully::"
+msgstr ""
+
+# ee75143c3a7842a48b9f5157204285a8
+#: ../../agent.service.creation.rst:80
+msgid "or::"
+msgstr ""

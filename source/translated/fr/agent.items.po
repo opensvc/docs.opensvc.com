@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# a3c07b2d70474873a8951deeb9750f9f
+#: ../../agent.items.rst:48
+msgid "Cron jobs"
+msgstr ""
+
+# 5ab0cf79fc3e49bdac218679cd3f4bfd
+#: ../../agent.items.rst:37
+msgid ""
+"Embedded documentation. Most importantly the service configuration reference "
+"file documenting all possible parameters."
+msgstr ""
+
+# 847fb2dca63444ed9a11a1c75836e663
+#: ../../agent.items.rst:17
+msgid "Executables like svcmon, svcmgr"
+msgstr ""
+
+# edcae6617ce04ed29e9c2ab8b69fe80a
+#: ../../agent.items.rst:21
+msgid ""
+"Executables to create package and optional, site-specific, release scripts "
+"(none shipped in the opensvc-provided packages)"
+msgstr ""
+
+# efa9ca21d02e4662b38f230c783cfb25
+#: ../../agent.items.rst:5
+msgid "File tree"
+msgstr ""
+
+# 6bbd26dd399e4985b404574958d503fa
+#: ../../agent.items.rst:9
+msgid "Hosts service configurations"
+msgstr ""
+
+# 652ab157d4d548da89e32564fef57413
+#: ../../agent.items.rst:25
+msgid ""
+"Hosts the (daily by default) cron job responsible for the service "
+"configurations gathering/pushing to collector, and for the rsync data "
+"synchronization to remote nodes. Note that even if no syncs are explicitely "
+"described in service configurations, there are still rsyncs scheduled for "
+"service and node configuration replication between nodes of a cluster."
+msgstr ""
+
+# fd3043d720cf4c29bb82452d19629c72
+#: ../../agent.items.rst:2
+msgid "Installed items details"
+msgstr ""
+
+# 882f3a06a88842b698d120ab5e1cc421
+#: ../../agent.items.rst:41
+msgid "Libraries implementing the nodeware logics"
+msgstr ""
+
+# 8caa4f39caad48a4b765336913a30332
+#: ../../agent.items.rst:60
+msgid ""
+"Operating system specific performance metrics gathering. Extends what the "
+"operating system provides by default, for example ``sar`` on Linux, FreeBSD "
+"and Solaris, ``glance`` on HP-UX."
+msgstr ""
+
+# c58a116630724fd4b92044904a62da6d
+#: ../../agent.items.rst:45
+msgid ""
+"Per-service, local, size-rotated, delay-rotated log files. All logs are also "
+"multiplexed to stdout and to the collector via xmlrpc"
+msgstr ""
+
+# 05afd3eb04344002958300916986fa7a
+#: ../../agent.items.rst:56
+msgid ""
+"Pushes the service and node configuration to the collector via xmlrpc, and "
+"triggers internal and user-configured rsyncs. Customized frequencies are "
+"preserved upon package upgrades."
+msgstr ""
+
+# 30a44ce799a046518ac2b360c8a66bbe
+#: ../../agent.items.rst:52
+msgid "Pushes the service per-resource status to the collector via xmlrpc"
+msgstr ""
+
+# 0f3055d735df40a1bdacb2b22d9d5d14
+#: ../../agent.items.rst:13
+msgid "Temporary, discardable files"
+msgstr ""
+
+# 8f5dfd33138746d5b01db74fe7401ea0
+#: ../../agent.items.rst:33
+msgid ""
+"Where executables create the lock-files used to ensure two actions can not "
+"run simultaneously on the same service."
+msgstr ""
+
+# 5f2cac373acd48c6838ab2a70434a2ef
+#: ../../agent.items.rst:29
+msgid ""
+"Where the production nodes of a cluster back up their configuration. These "
+"backups are used in case of disaster recovery activation to restore some "
+"specific configurations of the production nodes."
+msgstr ""

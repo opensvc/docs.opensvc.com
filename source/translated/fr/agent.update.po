@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 9a34f89fb0e64ee79197781b38c13b8c
+#: ../../agent.update.rst:49
+msgid "**node.repo**"
+msgstr ""
+
+# ea4d31c4d3f24951ac53e234877861b6
+#: ../../agent.update.rst:53
+msgid "**node.repopkg**"
+msgstr ""
+
+# 7fc912038f8d45d69aea0b9b3fbfb939
+#: ../../agent.update.rst:20
+msgid "A mirror can be set up using::"
+msgstr ""
+
+# ae3f6b69261049e2998e0c9eb4e22376
+#: ../../agent.update.rst:42
+msgid ""
+"After the mirror initialization, you have to update the current links "
+"according to your own policies. Beware, the mirroring step may have "
+"installed current links pointing to the lastest available agent packages."
+msgstr ""
+
+# 45dc5f5ed3e646da88c0ad7edeae6b17
+#: ../../agent.update.rst:11
+msgid ""
+"Download the required opensvc package to your hosts and use operating system "
+"specific local package management commands."
+msgstr ""
+
+# 925176f269194260a72e70c2a7b9695c
+#: ../../agent.update.rst:57
+msgid "Example::"
+msgstr ""
+
+# db78f997c3e04dc1b5b62183b1dca483
+#: ../../agent.update.rst:12
+msgid ""
+"Feed the opensvc packages into your existing per operating system package "
+"depots and use operating system specific network-aware package management "
+"commands."
+msgstr ""
+
+# 67f1d632d5ed4db19ad0b1b45783d6f9
+#: ../../agent.update.rst:18
+msgid "Initialize the mirror"
+msgstr ""
+
+# df28571ce3e94cfd8f5487317802c732
+#: ../../agent.update.rst:7
+msgid "Introduction"
+msgstr ""
+
+# 5e5ed28c50b94814ae4585bcb8656251
+#: ../../agent.update.rst:13
+msgid ""
+"Mirror http://repo.opensvc.com on a corporate server and set up the opensvc "
+"agent to use this mirror as a package source."
+msgstr ""
+
+# ae1939002c7f4365bce3094e5a5f3723
+#: ../../agent.update.rst:4
+msgid "OpenSVC agent updates"
+msgstr ""
+
+# 3b24ab82ca024a56bf3db57af947ce50
+#: ../../agent.update.rst:9
+msgid ""
+"OpenSVC provides packages for all supported operating systems at http://repo."
+"opensvc.com. Agents can be updated using one of the following methods, "
+"ordered by scalability:"
+msgstr ""
+
+# 9e64635208f74bf0afddaeaa1b8ff694
+#: ../../agent.update.rst:45
+msgid "Set up the agents"
+msgstr ""
+
+# 4bd39e611a02483687e860b269032b12
+#: ../../agent.update.rst:38
+msgid "Set up the published versions"
+msgstr ""
+
+# c49a7074486842b084ebd4f8b7c374ae
+#: ../../agent.update.rst:40
+msgid ""
+"The OpenSVC agent downloads the file pointed by the link named ``current`` "
+"under the package category supported by the operating system running the "
+"agent. For example a Solaris host executing 'nodemgr updatepkg' would try to "
+"download pkg/current."
+msgstr ""
+
+# 4245db92a0e84c86acc758d9b3dcc00b
+#: ../../agent.update.rst:47
+msgid ""
+"The repository must be known to the agent. This set up is done with either "
+"the node.repo or the node.repopkg ``node.conf`` parameters."
+msgstr ""
+
+# 7bd417bdab7c42d894ed30a04072d35c
+#: ../../agent.update.rst:24
+msgid "The resulting file tree must organized as::"
+msgstr ""
+
+# e706baab59134abc8c889d2d565cad66
+#: ../../agent.update.rst:64
+msgid "The update command is::"
+msgstr ""
+
+# 482fb252c9a047089514212dcc9508ca
+#: ../../agent.update.rst:15
+msgid "This chapter describes the last method."
+msgstr ""
+
+# 5472ad9c57a74a2493f7c34c8165ba2b
+#: ../../agent.update.rst:68
+msgid "This command is operating system agnostic."
+msgstr ""
+
+# 053ac8dac05149a49a21fbc7ceaccadb
+#: ../../agent.update.rst:55
+msgid ""
+"This parameter allows to set up a URI pointing to a pure OpenSVC agent "
+"packages repository. If specified node.repopkg overrides node.repo."
+msgstr ""
+
+# 435992fb67e64cbeac5d9fcd5203d451
+#: ../../agent.update.rst:51
+msgid ""
+"This parameter allows to set up a URI pointing to a repository hosting both "
+"compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
+"agent packages in the packages/ subdirectory."
+msgstr ""
+
+# da0baa5ea97b4809a7a5c5aca3309dfd
+#: ../../agent.update.rst:62
+msgid "Updating the agent"
+msgstr ""

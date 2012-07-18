@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 8da41e0b32df4e6ab15bf056cb58177a
+#: ../../introduction.rst:19
+msgid "History"
+msgstr ""
+
+# 842d918996d54453b164017e8088814b
+#: ../../introduction.rst:2
+msgid "Introduction"
+msgstr ""
+
+# 47251fbbd6d2484bb9e2c0ebec2b6a2f
+#: ../../introduction.rst:7
+msgid ""
+"OpenSVC is a software product and the name of the commercial entity "
+"developping, supporting and marketing it. The product will be referenced as "
+"\"OpenSVC\" and the company \"OpenSVC co\". This book covers extensively the "
+"OpenSVC goals, design and usage."
+msgstr ""
+
+# f291f0d86d864f5685880fe1a008eb04
+#: ../../introduction.rst:9
+msgid "OpenSVC is composed of two software components:"
+msgstr ""
+
+# a7a66b27553c4af48874d10b98e662a4
+#: ../../introduction.rst:16
+msgid ""
+"The OpenSVC agent is basically a Cluster Resource Manager with extended "
+"reporting capabilities. It is licensed under the GNU General Public License "
+"v2. The collector is a proprietary web 2.0 application aggregating the "
+"agents data. The Resource Management features of the agent are fully "
+"functional in the absence of a collector. Coupled by a heartbeat software, "
+"the agent completes a full cluster stack."
+msgstr ""
+
+# 811588cef2ed4e5ba688701935b722a3
+#: ../../introduction.rst:21
+msgid ""
+"The OpenSVC project was born in November 2009 when Christophe Varoqui and "
+"Cyril Galibern decided to develop from scratch a software stack to meet "
+"disaster recovery and systems management needs of large datacenters "
+"managers. These needs where assessed in major french financial and "
+"transports institutions."
+msgstr ""
+
+# 8fc90463350744d490666deb51aacf9c
+#: ../../introduction.rst:14
+msgid ""
+"The two components together address a wide range of IT issue including "
+"business continuity, application availability, continuous audit, alarming, "
+"performance analysis, asset management, software and hardware lifecycle "
+"management, trending, resource accounting, storage management, provisioning "
+"and compliance. OpenSVC is operating system, application and hardware "
+"agnostic."
+msgstr ""
+
+# 6b5e10a828144146b7f757e85ffe7bfa
+#: ../../introduction.rst:5
+msgid "What is OpenSVC"
+msgstr ""
+
+# df59f079105d4afc8eefd0ca3c72fd11
+#: ../../introduction.rst:12
+msgid "the agent"
+msgstr ""
+
+# 32b29c1c405148e5b391997c2f470209
+#: ../../introduction.rst:11
+msgid "the collector"
+msgstr ""

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 3295cc8b90d44b169a41711687d70f3c
+#: ../../collector.view.nodes.rst:27
+msgid "Add node"
+msgstr ""
+
+# 940729fe1b724d759f7353a42c0b6488
+#: ../../collector.view.nodes.rst:32
+msgid "Dashboard notifications"
+msgstr ""
+
+# e6e0345dfa184afea221e5e4097c95a0
+#: ../../collector.view.nodes.rst:29
+msgid "Delete node"
+msgstr ""
+
+# d969dde0e9cf4b7aa37a68cbd76778ab
+#: ../../collector.view.nodes.rst:19
+msgid "Group performance"
+msgstr ""
+
+# 96080893ea7d480da9b589b3d88a0af8
+#: ../../collector.view.nodes.rst:23
+msgid "Installed packages comparison"
+msgstr ""
+
+# 410b8e8cc6a5473387fe27215dc45355
+#: ../../collector.view.nodes.rst:25
+msgid "Node actions"
+msgstr ""
+
+# 6b075eecd856482786945661ab10dc1c
+#: ../../collector.view.nodes.rst:34
+msgid "Nodes close to warranty end"
+msgstr ""
+
+# 8ec971ff373141e8b98a2cac42fe38ed
+#: ../../collector.view.nodes.rst:4
+msgid "Nodes view"
+msgstr ""
+
+# 6750e76197cd49b7bdc193b7fc84cce5
+#: ../../collector.view.nodes.rst:35
+msgid "Nodes without asset information"
+msgstr ""
+
+# 0bbb7e5db7dc4c888da00aed6a204fed
+#: ../../collector.view.nodes.rst:12
+msgid "Screenshot"
+msgstr ""
+
+# 52ae604c54944aaebb94b8b17c1e6afb
+#: ../../collector.view.nodes.rst:9
+msgid ""
+"This view presents nodes information. Part of which is collected from the "
+"nodes themselves, through the OpenSVC agent. Information like geo-location, "
+"team responsible, power lines connexions, role, warranty end and status are "
+"either manually set or imported from the corporate asset manager."
+msgstr ""
+
+# be4db8a0dd4848e8be09bd1c0d8e2860
+#: ../../collector.view.nodes.rst:17
+msgid "Tools"
+msgstr ""
+
+# 4c3f4aa8d30a4751aa9b86d399147a30
+#: ../../collector.view.nodes.rst:7
+msgid "Usage"
+msgstr ""
+
+# 8395984c040f4c37abe880ca326b127d
+#: ../../collector.view.nodes.rst:21
+msgid ""
+"|video-icon| `Watch a video <http://www.youtube.com/watch?"
+"feature=player_embedded&v=9L4xfn9ylmI>`_"
+msgstr ""

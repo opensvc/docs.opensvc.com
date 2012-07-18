@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 450323b387044195b41e2b1b5021fa2f
+#: ../../collector.view.patches.rst:9
+msgid "Compare installed version of patches across a set of nodes"
+msgstr ""
+
+# 59e163c3a73146e2a321ab6c1892ccfd
+#: ../../collector.view.patches.rst:10
+msgid ""
+"Identify nodes vulnerable to bug or security problems known to certain patch "
+"levels"
+msgstr ""
+
+# c09ee12355fd4ef3bea65f2a14177748
+#: ../../collector.view.patches.rst:11
+msgid "Identify nodes where a patch is installed or not installed"
+msgstr ""
+
+# 60cab7a5f03b415084a92385d3d665ab
+#: ../../collector.view.patches.rst:14
+msgid ""
+"Patch database entries not refreshed for more than 24 hours will have its "
+"update date highlighted red. Information for such a patch should not be "
+"trusted."
+msgstr ""
+
+# 4c373b08f99a465f8501945274ee5be6
+#: ../../collector.view.patches.rst:2
+msgid "Patches view"
+msgstr ""
+
+# 6df17ee8dd1242fda5dfc9464b9ece2c
+#: ../../collector.view.patches.rst:12
+msgid "Plan patch compaigns"
+msgstr ""
+
+# 2c9e9305a60a4d1abbe9b6886eb81f59
+#: ../../collector.view.patches.rst:17
+msgid "Screenshot"
+msgstr ""
+
+# 9e3575811470412c96214d51b61129a2
+#: ../../collector.view.patches.rst:7
+msgid ""
+"The OpenSVC nodeware gathers installed patches list from the nodes (Solaris) "
+"and pushes it to the collector. Centralized patches lists allow "
+"administrators to easily:"
+msgstr ""
+
+# 701a63d1344342c1b0cd532f2f19a322
+#: ../../collector.view.patches.rst:5
+msgid "Usage"
+msgstr ""

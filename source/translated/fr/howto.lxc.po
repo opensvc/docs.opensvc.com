@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# a08a748b483b46eb8c7016f8a37ed721
+#: ../../howto.lxc.rst:15
+msgid "Additional packages"
+msgstr ""
+
+# 2510ef20cbb04988a5fbe16fcb223b40
+#: ../../howto.lxc.rst:21
+msgid "And opensvc from http://repo.opensvc.com/deb/"
+msgstr ""
+
+# 4415a757bbde4daab153b16c0046460b
+#: ../../howto.lxc.rst:87
+msgid "Basic container setup"
+msgstr ""
+
+# 5a6af4bb28294777a73e5c6a09058bca
+#: ../../howto.lxc.rst:12
+msgid ""
+"Before moving on to the next step, you should have a couple of servers "
+"delivered by OVH, setup with Debian Squeeze, which has initscripts and "
+"kernel adapted for LXC. You should also have an 'IP failover' available. "
+"Finally, the OpenSVC agent should be installed on both nodes (doc)"
+msgstr ""
+
+# fcd416dd343d4411a2adf3b8ffbb539c
+#: ../../howto.lxc.rst:48
+msgid "Cgroup setup"
+msgstr ""
+
+# c17926343e744144b0c91dbd76fa7416
+#: ../../howto.lxc.rst:77
+msgid "Container creation"
+msgstr ""
+
+# b825de59289a4d80ba809f9c80a50435
+#: ../../howto.lxc.rst:26
+msgid ""
+"Create a backend bridge connected to a dummy interface. In ``/etc/network/"
+"interfaces`` add the following block and activate the bridge using ifup br0::"
+msgstr ""
+
+# 7f7dacae31f64e04a1b5ef9c15322185
+#: ../../howto.lxc.rst:96
+msgid "Create the container"
+msgstr ""
+
+# fb4e05dc73da400098ba701adf8581e1
+#: ../../howto.lxc.rst:83
+msgid "Create the container rootfs::"
+msgstr ""
+
+# febd8a8f14a04f41a0491ee3424350c4
+#: ../../howto.lxc.rst:138
+msgid "Create the service configuration file::"
+msgstr ""
+
+# 17858511809941a596f767774b0d68eb
+#: ../../howto.lxc.rst:63
+msgid "Disk setup"
+msgstr ""
+
+# 920fef3042b64f87b7159873d7a87708
+#: ../../howto.lxc.rst:24
+msgid "Ethernet bridge"
+msgstr ""
+
+# c77252a1733e44579aae3b031c9a1545
+#: ../../howto.lxc.rst:50
+msgid "In ``/etc/fstab`` add the following line::"
+msgstr ""
+
+# 8bed1426b2ab4088a16d91b823a60965
+#: ../../howto.lxc.rst:41
+msgid ""
+"In ``/etc/sysctl.conf`` set the following parameters and reload the "
+"configuration using ``sysctl -p``::"
+msgstr ""
+
+# 4ec251642d5344229d91aab4ecdb8380
+#: ../../howto.lxc.rst:17
+msgid "Install::"
+msgstr ""
+
+# 845c8ec2788b4452967477dda75ed3e9
+#: ../../howto.lxc.rst:5
+msgid "Introduction"
+msgstr ""
+
+# 13b881af2b934484b1bb074797ec73b6
+#: ../../howto.lxc.rst:39
+msgid "Kernel parameters"
+msgstr ""
+
+# a363c182fbe44a639a74b060cbb45982
+#: ../../howto.lxc.rst:2
+msgid "Lxc clustered services on OVH"
+msgstr ""
+
+# 75e0e946dba64257b1548d7f7663c8d9
+#: ../../howto.lxc.rst:257
+msgid ""
+"Make sure this last script is owned by ``root`` and has ``700`` permissions, "
+"as it contains important credentials."
+msgstr ""
+
+# c26062386d3c4d85aa4572d3a6175ed1
+#: ../../howto.lxc.rst:7
+msgid ""
+"OVH provides powerful internet-connected servers at an affordable price and "
+"a scriptable IPv4 takeover. This is a great combination for clustered "
+"services driven by opensvc. This cookbook explains the steps involved in "
+"integrating such a cluster with LXC services on a local disk to gain a "
+"decent partitioning between services without compromise on performance and "
+"memory usage."
+msgstr ""
+
+# 6abfa8251a264bc99bd7cf81586c9aa4
+#: ../../howto.lxc.rst:170
+msgid "OVH routing and ipfailover"
+msgstr ""
+
+# 3053e89a206e4b08b6fa3c8b8509cd71
+#: ../../howto.lxc.rst:65
+msgid ""
+"OVH servers come with a 4 GB root filesystem, a ~4 GB swap partition and the "
+"rest of the disk is allocated to /home. The /home filesystem can be replaced "
+"by a single physical volume. Create a volume group over this pv and one or a "
+"set of logical volumes for each container. Format the logical volumes using "
+"the filesystem that suits you. Mount the logical volume set of the first "
+"container to create::"
+msgstr ""
+
+# fb9d6e5512ca44489bef9effe3599a3f
+#: ../../howto.lxc.rst:131
+msgid "Opensvc service creation"
+msgstr ""
+
+# 9f92971630754298931d969ebe84b47e
+#: ../../howto.lxc.rst:79
+msgid "Prepare the lxc container creation wrapper::"
+msgstr ""
+
+# 86e19f0d47774a5d839c1b9416ed828a
+#: ../../howto.lxc.rst:10
+msgid "Preparing a node"
+msgstr ""
+
+# 0b88432c08404adbabdca60a8e762477
+#: ../../howto.lxc.rst:60
+msgid "Preparing the service"
+msgstr ""
+
+# f304cd0714f14e3b894898e2bd225f4b
+#: ../../howto.lxc.rst:126
+msgid "Start the container::"
+msgstr ""
+
+# cc040a95320b49c9b4bd1e2a52fb3e64
+#: ../../howto.lxc.rst:54
+msgid "Then::"
+msgstr ""
+
+# 24c4d20781b642bfa49984b73e6748a5
+#: ../../howto.lxc.rst:133
+msgid "Trust the node root account to ssh-login into the container::"
+msgstr ""
+
+# c97841aca8864390ac446bd5b6c5f49c
+#: ../../howto.lxc.rst:206
+msgid "and ``/opt/opensvc/etc/opt/opensvc_name.dir/ipfailover``::"
+msgstr ""
+
+# bed074ff47344befabe62a41e8507eae
+#: ../../howto.lxc.rst:122
+msgid "and create the container with::"
+msgstr ""
+
+# 8caf1ed0f39c43f3b2ca385ba6df6263
+#: ../../howto.lxc.rst:98
+msgid "create a lxc config file as ``/tmp/lxc.conf`` containing::"
+msgstr ""
+
+# 121dacc4dd0248e18505ca3eef26147b
+#: ../../howto.lxc.rst:178
+msgid ""
+"create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name."
+"dir/ovh_routes``::"
+msgstr ""
+
+# 084bf452b65f49d888f6d45fb01c172f
+#: ../../howto.lxc.rst:172
+msgid "create the trigger scripts store, which is synchronized across nodes::"
+msgstr ""
+
+# 6246052e5b7b4831bf39b667c9df3ead
+#: ../../howto.lxc.rst:92
+msgid "hosts"
+msgstr ""
+
+# 752aa294f6994ce4b2e0693a0f6a3642
+#: ../../howto.lxc.rst:90
+msgid "locale"
+msgstr ""
+
+# 7bb5dc370981481195afc725486ead0f
+#: ../../howto.lxc.rst:89
+msgid "network"
+msgstr ""
+
+# 11cc45c8507640ccaad85bc25cc2b3ab
+#: ../../howto.lxc.rst:93
+msgid "rc.sysinit (remove swaps and udev actions)"
+msgstr ""
+
+# ebfaac5d8f114bf49eaf8c9dbdd3f95d
+#: ../../howto.lxc.rst:91
+msgid "tz"
+msgstr ""

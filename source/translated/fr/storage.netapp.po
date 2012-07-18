@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 8fc53ed56bb14870bece1434007cf0c5
+#: ../../storage.netapp.rst:8
+msgid ""
+"Acquire read/write access to the snapmirrored resources. Either swapping the "
+"syncs direction (in geocluster mode), or breaking-off the syncs (default "
+"disaster recovery mode)."
+msgstr ""
+
+# a6ce29ee2f7c4f729fb0a055649da68e
+#: ../../storage.netapp.rst:187
+msgid ""
+"Append the keys to :file:`/nasprd/vol/vol0/etc/sshd/opensvc/.ssh/"
+"authorized_keys2`::"
+msgstr ""
+
+# 6215e0913a4349e1a01e2ea65d481fab
+#: ../../storage.netapp.rst:23
+msgid "Break-off the snapmirror resource."
+msgstr ""
+
+# c03a0fc494d84be29ced5263f25367a0
+#: ../../storage.netapp.rst:205
+msgid "Check that target toaster hostname in present in the file"
+msgstr ""
+
+# f564a33d62124ed5af47a1fea8672312
+#: ../../storage.netapp.rst:5
+msgid "Command set"
+msgstr ""
+
+# dc502e8815584135aecd9a5ecc5a6360
+#: ../../storage.netapp.rst:119
+msgid "Create a role"
+msgstr ""
+
+# d432d6eabdf843e081a4771d400fc23b
+#: ../../storage.netapp.rst:126
+msgid "Create account"
+msgstr ""
+
+# 01eb7b12bc604eb7863e74f48b540b61
+#: ../../storage.netapp.rst:272
+msgid "Diskstart in disaster recovery (split) mode"
+msgstr ""
+
+# e6cbc72a9b534e7d9845a471af102ce0
+#: ../../storage.netapp.rst:283
+msgid "Diskstart in multi-site cluster (swap) mode"
+msgstr ""
+
+# 1073aa1aefe64ead897ca172cd8b880e
+#: ../../storage.netapp.rst:237
+msgid "Examples"
+msgstr ""
+
+# 62eb50c633914e129026390a549f7511
+#: ../../storage.netapp.rst:32
+msgid "Force flag"
+msgstr ""
+
+# 49f4dbcf65784e2190c3a123f95475af
+#: ../../storage.netapp.rst:137
+msgid ""
+"If the ssh setup has already been done skip the following command. Run "
+"secureadmin status to check."
+msgstr ""
+
+# 4884375e7b1a45809bfc7d327b579540
+#: ../../storage.netapp.rst:59
+msgid ""
+"Key-based ssh access to the filers. The root account's key-pair is used by "
+"OpenSVC. The filer account used is settable in the service configuration "
+"file. The filer account must have snapmirror handling capabilities granted. "
+"Cluster mode"
+msgstr ""
+
+# 1588d0bf40624a09a5a4352f4115dece
+#: ../../storage.netapp.rst:2
+msgid "Netapp"
+msgstr ""
+
+# 447485583c3146379207a7354ea344e8
+#: ../../storage.netapp.rst:116
+msgid "Netapp user account setup"
+msgstr ""
+
+# b0a0c7e0fdc34565abacd87b7a94d474
+#: ../../storage.netapp.rst:199
+msgid "On Source toaster : Ensure target toaster is trusted"
+msgstr ""
+
+# f21802b4bfd741dfaf6c08c0c5111d9a
+#: ../../storage.netapp.rst:222
+msgid ""
+"On Target toaster : Fill in the /etc/snapmirror.conf to specify the "
+"snapmirror policy"
+msgstr ""
+
+# de517058acbc42319b6a3f814c0f64f9
+#: ../../storage.netapp.rst:215
+msgid "On Target toaster : Initialize snapmirror replication"
+msgstr ""
+
+# 9a6a449d5f3d40afad50e94da942f9c3
+#: ../../storage.netapp.rst:208
+msgid "On Target toaster : Restrict destination volume"
+msgstr ""
+
+# 8ccb73109bd04b3188c014610e49561f
+#: ../../storage.netapp.rst:196
+msgid ""
+"OpenSVC does not provide assistance in initial snapmirror configuration. The "
+"necessary steps are described below to help you kickstart a service setup. "
+"OpenSVC declines liability for your breaking your filers. For accurate "
+"information please refer to Netapp documentations."
+msgstr ""
+
+# bf6fe616f0fa44eebfc2c166a282a07f
+#: ../../storage.netapp.rst:57
+msgid "Pre-requisites"
+msgstr ""
+
+# 5d54d03d95dd44049ff5911fc8bf307a
+#: ../../storage.netapp.rst:240
+msgid "Quiesce a replication"
+msgstr ""
+
+# 5c02fda43d10432198865690fb60de32
+#: ../../storage.netapp.rst:29
+msgid ""
+"Re-establish the snapmirror synchronization using current destination as new "
+"source."
+msgstr ""
+
+# 4e4c430aa1ba43d8aee4b12e312b3c66
+#: ../../storage.netapp.rst:26
+msgid "Re-establish the snapmirror synchronization."
+msgstr ""
+
+# 54c18f65c4544a2b8d8598aef0635246
+#: ../../storage.netapp.rst:248
+msgid "Resume a replication"
+msgstr ""
+
+# 0f8f1fabdfe6423aac4655f46b4a67d3
+#: ../../storage.netapp.rst:20
+msgid "Resume snapmirror sync schedule (rollbacks the effect of quiesce)."
+msgstr ""
+
+# de50b524e65a4763a4ba282039dcddb6
+#: ../../storage.netapp.rst:264
+msgid "Resync a replication"
+msgstr ""
+
+# bb4f21aca83c437598b6c07e34b10c00
+#: ../../storage.netapp.rst:71
+msgid "Service configuration file"
+msgstr ""
+
+# 7f60e1b170e0474294de4e6934af50bb
+#: ../../storage.netapp.rst:54
+msgid "Service configuration for Netapp"
+msgstr ""
+
+# a101d04d892c44678a1d9669771f9f0b
+#: ../../storage.netapp.rst:135
+msgid "Setup ssh key-based authentication"
+msgstr ""
+
+# 9708e5427a3742d6a388faaa597daa47
+#: ../../storage.netapp.rst:194
+msgid "Snapmirror configuration"
+msgstr ""
+
+# 4589698efa2a40b4acb43c735a3e041d
+#: ../../storage.netapp.rst:256
+msgid "Split a replication"
+msgstr ""
+
+# ef4b40ab8aed4b67a6e80774298953fa
+#: ../../storage.netapp.rst:37
+msgid "Status"
+msgstr ""
+
+# 8bdf9777225541079d92c371187c721f
+#: ../../storage.netapp.rst:34
+msgid ""
+"The --force flag is honored by the 'start' command only. It disables the "
+"exit on quiesce failure in the 'quiesce -> break' sequence. Be aware it "
+"means that the service will take over with a lagged data cursor."
+msgstr ""
+
+# dfdc5266f6ea4a959e0842699d528960
+#: ../../storage.netapp.rst:68
+msgid ""
+"The mode is deduced from the node's host mode (:file:`/opt/opensvc/var/"
+"host_mode`) : a PRD host mode implies the swap sync mode, otherwise the "
+"split sync mode is selected."
+msgstr ""
+
+# 1fd71d113fcb4fea8d48e479f6482be8
+#: ../../storage.netapp.rst:234
+msgid ""
+"The scheduling is disabled because syncs are drived by OpenSVC and that both "
+"replication directions are provisionned for swaps (one of them will appear "
+"as 'Uninitialized' in status)."
+msgstr ""
+
+# ca51c4a628be44d9833d3db1d6baa635
+#: ../../storage.netapp.rst:43
+msgid ""
+"The snapmirror are in one of the following state: *   transfer is in "
+"progress *   lag is beyond sync_max_delay"
+msgstr ""
+
+# 3302edba679e4c5f87d10735b9c23c20
+#: ../../storage.netapp.rst:40
+msgid "The snapmirror are operational and the lag in under sync_max_delay"
+msgstr ""
+
+# 894861106c7441ceb3f226e775e84bfa
+#: ../../storage.netapp.rst:63
+msgid ""
+"This is the default disaster recovery mode. Upon service startup on a DRP "
+"node, the snapmirrored resources are quiesced if the master filer is still "
+"joinable, then broken-off. The DRP node data cursor on the broken-off "
+"resources is considered volatile (still can be manually synchronized to the "
+"primary filer before failback to production node)."
+msgstr ""
+
+# c701b3bc41d74fbcbb2a6c1ae50e2e08
+#: ../../storage.netapp.rst:66
+msgid ""
+"This mode is dedicated to multi-site clusters. Upon service startup on a "
+"secondary node, the snapmirrored are quiesced and sync directions are "
+"swapped to set the 'source' to the filer local to the secondary node taking "
+"over the service."
+msgstr ""
+
+# f31e88a5e54042039657c66543873959
+#: ../../storage.netapp.rst:14
+msgid "Trigger a snapmirror sync."
+msgstr ""
+
+# 82d3c8c84f3a4e63afb2580b3b89bfd9
+#: ../../storage.netapp.rst:17
+msgid "Trigger an ultimate snapmirror sync then suspend the resync scheduling."
+msgstr ""
+
+# c13d073ec19d43f98259382061c12d37
+#: ../../storage.netapp.rst:185
+msgid ""
+"Trust all PRD nodes root public keys on all filers. Trust DRP nodes root "
+"public keys only on their local filer."
+msgstr ""
+
+# c9e35aa1082b4a368f33922ff31950d1
+#: ../../storage.netapp.rst:183
+msgid "Trust keys"
+msgstr ""
+
+# 946cbd8d36bf43408d272c5251582cec
+#: ../../storage.netapp.rst:11
+msgid "noop"
+msgstr ""
+
+# 045668574ef64689b5c9190d9d922899
+#: ../../storage.netapp.rst:51
+msgid "resource is not in snapmirrored state"
+msgstr ""
+
+# f22bd4752f9844cd911a95d28cacdd44
+#: ../../storage.netapp.rst:48
+msgid "slave filer is unreachable"
+msgstr ""

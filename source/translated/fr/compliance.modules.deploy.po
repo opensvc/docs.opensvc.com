@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# feb8cd1740e94640ad1145fbd1812613
+#: ../../compliance.modules.deploy.rst:40
+msgid "**node.repo**"
+msgstr ""
+
+# 3a3357a5c67941ddb34d6268fb05457d
+#: ../../compliance.modules.deploy.rst:44
+msgid "**node.repocomp**"
+msgstr ""
+
+# f4fa350319ac4c518843c79e7d6f7da7
+#: ../../compliance.modules.deploy.rst:33
+msgid ""
+"After the mirror initialization, you have to update the current link "
+"according to your own policies."
+msgstr ""
+
+# ff734bdfc5f146398cc4c28565549e06
+#: ../../compliance.modules.deploy.rst:48
+msgid "Example::"
+msgstr ""
+
+# a216d002dcd147c9b4e7ea3fe5e2a230
+#: ../../compliance.modules.deploy.rst:20
+msgid "Initialize the repository"
+msgstr ""
+
+# e940d6b098bf4d34bf2c180bd50b6d3b
+#: ../../compliance.modules.deploy.rst:7
+msgid "Introduction"
+msgstr ""
+
+# 50b1f2d7033347d8a062f9d868db0a5a
+#: ../../compliance.modules.deploy.rst:11
+msgid "Modules can be deployed using one of the following methods:"
+msgstr ""
+
+# ce9f744164de42d5a0fbd2377a461b85
+#: ../../compliance.modules.deploy.rst:4
+msgid "Modules deployment"
+msgstr ""
+
+# 686bacfee06c406f98104f0999f6e7b1
+#: ../../compliance.modules.deploy.rst:15
+msgid ""
+"Pull mode : each node is responsible from fetching the modules from a "
+"repository"
+msgstr ""
+
+# 0d220038e9b04a0cb9d8e21faac63669
+#: ../../compliance.modules.deploy.rst:13
+msgid ""
+"Push mode : a trusted server is responsible of pushing the modules to the "
+"nodes. The difficult part is the target node listing. Such lists can be "
+"extracted from the collector database."
+msgstr ""
+
+# 1a17cc9eaf8446b4bdac6f4c6c33e9b2
+#: ../../compliance.modules.deploy.rst:36
+msgid "Set up the agents"
+msgstr ""
+
+# 63dbd657cc184d579af1f0cdf8c6019c
+#: ../../compliance.modules.deploy.rst:29
+msgid "Set up the published version"
+msgstr ""
+
+# fc7f6846a8714438ba885b1463ad043a
+#: ../../compliance.modules.deploy.rst:31
+msgid ""
+"The OpenSVC agent downloads the file pointed by the link named ``current``."
+msgstr ""
+
+# bc8d4de9b49245f5bcb6461d27cf1692
+#: ../../compliance.modules.deploy.rst:9
+msgid ""
+"The compliance modules must be installed on all nodes with modulesets "
+"attached. All modules can be safely installed : only the modules included in "
+"attached modulesets are used. The modules must be installed in ``/opt/"
+"opensvc/var/compliance/``."
+msgstr ""
+
+# 1a734e87aaba463b9b6a33b27c0ab23b
+#: ../../compliance.modules.deploy.rst:22
+msgid "The compliance repository file tree must organized as::"
+msgstr ""
+
+# 111bcbeae6944f04a44872f024e899f9
+#: ../../compliance.modules.deploy.rst:38
+msgid ""
+"The repository must be known to the agent. This set up is done with either "
+"the node.repo or the node.repocomp ``node.conf`` parameters."
+msgstr ""
+
+# 95c473c1f13c45dba0bc352acdca27dd
+#: ../../compliance.modules.deploy.rst:55
+msgid "The update command is::"
+msgstr ""
+
+# a50cc6fc17844884b0ead1f4779bbc31
+#: ../../compliance.modules.deploy.rst:17
+msgid "This chapter describes the last method."
+msgstr ""
+
+# c24769f222344423a7adfb1f3aef167e
+#: ../../compliance.modules.deploy.rst:59
+msgid "This command is operating system agnostic."
+msgstr ""
+
+# c787d7bc6bd54d54bacf8e0c44f74e5e
+#: ../../compliance.modules.deploy.rst:46
+msgid ""
+"This parameter allows to set up a URI pointing to a pure OpenSVC agent "
+"compliance repository. If specified node.repocomp overrides node.repo."
+msgstr ""
+
+# 3fa67ab82aa945aea97e26814bc7499e
+#: ../../compliance.modules.deploy.rst:42
+msgid ""
+"This parameter allows to set up a URI pointing to a repository hosting both "
+"compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
+"agent packages in the packages/ subdirectory."
+msgstr ""
+
+# 16534a28a72d43979d1f3b153bbb1ed1
+#: ../../compliance.modules.deploy.rst:53
+msgid "Updating the modules"
+msgstr ""

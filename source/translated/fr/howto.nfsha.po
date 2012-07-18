@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 6c60bc5986ee4bf487ff8693e7262960
+#: ../../howto.nfsha.rst:121
+msgid "**On both nodes**"
+msgstr ""
+
+# 05db04ac7f2b4fe191f6f62fdd79f776
+# 992aa5b87c0c446c9469bfee552c9e1f
+# df2f232a43394621871b30d728328520
+# c3088331804c474a80d3ef6c62a8520a
+#: ../../howto.nfsha.rst:28 ../../howto.nfsha.rst:87 ../../howto.nfsha.rst:93
+#: ../../howto.nfsha.rst:114
+msgid "**On both nodes**::"
+msgstr ""
+
+# 0f4c65922fd448b3955e2134c7693f59
+# e08ad56609b741bfa21c124d6a32ea5c
+# 947c4e3aed9a4c1e8656a9b0a3e687b4
+# f0abac2d690a48438f042ef3c10ae6ab
+#: ../../howto.nfsha.rst:13 ../../howto.nfsha.rst:38 ../../howto.nfsha.rst:103
+#: ../../howto.nfsha.rst:110
+msgid "**On the master node**::"
+msgstr ""
+
+# 7e28192922c84ef18eaa5bd9bf0463ef
+#: ../../howto.nfsha.rst:91
+msgid "Change these system configuration files to use this new mountpoint."
+msgstr ""
+
+# 5784c11f7aed4bb48caa9e0cdc0de4e7
+#: ../../howto.nfsha.rst:119
+msgid "Configure nfs to listen on the service IP address"
+msgstr ""
+
+# 25b0a4a984964be5b1a07487dffa2d27
+#: ../../howto.nfsha.rst:9
+msgid "Create a HA service, using the :ref:`howto.ha` howto."
+msgstr ""
+
+# 539f08d154414011b60f86d9bb08ffac
+#: ../../howto.nfsha.rst:36
+msgid "Create the OpenSVC service startup script."
+msgstr ""
+
+# 901af789b65e4b539b807e1ba46f86c4
+#: ../../howto.nfsha.rst:85
+msgid "Create the new mount point."
+msgstr ""
+
+# 52c7b59cd46c43a58f366f5e984cbd6a
+#: ../../howto.nfsha.rst:126
+msgid "Epilog"
+msgstr ""
+
+# fd3853aabc824cdaa8e8d89cbcb00324
+#: ../../howto.nfsha.rst:21
+msgid ""
+"Linux NFS service uses ``/var/lib/nfs`` to store both node-private and "
+"service-private data. The tricky part of the HA setup is to separate this "
+"data."
+msgstr ""
+
+# d0094ebe285047c99180d408cb973af0
+#: ../../howto.nfsha.rst:11
+msgid ""
+"Make sure the ``/opt/opensvc/nfssvc.d`` symlink points to a directory hosted "
+"on a shared filesystem, handled by the nfssvc OpenSVC service. This howto "
+"uses ``/nfssvc`` as the root service shared filesystem."
+msgstr ""
+
+# 61df5d974b1e4d54aa1f76700ff64001
+#: ../../howto.nfsha.rst:123
+msgid "Modify STATD_HOSTNAME in /etc/sysconfig/nfs"
+msgstr ""
+
+# e6e26e2d47324b0d8cd4bfbb9d56fe72
+#: ../../howto.nfsha.rst:2
+msgid "NFS High Availability setup"
+msgstr ""
+
+# 6cc70853a2f646968ee9e7b3d424eb8e
+#: ../../howto.nfsha.rst:19
+msgid "NFS configuration"
+msgstr ""
+
+# bd02e2e77c7d4b8aa8ef0dfc8fc8a62f
+#: ../../howto.nfsha.rst:4
+msgid ""
+"NFS is a tricky beast to setup for high availability. Without proper "
+"configuration NFS clients tend to hang waiting for i/o completion on the "
+"shares. This guide exposes the Linux NFS servers configuration for smooth "
+"failover."
+msgstr ""
+
+# 0538ed781b3240ab84966d03e3978286
+#: ../../howto.nfsha.rst:24
+msgid "NFS server startup"
+msgstr ""
+
+# 023917098d914460bc6619330ecedf73
+#: ../../howto.nfsha.rst:26
+msgid ""
+"NFS startup will be handled by the OpenSVC service. Stop the NFS service and "
+"inhibit its launch at server startup."
+msgstr ""
+
+# b2487b02810f4b92ac080d6187547fb1
+#: ../../howto.nfsha.rst:81
+msgid "Node private data"
+msgstr ""
+
+# d86b64826a7a45e3a9a0d15ce607a9d8
+#: ../../howto.nfsha.rst:7
+msgid "OpenSVC HA setup"
+msgstr ""
+
+# 986c2798fbb543a7b1e5c181e0c3d3ec
+#: ../../howto.nfsha.rst:128
+msgid ""
+"Reboot the nodes to activate the new ``rpc_pipefs`` location and start "
+"testing failovers."
+msgstr ""
+
+# 3e8ecb890d654f008895a3d2f1aa1f7f
+#: ../../howto.nfsha.rst:99
+msgid "Service private data"
+msgstr ""
+
+# 19e683ffcb13411085a10e2abc7801e5
+#: ../../howto.nfsha.rst:83
+msgid ""
+"The data that must remain local to each node is the RPC pipefs pseudo "
+"filesystem. It is mounted by default under ``/var/lib/nfs/rpc_pipefs``. As "
+"``/var/lib/nfs`` will be moved to the shared filesystem, we need to change "
+"the location of this mount point."
+msgstr ""
+
+# 5aed2d0660d447efb0ac564b3b2f401c
+#: ../../howto.nfsha.rst:108
+msgid ""
+"The exports list should also move with the service, to avoid configuration "
+"drift between the 2 nodes."
+msgstr ""
+
+# d12a10d4904943539c71dfa0c55e30c6
+#: ../../howto.nfsha.rst:101
+msgid ""
+"``/var/lib/nfs`` contains data essential for nfs client sessions takeover. "
+"Thus, this directory must follow the service in case of failover."
+msgstr ""

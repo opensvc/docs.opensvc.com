@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 2b5da17ecd074523a3bf0b32836c190b
+#: ../../index.rst:23
+msgid ":ref:`genindex`"
+msgstr ""
+
+# 85827edba2024631bf990043549c2471
+#: ../../index.rst:24
+msgid ":ref:`search`"
+msgstr ""
+
+# 1d0befb093b5429a97d0022abe31a5d8
+#: ../../index.rst:4
+msgid "Contents:"
+msgstr ""
+
+# 388ae7bcb7094cdda966f2b9c450cae8
+#: ../../index.rst:21
+msgid "Indices and tables"
+msgstr ""
+
+# 5fe318ac06be4ac9b5626b17d2c85049
+#: ../../index.rst:2
+msgid "Welcome to OpenSVC documentation!"
+msgstr ""

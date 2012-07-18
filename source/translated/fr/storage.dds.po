@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 6572135171424a9aa5ad9883c8ce9190
+#: ../../storage.dds.rst:21
+msgid ""
+"After succesful delta application on targets, snap1 is removed and snap2 is "
+"renamed snap1. Ready for the next incremental sync."
+msgstr ""
+
+# dbb7ded411c54fe3a916fc5b606bacbd
+#: ../../storage.dds.rst:45
+msgid "Cluster mode"
+msgstr ""
+
+# 8682748b8e1842d09b9b9411757afcc1
+#: ../../storage.dds.rst:24
+msgid "Command set"
+msgstr ""
+
+# 476ada0180764edfad7e8aaedb57fb45
+#: ../../storage.dds.rst:12
+msgid "Delta generation"
+msgstr ""
+
+# c696c6a47d7c45d5b20ea56c77933b54
+#: ../../storage.dds.rst:111
+msgid "Examples"
+msgstr ""
+
+# f60349d3321243fc85c2037793de8014
+#: ../../storage.dds.rst:114
+msgid "Full synchronization"
+msgstr ""
+
+# 69742185ac2348118e5c1c779fc4a329
+#: ../../storage.dds.rst:19
+msgid ""
+"In other words, the binary delta file contains all data changed between "
+"snap1 and snap2 creation times, plus the mapping table keeping track of each "
+"chunk offset in the origin."
+msgstr ""
+
+# a7c9e261b874483394809465c3cee149
+#: ../../storage.dds.rst:131
+msgid "Incremental synchronization"
+msgstr ""
+
+# 84e3fd695fe845629fd89882a44de890
+#: ../../storage.dds.rst:30
+msgid ""
+"Incremental synchronization. dds-based. Extract the binary delta as a file, "
+"send to file to the target systems and replay the changes there."
+msgstr ""
+
+# 0d99c5b1ea9842488e2e5d912cd0b96d
+#: ../../storage.dds.rst:27
+msgid ""
+"Initial synchronization. dd-based. Make the whole dataset transit on the "
+"wire. Also needed when source and target get out-of-sync. This operation, "
+"though a storage bandwidth drain, works on a snapshot, so the service need "
+"not be down."
+msgstr ""
+
+# 50b108f85e624ad39cb918fd7384f349
+#: ../../storage.dds.rst:5
+msgid "Introduction"
+msgstr ""
+
+# 7704b75e6f914e859dcbe7b5f9b90f4e
+#: ../../storage.dds.rst:36
+msgid "Last synchronization occured less than sync_max_delay minutes ago."
+msgstr ""
+
+# ac7d56f12f3a4749a6ae89df01417593
+#: ../../storage.dds.rst:39
+msgid "Last synchronization occured more than sync_max_delay minutes ago."
+msgstr ""
+
+# f20073c4985f4bbcb7e155460d18e5a5
+#: ../../storage.dds.rst:42
+msgid "Service configuration"
+msgstr ""
+
+# b1cb6ec791ae451d833e1de2f42d5637
+#: ../../storage.dds.rst:51
+msgid "Service configuration file"
+msgstr ""
+
+# 5626b68261774a91a672123352a050ad
+#: ../../storage.dds.rst:9
+msgid ""
+"Source and targets maintain a state file to identify the last incremental "
+"synchronization done properly. This state is used to check that the deltas "
+"application sequence is not broken. If broken, alerts are emited and a full "
+"sync must be scheduled."
+msgstr ""
+
+# 1be477e49e65433fa45c5f2a45448e66
+#: ../../storage.dds.rst:33
+msgid "Status"
+msgstr ""
+
+# 849ac7622ac84e9d80e88ae8a54fa191
+#: ../../storage.dds.rst:7
+msgid ""
+"The dds replication scheme is like ddsnap, just simpler, dumber and entirely "
+"in userspace. It builds around the dds utility, provided by OpenSVC and "
+"available from the OpenSVC repositories. This tool parses the LVM2 snapshots "
+"copy-on-write table to identify changed chunks since snapshot creation and "
+"gather fresh data from the origin or from a newer snapshot of the same "
+"origin. OpenSVC uses this low-level feature-set to implement binary-delta "
+"incremental logical volume replication."
+msgstr ""
+
+# f0218801ae6e416cb3e23e478fce8ff2
+#: ../../storage.dds.rst:48
+msgid ""
+"This is the default disaster recovery mode. Upon service startup on a DRP "
+"node, the dds replication is blocked from the DRP node. The return to "
+"production mode usually involves a full resynchronization."
+msgstr ""
+
+# 5388b29b4ccb40fd94f1614827c1ec16
+#: ../../storage.dds.rst:2
+msgid "dds data replication"
+msgstr ""
+
+# 6fc299067aed4841be71f74a5b0eb1c0
+#: ../../storage.dds.rst:17
+msgid ""
+"dds reads the snap1 (oldest) snapshot cow table. For each changed chunk, "
+"fetch chunk data from snap2. In the diagram, chunk1 has not changed since "
+"snap2 creation, so data is actually read from origin, whereas chunk4 has "
+"changed since snap2 creation, so data is read from snap2 cow segment."
+msgstr ""

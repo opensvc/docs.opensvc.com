@@ -1,0 +1,558 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 62ee9a34ec6542de92a9b39ac505b5e8
+#: ../../collector.introduction.rst:114
+msgid ":command:`comment`"
+msgstr ""
+
+# fe49447f61b349d2bf3b9870d2b8347d
+#: ../../collector.introduction.rst:122
+msgid ":command:`container name`"
+msgstr ""
+
+# 21c43873c1584ad083e6fb6376d2a5d7
+#: ../../collector.introduction.rst:126
+msgid ":command:`container type`"
+msgstr ""
+
+# 53c4eec7685c4909b3c87c6ae29ae3d5
+#: ../../collector.introduction.rst:146
+msgid ":command:`drp node`"
+msgstr ""
+
+# 0ad3d295431e48f6b2ca16264053dc0f
+#: ../../collector.introduction.rst:150
+msgid ":command:`drp nodes`"
+msgstr ""
+
+# 239516ce31714c99a40cb52bc3b707c3
+#: ../../collector.introduction.rst:118
+msgid ":command:`last update`"
+msgstr ""
+
+# 1c6382a980974a119a7b56f55a5d1f58
+#: ../../collector.introduction.rst:142
+msgid ":command:`nodes`"
+msgstr ""
+
+# 85bc93bd667f419b9d8dadc7691d8c21
+#: ../../collector.introduction.rst:102
+msgid ":command:`opensvc version`"
+msgstr ""
+
+# 886f21d12e7742959b2a6cccbbd9ffe4
+#: ../../collector.introduction.rst:138
+msgid ":command:`primary node`"
+msgstr ""
+
+# 5e6ab906807e46038263fb0fc76d944f
+#: ../../collector.introduction.rst:134
+msgid ":command:`responsibles mail`"
+msgstr ""
+
+# 62be2ab0110b4bd1916d39807cf8d55d
+#: ../../collector.introduction.rst:130
+msgid ":command:`responsibles`"
+msgstr ""
+
+# 954b330100584a7587af067d687c3b07
+#: ../../collector.introduction.rst:154
+msgid ":command:`status`"
+msgstr ""
+
+# ff13b6a27a4a433b8ce16716575080a8
+#: ../../collector.introduction.rst:110
+msgid ":command:`type`"
+msgstr ""
+
+# 7a2aa0df14b24645b068efec9f6b326c
+#: ../../collector.introduction.rst:106
+msgid ":command:`unackowledged errors`"
+msgstr ""
+
+# 2e7396a6f63b46a1a2d7b583a7bc6241
+#: ../../collector.introduction.rst:36
+msgid "A column filters bar"
+msgstr ""
+
+# 15eac0955c554f1ab656b8b4ce0e5471
+#: ../../collector.introduction.rst:35
+msgid "A column selector"
+msgstr ""
+
+# 6e10a4d8adfc4129af49933ca83c7947
+#: ../../collector.introduction.rst:108
+msgid ""
+"A count of the unacknowledged errors on this service found in the actions "
+"table."
+msgstr ""
+
+# 3a14f2a2172942518412d0d62a44ffaa
+#: ../../collector.introduction.rst:38
+msgid "A csv export tool"
+msgstr ""
+
+# 25bb18ce7e4b4f299141d9c7bc973565
+#: ../../collector.introduction.rst:18
+msgid ""
+"A newly created account has no privilege to see other users services. You "
+"have to ask admin@opensvc.com to add filters to your account so you can see "
+"your data. Filtering is based on domainnames patterns. You can declare as "
+"many domains as you need. The email address you setup during registration is "
+"important : it is used by the collector alarming subsystem as a mail sink "
+"for services you are responsible of."
+msgstr ""
+
+# 6b107a3a2a5240f68370091bac2c6c77
+#: ../../collector.introduction.rst:37
+msgid "A pager"
+msgstr ""
+
+# b8906ef2c7404e18a85c4448ea7df2d8
+#: ../../collector.introduction.rst:218
+msgid ""
+"A per-node wiki page the team responsible member can use to share "
+"information relative to the node."
+msgstr ""
+
+# b028da388dff473e9acdcc69e6fa5bd8
+#: ../../collector.introduction.rst:34
+msgid "A persistent filters selector"
+msgstr ""
+
+# a51dbf1176fa43d686dc732332eb8505
+#: ../../collector.introduction.rst:69
+msgid "AND multiple patterns (%gie%&%adomain.com)"
+msgstr ""
+
+# 180c8c43a6dd47e28269c65d9c99bf6e
+#: ../../collector.introduction.rst:16
+msgid ""
+"Account registration the SaaS collector at https://collector.opensvc.com is "
+"open to all."
+msgstr ""
+
+# a615fb9a55b74310854ffcf43c520be9
+#: ../../collector.introduction.rst:144
+msgid ""
+"All nodes where the service may be running in degraded situation (not in "
+"disaster recovery situation)."
+msgstr ""
+
+# 61cac255cd5543b28654fb37fab0b4cd
+#: ../../collector.introduction.rst:152
+msgid ""
+"All nodes where the service may be running in disaster recovery situation."
+msgstr ""
+
+# af3383171089494582ea2a165224b400
+#: ../../collector.introduction.rst:4
+msgid "Collector"
+msgstr ""
+
+# 9e557575ca6c4ab082525f312f46ca78
+#: ../../collector.introduction.rst:56
+msgid "Column filters bar"
+msgstr ""
+
+# a8a2596c70e14837975e7a474ebb634a
+#: ../../collector.introduction.rst:49
+msgid "Column selector"
+msgstr ""
+
+# f4bcab2fe0c84680844e2a3533000bce
+#: ../../collector.introduction.rst:23
+msgid ""
+"Data views are accessed through the tabulations in the site's pages header."
+msgstr ""
+
+# 953d001976ce403d800d02605c469a58
+#: ../../collector.introduction.rst:161
+msgid "Display the per-node per-resource detailled service status."
+msgstr ""
+
+# 8672308a8c274bd6bd1231fff232003e
+#: ../../collector.introduction.rst:156
+msgid "Display the per-node synthetic service status."
+msgstr ""
+
+# ff1de34fb30348d488c24f6f8e3532af
+#: ../../collector.introduction.rst:166
+msgid "Display the raw service configuration file pushed by the nodeware."
+msgstr ""
+
+# 675801d7c0474c5a8de0050e433a4023
+#: ../../collector.introduction.rst:209
+msgid "Displays:"
+msgstr ""
+
+# 9593282177ad4dab88f1b54e6e609757
+#: ../../collector.introduction.rst:60
+msgid ""
+"Each column of the table supports filtering. Filters are applied upon "
+"``<enter>`` in any filter box. Filter box expressions are AND'ed. Filter "
+"syntax supports :"
+msgstr ""
+
+# 6630d8f912cd4da9a76ccc12e108ff6a
+#: ../../collector.introduction.rst:32
+msgid "Each view has:"
+msgstr ""
+
+# 8924f8ad8b3548fcad917e068f47cd31
+#: ../../collector.introduction.rst:46
+msgid ""
+"Filters can be designed from the :menuselection:`Admin --> Filters` view."
+msgstr ""
+
+# c0b7f2111fcc4505b91c492167407734
+#: ../../collector.introduction.rst:190
+msgid ""
+"Generate and display graphs of performance metrics on the user-selected time "
+"range. The metrics are gathered daily from tools like glance and sar running "
+"on the nodes. The opensvc agent pushes this information to database."
+msgstr ""
+
+# 3629d2a4fbdf40d2bcc6893a38e40020
+#: ../../collector.introduction.rst:124
+msgid "Host Name of the virtual machine encapsulated in the service, if any."
+msgstr ""
+
+# 97a59916a86a4af781ea4df4581220f9
+#: ../../collector.introduction.rst:148
+msgid ""
+"Host name of the node the service should be running in a disaster recovery "
+"situation."
+msgstr ""
+
+# 68594c9e6d514b7bb058d2052e5ad9b2
+#: ../../collector.introduction.rst:140
+msgid ""
+"Host name of the node where the service should be running in optimal "
+"situation."
+msgstr ""
+
+# b1f972b2fe824e7098697228de331dfb
+#: ../../collector.introduction.rst:180
+msgid ""
+"In all views, clicking on a node name will open the node tabs to display the "
+"most comprehensive data set the collector knows about this node. server, os, "
+"mem, cpu, location, power"
+msgstr ""
+
+# 25d5c13ee03d41f5ba6663b0630a9048
+#: ../../collector.introduction.rst:95
+msgid ""
+"In all views, clicking on a service name will open the service tabs to "
+"display the most comprehensive data set the collector knows about this "
+"service."
+msgstr ""
+
+# 03dc4f00973f4e2baa5c239239a31f4e
+#: ../../collector.introduction.rst:183
+msgid ""
+"Information displayed in these tabs are extracted from the asset table. "
+"Assets can be loaded from a tiers enterprise asset manager or filled-in "
+"manually."
+msgstr ""
+
+# 832c022a041c4a0ba39fec81ef13af36
+#: ../../collector.introduction.rst:14
+msgid "Internet collector account configuration"
+msgstr ""
+
+# 6006ed527ad94bec97c85f37cd1e74ed
+#: ../../collector.introduction.rst:7
+msgid "Introduction"
+msgstr ""
+
+# a4cef482721442df9165005f02ac225a
+#: ../../collector.introduction.rst:136
+msgid "List of administrators contact emails for this service."
+msgstr ""
+
+# f66348ddb6b24dcab5b6975c3a31684f
+#: ../../collector.introduction.rst:132
+msgid "List of administrators contact names for this service."
+msgstr ""
+
+# 5fb171bc637f4b45b92d3cb57f5e26b6
+#: ../../collector.introduction.rst:192
+msgid "Metrics collection depend on the operating system. Some of them are:"
+msgstr ""
+
+# 4fdd67cc2eec4afea3217dabc7dc4bfa
+#: ../../collector.introduction.rst:63
+msgid ""
+"Multiple character wildcard for SQL expressions. Can be used as a header, "
+"trailer or in the middle of a pattern (%gie%01%)"
+msgstr ""
+
+# 4e2f3b0669df4bc1b59768a92178fea0
+#: ../../collector.introduction.rst:21
+msgid "Navigation"
+msgstr ""
+
+# 0ff27b4b26a646ccbbce1def817e340a
+#: ../../collector.introduction.rst:75
+msgid "Negate the pattern (!%gie%&%adomain.com)"
+msgstr ""
+
+# 4f9773bb30114de8b94802747114f637
+#: ../../collector.introduction.rst:176
+msgid "Node tabs"
+msgstr ""
+
+# abb4c94a7b8d404a91aeb8945b1c2cb4
+#: ../../collector.introduction.rst:72
+msgid "OR multiple patterns (%gie%|%adomain.com)"
+msgstr ""
+
+# 260995cbfdca475d885c6db4d22d4197
+#: ../../collector.introduction.rst:42
+msgid "Persistent filters"
+msgstr ""
+
+# 0a596ebcdcef4959b808208732b81d32
+#: ../../collector.introduction.rst:104
+msgid "Pushed to database daily by the opensvc nodeware cronjob."
+msgstr ""
+
+# 06cf1119e2b24632bd3957f659f51255
+#: ../../collector.introduction.rst:116
+msgid ""
+"Pushed to database daily by the opensvc nodeware cronjob. This information "
+"resides in the service env file on the nodes."
+msgstr ""
+
+# 91bd56fa74234c2799f73ee2b631fd17
+#: ../../collector.introduction.rst:90
+msgid ""
+"Select only cells with value inforior or equal to specified value or date "
+"(<=2012-04-01)"
+msgstr ""
+
+# d07a2c3ac3474137bfc40d878b3fe82d
+#: ../../collector.introduction.rst:84
+msgid ""
+"Select only cells with value inforior to specified value or date "
+"(<2012-04-01)"
+msgstr ""
+
+# f4d3abd7b38143eb8fc7a4de904105bb
+#: ../../collector.introduction.rst:87
+msgid ""
+"Select only cells with value superior or equal to specified value or date "
+"(>=2012-04-01)"
+msgstr ""
+
+# 4492fda590be4481831cc658cc5fd045
+#: ../../collector.introduction.rst:81
+msgid ""
+"Select only cells with value superior to specified value or date "
+"(>2012-04-01)"
+msgstr ""
+
+# c20710ec22a744a38b9e3f937ea4f395
+#: ../../collector.introduction.rst:78
+msgid "Select only empty cells (!empty)"
+msgstr ""
+
+# 6d2459640c43460893f1febb8ba7a648
+#: ../../collector.introduction.rst:93
+msgid "Service tabs"
+msgstr ""
+
+# 184061ca24ec41298f2aa4c20704b29a
+#: ../../collector.introduction.rst:112
+msgid "Service type can be PRD, DEV, ..."
+msgstr ""
+
+# 2c77f3b634294f599517ad68228facb3
+#: ../../collector.introduction.rst:66
+msgid ""
+"Single character wildcard for SQL expressions. Can be used as a header, "
+"trailer or in the middle of a pattern (%gie%01%)"
+msgstr ""
+
+# 7a026aa602d34a31b571aaad27b36274
+#: ../../collector.introduction.rst:171
+msgid "Sketches service-nodes-storage-sites relationships"
+msgstr ""
+
+# 2941ce307a864d86890974d92c25d399
+#: ../../collector.introduction.rst:44
+msgid ""
+"The active filter is stored in database and applied on all collector views. "
+"It persists across navigation sessions.  Upon filter selection, the view is "
+"reloaded."
+msgstr ""
+
+# dee5483959f74bda86d314280ac0f3a7
+#: ../../collector.introduction.rst:11
+msgid ""
+"The collector centralizes the agents data and provides advanced filtering, "
+"reporting and accounting features."
+msgstr ""
+
+# 8ee1ec9d8c4045d2963d21a1111d028a
+#: ../../collector.introduction.rst:9
+msgid ""
+"The collector is commercially licensed web 2.0 site available either in SaaS "
+"mode or in client-hosted mode. Contact sales@opensvc.com for licensing "
+"information."
+msgstr ""
+
+# f466b722b05c4b0aa7d94c46c2b87e12
+#: ../../collector.introduction.rst:211
+msgid "The current node ruleset"
+msgstr ""
+
+# 5f8c225591fa4867b73932ce60f77332
+#: ../../collector.introduction.rst:212
+msgid "The current per-module compliance status of the node"
+msgstr ""
+
+# 2fdbeaeebca34da4a681883fc945ba43
+#: ../../collector.introduction.rst:213
+msgid "The modulesets attached to the node"
+msgstr ""
+
+# f86636c70f674e169064d8130a5849a7
+#: ../../collector.introduction.rst:120
+msgid ""
+"Timestamp updated upon service information receive from the nodeware cronjob."
+msgstr ""
+
+# 59e51df012164b0aad7b5f352b2bca92
+#: ../../collector.introduction.rst:53
+msgid ""
+"View columns can be toggled on and off from the column selector. Each view "
+"has a default set of column displayed. User column selection is stored in "
+"database, thus persistent across user sessions and different browsing "
+"devices."
+msgstr ""
+
+# 58301630dc9144cbb64b005c95ef4aac
+#: ../../collector.introduction.rst:39
+msgid "View-specific tools"
+msgstr ""
+
+# 6fe0ea0a23624a15a514c0e392dfe59d
+#: ../../collector.introduction.rst:28
+msgid "Views"
+msgstr ""
+
+# ad65a1914cc342fc8d41d9f730977ff2
+#: ../../collector.introduction.rst:30
+msgid "Views present data as tables."
+msgstr ""
+
+# 819657a752034fa8bdf93bd196f062de
+#: ../../collector.introduction.rst:128
+msgid ""
+"Virtualisation driver to handle the encapsulated virtual machine, if any."
+msgstr ""
+
+# 9b1f11feedeb4bd2ac6036c4680bd9d6
+#: ../../collector.introduction.rst:202
+msgid "all-disks: io/s, bandwidth"
+msgstr ""
+
+# 998472f3499d48e6b8f1a60799d5d512
+#: ../../collector.introduction.rst:207
+msgid "compliance"
+msgstr ""
+
+# c654d3fe94fa44e198cc17fc2986025a
+#: ../../collector.introduction.rst:194
+msgid "cpu: usr, sys, wait, irq, guest, steal, idle, nice, iowait, soft"
+msgstr ""
+
+# 8647827551484b45840f1c3cdeb8021c
+#: ../../collector.introduction.rst:164
+msgid "env"
+msgstr ""
+
+# 44ae77ac47a9433a8d4aecca91e8e656
+#: ../../collector.introduction.rst:200
+msgid "load: avg1, avg5, avg15, runq size, proc list size"
+msgstr ""
+
+# 80d919e92aa14927944192b46721b4b0
+#: ../../collector.introduction.rst:196
+msgid "mem: commit, free, used by usr, buffer, cache, sys"
+msgstr ""
+
+# 05652beb65df400cab6f87d2fa8c225b
+#: ../../collector.introduction.rst:204
+msgid "per-disk: io/s, request size, wait time, service time, %util, bandwidth"
+msgstr ""
+
+# 16d1e553b05b4133b0fcb2322f36ee61
+#: ../../collector.introduction.rst:100
+msgid "properties"
+msgstr ""
+
+# 00bd0ea57b094a0891d2e6769a8d9fb5
+#: ../../collector.introduction.rst:159
+msgid "resources"
+msgstr ""
+
+# ed7f96bf47a44cd6934eafe70b09b728
+#: ../../collector.introduction.rst:188
+msgid "stats"
+msgstr ""
+
+# 501a2b6d7e934ef9ab1fc60294f83118
+#: ../../collector.introduction.rst:198
+msgid "swap: free, used, used but cached"
+msgstr ""
+
+# a04f830516614b0591ef072a0a9e18d4
+#: ../../collector.introduction.rst:169
+msgid "topology"
+msgstr ""
+
+# bd42139780224fd19fbd2df7608c280f
+#: ../../collector.introduction.rst:216
+msgid "wiki"
+msgstr ""
+
+# fee1e62f997e4a399d3579efda6065ab
+#: ../../collector.introduction.rst:58
+msgid ""
+"|video-icon| `Watch a video <http://www.youtube.com/watch?"
+"feature=player_embedded&v=32pyu623U7A>`_"
+msgstr ""
+
+# ef5044297ff24b22bd49a2cbcb108dd2
+#: ../../collector.introduction.rst:51
+msgid ""
+"|video-icon| `Watch a video <http://www.youtube.com/watch?"
+"feature=player_embedded&v=8PLTJuEOHRs>`_"
+msgstr ""
+
+# 4644ad1ec1df4d95b886c61594cc662e
+#: ../../collector.introduction.rst:178
+msgid ""
+"|video-icon| `Watch a video <http://www.youtube.com/watch?"
+"feature=player_embedded&v=tEqKPRZ4YeA>`_"
+msgstr ""

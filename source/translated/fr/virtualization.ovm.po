@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 0b9920a91c2d47839eaaa116f05d75c4
+#: ../../virtualization.ovm.rst:70
+msgid ""
+"Add the authentication information to /opt/opensvc/etc/auth.conf (check that "
+"this file is not world-readable)::"
+msgstr ""
+
+# 90b8d28cfc914c54b5908b4dbf967aec
+#: ../../virtualization.ovm.rst:98
+msgid "Examples"
+msgstr ""
+
+# c62328d3e1204ba1868242e1c1269f80
+#: ../../virtualization.ovm.rst:47
+msgid ""
+"For reference, Oracle Linux public repositories are available at http://"
+"public-yum.oracle.com/public-yum-ovm2.repo"
+msgstr ""
+
+# 86e8d33ac2934fddb28a70c571fbbfef
+#: ../../virtualization.ovm.rst:17
+msgid "HA enabled or disabled"
+msgstr ""
+
+# 5878c129e2fc4b4c8a96731b7bf395bf
+#: ../../virtualization.ovm.rst:25
+msgid "Install ovmcli"
+msgstr ""
+
+# d56732979b5e4a12afe83a778a41ebf8
+#: ../../virtualization.ovm.rst:27
+msgid ""
+"Make sure you set up the following repositories in ``/etc/yum.conf`` or ``/"
+"etc/yum.repo.d/``::"
+msgstr ""
+
+# fdeceafb5f92435b8cd81c1a15d3be57
+#: ../../virtualization.ovm.rst:130
+msgid "Migrate a OVM service"
+msgstr ""
+
+# a834d2979d284d6b957ca45d2c354f0e
+#: ../../virtualization.ovm.rst:20
+msgid "OVM server configuration"
+msgstr ""
+
+# ea3813b6e1324280a35f5d04621a8831
+#: ../../virtualization.ovm.rst:68
+msgid "OpenSVC node configuration"
+msgstr ""
+
+# e602184d30544a34a69d112a002ecff0
+#: ../../virtualization.ovm.rst:2
+msgid "Oracle VM"
+msgstr ""
+
+# 953ab83a1d604ddd96ba0724ce8f9d4e
+#: ../../virtualization.ovm.rst:8
+msgid "Oracle has a unique value proposition with OVM:"
+msgstr ""
+
+# 14a4792d494745b6a983d729d53f8e36
+#: ../../virtualization.ovm.rst:6
+msgid ""
+"Oracle provides downloadable OVM server installation media and manager "
+"installation archives through its E-delivery website."
+msgstr ""
+
+# ae7502a7921a42c498b75d0b1aa5f6ff
+#: ../../virtualization.ovm.rst:12
+msgid ""
+"Oracle provides tuned and easily instanciable VM templates for those products"
+msgstr ""
+
+# 8544d31410a6427cae5cba5f06f9e43b
+#: ../../virtualization.ovm.rst:11
+msgid ""
+"Oracle's products are certified on OVM (Oracle Linux, Solaris, database, "
+"PeopleSoft, middleware, ...)"
+msgstr ""
+
+# 12fa17598f9b49eab93eb1bdc13a43ac
+#: ../../virtualization.ovm.rst:77
+msgid "Service configuration"
+msgstr ""
+
+# 736373fdce1d46e5bb67ec19663d3409
+#: ../../virtualization.ovm.rst:113
+msgid "Start a OVM service"
+msgstr ""
+
+# d0cad062591a43adbdbcf624c5ecd8f7
+#: ../../virtualization.ovm.rst:101
+msgid "Stop a OVM service"
+msgstr ""
+
+# 6f272e2211aa4a23a1d398f6a9952a3e
+#: ../../virtualization.ovm.rst:22
+msgid ""
+"The OVM servers need to be able to communicate with their manager for "
+"OpenSVC to handle service HA flag. This communication uses the ovmcli tool "
+"provided by Oracle."
+msgstr ""
+
+# 6d62e3efc0f249b48d5ab116d1482b49
+#: ../../virtualization.ovm.rst:14
+msgid "The OpenSVC driver for OVM supports:"
+msgstr ""
+
+# 87b95abd78314a5891a10b8f58a74fbd
+#: ../../virtualization.ovm.rst:4
+msgid ""
+"The Oracle VM infrastructure is based on the Xen virtualization technology "
+"and Oracle own clusterware. VM images are stored as files in either a "
+"network filesystem or Oracle's cluster filesystem (OCFS2). Hypervisors are "
+"called OVM servers. A OVM manager is mandatory to create OVM server pools "
+"and to configure per-VM failover policy."
+msgstr ""
+
+# 26c048d3625f4bcca03c08f8eab468f2
+#: ../../virtualization.ovm.rst:95
+msgid ""
+"The hb resource instruct OpenSVC that the virtual machine must have HA "
+"enabled. In this case, manual commands on the service must be submitted "
+"using svcmgr --cluster. OpenSVC will disable HA on stop and enable HA on "
+"start."
+msgstr ""
+
+# 88d0add28d014ad0acb7ce836efc89d8
+#: ../../virtualization.ovm.rst:43
+msgid "Then you can install ovmcli with::"
+msgstr ""
+
+# bc4b2f06e9d44f269959f50ac011c8aa
+#: ../../virtualization.ovm.rst:52
+msgid ""
+"You have to run the :command:`ovm config` command one time. You will then be "
+"prompted for the manager's access information::"
+msgstr ""
+
+# a17b99c1ec14465aa1a03f9dfb5b82c2
+#: ../../virtualization.ovm.rst:50
+msgid "ovmcli configuration"
+msgstr ""
+
+# 3176d9e755684d5aa636284aaa6ddf1f
+#: ../../virtualization.ovm.rst:16
+msgid "start, stop, migrate of virtual machines"
+msgstr ""
+
+# f2efe505172a406e9c1f4ceb2e58d400
+#: ../../virtualization.ovm.rst:10
+msgid "the billing is based on support"
+msgstr ""

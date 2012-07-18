@@ -1,0 +1,762 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 390ee8e953dd44d5af9733345ab63284
+#: ../../man.svcmgr.rst:372
+msgid "COPYRIGHT"
+msgstr ""
+
+# 00e1c0567f944fcca9ac2aea2463be43
+#: ../../man.svcmgr.rst:20
+msgid "Collector management"
+msgstr ""
+
+# f43c8853cebc4f8bbcebdcf32eb151b2
+#: ../../man.svcmgr.rst:65
+msgid "Compliance"
+msgstr ""
+
+# 7ad2f258f62747309756cd8e2e3e313e
+#: ../../man.svcmgr.rst:374
+msgid ""
+"Copyright © 2012 OpenSVC SARL. License GPLv2: GNU GPL version 2 <http://gnu."
+"org/licenses/gpl.html>. This is free software: you are free to change and "
+"redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+# 14da90a8c29343338cee21f541173de2
+#: ../../man.svcmgr.rst:15
+msgid "DESCRIPTION"
+msgstr ""
+
+# f0eb8d4dc9294c92a79f328e57d18022
+#: ../../man.svcmgr.rst:5
+msgid "NAME"
+msgstr ""
+
+# a9ac8ad56a6d4f039100557a1a8f6ad5
+#: ../../man.svcmgr.rst:369
+msgid "OpenSVC homepage: http://www.opensvc.com"
+msgstr ""
+
+# 727966d8fa284ca2a03772ad994d3349
+#: ../../man.svcmgr.rst:297
+msgid "Options:"
+msgstr ""
+
+# 528f47fff53a4dd48d527e35126c089a
+#: ../../man.svcmgr.rst:365
+msgid "REPORTING BUGS"
+msgstr ""
+
+# 245e28b7c87743f2b2c4ea29a3ed5e7d
+#: ../../man.svcmgr.rst:367
+msgid "Report bugs to opensvc-users@opensvc.com."
+msgstr ""
+
+# 8532c8cba0764f9180bf0cd75f64edc7
+#: ../../man.svcmgr.rst:377
+msgid "SEE ALSO"
+msgstr ""
+
+# 9bb054c900354cb7bdb987168dd02df2
+#: ../../man.svcmgr.rst:10
+msgid "SYNOPSIS"
+msgstr ""
+
+# 559f2967afa14325a8d938d8ba5984f4
+#: ../../man.svcmgr.rst:108
+msgid "Service actions"
+msgstr ""
+
+# eba2fd41312640ba9ec15aff307f2db6
+#: ../../man.svcmgr.rst:276
+msgid "Service configuration"
+msgstr ""
+
+# ffdc9e4db74a4f7bb677e0c39175294d
+#: ../../man.svcmgr.rst:17
+msgid ""
+"The svcmgr command controls all OpenSVC concepts relative to services on the "
+"local node. Collector querying and alteration of data concerning the node's "
+"services, service compliance management, OpenSVC service-specific "
+"configuration management, service-relative data push to the collector and "
+"service management."
+msgstr ""
+
+# 0231cdbac9a7454ab188040742cf9591
+#: ../../man.svcmgr.rst:346
+msgid ""
+"a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
+"unavailability' action"
+msgstr ""
+
+# f582f3642ced4aa19fa905c8a9b0f031
+#: ../../man.svcmgr.rst:350
+msgid ""
+"a comment to log when used with the 'collector ack unavailability' action"
+msgstr ""
+
+# 32444eb79b57454986dc74e72ba44559
+#: ../../man.svcmgr.rst:342
+msgid ""
+"a duration expressed in minutes. used with the 'collector ack "
+"unavailability' action"
+msgstr ""
+
+# 6d14ee8d164f4495974fea294a1c94a6
+#: ../../man.svcmgr.rst:348
+msgid ""
+"a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
+"unavailability' action"
+msgstr ""
+
+# 20253035e11d4888bc71ffb6c741be6e
+#: ../../man.svcmgr.rst:320
+msgid "a resource definition in json dictionary format fed to create or update"
+msgstr ""
+
+# 66eb19595bc840128cc0fcd21c0df465
+#: ../../man.svcmgr.rst:23
+msgid ""
+"acknowledge an action error on the service. an acknowlegment can be "
+"completed by --author (defaults to root@nodename) and --comment"
+msgstr ""
+
+# 9c4c5da24f0949c1992b634669b6389a
+#: ../../man.svcmgr.rst:28
+msgid ""
+"acknowledge an unavailability period. the period is specified by --begin/--"
+"end or --begin/--duration. omitting --begin defaults to now. an "
+"acknowlegment can be completed by --author (defaults to root@nodename), --"
+"account (default to 1) and --comment"
+msgstr ""
+
+# 4c75c61ff7af4526af39a59db046de8c
+#: ../../man.svcmgr.rst:198
+msgid "activate zpool resources of this service"
+msgstr ""
+
+# 380bc1227aa04311a151bcec14a104dd
+#: ../../man.svcmgr.rst:204
+msgid "activate/import volume group resources of this service"
+msgstr ""
+
+# 526d994cf5e84acdbfe64df3b43afb2f
+#: ../../man.svcmgr.rst:195
+msgid "attach loop resources of this service"
+msgstr ""
+
+# 7ca491919c50476e8f435113dd670555
+#: ../../man.svcmgr.rst:68
+msgid "attach moduleset specified by --moduleset to this service"
+msgstr ""
+
+# 37ae2aa6003a411e913cdb86e10b3b42
+#: ../../man.svcmgr.rst:71
+msgid "attach ruleset specified by --ruleset to this service"
+msgstr ""
+
+# 74c1612f39cf40f481dec943e0da8ce1
+#: ../../man.svcmgr.rst:328
+msgid ""
+"attach the modulesets specified during a compliance check/fix/fixable command"
+msgstr ""
+
+# a8f75e03322b4b388975b661b0291162
+#: ../../man.svcmgr.rst:189
+msgid ""
+"combo action, activating standby disks, taking reservations, starting "
+"loopback devices and volume groups"
+msgstr ""
+
+# a934d7b228754d1eb880ef24846c30e6
+#: ../../man.svcmgr.rst:171
+msgid "combo action, chaining stop-start"
+msgstr ""
+
+# 16a07744119a42a4aaf2c8fe2cfb567d
+#: ../../man.svcmgr.rst:174
+msgid "combo action, chaining stop-syncresync-start"
+msgstr ""
+
+# cab33cf6723e43b68cd2547d1420ab39
+#: ../../man.svcmgr.rst:240
+msgid ""
+"combo action, chaining syncnodes-syncdrp-syncupdate.  --force bypass the "
+"schedule check."
+msgstr ""
+
+# b4b7f942c17f4e91a4f1a994cdf2891f
+#: ../../man.svcmgr.rst:222
+msgid ""
+"combo action, stopping volume groups and loopback devices, droping "
+"reservations, disabling standby disks"
+msgstr ""
+
+# 0117814f94264fdb90b1544475a0dd6c
+# 5dd8b552b9284e428ee67a89b770e303
+#: ../../man.svcmgr.rst:318 ../../man.svcmgr.rst:324
+msgid "comma-separated list of resource tags to limit action to"
+msgstr ""
+
+# a836286bc60f403da2b6ea4e6be291c2
+#: ../../man.svcmgr.rst:316
+msgid "comma-separated list of resource to limit action to"
+msgstr ""
+
+# da2a280021bf4586bba932c80888f303
+#: ../../man.svcmgr.rst:356
+msgid "comma-separated list of service to operate on"
+msgstr ""
+
+# 3c1b140976f54e46a44183111a8c1ec1
+#: ../../man.svcmgr.rst:210
+msgid ""
+"command provided to the heartbeat daemon to fence peer node in case of split "
+"brain"
+msgstr ""
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:330
+msgid "compliance, set module list"
+msgstr ""
+
+# fc8e1b03290e44218e6357149df8266d
+#: ../../man.svcmgr.rst:332
+msgid ""
+"compliance, set moduleset list. The 'all' value can be used in conjonction "
+"with detach."
+msgstr ""
+
+# c091235022e8426bbb59ad33d405e646
+#: ../../man.svcmgr.rst:334
+msgid ""
+"compliance, set ruleset list. The 'all' value can be used in conjonction "
+"with detach."
+msgstr ""
+
+# ac45a76470e143aab4aca961c88086b3
+#: ../../man.svcmgr.rst:336
+msgid "compliance, use rulesets valid on specified date"
+msgstr ""
+
+# e482572c804143b5ac8f9603b6385d53
+#: ../../man.svcmgr.rst:192
+msgid "configure service ip addresses"
+msgstr ""
+
+# b390c3d979294874abe54877580a5665
+#: ../../man.svcmgr.rst:279
+msgid ""
+"create a new service configuration file. --interactive triggers the "
+"interactive mode"
+msgstr ""
+
+# 5e99207de5dc4c7587a8b0210a412a42
+#: ../../man.svcmgr.rst:231
+msgid "deactivate zpool resources of this service"
+msgstr ""
+
+# efbfaff1e4d04ca3a68516c624d43063
+#: ../../man.svcmgr.rst:234
+msgid "deactivate/deport volume group resources of this service"
+msgstr ""
+
+# f7e091c2bc8b4ba69c75cc7f3a0bf694
+#: ../../man.svcmgr.rst:304
+msgid "debug mode"
+msgstr ""
+
+# 6052ddeee6c949fba3f0e50b2727f0ca
+#: ../../man.svcmgr.rst:344
+msgid ""
+"decides that the unavailabity period should be deduced from the service "
+"availability anyway. used with the 'collector ack unavailability' action"
+msgstr ""
+
+# fb8db6100f92455a892bf28bde62c9ba
+#: ../../man.svcmgr.rst:282
+msgid ""
+"delete resources passed through --rid in services passed through --service"
+msgstr ""
+
+# 917e766788b14008897ac5fdda188b14
+#: ../../man.svcmgr.rst:228
+msgid "detach loop resources of this service"
+msgstr ""
+
+# 062fd1ff13f7465e8005f4d5da4e4164
+#: ../../man.svcmgr.rst:78
+msgid "detach moduleset specified by --moduleset from this service"
+msgstr ""
+
+# 6d16d85887de4ecda15dfcfc058a4135
+#: ../../man.svcmgr.rst:81
+msgid "detach ruleset specified by --ruleset from this service"
+msgstr ""
+
+# c30c18f9904343599aacc67607de46bc
+#: ../../man.svcmgr.rst:168
+msgid "detect monitored resource failures and trigger monitor_action"
+msgstr ""
+
+# bfb53fe9671e48c9bdbc3249aa386d12
+#: ../../man.svcmgr.rst:114
+msgid ""
+"disable resources passed through --rid in services passed through --service. "
+"Specifying no resource disables the whole service."
+msgstr ""
+
+# dba3a707735440ed974fe405e42bb774
+#: ../../man.svcmgr.rst:35
+msgid "display service alerts"
+msgstr ""
+
+# 9759e1adbc234c67a636a45818c7e865
+#: ../../man.svcmgr.rst:38
+msgid "display service checks"
+msgstr ""
+
+# 747cf0d967a04daba3170211ecc038fe
+#: ../../man.svcmgr.rst:41
+msgid ""
+"display service events during the period specified by --begin/--end. --end "
+"defaults to now. --begin defaults to 7 days ago"
+msgstr ""
+
+# d4be4a7e9598425593242490f1a5d89b
+#: ../../man.svcmgr.rst:150
+msgid "display service live configuration"
+msgstr ""
+
+# 0c5ac02c6fe3437eaf3c6c247a3d8c9a
+#: ../../man.svcmgr.rst:147
+msgid "display service resource status"
+msgstr ""
+
+# d09ad319ef51421497abf4ac2ba2d05a
+#: ../../man.svcmgr.rst:61
+msgid "display service status on all nodes, according to the collector."
+msgstr ""
+
+# e37cf52478b749bab6690f4832215f7c
+#: ../../man.svcmgr.rst:117
+msgid ""
+"enable resources passed through --rid in services passed through --service. "
+"Specifying no resource enables the whole service."
+msgstr ""
+
+# 693f7215ca144b58ab36ab9d9feb19d1
+#: ../../man.svcmgr.rst:183
+msgid "execute service application startup script"
+msgstr ""
+
+# 553296e7ca5c4aae99a0064065d4e5a8
+#: ../../man.svcmgr.rst:216
+msgid "execute service application stop script"
+msgstr ""
+
+# d8da209a879d4325a610732ddc004980
+#: ../../man.svcmgr.rst:308
+msgid "force action, ignore sanity check warnings"
+msgstr ""
+
+# 3daee9fd4fd441d4aa7c95a7c321b880
+#: ../../man.svcmgr.rst:285
+msgid "get the value of the node configuration parameter pointed by --param"
+msgstr ""
+
+# 35675f12db9e4250acfd28d3ec94bfaf
+#: ../../man.svcmgr.rst:261
+msgid ""
+"like syncupdate, but not triggered by the scheduler (thus adapted for clone/"
+"snap operations)"
+msgstr ""
+
+# b5ba2f38abe24e4a8642da88457dad61
+#: ../../man.svcmgr.rst:51
+msgid ""
+"list acknowledged periods for the service. the periods can be filtered by --"
+"begin/--end. omitting --end defaults to now. the wildcartd for --comment and "
+"--author is %"
+msgstr ""
+
+# c944e92c0f7c48f88633f9e24aa62235
+#: ../../man.svcmgr.rst:46
+msgid ""
+"list actions on the service, whatever the node, during the period specified "
+"by --begin/--end. --end defaults to now. --begin defaults to 7 days ago"
+msgstr ""
+
+# 30e6797fd18442599bb3bb9568d6941e
+#: ../../man.svcmgr.rst:91
+msgid ""
+"list available compliance modulesets. --moduleset f% limit the scope to "
+"modulesets matching the f% pattern."
+msgstr ""
+
+# 8b3b9eefb2664fd5a9290222afe067d6
+#: ../../man.svcmgr.rst:95
+msgid ""
+"list available compliance rulesets. --ruleset f% limit the scope to rulesets "
+"matching the f% pattern."
+msgstr ""
+
+# e360e45e30334177b26c07dd8083078e
+#: ../../man.svcmgr.rst:132
+msgid ""
+"live migrate the service to the remote node. --to <node> specify the remote "
+"node to migrate the service to."
+msgstr ""
+
+# fda1f9a8351343bc8bf25e0e1a4a7b77
+#: ../../man.svcmgr.rst:138
+msgid "make use of files received from master nodes in var"
+msgstr ""
+
+# 85f03d34462e4b46926e5b0e7215b277
+#: ../../man.svcmgr.rst:360
+msgid "operate only on service flagged for autostart on this node"
+msgstr ""
+
+# 0dcbb54428334d4b924dbeac5bfbd17b
+#: ../../man.svcmgr.rst:358
+msgid "operate only on service in the specified status (up/down/warn)"
+msgstr ""
+
+# 1784680df0e4450d830e1e15c3df7d80
+#: ../../man.svcmgr.rst:362
+msgid "operate only on service not flagged for autostart on this node"
+msgstr ""
+
+# 07ccb9db9ca04def9d1cd5717004f428
+#: ../../man.svcmgr.rst:312
+msgid "option to set when excuting from a clusterware to disable safety net"
+msgstr ""
+
+# e0da63c36919433db121d9d3ab464567
+#: ../../man.svcmgr.rst:338
+msgid "point a service configuration parameter for the 'get' and 'set' actions"
+msgstr ""
+
+# 18a50d4f31834b20aa3c6791cdbfda32
+#: ../../man.svcmgr.rst:135
+msgid ""
+"prepare devices, logical volumes, mount service filesystems, bootstrap "
+"containers"
+msgstr ""
+
+# 8dc3e32142604620bb2bc152060b251a
+#: ../../man.svcmgr.rst:144
+msgid "print service disk list"
+msgstr ""
+
+# d3ae6d9a5a244b3f9d54f0c15284520a
+#: ../../man.svcmgr.rst:314
+msgid "prompt user for a choice instead of going for defaults or failing"
+msgstr ""
+
+# 7fa3c76120b843d295eb4d17ee08a967
+#: ../../man.svcmgr.rst:129
+msgid ""
+"provide the resource and aggregated status in json format, for use by tier "
+"tools"
+msgstr ""
+
+# 3f48c42e26694df9817dac0f2e2f8d74
+#: ../../man.svcmgr.rst:126
+msgid "provide the service disk list in json format, for use by tier tools"
+msgstr ""
+
+# 1d625e5519e248b897fdde112060da5f
+#: ../../man.svcmgr.rst:322
+msgid ""
+"provision the service in addition to env file creation. defaults to False."
+msgstr ""
+
+# 44c5c26769074876868c7bdc91f31dfb
+#: ../../man.svcmgr.rst:165
+msgid "push service application launchers appinfo key/value pairs to database"
+msgstr ""
+
+# d80292dfb8924f729cbe0f312e8307d1
+#: ../../man.svcmgr.rst:162
+msgid "push service configuration to database"
+msgstr ""
+
+# 575ff9e6965a47c2bb6b8f863e293411
+#: ../../man.svcmgr.rst:258
+msgid "re-establish a broken storage hardware-assisted synchronization"
+msgstr ""
+
+# 3ce76ad189b84bb4b7edfcc903036518
+#: ../../man.svcmgr.rst:159
+msgid "release scsi disks held by this service"
+msgstr ""
+
+# b0f31cf1757645f5bdce3bcecdababfc
+#: ../../man.svcmgr.rst:326
+msgid "remote node to start or migrate the service to"
+msgstr ""
+
+# fbd3ac1e910c4e21901e94382aa390d2
+#: ../../man.svcmgr.rst:270
+msgid "remove the flag to unblock actions on this service"
+msgstr ""
+
+# eea8d587ddb34e78a11c5b051692a62d
+#: ../../man.svcmgr.rst:123
+msgid "report on the current blocking of actions on this service"
+msgstr ""
+
+# c15f6b7523134065bae3421a9eae0ac5
+#: ../../man.svcmgr.rst:156
+msgid "report status of reservations on scsi disks held by this service"
+msgstr ""
+
+# c5b63a815e8341828512cd4b6285efbb
+#: ../../man.svcmgr.rst:153
+msgid "reserve scsi disks held by this service"
+msgstr ""
+
+# b9fb39533908403883b52db068977c24
+#: ../../man.svcmgr.rst:207
+msgid "return service overall status code"
+msgstr ""
+
+# 12612b95a62c45ff8f8d760993724510
+#: ../../man.svcmgr.rst:74
+msgid ""
+"run compliance checks. --ruleset <md5> instruct the collector to provide an "
+"historical ruleset."
+msgstr ""
+
+# 43c1dd6179294bd9ad43f1feb357ed86
+#: ../../man.svcmgr.rst:84
+msgid ""
+"run compliance fixes. --ruleset <md5> instruct the collector to provide an "
+"historical ruleset."
+msgstr ""
+
+# 396b073b588742f38457990f9a37620e
+#: ../../man.svcmgr.rst:246
+msgid ""
+"send to drp nodes the service config files and additional files described in "
+"the config file. --force bypass the schedule check."
+msgstr ""
+
+# c74692e7f574438cb70e4638a716247c
+#: ../../man.svcmgr.rst:252
+msgid ""
+"send to peer nodes the service config files and additional files described "
+"in the config file. --force bypass the schedule check."
+msgstr ""
+
+# b5d11f9cb22e4d789af7522d33f4410b
+#: ../../man.svcmgr.rst:288
+msgid ""
+"set a service configuration parameter (pointed by --param) value (pointed by "
+"--value)"
+msgstr ""
+
+# 76352f3a844c4f5e832150b579933d20
+#: ../../man.svcmgr.rst:340
+msgid ""
+"set a service configuration parameter value for the 'set --param' action"
+msgstr ""
+
+# d868b2e084d54cd089153279f23fda9c
+#: ../../man.svcmgr.rst:120
+msgid "set up a flag to block actions on this service"
+msgstr ""
+
+# 80b1dd437ff64a819494040991c09db3
+#: ../../man.svcmgr.rst:56
+msgid ""
+"show actions detailled log. a single action is specified by --id. a range is "
+"specified by --begin/--end dates. --end defaults to now. --begin defaults to "
+"7 days ago"
+msgstr ""
+
+# ff2eddf5d799492ba9fa989505af5b7a
+#: ../../man.svcmgr.rst:105
+msgid "show compliance modules status"
+msgstr ""
+
+# 9b6f3944432d4ad696a2f023a490a2d7
+#: ../../man.svcmgr.rst:102
+msgid "show compliance rules applying to this node"
+msgstr ""
+
+# 7927991175484a2db2093933f46b974d
+#: ../../man.svcmgr.rst:99
+msgid "show compliance rules applying to this service"
+msgstr ""
+
+# 9bb9ae89a62e4bc395f12901410bbc91
+#: ../../man.svcmgr.rst:300
+msgid "show program's version number and exit"
+msgstr ""
+
+# 75d18d08945a4e70960f5475995a5085
+#: ../../man.svcmgr.rst:302
+msgid "show this help message and exit"
+msgstr ""
+
+# 4b4de34e6b184231aa7810c83b5533b2
+#: ../../man.svcmgr.rst:273
+msgid ""
+"shutdown container, umount service filesystems, deactivate logical volumes"
+msgstr ""
+
+# 77156b64b3254bae82a2c7ffafed63b3
+#: ../../man.svcmgr.rst:354
+msgid "specify an id to act on"
+msgstr ""
+
+# 92d721af6db9474b95113fd23029a0c1
+#: ../../man.svcmgr.rst:243
+msgid "split a storage hardware-assisted disk synchronization"
+msgstr ""
+
+# 1ab60381696f4c7eb947eecb06779a5e
+#: ../../man.svcmgr.rst:111
+msgid ""
+"start a service if executed on the primary node (or one of the primary nodes "
+"in case of a flex service), startstandby if not"
+msgstr ""
+
+# 8fb46895b3434485813c250c1097a311
+#: ../../man.svcmgr.rst:180
+msgid "start a service, chaining startip-diskstart-startapp"
+msgstr ""
+
+# 95809929f00c4a2187a68249a412315e
+#: ../../man.svcmgr.rst:306
+msgid "start actions on specified services in parallel"
+msgstr ""
+
+# a9e21c168f8a420696b2cdeada398ddc
+#: ../../man.svcmgr.rst:201
+msgid "start service resources marked always_on"
+msgstr ""
+
+# 59ebdde822504fefa34cdb0dd72c97c3
+#: ../../man.svcmgr.rst:186
+msgid "start the container resource"
+msgstr ""
+
+# ee16a9e5973c4830bf03e7e9d719f84f
+#: ../../man.svcmgr.rst:213
+msgid "stop a service, chaining stopapp-stopdisk-stopip"
+msgstr ""
+
+# 25849c217de14286b4d4a629f02bbeb7
+#: ../../man.svcmgr.rst:177
+msgid "stop a service, disabling the background database logging"
+msgstr ""
+
+# b178a145cad64b55814429d818285014
+#: ../../man.svcmgr.rst:219
+msgid "stop the container resource"
+msgstr ""
+
+# 0ed6b1939d104952934b8b66cafb4169
+#: ../../man.svcmgr.rst:237
+msgid ""
+"stop the service on the local node and start on the remote node. --to <node> "
+"specify the remote node to switch the service to."
+msgstr ""
+
+# 8bf1f90cbe8842e88ef40a84fcb54ebf
+# f1c65aaa531443379abff3261a3a3821
+#: ../../man.svcmgr.rst:2 ../../man.svcmgr.rst:7
+msgid "svcmgr"
+msgstr ""
+
+# b08293363304467b86dad360cdefa42a
+#: ../../man.svcmgr.rst:12
+msgid "svcmgr [options]... command"
+msgstr ""
+
+# ea5fa01af6b44370a24bc844654b3768
+#: ../../man.svcmgr.rst:379
+msgid "svcmgr(8)"
+msgstr ""
+
+# e7e0b7dd627446659bf28f0397a675fe
+#: ../../man.svcmgr.rst:352
+msgid ""
+"the acker name to log when used with the 'collector ack unavailability' "
+"action"
+msgstr ""
+
+# 3c190dfefd2c4e3c8b02d828ead96516
+#: ../../man.svcmgr.rst:249
+msgid "trigger a full copy of the volume to its target"
+msgstr ""
+
+# 5cbb6b5722b644e4a998454988b89d35
+#: ../../man.svcmgr.rst:267
+msgid "trigger a one-time checksum-based verify of the volume and its target"
+msgstr ""
+
+# d566d16dc07140b4989864186bd027b1
+#: ../../man.svcmgr.rst:264
+msgid "trigger a one-time resync of the volume to its target"
+msgstr ""
+
+# 7dbf3f2813d746b1abc4aa3f8192707a
+#: ../../man.svcmgr.rst:255
+msgid "trigger a storage hardware-assisted disk synchronization"
+msgstr ""
+
+# 701b44fc6c954277bb72f0c5ecadffc4
+#: ../../man.svcmgr.rst:225
+msgid "unconfigure service ip addresses"
+msgstr ""
+
+# 72446281feb14f0ab1bc251aed7411bf
+#: ../../man.svcmgr.rst:291
+msgid "unset a node configuration parameter pointed by --param"
+msgstr ""
+
+# 1098fc6f28814c71811e4c432f6877d4
+#: ../../man.svcmgr.rst:294
+msgid "update definitions in an existing service configuration file"
+msgstr ""
+
+# 3524a882757245fe8774dfd3f69c6884
+#: ../../man.svcmgr.rst:141
+msgid "update var files associated to resources"
+msgstr ""
+
+# 9370318075fd47b9bbb3e121598b96e9
+#: ../../man.svcmgr.rst:310
+msgid ""
+"used by cron'ed action to tell the collector to treat the log entries as such"
+msgstr ""
+
+# 82815b6e7dff4461b99101f549442af4
+#: ../../man.svcmgr.rst:87
+msgid ""
+"verify compliance fixes prerequisites. --ruleset <md5> instruct the "
+"collector to provide an historical ruleset."
+msgstr ""

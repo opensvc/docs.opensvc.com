@@ -1,0 +1,794 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 3fbb99201bc44b52b9ac851aac23dc1b
+#: ../../agent.feature.matrix.rst:8
+msgid "AIX"
+msgstr ""
+
+# 357adf526bae4bfab6a6c52a7c46cd44
+#: ../../agent.feature.matrix.rst:120
+msgid "Cluster mode"
+msgstr "Mode de cluster"
+
+# 609b45ebaba24002b2095f3c73227394
+#: ../../agent.feature.matrix.rst:120
+msgid "Commands"
+msgstr "Commandes"
+
+# 291a0cf5b3d643d1a6d942e83277ea34
+#: ../../agent.feature.matrix.rst:167
+msgid "Datacore replication"
+msgstr "réplication Datacore"
+
+# ca09240d31d541dd882a0b8571341438
+#: ../../agent.feature.matrix.rst:161
+msgid "Datacore snap"
+msgstr ""
+
+# 7ed9ef96e70d476f9be94ba91b8cff76
+#: ../../agent.feature.matrix.rst:142
+msgid "Dds"
+msgstr ""
+
+# 2f799aa9a018434a98cab888c551e555
+#: ../../agent.feature.matrix.rst:148
+msgid "Drbd"
+msgstr ""
+
+# 1c38f5b1a1e7472ba0ce4dc734d8bdef
+#: ../../agent.feature.matrix.rst:83
+msgid "ESX (Linux)"
+msgstr ""
+
+# 70f7bc756b304a8b97306424b12de2ed
+#: ../../agent.feature.matrix.rst:8
+msgid "Feature"
+msgstr "Fonctionnalité"
+
+# dc082b28fdd04cd5a1b16b0de4be6b3a
+#: ../../agent.feature.matrix.rst:2
+msgid "Feature Matrices"
+msgstr "Matrices des fonctionnalités"
+
+# cfd208abad89451399eab7c514b3371a
+#: ../../agent.feature.matrix.rst:5
+msgid "Features by operating system"
+msgstr "Fonctionnalités par système d'exploitation"
+
+# ed4df3e87f034eeeba453449654632a6
+#: ../../agent.feature.matrix.rst:48
+msgid "Footnotes"
+msgstr "Notes"
+
+# 979df1fc87c24aac8dcf0af0c018f8b4
+# a9917adb16cd4924946b47f7024c1f3b
+# d556cfe42d8c43e1804fec58cfd53305
+# abbebdd13f5d42f4974132323fd717ae
+# 20c7e46361c243ada49d6bddc4dcc7bc
+# 76454e5c84304fb29573863d529afd42
+# 28aec3639d9445348a84f8b21699e7e7
+# 73fcd2ee44094f32b08d51320331577d
+# 2363f8fb2c0f4649ad2b3448ad86c8cc
+# 05c779d2dafd40d3960ed84609041abb
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:63
+#: ../../agent.feature.matrix.rst:70 ../../agent.feature.matrix.rst:77
+#: ../../agent.feature.matrix.rst:84 ../../agent.feature.matrix.rst:91
+#: ../../agent.feature.matrix.rst:99 ../../agent.feature.matrix.rst:106
+#: ../../agent.feature.matrix.rst:109
+msgid "FreeBSD"
+msgstr ""
+
+# ceb767d2b2b746e7a426f5a776dd9993
+#: ../../agent.feature.matrix.rst:56
+msgid "Guest operating systems"
+msgstr "Système d'exploitation de l'invité"
+
+# 7232406d0d854731b173e5e78c3b2a18
+#: ../../agent.feature.matrix.rst:36
+msgid "HA plugin"
+msgstr ""
+
+# b90523ce07b949caa9491ebb42f81206
+#: ../../agent.feature.matrix.rst:139
+msgid "HP EVA snap"
+msgstr ""
+
+# e0e3e015d6a244f0b0a5e99e6a8e881d
+# 43ed02b3e2074a9e82c76ca73325cea6
+# 3d39e73eab8e4f3491a51f9db8261c68
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:97
+msgid "HP-UX"
+msgstr ""
+
+# 426fdd2188dc4adabbe78fcb1fe491e0
+#: ../../agent.feature.matrix.rst:53
+msgid "Host and guest operating systems by virtualization product"
+msgstr "Systèmes d'exploitation hôte et invité par produit de virtualisation"
+
+# be9f1667ac6a4a5c84e2645d1bcf7795
+#: ../../agent.feature.matrix.rst:56
+msgid "Host operating systems"
+msgstr "Système d'exploitation de l'hôte"
+
+# 1f28442962874cee873e3cfc53c8414f
+#: ../../agent.feature.matrix.rst:40
+msgid "IPv6"
+msgstr ""
+
+# e84a59a766a64ed68d9bd96634d89b12
+# c9ff3dcbbfc84a6191ff9476c86e7dea
+# 399ebd93ca204ebcaea37daaf887aa4f
+# 609a22418a514208937505248bfbe3d6
+# 23cab09271314065b6dfa8357f48cbdf
+# 46c3ec874197449dab5b580513ca3c1b
+# 1d5cfe36b11641d28198ef97b3f3253f
+# aae8b8bf074d4f4d891153e742b1ec8c
+# c01872be72be4ec7b9d9b7f9c011b00e
+# 92e796c03836403198a7ff19404b3b94
+# b1d581524fb649f788887bf026cc150e
+# 43b7ec657d2f4fe48cb276cbe3ece1f2
+# 4429ea4185494676a88bd7ccd8e5c344
+# c537738989574832a9559c43c5c47a68
+# f6c62afd38f24e55826a5ab42bf14174
+# ae3724fa162246fcbce1223d18ce08f4
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:59
+#: ../../agent.feature.matrix.rst:61 ../../agent.feature.matrix.rst:69
+#: ../../agent.feature.matrix.rst:76 ../../agent.feature.matrix.rst:83
+#: ../../agent.feature.matrix.rst:90 ../../agent.feature.matrix.rst:98
+#: ../../agent.feature.matrix.rst:105 ../../agent.feature.matrix.rst:108
+msgid "Linux"
+msgstr ""
+
+# 86cbafd67182451cb812f96689112b04
+# 6152eaa5444649e9b6712dfad2921525
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:110
+msgid "Mac OS X"
+msgstr ""
+
+# 0e7dd8e4d9d1413184d32886603155aa
+#: ../../agent.feature.matrix.rst:49
+msgid ""
+"Multipaths with queue_if_no_path active are not supported for clustered "
+"services, patches coming."
+msgstr ""
+"Les multipaths avec le paramètre queue_if_no_path actif ne sont pas "
+"supportés avec les services en cluster, des patchs sont en préparation."
+
+# 9930591c79d24294927ea09a0890c319
+#: ../../agent.feature.matrix.rst:128
+msgid "Netapp"
+msgstr ""
+
+# fe60a54d6c6c4382a3a54f70e13e54ec
+#: ../../agent.feature.matrix.rst:42
+msgid "Per-service resource capping"
+msgstr "Limites de ressources par service"
+
+# 680f749e4a2840709f97b47fbd12a461
+#: ../../agent.feature.matrix.rst:150
+msgid "Primary / Primary"
+msgstr ""
+
+# e997940b1d12422f887d6101da5148ea
+#: ../../agent.feature.matrix.rst:152
+msgid "Primary / Secondary"
+msgstr ""
+
+# f4edffe0329c46a6a5eaf5aec4b0bde0
+#: ../../agent.feature.matrix.rst:120
+msgid "Replication"
+msgstr "Réplication"
+
+# 452894c170ba43c28aa171313813a229
+#: ../../agent.feature.matrix.rst:122
+msgid "Rsync"
+msgstr ""
+
+# 65c99eb984f34bedba22cfb001d3cd9f
+# aad7b876b6e347f0bf608d129c85a662
+# b21035a6a2434e2c8068803c0a1605cb
+# 25192706516c406cb48c1e19c5ab0dbf
+# 82ed4f1345874c698397049ea8c3cb04
+# 01bcba47b12d4e2e9df61ab6f54862e6
+# c9de5ed400ea4affa34b20d092385865
+# 5b3a64ca3de94d1f960d73f51de31318
+# 32a55ffb01dc44c7ab6888f6f8b87192
+# 80b5fdc83b114dc090ffb28133ef7e00
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:65
+#: ../../agent.feature.matrix.rst:71 ../../agent.feature.matrix.rst:78
+#: ../../agent.feature.matrix.rst:85 ../../agent.feature.matrix.rst:92
+#: ../../agent.feature.matrix.rst:102 ../../agent.feature.matrix.rst:109
+#: ../../agent.feature.matrix.rst:110
+msgid "Solaris"
+msgstr ""
+
+# 543d1458f9bc4793b092d691ecefd56d
+# 1ac6a80d3490452584ff629d26a8bf60
+# 25a80e18aa0f48be9bb246c043137b3b
+# 689e300a63804a71972d26a59875fba8
+# 2b608deead3d45e7ac235827607bead8
+# c5a83a5070104d9c97b1194885b551c2
+# 8ddbb32e2da345d7aa2f3e1db01eb1d4
+# 5c6de83d936d46a0848b5754a4e633db
+# e9b6946c7d224123a43df9018af7e90a
+#: ../../agent.feature.matrix.rst:66 ../../agent.feature.matrix.rst:72
+#: ../../agent.feature.matrix.rst:77 ../../agent.feature.matrix.rst:79
+#: ../../agent.feature.matrix.rst:86 ../../agent.feature.matrix.rst:93
+#: ../../agent.feature.matrix.rst:103 ../../agent.feature.matrix.rst:111
+msgid "Solaris Express"
+msgstr ""
+
+# acc8f74fdaf34364a309b354fe45f891
+#: ../../agent.feature.matrix.rst:102
+msgid "Solaris on T-series"
+msgstr "Solaris sur T-series"
+
+# f05ddd06ed1a49a7a9fd978f0e69f2dd
+#: ../../agent.feature.matrix.rst:117
+msgid "Supported data replication modes"
+msgstr "Modes de réplication de données supportés"
+
+# 86032c5278d748689ad1c214f98ee1b4
+#: ../../agent.feature.matrix.rst:135
+msgid "Symmetrix clone"
+msgstr ""
+
+# 13aaf9102d5d47ffb624abe16a69a0b8
+#: ../../agent.feature.matrix.rst:120
+msgid "Transport"
+msgstr ""
+
+# cab1cd4785d94d22a3eb45a00c75f29b
+#: ../../agent.feature.matrix.rst:120
+msgid "Trigger"
+msgstr "Déclencheur"
+
+# a7bc84336d1b4db896822c3863c924d4
+#: ../../agent.feature.matrix.rst:8
+msgid "Tru64"
+msgstr ""
+
+# 206f075fb9bf467b96edbf95898c0447
+#: ../../agent.feature.matrix.rst:56
+msgid "Virtualization technology"
+msgstr "Technologie de virtualisation"
+
+# d1d41764add84bbdb56cf2c3aee6ff35
+# 14760a663a174da5a79a43578c24198b
+# b54905c55deb4d20997af3167246e610
+# 95fde8d7f80d467dbd9319ce65ed704c
+# cc16933a7f1d49009e593d69b998a52e
+# 4e179d54460c4542b74726359a77321e
+#: ../../agent.feature.matrix.rst:74 ../../agent.feature.matrix.rst:81
+#: ../../agent.feature.matrix.rst:88 ../../agent.feature.matrix.rst:95
+#: ../../agent.feature.matrix.rst:100 ../../agent.feature.matrix.rst:113
+msgid "Windows"
+msgstr ""
+
+# cc8a0e765cd34983a933e931aafd3553
+#: ../../agent.feature.matrix.rst:50
+msgid "With dsf devices."
+msgstr "Avec les devices dsf."
+
+# d5b88e341c3446c184ef960c5165991b
+#: ../../agent.feature.matrix.rst:155
+msgid "Zfs"
+msgstr ""
+
+# b217945736e54739a542358de753a4d4
+#: ../../agent.feature.matrix.rst:30
+msgid "advfs clonefset"
+msgstr ""
+
+# b550974ddd5b4001aa28a9228b7c9589
+#: ../../agent.feature.matrix.rst:13
+msgid "bind mounts"
+msgstr ""
+
+# 8031698082384466a643cc1ab8fa4674
+# b9e9b236e3d3446f9e67e9267c6b6155
+# 42018d4defc843c8b38e30d824e2af26
+# ef868d07cc27476c9544f7d45bdaaecf
+#: ../../agent.feature.matrix.rst:124 ../../agent.feature.matrix.rst:150
+#: ../../agent.feature.matrix.rst:157 ../../agent.feature.matrix.rst:169
+msgid "cluster"
+msgstr ""
+
+# 664a66cab022435c87d7f585d95c4896
+#: ../../agent.feature.matrix.rst:18
+msgid "containers"
+msgstr ""
+
+# 9e1742ba50fc4156a3ccd7495d4f2e3f
+#: ../../agent.feature.matrix.rst:33
+msgid "dds"
+msgstr ""
+
+# d7e30f0cecc34287ab18da3e8ca2d02c
+#: ../../agent.feature.matrix.rst:33
+msgid "delta replication"
+msgstr ""
+
+# 721725b745c94a45b16888c3ef6ba0be
+# caecfd25bd084f64896e6a5b211c2e7c
+# 6e97433a4fc34f3e91fcbe10316d0b90
+# d5211bc9551140f996929af67315ee7b
+# 08bab04474274b7dbc5176974fe5b5fb
+# 0ba7e6e88ae6417aa8b169e590ef0cf3
+#: ../../agent.feature.matrix.rst:125 ../../agent.feature.matrix.rst:131
+#: ../../agent.feature.matrix.rst:145 ../../agent.feature.matrix.rst:151
+#: ../../agent.feature.matrix.rst:158 ../../agent.feature.matrix.rst:170
+msgid "disaster recovery"
+msgstr "reprise sur sinistre"
+
+# 8a6eb3fa726e4ab8a003dff8e302a05b
+# e6e901168f264bd4a4a0ecfd7a5e6b41
+#: ../../agent.feature.matrix.rst:24 ../../agent.feature.matrix.rst:83
+msgid "esx"
+msgstr ""
+
+# c2bc7478b0e54c78a8636ef0c3cd0c27
+# 033e1aa17131472bb26ce1fe3800cca6
+# 03766d8f8dd84fbabd5d63862cf5dbea
+# e72a00f7e65242b2b60d30b0ae153890
+# a782ab2f386d47f985c429c6113814fd
+#: ../../agent.feature.matrix.rst:129 ../../agent.feature.matrix.rst:135
+#: ../../agent.feature.matrix.rst:139 ../../agent.feature.matrix.rst:161
+#: ../../agent.feature.matrix.rst:167
+msgid "fc"
+msgstr ""
+
+# 2ac63a469e144d4780553e67e1b26d68
+# 9cbe2e99e49944619a5b9a48d002f69c
+# 51506b8db6ce4ab2a7e64c35149a472f
+# 73f2a9ef0e4c4ad09e8e63ddb047178b
+# 6d48ace92b2f4a88858e6f808f6e811e
+# 5cc05ad122e34a5f92086e7dacf467be
+#: ../../agent.feature.matrix.rst:12 ../../agent.feature.matrix.rst:11
+msgid "fs"
+msgstr ""
+
+# f420a17101ce44689c6f15c78e73fc23
+#: ../../agent.feature.matrix.rst:37
+msgid "heartbeatd"
+msgstr ""
+
+# b9776e4d5d704b9089ba1e7aff15f28b
+# dd756987933c4c77aaee17d07a0f643b
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:97
+msgid "hpvm"
+msgstr ""
+
+# 54288caba6894f8495fb88e6809066de
+# cd7671888c1a43528cfa4a07f02b90ee
+# 8609243968044cbab68219662594f173
+# 70a66c182a854138aeefafcf03ff0bce
+# 025dbdf7ae2f494ab3dc27c58350800b
+# 43caf4067f9345919d8c82604ae9b27a
+# 226d319052c848159a8e144ecd510862
+# 76b83a11b1d94409891688d668da5e40
+# 3a335bac36d7421ba54945cf35efff36
+# 59f89c98a94044508179f2ff42534104
+# 9dd8ca8eaafa4fb4a2f3e19361b49d48
+#: ../../agent.feature.matrix.rst:10 ../../agent.feature.matrix.rst:122
+#: ../../agent.feature.matrix.rst:142 ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:155
+msgid "ip"
+msgstr ""
+
+# 5338771406464d47bd7f24c1361e3e3e
+#: ../../agent.feature.matrix.rst:130
+msgid "ip (nfs, smb)"
+msgstr ""
+
+# 70929ee3e24c4de889ca192e6a114569
+# 958e593e80034e3699c081937f6c82a8
+# fcf351b00e134e0e9522d600aaa77674
+#: ../../agent.feature.matrix.rst:128 ../../agent.feature.matrix.rst:162
+#: ../../agent.feature.matrix.rst:168
+msgid "iscsi"
+msgstr ""
+
+# 1e7ec15d9fbc40aabfec89de58bd4cc3
+# 91a24ee792954844ab8f7f1921bce4a5
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:63
+msgid "jail"
+msgstr ""
+
+# 52ca92c362e74e0a8726941ebe010a08
+#: ../../agent.feature.matrix.rst:30
+msgid "jfs2 snaps on lv"
+msgstr "jfs2 snaps sur lv"
+
+# 3b4d32f4c88941d18d7ac7246fd78506
+#: ../../agent.feature.matrix.rst:38
+msgid "keepalived"
+msgstr ""
+
+# 5cc0f25b596948e297a83167c04af4ec
+# b4b88a8f74b947fdacc202d2effda9b4
+#: ../../agent.feature.matrix.rst:21 ../../agent.feature.matrix.rst:69
+msgid "kvm"
+msgstr ""
+
+# ca8a8cdc0db041e3afbc644d7d7558dc
+# c3bccfe0930647588c4b8216099dd6ae
+#: ../../agent.feature.matrix.rst:19 ../../agent.feature.matrix.rst:102
+msgid "ldom"
+msgstr ""
+
+# 0162632e86a34b74b5888471f0556a3e
+# 0f9c43d0a9c14fa993c82fbab06cd4ee
+# 745fd50f47474c5395a6c62c0d59f720
+# 2f9beac027884a06bef59f15b8aa0f9e
+# 74ad677d1b264d4bb95bd4394af7ea59
+# d5bafe0c866a466788bfb6961dbcafb6
+# 3a87a23ea99045a58896db512b5c3f88
+#: ../../agent.feature.matrix.rst:122 ../../agent.feature.matrix.rst:135
+#: ../../agent.feature.matrix.rst:139 ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:155 ../../agent.feature.matrix.rst:161
+#: ../../agent.feature.matrix.rst:167
+msgid "local"
+msgstr ""
+
+# 14e5d732806546699e659ae61ff9d7cc
+#: ../../agent.feature.matrix.rst:11
+msgid "lofs"
+msgstr ""
+
+# 88a36901fe4b41af8e951a7be7ef1b16
+#: ../../agent.feature.matrix.rst:11
+msgid "loop"
+msgstr ""
+
+# 23a1465ce6d7465aad0a25153ab00fec
+#: ../../agent.feature.matrix.rst:30
+msgid "lvm2 snaps"
+msgstr ""
+
+# b989f729f1284a5985da8a9ea469d30f
+#: ../../agent.feature.matrix.rst:14
+msgid "lvm2 vg"
+msgstr ""
+
+# d24c1b59327c41669b357305702f6494
+# aff9bb68588d43bc8e0bcfd1df2d0f26
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:59
+msgid "lxc"
+msgstr ""
+
+# ca841f9ff3b9436ba603648fda6b1a01
+#: ../../agent.feature.matrix.rst:11
+msgid "md"
+msgstr ""
+
+# 18cf8ff07c4640ddabca196f202473df
+# c87c1a9cdbad4506bbe1a4ada53b442b
+# e1e86e6ce1ce4b09ae50e34cd46f4a85
+# 82da61be4ca046768c421db958ef60e4
+# bfff0f1beb344f4581aec5b6df4df928
+# 1d88bbeaf8f84aa9b444a04f74aa8a86
+#: ../../agent.feature.matrix.rst:123 ../../agent.feature.matrix.rst:129
+#: ../../agent.feature.matrix.rst:143 ../../agent.feature.matrix.rst:149
+#: ../../agent.feature.matrix.rst:156 ../../agent.feature.matrix.rst:168
+msgid "multi-site"
+msgstr ""
+
+# 12f1d448edb94548b62db9da40951868
+# 29a669ab1b0c489cae349e5812d00e14
+# 3292c525d6944e26bb62c0969613be2b
+# 2f84ef7eeabb4808960a5268fe2608b2
+# 245e491bcd0a4674a80ab029fad8c390
+#: ../../agent.feature.matrix.rst:30 ../../agent.feature.matrix.rst:33
+msgid "n/a"
+msgstr ""
+
+# 41f454196fe044e39ef7890bcd0f7143
+#: ../../agent.feature.matrix.rst:12
+msgid "namefs"
+msgstr ""
+
+# 286d7e9927c44bde9bfa3dc269cc2626
+# 0fd05c970fe0469ea6ac276b47dd7dd9
+# 528e7da410fb4a9aada103b5fda86ffb
+# f443c3b9fca8495ca321d33f66811aad
+# ac1c805d2ddf4da98c4beaff08523a57
+# 433f72e8871a438990ddc79afb5828b9
+# 875041e5ca084d91a66c187a97ac58e6
+# df85fbfd9f04494f884e16612cc273b4
+#: ../../agent.feature.matrix.rst:26 ../../agent.feature.matrix.rst:42
+msgid "no"
+msgstr "non"
+
+# 081470cb802d461fbec9a4d362aabdaa
+# 0e949316c432444b88b8596b03c875e4
+# f7f2ca00ebaa473d91fa8235b3c874d6
+# acf15e72928c4f2e985914d34b8abe9e
+# 335e857a91724129ae644ce91c8a3732
+#: ../../agent.feature.matrix.rst:36 ../../agent.feature.matrix.rst:40
+msgid "not tested"
+msgstr "non testé"
+
+# 07392e6560804a3a87ef39b83cede19b
+#: ../../agent.feature.matrix.rst:13
+msgid "nullfs"
+msgstr ""
+
+# f8de2985a02444559d75e44e6d31ed97
+# c791febaf8a0435a92d785f5a9c3dd68
+# ac028be3823042b384cc39a418aaa078
+# e0674ba1781c4be4b5ced108ae4f49ab
+# 719397111db6494c93dae9e67f28465e
+# 4edc3a1d3e514e27b05fcf8a917194cb
+# 578a9a023c194db18199ff4d24edae2a
+# 443ce2b94ae34ba8bf608bcf95856935
+# 200a615e3bb740b18d176a6d9802e10f
+#: ../../agent.feature.matrix.rst:123 ../../agent.feature.matrix.rst:129
+#: ../../agent.feature.matrix.rst:136 ../../agent.feature.matrix.rst:140
+#: ../../agent.feature.matrix.rst:143 ../../agent.feature.matrix.rst:149
+#: ../../agent.feature.matrix.rst:156 ../../agent.feature.matrix.rst:162
+#: ../../agent.feature.matrix.rst:168
+msgid "on-demand"
+msgstr "à la demande"
+
+# f1b2d46f94b34db6bac9d14c50a77a7e
+# efe7c72d5b684e54ae5c4e37ac873763
+# 787d5af1376441adba2202afd5fe72cf
+#: ../../agent.feature.matrix.rst:36
+msgid "openha"
+msgstr ""
+
+# 1095a626b76a49538525f2df29bfe223
+#: ../../agent.feature.matrix.rst:19
+msgid "openvz"
+msgstr ""
+
+# b2e579a890ca46e9a1eab7ad58e833ff
+# 7df8a9a7de6541c0923764e00b95801f
+#: ../../agent.feature.matrix.rst:23 ../../agent.feature.matrix.rst:90
+msgid "ovm"
+msgstr ""
+
+# b22c435cc61649f18ca3ed00b2388320
+#: ../../agent.feature.matrix.rst:10
+msgid "resources"
+msgstr "ressources"
+
+# 278935c11c08440a85828d7d9b3216ab
+#: ../../agent.feature.matrix.rst:30
+msgid "rsync on snap"
+msgstr "rsync sur snap"
+
+# 125c0e9243fb4c8bb14ce25638ec5e84
+# 4aa4b94745d3468c96eeb02a30fdd2fe
+# 208982c78cd24ddead7b350733ecd543
+# 36914e93a5e148c9a67426084747fd5b
+# 9c6cede6deb94fa5a47b59be9dd778c5
+# 7c75f79e292d44759e70a14a69f5c1ab
+# 697120a35ece42d8872b3b98fe306372
+# ec231f91768e4e77854f0495b2d061e4
+# c1cf03888e4e4a44bc160f83fc24b30c
+#: ../../agent.feature.matrix.rst:122 ../../agent.feature.matrix.rst:128
+#: ../../agent.feature.matrix.rst:135 ../../agent.feature.matrix.rst:139
+#: ../../agent.feature.matrix.rst:142 ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:155 ../../agent.feature.matrix.rst:161
+#: ../../agent.feature.matrix.rst:167
+msgid "scheduled"
+msgstr "planifié"
+
+# 01108bdbe5744c55a7872171de717ccb
+#: ../../agent.feature.matrix.rst:26
+msgid "scsi persistent reservation"
+msgstr ""
+
+# 5fdb4d653bd448289c86cfefc17df785
+#: ../../agent.feature.matrix.rst:148
+msgid "start"
+msgstr ""
+
+# 8d06ed4e7c1b49c59d1b1e94c42d3e81
+#: ../../agent.feature.matrix.rst:150
+msgid "startstandby"
+msgstr ""
+
+# 3735bec9f4674f329a00c57185adc628
+#: ../../agent.feature.matrix.rst:149
+msgid "stop"
+msgstr ""
+
+# 54aee879b7d84ece9d2c3912116da870
+# d393478925c9414e91cbfa65acdad666
+# 27e20889c2be44298fc25a433a044282
+# a72e9b23cfd24c13adec7fc44d97ccea
+# 40ebd4e8c7624573b505485e79ebc819
+# f8b5d57a5d75491aa7f6b377aabf790f
+# 697da44125dd478abab859f79006654e
+#: ../../agent.feature.matrix.rst:16 ../../agent.feature.matrix.rst:14
+#: ../../agent.feature.matrix.rst:13 ../../agent.feature.matrix.rst:15
+#: ../../agent.feature.matrix.rst:12
+msgid "sync"
+msgstr ""
+
+# ea6b7e5b68b948668d615fa6130173a3
+# a2a6e1df5b7544228f0a4b97da7017ff
+#: ../../agent.feature.matrix.rst:124 ../../agent.feature.matrix.rst:157
+msgid "syncall"
+msgstr ""
+
+# 9e96f9f99349493a9246ade7c8a9e9ba
+# 75b9734a4a08434b8f07c77d4beabd79
+# 53100b140bc7470bb5433320704ca92d
+#: ../../agent.feature.matrix.rst:131 ../../agent.feature.matrix.rst:135
+#: ../../agent.feature.matrix.rst:169
+msgid "syncbreak"
+msgstr ""
+
+# 6b0a2e21c67f437b9dd8b9a430dc6736
+# 5d97bc58ddef4b88bc1a7341470ce08a
+#: ../../agent.feature.matrix.rst:123 ../../agent.feature.matrix.rst:156
+msgid "syncdrp"
+msgstr ""
+
+# 1e5761a83ee84479b580a75fc128c67c
+#: ../../agent.feature.matrix.rst:142
+msgid "syncfullsync"
+msgstr ""
+
+# b20f61a286404e30b21a1103a7ae7f25
+# 14989749dc424a4ab8b3eada6485b55e
+#: ../../agent.feature.matrix.rst:122 ../../agent.feature.matrix.rst:155
+msgid "syncnodes"
+msgstr ""
+
+# 1642652dd90a44f2bd99ed237703e15f
+#: ../../agent.feature.matrix.rst:128
+msgid "syncquiesce"
+msgstr ""
+
+# 996c6e909fbd44c481c9b67932164e20
+# f0cf086e001545ef91a7cbed0b5a22af
+#: ../../agent.feature.matrix.rst:129 ../../agent.feature.matrix.rst:167
+msgid "syncresume"
+msgstr ""
+
+# 8573107d116b4f4299e0ffdac6614007
+# a6b12c93e267404aa85f58dc20f6bf51
+# 0f3a3320e7234fa19bd9457b3fc7a251
+# 5cff9269f5fd48718721e60fc77e408d
+#: ../../agent.feature.matrix.rst:132 ../../agent.feature.matrix.rst:136
+#: ../../agent.feature.matrix.rst:139 ../../agent.feature.matrix.rst:161
+msgid "syncresync"
+msgstr ""
+
+# cc48abefe2f849728287ca072d1393ef
+#: ../../agent.feature.matrix.rst:133
+msgid "syncswap"
+msgstr ""
+
+# f033574f11fb40fba88c7461d0f16e85
+# aa8cbeb0c19048968a1cdee8d287f535
+# 9a8a7eb88023444889a8010af295bdc3
+# aa580484064c41d2be8f372643d2d0bc
+#: ../../agent.feature.matrix.rst:130 ../../agent.feature.matrix.rst:143
+#: ../../agent.feature.matrix.rst:158 ../../agent.feature.matrix.rst:168
+msgid "syncupdate"
+msgstr ""
+
+# 6297de78c2e7418ebb28b62192122403
+#: ../../agent.feature.matrix.rst:144
+msgid "syncverify"
+msgstr ""
+
+# efb656b0ff534ba9af023dc1f5c68892
+# c1552f6342d34cb3984bd81555b15bd4
+# 0b66d6cadabd49c4b43a0e50299431b4
+# 563b92ca80364e98ab04d2ec484aebd2
+#: ../../agent.feature.matrix.rst:22 ../../agent.feature.matrix.rst:21
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:108
+msgid "vbox"
+msgstr ""
+
+# 5acdf94b6e174fdf9a500a74c77a66dc
+# b6b4bdd809d74f6b8197d9ecfea143a4
+#: ../../agent.feature.matrix.rst:15 ../../agent.feature.matrix.rst:13
+msgid "veritas vg"
+msgstr ""
+
+# 87624c4b1e164fa38a42f718fe6b28ce
+#: ../../agent.feature.matrix.rst:12
+msgid "vg"
+msgstr ""
+
+# bab6691a05f14e22a9bbf7275a76b199
+#: ../../agent.feature.matrix.rst:30
+msgid "vxfs snaps on lv"
+msgstr "vxfs snaps sur lv"
+
+# 3ce7947c74554e70867b61a15da72e65
+#: ../../agent.feature.matrix.rst:61
+msgid "vz"
+msgstr ""
+
+# bc0e3e8c80e14d80a47ae49626f101bb
+# 5c2d8eb5dc7e41ea9827801b7269ecaf
+# 99fd6385c05f4baba87ac169080e52a5
+#: ../../agent.feature.matrix.rst:20 ../../agent.feature.matrix.rst:76
+msgid "xen"
+msgstr ""
+
+# 4c59a328fb3f4bf19509d9e7a35d5965
+# 568cf10bc7384e63897cce0f1f5b6295
+# b27ca8bca020431ba0df844550f3d445
+# 1b8d6b4921524fc3ab6eaea538bed996
+# 0f7304e3d4ac47d0ad33d0fbda6926f5
+# 605c8b700623474b9088955661187c4a
+#: ../../agent.feature.matrix.rst:40
+msgid "yes"
+msgstr "oui"
+
+# 2bf9e47917ef4a2b90908333d66ca059
+#: ../../agent.feature.matrix.rst:42
+msgid "yes (cgroup)"
+msgstr "oui (cgroup)"
+
+# 04065a459e1c45c9a8d49583527d22dc
+#: ../../agent.feature.matrix.rst:26
+msgid "yes (scu)"
+msgstr "oui (scu)"
+
+# 65e5947567ba4cf8afeaa11d60d20165
+# 990d0bdb98ce4aaabed76f83cbb2826d
+#: ../../agent.feature.matrix.rst:26
+msgid "yes (sg_persist)"
+msgstr "oui (sg_persist)"
+
+# 73cd0821cb504d578955b0db40e348fc
+#: ../../agent.feature.matrix.rst:26
+msgid "yes [#f1]_ (sg_persist)"
+msgstr "oui [#f1]_ (sg_persist)"
+
+# 131a948c72324a32bcf3ed4c7a9d1de3
+#: ../../agent.feature.matrix.rst:26
+msgid "yes [#f2]_ (scu)"
+msgstr "oui [#f2]_ (scu)"
+
+# 27c31e050c9a4a789353f4d8d8a40a0a
+# 76ba63914b794756b3d53eba8c25927b
+#: ../../agent.feature.matrix.rst:12 ../../agent.feature.matrix.rst:14
+msgid "zfs pool"
+msgstr ""
+
+# 4c40a2b15f5f45a58274d2e73efbefa0
+# 6fa78d1d1c56422087aabaa1c8f2afd3
+#: ../../agent.feature.matrix.rst:33
+msgid "zfs send/recv"
+msgstr ""
+
+# 83291f6e892945fa81d99887706e54c0
+# a667499392bd4dac89dfd9a1dfae5d6c
+#: ../../agent.feature.matrix.rst:30
+msgid "zfs snaps"
+msgstr ""
+
+# 9a2cb0e0951b49b2a2bf7bc4de2dd43f
+# 456bbe4fbbeb4cb1bbabe52af26f7992
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:65
+msgid "zone"
+msgstr ""

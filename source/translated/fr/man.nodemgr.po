@@ -1,0 +1,474 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# 9260c36a1e384546b987fde55a323af8
+#: ../../man.nodemgr.rst:242
+msgid "COPYRIGHT"
+msgstr ""
+
+# 82371ed289264fc5bd6f6c6cf35a4f1b
+#: ../../man.nodemgr.rst:20
+msgid "Collector management"
+msgstr ""
+
+# 8600528c04074f3fb50f677daa53162b
+#: ../../man.nodemgr.rst:52
+msgid "Compliance"
+msgstr ""
+
+# 48c2e15967a742cfba2b9315acf95091
+#: ../../man.nodemgr.rst:244
+msgid ""
+"Copyright © 2012 OpenSVC SARL. License GPLv2: GNU GPL version 2 <http://gnu."
+"org/licenses/gpl.html>. This is free software: you are free to change and "
+"redistribute it. There is NO WARRANTY, to the extent permitted by law."
+msgstr ""
+
+# aab37a0b468a4c379f2afbe6e609a594
+#: ../../man.nodemgr.rst:15
+msgid "DESCRIPTION"
+msgstr ""
+
+# 785c658fdc814aa593d0d263c4a5007c
+#: ../../man.nodemgr.rst:99
+msgid "Misc"
+msgstr ""
+
+# fa2afde2e0c74bea94834aed17c57d1f
+#: ../../man.nodemgr.rst:5
+msgid "NAME"
+msgstr ""
+
+# 85cbdd00cb3b4aee86946ac57fb2ddca
+#: ../../man.nodemgr.rst:105
+msgid "Node actions"
+msgstr ""
+
+# 70cd42b8b11e4ce1a41fb554244c9150
+#: ../../man.nodemgr.rst:114
+msgid "Node configuration edition"
+msgstr ""
+
+# e1087ee1cded434d992138abb7f6c7a9
+#: ../../man.nodemgr.rst:239
+msgid "OpenSVC homepage: http://www.opensvc.com"
+msgstr ""
+
+# 5cee43b6a7a341cbbf2c55a587654856
+#: ../../man.nodemgr.rst:186
+msgid "Options"
+msgstr ""
+
+# 832206c0463a4bdba5f435d003f26949
+#: ../../man.nodemgr.rst:132
+msgid "Push data to the collector"
+msgstr ""
+
+# fd903b268d4e4221af1162e70bdb5c6b
+#: ../../man.nodemgr.rst:235
+msgid "REPORTING BUGS"
+msgstr ""
+
+# 3c5aee3a03544e119337784e9ae6aa2b
+#: ../../man.nodemgr.rst:237
+msgid "Report bugs to opensvc-users@opensvc.com."
+msgstr ""
+
+# df9ea22e55cc468bb4f0c02925a2dac9
+#: ../../man.nodemgr.rst:247
+msgid "SEE ALSO"
+msgstr ""
+
+# 0ecb470b37394ba29e1b5d25bafdd6da
+#: ../../man.nodemgr.rst:10
+msgid "SYNOPSIS"
+msgstr ""
+
+# 253aa5fd5d9c4a0e84f1e5c20e7d82b6
+#: ../../man.nodemgr.rst:176
+msgid "Service actions"
+msgstr ""
+
+# 0bd4ca8cb51547beaed54aa98c6de58d
+#: ../../man.nodemgr.rst:17
+msgid ""
+"The nodemgr command controls all OpenSVC concepts relative to the node. "
+"Collector querying and alteration of data concerning the node, compliance "
+"management, OpenSVC node-specific configuration management, node-relative "
+"data push to the collector, node-wide service management."
+msgstr ""
+
+# d9b2d6789e7a43109115133852f12c9e
+#: ../../man.nodemgr.rst:213
+msgid ""
+"[pushsym option] use symcli offline mode with the specified file. aclx files "
+"are expected to be found in the same directory and named either <symid>.aclx "
+"or <same_prefix_as_bin_file>.aclx"
+msgstr ""
+
+# 4273bf13c82349a8945ee316526c89d1
+#: ../../man.nodemgr.rst:224
+msgid ""
+"a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
+"action' and pushstats action"
+msgstr ""
+
+# e2d34ca3437c4da5b5fe67247b023727
+#: ../../man.nodemgr.rst:228
+msgid "a comment to log when used with the 'collector ack action' action"
+msgstr ""
+
+# 54a58fd289974a35b503e26210449991
+#: ../../man.nodemgr.rst:222
+msgid ""
+"a duration expressed in minutes. used with the 'collector ack action' action"
+msgstr ""
+
+# d908141420a94e67b34779d9e88fa141
+#: ../../man.nodemgr.rst:226
+msgid ""
+"a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
+"action' and pushstats action"
+msgstr ""
+
+# 4d2fff3e916b452eb76d0f4dba1a599a
+#: ../../man.nodemgr.rst:23
+msgid ""
+"acknowledge an action error on the node. an acknowlegment can be completed "
+"by --author (defaults to root@nodename) and --comment"
+msgstr ""
+
+# 9feb13a5ead341dea4f30c7ed45f1076
+#: ../../man.nodemgr.rst:55
+msgid "attach moduleset specified by --moduleset for this node"
+msgstr ""
+
+# 121b0d0a36e0439bbf08bc6dfd9077a0
+#: ../../man.nodemgr.rst:58
+msgid "attach ruleset specified by --ruleset for this node"
+msgstr ""
+
+# dc0639f4cda04ec99846d2d14868584e
+#: ../../man.nodemgr.rst:207
+msgid ""
+"attach the modulesets specified during a compliance check/fix/fixable command"
+msgstr ""
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:198
+msgid "compliance, set module list"
+msgstr ""
+
+# 170ad25984a1428e83419ef99933d7ce
+#: ../../man.nodemgr.rst:200
+msgid ""
+"compliance, set moduleset list. The 'all' value can be used in conjonction "
+"with detach."
+msgstr ""
+
+# 6ae3faac448e4d94b2f4ea939a86da03
+#: ../../man.nodemgr.rst:203
+msgid ""
+"compliance, set ruleset list. The 'all' value can be used in conjonction "
+"with detach."
+msgstr ""
+
+# f1eb414bc3a949959dd46d633c95ac50
+#: ../../man.nodemgr.rst:205
+msgid "compliance, use rulesets valid on specified date"
+msgstr ""
+
+# 922e5cc743894a498589c0e33aedc99e
+#: ../../man.nodemgr.rst:209
+msgid "cron mode"
+msgstr ""
+
+# b331c0bc24f642d69f20c7c3c8732024
+#: ../../man.nodemgr.rst:193
+msgid "debug mode"
+msgstr ""
+
+# b1495985d08b49d4a67c17a35aa115e9
+#: ../../man.nodemgr.rst:65
+msgid "detach moduleset specified by --moduleset for this node"
+msgstr ""
+
+# b0904d33b99b4bcfad68b402ca3bdab6
+#: ../../man.nodemgr.rst:68
+msgid "detach ruleset specified by --ruleset for this node"
+msgstr ""
+
+# 83aa9f9c7da849fbba0a90fa822be3d3
+#: ../../man.nodemgr.rst:28
+msgid "display node alerts"
+msgstr ""
+
+# f49eed9c023f45c68522576dd909638b
+#: ../../man.nodemgr.rst:31
+msgid "display node checks"
+msgstr ""
+
+# acca2bc80ba04874a6d6573bc2f67c6f
+#: ../../man.nodemgr.rst:34
+msgid ""
+"display node events during the period specified by --begin/--end. --end "
+"defaults to now. --begin defaults to 7 days ago"
+msgstr ""
+
+# e68f0ee63cd34401b3f836c327478e74
+#: ../../man.nodemgr.rst:49
+msgid "display node services status according to the collector"
+msgstr ""
+
+# 182c4f1905f74652a257d36033277502
+#: ../../man.nodemgr.rst:211
+msgid "force action"
+msgstr ""
+
+# 8af6178b75dc4ad6ace2a716d84e13c3
+#: ../../man.nodemgr.rst:117
+msgid "get the value of the node configuration parameter pointed by --param"
+msgstr ""
+
+# 49292520485c4d1e996334f5a52d9e25
+#: ../../man.nodemgr.rst:39
+msgid ""
+"list actions on the node, whatever the service, during the period specified "
+"by --begin/--end. --end defaults to now. --begin defaults to 7 days ago"
+msgstr ""
+
+# 651f0aad50a94ab589b25372ca65bd0b
+#: ../../man.nodemgr.rst:82
+msgid ""
+"list available compliance modulesets. --moduleset f% limit the scope to "
+"modulesets matching the f% pattern."
+msgstr ""
+
+# 248d25102e714ef0967a616518730f48
+#: ../../man.nodemgr.rst:86
+msgid ""
+"list available compliance rulesets. --ruleset f% limit the scope to rulesets "
+"matching the f% pattern."
+msgstr ""
+
+# 94b42fe48cb94377802eca5759288607
+#: ../../man.nodemgr.rst:79
+msgid "list compliance modules available on this node"
+msgstr ""
+
+# 7062be4bb95f45e19ba62000cd774582
+# 6100a126ef7b428394dc46f66835beb1
+#: ../../man.nodemgr.rst:2 ../../man.nodemgr.rst:7
+msgid "nodemgr"
+msgstr ""
+
+# 97b7f048795f4c08932d2eb6d740c1fe
+#: ../../man.nodemgr.rst:12
+msgid "nodemgr [options]... command"
+msgstr ""
+
+# 3c82661e0e734723b6613b8468cf3b91
+#: ../../man.nodemgr.rst:121
+msgid ""
+"obtain a registration number from the collector, used to authenticate the "
+"node"
+msgstr ""
+
+# 2fe7c87a266d4e3cba79a1dc335141ea
+#: ../../man.nodemgr.rst:218
+msgid "point a node configuration parameter for the 'get' and 'set' actions"
+msgstr ""
+
+# 48e2186ac4b440848d2950db64767aca
+#: ../../man.nodemgr.rst:195
+msgid "points the directory where the metrics files are stored for pushstats"
+msgstr ""
+
+# 8d402f4812f742469e5daefe865eb300
+#: ../../man.nodemgr.rst:145
+msgid "push Datacore configuration to collector"
+msgstr ""
+
+# 990d71af975b403eac6c2648bb0bcae8
+#: ../../man.nodemgr.rst:151
+msgid "push HP EVA configuration to collector"
+msgstr ""
+
+# a3ca4299992e496a8965c5d009181d56
+#: ../../man.nodemgr.rst:154
+msgid "push IBM SVC configuration to collector"
+msgstr ""
+
+# d0e0b4d4aa0c4095adf53fe8eff92117
+#: ../../man.nodemgr.rst:142
+msgid "push asset information to collector"
+msgstr ""
+
+# bfdb8d67d0f64d28902f98b24ab1ee2e
+#: ../../man.nodemgr.rst:148
+msgid "push disks usage information to collector"
+msgstr ""
+
+# 8516c68780ca4b33accb0a4449296970
+#: ../../man.nodemgr.rst:160
+msgid "push package/version list to collector"
+msgstr ""
+
+# 45d6fbd45f7b429c87a80d61fed37141
+#: ../../man.nodemgr.rst:157
+msgid "push patch/version list to collector"
+msgstr ""
+
+# d8666ca06dad42c7b9517f8006c642dc
+#: ../../man.nodemgr.rst:166
+msgid ""
+"push performance metrics to collector. By default pushed stats interval "
+"begins yesterday at the beginning of the allowed interval and ends now. This "
+"interval can be changed using --begin/--end parameters. The location where "
+"stats files are looked up can be changed using --stats-dir."
+msgstr ""
+
+# b65028f4919e4091bbf92fbb1962a4b4
+#: ../../man.nodemgr.rst:138
+msgid "push services application launchers appinfo key/value pairs to database"
+msgstr ""
+
+# 9d4b5f9136f24497b5a7abd882f5f1aa
+#: ../../man.nodemgr.rst:163
+msgid "push services configuration to collector"
+msgstr ""
+
+# e89a20a67959494dad1776b0ac848381
+#: ../../man.nodemgr.rst:173
+msgid "push symmetrix configuration to collector"
+msgstr ""
+
+# 78d7dd6ef90d411f96bfd08fbdcea38e
+#: ../../man.nodemgr.rst:108
+msgid "reboot the node"
+msgstr ""
+
+# cba74a7904ad460a8e86dc7a879a270a
+#: ../../man.nodemgr.rst:183
+msgid "refresh var files associated with services"
+msgstr ""
+
+# 10afc6210d214cb7a99e16918b211e12
+#: ../../man.nodemgr.rst:61
+msgid ""
+"run compliance checks. --ruleset <md5> instruct the collector to provide an "
+"historical ruleset."
+msgstr ""
+
+# 3631726c8d8748acac41fc267ca023a5
+#: ../../man.nodemgr.rst:71
+msgid ""
+"run compliance fixes. --ruleset <md5> instruct the collector to provide an "
+"historical ruleset."
+msgstr ""
+
+# f4ac1777a738414ebf38b1047fa795ca
+#: ../../man.nodemgr.rst:135
+msgid "run node sanity checks, push results to collector"
+msgstr ""
+
+# 6c9c81282caa44fda4ed6c709fd60e58
+#: ../../man.nodemgr.rst:179
+msgid ""
+"send var files, config files and configured replications to other nodes for "
+"each node service"
+msgstr ""
+
+# 59aa93c78bb24ee381f96d172b53843d
+#: ../../man.nodemgr.rst:125
+msgid ""
+"set a node configuration parameter (pointed by --param) value (pointed by --"
+"value)"
+msgstr ""
+
+# 2cc671c937c943aeb55015167b7d0333
+#: ../../man.nodemgr.rst:220
+msgid "set a node configuration parameter value for the 'set --param' action"
+msgstr ""
+
+# 09c35f782a9f4ee9b86cc2d376bacf2d
+#: ../../man.nodemgr.rst:44
+msgid ""
+"show actions detailled log. a single action is specified by --id. a range is "
+"specified by --begin/--end dates. --end defaults to now. --begin defaults to "
+"7 days ago"
+msgstr ""
+
+# 114b621a55994144bb1ba8fc48778241
+#: ../../man.nodemgr.rst:96
+msgid "show compliance modules status"
+msgstr ""
+
+# d937ad0cad654bd6a0e0e84b1ee87a57
+# 0084880ba174465f8fd69fa57c764d7f
+#: ../../man.nodemgr.rst:90 ../../man.nodemgr.rst:93
+msgid "show compliance rules applying to this node"
+msgstr ""
+
+# d1c175d270e846438d71327464a0cfb7
+#: ../../man.nodemgr.rst:102
+msgid "show persistent reservation key of this node"
+msgstr ""
+
+# dcf272a287c1480895acfac3b1f4a31c
+#: ../../man.nodemgr.rst:189
+msgid "show program's version number and exit"
+msgstr ""
+
+# 58ca55107e2f4a63a73913725bd63929
+#: ../../man.nodemgr.rst:191
+msgid "show this help message and exit"
+msgstr ""
+
+# 1cbfb408b6964b989f5ee0f2df15c699
+#: ../../man.nodemgr.rst:111
+msgid "shutdown the node to powered off state"
+msgstr ""
+
+# 1a3491a9d7534d67b54ac389bcc802ba
+#: ../../man.nodemgr.rst:232
+msgid "specify an id to act on"
+msgstr ""
+
+# a5c47de707e8428aa4b190333169db2e
+#: ../../man.nodemgr.rst:249
+msgid "svcmgr(8)"
+msgstr ""
+
+# a74f8dc63499491ea6f124f4b2566d3f
+#: ../../man.nodemgr.rst:230
+msgid "the acker name to log when used with the 'collector ack action' action"
+msgstr ""
+
+# cc5f7df1c4994d359bae3fd3836260a6
+#: ../../man.nodemgr.rst:129
+msgid "unset a node configuration parameter (pointed by --param)"
+msgstr ""
+
+# 0f83fddb57aa417fbd53769a6953ee60
+#: ../../man.nodemgr.rst:75
+msgid ""
+"verify compliance fixes prerequisites. --ruleset <md5> instruct the "
+"collector to provide an historical ruleset."
+msgstr ""

@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# e9714258a30a4cb38f6c080aa4baee10
+#: ../../compliance.usage.rst:21
+msgid ""
+"A compliance check of all attached modulesets on a node can be triggered by::"
+msgstr ""
+
+# 554b7313b1e24e6a8c87981baf664aef
+#: ../../compliance.usage.rst:25
+msgid ""
+"A compliance check of all attached modulesets on a service can be triggered "
+"by::"
+msgstr ""
+
+# 2d803e880abd41d48d885b42d7301b65
+#: ../../compliance.usage.rst:7
+msgid ""
+"A node and service compliance check run is scheduled once a week at the "
+"initiative of the OpenSVC agent. Upon execution, the agent fetches from the "
+"collector the node or service applicable ruleset and the applicable "
+"moduleset."
+msgstr ""
+
+# 063c8f66939d42e29c50ace19e9c648c
+#: ../../compliance.usage.rst:29
+msgid "A specific module compliance check::"
+msgstr ""
+
+# 789f194b7c8a4204b538a81b93a83a87
+# 22080514e7d24baa998f4214745e56c5
+#: ../../compliance.usage.rst:40 ../../compliance.usage.rst:59
+msgid "Attach a moduleset to a service::"
+msgstr ""
+
+# 7abb0958f1b244e08d36554b6d97de85
+#: ../../compliance.usage.rst:36
+msgid "Attach a moduleset to the node::"
+msgstr ""
+
+# ca2f413154864ee6bf1e4534cca70926
+#: ../../compliance.usage.rst:55
+msgid "Attach a ruleset to the node::"
+msgstr ""
+
+# fd8a07d5e84248a48bb11af19f024971
+# 0d119447fb3941ccb6b61e4917b99d7f
+#: ../../compliance.usage.rst:48 ../../compliance.usage.rst:67
+msgid "Detach a moduleset from a service::"
+msgstr ""
+
+# 4b19da393bc24ecda57521bffe66774b
+# 50f18cde4e994edc8fc9cd093f82da72
+#: ../../compliance.usage.rst:44 ../../compliance.usage.rst:63
+msgid "Detach a moduleset from the node::"
+msgstr ""
+
+# 8746501f3cfb4cbaa3c6d389319390de
+#: ../../compliance.usage.rst:82
+msgid "List the available explicit rulesets::"
+msgstr ""
+
+# da7d9a4e8e0440829c33fd4d47924964
+#: ../../compliance.usage.rst:78
+msgid "List the available modulesets::"
+msgstr ""
+
+# 4dcf57906f5f439fa68c6237f89f514d
+#: ../../compliance.usage.rst:74
+msgid "List the installed modules::"
+msgstr ""
+
+# 1b8bc52fab5147f5918d4009e5792bfa
+#: ../../compliance.usage.rst:34
+msgid "Managing moduleset attachments"
+msgstr ""
+
+# 78a4158f9d6849bda82d4560c4b32459
+#: ../../compliance.usage.rst:53
+msgid "Managing ruleset attachments"
+msgstr ""
+
+# f88c784337d84ef6a58e6d230b0c0b1c
+#: ../../compliance.usage.rst:19
+msgid "Manual execution"
+msgstr ""
+
+# 01673cffc4c040cabcc363e8dbbf28bc
+#: ../../compliance.usage.rst:72
+msgid "Querying the framework"
+msgstr ""
+
+# b17036410cf04338adb863382bc5646f
+#: ../../compliance.usage.rst:5
+msgid "Scheduling"
+msgstr ""
+
+# 7813d354abbc488088fe7f2d650b8464
+#: ../../compliance.usage.rst:86
+msgid "Show the currently attached modulesets::"
+msgstr ""
+
+# b2f2e42d83174b66b5e5f8f960a927f2
+#: ../../compliance.usage.rst:90
+msgid "Show the currently presented rulesets::"
+msgstr ""
+
+# bbc438174c624eefa810d38e9c3c254e
+#: ../../compliance.usage.rst:98
+msgid ""
+"Show the status of modules, specified by pattern, last run, as known by the "
+"collector::"
+msgstr ""
+
+# c762cc52aef1408faef7320ca7935d53
+#: ../../compliance.usage.rst:94
+msgid "Show the status of the modules last run, as known by the collector::"
+msgstr ""
+
+# 24cf1c794590415bbf4ff6f48b284d91
+#: ../../compliance.usage.rst:11
+msgid "The default schedule can be altered in ``/opt/opensvc/etc/node.conf``::"
+msgstr ""
+
+# 3ae2345d79934a98badbc46765ec6c8d
+#: ../../compliance.usage.rst:9
+msgid ""
+"The modules are merged in a single, deduplicated, ordered by module filename "
+"list. Modules not present on the node will be silently bypassed."
+msgstr ""
+
+# 19bf1341a4f446e784de65e651b6af1b
+#: ../../compliance.usage.rst:2
+msgid "Usage"
+msgstr ""

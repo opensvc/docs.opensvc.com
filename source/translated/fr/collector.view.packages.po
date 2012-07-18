@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# dc29cf702b9b44b5a26f9682fd06cb9a
+#: ../../collector.view.packages.rst:9
+msgid "Compare installed version of packages across a set of nodes"
+msgstr ""
+
+# 87a35419c3804ef0b410f24e73de82bf
+#: ../../collector.view.packages.rst:24
+msgid "Dashboard notifications"
+msgstr ""
+
+# 8be3e45707ba4d4aae3a217082a1609a
+#: ../../collector.view.packages.rst:10
+msgid ""
+"Identify nodes vulnerable to bug or security problems known to certain "
+"package versions"
+msgstr ""
+
+# 81ed8292f6b548a1b744c9f057ed8b1c
+#: ../../collector.view.packages.rst:11
+msgid "Identify nodes where a package is installed or not installed"
+msgstr ""
+
+# 1ef4af637f634977ab8e6bc35fd82c44
+#: ../../collector.view.packages.rst:26
+msgid "Package differences amongst nodes of a cluster"
+msgstr ""
+
+# 8cf6e2df2d054b9ea6b9ceee1948b081
+#: ../../collector.view.packages.rst:14
+msgid ""
+"Packages database entries not refreshed for more than 24 hours will have its "
+"update date highlighted red. Information for such a package should not be "
+"trusted."
+msgstr ""
+
+# ba13f901e0bd4e45b7a54a8b56aafe3a
+#: ../../collector.view.packages.rst:2
+msgid "Packages view"
+msgstr ""
+
+# 8e91d7cefe824816afcd3dee957493c8
+#: ../../collector.view.packages.rst:12
+msgid "Plan upgrades"
+msgstr ""
+
+# 51f4e0d329134af5837f3e9a21303038
+#: ../../collector.view.packages.rst:19
+msgid "Screenshot"
+msgstr ""
+
+# 883624939869454d9b6162fab2c763d0
+#: ../../collector.view.packages.rst:7
+msgid ""
+"The OpenSVC agent pushes installed package list from the nodes to the "
+"collector. Centralized package lists allow administrators to easily:"
+msgstr ""
+
+# a755fb838d74491ab11e8ed5b55688a4
+#: ../../collector.view.packages.rst:16
+msgid ""
+"The toolbox of the nodes view proposes a tool to highlight package "
+"differences between selected nodes."
+msgstr ""
+
+# 246262ebdad54c12b97104647a717132
+#: ../../collector.view.packages.rst:5
+msgid "Usage"
+msgstr ""

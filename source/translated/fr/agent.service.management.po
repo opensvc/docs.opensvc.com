@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012, OpenSVC SARL
+# This file is distributed under the same license as the OpenSVC package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSVC 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-18 11:41\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# fb6b905861904d4f93fc2497b1945ab3
+#: ../../agent.service.management.rst:104
+msgid ""
+"Acquire scsi persistent reservations on disks of the service (wrapped by "
+"startvg and startdisk)"
+msgstr ""
+
+# 70201278f9174ed38274839f55e2fdb2
+#: ../../agent.service.management.rst:52
+msgid "Actions"
+msgstr ""
+
+# 613f3e79c69e4b3f83a6d4481c52ef6d
+#: ../../agent.service.management.rst:125
+msgid "All action logs are multiplexed to:"
+msgstr ""
+
+# fb4682eb63f1492f889738b23eb2b11f
+#: ../../agent.service.management.rst:38
+msgid ""
+"Apply action to all node services having the node as an 'autostart_node' in "
+"their env file."
+msgstr ""
+
+# d8399a9af9fa4579b61484ca5f8ee20e
+#: ../../agent.service.management.rst:30
+msgid "Apply action to all node services in 'down' state."
+msgstr ""
+
+# 52950f4ce17e42449fdb2ddf8fcc7ce6
+#: ../../agent.service.management.rst:34
+msgid "Apply action to all node services in 'up' and 'warn' state."
+msgstr ""
+
+# 3db58a1c32ba4df39a0f55acab239948
+#: ../../agent.service.management.rst:24
+msgid ""
+"Apply action to all node services. The command ``/opt/opensvc/bin/"
+"allservices shutdown --parallel`` is triggered upon node shutdown by the "
+"opensvc rc script. The command ``/opt/opensvc/bin/allservices boot --"
+"parallel`` is triggered upon node startup by the opensvc rc script."
+msgstr ""
+
+# 71edd2f786124d6194a90ef9f2ff2e59
+#: ../../agent.service.management.rst:5
+msgid "Commands"
+msgstr ""
+
+# 636a73ff7e2b4a9796e8c591d2707d80
+#: ../../agent.service.management.rst:18
+msgid "Contextual group of services management"
+msgstr ""
+
+# 0e352fd08b644e31bdc495d34dcbef55
+#: ../../agent.service.management.rst:49
+msgid "Detailled service resources status."
+msgstr ""
+
+# 4c2b9c03c9bd4050aad4062f69523320
+#: ../../agent.service.management.rst:136
+msgid "Examples"
+msgstr ""
+
+# 6a365cb9a00940c68b9f36077c1d98ee
+#: ../../agent.service.management.rst:13
+msgid "Explicit group of services management"
+msgstr ""
+
+# 30d2354d26424cb7bf7d127ac8cfb248
+#: ../../agent.service.management.rst:8
+msgid "Explicit service management"
+msgstr ""
+
+# 37493001cec54b9a8e44a105ac4ad054
+#: ../../agent.service.management.rst:123
+msgid "Logging"
+msgstr ""
+
+# da76243fc3a74bb0b0525e0f2a50a161
+#: ../../agent.service.management.rst:20
+msgid ""
+"OpenSVC provides a set of svcmgr links applying preset filters on local "
+"service."
+msgstr ""
+
+# 74c75b225bc74079994f344d47371ea2
+#: ../../agent.service.management.rst:45
+msgid "Overview of all local node services status."
+msgstr ""
+
+# 76713a8ba0d64f3c9adfe0ab113acbfb
+#: ../../agent.service.management.rst:149
+msgid "Print resource status of a service::"
+msgstr ""
+
+# b2130895cfed40b1b2ba9a4c0cee0967
+#: ../../agent.service.management.rst:138
+msgid "Print services status of a node::"
+msgstr ""
+
+# e3296c9cd5b64d17877f7927881aab96
+#: ../../agent.service.management.rst:120
+msgid "Print status of all service resources"
+msgstr ""
+
+# c07e831885a5458098fd877919f73b02
+#: ../../agent.service.management.rst:108
+msgid ""
+"Release scsi persistent reservations on disks of the service (wrapped by "
+"stopvg and stopdisk)"
+msgstr ""
+
+# 86e3b83f52474e2498ef5f56c830024b
+#: ../../agent.service.management.rst:2
+msgid "Service management"
+msgstr ""
+
+# 5a4930ed67c140638a533e3d05dabf69
+#: ../../agent.service.management.rst:41
+msgid "Services status"
+msgstr ""
+
+# 0bb6763c64a74f4582750bc26aefeb67
+#: ../../agent.service.management.rst:176
+msgid "Start of an HP-VM service::"
+msgstr ""
+
+# 09a63c2cf55f4806a397a69e2993d7cc
+#: ../../agent.service.management.rst:209
+msgid "Start of an Xen service::"
+msgstr ""
+
+# 296d15a2535f4e4fae0a80d77c89829b
+#: ../../agent.service.management.rst:88
+msgid "Start resources of type disk group"
+msgstr ""
+
+# b581c69a65604fc68f7b148f10515bd8
+#: ../../agent.service.management.rst:96
+msgid "Start resources of type fs and the underlying resources"
+msgstr ""
+
+# 185dd39f0fd8469e8eb941c097a4d5ce
+#: ../../agent.service.management.rst:72
+msgid "Start resources of type ip"
+msgstr ""
+
+# f4c2ccf1a24f4ab2a5987cea2fe5dfd0
+#: ../../agent.service.management.rst:56
+msgid "Start resources of type ip, loop, disk group, zpool, fs, container, app"
+msgstr ""
+
+# 7c9cdedee224405a9136634acbc10056
+#: ../../agent.service.management.rst:80
+msgid "Start resources of type loop"
+msgstr ""
+
+# 4c90b028a540427cb5fc139c03fc69c0
+#: ../../agent.service.management.rst:64
+msgid "Start resources of type loop, disk group, zpool, fs"
+msgstr ""
+
+# 0d8a020549bf44288de937abcf759d03
+#: ../../agent.service.management.rst:164
+msgid "Stop of a hosted Oracle service::"
+msgstr ""
+
+# fa81313dfcda4b229fffe0f6ddff4b01
+#: ../../agent.service.management.rst:60
+msgid "Stop resources of type app, container, fs, zpool, disk group, loop, ip"
+msgstr ""
+
+# e7ddca3ab1994bdfb10289b5578cab2a
+#: ../../agent.service.management.rst:92
+msgid "Stop resources of type disk group"
+msgstr ""
+
+# 614c3319519947339b95ec07d026482e
+#: ../../agent.service.management.rst:100
+msgid "Stop resources of type fs and the underlying resources"
+msgstr ""
+
+# 7265969af3e24ccc962ce4f69dd1319c
+#: ../../agent.service.management.rst:68
+msgid "Stop resources of type fs, zpool, disk group, loop"
+msgstr ""
+
+# 1fed5db7bb6b4956a7067ea8a0244f24
+#: ../../agent.service.management.rst:76
+msgid "Stop resources of type ip"
+msgstr ""
+
+# 9dc43104c00d4f5885d3e008e0e15f5f
+#: ../../agent.service.management.rst:84
+msgid "Stop resources of type loop"
+msgstr ""
+
+# 10d61a7307f940daae3623dc42a476f5
+#: ../../agent.service.management.rst:15
+msgid ""
+"The prefered command to use to start an action on a specific group of "
+"services is ``/opt/opensvc/bin/svcmgr --service svc1,svc2 action``."
+msgstr ""
+
+# ba7102e739504643b4a9703fef6e7e8d
+#: ../../agent.service.management.rst:10
+msgid ""
+"The prefered command to use to start an action on a specific service is ``/"
+"opt/opensvc/etc/svcname action``."
+msgstr ""
+
+# c5e7d88f0e79497297eefee26ebcdf8d
+#: ../../agent.service.management.rst:116
+msgid ""
+"Trigger hard-coded and user-defined file synchronization to disaster "
+"recovery nodes. Optionally creates snapshots to send a coherent file set. No-"
+"op if run from a node not running the service."
+msgstr ""
+
+# ed1760294b984c8eb5b95ae45a47b235
+#: ../../agent.service.management.rst:112
+msgid ""
+"Trigger hard-coded and user-defined file synchronization to secondary nodes. "
+"Optionally creates snapshots to send a coherent file set. No-op if run from "
+"a node not running the service."
+msgstr ""
+
+# e1e5bc222e904b07b365e9c357f67c3b
+#: ../../agent.service.management.rst:129
+msgid ""
+"``/opt/opensvc/log/<svcname>.log`` Daily rotation on these files, and size "
+"limit rotation"
+msgstr ""
+
+# f916fb09db664566a1950e22c8256c9d
+#: ../../agent.service.management.rst:132
+msgid "collector database Optional, through asynchronous xmlrpc calls."
+msgstr ""
+
+# 4e3cdf68a5974902b44d9fef2bcdb8bb
+#: ../../agent.service.management.rst:127
+msgid "stdout"
+msgstr ""

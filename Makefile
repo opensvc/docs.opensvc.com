@@ -12,7 +12,10 @@ PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
+TRANS_D = source/translated
+POT_D = $(TRANS_D)/pot
+
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest osvc osvc_fr
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -128,3 +131,33 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+html_fr:
+	$(SPHINXBUILD) -b html -Dlanguage=fr $(ALLSPHINXOPTS) $(BUILDDIR)/html/fr
+
+osvc: html html_fr
+
+pot:
+	$(SPHINXBUILD) -b gettext source $(POT_D)
+
+po_fr:
+	@for pot in `echo $(POT_D)/*.pot` ; do \
+	base_pot=`basename $$pot` ; \
+	po=$(TRANS_D)/fr/`echo $$base_pot | sed "s/t$$//"` ; \
+	echo "merge new strings in $$po" ; \
+	msgmerge -s -U $$po $$pot ; \
+	done
+
+po: po_fr
+
+mo_fr:
+	@for po in `echo $(TRANS_D)/fr/*.po` ; do \
+	base_po=`basename $$po` ; \
+	mo=$(TRANS_D)/fr/LC_MESSAGES/`echo $$base_po | sed "s/po$$/mo/"` ; \
+	echo "gen hash in $$mo" ; \
+	msgfmt -c -v -o $$mo $$po ; \
+	done
+
+mo: mo_fr
+
+trans: pot po mo
