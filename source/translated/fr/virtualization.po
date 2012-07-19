@@ -20,9 +20,9 @@ msgstr ""
 # 91e3b75b79bc45069307b97cefecdba9
 #: ../../virtualization.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu:"
 
 # 56d79053f65e438abf0b55718c98217f
 #: ../../virtualization.rst:2
 msgid "Virtual services"
-msgstr ""
+msgstr "Services virtuels"

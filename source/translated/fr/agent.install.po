@@ -20,17 +20,17 @@ msgstr ""
 # 76a70097bf4b4a92944b6c930cbf2e08
 #: ../../agent.install.rst:163
 msgid "/etc/lvm/lvm.conf"
-msgstr ""
+msgstr "/etc/lvm/lvm.conf"
 
 # 7111b3b3dd32483aae29c7c04a5ef77c
 #: ../../agent.install.rst:179
 msgid "/etc/lvm/lvm_{node}.conf"
-msgstr ""
+msgstr "/etc/lvm/lvm_{noeud}.conf"
 
 # e0015903d2ad4e669d8c5a12e65344e2
 #: ../../agent.install.rst:86
 msgid "2am-6am sundays"
-msgstr ""
+msgstr "02:00-06:00 les dimanches"
 
 # 882f4659878949f5bfb0bdc3402a60c6
 # 3735a186a8e0430d9da912d1837c7f3c
@@ -44,7 +44,7 @@ msgstr ""
 #: ../../agent.install.rst:83 ../../agent.install.rst:89
 #: ../../agent.install.rst:92
 msgid "4am-6am daily"
-msgstr ""
+msgstr "04:00-06:00 tous les jours"
 
 # 0ba127f30e2b4d5ea50e4c7571e3fcac
 #: ../../agent.install.rst:104
@@ -52,21 +52,23 @@ msgid ""
 "A reference ``node.conf`` file can be found on the node at ``/opt/opensvc/"
 "usr/share/doc/node.conf``."
 msgstr ""
+"Un fichier de référence ``node.conf`` peut être trouvé sur le noeud à "
+"l'emplacement ``/opt/opensvc/usr/share/doc/node.conf``."
 
 # 1f2e104fc43c4f54af0a67aa6712bffb
 #: ../../agent.install.rst:96
 msgid "A typical schedule definition would look like::"
-msgstr ""
+msgstr "Une définition typique de planification ressemblerait à::"
 
 # f3ae3ee6b17242d29c8b658b70ee44c1
 #: ../../agent.install.rst:69
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 # c5612f02354b458fab666465b16a8bc9
 #: ../../agent.install.rst:165
 msgid "Add the following root-level configuration node::"
-msgstr ""
+msgstr "Ajoutez la configuration de noeud suivante::"
 
 # fe9b937541cd4bd8bbccf329b29f61b4
 #: ../../agent.install.rst:108
@@ -75,11 +77,15 @@ msgid ""
 "of running increases linearly from 25% to 100% during the first half of the "
 "action allowed period. This delay helps level to collector load."
 msgstr ""
+"Toutes les actions exceptées les synchronisations de données peuvent être"
+"statistiquement retardées. La probabilité d'exécution augmente de 25% à "
+"100% sur la durée de la première moitié de l'intervalle autorisé d'exécution "
+"de l'action. Ce retard aide à niveler la charge du collecteur."
 
 # a6848a0368eb421fb8969f7fbf82f23f
 #: ../../agent.install.rst:172
 msgid "And add the ``local`` tag to all local volume groups. For example::"
-msgstr ""
+msgstr "Et ajoutez le tag ``local`` à tous les volume groups locaux. Par exemple::"
 
 # c229d6351008468e8f36ec8194f8e800
 #: ../../agent.install.rst:117
@@ -90,11 +96,16 @@ msgid ""
 "internet shared collector, the corresponding ip address must be set to the "
 "address of ``collector.opensvc.com``."
 msgstr ""
+"Par défaut, le collecteur est contacté par le noeud en utilisant le nom "
+"générique ``dbopensvc`` sur les ports ``80`` et ``8000``. Ce nom doit "
+"pouvoir être résolu par le mécanisme de résolution en place : hosts, dns, "
+"... Si vous utilisez le collecteur internet, l'ip correspondante doit être "
+"celle de ``collector.opensvc.com``."
 
 # 2b132aef911e4c71bd90069a94bd5354
 #: ../../agent.install.rst:115
 msgid "Configuration for collector usage"
-msgstr ""
+msgstr "Configuration pour l'utilisation d'un collecteur"
 
 # f5c8abcf08934333a726f621e464b59c
 #: ../../agent.install.rst:181
@@ -102,21 +113,23 @@ msgid ""
 "Create this file, {node} being the output of uname -n and add the following "
 "configuration::"
 msgstr ""
+"Créez ce fichier, {noeud} étant la sortie de ``uname -n``  et ajoutez la "
+"configuration suivante::"
 
 # 4343ab26918a4ae391b57ca59c1ba8dc
 #: ../../agent.install.rst:34
 msgid "Cron jobs"
-msgstr ""
+msgstr "Tâches planifiées"
 
 # bf94770ef6ac43f6b00b912a1dbe5aa5
 #: ../../agent.install.rst:69
 msgid "Default"
-msgstr ""
+msgstr "Défauts"
 
 # e4604b457a5b4a408734860393795e4f
 #: ../../agent.install.rst:69
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # d4e633eed62148a3bf2f4f6f2f8eeef4
 #: ../../agent.install.rst:9
@@ -126,11 +139,16 @@ msgid ""
 "operating system, and operating system version, you might need to satisfy "
 "dependencies using packages provided on this website."
 msgstr ""
+"Téléchargez la dernière version du paquet OpenSVC disponible pour le "
+"système d'exploitation de votre choix à l'adresse http://repo.opensvc.com et "
+"installez-le. En fonction du système d'exploitation, vous pouvez être "
+"amené à satisfaire des dépendences en utilisant les paquets proposés sur ce "
+"site internet."
 
 # 5618921a63bf457894ad9768ac6570b9
 #: ../../agent.install.rst:14
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 # ab6e8178e94d40399d0b8eee351b587a
 #: ../../agent.install.rst:176
@@ -138,6 +156,8 @@ msgid ""
 "Finally you need to rebuild the initrd/initramfs to prevent shared vg "
 "activation at boot."
 msgstr ""
+"Pour finir, vous devez reconstruire l'environnement initrd/initramfs "
+"afin d'empêcher l'activation des vg partagés au boot."
 
 # 32f72dfb639044508eb53fe6b96953db
 #: ../../agent.install.rst:132
@@ -145,11 +165,13 @@ msgid ""
 "Finally, you can accelerate the node discovery by forcing the execution of "
 "opensvc cron jobs after the package installation::"
 msgstr ""
+"Enfin, vous pouvez accélérer la découverte du noeud en forçant l'exécution "
+"des tâches planifiée OpenSVC après l'installation du paquet::"
 
 # b7111564265d4bfe82287d11ca2c2c0b
 #: ../../agent.install.rst:149
 msgid "HP-UX specificities"
-msgstr ""
+msgstr "Spécificités HP-UX"
 
 # 1519c670d59846dcbb8185bce73ef3df
 #: ../../agent.install.rst:49
@@ -160,46 +182,55 @@ msgid ""
 "be trusted by production nodes. This setup is used for rsync file transfers "
 "and remote command execution."
 msgstr ""
+"Si le compte root n'a pas de clé ssh, une clé dsa de 1024 bits est générée "
+"par la post-installation du paquet. Les clés des noeuds de production "
+"doivent être autorisées sur tous les noeuds du cluster (PRD et DRP), alors "
+"que les clés des noeuds de reprise sur sinistre ne doivent pas être "
+"autorisées sur les noeuds de production. Cette configuration est utilisée "
+"pour les synchronisations de données par rsync et pour les exécutions de "
+"commandes à distance."
 
 # fcebd9cf9b604a5288967f3c32220b81
 #: ../../agent.install.rst:47
 msgid "Keys"
-msgstr ""
+msgstr "Clés"
 
 # fc10f272b1dc4725ab2210dca744c1b6
 #: ../../agent.install.rst:156
 msgid "Linux LVM2 specificities"
-msgstr ""
+msgstr "Spécificités LVM2 sur Linux"
 
 # 8e3cefe9852a421cbeee390d528eab52
 #: ../../agent.install.rst:42
 msgid "Linux and HP-UX also have a helper to gather statistics::"
-msgstr ""
+msgstr "Linux et HP-UX ont également une tâche de collecte de statistiques::"
 
 # cba72f8f4f2f4311a8b879985982fc82
 #: ../../agent.install.rst:92
 msgid "No"
-msgstr ""
+msgstr "Oui"
 
 # e7e46ba0fa3e4cf6af9a273952d70229
 #: ../../agent.install.rst:92
 msgid "None"
-msgstr ""
+msgstr "Aucune"
 
 # 00df508c063a455dad448a3baaeaba85
 #: ../../agent.install.rst:61
 msgid "Only PRD nodes are allowed to push data to a PRD node"
-msgstr ""
+msgstr "Seuls les noeuds de PRD sont autorisés à envoyer des données à un "
+"noeud de PRD"
 
 # b6c08f62ff894a8b84c65eb4081c3082
 #: ../../agent.install.rst:60
 msgid "Only PRD services are allowed to start on a PRD node"
-msgstr ""
+msgstr "Seuls les services de PRD sont autorisés à démarrer un noeud de "
+"PRD"
 
 # 3b8d5df2a16741fd9b3caa579aa5e05a
 #: ../../agent.install.rst:4
 msgid "OpenSVC agent installation"
-msgstr ""
+msgstr "Installation de l'agent OpenSVC"
 
 # 79b246e7a2a54edc9cf0039686b1cf01
 #: ../../agent.install.rst:158
@@ -209,12 +240,18 @@ msgid ""
 "activate them upon de-activation events. These mecanisms can be disabled "
 "using the following setup. It also provides another protection against "
 "unwanted volume group activation from a secondary cluster node."
-msgstr ""
+msgstr "OpenSVC contrôle l'activation et la désactivation des volume "
+"groups. La plupart des distributions Linux activent tous les volume "
+"groups visibles au boot, certaines vont même jusqu'à les réactiver après "
+"désactivation manuelle. Ces mécanismes peuvent être débrayés en déployant "
+"les configurations suivantes. Ces configurations apportent également une "
+"protection supplémentaire contre les activations non voulues sur les "
+"noeuds secondaires du cluster."
 
 # d0f023424b85492d9e278d644c7c681c
 #: ../../agent.install.rst:7
 msgid "Package"
-msgstr ""
+msgstr "Paquet"
 
 # 60728cd3d1764347be0317dc14c309d4
 #: ../../agent.install.rst:66
@@ -222,11 +259,13 @@ msgid ""
 "Schedules are defined in ``/opt/opensvc/etc/node.conf``. The OpenSVC agent "
 "schedules the following actions:"
 msgstr ""
+"Les planifications des tâches sont définies dans ``/opt/opensvc/etc/node.conf``. "
+"L'agent OpenSVC planifie les actions suivantes:"
 
 # 696e77cee5f84f3daa47a01dfda04d2d
 #: ../../agent.install.rst:69
 msgid "Section name"
-msgstr ""
+msgstr "Nom de la section"
 
 # 7738004f55604f76b3c8bdf8c29e16ee
 #: ../../agent.install.rst:74
@@ -234,52 +273,56 @@ msgid ""
 "Send to the collector the collected node information (cpu, memory, "
 "board, ...)"
 msgstr ""
+"Envoi au collecteur des informations collectées sur le noeud (processeur, "
+"mémoire, matériel, ...)"
 
 # 30a1863939614cf4be526b9891ba12e2
 #: ../../agent.install.rst:71
 msgid ""
 "Send to the collector the collected performance metrics since last pushstats"
 msgstr ""
+"Envoi au collecteur des échantillons de performance rassemblés depuis le "
+"dernier pushstats"
 
 # df6883470b6645558d73faed082452d3
 #: ../../agent.install.rst:86
 msgid "Send to the collector the compliance modules checks results"
-msgstr ""
+msgstr "Envoi au collecteur des résultats des sondes de conformité"
 
 # 747af32ee4bf4ce9b06e5e9be3eaba50
 #: ../../agent.install.rst:83
 msgid "Send to the collector the node checks results (fs_u, fs_i, vg_u, ...)"
-msgstr ""
+msgstr "Envoi au collecteur des sondes du noeud (fs_u, fs_i, vg_u, ...)"
 
 # 355259b5ef534e3096d087b0790ce166
 #: ../../agent.install.rst:77
 msgid "Send to the collector the node installed package database"
-msgstr ""
+msgstr "Envoi au collecteur de la base de paquets installés"
 
 # 9a36d4e2cb6841a99c3d913cc95b3099
 #: ../../agent.install.rst:80
 msgid "Send to the collector the node installed patch database"
-msgstr ""
+msgstr "Envoi au collecteur de la base de correctifs installés"
 
 # b4a9b7797eba4023b119a42d5d0b6d97
 #: ../../agent.install.rst:89
 msgid "Send to the collector the service configurations"
-msgstr ""
+msgstr "Envoi au collecteur des configurations de services"
 
 # d75f6bc7554c4c918fdd76367d012c12
 #: ../../agent.install.rst:51
 msgid "Set host mode::"
-msgstr ""
+msgstr "Paramétrage du mode de noeud::"
 
 # c3fa0a2b4380442484dd924e630768d6
 #: ../../agent.install.rst:64
 msgid "Set schedules"
-msgstr ""
+msgstr "Paramétrage des planifications"
 
 # 74f565dda1d44f04b4449ce4cb926900
 #: ../../agent.install.rst:69
 msgid "Statistic Delay"
-msgstr ""
+msgstr "Retards statistiques"
 
 # dac38de08d344ba3b85eef7704ddbbde
 #: ../../agent.install.rst:153
@@ -287,7 +330,9 @@ msgid ""
 "The HP-UX base system does not provide tools to handle scsi persistent "
 "reservations. You have to install the scu tool if you want to activate this "
 "feature."
-msgstr ""
+msgstr "La base installée standard de HP-UX ne permet pas de gérer les "
+"reservations persistentes SCSI. Il faut donc installer l'outil additionnel "
+"scu si vous souhaitez activer cette fonctionnalité."
 
 # 207301771daf4613883397c6fae68edf
 #: ../../agent.install.rst:112
@@ -297,6 +342,11 @@ msgid ""
 "resources. As a cache, it is maintained by OpenSVC, and manual changes to "
 "this file would be overwritten."
 msgstr ""
+"Le fichier ``/opt/opensvc/etc/.node.conf`` ne doit pas être édité manuellement. "
+"Il contient un cache des planifications calculé en fonction de toutes les "
+"ressources de synchronisation de tous les services du noeud. En tant que cache, "
+"il est maintenu par OpenSVC, et tout changement manuel dans ce fichier serait "
+"écrasé."
 
 # 51dbf00e7e0545829666f5b573298b99
 #: ../../agent.install.rst:127
@@ -306,11 +356,15 @@ msgid ""
 "on the node in ``node.conf``. The token initialization is handled by the "
 "command::"
 msgstr ""
+"Le collecteur exige d'un noeud qu'il fournisse avec chaque requête un jeton "
+"d'identification (secret partagé). Ce jeton est généré par le collecteur et "
+"stocké sur le noeud dans le fichier ``node.conf``. La génération initiale du "
+"jeton est déclenchée par la commande::"
 
 # faf8df5bc65044beb3848639f88f3fdb
 #: ../../agent.install.rst:58
 msgid "The host_mode setting is used to enforce the following policies:"
-msgstr ""
+msgstr "Le paramètre host_mode est utilisé dans les politiques suivantes:"
 
 # c2209a95cedc4bbd92e6554c9b326569
 #: ../../agent.install.rst:36
@@ -319,11 +373,13 @@ msgid ""
 "``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/"
 "cron/root``::"
 msgstr ""
+"Le paquet installe les tâches planifiées suivantes dans, par ordre de "
+"préférence, ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``::"
 
 # 82a1b8ec29054c718819e8dc2a7bd2c9
 #: ../../agent.install.rst:16
 msgid "The package installs the following directory tree::"
-msgstr ""
+msgstr "Le paquet installe l'arborescence suivante::"
 
 # caeb0a7d05db43c0be9d79038dc96a5d
 #: ../../agent.install.rst:11
@@ -332,6 +388,9 @@ msgid ""
 "postinstall`` script. This script can be safely executed on a node where "
 "OpenSVC is already installed."
 msgstr ""
+"La post-installation du paquet est prise en charge par le script "
+"``/opt/opensvc/bin/postinstall``. Ce script peut être exécuté en toute "
+"sécurité sur un noeud où OpenSVC est déjà installé."
 
 # 4d2c9391681b478f8c93bc6e7550bbd9
 #: ../../agent.install.rst:151
@@ -340,6 +399,10 @@ msgid ""
 "won't find terminfo at the expected places. To fix that, you have to export "
 "``TERMINFO=/usr/share/lib/terminfo`` from ``/etc/profile``"
 msgstr ""
+"Le paquet python fournit par HP renvoie des informations indésirables lors "
+"de son exécution à cause de son incapacité à trouver terminfo aux "
+"emplacements attendus. Pour corriger cela, il vous faut exporter "
+"``TERMINFO=/usr/share/lib/terminfo`` depuis ``/etc/profile``"
 
 # 2baa8d9e198c4e8287dffe276edb1af8
 #: ../../agent.install.rst:106
@@ -348,6 +411,10 @@ msgid ""
 "definitions in service configuration files, where ``sync_interval``, "
 "``sync_days`` and ``sync_period`` parameters are available."
 msgstr ""
+"La tâche planifiée syncservices est déduite depuis les définitions "
+"de ressource sync dans les configurations de services, dans lesquelles "
+"les paramètres ``sync_interval``, ``sync_days`` et ``sync_period`` sont "
+"disponibles."
 
 # 3b0d83ce5d3345dd9e50bbcfda3b542e
 #: ../../agent.install.rst:56
@@ -358,11 +425,16 @@ msgid ""
 "the new OpenSVC package on a system with a ``/opt/opensvc/var/host_mode`` "
 "file will move the value to ``/opt/opensvc/etc/node.conf``."
 msgstr ""
+"Les valeurs possibles de host_mode sont PRD, DEV, TST. Ce paramètre est "
+"stocké dans ``/opt/opensvc/etc/node.conf``. Sur une installation vierge, "
+"ce fichier n'existe pas. A noter que le fichier ``/opt/opensvc/var/host_mode`` "
+"est déprécié. La mise à jour vers une version d'OpenSVC plus récente "
+"déplacera le paramètre host_mode vers ``/opt/opensvc/etc/node.conf``."
 
 # 905cb57f975b4736bf0d41c3898a66fb
 #: ../../agent.install.rst:125
 msgid "This override is recommended for xmlrpc encryption."
-msgstr ""
+msgstr "Ce surchargement est recommandé pour activer l'encryption des xmlrpc."
 
 # 26d90c6422e14a6f976de193e63a1736
 #: ../../agent.install.rst:160
@@ -373,11 +445,17 @@ msgid ""
 "volume group, so opensvc can satisfy a start request on a service uncleanly "
 "shut down."
 msgstr ""
+"Cette configuration indique aux commandes LVM2 de n'activer que les objets "
+"taggés avec le nom d'hôte. OpenSVC s'assure que les tags sont correctement "
+"positionnés au démarrage, et retirés à l'arrêt. OpenSVC purge également "
+"tous les tags avant d'ajouter celui du noeud nécessaire pour l'activation "
+"d'un volume group, afin d'assurer un démarrage correct d'un service qui n'a "
+"pas été arrêté proprement."
 
 # bb147080c3e94178a79cbb350d0f10a7
 #: ../../agent.install.rst:142
 msgid "To disable collector communications, use::"
-msgstr ""
+msgstr "Pour désactiver les communications avec le collecteur, utilisez::"
 
 # ff6522e1c7da4d6ba12590a27f78f463
 #: ../../agent.install.rst:119
@@ -385,11 +463,13 @@ msgid ""
 "To override the default collector's xmlrpc urls, you can set them in node."
 "conf::"
 msgstr ""
+"Pour surcharger les définitions par défaut des urls xmlrpc du collecteur, "
+"vous pouvez les paramétrer dans node.conf::"
 
 # f60692a0c49646f5990a5611c7b36e8b
 #: ../../agent.install.rst:92
 msgid "Try a ``syncall`` action on all node's services"
-msgstr ""
+msgstr "Déclencher l'action ``syncall`` sur tous les services du noeud"
 
 # ee05b8aba5e3475685fd8c0d9c302ab6
 # ad4aab4397194c538699ab509ffed189
@@ -403,79 +483,79 @@ msgstr ""
 #: ../../agent.install.rst:83 ../../agent.install.rst:86
 #: ../../agent.install.rst:89
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 # 391fb94e170a48bba627452a2133fc82
 #: ../../agent.install.rst:74
 msgid "[asset]"
-msgstr ""
+msgstr "[asset]"
 
 # 746d71d687954c639fa12eef2863810b
 #: ../../agent.install.rst:83
 msgid "[checks]"
-msgstr ""
+msgstr "[checks]"
 
 # f68693bfbf6f4f73bce4e81163494e53
 #: ../../agent.install.rst:86
 msgid "[comp]"
-msgstr ""
+msgstr "[comp]"
 
 # 8cf9a68a84464ce18c669ff50b3c658b
 #: ../../agent.install.rst:77
 msgid "[packages]"
-msgstr ""
+msgstr "[packages]"
 
 # e4bc535514614bc49595ac610f270ccb
 #: ../../agent.install.rst:80
 msgid "[patches]"
-msgstr ""
+msgstr "[patches]"
 
 # 5f0722e4cbbf4b15853e4d9db34c7373
 #: ../../agent.install.rst:71
 msgid "[stats]"
-msgstr ""
+msgstr "[stats]"
 
 # 4097f52a553c47f49d3f4dd45c8feb8f
 #: ../../agent.install.rst:89
 msgid "[svcconf]"
-msgstr ""
+msgstr "[svcconf]"
 
 # c6d666b71aec4eb78965bd0536e05921
 #: ../../agent.install.rst:83
 msgid "checks"
-msgstr ""
+msgstr "checks"
 
 # d5f04e461fb84ff0b0abaa002f88c6cf
 #: ../../agent.install.rst:86
 msgid "compliance check"
-msgstr ""
+msgstr "compliance check"
 
 # 4184f4b06b7f4cb1930dd838170f4fa6
 #: ../../agent.install.rst:74
 msgid "pushasset"
-msgstr ""
+msgstr "pushasset"
 
 # 0cfac4ba30a54ba891866cb222217db3
 #: ../../agent.install.rst:80
 msgid "pushpatch"
-msgstr ""
+msgstr "pushpatch"
 
 # feed7391fad64541833e6fc83bdf29e0
 #: ../../agent.install.rst:77
 msgid "pushpkg"
-msgstr ""
+msgstr "pushpkg"
 
 # aa28b340ab7143b9b51b2c86b93ee5a1
 #: ../../agent.install.rst:89
 msgid "pushservices"
-msgstr ""
+msgstr "pushservices"
 
 # 2a9dcd63d22d4cb1ab165efee37a5b77
 #: ../../agent.install.rst:71
 msgid "pushstats"
-msgstr ""
+msgstr "pushstats"
 
 # ebb4599747af40dbafaeb5162683514c
 #: ../../agent.install.rst:92
 msgid "syncservices"
-msgstr ""
+msgstr "syncservices"

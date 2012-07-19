@@ -20,9 +20,9 @@ msgstr ""
 # a2c50b29e50c47f88442fd977f02cb3f
 #: ../../storage.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu:"
 
 # a4670616b3074343aa1ba104eb11a117
 #: ../../storage.rst:2
 msgid "Storage resources"
-msgstr ""
+msgstr "Ressources de stockage"
