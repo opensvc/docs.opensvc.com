@@ -22,23 +22,29 @@ msgstr ""
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service start"
 msgstr ""
+"Un lien symbolique vers mylauncher marquant le script pour exécution lors "
+"des démarrages de service"
 
 # 2d005688686a474e8e5ea9a3a1058562
 #: ../../agent.service.app.rst:18
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service status"
 msgstr ""
+"Un lien symbolique vers mylauncher marquant le script pour exécution lors "
+"des évalutions d'état du service"
 
 # f94c4a4580424020ab74f67c9e5e849a
 #: ../../agent.service.app.rst:16
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service stop"
 msgstr ""
+"Un lien symbolique vers mylauncher marquant le script pour exécution lors "
+"des arrêts de service"
 
 # 869bb55b84e7474d893ab333bd689749
 #: ../../agent.service.app.rst:10
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 # b35593c23e1b4a9488280afda4bf4cb0
 #: ../../agent.service.app.rst:23
@@ -46,11 +52,13 @@ msgid ""
 "Application can be started and stopped without touching the other service "
 "resources with::"
 msgstr ""
+"Les applications peuvent être démarrées et arrêtées sans impacter les autres "
+"services par ::"
 
 # a97235d30185428bbcf1ef9fde882919
 #: ../../agent.service.app.rst:2
 msgid "Application launchers"
-msgstr ""
+msgstr "Lanceurs applicatifs"
 
 # aca0c07a48cb48b3942b2530c56f0bb3
 #: ../../agent.service.app.rst:7
@@ -58,36 +66,38 @@ msgid ""
 "Application launchers are installed in the directory pointed by ``/opt/"
 "opensvc/etc/svcnamed.d``. They follow the SysV guidelines:"
 msgstr ""
+"Les lanceurs applicatifs sont installés dans le répertoire pointé par "
+"``/opt/opensvc/etc/svcnamed.d``. Ils respectent les directives SysV :"
 
 # b2827447401144d4ad73daee2bb90116
 #: ../../agent.service.app.rst:18
 msgid "C90mylauncher"
-msgstr ""
+msgstr "C90mylauncher"
 
 # f8dc38caf6cb468293d9e5e46f918334
 #: ../../agent.service.app.rst:31
 msgid "Common launchers"
-msgstr ""
+msgstr "Lanceurs usuels"
 
 # e4e5ba35f8a444938e25c5c8434a44bb
 #: ../../agent.service.app.rst:34
 msgid "Crontab handler"
-msgstr ""
+msgstr "Gestionnaire de tâches planifiées"
 
 # d2ee9e194caa487fbc8c024bfa16cc13
 #: ../../agent.service.app.rst:10
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # 0ab10ea99ee041629c79c12988491dfe
 #: ../../agent.service.app.rst:92
 msgid "Example::"
-msgstr ""
+msgstr "Exemple ::"
 
 # 78dfaea842df4236a7cb35ee7cf9e473
 #: ../../agent.service.app.rst:10
 msgid "File name"
-msgstr ""
+msgstr "Nom de fichier"
 
 # c8af2873cc1449148a5e9830913cabc7
 #: ../../agent.service.app.rst:21
@@ -95,16 +105,19 @@ msgid ""
 "In containers and virtual machines OpenSVC the launchers are installed in ``/"
 "svc/etc/init.d/`` in the container file tree."
 msgstr ""
+"Dans les containers et les machines virtuelles gérés par OpenSVC, les "
+"lanceurs sont installés dans ``/svc/etc/init.d/`` dans l'arborescence du "
+"container."
 
 # a73f58715d244f0bbcfd1a8a00f6466a
 #: ../../agent.service.app.rst:16
 msgid "K90mylauncher"
-msgstr ""
+msgstr "K90mylauncher"
 
 # 8f25ffb8127c4a10b0917d0250950825
 #: ../../agent.service.app.rst:12
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 # d9e43ebc34494715bc80f4120ba6f663
 #: ../../agent.service.app.rst:90
@@ -113,11 +126,15 @@ msgid ""
 "failing after a node unclean reboot: all cron jobs must verify the presence "
 "of their executable file."
 msgstr ""
+"A noter qu'un garde fou supplémentaire est requis pour éviter que les "
+"exécutions de tâches planifiées renvoient des erreurs à la suite d'un "
+"redémarrage du noeud en court-circuit des stopeurs : toutes les tâches "
+"planifiées doivent vérifier la présence de leur exécutable."
 
 # 604abec41ba448db95e1b46729d4bdd1
 #: ../../agent.service.app.rst:14
 msgid "S10mylauncher"
-msgstr ""
+msgstr "S10mylauncher"
 
 # 3e58ad5774c24c9981266afaeecdbb31
 #: ../../agent.service.app.rst:36
@@ -130,6 +147,15 @@ msgid ""
 "crontab support. It installs and removes the crontabs in ``/opt/opensvc/etc/"
 "myservice.d/cron.d/``::"
 msgstr ""
+"Les services nécessitent souvent des planifications spécifiques de tâches. "
+"Soit ils peuvent démarrer leur propre planificateur, soit ils doivent partager "
+"le planificateur du système hôte. Dans ce dernier cas, les planifications "
+"du service doivent être installées au démarrage du service, et retirées à "
+"l'arrêt pour garantir que les tâches ne seront pas exécutées sur plusieurs "
+"noeud du cluster. Le lanceur suivant peut être utilisé à cette fin sur des "
+"noeuds dont le planificateur crond supporte les fichiers de configurations "
+"morcelés. Il installe et retire les configurations disponibles dans "
+"``/opt/opensvc/etc/myservice.d/cron.d/`` ::"
 
 # e178c953957d45648fe5ea443f870b21
 #: ../../agent.service.app.rst:28
@@ -138,33 +164,37 @@ msgid ""
 "that integrators can write reusable launcher scripts. Examples of this "
 "variable usage below."
 msgstr ""
+"La variable ``OPENSVC_SVCNAME`` est positionnée par OpenSVC et prend pour "
+"valeur le nom du service, afin de permettre aux intégrateurs d'écrire des "
+"lanceurs réutilisables. Des exemples d'utilisation de cette variable sont "
+"visibles ci-après."
 
 # 9ccd2a91317e4a68982c35852ba1e113
 #: ../../agent.service.app.rst:12
 msgid "The launcher script proper"
-msgstr ""
+msgstr "Le script de lancement"
 
 # 5ad4ce71b52b4ecaa14a02ccb3e668c7
 #: ../../agent.service.app.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # 7bb3f8d2e9e94956abded4d86091ab32
 #: ../../agent.service.app.rst:12
 msgid "mylauncher"
-msgstr ""
+msgstr "mylauncher"
 
 # 6706e4a8d0184b67980645c830805f8a
 #: ../../agent.service.app.rst:14
 msgid "start"
-msgstr ""
+msgstr "start"
 
 # 087ef5a39b574b7187def5f3d022d7fc
 #: ../../agent.service.app.rst:18
 msgid "status"
-msgstr ""
+msgstr "status"
 
 # cfe1ee8f0e6047edb7711163181adfe8
 #: ../../agent.service.app.rst:16
 msgid "stop"
-msgstr ""
+msgstr "stop"

@@ -20,9 +20,9 @@ msgstr ""
 # f998216787144fa09db79e1d3424bd0a
 #: ../../agent.rst:2
 msgid "Agent"
-msgstr ""
+msgstr "Agent"
 
 # 04eb4b5dd5fe47568344793836b323bb
 #: ../../agent.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu :"
