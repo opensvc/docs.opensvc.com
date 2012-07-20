@@ -58,7 +58,7 @@ msgstr ""
 # 1f2e104fc43c4f54af0a67aa6712bffb
 #: ../../agent.install.rst:96
 msgid "A typical schedule definition would look like::"
-msgstr "Une définition typique de planification ressemblerait à::"
+msgstr "Une définition typique de planification ressemblerait à ::"
 
 # f3ae3ee6b17242d29c8b658b70ee44c1
 #: ../../agent.install.rst:69
@@ -68,7 +68,7 @@ msgstr "Action"
 # c5612f02354b458fab666465b16a8bc9
 #: ../../agent.install.rst:165
 msgid "Add the following root-level configuration node::"
-msgstr "Ajoutez la configuration de noeud suivante::"
+msgstr "Ajoutez la configuration de noeud suivante ::"
 
 # fe9b937541cd4bd8bbccf329b29f61b4
 #: ../../agent.install.rst:108
@@ -85,7 +85,7 @@ msgstr ""
 # a6848a0368eb421fb8969f7fbf82f23f
 #: ../../agent.install.rst:172
 msgid "And add the ``local`` tag to all local volume groups. For example::"
-msgstr "Et ajoutez le tag ``local`` à tous les volume groups locaux. Par exemple::"
+msgstr "Et ajoutez le tag ``local`` à tous les volume groups locaux. Par exemple ::"
 
 # c229d6351008468e8f36ec8194f8e800
 #: ../../agent.install.rst:117
@@ -114,7 +114,7 @@ msgid ""
 "configuration::"
 msgstr ""
 "Créez ce fichier, {noeud} étant la sortie de ``uname -n``  et ajoutez la "
-"configuration suivante::"
+"configuration suivante ::"
 
 # 4343ab26918a4ae391b57ca59c1ba8dc
 #: ../../agent.install.rst:34
@@ -166,7 +166,7 @@ msgid ""
 "opensvc cron jobs after the package installation::"
 msgstr ""
 "Enfin, vous pouvez accélérer la découverte du noeud en forçant l'exécution "
-"des tâches planifiée OpenSVC après l'installation du paquet::"
+"des tâches planifiée OpenSVC après l'installation du paquet ::"
 
 # b7111564265d4bfe82287d11ca2c2c0b
 #: ../../agent.install.rst:149
@@ -203,7 +203,7 @@ msgstr "Spécificités LVM2 sur Linux"
 # 8e3cefe9852a421cbeee390d528eab52
 #: ../../agent.install.rst:42
 msgid "Linux and HP-UX also have a helper to gather statistics::"
-msgstr "Linux et HP-UX ont également une tâche de collecte de statistiques::"
+msgstr "Linux et HP-UX ont également une tâche de collecte de statistiques ::"
 
 # cba72f8f4f2f4311a8b879985982fc82
 #: ../../agent.install.rst:92
@@ -260,7 +260,7 @@ msgid ""
 "schedules the following actions:"
 msgstr ""
 "Les planifications des tâches sont définies dans ``/opt/opensvc/etc/node.conf``. "
-"L'agent OpenSVC planifie les actions suivantes:"
+"L'agent OpenSVC planifie les actions suivantes :"
 
 # 696e77cee5f84f3daa47a01dfda04d2d
 #: ../../agent.install.rst:69
@@ -312,7 +312,7 @@ msgstr "Envoi au collecteur des configurations de services"
 # d75f6bc7554c4c918fdd76367d012c12
 #: ../../agent.install.rst:51
 msgid "Set host mode::"
-msgstr "Paramétrage du mode de noeud::"
+msgstr "Paramétrage du mode de noeud ::"
 
 # c3fa0a2b4380442484dd924e630768d6
 #: ../../agent.install.rst:64
@@ -359,12 +359,12 @@ msgstr ""
 "Le collecteur exige d'un noeud qu'il fournisse avec chaque requête un jeton "
 "d'identification (secret partagé). Ce jeton est généré par le collecteur et "
 "stocké sur le noeud dans le fichier ``node.conf``. La génération initiale du "
-"jeton est déclenchée par la commande::"
+"jeton est déclenchée par la commande ::"
 
 # faf8df5bc65044beb3848639f88f3fdb
 #: ../../agent.install.rst:58
 msgid "The host_mode setting is used to enforce the following policies:"
-msgstr "Le paramètre host_mode est utilisé dans les politiques suivantes:"
+msgstr "Le paramètre host_mode est utilisé dans les politiques suivantes :"
 
 # c2209a95cedc4bbd92e6554c9b326569
 #: ../../agent.install.rst:36
@@ -379,7 +379,7 @@ msgstr ""
 # 82a1b8ec29054c718819e8dc2a7bd2c9
 #: ../../agent.install.rst:16
 msgid "The package installs the following directory tree::"
-msgstr "Le paquet installe l'arborescence suivante::"
+msgstr "Le paquet installe l'arborescence suivante ::"
 
 # caeb0a7d05db43c0be9d79038dc96a5d
 #: ../../agent.install.rst:11
@@ -455,7 +455,7 @@ msgstr ""
 # bb147080c3e94178a79cbb350d0f10a7
 #: ../../agent.install.rst:142
 msgid "To disable collector communications, use::"
-msgstr "Pour désactiver les communications avec le collecteur, utilisez::"
+msgstr "Pour désactiver les communications avec le collecteur, utilisez ::"
 
 # ff6522e1c7da4d6ba12590a27f78f463
 #: ../../agent.install.rst:119
@@ -464,7 +464,7 @@ msgid ""
 "conf::"
 msgstr ""
 "Pour surcharger les définitions par défaut des urls xmlrpc du collecteur, "
-"vous pouvez les paramétrer dans node.conf::"
+"vous pouvez les paramétrer dans node.conf ::"
 
 # f60692a0c49646f5990a5611c7b36e8b
 #: ../../agent.install.rst:92

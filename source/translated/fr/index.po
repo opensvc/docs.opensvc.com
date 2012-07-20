@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-07-20 10:49\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 2b5da17ecd074523a3bf0b32836c190b
-#: ../../index.rst:23
+#: ../../index.rst:33
 msgid ":ref:`genindex`"
 msgstr ":ref:`genindex`"
 
 # 85827edba2024631bf990043549c2471
-#: ../../index.rst:24
+#: ../../index.rst:34
 msgid ":ref:`search`"
 msgstr ":ref:`search`"
 
 # 1d0befb093b5429a97d0022abe31a5d8
-#: ../../index.rst:4
+#: ../../index.rst:14
 msgid "Contents:"
-msgstr "Contenu:"
+msgstr "Contenu :"
+
+# 2ee4546073044adea4a80149c479f7fd
+#: ../../index.rst:7
+msgid "Country"
+msgstr "Pays"
 
 # 388ae7bcb7094cdda966f2b9c450cae8
-#: ../../index.rst:21
+#: ../../index.rst:31
 msgid "Indices and tables"
 msgstr "Indices et tables"
+
+# 7932892fdd3e4462a86e417031199df9
+#: ../../index.rst:7
+msgid "Link"
+msgstr "Lien"
+
+# 87e6a4954c304ff587e1a22c30f74db1
+#: ../../index.rst:4
+msgid "Translations:"
+msgstr "Traductions :"
 
 # 5fe318ac06be4ac9b5626b17d2c85049
 #: ../../index.rst:2
 msgid "Welcome to OpenSVC documentation!"
 msgstr "Bienvenu dans la documentation de OpenSVC!"
+
+# ee5c0e8408fd4b11999981509b2824fd
+#: ../../index.rst:9
+msgid "http://docs.opensvc.com/"
+msgstr "http://docs.opensvc.com/"
+
+# 73ae8298777e4c2488bdb5ca24cae52d
+#: ../../index.rst:11
+msgid "http://docs.opensvc.com/fr/"
+msgstr "http://docs.opensvc.com/fr/"
