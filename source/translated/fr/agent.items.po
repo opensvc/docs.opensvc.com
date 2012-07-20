@@ -20,7 +20,7 @@ msgstr ""
 # a3c07b2d70474873a8951deeb9750f9f
 #: ../../agent.items.rst:48
 msgid "Cron jobs"
-msgstr ""
+msgstr "Tâches planifiées"
 
 # 5ab0cf79fc3e49bdac218679cd3f4bfd
 #: ../../agent.items.rst:37
@@ -28,11 +28,13 @@ msgid ""
 "Embedded documentation. Most importantly the service configuration reference "
 "file documenting all possible parameters."
 msgstr ""
+"Documentation embarquée. Notamment le fichier de configuration de service de "
+"référence contenant tous les paramètres supportés."
 
 # 847fb2dca63444ed9a11a1c75836e663
 #: ../../agent.items.rst:17
 msgid "Executables like svcmon, svcmgr"
-msgstr ""
+msgstr "Fichiers exécutables, dont svcmon et svcmgr"
 
 # edcae6617ce04ed29e9c2ab8b69fe80a
 #: ../../agent.items.rst:21
@@ -40,16 +42,19 @@ msgid ""
 "Executables to create package and optional, site-specific, release scripts "
 "(none shipped in the opensvc-provided packages)"
 msgstr ""
+"Fichiers exécutables dédiés à la création des paquets, et, éventuellement, "
+"les scripts d'intégration aux dépots (aucun n'est livré dans les paquets "
+"fournis par OpenSVC)."
 
 # efa9ca21d02e4662b38f230c783cfb25
 #: ../../agent.items.rst:5
 msgid "File tree"
-msgstr ""
+msgstr "Arborescence des fichiers"
 
 # 6bbd26dd399e4985b404574958d503fa
 #: ../../agent.items.rst:9
 msgid "Hosts service configurations"
-msgstr ""
+msgstr "Configurations des services"
 
 # 652ab157d4d548da89e32564fef57413
 #: ../../agent.items.rst:25
@@ -60,16 +65,23 @@ msgid ""
 "described in service configurations, there are still rsyncs scheduled for "
 "service and node configuration replication between nodes of a cluster."
 msgstr ""
+"Héberge le script de la tâche planifiée (quotidienne par défaut) "
+"responsable de l'émission au collecteur des configurations de service et "
+"des synchronisations de données vers les autres noeuds. A noter que "
+"même si aucune synchronisation n'est explicitement déclarée dans les "
+"configurations de service, il existe néanmoins des synchronizations par "
+"rsync planifiées pour repliquer les configurations de service entre les "
+"noeuds d'un cluster."
 
 # fd3043d720cf4c29bb82452d19629c72
 #: ../../agent.items.rst:2
 msgid "Installed items details"
-msgstr ""
+msgstr "Détail des éléments installés"
 
 # 882f3a06a88842b698d120ab5e1cc421
 #: ../../agent.items.rst:41
 msgid "Libraries implementing the nodeware logics"
-msgstr ""
+msgstr "Librairies implémentant la logique de l'agent"
 
 # 8caa4f39caad48a4b765336913a30332
 #: ../../agent.items.rst:60
@@ -78,6 +90,9 @@ msgid ""
 "operating system provides by default, for example ``sar`` on Linux, FreeBSD "
 "and Solaris, ``glance`` on HP-UX."
 msgstr ""
+"Scripts de collecte de performance spécifiques aux systèmes d'exploitation. "
+"Etendent ce que ces systèmes d'exploitation proposent par défaut, par "
+"exemple via ``sar`` sous Linux, FreeBSD et Solaris, ``glance`` sur HP-UX."
 
 # c58a116630724fd4b92044904a62da6d
 #: ../../agent.items.rst:45
@@ -85,6 +100,9 @@ msgid ""
 "Per-service, local, size-rotated, delay-rotated log files. All logs are also "
 "multiplexed to stdout and to the collector via xmlrpc"
 msgstr ""
+"Fichiers de journaux locaux par service, en rotation sur taille limite. Tous "
+"les journaux sont également multiplexés sur la sortie standard et sur le "
+"collecteur via xmlrpc." 
 
 # 05afd3eb04344002958300916986fa7a
 #: ../../agent.items.rst:56
@@ -93,16 +111,20 @@ msgid ""
 "triggers internal and user-configured rsyncs. Customized frequencies are "
 "preserved upon package upgrades."
 msgstr ""
+"Emet les configurations de service et de noeud au collecteur via xmlrpc, et "
+"déclenche les synchronisations de données internes et configurées par les "
+"utilisateurs. Les personnalisations de fréquence sont préservées lors des "
+"mises à jour de l'agent."
 
 # 30a44ce799a046518ac2b360c8a66bbe
 #: ../../agent.items.rst:52
 msgid "Pushes the service per-resource status to the collector via xmlrpc"
-msgstr ""
+msgstr "Emet les états individuels de resource au collecteur via xmlrpc"
 
 # 0f3055d735df40a1bdacb2b22d9d5d14
 #: ../../agent.items.rst:13
 msgid "Temporary, discardable files"
-msgstr ""
+msgstr "Fichiers temporaires et effaçables"
 
 # 8f5dfd33138746d5b01db74fe7401ea0
 #: ../../agent.items.rst:33
@@ -110,6 +132,8 @@ msgid ""
 "Where executables create the lock-files used to ensure two actions can not "
 "run simultaneously on the same service."
 msgstr ""
+"Où les exécutables créent leurs fichiers-verrous utilisés pour garantir que "
+"deux actions ne sont pas exécutées simultanéement sur le même service."
 
 # 5f2cac373acd48c6838ab2a70434a2ef
 #: ../../agent.items.rst:29
@@ -118,3 +142,7 @@ msgid ""
 "backups are used in case of disaster recovery activation to restore some "
 "specific configurations of the production nodes."
 msgstr ""
+"Où les noeuds de production d'un cluster archivent leurs configurations. "
+"Ces archives sont utilisées en cas d'activation d'un plan de reprise sur "
+"sinistre pour restaurer des configurations spécifiques aux noeuds de "
+"production."
