@@ -20,43 +20,44 @@ msgstr ""
 # 8f831fe37e3344a7a1ae6f0380a4ffe8
 #: ../../collector.admin.obsolescence.rst:24
 msgid "**Missing obsolescence information**"
-msgstr ""
+msgstr "**Information sur l'obsolescence manquante**"
 
 # e7d3e2ee75dd4ab787a4337b448e5dd3
 #: ../../collector.admin.obsolescence.rst:28
 msgid "**Nodes above obsolescence thresholds**"
-msgstr ""
+msgstr "**Noeuds au delà du seuil d'obsolescence**"
 
 # f352f09535444fa9b180b34a7a1068e2
 #: ../../collector.admin.obsolescence.rst:30
 msgid "Alerts and warnings generate different alerts in the dashboard."
-msgstr ""
+msgstr "Les alertes et avertissements donnent lieu à des entrées dans le tableau de bord."
 
 # 02b5fd9ba7b94ec0ae7fde3d1cd56575
 #: ../../collector.admin.obsolescence.rst:20
 msgid "Dashboard alerts"
-msgstr ""
+msgstr "Alertes du tableau de bord"
 
 # 5258cbc2642b44e6b28fa40b649e2e0a
 #: ../../collector.admin.obsolescence.rst:2
 msgid "Obsolescence management"
-msgstr ""
+msgstr "Gestion de l'obsolescence"
 
 # 3ab80a82c38649038c04db8c790de887
 #: ../../collector.admin.obsolescence.rst:9
 msgid "Obsolescence setup"
-msgstr ""
+msgstr "Configuration de l'obsolescence"
 
 # 9ecb5f3d552646aca8dd23fa360aa5a2
 #: ../../collector.admin.obsolescence.rst:13
 msgid "Operating systems and hardware are collected from the asset database."
-msgstr ""
+msgstr "Les systèmes d'exploitation et les matériels sont glanés depuis la base des assets."
 
 # 823169d0369e4c5f934bc830c97de185
 #: ../../collector.admin.obsolescence.rst:31
 msgid ""
 "Operating systems and hardware generate different alerts in the dashboard."
 msgstr ""
+"LLes systèmes d'exploitation et les matériels donnent lieu à des entrées différenciées dans le tableau de bord."
 
 # 7d7ec12f07a24d76961c77a529774f41
 #: ../../collector.admin.obsolescence.rst:17
@@ -64,7 +65,8 @@ msgid ""
 "The 'Warn date' and 'Alert date' thresholds can be set by clicking on the "
 "table cell."
 msgstr ""
-
+"Les seuils 'date d'avertissement' et 'date d'alerte' peuvent être modifiés en clickant sur la cellule du tableau."
+ 
 # a6d897fc66fa47ddbe3ce4dfdbf40c75
 #: ../../collector.admin.obsolescence.rst:4
 msgid ""
@@ -72,6 +74,9 @@ msgid ""
 "constant notification of items beyond user-defined warning and alerting "
 "thresholds."
 msgstr ""
+"Le collecteur aide à planifier les mises à jour des systèmes d'exploitation et des matériels "
+"par ses notifications au jour le jour des éléments ayant dépassé les seuils "
+"d'avertissement et d'alerte définis par l'utilisateur."
 
 # c18f4e1e1576497e97778127fbcdb000
 #: ../../collector.admin.obsolescence.rst:15
@@ -80,6 +85,9 @@ msgid ""
 "in the 'count' column. Clicking on the count number displays the list of "
 "nodes."
 msgstr ""
+"Un compteur du nombre de serveurs correspondant à chaque différent système d'exploitation "
+"et matériel est affiché dans la colonne 'compte'. Cliquer sur une de ces valeurs affiche "
+"la liste des serveurs correspondants."
 
 # f439702b21964c6da0f324a28272ca9b
 #: ../../collector.admin.obsolescence.rst:26
@@ -88,6 +96,9 @@ msgid ""
 "They show how many operating system and hardware type items have no warn and "
 "alert date set by the managers."
 msgstr ""
+"Ces notifications sont affichées uniquement aux utilisateurs gratifiés du "
+"rôle 'Manager'. Elles montrent quels systèmes d'exploitation et quels matériels "
+"n'ont pas de date d'avertissement ou de date d'alerte paramétrées."
 
 # 2d888af6de8847a4a6aaf193cbca5f24
 #: ../../collector.admin.obsolescence.rst:6
@@ -95,3 +106,4 @@ msgid ""
 "This view is accessed through the :menuselection:`Admin --> Obsolescence "
 "Setup` menu."
 msgstr ""
+"Cette vue est accédée par le menu :menuselection:`Admin --> Obsolescence`."
