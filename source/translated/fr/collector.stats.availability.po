@@ -23,6 +23,7 @@ msgid ""
 "An acknowledged range will show the ack message, ack author and ack date "
 "when the cursor moves over the range dates."
 msgstr ""
+"Un segment aquitté affiche le message d'aquittement, l'auteur de l'aquittement, et la date d'aquittement quand le curseur survole les dates limites du segment."
 
 # 1b98867901bb4dd3b1327f52fa5eda6a
 #: ../../collector.stats.availability.rst:24
@@ -30,26 +31,27 @@ msgid ""
 "Clicking on a date will display a state transition graph to help determine "
 "which ressource caused to outage."
 msgstr ""
+"Cliquer sur une date affiche un encart montrant les transitions d'état détaillées pour aider à déterminer quelle ressource est la cause d'une dégradation."
 
 # 92038c58ece44f298dcc31cdd9be647c
 #: ../../collector.stats.availability.rst:11
 msgid "Each unavailability time range can be either:"
-msgstr ""
+msgstr "Chaque segment d'indisponibilité peut être :"
 
 # d8ef93f3ac6642819f651faec0f9dfa5
 #: ../../collector.stats.availability.rst:27
 msgid "Screenshot"
-msgstr ""
+msgstr "Copie d'écran"
 
 # 4fdcc22db1e04943af44a27742921992
 #: ../../collector.stats.availability.rst:2
 msgid "Service availability"
-msgstr ""
+msgstr "Disponibilité de service"
 
 # 27c9bb84caab4475a3a86ce7c8c38671
 #: ../../collector.stats.availability.rst:9
 msgid "The begin and end points of the analyzed period can be adjusted."
-msgstr ""
+msgstr "Le début et la fin de la période analysée peuvent être ajustés."
 
 # fce0035ca9cd42e9956f54370181a3db
 #: ../../collector.stats.availability.rst:20
@@ -58,6 +60,10 @@ msgid ""
 "This is used to explain an unavailability range that was either planned or "
 "due to a collection error. The chart draws this state in grey."
 msgstr ""
+"La durée de cette indisponibilité n'abaisse pas le taux de disponibilité. "
+"Ce mode est utilisé pour expliquer une indisponibilité prévue ou dûe à "
+"une interruption de service du collecteur. Le graphique montre cet état en "
+"gris."
 
 # 6a1b78c134e042d699b167b5930b6bf8
 #: ../../collector.stats.availability.rst:14
@@ -65,6 +71,8 @@ msgid ""
 "The duration of this unvailability lowers the avail%. The chart draws this "
 "state in red."
 msgstr ""
+"La durée de cette interruption de service est décomptée du taux de disponibilité. "
+"Le graphique affiche cet état en rouge."
 
 # c3fd7935a45848b3895d212519f89c7f
 #: ../../collector.stats.availability.rst:17
@@ -72,6 +80,9 @@ msgid ""
 "The duration of this unvailability lowers the availability ratio. This is "
 "used to explain an undue unavailability. The chart draws this state in red."
 msgstr ""
+"La durée de cette interruption de service abaisse le taux de disponibilité. "
+"Ce mode est utilisé pour expliquer une interruption non planifiée. Le "
+"graphique affiche cet état en rouge."
 
 # f472e22fde2844c59d2e36e2854efa16
 #: ../../collector.stats.availability.rst:7
@@ -81,8 +92,12 @@ msgid ""
 "unavailability time range and aggregate availability ratio on the selected "
 "period."
 msgstr ""
+"Cette vue présente les informations sur la disponibilité des services dont le "
+"collecteur dispose. Un graphique aide à déceler les problèmes efficacement, et "
+"un tableau affiche chaque segment d'indisponibilité et calcule le taux de "
+"disponibilité sur la période analysée."
 
 # d155eb77c97c4f3abe6c6d2265e4c226
 #: ../../collector.stats.availability.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"

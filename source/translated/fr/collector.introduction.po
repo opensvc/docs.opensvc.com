@@ -20,94 +20,94 @@ msgstr ""
 # 62ee9a34ec6542de92a9b39ac505b5e8
 #: ../../collector.introduction.rst:114
 msgid ":command:`comment`"
-msgstr ""
+msgstr ":command:`commentaire`"
 
 # fe49447f61b349d2bf3b9870d2b8347d
 #: ../../collector.introduction.rst:122
 msgid ":command:`container name`"
-msgstr ""
+msgstr ":command:`nom de container`"
 
 # 21c43873c1584ad083e6fb6376d2a5d7
 #: ../../collector.introduction.rst:126
 msgid ":command:`container type`"
-msgstr ""
+msgstr ":command:`type de container`"
 
 # 53c4eec7685c4909b3c87c6ae29ae3d5
 #: ../../collector.introduction.rst:146
 msgid ":command:`drp node`"
-msgstr ""
+msgstr ":command:`noeud de pra`"
 
 # 0ad3d295431e48f6b2ca16264053dc0f
 #: ../../collector.introduction.rst:150
 msgid ":command:`drp nodes`"
-msgstr ""
+msgstr ":command:`noeuds de pra`"
 
 # 239516ce31714c99a40cb52bc3b707c3
 #: ../../collector.introduction.rst:118
 msgid ":command:`last update`"
-msgstr ""
+msgstr ":command:`Dernière mise à jour`"
 
 # 1c6382a980974a119a7b56f55a5d1f58
 #: ../../collector.introduction.rst:142
 msgid ":command:`nodes`"
-msgstr ""
+msgstr ":command:`noeuds`"
 
 # 85bc93bd667f419b9d8dadc7691d8c21
 #: ../../collector.introduction.rst:102
 msgid ":command:`opensvc version`"
-msgstr ""
+msgstr ":command:`version d'opensvc`"
 
 # 886f21d12e7742959b2a6cccbbd9ffe4
 #: ../../collector.introduction.rst:138
 msgid ":command:`primary node`"
-msgstr ""
+msgstr ":command:`noeud primaire`"
 
 # 5e6ab906807e46038263fb0fc76d944f
 #: ../../collector.introduction.rst:134
 msgid ":command:`responsibles mail`"
-msgstr ""
+msgstr ":command:`email des responsables`"
 
 # 62be2ab0110b4bd1916d39807cf8d55d
 #: ../../collector.introduction.rst:130
 msgid ":command:`responsibles`"
-msgstr ""
+msgstr ":command:`responsables`"
 
 # 954b330100584a7587af067d687c3b07
 #: ../../collector.introduction.rst:154
 msgid ":command:`status`"
-msgstr ""
+msgstr ":command:`état`"
 
 # ff13b6a27a4a433b8ce16716575080a8
 #: ../../collector.introduction.rst:110
 msgid ":command:`type`"
-msgstr ""
+msgstr ":command:`type`"
 
 # 7a2aa0df14b24645b068efec9f6b326c
 #: ../../collector.introduction.rst:106
 msgid ":command:`unackowledged errors`"
-msgstr ""
+msgstr ":command:`erreurs non-aquittées`"
 
 # 2e7396a6f63b46a1a2d7b583a7bc6241
 #: ../../collector.introduction.rst:36
 msgid "A column filters bar"
-msgstr ""
+msgstr "Une barre de filtres par colonne"
 
 # 15eac0955c554f1ab656b8b4ce0e5471
 #: ../../collector.introduction.rst:35
 msgid "A column selector"
-msgstr ""
+msgstr "Un sélecteur de colonne"
 
 # 6e10a4d8adfc4129af49933ca83c7947
 #: ../../collector.introduction.rst:108
 msgid ""
 "A count of the unacknowledged errors on this service found in the actions "
 "table."
-msgstr ""
+msgstr "Un compte d'erreurs non-acquittées pour ce service se trouve dans la vue des actions."
 
 # 3a14f2a2172942518412d0d62a44ffaa
 #: ../../collector.introduction.rst:38
 msgid "A csv export tool"
-msgstr ""
+msgstr "Un outil d'export au format csv"
 
 # 25bb18ce7e4b4f299141d9c7bc973565
 #: ../../collector.introduction.rst:18
@@ -119,11 +119,18 @@ msgid ""
 "important : it is used by the collector alarming subsystem as a mail sink "
 "for services you are responsible of."
 msgstr ""
+"Un compte utilisateur fraîchement créé n'a pas le privilège de voir les services "
+"des autres utilisateurs. Il vous faut demander à admin@opensvc.com d'ajouter "
+"les filtres à votre compte nécessaires pour visualiser vos données. Le "
+"filtrage est basé sur les noms de domaine. Vous pouvez déclarer autant de "
+"domaines que nécessaire. L'adresse email que vous définissez pendant "
+"l'enregistrement du compte est importante : elle est utilisée pour le routage "
+"d'alertes concernant les services dont vous êtes responsable."
 
 # 6b107a3a2a5240f68370091bac2c6c77
 #: ../../collector.introduction.rst:37
 msgid "A pager"
-msgstr ""
+msgstr "Un outil de navigation dans les pages"
 
 # b8906ef2c7404e18a85c4448ea7df2d8
 #: ../../collector.introduction.rst:218
@@ -131,16 +138,17 @@ msgid ""
 "A per-node wiki page the team responsible member can use to share "
 "information relative to the node."
 msgstr ""
+"Une paje wiki spécifique au noeud, que ses responsables peuvent utiliser pour partager des informations s'y rapportant."
 
 # b028da388dff473e9acdcc69e6fa5bd8
 #: ../../collector.introduction.rst:34
 msgid "A persistent filters selector"
-msgstr ""
+msgstr "A sélecteur de filtres persistents"
 
 # a51dbf1176fa43d686dc732332eb8505
 #: ../../collector.introduction.rst:69
 msgid "AND multiple patterns (%gie%&%adomain.com)"
-msgstr ""
+msgstr "ET entre expressions (%gie%&%adomain.com)"
 
 # 180c8c43a6dd47e28269c65d9c99bf6e
 #: ../../collector.introduction.rst:16
@@ -148,6 +156,7 @@ msgid ""
 "Account registration the SaaS collector at https://collector.opensvc.com is "
 "open to all."
 msgstr ""
+"L'enregistrement d'un compte sur le collecteur SaaS https://collector.opensvc.com est ouvert à tous."
 
 # a615fb9a55b74310854ffcf43c520be9
 #: ../../collector.introduction.rst:144
@@ -155,53 +164,56 @@ msgid ""
 "All nodes where the service may be running in degraded situation (not in "
 "disaster recovery situation)."
 msgstr ""
+"Tous les noeuds sur lesquels le service peut tourner en reprise sur incident "
+"(pas en reprise sur désastre)."
 
 # 61cac255cd5543b28654fb37fab0b4cd
 #: ../../collector.introduction.rst:152
 msgid ""
 "All nodes where the service may be running in disaster recovery situation."
-msgstr ""
+msgstr "Tous les noeuds sur lesquels le service peut tourner en reprise sur désastre."
 
 # af3383171089494582ea2a165224b400
 #: ../../collector.introduction.rst:4
 msgid "Collector"
-msgstr ""
+msgstr "Collecteur"
 
 # 9e557575ca6c4ab082525f312f46ca78
 #: ../../collector.introduction.rst:56
 msgid "Column filters bar"
-msgstr ""
+msgstr "Barre de filtres par colonne"
 
 # a8a2596c70e14837975e7a474ebb634a
 #: ../../collector.introduction.rst:49
 msgid "Column selector"
-msgstr ""
+msgstr "Sélecteur de colonnes"
 
 # f4bcab2fe0c84680844e2a3533000bce
 #: ../../collector.introduction.rst:23
 msgid ""
 "Data views are accessed through the tabulations in the site's pages header."
 msgstr ""
+"Les vues sont accédées par les menus en tête de paje."
 
 # 953d001976ce403d800d02605c469a58
 #: ../../collector.introduction.rst:161
 msgid "Display the per-node per-resource detailled service status."
-msgstr ""
+msgstr "Affiche les états détaillés des ressources du service."
 
 # 8672308a8c274bd6bd1231fff232003e
 #: ../../collector.introduction.rst:156
 msgid "Display the per-node synthetic service status."
-msgstr ""
+msgstr "Affiche les états aggrégés des services sur les noeuds."
 
 # ff1de34fb30348d488c24f6f8e3532af
 #: ../../collector.introduction.rst:166
 msgid "Display the raw service configuration file pushed by the nodeware."
-msgstr ""
+msgstr "Affiche le fichier de configuration brut d'un service, tel que poussé par l'agent."
 
 # 675801d7c0474c5a8de0050e433a4023
 #: ../../collector.introduction.rst:209
 msgid "Displays:"
-msgstr ""
+msgstr "Affiche :"
 
 # 9593282177ad4dab88f1b54e6e609757
 #: ../../collector.introduction.rst:60
@@ -210,17 +222,21 @@ msgid ""
 "``<enter>`` in any filter box. Filter box expressions are AND'ed. Filter "
 "syntax supports :"
 msgstr ""
+"Chaque colonne de la table est apte au filtrage. Les filtres sont activés par pression sur ``<Entrée>`` "
+"dans n'importe quelle boite de saisie de filtre. Les expressions des différents filtres de colonne sont "
+"aggégées par des ET logiques. Leur syntaxe comprend :"
 
 # 6630d8f912cd4da9a76ccc12e108ff6a
 #: ../../collector.introduction.rst:32
 msgid "Each view has:"
-msgstr ""
+msgstr "Chaque vue dispose de :"
 
 # 8924f8ad8b3548fcad917e068f47cd31
 #: ../../collector.introduction.rst:46
 msgid ""
 "Filters can be designed from the :menuselection:`Admin --> Filters` view."
 msgstr ""
+"Les filtres peuvent être créés dans la vue :menuselection:`Admin --> Filtres`"
 
 # c0b7f2111fcc4505b91c492167407734
 #: ../../collector.introduction.rst:190
@@ -229,11 +245,16 @@ msgid ""
 "range. The metrics are gathered daily from tools like glance and sar running "
 "on the nodes. The opensvc agent pushes this information to database."
 msgstr ""
+"Génère et affiche les courbes de performance sur la durée choisie par "
+"l'utilisateur. Les métriques sont collectées quotidiennement depuis les "
+"statistiques d'outils comme sar et glance qui tournent sur les noeuds. "
+"L'agent OpenSVC est responsable de pousser ces informations au "
+"collecteur."
 
 # 3629d2a4fbdf40d2bcc6893a38e40020
 #: ../../collector.introduction.rst:124
 msgid "Host Name of the virtual machine encapsulated in the service, if any."
-msgstr ""
+msgstr "Le nom d'hôte de la machine virtuelle encapsulée dans le service, si applicable."
 
 # 97a59916a86a4af781ea4df4581220f9
 #: ../../collector.introduction.rst:148
@@ -241,6 +262,7 @@ msgid ""
 "Host name of the node the service should be running in a disaster recovery "
 "situation."
 msgstr ""
+"Le nom d'hôte du noeud sur lequel le service devrait tourner en cas de reprise sur sinistre."
 
 # 68594c9e6d514b7bb058d2052e5ad9b2
 #: ../../collector.introduction.rst:140
@@ -248,6 +270,7 @@ msgid ""
 "Host name of the node where the service should be running in optimal "
 "situation."
 msgstr ""
+"Le nom d'hôte du noeud sur lequel le service devrait tourner en situation optimale."
 
 # b1f972b2fe824e7098697228de331dfb
 #: ../../collector.introduction.rst:180
@@ -256,6 +279,10 @@ msgid ""
 "most comprehensive data set the collector knows about this node. server, os, "
 "mem, cpu, location, power"
 msgstr ""
+"Dans toutes les vues, cliquer sur un nom de noeud ouvre un encart tabulé qui "
+"affiche l'intégralité des informations disponibles sur le noeud dans la base "
+"du collecteur. Serveur, système d'exploitation, mémoire, processeurs, "
+"géolocalisation, alimentation"
 
 # 25d5c13ee03d41f5ba6663b0630a9048
 #: ../../collector.introduction.rst:95
@@ -264,6 +291,9 @@ msgid ""
 "display the most comprehensive data set the collector knows about this "
 "service."
 msgstr ""
+"Dans toutes les vues, cliquer sur un nom de service ouvre un encart tabulé qui "
+"affiche l'intégralité des informations disponibles sur le service dans la base "
+"du collecteur."
 
 # 03dc4f00973f4e2baa5c239239a31f4e
 #: ../../collector.introduction.rst:183
@@ -272,31 +302,34 @@ msgid ""
 "Assets can be loaded from a tiers enterprise asset manager or filled-in "
 "manually."
 msgstr ""
+"Les informations affichées dans ces tabulations sont issues de la table "
+"des assets. Cette table peut être alimentée depuis un gestionnaire d'asset "
+"tiers ou alimentée manuellement."
 
 # 832c022a041c4a0ba39fec81ef13af36
 #: ../../collector.introduction.rst:14
 msgid "Internet collector account configuration"
-msgstr ""
+msgstr "Configuration des comptes utilisateur du collecteur internet"
 
 # 6006ed527ad94bec97c85f37cd1e74ed
 #: ../../collector.introduction.rst:7
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # a4cef482721442df9165005f02ac225a
 #: ../../collector.introduction.rst:136
 msgid "List of administrators contact emails for this service."
-msgstr ""
+msgstr "Liste des adresses email des administrateurs de ce service."
 
 # f66348ddb6b24dcab5b6975c3a31684f
 #: ../../collector.introduction.rst:132
 msgid "List of administrators contact names for this service."
-msgstr ""
+msgstr "Liste des noms des administrateurs de ce service."
 
 # 5fb171bc637f4b45b92d3cb57f5e26b6
 #: ../../collector.introduction.rst:192
 msgid "Metrics collection depend on the operating system. Some of them are:"
-msgstr ""
+msgstr "La liste des métriques dépend du système d'exploitation. On y trouve :"
 
 # 4fdd67cc2eec4afea3217dabc7dc4bfa
 #: ../../collector.introduction.rst:63
@@ -304,36 +337,38 @@ msgid ""
 "Multiple character wildcard for SQL expressions. Can be used as a header, "
 "trailer or in the middle of a pattern (%gie%01%)"
 msgstr ""
+"Wildcard pour une suite de caractères dans une expression SQL. Peut être utilisé "
+"en tête, en fin ou au sein d'une expression (%gie%01%)"
 
 # 4e2f3b0669df4bc1b59768a92178fea0
 #: ../../collector.introduction.rst:21
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 # 0ff27b4b26a646ccbbce1def817e340a
 #: ../../collector.introduction.rst:75
 msgid "Negate the pattern (!%gie%&%adomain.com)"
-msgstr ""
+msgstr "Négation de l'expression (!%gie%&%adomain.com)"
 
 # 4f9773bb30114de8b94802747114f637
 #: ../../collector.introduction.rst:176
 msgid "Node tabs"
-msgstr ""
+msgstr "Tabulations d'un noeud"
 
 # abb4c94a7b8d404a91aeb8945b1c2cb4
 #: ../../collector.introduction.rst:72
 msgid "OR multiple patterns (%gie%|%adomain.com)"
-msgstr ""
+msgstr "OU entre expressions (%gie%|%adomain.com)"
 
 # 260995cbfdca475d885c6db4d22d4197
 #: ../../collector.introduction.rst:42
 msgid "Persistent filters"
-msgstr ""
+msgstr "Filtres persistants"
 
 # 0a596ebcdcef4959b808208732b81d32
 #: ../../collector.introduction.rst:104
 msgid "Pushed to database daily by the opensvc nodeware cronjob."
-msgstr ""
+msgstr "Poussé en base du collecteur quotidiennement par les tâches planifiées de l'agent."
 
 # 06cf1119e2b24632bd3957f659f51255
 #: ../../collector.introduction.rst:116
@@ -341,6 +376,8 @@ msgid ""
 "Pushed to database daily by the opensvc nodeware cronjob. This information "
 "resides in the service env file on the nodes."
 msgstr ""
+"Poussé en base du collecteur quotidiennement par les tâches planifiées de l'agent. "
+"Cette information dérive du fichier env des services sur les noeuds."
 
 # 91bd56fa74234c2799f73ee2b631fd17
 #: ../../collector.introduction.rst:90
@@ -348,6 +385,7 @@ msgid ""
 "Select only cells with value inforior or equal to specified value or date "
 "(<=2012-04-01)"
 msgstr ""
+"Retenir les cellules dont la valeur est inférieure ou égale à la valeur ou la date spécifiée (<=2012-04-01)"
 
 # d07a2c3ac3474137bfc40d878b3fe82d
 #: ../../collector.introduction.rst:84
@@ -355,6 +393,7 @@ msgid ""
 "Select only cells with value inforior to specified value or date "
 "(<2012-04-01)"
 msgstr ""
+"Retenir les cellules dont la valeur est inférieure à la valeur ou la date spécifiée (<2012-04-01)"
 
 # f4d3abd7b38143eb8fc7a4de904105bb
 #: ../../collector.introduction.rst:87
@@ -362,6 +401,7 @@ msgid ""
 "Select only cells with value superior or equal to specified value or date "
 "(>=2012-04-01)"
 msgstr ""
+"Retenir les cellules dont la valeur est supérieure ou égale à la valeur ou la date spécifiée (>=2012-04-01)"
 
 # 4492fda590be4481831cc658cc5fd045
 #: ../../collector.introduction.rst:81
@@ -369,21 +409,22 @@ msgid ""
 "Select only cells with value superior to specified value or date "
 "(>2012-04-01)"
 msgstr ""
+"Retenir les cellules dont la valeur est supérieure à la valeur ou la date spécifiée (>2012-04-01)"
 
 # c20710ec22a744a38b9e3f937ea4f395
 #: ../../collector.introduction.rst:78
 msgid "Select only empty cells (!empty)"
-msgstr ""
+msgstr "Retenir les cellules vides uniquement (!empty)"
 
 # 6d2459640c43460893f1febb8ba7a648
 #: ../../collector.introduction.rst:93
 msgid "Service tabs"
-msgstr ""
+msgstr "Tabulations d'un service"
 
 # 184061ca24ec41298f2aa4c20704b29a
 #: ../../collector.introduction.rst:112
 msgid "Service type can be PRD, DEV, ..."
-msgstr ""
+msgstr "Le type de service peut être PRD, DEV, ..."
 
 # 2c77f3b634294f599517ad68228facb3
 #: ../../collector.introduction.rst:66
@@ -391,11 +432,13 @@ msgid ""
 "Single character wildcard for SQL expressions. Can be used as a header, "
 "trailer or in the middle of a pattern (%gie%01%)"
 msgstr ""
+"Wildcard pour un caractère unique dans une expression SQL. Peut être utilisé "
+"en tête, en fin ou au sein d'une expression (%gie%01%)"
 
 # 7a026aa602d34a31b571aaad27b36274
 #: ../../collector.introduction.rst:171
 msgid "Sketches service-nodes-storage-sites relationships"
-msgstr ""
+msgstr "Représente les relations entre services, noeuds, stockages et sites"
 
 # 2941ce307a864d86890974d92c25d399
 #: ../../collector.introduction.rst:44
@@ -404,6 +447,9 @@ msgid ""
 "It persists across navigation sessions.  Upon filter selection, the view is "
 "reloaded."
 msgstr ""
+"Le filtre actif est stocké en base de données et s'applique à toutes les vues. "
+"Il persiste entre sessions de navigation. Quand un filtre est choisi, la vue "
+"courrante est rechargée."
 
 # dee5483959f74bda86d314280ac0f3a7
 #: ../../collector.introduction.rst:11
@@ -411,6 +457,8 @@ msgid ""
 "The collector centralizes the agents data and provides advanced filtering, "
 "reporting and accounting features."
 msgstr ""
+"Le collecteur centralise les informations glanées depuis les agents et fournit "
+"les capacités de filtrage, de mise en rapports et de comptabilité."
 
 # 8ee1ec9d8c4045d2963d21a1111d028a
 #: ../../collector.introduction.rst:9
@@ -419,27 +467,31 @@ msgid ""
 "mode or in client-hosted mode. Contact sales@opensvc.com for licensing "
 "information."
 msgstr ""
+"Le collecteur est un site web 2.0, commercialisé sous license, disponible soit "
+"en mode SaaS, soit déployé sur les sites clients. Contactez sales@opensvc.com "
+"pour obtenir les détails concernant le mode de license."
 
 # f466b722b05c4b0aa7d94c46c2b87e12
 #: ../../collector.introduction.rst:211
 msgid "The current node ruleset"
-msgstr ""
+msgstr "Le jeu de règles actuel du noeud"
 
 # 5f8c225591fa4867b73932ce60f77332
 #: ../../collector.introduction.rst:212
 msgid "The current per-module compliance status of the node"
-msgstr ""
+msgstr "L'état actuel de conformité du noeud, module par module"
 
 # 2fdbeaeebca34da4a681883fc945ba43
 #: ../../collector.introduction.rst:213
 msgid "The modulesets attached to the node"
-msgstr ""
+msgstr "Les jeux de modules attachés au noeud"
 
 # f86636c70f674e169064d8130a5849a7
 #: ../../collector.introduction.rst:120
 msgid ""
 "Timestamp updated upon service information receive from the nodeware cronjob."
 msgstr ""
+"Un horodatage mis à jour quand l'agent envoit les configurations de service."
 
 # 59e51df012164b0aad7b5f352b2bca92
 #: ../../collector.introduction.rst:53
@@ -449,92 +501,97 @@ msgid ""
 "database, thus persistent across user sessions and different browsing "
 "devices."
 msgstr ""
+"Les colonnes des vues peuvent être affichées ou masquées grace au sélecteur de colonnes. "
+"Chaque vue a un jeu de colonnes affichées par défaut. La sélection de colonnes d'un "
+"utilisateur est stockée en base de données. Elle est donc persistante entre sessions de "
+"navigation et entre appareils de consultation."
 
 # 58301630dc9144cbb64b005c95ef4aac
 #: ../../collector.introduction.rst:39
 msgid "View-specific tools"
-msgstr ""
+msgstr "Outils spécifiques aux vues"
 
 # 6fe0ea0a23624a15a514c0e392dfe59d
 #: ../../collector.introduction.rst:28
 msgid "Views"
-msgstr ""
+msgstr "Vues"
 
 # ad65a1914cc342fc8d41d9f730977ff2
 #: ../../collector.introduction.rst:30
 msgid "Views present data as tables."
-msgstr ""
+msgstr "Les vues présentent les données sous forme de tableau."
 
 # 819657a752034fa8bdf93bd196f062de
 #: ../../collector.introduction.rst:128
 msgid ""
 "Virtualisation driver to handle the encapsulated virtual machine, if any."
 msgstr ""
+"Pilote de virtualisation utilisé pour gérer la machine virtuelle du service, si applicable."
 
 # 9b1f11feedeb4bd2ac6036c4680bd9d6
 #: ../../collector.introduction.rst:202
 msgid "all-disks: io/s, bandwidth"
-msgstr ""
+msgstr "tous les disques : io/s, bande passante"
 
 # 998472f3499d48e6b8f1a60799d5d512
 #: ../../collector.introduction.rst:207
 msgid "compliance"
-msgstr ""
+msgstr "conformité"
 
 # c654d3fe94fa44e198cc17fc2986025a
 #: ../../collector.introduction.rst:194
 msgid "cpu: usr, sys, wait, irq, guest, steal, idle, nice, iowait, soft"
-msgstr ""
+msgstr "processeur: usr, sys, wait, irq, guest, steal, idle, nice, iowait, soft"
 
 # 8647827551484b45840f1c3cdeb8021c
 #: ../../collector.introduction.rst:164
 msgid "env"
-msgstr ""
+msgstr "env"
 
 # 44ae77ac47a9433a8d4aecca91e8e656
 #: ../../collector.introduction.rst:200
 msgid "load: avg1, avg5, avg15, runq size, proc list size"
-msgstr ""
+msgstr "charge : avg1, avg5, avg15, runq size, proc list size"
 
 # 80d919e92aa14927944192b46721b4b0
 #: ../../collector.introduction.rst:196
 msgid "mem: commit, free, used by usr, buffer, cache, sys"
-msgstr ""
+msgstr "mémoire : commit, free, used by usr, buffer, cache, sys"
 
 # 05652beb65df400cab6f87d2fa8c225b
 #: ../../collector.introduction.rst:204
 msgid "per-disk: io/s, request size, wait time, service time, %util, bandwidth"
-msgstr ""
+msgstr "par disque : io/s, taille de requête, temps d'attente, temps de service, %util, bande passante"
 
 # 16d1e553b05b4133b0fcb2322f36ee61
 #: ../../collector.introduction.rst:100
 msgid "properties"
-msgstr ""
+msgstr "propriétés"
 
 # 00bd0ea57b094a0891d2e6769a8d9fb5
 #: ../../collector.introduction.rst:159
 msgid "resources"
-msgstr ""
+msgstr "ressources"
 
 # ed7f96bf47a44cd6934eafe70b09b728
 #: ../../collector.introduction.rst:188
 msgid "stats"
-msgstr ""
+msgstr "stats"
 
 # 501a2b6d7e934ef9ab1fc60294f83118
 #: ../../collector.introduction.rst:198
 msgid "swap: free, used, used but cached"
-msgstr ""
+msgstr "swap : libre, utilisé, utilisé mais en cache"
 
 # a04f830516614b0591ef072a0a9e18d4
 #: ../../collector.introduction.rst:169
 msgid "topology"
-msgstr ""
+msgstr "topologie"
 
 # bd42139780224fd19fbd2df7608c280f
 #: ../../collector.introduction.rst:216
 msgid "wiki"
-msgstr ""
+msgstr "wiki"
 
 # fee1e62f997e4a399d3579efda6065ab
 #: ../../collector.introduction.rst:58
@@ -542,6 +599,8 @@ msgid ""
 "|video-icon| `Watch a video <http://www.youtube.com/watch?"
 "feature=player_embedded&v=32pyu623U7A>`_"
 msgstr ""
+"|video-icon| `Regarder une vidéo <http://www.youtube.com/watch?"
+"feature=player_embedded&v=32pyu623U7A>`_"
 
 # ef5044297ff24b22bd49a2cbcb108dd2
 #: ../../collector.introduction.rst:51
@@ -549,6 +608,8 @@ msgid ""
 "|video-icon| `Watch a video <http://www.youtube.com/watch?"
 "feature=player_embedded&v=8PLTJuEOHRs>`_"
 msgstr ""
+"|video-icon| `Regarder une vidéo <http://www.youtube.com/watch?"
+"feature=player_embedded&v=8PLTJuEOHRs>`_"
 
 # 4644ad1ec1df4d95b886c61594cc662e
 #: ../../collector.introduction.rst:178
@@ -556,3 +617,5 @@ msgid ""
 "|video-icon| `Watch a video <http://www.youtube.com/watch?"
 "feature=player_embedded&v=tEqKPRZ4YeA>`_"
 msgstr ""
+"|video-icon| `Regarder une vidéo <http://www.youtube.com/watch?"
+"feature=player_embedded&v=tEqKPRZ4YeA>`_"

@@ -20,9 +20,9 @@ msgstr ""
 # 756779c0fbbe4457a272bce83bff6e24
 #: ../../collector.rst:2
 msgid "Collector"
-msgstr ""
+msgstr "Collecteur"
 
 # 6f949c4c05b94f4ea4685ee023327553
 #: ../../collector.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu :"
