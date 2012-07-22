@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-07-22 17:30\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,430 +18,501 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # b0f52bbb29f24232b8ed0720366e3c86
-#: ../../collector.view.actions.rst:51
+#: ../../collector.view.actions.rst:55
 msgid "**Action**"
-msgstr ""
+msgstr "**Action**"
 
 # 83e3e9f1a37949a38f52ade98d611332
-#: ../../collector.view.actions.rst:39
+#: ../../collector.view.actions.rst:43
 msgid "**App**"
-msgstr ""
+msgstr "**App**"
 
 # 32f4a5e59992449da10cd0e7631ceda7
-#: ../../collector.view.actions.rst:89
+#: ../../collector.view.actions.rst:93
 msgid "**Begin**"
-msgstr ""
+msgstr "**Début**"
 
 # 0e413d405f35437bb7650f268f925d2f
-#: ../../collector.view.actions.rst:93
+#: ../../collector.view.actions.rst:97
 msgid "**End**"
-msgstr ""
+msgstr "**Fin**"
+
+# 993ee5b67cd8409580d40e191497278e
+#: ../../collector.view.actions.rst:25
+msgid "**Learn which system commands are run by the nodeware**"
+msgstr "**Découvrir quelles commandes système sont utilisées par l'agent**"
 
 # 792e01ca23af4b1589c9ddf249ec5a0e
-#: ../../collector.view.actions.rst:101
+#: ../../collector.view.actions.rst:105
 msgid "**Log**"
-msgstr ""
+msgstr "**Journal**"
 
 # bc5fbe59f80847efacc6c7144b6e44f0
-#: ../../collector.view.actions.rst:47
+#: ../../collector.view.actions.rst:51
 msgid "**Node**"
-msgstr ""
+msgstr "**Noeud**"
 
 # 79b11394491943259184ce8e2842d87e
-#: ../../collector.view.actions.rst:97
+#: ../../collector.view.actions.rst:101
 msgid "**Pid**"
+msgstr "**Pid**"
+
+# 109310a3ed62455392385269747314fb
+#: ../../collector.view.actions.rst:21
+msgid "**Problem patterns**"
+msgstr "**Récurrence des problèmes**"
+
+# ba68c4fb84ea4bfbadf2acce42e41f50
+#: ../../collector.view.actions.rst:13
+msgid ""
+"**Quick insight of unacknowledged errors affecting a specific perimeter**"
 msgstr ""
+"**Apperçu rapide des erreurs non aquittées affectant un périmètre particulier**"
 
 # 856ce107a98248eda6085c39723ca395
-#: ../../collector.view.actions.rst:43
+#: ../../collector.view.actions.rst:47
 msgid "**Responsible**"
-msgstr ""
+msgstr "**Responsable**"
+
+# 667b49bbf81a4dbf80bc26eda5aabc8a
+#: ../../collector.view.actions.rst:17
+msgid "**Retrospective problem analysis**"
+msgstr "**Analyse rétrospective des problèmes**"
 
 # 5d8094a9435749329b68d1f9afcbbab8
-#: ../../collector.view.actions.rst:35
+#: ../../collector.view.actions.rst:39
 msgid "**Service**"
-msgstr ""
+msgstr "**Service**"
 
 # a73d8eda5a5a4fafa60b7448b9875d96
-#: ../../collector.view.actions.rst:77
+#: ../../collector.view.actions.rst:81
 msgid "**Status**"
-msgstr ""
+msgstr "**Etat**"
 
 # aa713f4912fd45e29a0e9197a82881b4
-#: ../../collector.view.actions.rst:25
+#: ../../collector.view.actions.rst:29
 msgid "**Trace who was alerted of a problem, and when**"
-msgstr ""
+msgstr "**Consulter qui a été alerté d'un problème, et quand**"
 
 # 098452ef92ce43d8a2dadd16d98e5889
-#: ../../collector.view.actions.rst:56
+#: ../../collector.view.actions.rst:60
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 # 9fc9d2eeb9cf4620910af07e0f34ea24
 #: ../../collector.view.actions.rst:4
 msgid "Actions view"
-msgstr ""
+msgstr "Vue des actions"
 
 # b0b0465dcb0b4957a7c2fc2ca50b2b00
-#: ../../collector.view.actions.rst:91
+#: ../../collector.view.actions.rst:95
 msgid "Begin timestamp of the action."
-msgstr ""
+msgstr "Horodatage du début d'action."
 
 # fe5b3c1870e3485ab8c9e3fbc43b9ab4
-#: ../../collector.view.actions.rst:106
+#: ../../collector.view.actions.rst:110
 msgid "Dashboard notifications"
-msgstr ""
+msgstr "Notifications dans le tableau de bord"
 
 # e455547e43fb4e52bff2dd6697f70bcb
-#: ../../collector.view.actions.rst:56
+#: ../../collector.view.actions.rst:60
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # ce7f66c9c621498c86b97a3b9f14b438
-#: ../../collector.view.actions.rst:95
+#: ../../collector.view.actions.rst:99
 msgid "End timestamp of the action."
-msgstr ""
+msgstr "Horodatage de fin d'action."
 
 # ab6d82ed2f2b40dfbc675b45d812646d
-#: ../../collector.view.actions.rst:14
+#: ../../collector.view.actions.rst:15
 msgid "Example: ``ack=0 & status=err & responsible=me``"
-msgstr ""
+msgstr "Exemple : ``ack=0 & status=err & responsible=me``"
 
 # 2fede88ddca1468d985bf0cb2e2139cc
-#: ../../collector.view.actions.rst:23
+#: ../../collector.view.actions.rst:27
 msgid "Example: ``log=%sg_persist%|%scu%``"
-msgstr ""
+msgstr "Exemple : ``log=%sg_persist%|%scu%``"
 
 # ba0d009a7d6c42d0b6538575357735a5
-#: ../../collector.view.actions.rst:20
+#: ../../collector.view.actions.rst:23
 msgid "Example: ``service=some_service & action=syncnodes & status!=ok``"
-msgstr ""
+msgstr "Exemple : ``service=some_service & action=syncnodes & status!=ok``"
 
 # d02b3560054d47288a3ca5392dcb48f8
-#: ../../collector.view.actions.rst:17
+#: ../../collector.view.actions.rst:19
 msgid "Example: ``service=some_service & begin>2010-01-10% & end<2010-01-12%``"
 msgstr ""
+"Exemple : ``service=some_service & begin>2010-01-10% & end<2010-01-12%``"
 
 # 0d4f5a68f49c4f33a0c8cd1f418714f5
-#: ../../collector.view.actions.rst:33
+#: ../../collector.view.actions.rst:37
 msgid "Fields"
-msgstr ""
+msgstr "Champs"
 
 # 1199551cdbda4e28acb34ad358ac7efa
-#: ../../collector.view.actions.rst:49
+#: ../../collector.view.actions.rst:53
 msgid ""
 "Node where the action has be executed. The node name is a link to the asset "
 "view."
 msgstr ""
+"Le noeud sur lequel l'action a été exécutée. Ce nom est un lien vers la vue "
+"des assets."
 
 # 70ad6feb7d3343ef851d9209a8c72399
-#: ../../collector.view.actions.rst:99
+#: ../../collector.view.actions.rst:103
 msgid ""
 "Process identifier of the session handling the action on the node. Click to "
 "active a pid filter with this value."
 msgstr ""
+"Identificateur de processus de la session en charge de l'exécution de "
+"l'action sur le noeud. Cliquer pour activer un filtre sur cette valeur de "
+"pid."
 
 # f430a237703f4fa59fa6f07e28ba964e
-#: ../../collector.view.actions.rst:28
+#: ../../collector.view.actions.rst:32
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # 6e6a4cadf7834c4292aed571b358236f
-#: ../../collector.view.actions.rst:108
+#: ../../collector.view.actions.rst:112
 msgid "Service action error count"
-msgstr ""
+msgstr "Compteur d'erreurs d'action sur les services"
 
 # 5fc29edfafe749cfa4be353782baeb3c
-#: ../../collector.view.actions.rst:37
+#: ../../collector.view.actions.rst:41
 msgid ""
 "Service name the action applied to. Private collectors usually report "
 "shortnames, shared collectors usually report service names with domain names."
 msgstr ""
+"Le nom du service sur lequel l'action prend effet. Les collecteurs privés "
+"mentionnent souvent des noms courts, alors que les collecteurs SaaS "
+"mentionnent des noms incluant le nom du domaine."
 
 # 8654750578d543c5a24f9c3241973b81
-#: ../../collector.view.actions.rst:80
+#: ../../collector.view.actions.rst:84
 msgid "Status Description"
-msgstr ""
+msgstr "Description de l'état"
 
 # b4950f99531c45c98f83d5d8d218ab42
-#: ../../collector.view.actions.rst:82
+#: ../../collector.view.actions.rst:86
 msgid "The action completed succesfully."
-msgstr ""
+msgstr "L'action a été exécutée avec succès."
 
 # 480d5644afae4866bb33b86f5eeefbc1
-#: ../../collector.view.actions.rst:85
+#: ../../collector.view.actions.rst:89
 msgid "The action completed with some error. Acknowledged by a user."
 msgstr ""
+"L'action a été exécutée avec des erreurs. Aquittées par un utilisateur."
 
 # 63a40b989ecd4eb9a3cf64e5377665ad
-#: ../../collector.view.actions.rst:84
+#: ../../collector.view.actions.rst:88
 msgid ""
 "The action completed with some error. Investigation and acknowledgement are "
 "needed."
 msgstr ""
+"L'action a été exécutée avec des erreurs. Investigation et aquittement "
+"requis."
 
 # bc79929d31a24378a6407c683fe8c481
-#: ../../collector.view.actions.rst:83
+#: ../../collector.view.actions.rst:87
 msgid "The action completed with some warnings. No acknowledgement needed."
 msgstr ""
+"L'action a été exécutée avec des avertissement. Pas d'aquittement nécessaire."
 
 # fdf0272812ea485aae573b6da1c643cc
-#: ../../collector.view.actions.rst:103
+#: ../../collector.view.actions.rst:107
 msgid "The action log as it is displayed on the node standart output."
 msgstr ""
+"Le journal de l'action tel qu'il a été affiché sur la sortie standard du "
+"noeud."
 
 # 66d266f545f94a59881b2381ad4530f8
-#: ../../collector.view.actions.rst:41
+#: ../../collector.view.actions.rst:45
 msgid ""
 "The application code is a way to group services dedicated/paid by some "
 "corporate entity or project. You can setup any application code you want in "
 "your services configuration file, using the app parameter."
 msgstr ""
+"Le code applicatif est un moyen de grouper les services dédiés ou financés "
+"par une entité ou un projet de l'entreprise. Vous pouvez choisir le code "
+"applicatif d'un service dans son fichier de configuration, en utilisant le "
+"paramère 'app'."
 
 # 5e8662a991894ac18691fc723a80a7d2
-#: ../../collector.view.actions.rst:86
+#: ../../collector.view.actions.rst:90
 msgid ""
 "The collector has been informed of the action begining but has no yet "
 "received ending logs."
 msgstr ""
+"Le collecteur a été informé d'un début d'action mais n'a pas encore reçu les "
+"journaux sur fin d'action."
 
 # 50c63debaa4d400f9529296d0dd11f13
-#: ../../collector.view.actions.rst:53
+#: ../../collector.view.actions.rst:57
 msgid ""
 "The executed action name. An action usually aggregates a number of log "
 "lines, plus a line with no log message as a header. The default action view "
 "has an 'empty' log filter active so you are presented only actions without "
 "their logs. You can drill down a specific action by clicking on its pid."
 msgstr ""
+"Le nom de l'action exécutée. Une action regroupe en général un certain "
+"nombre de lignes de journal, plus une ligne d'en-tête, sans journal associé. "
+"La vue par défaut a un filtre 'empty' dans la colonne journal, afin que ne "
+"soient présentées que les lignes d'en-tête. Il est possible de consulter le "
+"journal d'une action en cliquant sur son pid."
 
 # 1616cbc77cf3454caea5dc88752d419b
-#: ../../collector.view.actions.rst:45
+#: ../../collector.view.actions.rst:49
 msgid ""
 "The responsibles are persons receiving alerts for a service. Hovering the "
 "mouse over the icon spawns the name of the responsibles. No icon means no "
 "responsible, which is an anomaly, and as such, cause alerts to be emitted to "
 "the site's administrator/manager."
 msgstr ""
+"Les responsables sont les individus recevant les alerts d'un service. Le "
+"survol du pointeur au dessus de l'icône fait apparaitre le nom des "
+"responsables. L'absence d'icône identique l'absence de responsable, ce qui "
+"est une anomalie, et en tant que tel, cause le routage des alertes vers les "
+"utilisateurs 'Manager' du site."
 
 # 7c411099d3044a1a80eb35a62a9d42f6
 #: ../../collector.view.actions.rst:9
 msgid ""
 "This view displays the journal of all services events with their status."
 msgstr ""
+"Cette vue affiche les journaux des actions exécutées sur tous les services "
+"et leur état."
 
 # 2f9212a9994f4e5aa4d829fcced4a209
 #: ../../collector.view.actions.rst:11
 msgid "Typical usage:"
-msgstr ""
+msgstr "Utilisation usuelle :"
 
 # 04b43f970ea949e0b7d18368a65ff43a
 #: ../../collector.view.actions.rst:7
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # 0c3ae0ef680f4dde85604f7f7eaa1365
-#: ../../collector.view.actions.rst:70
+#: ../../collector.view.actions.rst:74
 msgid ""
 "acquire scsi persistent reservations on disks of the service (wrapped by "
 "startvg and startdisk)"
 msgstr ""
+"Aquérir les réservations persistentes scsi sur les disques du service "
+"(également déclenché par startvg et startdisk)"
 
 # 127a56727f4846058ae1378a19689f1d
-#: ../../collector.view.actions.rst:86
+#: ../../collector.view.actions.rst:90
 msgid "empty"
-msgstr ""
+msgstr "empty"
 
 # 1655060f398b4b48b895658822039ccc
-#: ../../collector.view.actions.rst:84
+#: ../../collector.view.actions.rst:88
 msgid "err"
-msgstr ""
+msgstr "err"
 
 # c324e30a5ae3420e9cdc48d3b78a4f63
-#: ../../collector.view.actions.rst:85
+#: ../../collector.view.actions.rst:89
 msgid "err (strikethrough)"
-msgstr ""
+msgstr "err (barré)"
 
 # d455b714eb684ddb8f4841bf0c7bc085
-#: ../../collector.view.actions.rst:68
+#: ../../collector.view.actions.rst:72
 msgid "mount"
-msgstr ""
+msgstr "mount"
 
 # fc38938adf734566bc1fec701a4415b8
-#: ../../collector.view.actions.rst:82
+#: ../../collector.view.actions.rst:86
 msgid "ok"
-msgstr ""
+msgstr "ok"
 
 # 41f7f0c686e6489dbbc6f995cecfadc6
-#: ../../collector.view.actions.rst:74
+#: ../../collector.view.actions.rst:78
 msgid "print status of all service resources"
-msgstr ""
+msgstr "affiche les états de toutes les ressources du service"
 
 # 7670cf0b0c3e4f57a5c76e7642d545b3
-#: ../../collector.view.actions.rst:74
+#: ../../collector.view.actions.rst:78
 msgid "print_status"
-msgstr ""
+msgstr "print_status"
 
 # 3283a71197724f13bbc823c80d100c68
-#: ../../collector.view.actions.rst:70
+#: ../../collector.view.actions.rst:74
 msgid "prstart"
-msgstr ""
+msgstr "prstart"
 
 # 3424c62cdefd4ff7a177c5c19b2c0bde
-#: ../../collector.view.actions.rst:71
+#: ../../collector.view.actions.rst:75
 msgid "prstop"
-msgstr ""
+msgstr "prstop"
 
 # 5c303d6f198947a98b257ab3bbefd11e
-#: ../../collector.view.actions.rst:71
+#: ../../collector.view.actions.rst:75
 msgid ""
 "release scsi persistent reservations on disks of the service (wrapped by "
 "stopvg and stopdisk)"
 msgstr ""
+"Libère les réservations persistentes scsi des disques du service (également "
+"déclenché par stopvg et stopdisk)"
 
 # e54185c2ff204eb6bfa1c57645d1d2be
-#: ../../collector.view.actions.rst:58
+#: ../../collector.view.actions.rst:62
 msgid "start"
-msgstr ""
+msgstr "start"
 
 # f71c6f345bed4d1797c7b2c88951612a
-#: ../../collector.view.actions.rst:66
+#: ../../collector.view.actions.rst:70
 msgid "start resources of type : disk group"
-msgstr ""
+msgstr "démarre les ressources de type : disk group"
 
 # 65b613cac8b54a99997396b691c6ac27
-#: ../../collector.view.actions.rst:68
+#: ../../collector.view.actions.rst:72
 msgid "start resources of type : fs"
-msgstr ""
+msgstr "démarre les ressources de type : fs"
 
 # 5002b36fd1e145b1abbcf097520d33a3
-#: ../../collector.view.actions.rst:62
+#: ../../collector.view.actions.rst:66
 msgid "start resources of type : ip"
-msgstr ""
+msgstr "démarre les ressources de type : ip"
 
 # f78d22a73c7a4c2b8e980ba74cab41a1
-#: ../../collector.view.actions.rst:58
+#: ../../collector.view.actions.rst:62
 msgid ""
 "start resources of type : ip, loop, disk group, zpool, fs, container, app"
 msgstr ""
+"démarre les ressources de type : ip, loop, disk group, zpool, fs, container, "
+"app"
 
 # 04412d927ffc47dd9efd572eb44c3574
-#: ../../collector.view.actions.rst:64
+#: ../../collector.view.actions.rst:68
 msgid "start resources of type : loop"
-msgstr ""
+msgstr "démarre les ressources de type : loop"
 
 # f1d16ada70de4694b1920401ec96e347
-#: ../../collector.view.actions.rst:60
+#: ../../collector.view.actions.rst:64
 msgid "start resources of type : loop, disk group, zpool, fs"
-msgstr ""
+msgstr "démarre les ressources de type : loop, disk group, zpool, fs"
 
 # 37e1ac58f0194b1fb92200f980c0c38c
-#: ../../collector.view.actions.rst:60
+#: ../../collector.view.actions.rst:64
 msgid "startdisk"
-msgstr ""
+msgstr "startdisk"
 
 # 46b87f7716b540a090dfba8c7430a4f8
-#: ../../collector.view.actions.rst:62
+#: ../../collector.view.actions.rst:66
 msgid "startip"
-msgstr ""
+msgstr "startip"
 
 # 9f5cb3300c424a4086052d5d80437e5b
-#: ../../collector.view.actions.rst:64
+#: ../../collector.view.actions.rst:68
 msgid "startloop"
-msgstr ""
+msgstr "startloop"
 
 # 69c861df7c7d486d8b52e0fb20efa4ce
-#: ../../collector.view.actions.rst:66
+#: ../../collector.view.actions.rst:70
 msgid "startvg"
-msgstr ""
+msgstr "startvg"
 
 # 93517fd7a40a429a899846c632122e01
-#: ../../collector.view.actions.rst:59
+#: ../../collector.view.actions.rst:63
 msgid "stop"
-msgstr ""
+msgstr "stop"
 
 # f7511333e500443785e4b1c8c0a4f84a
-#: ../../collector.view.actions.rst:59
+#: ../../collector.view.actions.rst:63
 msgid ""
 "stop resources of type : app, container, fs, zpool, disk group, loop, ip"
 msgstr ""
+"arrête les ressources de type : app, container, fs, zpool, disk group, loop, "
+"ip"
 
 # 8c459eeb3e374827a179ac80b1779443
-#: ../../collector.view.actions.rst:67
+#: ../../collector.view.actions.rst:71
 msgid "stop resources of type : disk group"
-msgstr ""
+msgstr "arrête les ressources de type : disk group"
 
 # 8d21e43d7c5e44c48d9b519d1b7cc993
-#: ../../collector.view.actions.rst:69
+#: ../../collector.view.actions.rst:73
 msgid "stop resources of type : fs"
-msgstr ""
+msgstr "arrête les ressources de type : fs"
 
 # b3be45b4199e4d8dabc63eb83305a13d
-#: ../../collector.view.actions.rst:61
+#: ../../collector.view.actions.rst:65
 msgid "stop resources of type : fs, zpool, disk group, loop"
-msgstr ""
+msgstr "arrête les ressources de type : fs, zpool, disk group, loop"
 
 # 45c690b7053842f9af53ab85d6223b7e
-#: ../../collector.view.actions.rst:63
+#: ../../collector.view.actions.rst:67
 msgid "stop resources of type : ip"
-msgstr ""
+msgstr "arrête les ressources de type : ip"
 
 # 8b0c0dafe6cd4b798690401e1253019c
-#: ../../collector.view.actions.rst:65
+#: ../../collector.view.actions.rst:69
 msgid "stop resources of type : loop"
-msgstr ""
+msgstr "arrête les ressources de type : loop"
 
 # eb48a68d6f87442a91dd440de2f5ef2c
-#: ../../collector.view.actions.rst:61
+#: ../../collector.view.actions.rst:65
 msgid "stopdisk"
-msgstr ""
+msgstr "stopdisk"
 
 # f049877da9094459929b519bfa800c57
-#: ../../collector.view.actions.rst:63
+#: ../../collector.view.actions.rst:67
 msgid "stopip"
-msgstr ""
+msgstr "stopip"
 
 # c8450a89ed904bcf9d8b65390ffa376e
-#: ../../collector.view.actions.rst:65
+#: ../../collector.view.actions.rst:69
 msgid "stoploop"
-msgstr ""
+msgstr "stoploop"
 
 # 17abd21d07774e6a8cbef0032e1d1439
-#: ../../collector.view.actions.rst:67
+#: ../../collector.view.actions.rst:71
 msgid "stopvg"
-msgstr ""
+msgstr "stopvg"
 
 # 4f0a80e234534dee920fb78194e14395
-#: ../../collector.view.actions.rst:73
+#: ../../collector.view.actions.rst:77
 msgid "syncdrp"
-msgstr ""
+msgstr "syncdrp"
 
 # a50980a8c815417f874bfe2ded05bbfd
-#: ../../collector.view.actions.rst:72
+#: ../../collector.view.actions.rst:76
 msgid "syncnodes"
-msgstr ""
+msgstr "syncnodes"
 
 # 96c51a7a4fe6489184ce09accc1c5925
-#: ../../collector.view.actions.rst:73
+#: ../../collector.view.actions.rst:77
 msgid ""
 "trigger hard-coded and user-defined file synchronization to disaster "
 "recovery nodes. Optionally creates snapshots to send a coherent file set. No-"
 "op if run from a node not running the service."
 msgstr ""
+"déclenche les synchronisations de données codées en dur et celles définies "
+"par l'utilisateur vers les noeuds de reprise sur sinistre. Accessoirement, "
+"crée les snapshots pour envoyer un jeu de données cohérent. Sans effet si "
+"lancé depuis un noeud ou le service n'est pas actif."
 
 # c536c216915a4cea8628edf6452ee977
-#: ../../collector.view.actions.rst:72
+#: ../../collector.view.actions.rst:76
 msgid ""
 "trigger hard-coded and user-defined file synchronization to secondary nodes. "
 "Optionally creates snapshots to send a coherent file set. No-op if run from "
 "a node not running the service."
 msgstr ""
+"déclenche les synchronisations de données codées en dur et celles définies "
+"par l'utilisateur vers les noeuds de reprise sur incident. Accessoirement, "
+"crée les snapshots pour envoyer un jeu de données cohérent. Sans effet si "
+"lancé depuis un noeud ou le service n'est pas actif."
 
 # 3be62d7b3c904e62bc8ff79aa90957ce
-#: ../../collector.view.actions.rst:69
+#: ../../collector.view.actions.rst:73
 msgid "umount"
-msgstr ""
+msgstr "umount"
 
 # 4cd63f99e5b1425189bd571dec81806d
-#: ../../collector.view.actions.rst:83
+#: ../../collector.view.actions.rst:87
 msgid "warn"
-msgstr ""
+msgstr "attention"

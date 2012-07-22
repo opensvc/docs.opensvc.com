@@ -20,22 +20,22 @@ msgstr ""
 # e569d739f2814141a9f423757b9bb7a1
 #: ../../collector.stats.oslifecycle.rst:11
 msgid "Current status of an operating system upgrade compaign"
-msgstr ""
+msgstr "Etats actuels d'une campagne de mise à jour des systèmes d'exploitation"
 
 # 490042f4fb34479d8d4187a16ba8b656
 #: ../../collector.stats.oslifecycle.rst:9
 msgid "Operating system dependency"
-msgstr ""
+msgstr "Dépendance à un système d'exploitation"
 
 # 116ef3f8fdcd4863ad64d29d2587cde8
 #: ../../collector.stats.oslifecycle.rst:2
 msgid "Operating system lifecycle"
-msgstr ""
+msgstr "Cycle de vie des systèmes d'exploitation"
 
 # caf4c06d70be4343a91b69ba25bfca75
 #: ../../collector.stats.oslifecycle.rst:14
 msgid "Screenshots"
-msgstr ""
+msgstr "Copies d'écran"
 
 # b253ce094f5a4d9c92515109957d13b3
 #: ../../collector.stats.oslifecycle.rst:7
@@ -45,13 +45,17 @@ msgid ""
 "charts focus on each family. These charts allow administrators and managers "
 "to analyse:"
 msgstr ""
+"Cette vue représente graphiquement les parts de chaque système d'exploitation dont "
+"les noeuds sont connus d'OpenSVC. Une première courbe montre les parts de chaque "
+"famille de système d'exploitation. Les courbes suivantes détaillent chaque famille. "
+"Ces courbes mettent en lumière pour les administrateurs et les responsables :"
 
 # 889e1ce462d24bc19014bbd7147d4622
 #: ../../collector.stats.oslifecycle.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # b2f98381f98f40b8a6281460d71dd3f6
 #: ../../collector.stats.oslifecycle.rst:10
 msgid "Which operating system is gaining ground over the others"
-msgstr ""
+msgstr "Quel système d'exploitation gagne du terrain par rapport aux autres"

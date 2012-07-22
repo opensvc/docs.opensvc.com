@@ -11,15 +11,19 @@ This view displays the journal of all services events with their status.
 Typical usage:
 
 **Quick insight of unacknowledged errors affecting a specific perimeter**
+
     Example: ``ack=0 & status=err & responsible=me``
 
 **Retrospective problem analysis**
+
     Example: ``service=some_service & begin>2010-01-10% & end<2010-01-12%``
 
 **Problem patterns**
+
     Example: ``service=some_service & action=syncnodes & status!=ok``
 
 **Learn which system commands are run by the nodeware**
+
     Example: ``log=%sg_persist%|%scu%``
 
 **Trace who was alerted of a problem, and when**
