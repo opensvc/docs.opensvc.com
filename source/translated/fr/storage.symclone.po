@@ -22,8 +22,8 @@ msgid ""
 "A service with only symclone sync resource can be defined to drive the clone "
 "of other servers, just for the benefit of centralised logging and scheduling."
 msgstr ""
-"Il est possible de créer un service contenant uniquement une ressource de sycnronisation symclone "
-"afin de piloter les rafraîchissement du clone consommé par d'autres serveurs, juste pour le "
+"Il est possible de créer un service contenant uniquement une ressource de synchronisation symclone "
+"afin de piloter les rafraîchissements du clone consommé par d'autres serveurs, juste pour le "
 "bénéfice de la centralisation des journaux et pour la planification."
 
 # 1fa0b905b3df4ac5aee441866f28df83

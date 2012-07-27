@@ -19,7 +19,7 @@ msgstr ""
 # 7040fb927d9b43afafbde08ae8814228
 #: ../../storage.evasnap.rst:29
 msgid ":command:`warn`"
-msgstr ""
+msgstr ":command:`warn`"
 
 # 649c55e4391345c091e1e800d8ce1067
 #: ../../storage.evasnap.rst:12
@@ -28,31 +28,34 @@ msgid ""
 "snapshots of other servers, just for the benefit of centralised logging and "
 "scheduling."
 msgstr ""
+"Il est possible de créer un service contenant uniquement une ressource de synchronisation evasnap "
+"afin de piloter les rafraîchissements des snapshots consommés par d'autres serveurs, juste pour le "
+"bénéfice de la centralisation des journaux et pour la planification."
 
 # 91e6a91582944120ac2b655a9649ccc0
 #: ../../storage.evasnap.rst:32
 msgid "A snapshot does not exist."
-msgstr ""
+msgstr "A des snapshots n'existe pas."
 
 # e157779ebb824305b0a0105d5f5cecc6
 #: ../../storage.evasnap.rst:33
 msgid "A snapshot exist but with incorrect origin."
-msgstr ""
+msgstr "Un des snapshots existe mais avec une origine incorrecte."
 
 # 303ffe5e7e9a4a5a8f3705936c7dd73a
 #: ../../storage.evasnap.rst:34
 msgid "A snapshot exist but with incorrect presentation (host or lunid)."
-msgstr ""
+msgstr "Un snapshot existe mais avec une présentation incorrecte (mauvais lun id ou mauvais hôte)"
 
 # ad7a16c73f83493bb48a00987aba49b8
 #: ../../storage.evasnap.rst:21
 msgid "Bypass the sync_min_delay protection."
-msgstr ""
+msgstr "Outre-passer la protection du sync_min_delay"
 
 # c50397fa2777475484323a9188c93aa7
 #: ../../storage.evasnap.rst:15
 msgid "Command set"
-msgstr ""
+msgstr "Commandes"
 
 # 97336b35584c4bf4b7995f4ebb852c44
 #: ../../storage.evasnap.rst:18
@@ -60,76 +63,77 @@ msgid ""
 "Delete Logical Units and snapshots, then create new snapshots and present "
 "them."
 msgstr ""
+"Supprime les unités logiques et les snapshots, puis les recrée et les présente."
 
 # 20aa5c95943a4916a62cd13719f2dbd4
 #: ../../storage.evasnap.rst:95
 msgid "EVA snapshots configuration"
-msgstr ""
+msgstr "Configuration des snapshots EVA"
 
 # 996973ee1f50456991ec7ba646788730
 #: ../../storage.evasnap.rst:48
 msgid "Example sssu.conf::"
-msgstr ""
+msgstr "Exemple de sssu.conf ::"
 
 # 5267e7c8deab4b8cb53363154bd28861
 #: ../../storage.evasnap.rst:100
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 # 3b7aaa5c7ff84cdaaa8cf0354f7f09ca
 #: ../../storage.evasnap.rst:2
 msgid "HP StorageWorks EVA snapshots"
-msgstr ""
+msgstr "Snapshots HP StorageWorks EVA"
 
 # 7c2ff5669128451fb3b487768ca4f136
 #: ../../storage.evasnap.rst:37
 msgid "Incorrect credentials for the manager."
-msgstr ""
+msgstr "Accréditions sur le gestionnaire incorrectes."
 
 # b22432dfd7b64503a804ef36a4905b4c
 #: ../../storage.evasnap.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # b60a60bfe1aa406e9029adc5e4fdfd56
 #: ../../storage.evasnap.rst:35
 msgid "Missing sssu binary."
-msgstr ""
+msgstr "Binaire sssu absent."
 
 # 7207c34d541c414b9f16774e45612319
 #: ../../storage.evasnap.rst:36
 msgid "Missing sssu.conf configuration file."
-msgstr ""
+msgstr "Fichier de configuration sssu.conf absent."
 
 # b14bbba4077d42eb93825f4a96d184ea
 #: ../../storage.evasnap.rst:44
 msgid "Pre-requisites"
-msgstr ""
+msgstr "Pré-requis"
 
 # f8d4bb6b815946ff9203e967c8b6f4d4
 #: ../../storage.evasnap.rst:103
 msgid "Resync a started service snapshots"
-msgstr ""
+msgstr "Resynchronise les snapshots d'un service démarré"
 
 # 39ce7bdf17ec405e9ff652a37281297b
 #: ../../storage.evasnap.rst:110
 msgid "Resync a stopped service snapshots"
-msgstr ""
+msgstr "Resynchronise les snapshots d'un service arrêté"
 
 # a1800eb3c17b4098a75cc973ca7e5d6b
 #: ../../storage.evasnap.rst:41
 msgid "Service configuration"
-msgstr ""
+msgstr "Configuration du service"
 
 # d4759c42c64549589ae7e3c89b6f2d0c
 #: ../../storage.evasnap.rst:56
 msgid "Service configuration file"
-msgstr ""
+msgstr "Fichier de configuration du service"
 
 # c053d7c81009485bacb6772b3d42e97c
 #: ../../storage.evasnap.rst:24
 msgid "Status"
-msgstr ""
+msgstr "Etats"
 
 # a5a47273ab1548168214b0327181f961
 #: ../../storage.evasnap.rst:10
@@ -142,21 +146,28 @@ msgid ""
 "source device set is used for production. The following documentation "
 "presents the configuration of such a service."
 msgstr ""
+"Le pilote des snapshots des baies de stockage EVA permet de répliquer une "
+"source vers plusieurs cibles. Il supporte l'action 'syncresync' qui "
+"automatise la recréation des snapshots et leur présentation aux noeuds. "
+"Un service OpenSVC peut facilement utiliser un jeu de devices snapshottés. "
+"Ce type de services est souvent utilisé pour les rôles de maintenance, "
+"pré-production et tests de performance où les disques sources sont utilisés "
+"en production. La présente documentation présente comment configurer un tel service."
 
 # 0d24b2e4062a4fc8b8ea2034f30f06fc
 #: ../../storage.evasnap.rst:38
 msgid "The array is not managed by the specified manager."
-msgstr ""
+msgstr "La baie de stockage n'est pas gérée par le gestionnaire spécifié."
 
 # 76613a9c4df247a1836509653e7bcf34
 #: ../../storage.evasnap.rst:27
 msgid "The last resync occured less than 'sync_max_delay' minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # 26d6f039ab0844b8bb9fc726a5099bda
 #: ../../storage.evasnap.rst:31
 msgid "The last resync occured more than 'sync_max_delay' minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # f2c97a636c5046caa2bf971a8472a688
 #: ../../storage.evasnap.rst:46
@@ -168,6 +179,13 @@ msgid ""
 "obfuscating the password in the output, local logs, and logs sent to the "
 "collector."
 msgstr ""
+"Le binaire sssu doit être installé sur le noeud et un lien symbolique "
+"/opt/opensvc/bin/sssu doit le pointer. Un fichier /opt/opensvc/etc/sssu.conf "
+"doit exister et contenir les informations d'autentification auprès du "
+"gestionnaire Command View pour chaque baie. Ce fichier de configuration "
+"de sssu doit avoir ses permissions positionnées à 600 et être propriété "
+"de root. OpenSVC se charge d'obfusquer le mot de passe dans les sorties "
+"et dans les journaux envoyés au collecteur."
 
 # 4860fa0fcdf346bd9435d03596ddcae9
 #: ../../storage.evasnap.rst:92
@@ -175,6 +193,8 @@ msgid ""
 "You can setup as many sync resources as needed to ensure a consistent "
 "replication scenario."
 msgstr ""
+"Il est possible de définir autant de ressources de synchronisation que "
+"nécessaire pour assurer un scénario de réplication consistent."
 
 # a6a9d634633c4fe286f0e45d1ad41d9c
 #: ../../storage.evasnap.rst:97
@@ -186,3 +206,10 @@ msgid ""
 "properties. This is important to make the snapshot resync as transparent as "
 "possible to the operating system, and not to trigger device renames."
 msgstr ""
+"Il est nécessaire de créer les snapshots manuellement la première fois et de "
+"les présenter aux noeuds, afin que la baie attribue aux nouveaux snapshots "
+"leur wwid et leur numéro de lun. Ces propriétés seront ensuite renseignées "
+"dans le fichier de configuration du service pour assurer que les snapshots "
+"auront toujours ces mêmes propriétés. Il est important pour certains "
+"systèmes d'exploitation de rendre le rafraîchissement des snapshots aussi "
+"transparent que possible pour ne pas provoquer le renommage des devices."
