@@ -22,6 +22,9 @@ msgid ""
 "A service with only symclone sync resource can be defined to drive the clone "
 "of other servers, just for the benefit of centralised logging and scheduling."
 msgstr ""
+"Il est possible de créer un service contenant uniquement une ressource de sycnronisation symclone "
+"afin de piloter les rafraîchissement du clone consommé par d'autres serveurs, juste pour le "
+"bénéfice de la centralisation des journaux et pour la planification."
 
 # 1fa0b905b3df4ac5aee441866f28df83
 #: ../../storage.symclone.rst:18
@@ -29,26 +32,29 @@ msgid ""
 "Activate the resource devices, breaking the data-replication. The source "
 "starts to log differences. The devices are promoted to read-write access."
 msgstr ""
+"Active les devices de la ressource, casse les réplications de données. "
+"La source commence alors à journaliser les différences. L'accès aux devices "
+"est promu en lecture-écriture."
 
 # 398cbf069ee54128bbd5ce6d85ea6c94
 #: ../../storage.symclone.rst:94
 msgid "Add source devices to the group"
-msgstr ""
+msgstr "Ajouter les devices source au groupe"
 
 # e8816e32dc4141c0b8c688744f5788f7
 #: ../../storage.symclone.rst:101
 msgid "Add target devices to the group"
-msgstr ""
+msgstr "Ajouter les devices cible au groupe"
 
 # 17cfd11467d441fba5e5da7977d7be61
 #: ../../storage.symclone.rst:15
 msgid "Command set"
-msgstr ""
+msgstr "Commandes"
 
 # 69eb8528115e4d6296a54ed8c6ea42e4
 #: ../../storage.symclone.rst:87
 msgid "Create a symmetrix disk group"
-msgstr ""
+msgstr "Créer un groupe de disques Symmetrix"
 
 # 27a4a523cbfb43f4b037fece9e91180c
 #: ../../storage.symclone.rst:33
@@ -56,6 +62,8 @@ msgid ""
 "Device are in a unexpected state or not present in the resource symmetrix "
 "disk group."
 msgstr ""
+"Les devices sont dans un état non prévu ou non présent dans le groupe de "
+"disques Symmetrix."
 
 # 2e63ebfef7024850bcdbf065cfabcedd
 #: ../../storage.symclone.rst:10
@@ -70,21 +78,34 @@ msgid ""
 "source device set is used for production. The following documentation "
 "presents the configuration of such a service."
 msgstr ""
+"Les clones des baies de stockage EMC Symmetrix permettent d'entretenir "
+"la réplication des changements des disques source vers plusieurs jeux de "
+"disques cibles, de casser la réplication vers un jeu de disques, de "
+"resynchroniser ou de fusionner les changements réalisés sur un clone vers "
+"son jeu de disque source. Après une copie complète initiale, toutes les "
+"resynchronisation sont faite de façon incrémentale. Ces excellentes "
+"fonctionnalités permettent à OpenSVC de gérer des services bâtis sur des "
+"disques clonés, auquel cas il gère la rupture de synchronisation au "
+"démarrage du service et propose une commande simple de resynchronisation "
+"ou de fusion vers la source. Ce type de services est souvent utilisé "
+"pour les rôles de maintenance, pré-production et tests de performance où "
+"les disques sources sont utilisés en production. La présente documentation "
+"présente comment configurer un tel service."
 
 # 691099a2a0b64c748337153dfbd84910
 #: ../../storage.symclone.rst:115
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 # b21ebb87bec446c2980d32edfa194d62
 #: ../../storage.symclone.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # be59ce7e41f1484fb4b16c21d8ddd739
 #: ../../storage.symclone.rst:39
 msgid "Pre-requisites"
-msgstr ""
+msgstr "Pré-requis"
 
 # d554075794b8468cbd400d75c42eea08
 #: ../../storage.symclone.rst:21
@@ -92,56 +113,58 @@ msgid ""
 "Re-establish the resource devices replication. This command verifies the "
 "service is down before proceeding."
 msgstr ""
+"Rétablir la synchronisation depuis les disques source. Cette commande "
+"vérifie que le service est arrêté au préalable."
 
 # 6d861b1e00c7459099a0abab34df248e
 #: ../../storage.symclone.rst:118
 msgid "Resync service clones"
-msgstr ""
+msgstr "Resynchronisation des clone du service"
 
 # 51f804dc561b49138623d3cfbd225f24
 #: ../../storage.symclone.rst:36
 msgid "Service configuration"
-msgstr ""
+msgstr "Configuration du service"
 
 # a9ca0db8d2134206b0593af15ad30a40
 #: ../../storage.symclone.rst:44
 msgid "Service configuration file"
-msgstr ""
+msgstr "Fichier de configuration du service"
 
 # 7fda5302b3d247a78f6a790aa3df04f8
 #: ../../storage.symclone.rst:134
 msgid "Start a service using clones"
-msgstr ""
+msgstr "Démarrer un service qui utilise des clones"
 
 # faaa8895782c4448b826c43e5e8c70c3
 #: ../../storage.symclone.rst:108
 msgid "Start the initial copy"
-msgstr ""
+msgstr "Démarrer la copie initiale"
 
 # ca2614ef57b44bec85c92eedc1fb8581
 #: ../../storage.symclone.rst:24
 msgid "Status"
-msgstr ""
+msgstr "Etats"
 
 # 57b02d2192164a5b94540553ab985ec9
 #: ../../storage.symclone.rst:84
 msgid "Symmetrix clone configuration"
-msgstr ""
+msgstr "Configuration des clones Symmetrix"
 
 # 50cfbc0788d0415594cf20cd76fd3608
 #: ../../storage.symclone.rst:2
 msgid "Symmetrix clones"
-msgstr ""
+msgstr "Clones Symmetrix"
 
 # 90891a24ad38430dabc9e5140d69129a
 #: ../../storage.symclone.rst:27
 msgid "The last replication occured less than 'sync_max_delay' minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # bde78aa08b5b42d2acd7d16c9aa9e791
 #: ../../storage.symclone.rst:30
 msgid "The last replication occured more than 'sync_max_delay' minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # 2f65345e6a0a4103b26370ead28d15b9
 #: ../../storage.symclone.rst:41
@@ -149,6 +172,8 @@ msgid ""
 "The symcli commands must be installed in the standard location on the nodes "
 "running this service resource type."
 msgstr ""
+"Les commandes symcli doivent être installées à leur emplacement standard sur "
+"les noeuds gestionnaires de ce type de ressources."
 
 # dfbba57d6beb48259a81f6f871cb2e2a
 #: ../../storage.symclone.rst:81
@@ -157,3 +182,8 @@ msgid ""
 "replication scenario. For example, you might want to clone an Oracle "
 "database data first, then in a subsequent sync, clone the archivelogs."
 msgstr ""
+"Il est possible de définir autant de ressources de synchronisation que "
+"nécessaire pour assurer un scénario de réplication consistent. Par "
+"exemple, il possible de cloner dans une première étape les données "
+"d'une base de données Oracle, puis de cloner lors d'une synchronisation "
+"suivante les archivelogs de cette base."
