@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,52 +19,52 @@ msgstr ""
 # 3295cc8b90d44b169a41711687d70f3c
 #: ../../collector.view.nodes.rst:27
 msgid "Add node"
-msgstr ""
+msgstr "Ajouter un noeud"
 
 # 940729fe1b724d759f7353a42c0b6488
 #: ../../collector.view.nodes.rst:32
 msgid "Dashboard notifications"
-msgstr ""
+msgstr "Notifications dans le tableau de bord"
 
 # e6e0345dfa184afea221e5e4097c95a0
 #: ../../collector.view.nodes.rst:29
 msgid "Delete node"
-msgstr ""
+msgstr "Supprimer un noeud"
 
 # d969dde0e9cf4b7aa37a68cbd76778ab
 #: ../../collector.view.nodes.rst:19
 msgid "Group performance"
-msgstr ""
+msgstr "Performance de groupe"
 
 # 96080893ea7d480da9b589b3d88a0af8
 #: ../../collector.view.nodes.rst:23
 msgid "Installed packages comparison"
-msgstr ""
+msgstr "Comparaison des paquets installés"
 
 # 410b8e8cc6a5473387fe27215dc45355
 #: ../../collector.view.nodes.rst:25
 msgid "Node actions"
-msgstr ""
+msgstr "Actions de noeud"
 
 # 6b075eecd856482786945661ab10dc1c
 #: ../../collector.view.nodes.rst:34
 msgid "Nodes close to warranty end"
-msgstr ""
+msgstr "Noeuds proches de leur fin de garantie"
 
 # 8ec971ff373141e8b98a2cac42fe38ed
 #: ../../collector.view.nodes.rst:4
 msgid "Nodes view"
-msgstr ""
+msgstr "Vue des noeuds"
 
 # 6750e76197cd49b7bdc193b7fc84cce5
 #: ../../collector.view.nodes.rst:35
 msgid "Nodes without asset information"
-msgstr ""
+msgstr "Noeuds sans information d'asset"
 
 # 0bbb7e5db7dc4c888da00aed6a204fed
 #: ../../collector.view.nodes.rst:12
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # 52ae604c54944aaebb94b8b17c1e6afb
 #: ../../collector.view.nodes.rst:9
@@ -75,16 +74,22 @@ msgid ""
 "team responsible, power lines connexions, role, warranty end and status are "
 "either manually set or imported from the corporate asset manager."
 msgstr ""
+"Cette vue présente les informations sur les noeuds. Une partie de ces "
+"information sont glanées depuis les noeuds eux-même, par l'agent OpenSVC. "
+"L'autre partie, dont la géolocalisation, les équipes responsables, les "
+"lignes d'alimentations électriques, le rôle, la date de fin de garantie et "
+"l'état dans le cycle de vie du noeud est soit configurée par saisie "
+"manuelle, soit importée depuis le gestionnaire de biens de l'entreprise."
 
 # be4db8a0dd4848e8be09bd1c0d8e2860
 #: ../../collector.view.nodes.rst:17
 msgid "Tools"
-msgstr ""
+msgstr "Outils"
 
 # 4c3f4aa8d30a4751aa9b86d399147a30
 #: ../../collector.view.nodes.rst:7
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # 8395984c040f4c37abe880ca326b127d
 #: ../../collector.view.nodes.rst:21
@@ -92,3 +97,5 @@ msgid ""
 "|video-icon| `Watch a video <http://www.youtube.com/watch?"
 "feature=player_embedded&v=9L4xfn9ylmI>`_"
 msgstr ""
+"|video-icon| `Regarder une vidéo <http://www.youtube.com/watch?"
+"feature=player_embedded&v=9L4xfn9ylmI>`_"

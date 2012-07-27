@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -23,6 +22,8 @@ msgid ""
 "A module can be either a file or a directory tree. The top-level file or "
 "directory name must comply to the naming convention::"
 msgstr ""
+"Un module peut être composé d'un seul fichier, ou d'une arborescence parentée à un répertoire. "
+"Le fichier unique ou le répertoire père doit se conformer à la convention de nommage suivante ::"
 
 # 38c6f5f432124894a70194512241ef73
 #: ../../compliance.modules.rst:9
@@ -30,32 +31,35 @@ msgid ""
 "A module can be implemented in any programing langage : shell scripts, "
 "python, perl, C, ..."
 msgstr ""
+"Un module peut être développé dans n'importe quel langage de programmation : "
+"scripts shell, perl, C, ..."
 
 # 34c5363e95da455caf76b8666ea20a74
 #: ../../compliance.modules.rst:36
 msgid "A module must return one of those three possible values"
-msgstr ""
+msgstr "Un module doit renvoyer une de ces trois valeurs"
 
 # f21e713174914ffab45a75cc42795e9b
 #: ../../compliance.modules.rst:19
 msgid ""
 "A module must support only one mandatory argument. Its' values can be either"
 msgstr ""
+"Un module ne doit supporter qu'un seul paramètre. Sa valeur peut être"
 
 # 258ccc71335e493a9446bf61c8a010b5
 #: ../../compliance.modules.rst:31
 msgid "Apply the rules on the node or service"
-msgstr ""
+msgstr "Appliquer les règles au noeud ou au service"
 
 # 9ca673738edb4e2e838b5eefa41cd78b
 #: ../../compliance.modules.rst:5
 msgid "Basics"
-msgstr ""
+msgstr "Bases"
 
 # 8ea559b4b2a34c738b6685cedab07c9a
 #: ../../compliance.modules.rst:72
 msgid "Compliance Objects"
-msgstr ""
+msgstr "Objets de conformité"
 
 # c420e02250704612aa730afe0c12c794
 #: ../../compliance.modules.rst:48
@@ -63,21 +67,23 @@ msgid ""
 "Compliance checks or fixes are not applicable. For example when no rules are "
 "made available to the module."
 msgstr ""
+"Les vérifications et les corrections de conformité ne sont pas applicables. "
+"Par exemple parcequ'aucune des règles attendues par le module ne sont exportées."
 
 # 33fa1774b0cb41a98e385216e40088d8
 #: ../../compliance.modules.rst:44
 msgid "Compliance checks or fixes failed."
-msgstr ""
+msgstr "Les vérifications et les corrections de conformité ont échoué"
 
 # db22242e10db4a08a5dfa084174f5c0e
 #: ../../compliance.modules.rst:40
 msgid "Compliance checks or fixes passed."
-msgstr ""
+msgstr "Les vérifications et les corrections de conformité ont réussi"
 
 # 2697ced7e3414922b2a8a6a79c852018
 #: ../../compliance.modules.rst:56
 msgid "File naming conventions"
-msgstr ""
+msgstr "Convention de nommage des fichiers"
 
 # 03ee19a5551c46829b82d5cdf41a7a9f
 #: ../../compliance.modules.rst:62
@@ -85,31 +91,32 @@ msgid ""
 "If the module top-level object is a directory, the file tree under it must "
 "be either::"
 msgstr ""
+"Si l'object de plus haut niveau est un répertoire, l'arborescence sous-jacente doit être soit ::"
 
 # 21aa691bc7064e2591de1583aaa95e1e
 #: ../../compliance.modules.rst:8
 msgid "Langage"
-msgstr ""
+msgstr "Langage"
 
 # 33608a8a10ce4c7396f8fec0843cdb37
 #: ../../compliance.modules.rst:51
 msgid "Location"
-msgstr ""
+msgstr "Emplacement"
 
 # 0c0305efb7d846c4bc2bac1cbf719b26
 #: ../../compliance.modules.rst:84
 msgid "Module skeleton"
-msgstr ""
+msgstr "Squelette d'un module"
 
 # fb79124a881347aeb9974990b7321838
 #: ../../compliance.modules.rst:53
 msgid "Modules are installed in ``/opt/openvc/var/compliance``."
-msgstr ""
+msgstr "Les modules sont installés dans ``/opt/openvc/var/compliance``."
 
 # 49c93d288a55478eb776218fb7f2c405
 #: ../../compliance.modules.rst:2
 msgid "Modules development"
-msgstr ""
+msgstr "Développement des modules"
 
 # e34caf8caa7043a3b3a19464a5010f80
 #: ../../compliance.modules.rst:76
@@ -117,6 +124,8 @@ msgid ""
 "Objects take complex serialized rules as input, and the collector implements "
 "forms to easily create those rules."
 msgstr ""
+"Les objets utilisent des règles complexes sous forme de dictionnaire sérialisés, "
+"et le collecteur dispose de formulaires pour créer facilement ces règles."
 
 # b0a39a9e593249deacc46e177e543849
 #: ../../compliance.modules.rst:74
@@ -125,41 +134,45 @@ msgid ""
 "executable python classes, to ease module development. They implement common "
 "checks and fixes. The skeletons presented below make use of these objects."
 msgstr ""
+"OpenSVC distribue un ensemble d'objets de conformité, implémentées sous forme "
+"de classes python exécutables, afin de faciliter le développement des modules. "
+"Ils implémentent des fonctions de vérification et de correction pour les "
+"besoins de base. Les squelettes présentés ci-bas utilisent ces objets."
 
 # 9a7bc41c80ee4fa2ae23a8b9a6b943a2
 #: ../../compliance.modules.rst:17
 msgid "Parameters"
-msgstr ""
+msgstr "Paramètres"
 
 # 525d906f002b4da58806261c0ddb7017
 #: ../../compliance.modules.rst:119
 msgid "Python script"
-msgstr ""
+msgstr "Scripts python"
 
 # 9cf0e0298ba54f4f907bf7b9d2e0be51
 #: ../../compliance.modules.rst:34
 msgid "Return code"
-msgstr ""
+msgstr "Code retour"
 
 # 9512aac0d64b49a3ad791a6d770969f7
 #: ../../compliance.modules.rst:12
 msgid "Rules"
-msgstr ""
+msgstr "Règles"
 
 # 37254e13a7cf4e769ea9538ed115f642
 #: ../../compliance.modules.rst:87
 msgid "Shell script"
-msgstr ""
+msgstr "Script shell"
 
 # ed3bbc1cb981458692b0b68493fa074d
 #: ../../compliance.modules.rst:80
 msgid "The called action : fix, fixable or check"
-msgstr ""
+msgstr "L'action demandée : fix, fixable ou check"
 
 # 453d44903dc24f21827fc3edd7cf33b4
 #: ../../compliance.modules.rst:78
 msgid "The calling modules have to specify to the object 2 informations:"
-msgstr ""
+msgstr "Les modules appelants doit spécifier aux objets deux informations :"
 
 # 1c88b55465c846a6a6f9816028c65742
 #: ../../compliance.modules.rst:14
@@ -167,6 +180,10 @@ msgid ""
 "The rules are passed to the modules through environment variables. Advanced "
 "langages can use complex serialized variable values like JSON or XML."
 msgstr ""
+"Les règles sont passées aux modules par l'intermédiaire de variables "
+"d'environnement. Les langages de programmation avancés peut faire usage "
+"de valeurs de variables complexes sous forme de dictionnaires sérialisés "
+"par JSON ou XML."
 
 # 53851aca563f416db57cf9936dab8601
 #: ../../compliance.modules.rst:81
@@ -174,18 +191,21 @@ msgid ""
 "The variable name prefix the object must care about. The object will search "
 "the environment for variables matching this prefix."
 msgstr ""
+"Le préfixe du nom des variables que l'objet doit prendre en considération. "
+"L'objet cherchera dans l'environnement toutes les variables correspondantes "
+"à ce préfixe."
 
 # 821adeb6059f4c43aaedf64b0f36a8dc
 #: ../../compliance.modules.rst:27
 msgid "Verify the module can apply the rules on the service or node."
-msgstr ""
+msgstr "Vérifier que le module est capable d'assurer les corrections sur le service ou le noeud."
 
 # 5d76db658fd3486a9f7bed3773d9bd40
 #: ../../compliance.modules.rst:23
 msgid "Verify the rules are applied on the node or service."
-msgstr ""
+msgstr "Vérifier que les règles sont correctement appliquées sur le noeud ou le service."
 
 # ed600cfbaae14a60885678d7a47e30e1
 #: ../../compliance.modules.rst:66
 msgid "or::"
-msgstr ""
+msgstr "ou ::"

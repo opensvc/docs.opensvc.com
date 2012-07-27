@@ -11,9 +11,11 @@ This view presents service inventory and health.
 Typical use cases:
 
 **Quick insight of live service status**
+
   ``status!=ok``
 
 **List services matching criteria**
+
   Example: 'How many non-production services do I manage for the ERP system'
   ``app=ERP & type=!PRD``
 
@@ -21,15 +23,19 @@ Typical use cases:
   ``nb_power_supply=1 & power_supply_1=POW_A``
 
 **Generate diagrams of clusters to better communicate on disaster recovery plans and allocated resources**
+
   Check some rows and click :menuselection:`Topology`
 
 **Trigger actions on a service or a group of services**
+
   Check some rows and click :menuselection:`Service action`
 
 **Trigger actions on a node or a group of nodes**
+
   Check some rows and click :menuselection:`Node action`
 
 **Provision a new service from a template**
+
   Click :menuselection:`Provisioning`
 
 

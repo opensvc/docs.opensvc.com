@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,12 +19,12 @@ msgstr ""
 # dc29cf702b9b44b5a26f9682fd06cb9a
 #: ../../collector.view.packages.rst:9
 msgid "Compare installed version of packages across a set of nodes"
-msgstr ""
+msgstr "Comparaison des versions de paquet installés sur un groupe de noeuds"
 
 # 87a35419c3804ef0b410f24e73de82bf
 #: ../../collector.view.packages.rst:24
 msgid "Dashboard notifications"
-msgstr ""
+msgstr "Notifications dans le tableau de bord"
 
 # 8be3e45707ba4d4aae3a217082a1609a
 #: ../../collector.view.packages.rst:10
@@ -33,16 +32,17 @@ msgid ""
 "Identify nodes vulnerable to bug or security problems known to certain "
 "package versions"
 msgstr ""
+"Identification des noeuds vulnérables à un bug ou à une faille de sécurité liée à un paquet particulier"
 
 # 81ed8292f6b548a1b744c9f057ed8b1c
 #: ../../collector.view.packages.rst:11
 msgid "Identify nodes where a package is installed or not installed"
-msgstr ""
+msgstr "Identification des noeuds où un paquet est installé mais indésirable"
 
 # 1ef4af637f634977ab8e6bc35fd82c44
 #: ../../collector.view.packages.rst:26
 msgid "Package differences amongst nodes of a cluster"
-msgstr ""
+msgstr "Différences de paquets installés sur les noeuds d'un cluster"
 
 # 8cf6e2df2d054b9ea6b9ceee1948b081
 #: ../../collector.view.packages.rst:14
@@ -51,21 +51,25 @@ msgid ""
 "update date highlighted red. Information for such a package should not be "
 "trusted."
 msgstr ""
+"Les entrées de la base des paquets non rafraîchies pendant 24 heures ont "
+"leur horadatage affiché en rouge. Ces informations sont à considérer avec "
+"suspicion."
+
 
 # ba13f901e0bd4e45b7a54a8b56aafe3a
 #: ../../collector.view.packages.rst:2
 msgid "Packages view"
-msgstr ""
+msgstr "Vue des paquets"
 
 # 8e91d7cefe824816afcd3dee957493c8
 #: ../../collector.view.packages.rst:12
 msgid "Plan upgrades"
-msgstr ""
+msgstr "Planification des mises à jour"
 
 # 51f4e0d329134af5837f3e9a21303038
 #: ../../collector.view.packages.rst:19
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # 883624939869454d9b6162fab2c763d0
 #: ../../collector.view.packages.rst:7
@@ -73,6 +77,9 @@ msgid ""
 "The OpenSVC agent pushes installed package list from the nodes to the "
 "collector. Centralized package lists allow administrators to easily:"
 msgstr ""
+"L'agent OpenSVC envoit au collecteur les bases de paquets installés de "
+"chaque noeud. La centralisation de ces informations facilite pour les "
+"administrateurs :"
 
 # a755fb838d74491ab11e8ed5b55688a4
 #: ../../collector.view.packages.rst:16
@@ -80,8 +87,11 @@ msgid ""
 "The toolbox of the nodes view proposes a tool to highlight package "
 "differences between selected nodes."
 msgstr ""
+"La boite à outils de la vue des noeuds inclut un outil pour mettre "
+"en lumière les différences de paquets installés entre les noeuds "
+"sélectionnés."
 
 # 246262ebdad54c12b97104647a717132
 #: ../../collector.view.packages.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"

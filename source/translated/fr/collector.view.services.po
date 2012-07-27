@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-07-23 15:33\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,416 +17,522 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 372be2e87b4d47d7934d386e9cf3663b
-#: ../../collector.view.services.rst:82
+#: ../../collector.view.services.rst:88
 msgid "**App**"
-msgstr ""
+msgstr "**App**"
 
 # c42d0366e089450aac89e3d2b912edf7
-#: ../../collector.view.services.rst:44
+#: ../../collector.view.services.rst:50
 msgid "**Container type**"
+msgstr "**Type de container**"
+
+# 97f59f88f54c4abe889ef559d1d31940
+#: ../../collector.view.services.rst:25
+msgid ""
+"**Generate diagrams of clusters to better communicate on disaster recovery "
+"plans and allocated resources**"
 msgstr ""
+"**Génère des diagrammes des clusters pour aider à la communication lors de "
+"la préparation des plans de reprise d'activité et pour la compréhension "
+"des ressources allouées à un service."
+
+# 713c9294c9134bd4b7c5609246f93b2d
+#: ../../collector.view.services.rst:17
+msgid "**List services matching criteria**"
+msgstr "**Lister les services qui correspondent à certains critères**"
 
 # 1c0c729ba9e645e38e9b0130158b9ae9
-#: ../../collector.view.services.rst:66
+#: ../../collector.view.services.rst:72
 msgid "**Prefered node**"
-msgstr ""
+msgstr "**Noeud primaire**"
+
+# 64365c04d4024aed99036908bb31a3ca
+#: ../../collector.view.services.rst:37
+msgid "**Provision a new service from a template**"
+msgstr "**Provisionner un nouveau service depuis un modèle**"
+
+# d74a2eac61c74e0182b49908c40afca9
+#: ../../collector.view.services.rst:13
+msgid "**Quick insight of live service status**"
+msgstr "**Analyse rapide des états des services**"
 
 # dc183d2bb9ba443094730cdc9f13240c
-#: ../../collector.view.services.rst:62
+#: ../../collector.view.services.rst:68
 msgid "**Responsible**"
-msgstr ""
+msgstr "**Responsable**"
 
 # 134223c2d16b4c2baa72e9e135c4f3bb
-#: ../../collector.view.services.rst:70
+#: ../../collector.view.services.rst:76
 msgid "**Service type**"
-msgstr ""
+msgstr "**Type de service**"
 
 # 01f4ff1442c04d67a110b7760f13111f
-#: ../../collector.view.services.rst:86
+#: ../../collector.view.services.rst:92
 msgid "**Status**"
-msgstr ""
+msgstr "**Etat**"
+
+# e501dd754ad9430e9a84a69f537cbcdf
+#: ../../collector.view.services.rst:33
+msgid "**Trigger actions on a node or a group of nodes**"
+msgstr "**Déclencher des actions sur un seul ou un groupe de noeuds**"
+
+# d0d6b99092af4ae8934e0affbb0c19a1
+#: ../../collector.view.services.rst:29
+msgid "**Trigger actions on a service or a group of services**"
+msgstr "**Déclencher des actions sur un seul ou un groupe de services**"
 
 # 67fead3589664befaee0ecb4d2596b13
-#: ../../collector.view.services.rst:100
+#: ../../collector.view.services.rst:106
 msgid ""
 "An all-greyed-out status marker indicates the presented data is too old to "
 "be trusted, though it displays the last overall known status. Hovering the "
 "mouse over the status markers will displayed the data refresh timestamp."
 msgstr ""
+"Un état composite complètement grisé indique que les données présentées sont "
+"trop agées pour être considérées sans suspicion. Les données présentées sont "
+"les dernières reçues. Le survol du curseur au dessus des états fait "
+"apparaître l'horodatage des données."
 
 # a57e99ed072f40dc9b5940123bd5bc40
-#: ../../collector.view.services.rst:30
+#: ../../collector.view.services.rst:35
 msgid "Check some rows and click :menuselection:`Node action`"
-msgstr ""
+msgstr "Cocher des lignes et cliquer sur :menuselection:`Action de noeud`"
 
 # 56f59049b6344cbaa805e32f414734eb
-#: ../../collector.view.services.rst:27
+#: ../../collector.view.services.rst:31
 msgid "Check some rows and click :menuselection:`Service action`"
-msgstr ""
+msgstr "Cocher des lignes et cliquer sur :menuselection:`Action de service`"
 
 # 836e817f6fcc479a9bd50650f3f37738
-#: ../../collector.view.services.rst:24
+#: ../../collector.view.services.rst:27
 msgid "Check some rows and click :menuselection:`Topology`"
-msgstr ""
+msgstr "Cocher des lignes et cliquer sur :menuselection:`Topologie`"
 
 # 8ef3b5b9c948434d90ff9916e3bb64e2
-#: ../../collector.view.services.rst:33
+#: ../../collector.view.services.rst:39
 msgid "Click :menuselection:`Provisioning`"
-msgstr ""
+msgstr "Cliquer sur :menuselection:`Provisioning`"
 
 # 1a7eeab4ffe24b88a8474dcd235465fc
-#: ../../collector.view.services.rst:92
+#: ../../collector.view.services.rst:98
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 # 2554b358c19c43d5b66c34cab8e028e8
-#: ../../collector.view.services.rst:78
+#: ../../collector.view.services.rst:84
 msgid "DEV"
-msgstr ""
+msgstr "DEV"
 
 # ffa780ad64714f7789bf6faf764cb692
-#: ../../collector.view.services.rst:114
+#: ../../collector.view.services.rst:120
 msgid "Dashboard notifications"
-msgstr ""
+msgstr "Notifications dans le tableau de bord"
 
 # 488510bb0ae64477ab5626a08f226032
 # d47995d3f30d46e8ac36b91aa7fb28a9
 # ea43ab73bb214762891132d51d63ef28
-#: ../../collector.view.services.rst:49 ../../collector.view.services.rst:75
-#: ../../collector.view.services.rst:92
+#: ../../collector.view.services.rst:55 ../../collector.view.services.rst:81
+#: ../../collector.view.services.rst:98
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 # b1e67f0c1eee43b7b27e6d9913211561
-#: ../../collector.view.services.rst:78
+#: ../../collector.view.services.rst:84
 msgid ""
 "Development service. Services of this type are not allowed to be started on "
 "production nodes."
 msgstr ""
+"Service de développement. Les services de ce type ne sont pas autorisés à "
+"démarrer sur les noeuds de production."
 
 # f650d8fda3e343fbbd6795b0679e86bd
-#: ../../collector.view.services.rst:17
+#: ../../collector.view.services.rst:19
 msgid ""
 "Example: 'How many non-production services do I manage for the ERP system' "
 "``app=ERP & type=!PRD``"
 msgstr ""
+"Exemple : 'Combien de service hors-production de l'application ERP sont sous "
+"ma responsabilité' ``app=ERP & type=!PRD``"
 
 # 6f879226a56f41238fc86235d7b968f7
-#: ../../collector.view.services.rst:20
+#: ../../collector.view.services.rst:22
 msgid ""
 "Example: 'I lost a power line, which services are impacted': "
 "``nb_power_supply=1 & power_supply_1=POW_A``"
 msgstr ""
+"Exemple : 'Une ligne d'alimentation électrique est perdue, combien de "
+"services sont impactés' : ``nb_power_supply=1 & power_supply_1=POW_A``"
 
 # 3876e67a757744df8ef59923e491e547
-#: ../../collector.view.services.rst:42
+#: ../../collector.view.services.rst:48
 msgid "Fields"
-msgstr ""
+msgstr "Champs"
 
 # a8dc75df852a417280954dcf618ac9bf
-#: ../../collector.view.services.rst:116
+#: ../../collector.view.services.rst:122
 msgid "Frozen services"
-msgstr ""
+msgstr "Services gelés"
 
 # 979a90ef7920491598229492f6b0e790
-#: ../../collector.view.services.rst:49
+#: ../../collector.view.services.rst:55
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 # d5564674515c4c05ab5e6f4d4b2bc2bd
-#: ../../collector.view.services.rst:105
+#: ../../collector.view.services.rst:111
 msgid "Node actions"
-msgstr ""
+msgstr "Actions de noeud"
 
 # 6188cbe66f964da0aefd382507a2f60e
-#: ../../collector.view.services.rst:77
+#: ../../collector.view.services.rst:83
 msgid "PRD"
-msgstr ""
+msgstr "PRD"
 
 # f35da4853425479aa8be517e180ca76a
-#: ../../collector.view.services.rst:77
+#: ../../collector.view.services.rst:83
 msgid ""
 "Production service. Services of this type can be started on any type of node."
 msgstr ""
+"Service de production. Les services de ce type peuvent être démarrés sur "
+"n'importe quel type de noeud."
 
 # 9f156888e1fa4773b121e359d097e4a6
-#: ../../collector.view.services.rst:37
+#: ../../collector.view.services.rst:43
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # a8ca9158d48743d6ab000bf10e080eb2
-#: ../../collector.view.services.rst:109
+#: ../../collector.view.services.rst:115
 msgid "Service actions"
-msgstr ""
+msgstr "Actions de service"
 
 # c841661ff7254a41bec4408156753949
-#: ../../collector.view.services.rst:117
+#: ../../collector.view.services.rst:123
 msgid "Service status not updated"
-msgstr ""
+msgstr "Etats de service non mis à jour"
 
 # 372f4bfccd544faea418d1a54df8e58d
-#: ../../collector.view.services.rst:118
+#: ../../collector.view.services.rst:124
 msgid "Services not up"
-msgstr ""
+msgstr "Services non démarrés"
 
 # 68f2aeb0dafe43dcabb8ad3bcfd50336
 #: ../../collector.view.services.rst:4
 msgid "Services view"
-msgstr ""
+msgstr "Vue des services"
 
 # 23e834c90d4c407c9165c6c939f6d7c4
-#: ../../collector.view.services.rst:88
+#: ../../collector.view.services.rst:94
 msgid ""
 "Status gizmos present the overall service health on top, and individual "
 "resource type status below. Color codes are:"
 msgstr ""
+"Des composites d'états présentent l'état global du service en haut, et des "
+"états aggrégé par type de ressource en bas. Le code des couleur est :"
 
 # d8307839b6734408957371913f825fd1
-#: ../../collector.view.services.rst:79
+#: ../../collector.view.services.rst:85
 msgid "TMP"
-msgstr ""
+msgstr "TMP"
 
 # 2077e03d07684f3fb61f96d150be6cf1
-#: ../../collector.view.services.rst:79
+#: ../../collector.view.services.rst:85
 msgid ""
 "Temporary service. Like DEV, but alerts won't be sent for these services."
 msgstr ""
+"Service temporaire. Comme pour DEV, mais les alertes ne sont pas générées "
+"pour ces services."
 
 # fff0f9625d214e4bb85bad562d3a4056
-#: ../../collector.view.services.rst:84
+#: ../../collector.view.services.rst:90
 msgid ""
 "The application code is a way to group services dedicated/paid by some "
 "corporate entity or project. You can setup any application code you want in "
 "your services configuration file, using the app parameter."
 msgstr ""
+"Le code applicatif est un moyen de grouper les servicés dédiés ou financés "
+"par une même entité de l'entreprise ou un projet. Vous pouvez choisir le "
+"code applicatif dans le fichier de configuration des services, en utilisant "
+"le paramètre app."
 
 # 81422f0834cd47fd8992b2d168d2ea9e
-#: ../../collector.view.services.rst:46
+#: ../../collector.view.services.rst:52
 msgid ""
 "The container type reflect the service integration type of the service. This "
 "setting is set in the service configuration file on the nodes as the "
 "``mode`` parameter. The possible values are:"
 msgstr ""
+"Le type de container indique le type d'intégration du service. Ce paramètre "
+"est défini dans le fichier de configuration des services par le paramètre "
+"``mode``. Les valeurs possibles sont :"
 
 # 10b24da2c2124b3ea749b3328c1c1217
-#: ../../collector.view.services.rst:64
+#: ../../collector.view.services.rst:70
 msgid ""
 "The responsibles are persons receiving alerts for a service. Hovering the "
 "mouse over the icon spawns the name of the responsibles. No icon means no "
 "responsible, which is an anomaly, and as such, cause alerts to be emitted to "
 "the site's administrator/manager."
 msgstr ""
+"Les responsables sont les individus qui recoivent les alertes d'un service. "
+"Le survol du pointeur au dessus de l'icône fait apparaître un encart "
+"contenant le nom des responsables. L'absence d'icône indique que le service "
+"n'a pas de responsable identifié, ce qui est une anomalie, et en tant quel "
+"telle, provoque l'envoi d'alertes au 'Manager' du site."
 
 # bcd9369a2436407598c483c8fcd6fcc2
-#: ../../collector.view.services.rst:58
+#: ../../collector.view.services.rst:64
 msgid ""
 "The service applications and data are deployed in a HP-UX native virtual "
 "machine. The ip is plumbed on a virtual interface, with virtualized mac "
 "address. Filesystem resources are mounted in the virtual host."
 msgstr ""
+"Les applications et les données du service sont déployées dans une machine "
+"virtuelle HP-UX. L'adresse internet est montée sur une interface virtuelle, "
+"avec adresse physique virtuelle. Les systèmes de fichiers sont montés dans "
+"la machine virtuelle."
 
 # bf4c0c350d384ee9924f111612fcc440
-#: ../../collector.view.services.rst:55
+#: ../../collector.view.services.rst:61
 msgid ""
 "The service applications and data are deployed in a KVM virtual machine. The "
 "ip is plumbed on a virtual interface, with virtualized mac address. "
 "Filesystem resources are mounted in the virtual host."
 msgstr ""
+"Les applications et les données sont déployées dans une machine virtuelle de "
+"type KVM. L'adresse internet est montée sur une interface virtuelle, avec "
+"adresse physique virtuelle. Les systèmes de fichiers sont montés dans la "
+"machine virtuelle."
 
 # b895f34b4fe2440ea7945488b21e45a0
-#: ../../collector.view.services.rst:54
+#: ../../collector.view.services.rst:60
 msgid ""
 "The service applications and data are deployed in a Linux Container (zone-"
 "like). The ip is plumbed on a virtual interface, with virtualized mac "
 "address or tunneled. Filesystem resources are mounted in the host system."
 msgstr ""
+"Les applications et les données sont déployées dans un container Linux "
+"(équivallent des zones). L'adresse internet est montée sur une interface "
+"virtuelle, avec adresse physique virtuelle, ou tunnelée. Les systèmes de "
+"fichiers sont montés dans le système hôte."
 
 # 7a3fab281d67499c8f64171e7081447a
-#: ../../collector.view.services.rst:53
+#: ../../collector.view.services.rst:59
 msgid ""
 "The service applications and data are deployed in a Linux Container (zone-"
 "like). The ip is plumbed on a virtual interface, with virtualized mac "
 "address. Filesystem resources are mounted in the host system."
 msgstr ""
+"Les applications et les données sont déployées dans un container Linux "
+"(équivallent des zones). L'adresse internet est montée sur une interface "
+"virtuelle, avec adresse physique virtuelle, ou tunnelée. Les systèmes de "
+"fichiers sont montés dans le système hôte."
 
 # 39bd9790acf84186be7859b2183d7f50
-#: ../../collector.view.services.rst:59
+#: ../../collector.view.services.rst:65
 msgid ""
 "The service applications and data are deployed in a Oracle Virtual Machine. "
 "The ip is plumbed on a virtual interface, with virtualized mac address. "
 "Filesystem resources are mounted in the virtual host."
 msgstr ""
+"Les applications et les données sont déployées dans une machine virtuelle de "
+"type Oracle VM. L'adresse internet est montée sur une interface virtuelle, "
+"avec adresse physique virtuelle. Les systèmes de fichiers sont montés dans "
+"la machine virtuelle."
 
 # a422e8f8894841348dad84765cfe1072
-#: ../../collector.view.services.rst:52
+#: ../../collector.view.services.rst:58
 msgid ""
 "The service applications and data are deployed in a Solaris zone. The ip is "
 "still plumbed in the global zone. Filesystem resources are mounted in the "
 "global zone."
 msgstr ""
+"Les applications et les données sont déployées dans un container Solaris. "
+"L'adresse internet est montée dans la zone globale. Les systèmes de fichiers "
+"sont montés dans le système hôte."
 
 # 649baa0094c54a498cb1e2b66fc95664
-#: ../../collector.view.services.rst:56
+#: ../../collector.view.services.rst:62
 msgid ""
 "The service applications and data are deployed in a VirtualBox virtual "
 "machine. The ip is plumbed on a virtual interface, with virtualized mac "
 "address. Filesystem resources are mounted in the virtual host."
 msgstr ""
+"Les applications et les données sont déployées dans une machine virtuelle de "
+"type Oracle VirtualBox. L'adresse internet est montée sur une interface "
+"virtuelle, avec adresse physique virtuelle. Les systèmes de fichiers sont "
+"montés dans la machine virtuelle."
 
 # 7f949faa963b443f9d7d4d6e1996b1f0
-#: ../../collector.view.services.rst:57
+#: ../../collector.view.services.rst:63
 msgid ""
 "The service applications and data are deployed in a Xen virtual machine. The "
 "ip is plumbed on a virtual interface, with virtualized mac address. "
 "Filesystem resources are mounted in the virtual host."
 msgstr ""
+"Les applications et les données sont déployées dans une machine virtuelle de "
+"type Xen. L'adresse internet est montée sur une interface virtuelle, avec "
+"adresse physique virtuelle. Les systèmes de fichiers sont montés dans la "
+"machine virtuelle."
 
 # aaabf63cc5254bf7b4b7fa6709ad5be5
-#: ../../collector.view.services.rst:51
+#: ../../collector.view.services.rst:57
 msgid ""
 "The service is hosted on bare metal, non-virtualized resources : ip plumbed "
 "on a physical interface, applications and data in filesystems mounted on a "
 "real server."
 msgstr ""
+"Le service est hébergé sur le système hôte. Les ressources sont non-"
+"virtualisées : l'adresse internet est montée sur une interface physique, les "
+"applications et les données sont dans des systèmes de fichiers montés sur le "
+"système physique."
 
 # 4283bb5f1a84472f8d9d2cd6bc91f1b2
-#: ../../collector.view.services.rst:72
+#: ../../collector.view.services.rst:78
 msgid ""
 "This property is used by the nodeware to sanity check actions asked by the "
 "admin."
 msgstr ""
+"Cette propriété est utilisée par l'agent pour vérifier la cohérence des "
+"actions demandées par l'utilisateur."
 
 # 2fa42bff1df94795b30f4998d24fa151
 #: ../../collector.view.services.rst:9
 msgid "This view presents service inventory and health."
-msgstr ""
+msgstr "Cette vue présente l'inventaire des service et leur santé."
 
 # 76a32d97527b4fec9ade782902541a0a
-#: ../../collector.view.services.rst:103
+#: ../../collector.view.services.rst:109
 msgid "Tools"
-msgstr ""
+msgstr "Outils"
 
 # e43d3f5596e84912aba1a7c82b8c3fc8
-#: ../../collector.view.services.rst:111
+#: ../../collector.view.services.rst:117
 msgid "Topology"
-msgstr ""
+msgstr "Topologie"
 
 # d3f6cfba5e8646ae8829e5ac80af5b38
-#: ../../collector.view.services.rst:75
+#: ../../collector.view.services.rst:81
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 # fd1cc821724846e6b3c54af9fe7fce50
 #: ../../collector.view.services.rst:11
 msgid "Typical use cases:"
-msgstr ""
+msgstr "Cas d'usage usuels :"
 
 # 2ef3b14dec004f81826eb5ec29df818b
-#: ../../collector.view.services.rst:68
+#: ../../collector.view.services.rst:74
 msgid ""
 "Upon node reboot, only the services whose prefered node is set to this node "
 "are started. During those services start-up, the nodeware verifies the "
 "service is not running on another node and aborts the start-up if so."
 msgstr ""
+"Lors d'un redémmarage de noeud, seuls les services dont le noeud préféré "
+"(preferred_node) est paramétré à ce même noeud sont démarrés. Durant le "
+"démarrage de ces services, l'agent vérifie que le service ne tourne pas déjà "
+"sur un autre noeud. Auquel cas il annule son démarrage."
 
 # 86cdf71a6d90448594af8145d7c8a842
 #: ../../collector.view.services.rst:7
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # 83e4dfa27043420b92023d09af19d502
-#: ../../collector.view.services.rst:14
+#: ../../collector.view.services.rst:15
 msgid "``status!=ok``"
-msgstr ""
+msgstr "``status!=ok``"
 
 # f363267e80834bcbbbfdff2f8687bcb7
-#: ../../collector.view.services.rst:94
+#: ../../collector.view.services.rst:100
 msgid "green"
-msgstr ""
+msgstr "vert"
 
 # e9c9bb5900d8463f97ed329157ac1fda
-#: ../../collector.view.services.rst:97
+#: ../../collector.view.services.rst:103
 msgid "grey"
-msgstr ""
+msgstr "gris"
 
 # c22ab6db5fe740fdb5e728d630a5e117
-#: ../../collector.view.services.rst:51
+#: ../../collector.view.services.rst:57
 msgid "hosted"
-msgstr ""
+msgstr "hosted"
 
 # 956c5a4d2f924039812544dc41825ff7
-#: ../../collector.view.services.rst:58
+#: ../../collector.view.services.rst:64
 msgid "hpvm"
-msgstr ""
+msgstr "hpvm"
 
 # 1b9ea1b7fa1d483387e0df2b3bb28ad2
-#: ../../collector.view.services.rst:55
+#: ../../collector.view.services.rst:61
 msgid "kvm"
-msgstr ""
+msgstr "kvm"
 
 # c90c51c2ab134581ba22788d67b36780
-#: ../../collector.view.services.rst:53
+#: ../../collector.view.services.rst:59
 msgid "lxc"
-msgstr ""
+msgstr "lxc"
 
 # b954a96283eb465d896e7fbbc4c5d6ad
-#: ../../collector.view.services.rst:96
+#: ../../collector.view.services.rst:102
 msgid "orange"
-msgstr ""
+msgstr "orange"
 
 # 41faab2bed204bb89e3d01d7337478cf
-#: ../../collector.view.services.rst:59
+#: ../../collector.view.services.rst:65
 msgid "ovm"
-msgstr ""
+msgstr "ovm"
 
 # 2d39831594bc43e4b7453608cd46fb60
-#: ../../collector.view.services.rst:95
+#: ../../collector.view.services.rst:101
 msgid "red"
-msgstr ""
+msgstr "rouge"
 
 # c83ecebb52c143d2a196b7bd6e57f18f
-#: ../../collector.view.services.rst:96
+#: ../../collector.view.services.rst:102
 msgid "resource has warnings"
-msgstr ""
+msgstr "la ressource est en attention"
 
 # 03453d7155664992ab298c4cc7eab8cf
-#: ../../collector.view.services.rst:95
+#: ../../collector.view.services.rst:101
 msgid "resource is down"
-msgstr ""
+msgstr "la ressource est à l'arrêt"
 
 # 71c71832b43f4be992175e7324e0f3b7
-#: ../../collector.view.services.rst:94
+#: ../../collector.view.services.rst:100
 msgid "resource is up"
-msgstr ""
+msgstr "la ressource est démarrée"
 
 # 3dd9320db39a4ad8ab14762990b1fda7
-#: ../../collector.view.services.rst:97
+#: ../../collector.view.services.rst:103
 msgid "resource type is not used by the service"
-msgstr ""
+msgstr "le type de ressource n'est pas utilisé par le service"
 
 # a4fff6f02f9047c389c4844fa5e4466f
-#: ../../collector.view.services.rst:56
+#: ../../collector.view.services.rst:62
 msgid "vbox"
-msgstr ""
+msgstr "vbox"
 
 # ece9ec9a06fe40f6b232f53d40b7fd2f
-#: ../../collector.view.services.rst:54
+#: ../../collector.view.services.rst:60
 msgid "vz"
-msgstr ""
+msgstr "vz"
 
 # 5c7ae4a10bb84dacbff2bc594eae4671
-#: ../../collector.view.services.rst:57
+#: ../../collector.view.services.rst:63
 msgid "xen"
-msgstr ""
+msgstr "xen"
 
 # 05cdf093bb9046bebe86910d80433fcd
-#: ../../collector.view.services.rst:52
+#: ../../collector.view.services.rst:58
 msgid "zone"
-msgstr ""
+msgstr "zone"
 
 # d9069c48b4c04a3589ea055f956bc8c6
-#: ../../collector.view.services.rst:107
+#: ../../collector.view.services.rst:113
 msgid ""
 "|video-icon| `Watch a video <http://www.youtube.com/watch?"
 "feature=player_embedded&v=Yh7P7F61DB0>`_"
 msgstr ""
+"|video-icon| `Regarder une vidéo <http://www.youtube.com/watch?"
+"feature=player_embedded&v=Yh7P7F61DB0>`_"

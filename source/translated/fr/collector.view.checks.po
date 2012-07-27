@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -23,6 +22,9 @@ msgid ""
 "A check without value update for more than 24 hours will have its update "
 "date highlighted red. These checks instances should not be trusted."
 msgstr ""
+"Une sonde dont la valeur n'a pas été mise à jour pendant 24 heures aura "
+"son horadatage affiché en rouge. Ces valeurs de sonde sont à considérer "
+"avec suspicion."
 
 # 39b7bc8d8b1949329fc2786d1fdc46eb
 #: ../../collector.view.checks.rst:50
@@ -31,31 +33,34 @@ msgid ""
 "customized for each node and instance of the check or a threshold can be "
 "attached to a filterset."
 msgstr ""
+"Les familles de sondes ont des valeur par défaut pour les seuils haut et bas. "
+"Ces valeurs peuvent être changées pour chaque instance de chaque sonde, ou "
+"des seuils peuvent être attachées à un jeu de filtres."
 
 # e9b2a3bb8f6c42339e9219624eca9a29
 #: ../../collector.view.checks.rst:45
 msgid "Check value not updated"
-msgstr ""
+msgstr "Valeur de sonde non mise à jour"
 
 # 9c71b3e279bc4f6fb11ad81b40cdda73
 #: ../../collector.view.checks.rst:44
 msgid "Check value out of bounds"
-msgstr ""
+msgstr "Valeur de sonde en dehors des seuils"
 
 # 01ce8fe200a643c2a9965e8fecd957b9
 #: ../../collector.view.checks.rst:2
 msgid "Checks view"
-msgstr ""
+msgstr "Vue des sondes"
 
 # fe030e023d204406a9e31c05257d222b
 #: ../../collector.view.checks.rst:52
 msgid "Clicking a checker name opens a dialog to change the default value."
-msgstr ""
+msgstr "Cliquer un nom de sonde ouvre un encart qui permet de changer les valeurs de seuil par défaut."
 
 # 8bedd0713b7d4d4384f1a8880495cf26
 #: ../../collector.view.checks.rst:42
 msgid "Dashboard notifications"
-msgstr ""
+msgstr "Notifications dans le tableau de bord"
 
 # 0e7b4fb0a6fe452783e23c08d231dc51
 #: ../../collector.view.checks.rst:32
@@ -65,31 +70,35 @@ msgid ""
 "dashboard and the value and crossed threshold are highlighted red in the "
 "checks view."
 msgstr ""
+"Chaque valeur de sonde est comparée à ses seuils haut et bas. Si la valeur "
+"actuelle est en dehors de ses limites, la sonde donne lieu à une alerte "
+"dans le tableau de bord. De plus la valeur et le seuil franchi sont "
+"affichés en rouge dans la vue des sondes."
 
 # 621b6d4737174e18a0bc423ebb4d4990
 #: ../../collector.view.checks.rst:25
 msgid "Fault Management. Server hardware error count (Solaris fmadm)."
-msgstr ""
+msgstr "Fault Management. Gestion des erreurs matérielles (fmadm sur Solaris)."
 
 # b822a25d66b94e5680c8aaa60d3902cd
 #: ../../collector.view.checks.rst:13
 msgid "Filesystems inodes usage percent."
-msgstr ""
+msgstr "Taux d'utilisation des inodes d'un système de fichiers."
 
 # f946a2dd6b0041c691f6fb96a24f24b3
 #: ../../collector.view.checks.rst:10
 msgid "Filesystems usage percent."
-msgstr ""
+msgstr "Taux d'utilisation d'un système de fichiers."
 
 # 2a95f3826ca5452b8857fe76b05cf92b
 #: ../../collector.view.checks.rst:28
 msgid "Link aggregate error count (Linux bonding, Solaris)."
-msgstr ""
+msgstr "Compteur d'erreurs des aggrégats de lien réseau (Linux bonding, Solaris)."
 
 # 0a2033882d4c4846912201ee1f872a11
 #: ../../collector.view.checks.rst:30
 msgid "More checks will be implemented depending on client needs."
-msgstr ""
+msgstr "Plus de sondes sont développées au gré des besoins des clients."
 
 # 622ac577eb674d5798d5e4d28ad59e9e
 #: ../../collector.view.checks.rst:19
@@ -97,21 +106,22 @@ msgid ""
 "Multipath valid path count (native multipath on Linux, HP-UX, Solaris, "
 "PowerPath)."
 msgstr ""
+"Compteur de chemins valides des multipaths (multipath natif sous Linux, HP-UX, Solaris et PowerPath)."
 
 # bee10356ea7b4469b5bffaa8fe90b361
 #: ../../collector.view.checks.rst:22
 msgid "Raid hardware error count (MegaRaid, SmartArray)."
-msgstr ""
+msgstr "Compteur d'erreur des cartes raid (MegaRaid, SmartArray)."
 
 # 1e69f46686c74dbbb887124bb5a728a8
 #: ../../collector.view.checks.rst:37
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # 70f6572dd671416783eac293b9645214
 #: ../../collector.view.checks.rst:48
 msgid "Setting thresholds"
-msgstr ""
+msgstr "Configuration des seuils"
 
 # 0dab4b3e3f044357805bde7d8a4f1dd5
 #: ../../collector.view.checks.rst:7
@@ -119,6 +129,9 @@ msgid ""
 "The OpenSVC agent schedule and ``nodemgr checks`` push checkers values from "
 "the nodes to the collector. Current implemented checks are:"
 msgstr ""
+"Les tâches planifiées de l'agent OpenSVC et la commande ``nodemgr checks`` "
+"envoient au collecteur les valeurs des sondes des noeuds. Les sondes implémentées "
+"à ce jour sont :" 
 
 # b5ace40de85d4253965ac29e9b02dd61
 #: ../../collector.view.checks.rst:54
@@ -127,13 +140,17 @@ msgid ""
 "corresponding rows in the table and click the :menuselection:`Set low "
 "threshold` or :menuselection:`Set high threshold`."
 msgstr ""
+"Pour changer les valeurs de seuil d'un groupe d'instances de sondes, "
+"cocher les lignes correspondantes du tableau et cliquer sur "
+":menuselection:`Paramétrer le seuil bas` or "
+":menuselection:`Paramétrer le seuil haut`."
 
 # 37021a52d36847a09e8074cd01998cb5
 #: ../../collector.view.checks.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 # 74b37aa2d076456f88b08f280d1cbb74
 #: ../../collector.view.checks.rst:16
 msgid "Volume group usage percent."
-msgstr ""
+msgstr "Taux d'utilisation d'un volume group"

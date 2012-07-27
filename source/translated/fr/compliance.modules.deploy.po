@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,12 +19,12 @@ msgstr ""
 # feb8cd1740e94640ad1145fbd1812613
 #: ../../compliance.modules.deploy.rst:40
 msgid "**node.repo**"
-msgstr ""
+msgstr "**node.repo**"
 
 # 3a3357a5c67941ddb34d6268fb05457d
 #: ../../compliance.modules.deploy.rst:44
 msgid "**node.repocomp**"
-msgstr ""
+msgstr "**node.repocomp**"
 
 # f4fa350319ac4c518843c79e7d6f7da7
 #: ../../compliance.modules.deploy.rst:33
@@ -33,31 +32,32 @@ msgid ""
 "After the mirror initialization, you have to update the current link "
 "according to your own policies."
 msgstr ""
+"Après l'initialisation du miroir, il reste à mettre à jour le lien current selon votre politique."
 
 # ff734bdfc5f146398cc4c28565549e06
 #: ../../compliance.modules.deploy.rst:48
 msgid "Example::"
-msgstr ""
+msgstr "Exemple ::"
 
 # a216d002dcd147c9b4e7ea3fe5e2a230
 #: ../../compliance.modules.deploy.rst:20
 msgid "Initialize the repository"
-msgstr ""
+msgstr "Initialisation du dépôt"
 
 # e940d6b098bf4d34bf2c180bd50b6d3b
 #: ../../compliance.modules.deploy.rst:7
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # 50b1f2d7033347d8a062f9d868db0a5a
 #: ../../compliance.modules.deploy.rst:11
 msgid "Modules can be deployed using one of the following methods:"
-msgstr ""
+msgstr "Les modules peuvent être déployés par une des méthodes suivantes :"
 
 # ce9f744164de42d5a0fbd2377a461b85
 #: ../../compliance.modules.deploy.rst:4
 msgid "Modules deployment"
-msgstr ""
+msgstr "Déploiement des modules"
 
 # 686bacfee06c406f98104f0999f6e7b1
 #: ../../compliance.modules.deploy.rst:15
@@ -65,6 +65,7 @@ msgid ""
 "Pull mode : each node is responsible from fetching the modules from a "
 "repository"
 msgstr ""
+"Par récupération : chaque noeud est responsable de la récupération des modules depuis un dépôt"
 
 # 0d220038e9b04a0cb9d8e21faac63669
 #: ../../compliance.modules.deploy.rst:13
@@ -73,22 +74,26 @@ msgid ""
 "nodes. The difficult part is the target node listing. Such lists can be "
 "extracted from the collector database."
 msgstr ""
+"Par diffusion : un serveur de confiance est responsable de la diffusion des modules vers tous les noeuds. "
+"Le point délicat est l'inventaire des noeuds vers lesquels effectuer la diffusion. Cet inventaire peut "
+"être extrait de la base de données du collecteur."
 
 # 1a17cc9eaf8446b4bdac6f4c6c33e9b2
 #: ../../compliance.modules.deploy.rst:36
 msgid "Set up the agents"
-msgstr ""
+msgstr "Configuration des agents"
 
 # 63dbd657cc184d579af1f0cdf8c6019c
 #: ../../compliance.modules.deploy.rst:29
 msgid "Set up the published version"
-msgstr ""
+msgstr "Configuration des versions publiées"
 
 # fc7f6846a8714438ba885b1463ad043a
 #: ../../compliance.modules.deploy.rst:31
 msgid ""
 "The OpenSVC agent downloads the file pointed by the link named ``current``."
 msgstr ""
+"L'agent OpenSVC télécharge le fichier pointé par le lien nommé ``current``."
 
 # bc8d4de9b49245f5bcb6461d27cf1692
 #: ../../compliance.modules.deploy.rst:9
@@ -98,11 +103,14 @@ msgid ""
 "attached modulesets are used. The modules must be installed in ``/opt/"
 "opensvc/var/compliance/``."
 msgstr ""
+"Les modules de conformité doivent être présents sur tous les noeuds sur lesquels sont attachés des jeux de modules. "
+"Tous les modules peuvent être déployés sans risque : seuls les modules des jeux de modules attachés seront planifiés "
+"pour exécution. Les modules doivent être présent dans ``/opt/opensvc/var/compliance/``."
 
 # 1a734e87aaba463b9b6a33b27c0ab23b
 #: ../../compliance.modules.deploy.rst:22
 msgid "The compliance repository file tree must organized as::"
-msgstr ""
+msgstr "L'arborescence du dépôt de conformité doit être organisée comme suit ::"
 
 # 111bcbeae6944f04a44872f024e899f9
 #: ../../compliance.modules.deploy.rst:38
@@ -110,21 +118,23 @@ msgid ""
 "The repository must be known to the agent. This set up is done with either "
 "the node.repo or the node.repocomp ``node.conf`` parameters."
 msgstr ""
+"Le dépôt doit être connu de l'agent. Cette configuration est faite par les "
+"paramètres node.repo ou node.repocomp du fichier de configuration ``node.conf``."
 
 # 95c473c1f13c45dba0bc352acdca27dd
 #: ../../compliance.modules.deploy.rst:55
 msgid "The update command is::"
-msgstr ""
+msgstr "La commande de mise à jour est ::"
 
 # a50cc6fc17844884b0ead1f4779bbc31
 #: ../../compliance.modules.deploy.rst:17
 msgid "This chapter describes the last method."
-msgstr ""
+msgstr "Ce chapitre décrit cette dernière méthode."
 
 # c24769f222344423a7adfb1f3aef167e
 #: ../../compliance.modules.deploy.rst:59
 msgid "This command is operating system agnostic."
-msgstr ""
+msgstr "Cette commande est agnostique au système d'exploitation."
 
 # c787d7bc6bd54d54bacf8e0c44f74e5e
 #: ../../compliance.modules.deploy.rst:46
@@ -132,6 +142,8 @@ msgid ""
 "This parameter allows to set up a URI pointing to a pure OpenSVC agent "
 "compliance repository. If specified node.repocomp overrides node.repo."
 msgstr ""
+"Ce paramètre permet de configurer une URI pointant un pur dépôt de conformité. "
+"Si le paramètre node.repocomp est configuré, il prend le pas sur node.repo."
 
 # 3fa67ab82aa945aea97e26814bc7499e
 #: ../../compliance.modules.deploy.rst:42
@@ -140,8 +152,10 @@ msgid ""
 "compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
 "agent packages in the packages/ subdirectory."
 msgstr ""
+"Ce paramètre permet de configurer une URI pointant un dépôt hébergeant à la fois les tarball gzippés de la comformité "
+"dans le sous-répertoire compliance/ et les paquets de l'agent OpenSVC dans le sous-répertoire packages/."
 
 # 16534a28a72d43979d1f3b153bbb1ed1
 #: ../../compliance.modules.deploy.rst:53
 msgid "Updating the modules"
-msgstr ""
+msgstr "Mise à jour des modules"

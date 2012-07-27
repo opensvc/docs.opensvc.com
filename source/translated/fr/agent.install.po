@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -240,7 +239,8 @@ msgid ""
 "activate them upon de-activation events. These mecanisms can be disabled "
 "using the following setup. It also provides another protection against "
 "unwanted volume group activation from a secondary cluster node."
-msgstr "OpenSVC contrôle l'activation et la désactivation des volume "
+msgstr ""
+"OpenSVC contrôle l'activation et la désactivation des volume "
 "groups. La plupart des distributions Linux activent tous les volume "
 "groups visibles au boot, certaines vont même jusqu'à les réactiver après "
 "désactivation manuelle. Ces mécanismes peuvent être débrayés en déployant "
@@ -330,7 +330,8 @@ msgid ""
 "The HP-UX base system does not provide tools to handle scsi persistent "
 "reservations. You have to install the scu tool if you want to activate this "
 "feature."
-msgstr "La base installée standard de HP-UX ne permet pas de gérer les "
+msgstr ""
+"La base installée standard de HP-UX ne permet pas de gérer les "
 "reservations persistentes SCSI. Il faut donc installer l'outil additionnel "
 "scu si vous souhaitez activer cette fonctionnalité."
 
@@ -374,7 +375,7 @@ msgid ""
 "cron/root``::"
 msgstr ""
 "Le paquet installe les tâches planifiées suivantes dans, par ordre de "
-"préférence, ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``::"
+"préférence, ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root`` ::"
 
 # 82a1b8ec29054c718819e8dc2a7bd2c9
 #: ../../agent.install.rst:16

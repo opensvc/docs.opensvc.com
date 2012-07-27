@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,9 +19,9 @@ msgstr ""
 # 7bc3cfd5a6dd46fb8eb96f3cf6acc8c6
 #: ../../compliance.rst:2
 msgid "Compliance"
-msgstr ""
+msgstr "Conformité"
 
 # 4bb3a9fde0244f559d79380151ce660f
 #: ../../compliance.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenu :"

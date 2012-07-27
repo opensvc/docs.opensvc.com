@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,22 +19,22 @@ msgstr ""
 # b92953d357b34a4b915c770fc3fc2985
 #: ../../contribute.rst:16
 msgid "Clone the appropriate git repository"
-msgstr ""
+msgstr "Cloner le dépôt git approprié"
 
 # a2ae97b737b44f72a0e456cd50626df0
 #: ../../contribute.rst:39
 msgid "Configured local MTA, with git send-email"
-msgstr ""
+msgstr "MTA local configuré, avec git send-email"
 
 # 4f506c137db54ca0bd71821be0d86d68
 #: ../../contribute.rst:29
 msgid "Configured local MTA, without git send-email"
-msgstr ""
+msgstr "MTA local configuré, sans git send-email"
 
 # f3873eaef5544a4693125254d0ce48d5
 #: ../../contribute.rst:2
 msgid "Contribute"
-msgstr ""
+msgstr "Contribution"
 
 # a8c3f40653a14461b17e006c0d712e23
 #: ../../contribute.rst:52
@@ -43,11 +42,12 @@ msgid ""
 "Install :command:`git-send-email`, and :command:`msmtp` if you have to use "
 "Gmail SMTP (no local MTA configured)::"
 msgstr ""
+"Installer la commande :command:`git-send-email`, ainsi que :command:`msmtp` si vous souhaitez utiliser le service SMTP de Gmail (sans MTA local configuré) ::"
 
 # 13607320e63a40bea26b1760c62332b1
 #: ../../contribute.rst:41
 msgid "Install :command:`git-send-email`::"
-msgstr ""
+msgstr "Installer la commande :command:`git-send-email` ::"
 
 # 39e1bbfde8964f9eaa5db412fc188169
 #: ../../contribute.rst:87
@@ -55,11 +55,12 @@ msgid ""
 "Install :command:`msmtp` if you have to use Gmail SMTP (no local MTA "
 "configured)::"
 msgstr ""
+"Installer la commande :command:`msmtp` si vous souhaitez utiliser le service SMTP de Gmail (sans MTA local configuré) ::"
 
 # f5081a9fb8bc41de82f447da1647fb9b
 #: ../../contribute.rst:7
 msgid "Install git"
-msgstr ""
+msgstr "Installer git"
 
 # 296d15d5f74842eba19654e41225a6f3
 #: ../../contribute.rst:4
@@ -68,41 +69,44 @@ msgid ""
 "is also managed as a git tracked project. A GitWeb interface is available at "
 "http://git.opensvc.com."
 msgstr ""
+"Les projets de OpenSVC sont traqués par le gestionnaire de sources git. La "
+"documentation est également traquée ainsi. Une interface gitweb est disponible "
+"sur http://git.opensvc.com."
 
 # ae9b1dc042a84a5bbfd553622e1dc53f
 #: ../../contribute.rst:31
 msgid "Send patch with::"
-msgstr ""
+msgstr "L'envoi d'un patch se fait par ::"
 
 # d27a9e2345e54389971b8d7823ab471f
 #: ../../contribute.rst:26
 msgid "Send patches"
-msgstr ""
+msgstr "Envoi de patches"
 
 # 96585718395e45cbaacf90b48683b3c9
 # eee24fda110d4302aea11bb0ba599c35
 # 1cc1fffe69b84b429672f2069810488f
 #: ../../contribute.rst:45 ../../contribute.rst:80 ../../contribute.rst:110
 msgid "Send patches with::"
-msgstr ""
+msgstr "L'envoi de patchs se fait par ::"
 
 # 8d450e63b57146b39749046209a40b8c
 #: ../../contribute.rst:76
 msgid "Set up :command:`git-send-email` to use :command:`msmtp`::"
-msgstr ""
+msgstr "Configurer :command:`git-send-email` pour l'utilisation de :command:`msmtp` ::"
 
 # 21aa40c7358948d9a69b6813104fd253
 # 27fda7e570224a56b6e2631b1c302fd7
 #: ../../contribute.rst:57 ../../contribute.rst:91
 msgid "Set up :command:`msmtp`::"
-msgstr ""
+msgstr "Configuration de :command:`msmtp` ::"
 
 # 5577725b27c843e985c7d48c2ad4595f
 #: ../../contribute.rst:50
 msgid "With msmtp, with git send-email"
-msgstr ""
+msgstr "Avec msmtp, avec git send-email"
 
 # 9ae5bca46e9e410e92e8d4b848790a92
 #: ../../contribute.rst:85
 msgid "With msmtp, without git send-email"
-msgstr ""
+msgstr "Avec msmtp, sans git send-email"

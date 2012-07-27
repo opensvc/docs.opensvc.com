@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the OpenSVC package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
@@ -20,7 +19,7 @@ msgstr ""
 # 450323b387044195b41e2b1b5021fa2f
 #: ../../collector.view.patches.rst:9
 msgid "Compare installed version of patches across a set of nodes"
-msgstr ""
+msgstr "Comparer les versions des correctifs installés sur un groupe de noeuds"
 
 # 59e163c3a73146e2a321ab6c1892ccfd
 #: ../../collector.view.patches.rst:10
@@ -28,11 +27,12 @@ msgid ""
 "Identify nodes vulnerable to bug or security problems known to certain patch "
 "levels"
 msgstr ""
+"Identifier les noeuds vulnérables à un bug ou une brèche de sécurité lié à un correctif particulier"
 
 # c09ee12355fd4ef3bea65f2a14177748
 #: ../../collector.view.patches.rst:11
 msgid "Identify nodes where a patch is installed or not installed"
-msgstr ""
+msgstr "Identifier les noeuds sur lesquels un correctif est installé mais où il n'est plus souhaité"
 
 # 60cab7a5f03b415084a92385d3d665ab
 #: ../../collector.view.patches.rst:14
@@ -41,21 +41,23 @@ msgid ""
 "update date highlighted red. Information for such a patch should not be "
 "trusted."
 msgstr ""
+"Les entrées de la table des correctifs non rafraîchies pendant 24 heures sont "
+"affichées en rouge. Les informations ainsi marquées sont à prendre avec suspicion."
 
 # 4c373b08f99a465f8501945274ee5be6
 #: ../../collector.view.patches.rst:2
 msgid "Patches view"
-msgstr ""
+msgstr "Vue des correctifs"
 
 # 6df17ee8dd1242fda5dfc9464b9ece2c
 #: ../../collector.view.patches.rst:12
 msgid "Plan patch compaigns"
-msgstr ""
+msgstr "Planification des campagnes de déploiement de correctifs"
 
 # 2c9e9305a60a4d1abbe9b6886eb81f59
 #: ../../collector.view.patches.rst:17
 msgid "Screenshot"
-msgstr ""
+msgstr "Copies d'écran"
 
 # 9e3575811470412c96214d51b61129a2
 #: ../../collector.view.patches.rst:7
@@ -64,8 +66,10 @@ msgid ""
 "and pushes it to the collector. Centralized patches lists allow "
 "administrators to easily:"
 msgstr ""
+"L'agent OpenSVC récupère les listes de correctifs installés sur les noeuds (Solaris) et les envoit au collecteur. "
+"La centralisation de ces informations facilite pour les administrateurs :"
 
 # 701a63d1344342c1b0cd532f2f19a322
 #: ../../collector.view.patches.rst:5
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
