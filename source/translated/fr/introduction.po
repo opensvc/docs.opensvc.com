@@ -19,12 +19,12 @@ msgstr ""
 # 8da41e0b32df4e6ab15bf056cb58177a
 #: ../../introduction.rst:19
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 # 842d918996d54453b164017e8088814b
 #: ../../introduction.rst:2
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # 47251fbbd6d2484bb9e2c0ebec2b6a2f
 #: ../../introduction.rst:7
@@ -34,11 +34,16 @@ msgid ""
 "\"OpenSVC\" and the company \"OpenSVC co\". This book covers extensively the "
 "OpenSVC goals, design and usage."
 msgstr ""
+"OpenSVC est un logiciel et également le nom de la société qui le développe, "
+"le supporte et le commercialise. Dans cette documentation le logiciel sera "
+"mentionné sous le nom de OpenSVC, et la société sous le nom de OpenSVC SARL. "
+"Ce livre explique dans le détails les objectifs d'OpenSVC, son implémentation "
+"et son utilisation."
 
 # f291f0d86d864f5685880fe1a008eb04
 #: ../../introduction.rst:9
 msgid "OpenSVC is composed of two software components:"
-msgstr ""
+msgstr "OpenSVC se compose de deux composants logiciels :"
 
 # a7a66b27553c4af48874d10b98e662a4
 #: ../../introduction.rst:16
@@ -50,6 +55,13 @@ msgid ""
 "functional in the absence of a collector. Coupled by a heartbeat software, "
 "the agent completes a full cluster stack."
 msgstr ""
+"L'agent OpenSVC est à la base un gestionnaire de ressources en cluster, "
+"étendu de capacités de centralisation d'informations. Il est placé sous "
+"license GNU General Public License v2. Le collecteur est une application "
+"web 2.0 propriétaire qui aggrège les informations fournies par les agents. "
+"Les fonctionnalités de gestionnaire de ressources de l'agent sont "
+"pleinement utilisables en l'absence d'un collecteur. Couplé à un logiciel "
+"de battement de coeur, l'agent forme une pile de clustering complète."
 
 # 811588cef2ed4e5ba688701935b722a3
 #: ../../introduction.rst:21
@@ -60,6 +72,12 @@ msgid ""
 "managers. These needs where assessed in major french financial and "
 "transports institutions."
 msgstr ""
+"Le projet OpenSVC est né en Novembre 2009 quand Christophe Varoqui et "
+"Cyril Galibern décidèrent de développer depuis une copie blanche une "
+"pile logicielle capable de répondre aux besoins de plans de reprise "
+"d'activité et de gestion de grands parcs hétérogènes. Ces besoins ont "
+"été collectés chez des acteurs français majeurs des secteurs "
+"financier et du transport."
 
 # 8fc90463350744d490666deb51aacf9c
 #: ../../introduction.rst:14
@@ -71,18 +89,25 @@ msgid ""
 "and compliance. OpenSVC is operating system, application and hardware "
 "agnostic."
 msgstr ""
+"Les deux composants mis ensemble répondent à un large spectre de problèmes "
+"pour les départements informatiques, dont la continuité de service, la "
+"disponibilité applicative, l'audit continu, la gestion des biens, la gestion "
+"du cycle de vie des matériels et des logiciels, l'analyse de tendances, "
+"la refacturation des ressources, la gestion du stockage, le provisioning et "
+"la conformité. OpenSVC est agnostique vis-à-vis du système d'exploitation, des "
+"applications et du matériel."
 
 # 6b5e10a828144146b7f757e85ffe7bfa
 #: ../../introduction.rst:5
 msgid "What is OpenSVC"
-msgstr ""
+msgstr "Ce qu'est OpenSVC"
 
 # df59f079105d4afc8eefd0ca3c72fd11
 #: ../../introduction.rst:12
 msgid "the agent"
-msgstr ""
+msgstr "l'agent"
 
 # 32b29c1c405148e5b391997c2f470209
 #: ../../introduction.rst:11
 msgid "the collector"
-msgstr ""
+msgstr "le collecteur"
