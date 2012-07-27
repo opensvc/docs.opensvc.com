@@ -19,27 +19,27 @@ msgstr ""
 # 6e104f96786e4cb295929afecdf81645
 #: ../../storage.zfs.rst:12
 msgid "Command set"
-msgstr ""
+msgstr "Commandes"
 
 # 706e346a78a642fdafb2cb5b36099771
 #: ../../storage.zfs.rst:45
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 # e4ff52171e424b0e9ab470f34b555d49
 #: ../../storage.zfs.rst:48
 msgid "Extract of z3.opensvc.com env file"
-msgstr ""
+msgstr "Extrait du fichier env de z3.opensvc.com"
 
 # ce21cd74110342c1aae1a8618815b227
 #: ../../storage.zfs.rst:62
 msgid "Full synchronization"
-msgstr ""
+msgstr "Synchronisation complète"
 
 # 85cb775302d8484787b52515bd98d598
 #: ../../storage.zfs.rst:77
 msgid "Incremental synchronization"
-msgstr ""
+msgstr "Synchronisation incrémentale"
 
 # 4bddbf61334a452c8f666f99a5318da9
 #: ../../storage.zfs.rst:15
@@ -47,36 +47,38 @@ msgid ""
 "Initial synchronization or incremental synchronisation. First one will be a "
 "Initial synchronisation, next will be incremental"
 msgstr ""
+"Synchronisation initiale ou incrémentale. La première synchronisation est "
+"complète, les suivantes incrémentales."
 
 # ef6df0ed126a41edbe1e064ec73fa714
 #: ../../storage.zfs.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # e7b94b4ad60c43f7adddecbb25704c11
 #: ../../storage.zfs.rst:24
 msgid "Last synchronization occured less than sync_max_delay minutes ago."
-msgstr ""
+msgstr "La dernnière synchronisation a eu lieu il y a moins de sync_max_delay minutes."
 
 # d7eb70ab18e145d988825c313e082d44
 #: ../../storage.zfs.rst:27
 msgid "Last synchronization occured more than sync_max_delay minutes ago."
-msgstr ""
+msgstr "La dernnière synchronisation a eu lieu il y a plus de sync_max_delay minutes."
 
 # 113357c5385643039675d7547044b461
 #: ../../storage.zfs.rst:18
 msgid "Same"
-msgstr ""
+msgstr "Idem"
 
 # 7f2cc27942244beeb12b7879c01bb50b
 #: ../../storage.zfs.rst:30
 msgid "Service configuration"
-msgstr ""
+msgstr "Configuration de service"
 
 # d601258096334adaae8689f64c9519fe
 #: ../../storage.zfs.rst:33
 msgid "Service configuration file"
-msgstr ""
+msgstr "Fichier de configuration du service"
 
 # 96cd183f098b4487ae4b3d12720b0fff
 #: ../../storage.zfs.rst:9
@@ -86,11 +88,16 @@ msgid ""
 "the deltas application sequence is not broken. If broken, alerts are emited "
 "and a full sync must be scheduled"
 msgstr ""
+"La source et la cible maintiennent un snapshot nommé @sent pour identifier "
+"la dernière synchronisation incrémentale réussie. La présence de ce "
+"snapshot est utilisée pour savoir si la chaine de synchronisations incrémentale "
+"est brisée. Auquel cas, une alerte est émise et une synchronisation complète "
+"doit être planifiée."
 
 # 5d9041f54df147bd9d2ad94d8b2bf08c
 #: ../../storage.zfs.rst:21
 msgid "Status"
-msgstr ""
+msgstr "Etats"
 
 # 5540353ba9ff4dfeb4175cb2586d8bab
 #: ../../storage.zfs.rst:7
@@ -98,8 +105,10 @@ msgid ""
 "The zfs replication scheme is based on zfs send/receive. OpenSVC uses ZFS "
 "snapshots to ensure incremental send/receive replication."
 msgstr ""
+"La stratégie de réplication par zfs est basée sur les commandes zfs send/receive. "
+"OpenSVC utilise les snapshots zfs pour assurer ces réplications incrémentales."
 
 # a7c3636d18b143f2935c09100aa40e30
 #: ../../storage.zfs.rst:2
 msgid "zfs data replication"
-msgstr ""
+msgstr "Réplication de données par zfs"
