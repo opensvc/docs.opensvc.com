@@ -22,31 +22,34 @@ msgid ""
 "After succesful delta application on targets, snap1 is removed and snap2 is "
 "renamed snap1. Ready for the next incremental sync."
 msgstr ""
+"Après application réussie du delta sur les cibles, snap1 est supprimé et "
+"snap2 est renommé snap1. Tout est près pour la synchronisation incrémentale "
+"suivante."
 
 # dbb7ded411c54fe3a916fc5b606bacbd
 #: ../../storage.dds.rst:45
 msgid "Cluster mode"
-msgstr ""
+msgstr "Mode cluster"
 
 # 8682748b8e1842d09b9b9411757afcc1
 #: ../../storage.dds.rst:24
 msgid "Command set"
-msgstr ""
+msgstr "Commandes"
 
 # 476ada0180764edfad7e8aaedb57fb45
 #: ../../storage.dds.rst:12
 msgid "Delta generation"
-msgstr ""
+msgstr "Génération du delta"
 
 # c696c6a47d7c45d5b20ea56c77933b54
 #: ../../storage.dds.rst:111
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 # f60349d3321243fc85c2037793de8014
 #: ../../storage.dds.rst:114
 msgid "Full synchronization"
-msgstr ""
+msgstr "Synchronisation complète"
 
 # 69742185ac2348118e5c1c779fc4a329
 #: ../../storage.dds.rst:19
@@ -55,11 +58,14 @@ msgid ""
 "snap1 and snap2 creation times, plus the mapping table keeping track of each "
 "chunk offset in the origin."
 msgstr ""
+"Autrement dit, le delta binaire contient toutes les données changées entre "
+"la création de snap1 et de snap2, plus la table des pointeurs qui "
+"stocke les offsets des chunks sur l'origine."
 
 # a7c9e261b874483394809465c3cee149
 #: ../../storage.dds.rst:131
 msgid "Incremental synchronization"
-msgstr ""
+msgstr "Synchronisation incrémentale"
 
 # 84e3fd695fe845629fd89882a44de890
 #: ../../storage.dds.rst:30
@@ -67,6 +73,9 @@ msgid ""
 "Incremental synchronization. dds-based. Extract the binary delta as a file, "
 "send to file to the target systems and replay the changes there."
 msgstr ""
+"Synchronisation incrémentale. Basée sur dds. Extrait un delta binaire sous "
+"forme de fichier, envoie ce fichier sur les noeuds cibles et y rejoue les "
+"changements."
 
 # 0d99c5b1ea9842488e2e5d912cd0b96d
 #: ../../storage.dds.rst:27
@@ -76,31 +85,36 @@ msgid ""
 "though a storage bandwidth drain, works on a snapshot, so the service need "
 "not be down."
 msgstr ""
+"Synchronisation initiale. Basée sur dds. Fait transiter toutes les "
+"données sur le réseau. Egalement nécessaire lorsque la source et la "
+"cible sont dé-synchronisées. Cette opération, bien que consommatrice "
+"en bande passante, utilise un snapshot donc le service n'a pas "
+"besoin d'être arrêté."
 
 # 50b108f85e624ad39cb918fd7384f349
 #: ../../storage.dds.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 # 7704b75e6f914e859dcbe7b5f9b90f4e
 #: ../../storage.dds.rst:36
 msgid "Last synchronization occured less than sync_max_delay minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # ac7d56f12f3a4749a6ae89df01417593
 #: ../../storage.dds.rst:39
 msgid "Last synchronization occured more than sync_max_delay minutes ago."
-msgstr ""
+msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # f20073c4985f4bbcb7e155460d18e5a5
 #: ../../storage.dds.rst:42
 msgid "Service configuration"
-msgstr ""
+msgstr "Configuration du service"
 
 # b1cb6ec791ae451d833e1de2f42d5637
 #: ../../storage.dds.rst:51
 msgid "Service configuration file"
-msgstr ""
+msgstr "Fichier de configuration du service"
 
 # 5626b68261774a91a672123352a050ad
 #: ../../storage.dds.rst:9
@@ -110,11 +124,16 @@ msgid ""
 "application sequence is not broken. If broken, alerts are emited and a full "
 "sync must be scheduled."
 msgstr ""
+"La source et les cibles maintiennent un fichier d'état pour stocker "
+"l'horodatage de la dernière synchronisation incrémentale réussie. "
+"Cette information est utilisée pour vérifier que la séquence "
+"d'application des delta n'a pas été interrompue. Si elle l'a été, "
+"une alerte est émise et une synchronisation complète devient nécessaire."
 
 # 1be477e49e65433fa45c5f2a45448e66
 #: ../../storage.dds.rst:33
 msgid "Status"
-msgstr ""
+msgstr "Etats"
 
 # 849ac7622ac84e9d80e88ae8a54fa191
 #: ../../storage.dds.rst:7
@@ -127,6 +146,15 @@ msgid ""
 "origin. OpenSVC uses this low-level feature-set to implement binary-delta "
 "incremental logical volume replication."
 msgstr ""
+"Le mécanisme de réplication par dds est similaire à ddsnap, en plus simple, "
+"plus spécifique, et complètement userspace. Il repose sur l'outil dds, "
+"mis à disposition par OpenSVC via http://repo.opensvc.com. Cet outil "
+"consulte les tables de copy-on-write des snapshots LVM2 à la recherche des "
+"segments de données changés depuis la création du snapshot et rassemble "
+"les dernières données depuis l'origine du snapshot ou depuis un snapshot "
+"plus récent de la même origine. OpenSVC utilise ces fonctions bas-niveau "
+"pour implémenter un mécanisme de réplication de volumes logiques par "
+"envois incrémentaux de deltas binaires."
 
 # f0218801ae6e416cb3e23e478fce8ff2
 #: ../../storage.dds.rst:48
@@ -135,11 +163,15 @@ msgid ""
 "node, the dds replication is blocked from the DRP node. The return to "
 "production mode usually involves a full resynchronization."
 msgstr ""
+"C'est le mode par défaut de plan de reprise d'activité. Lors du "
+"démarrage d'un service sur un noeud DRP, la réplication dds est suspendue à "
+"l'initiative du noeud DRP. Le retour au mode de production normal "
+"implique dans le cas général une synchronisation complète."
 
 # 5388b29b4ccb40fd94f1614827c1ec16
 #: ../../storage.dds.rst:2
 msgid "dds data replication"
-msgstr ""
+msgstr "Réplication de données par dds"
 
 # 6fc299067aed4841be71f74a5b0eb1c0
 #: ../../storage.dds.rst:17
@@ -149,3 +181,9 @@ msgid ""
 "snap2 creation, so data is actually read from origin, whereas chunk4 has "
 "changed since snap2 creation, so data is read from snap2 cow segment."
 msgstr ""
+"dds lit la table de copy-on-write du snap1 (le plus agé). Pour chaque "
+"chunk changé, il récupère les données du chunk depuis snap2. Dans le "
+"diagramme, chunk1 n'a pas changé depsui la création de snap2, donc ses "
+"données sont lues depuis l'origine. chunk4, lui, a changé depuis la "
+"création de snap2, donc ses données sont lues depuis la table cow de "
+"snap2."
