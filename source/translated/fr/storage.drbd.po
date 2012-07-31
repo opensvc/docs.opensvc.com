@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-07-31 17:51\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,15 +16,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# a8b167f46f834ec3aa9649c98cc5b1c1
+#: ../../storage.drbd.rst:50
+msgid ":command:`postvg`"
+msgstr ":command:`postvg`"
+
+# b1f1b9afb42f425585cb096378f11a38
+#: ../../storage.drbd.rst:46
+msgid ":command:`prevg`"
+msgstr ":command:`prevg`"
+
+# 3fa76f548f514998ad1a440c3ef55f7b
+#: ../../storage.drbd.rst:35
+msgid ":command:`start`"
+msgstr ":command:`start`"
+
 # 968d24b8dc9744989814fdd2303f9053
-#: ../../storage.drbd.rst:29
+#: ../../storage.drbd.rst:39
+msgid ":command:`stop`"
+msgstr ":command:`stop`"
+
+# 968d24b8dc9744989814fdd2303f9053
+#: ../../storage.drbd.rst:31
 msgid "Command set"
-msgstr ""
+msgstr "Commandes"
 
 # ae2f85d9868d4a45adac9163fdd6c1d2
-#: ../../storage.drbd.rst:37
+#: ../../storage.drbd.rst:41
 msgid "Demote to 'secondary' state"
-msgstr ""
+msgstr "Transition vers le mode 'secondary'"
 
 # d6f5c26aba3a4680a31c4cba8e033fda
 #: ../../storage.drbd.rst:7
@@ -35,104 +55,132 @@ msgid ""
 "passive operation modes. The former being a prerequisite for cluster "
 "filesystem."
 msgstr ""
+"Drbd est un pilote du noyau Linux qui présente un block device partagé à "
+"partir d'une paire de block devices locaux. La réplication des données se "
+"fait par le réseau et peut être synchrone ou quasi-synchrone. Il supporte "
+"les modes actif-actif et actif-passif. Le mode actif-actif est un pré-requis "
+"pour les systèmes de fichiers en cluster."
 
 # 66bf09827cc74bbeb0d2638eb85cabd5
 #: ../../storage.drbd.rst:2
 msgid "Drbd storage driver"
-msgstr ""
+msgstr "Pilote Drbd"
 
 # bd9164b1d4ab4133b9b3d04e8557b5d7
-#: ../../storage.drbd.rst:92
+#: ../../storage.drbd.rst:98
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 # 2c169c8cc5ff48b3b8c42e9a7ac79031
-#: ../../storage.drbd.rst:20
+#: ../../storage.drbd.rst:22
 msgid "Files contributed to sync#i0"
-msgstr ""
+msgstr "Fichiers ajoutés à sync#i0"
 
 # ecd62071936742f28e8e310b36b15f41
-#: ../../storage.drbd.rst:14
+#: ../../storage.drbd.rst:16
 msgid ""
 "If a vg is layered above drbd, a specific LVM configuration is recommended "
 "(link)::"
 msgstr ""
+"Si un vg est empilé sur drbd, une configuration LVM spécifique est "
+"recommandée (link) ::"
 
 # c75d735149cd4770ab8c5e96eaad960a
-#: ../../storage.drbd.rst:94
+#: ../../storage.drbd.rst:100
 msgid ""
 "In this example the service drives an OpenVZ container installed in a "
 "filesystem (fs#1) build on a drbd (drbd#1, resource name 'data'). OpenSVC "
 "Also handles the :file:`svc/etc/init.d/foo` start-up script inside the vz "
 "container."
 msgstr ""
+"Dans cet exemple, le service pilote un container OpenVZ installé sur un "
+"système de fichiers (fs#1) bâti sur un disque drbd (drbd#1, nom de la "
+"ressource 'data'). OpenSVC gère aussi le lanceur :file:`svc/etc/init.d/foo` "
+"à l'intérieur du container."
 
 # b5ea0344945142078b2f3f6bb2c4d99a
 #: ../../storage.drbd.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
+
+# c1fe8b7898fd45cf8e930f8f2192b588
+#: ../../storage.drbd.rst:12
+msgid "Node configuration"
+msgstr "Configuration des noeuds"
 
 # 680b90e1ce364a39b6ad6e7439ce5769
 #: ../../storage.drbd.rst:9
 msgid ""
 "OpenSVC does not configure the drbd framework. It just handles the actions "
-"needed upon service 'start' and 'stop'. Node configuration"
+"needed upon service 'start' and 'stop'."
 msgstr ""
+"OpenSVC ne prend pas en charge la configuration du sous-système drbd. Il "
+"n'assure que le pilotage nécessaire au moment des 'start' et 'stop'. "
 
 # 041f1b4160ac4ad6bf723563ae7cbf56
-#: ../../storage.drbd.rst:34
+#: ../../storage.drbd.rst:37
 msgid "Promote to 'primary' state"
-msgstr ""
+msgstr "Transition vers l'état 'primary'"
 
 # c49aa172be7b4a548f54afd054b9fbee
-#: ../../storage.drbd.rst:97
+#: ../../storage.drbd.rst:103
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 # a66b8c5c6e0b4530a4942b089384e3b6
-#: ../../storage.drbd.rst:124
+#: ../../storage.drbd.rst:130
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 # 104080b4e3884a7fb5018f2d507d5a2b
-#: ../../storage.drbd.rst:49
+#: ../../storage.drbd.rst:55
 msgid "Syntax"
-msgstr ""
+msgstr "Syntaxe"
 
 # 2ed449d222884b5c894d36d98c9d69a9
-#: ../../storage.drbd.rst:40
+#: ../../storage.drbd.rst:44
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 # 947537f0f3564dcf9db8e0666b313ccc
-#: ../../storage.drbd.rst:31
+#: ../../storage.drbd.rst:33
 msgid "The drbd driver is a member of the 'disk group' class."
-msgstr ""
+msgstr "Le pilote drbd est un membre de la classe 'disk group'."
 
 # 181b49ae74bc4f58a6939c2aa835c26f
-#: ../../storage.drbd.rst:12
+#: ../../storage.drbd.rst:14
 msgid ""
 "The drbd resource configuration is expected to reside in :file:`/etc/drbd.d/"
 "${res}.res`."
 msgstr ""
+"La configuration de la ressource drbd est attendue à l'emplacement :file:`/"
+"etc/drbd.d/${res}.res`."
 
 # 24f0959872144e90905d3627144881b8
-#: ../../storage.drbd.rst:26
+#: ../../storage.drbd.rst:28
 msgid ""
 "This file is thus replicated from the node running the service to the other "
 "nodes and drpnodes."
 msgstr ""
+"Ce fichier est ainsi répliqué depuis le noeud faisant tourner le service "
+"vers les noeuds secondaires et de reprise d'activité. "
 
 # 513c872c79544f349852018d82ef460e
-#: ../../storage.drbd.rst:46
+#: ../../storage.drbd.rst:52
 msgid ""
 "Upon service 'start', drbd 'start' is scheduled after volume group 'start'. "
 "To use when the the drbd is layered over the volume group."
 msgstr ""
+"Lors d'un 'start' du service, l'action 'start' des drbd est planifiée après "
+"le 'start' des volume groups. A utiliser quand les block devices socles de "
+"drbd sont des volumes logiques."
 
 # a0a0caa0338d4e018a250e83a325c830
-#: ../../storage.drbd.rst:43
+#: ../../storage.drbd.rst:48
 msgid ""
 "Upon service 'start', drbd 'start' is scheduled before volume group 'start'. "
 "To use when the volume group is layered over the drbd."
 msgstr ""
+"Lors d'un 'start' du service, l'action 'start' des drbd est planifiée avant "
+"le 'start' des volume groups. A utiliser quand les pv des vg sont des "
+"devices drbd."

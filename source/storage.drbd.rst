@@ -7,7 +7,9 @@ Introduction
 Drbd is a Linux kernel driver presenting shared block devices from pairs of local block devices. Replication data goes over the network and can be synchronous ou near-synchronous. It supports the active-active or active-passive operation modes. The former being a prerequisite for cluster filesystem.
 
 OpenSVC does not configure the drbd framework. It just handles the actions needed upon service 'start' and 'stop'.
+
 Node configuration
+==================
 
 The drbd resource configuration is expected to reside in :file:`/etc/drbd.d/${res}.res`.
 
@@ -31,18 +33,22 @@ Command set
 The drbd driver is a member of the 'disk group' class.
 
 :command:`start`
+
     Promote to 'primary' state
 
 :command:`stop`
+
     Demote to 'secondary' state
 
 Tags
 ====
 
 :command:`prevg`
+
     Upon service 'start', drbd 'start' is scheduled before volume group 'start'. To use when the volume group is layered over the drbd.
 
 :command:`postvg`
+
     Upon service 'start', drbd 'start' is scheduled after volume group 'start'. To use when the the drbd is layered over the volume group.
 
 Syntax
