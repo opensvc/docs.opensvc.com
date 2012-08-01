@@ -19,7 +19,7 @@ msgstr ""
 # 2826df9bef004e8c957e723806612086
 #: ../../manpages.rst:4
 msgid "Contents:"
-msgstr "Contenu:"
+msgstr "Contenu :"
 
 # 0e79310da1ff4938a337f650ca9132f2
 #: ../../manpages.rst:2
