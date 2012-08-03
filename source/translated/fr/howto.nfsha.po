@@ -19,7 +19,7 @@ msgstr ""
 # 6c60bc5986ee4bf487ff8693e7262960
 #: ../../howto.nfsha.rst:121
 msgid "**On both nodes**"
-msgstr ""
+msgstr "**Sur les deux noeuds**"
 
 # 05db04ac7f2b4fe191f6f62fdd79f776
 # 992aa5b87c0c446c9469bfee552c9e1f
@@ -28,7 +28,7 @@ msgstr ""
 #: ../../howto.nfsha.rst:28 ../../howto.nfsha.rst:87 ../../howto.nfsha.rst:93
 #: ../../howto.nfsha.rst:114
 msgid "**On both nodes**::"
-msgstr ""
+msgstr "**Sur les deux noeuds** ::"
 
 # 0f4c65922fd448b3955e2134c7693f59
 # e08ad56609b741bfa21c124d6a32ea5c
@@ -37,37 +37,37 @@ msgstr ""
 #: ../../howto.nfsha.rst:13 ../../howto.nfsha.rst:38 ../../howto.nfsha.rst:103
 #: ../../howto.nfsha.rst:110
 msgid "**On the master node**::"
-msgstr ""
+msgstr "**Sur le noeud maître** ::"
 
 # 7e28192922c84ef18eaa5bd9bf0463ef
 #: ../../howto.nfsha.rst:91
 msgid "Change these system configuration files to use this new mountpoint."
-msgstr ""
+msgstr "Changer ces fichiers de configurations du système pour utiliser ces nouveaux points d'ancrage."
 
 # 5784c11f7aed4bb48caa9e0cdc0de4e7
 #: ../../howto.nfsha.rst:119
 msgid "Configure nfs to listen on the service IP address"
-msgstr ""
+msgstr "Configurer nfs pour écouter sur l'adresse internet du service"
 
 # 25b0a4a984964be5b1a07487dffa2d27
 #: ../../howto.nfsha.rst:9
 msgid "Create a HA service, using the :ref:`howto.ha` howto."
-msgstr ""
+msgstr "Créer un service HA, en utilisant le guide :ref:`howto.ha`."
 
 # 539f08d154414011b60f86d9bb08ffac
 #: ../../howto.nfsha.rst:36
 msgid "Create the OpenSVC service startup script."
-msgstr ""
+msgstr "Créer le lanceur du service OpenSVC."
 
 # 901af789b65e4b539b807e1ba46f86c4
 #: ../../howto.nfsha.rst:85
 msgid "Create the new mount point."
-msgstr ""
+msgstr "Créer le nouveau point d'ancrage."
 
 # 52c7b59cd46c43a58f366f5e984cbd6a
 #: ../../howto.nfsha.rst:126
 msgid "Epilog"
-msgstr ""
+msgstr "Epilogue"
 
 # fd3853aabc824cdaa8e8d89cbcb00324
 #: ../../howto.nfsha.rst:21
@@ -76,6 +76,10 @@ msgid ""
 "service-private data. The tricky part of the HA setup is to separate this "
 "data."
 msgstr ""
+"Le service NFS sous Linux utilise ``/var/lib/nfs`` pour stocker à la "
+"fois les méta-données privées au noeud et celles qui doivent basculer. "
+"La complexité dans la mise en haute disponibilité est de séparer ces "
+"deux types de données."
 
 # d0094ebe285047c99180d408cb973af0
 #: ../../howto.nfsha.rst:11
@@ -84,21 +88,25 @@ msgid ""
 "on a shared filesystem, handled by the nfssvc OpenSVC service. This howto "
 "uses ``/nfssvc`` as the root service shared filesystem."
 msgstr ""
+"S'assurer que le lien symbolique ``/opt/opensvc/nfssvc.d`` pointe sur un "
+"répertoire d'un système de fichiers basculable, pris en charge par le "
+"service OpenSVC nfssvc. Ce guide utilise ``/nfssvc`` comme racine de ce "
+"système de fichier basculable."
 
 # 61df5d974b1e4d54aa1f76700ff64001
 #: ../../howto.nfsha.rst:123
 msgid "Modify STATD_HOSTNAME in /etc/sysconfig/nfs"
-msgstr ""
+msgstr "Modifier STATD_HOSTNAME dans /etc/sysconfig/nfs"
 
 # e6e26e2d47324b0d8cd4bfbb9d56fe72
 #: ../../howto.nfsha.rst:2
 msgid "NFS High Availability setup"
-msgstr ""
+msgstr "NFS en haute disponibilité"
 
 # 6cc70853a2f646968ee9e7b3d424eb8e
 #: ../../howto.nfsha.rst:19
 msgid "NFS configuration"
-msgstr ""
+msgstr "Configuration NFS"
 
 # bd02e2e77c7d4b8aa8ef0dfc8fc8a62f
 #: ../../howto.nfsha.rst:4
@@ -108,11 +116,16 @@ msgid ""
 "shares. This guide exposes the Linux NFS servers configuration for smooth "
 "failover."
 msgstr ""
+"NFS est un service délicat à mettre en haute disponibilité. Sans "
+"configuration soigneuse, les clients NFS ont tendance à se figer "
+"en attente d'un aquittement d'entrée/sortie sur le partage. Ce "
+"guide expose la configuration adéquate pour une bascule transparente "
+"du service NFS sous Linux."
 
 # 0538ed781b3240ab84966d03e3978286
 #: ../../howto.nfsha.rst:24
 msgid "NFS server startup"
-msgstr ""
+msgstr "Démarrage du serveur NFS"
 
 # 023917098d914460bc6619330ecedf73
 #: ../../howto.nfsha.rst:26
@@ -120,16 +133,19 @@ msgid ""
 "NFS startup will be handled by the OpenSVC service. Stop the NFS service and "
 "inhibit its launch at server startup."
 msgstr ""
+"Le démarrage du service NFS sera pris en charge par le service OpenSVC. "
+"Il faut donc arrêter le service NFS et inhiber son démarrage au boot "
+"des serveurs."
 
 # b2487b02810f4b92ac080d6187547fb1
 #: ../../howto.nfsha.rst:81
 msgid "Node private data"
-msgstr ""
+msgstr "Données propres aux noeuds"
 
 # d86b64826a7a45e3a9a0d15ce607a9d8
 #: ../../howto.nfsha.rst:7
 msgid "OpenSVC HA setup"
-msgstr ""
+msgstr "Configuration HA pour OpenSVC"
 
 # 986c2798fbb543a7b1e5c181e0c3d3ec
 #: ../../howto.nfsha.rst:128
@@ -137,11 +153,13 @@ msgid ""
 "Reboot the nodes to activate the new ``rpc_pipefs`` location and start "
 "testing failovers."
 msgstr ""
+"Rebooter les noeuds pour activer l'utilisation du nouvel emplacement de "
+"``rpc_pipefs`` et commencer à tester des bascules."
 
 # 3e8ecb890d654f008895a3d2f1aa1f7f
 #: ../../howto.nfsha.rst:99
 msgid "Service private data"
-msgstr ""
+msgstr "Données propres au service"
 
 # 19e683ffcb13411085a10e2abc7801e5
 #: ../../howto.nfsha.rst:83
@@ -151,6 +169,11 @@ msgid ""
 "``/var/lib/nfs`` will be moved to the shared filesystem, we need to change "
 "the location of this mount point."
 msgstr ""
+"Les données qui doivent rester locales aux noeuds sont contenues dans "
+"le pseudo système de fichiers RPC pipefs. Sont point d'ancrage par défaut "
+"est ``/var/lib/nfs/rpc_pipefs``. Comme ``/var/lib/nfs`` doit être déplacé "
+"dans l'arborescence du système de fichier basculable, il faut changer "
+"l'emplacement de ce point d'ancrage."
 
 # 5aed2d0660d447efb0ac564b3b2f401c
 #: ../../howto.nfsha.rst:108
@@ -158,6 +181,8 @@ msgid ""
 "The exports list should also move with the service, to avoid configuration "
 "drift between the 2 nodes."
 msgstr ""
+"La liste des exports devrait également se déplacer avec le service, pour "
+"éviter une dérive de configuration entre les deux noeuds."
 
 # d12a10d4904943539c71dfa0c55e30c6
 #: ../../howto.nfsha.rst:101
@@ -165,3 +190,6 @@ msgid ""
 "``/var/lib/nfs`` contains data essential for nfs client sessions takeover. "
 "Thus, this directory must follow the service in case of failover."
 msgstr ""
+"``/var/lib/nfs`` contient des données essentielles pour la reprise des "
+"sessions clientes. C'est pourquoi ce répertoire doit suivre le service "
+"en cas de bascule."
