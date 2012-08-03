@@ -63,12 +63,11 @@ msgstr "**ressource vmdg**"
 
 # 83fa8c0c8f9b450798c0df4a13c7cef3
 #: ../../howto.vmencap.rst:103
-#, fuzzy
 msgid ""
 "*and* execute in the context of the guest operating system a command "
 "verifying the plumbing on the 'ipdev' adapter."
 msgstr ""
-"*and* exécute dans le contexte du système d'exploitation invité une commande "
+"*et* exécute dans le contexte du système d'exploitation invité une commande "
 "vérifiant la présence de l'adresse internet sur la carte 'ipdev'."
 
 # 5de0ad6d37ee4f82b4d1761ce394cef3
