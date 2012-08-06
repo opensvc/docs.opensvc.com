@@ -56,7 +56,7 @@ msgstr "Divers"
 # fa2afde2e0c74bea94834aed17c57d1f
 #: ../../man.nodemgr.rst:5
 msgid "NAME"
-msgstr "nOM"
+msgstr "NOM"
 
 # 85cbdd00cb3b4aee86946ac57fb2ddca
 #: ../../man.nodemgr.rst:105
@@ -492,7 +492,7 @@ msgstr "Affiche ce message d'aide"
 # 1cbfb408b6964b989f5ee0f2df15c699
 #: ../../man.nodemgr.rst:111
 msgid "shutdown the node to powered off state"
-msgstr "shutdown le noeud, jusqu'à coupure électrique"
+msgstr "Shutdown le noeud, jusqu'à coupure électrique"
 
 # 1a3491a9d7534d67b54ac389bcc802ba
 #: ../../man.nodemgr.rst:232
