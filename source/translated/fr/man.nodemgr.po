@@ -19,17 +19,17 @@ msgstr ""
 # 9260c36a1e384546b987fde55a323af8
 #: ../../man.nodemgr.rst:242
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "COPYRIGHT"
 
 # 82371ed289264fc5bd6f6c6cf35a4f1b
 #: ../../man.nodemgr.rst:20
 msgid "Collector management"
-msgstr ""
+msgstr "Gestion du collecteur"
 
 # 8600528c04074f3fb50f677daa53162b
 #: ../../man.nodemgr.rst:52
 msgid "Compliance"
-msgstr ""
+msgstr "Conformité"
 
 # 48c2e15967a742cfba2b9315acf95091
 #: ../../man.nodemgr.rst:244
@@ -38,71 +38,75 @@ msgid ""
 "org/licenses/gpl.html>. This is free software: you are free to change and "
 "redistribute it. There is NO WARRANTY, to the extent permitted by law."
 msgstr ""
+"Copyright © 2012 OpenSVC SARL. Licence GPLv2 : GNU GPL version 2 <http://gnu."
+"org/licenses/gpl.html>. Ceci est un logiciel libre : vous êtes libre de "
+"le changer et de le redistribuer. Il n'y a aucune garantie, dans la "
+"mesure permie par la loi."
 
 # aab37a0b468a4c379f2afbe6e609a594
 #: ../../man.nodemgr.rst:15
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 # 785c658fdc814aa593d0d263c4a5007c
 #: ../../man.nodemgr.rst:99
 msgid "Misc"
-msgstr ""
+msgstr "Divers"
 
 # fa2afde2e0c74bea94834aed17c57d1f
 #: ../../man.nodemgr.rst:5
 msgid "NAME"
-msgstr ""
+msgstr "nOM"
 
 # 85cbdd00cb3b4aee86946ac57fb2ddca
 #: ../../man.nodemgr.rst:105
 msgid "Node actions"
-msgstr ""
+msgstr "Actions de noeud"
 
 # 70cd42b8b11e4ce1a41fb554244c9150
 #: ../../man.nodemgr.rst:114
 msgid "Node configuration edition"
-msgstr ""
+msgstr "Edition de la configuration du noeud"
 
 # e1087ee1cded434d992138abb7f6c7a9
 #: ../../man.nodemgr.rst:239
 msgid "OpenSVC homepage: http://www.opensvc.com"
-msgstr ""
+msgstr "Page principale OpenSVC : http://www.opensvc.com"
 
 # 5cee43b6a7a341cbbf2c55a587654856
 #: ../../man.nodemgr.rst:186
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 # 832206c0463a4bdba5f435d003f26949
 #: ../../man.nodemgr.rst:132
 msgid "Push data to the collector"
-msgstr ""
+msgstr "Pousser des données au collecteur"
 
 # fd903b268d4e4221af1162e70bdb5c6b
 #: ../../man.nodemgr.rst:235
 msgid "REPORTING BUGS"
-msgstr ""
+msgstr "REMONTER DES BUGS"
 
 # 3c5aee3a03544e119337784e9ae6aa2b
 #: ../../man.nodemgr.rst:237
 msgid "Report bugs to opensvc-users@opensvc.com."
-msgstr ""
+msgstr "Remontez les bugs à opensvc-users@opensvc.com."
 
 # df9ea22e55cc468bb4f0c02925a2dac9
 #: ../../man.nodemgr.rst:247
 msgid "SEE ALSO"
-msgstr ""
+msgstr "VOIR AUSSI"
 
 # 0ecb470b37394ba29e1b5d25bafdd6da
 #: ../../man.nodemgr.rst:10
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "SYNOPSIS"
 
 # 253aa5fd5d9c4a0e84f1e5c20e7d82b6
 #: ../../man.nodemgr.rst:176
 msgid "Service actions"
-msgstr ""
+msgstr "Actions de service"
 
 # 0bd4ca8cb51547beaed54aa98c6de58d
 #: ../../man.nodemgr.rst:17
@@ -112,6 +116,11 @@ msgid ""
 "management, OpenSVC node-specific configuration management, node-relative "
 "data push to the collector, node-wide service management."
 msgstr ""
+"La commande nodemgr contrôle tous les concepts OpenSVC relatifs au noeud. "
+"Interrogation du collecteur, changement des données concernant le noeud, "
+"gestion de la conformité, gestion des configurations de noeud de l'agent, "
+"envoi de données du noeud au collecteur, gestion en groupe des services "
+"du noeud."
 
 # d9b2d6789e7a43109115133852f12c9e
 #: ../../man.nodemgr.rst:213
@@ -120,6 +129,9 @@ msgid ""
 "are expected to be found in the same directory and named either <symid>.aclx "
 "or <same_prefix_as_bin_file>.aclx"
 msgstr ""
+"[option de pushsym] utilise le mode déconnecté de symcli sur le fichier "
+"spécifié. Les fichiers aclx sont attendus dans ce même répertoire et peuvent être nommés "
+"<symid>.aclx ou <même_prefixe_que_le_bin_file>.aclx"
 
 # 4273bf13c82349a8945ee316526c89d1
 #: ../../man.nodemgr.rst:224
@@ -127,17 +139,20 @@ msgid ""
 "a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "action' and pushstats action"
 msgstr ""
+"Une date de début exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
+"avec les actions 'collector ack' et 'pushstats'."
 
 # e2d34ca3437c4da5b5fe67247b023727
 #: ../../man.nodemgr.rst:228
 msgid "a comment to log when used with the 'collector ack action' action"
-msgstr ""
+msgstr "Un commentaire à enregistrer en complément de l'action 'collector ack action'."
 
 # 54a58fd289974a35b503e26210449991
 #: ../../man.nodemgr.rst:222
 msgid ""
 "a duration expressed in minutes. used with the 'collector ack action' action"
 msgstr ""
+"Une durée exprimée en minutes. À utiliser avec l'action 'collector ack action'."
 
 # d908141420a94e67b34779d9e88fa141
 #: ../../man.nodemgr.rst:226
@@ -145,6 +160,8 @@ msgid ""
 "a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "action' and pushstats action"
 msgstr ""
+"Une date de fin exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
+"avec les actions 'collector ack' et 'pushstats'."
 
 # 4d2fff3e916b452eb76d0f4dba1a599a
 #: ../../man.nodemgr.rst:23
@@ -152,27 +169,30 @@ msgid ""
 "acknowledge an action error on the node. an acknowlegment can be completed "
 "by --author (defaults to root@nodename) and --comment"
 msgstr ""
+"Aquitter une action en erreur sur le noeud. Un aquittement peut être "
+"complété par --author (par défaut root@nodename) et --comment."
 
 # 9feb13a5ead341dea4f30c7ed45f1076
 #: ../../man.nodemgr.rst:55
 msgid "attach moduleset specified by --moduleset for this node"
-msgstr ""
+msgstr "Attache le jeu de module spécifié par --moduleset à ce noeud"
 
 # 121b0d0a36e0439bbf08bc6dfd9077a0
 #: ../../man.nodemgr.rst:58
 msgid "attach ruleset specified by --ruleset for this node"
-msgstr ""
+msgstr "Attache le jeu de règles spécifié par --ruleset à ce noeud"
 
 # dc0639f4cda04ec99846d2d14868584e
 #: ../../man.nodemgr.rst:207
 msgid ""
 "attach the modulesets specified during a compliance check/fix/fixable command"
 msgstr ""
+"Attache les jeux de modules spécifiés lors d'une commande check/fix/fixable de conformité"
 
 # 318c0b3f33f046babbe1e1ace4fc5575
 #: ../../man.nodemgr.rst:198
 msgid "compliance, set module list"
-msgstr ""
+msgstr "Conformité, définit la liste des modules"
 
 # 170ad25984a1428e83419ef99933d7ce
 #: ../../man.nodemgr.rst:200
@@ -180,6 +200,7 @@ msgid ""
 "compliance, set moduleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
+"Conformité, définit la liste des modules. La valeur 'all' peut être utilisée avec l'action 'detach'"
 
 # 6ae3faac448e4d94b2f4ea939a86da03
 #: ../../man.nodemgr.rst:203
@@ -187,41 +208,42 @@ msgid ""
 "compliance, set ruleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
+"Conformité, définit la liste de jeux de règles. La valeur 'all' peut être utilisée avec l'action 'detach'"
 
 # f1eb414bc3a949959dd46d633c95ac50
 #: ../../man.nodemgr.rst:205
 msgid "compliance, use rulesets valid on specified date"
-msgstr ""
+msgstr "Conformité, utilise les jeux de règles en vigueur à la date spécifiée"
 
 # 922e5cc743894a498589c0e33aedc99e
 #: ../../man.nodemgr.rst:209
 msgid "cron mode"
-msgstr ""
+msgstr "Mode de tâche planifiée"
 
 # b331c0bc24f642d69f20c7c3c8732024
 #: ../../man.nodemgr.rst:193
 msgid "debug mode"
-msgstr ""
+msgstr "Mode de débug"
 
 # b1495985d08b49d4a67c17a35aa115e9
 #: ../../man.nodemgr.rst:65
 msgid "detach moduleset specified by --moduleset for this node"
-msgstr ""
+msgstr "Détache le jeu de modules spécifié par --moduleset de ce noeud"
 
 # b0904d33b99b4bcfad68b402ca3bdab6
 #: ../../man.nodemgr.rst:68
 msgid "detach ruleset specified by --ruleset for this node"
-msgstr ""
+msgstr "Détache le jeu de règles spécifié par --ruleset de ce noeud"
 
 # 83aa9f9c7da849fbba0a90fa822be3d3
 #: ../../man.nodemgr.rst:28
 msgid "display node alerts"
-msgstr ""
+msgstr "Affiche les alertes pour le noeud"
 
 # f49eed9c023f45c68522576dd909638b
 #: ../../man.nodemgr.rst:31
 msgid "display node checks"
-msgstr ""
+msgstr "Affiche les sondes pour le noeud"
 
 # acca2bc80ba04874a6d6573bc2f67c6f
 #: ../../man.nodemgr.rst:34
@@ -229,21 +251,23 @@ msgid ""
 "display node events during the period specified by --begin/--end. --end "
 "defaults to now. --begin defaults to 7 days ago"
 msgstr ""
+"Affiche les évènements sur le noeud pendant la période spécifiée par --begin/--end. "
+"--end prend la date actuelle pour défaut. --begin prend 7 jour auparavant pour défaut"
 
 # e68f0ee63cd34401b3f836c327478e74
 #: ../../man.nodemgr.rst:49
 msgid "display node services status according to the collector"
-msgstr ""
+msgstr "Affiche les états de service tel que connus du collecteur"
 
 # 182c4f1905f74652a257d36033277502
 #: ../../man.nodemgr.rst:211
 msgid "force action"
-msgstr ""
+msgstr "Force l'action"
 
 # 8af6178b75dc4ad6ace2a716d84e13c3
 #: ../../man.nodemgr.rst:117
 msgid "get the value of the node configuration parameter pointed by --param"
-msgstr ""
+msgstr "Affiche la valeur du paramètre de la configuration de noeud pointé par --param"
 
 # 49292520485c4d1e996334f5a52d9e25
 #: ../../man.nodemgr.rst:39
@@ -251,6 +275,9 @@ msgid ""
 "list actions on the node, whatever the service, during the period specified "
 "by --begin/--end. --end defaults to now. --begin defaults to 7 days ago"
 msgstr ""
+"Liste les actions sur le noeud, quel que soit le service, et durant la période "
+"spécifiée par --begin/--end. --end prend la date actuelle pour défaut. "
+"--begin prend 7 jour auparavant pour défaut"
 
 # 651f0aad50a94ab589b25372ca65bd0b
 #: ../../man.nodemgr.rst:82
@@ -258,6 +285,8 @@ msgid ""
 "list available compliance modulesets. --moduleset f% limit the scope to "
 "modulesets matching the f% pattern."
 msgstr ""
+"Liste les jeux de modules disponibles. --moduleset f% limite le périmètre "
+"aux jeux de modules correspondants à l'expression f%."
 
 # 248d25102e714ef0967a616518730f48
 #: ../../man.nodemgr.rst:86
@@ -265,22 +294,24 @@ msgid ""
 "list available compliance rulesets. --ruleset f% limit the scope to rulesets "
 "matching the f% pattern."
 msgstr ""
+"Liste les jeux de règles disponibles. --ruleset f% limite le périmètre "
+"aux jeux de règles correspondants à l'expression f%."
 
 # 94b42fe48cb94377802eca5759288607
 #: ../../man.nodemgr.rst:79
 msgid "list compliance modules available on this node"
-msgstr ""
+msgstr "Liste les modules de conformité disponibles sur le noeud"
 
 # 7062be4bb95f45e19ba62000cd774582
 # 6100a126ef7b428394dc46f66835beb1
 #: ../../man.nodemgr.rst:2 ../../man.nodemgr.rst:7
 msgid "nodemgr"
-msgstr ""
+msgstr "nodemgr"
 
 # 97b7f048795f4c08932d2eb6d740c1fe
 #: ../../man.nodemgr.rst:12
 msgid "nodemgr [options]... command"
-msgstr ""
+msgstr "nodemgr [options]... commande"
 
 # 3c82661e0e734723b6613b8468cf3b91
 #: ../../man.nodemgr.rst:121
@@ -288,51 +319,53 @@ msgid ""
 "obtain a registration number from the collector, used to authenticate the "
 "node"
 msgstr ""
+"Obtient du collecteur un numéro d'enregistrement, utilisé pour autentifier "
+"le noeud"
 
 # 2fe7c87a266d4e3cba79a1dc335141ea
 #: ../../man.nodemgr.rst:218
 msgid "point a node configuration parameter for the 'get' and 'set' actions"
-msgstr ""
+msgstr "Précise le paramètre de configuration pour les actions 'get' et 'set'"
 
 # 48e2186ac4b440848d2950db64767aca
 #: ../../man.nodemgr.rst:195
 msgid "points the directory where the metrics files are stored for pushstats"
-msgstr ""
+msgstr "Indique l'emplacement des fichiers de métriques pour l'action 'pushstats'"
 
 # 8d402f4812f742469e5daefe865eb300
 #: ../../man.nodemgr.rst:145
 msgid "push Datacore configuration to collector"
-msgstr ""
+msgstr "Envoie les configurations Datacore au collecteur"
 
 # 990d71af975b403eac6c2648bb0bcae8
 #: ../../man.nodemgr.rst:151
 msgid "push HP EVA configuration to collector"
-msgstr ""
+msgstr "Envoie les configuration HP EVA au collecteur"
 
 # a3ca4299992e496a8965c5d009181d56
 #: ../../man.nodemgr.rst:154
 msgid "push IBM SVC configuration to collector"
-msgstr ""
+msgstr "Envoie les configurations IBM SVC au collecteur"
 
 # d0e0b4d4aa0c4095adf53fe8eff92117
 #: ../../man.nodemgr.rst:142
 msgid "push asset information to collector"
-msgstr ""
+msgstr "Envoie les informations d'asset au collecteur"
 
 # bfdb8d67d0f64d28902f98b24ab1ee2e
 #: ../../man.nodemgr.rst:148
 msgid "push disks usage information to collector"
-msgstr ""
+msgstr "Envoie les consommations des systèmes de fichiers au collecteur"
 
 # 8516c68780ca4b33accb0a4449296970
 #: ../../man.nodemgr.rst:160
 msgid "push package/version list to collector"
-msgstr ""
+msgstr "Envoie la liste des paquets et leur version au collecteur"
 
 # 45d6fbd45f7b429c87a80d61fed37141
 #: ../../man.nodemgr.rst:157
 msgid "push patch/version list to collector"
-msgstr ""
+msgstr "Envoie la liste des correctifs et leur version au collecteur"
 
 # d8666ca06dad42c7b9517f8006c642dc
 #: ../../man.nodemgr.rst:166
@@ -342,31 +375,36 @@ msgid ""
 "interval can be changed using --begin/--end parameters. The location where "
 "stats files are looked up can be changed using --stats-dir."
 msgstr ""
+"Envoie les métriques de performance au collecteur. Par défaut, l'intervale "
+"des statiqtiques poussées s'étend de hier au début de la période de planification autorisée, "
+"et se termine à l'instant. Cet interval peut être changé par les paramètres "
+"--begin/--end. L'emplacement où les fichiers de statistiques sont cherchés "
+"peut être changé par --stats-dir."
 
 # b65028f4919e4091bbf92fbb1962a4b4
 #: ../../man.nodemgr.rst:138
 msgid "push services application launchers appinfo key/value pairs to database"
-msgstr ""
+msgstr "Envoie au collecteur les couples clé/valeur du appinfo des lanceurs des services"
 
 # 9d4b5f9136f24497b5a7abd882f5f1aa
 #: ../../man.nodemgr.rst:163
 msgid "push services configuration to collector"
-msgstr ""
+msgstr "Envoie les configurations de service au collecteur"
 
 # e89a20a67959494dad1776b0ac848381
 #: ../../man.nodemgr.rst:173
 msgid "push symmetrix configuration to collector"
-msgstr ""
+msgstr "Envoie les configuration des EMC Symmetrix au collecteur"
 
 # 78d7dd6ef90d411f96bfd08fbdcea38e
 #: ../../man.nodemgr.rst:108
 msgid "reboot the node"
-msgstr ""
+msgstr "Reboot le noeud"
 
 # cba74a7904ad460a8e86dc7a879a270a
 #: ../../man.nodemgr.rst:183
 msgid "refresh var files associated with services"
-msgstr ""
+msgstr "Rafraîchit les fichiers de var/ appartenant aux services"
 
 # 10afc6210d214cb7a99e16918b211e12
 #: ../../man.nodemgr.rst:61
@@ -374,6 +412,8 @@ msgid ""
 "run compliance checks. --ruleset <md5> instruct the collector to provide an "
 "historical ruleset."
 msgstr ""
+"Lance une vérification de conformité. --ruleset <md5> indique au collecteur "
+"de fournir un jeu de règles historique."
 
 # 3631726c8d8748acac41fc267ca023a5
 #: ../../man.nodemgr.rst:71
@@ -381,11 +421,13 @@ msgid ""
 "run compliance fixes. --ruleset <md5> instruct the collector to provide an "
 "historical ruleset."
 msgstr ""
+"Lance une mise en conformité. --ruleset <md5> indique au collecteur "
+"de fournir un jeu de règles historique."
 
 # f4ac1777a738414ebf38b1047fa795ca
 #: ../../man.nodemgr.rst:135
 msgid "run node sanity checks, push results to collector"
-msgstr ""
+msgstr "Lance les sondes de santé du noeud, envoie les résultats au collecteur"
 
 # 6c9c81282caa44fda4ed6c709fd60e58
 #: ../../man.nodemgr.rst:179
@@ -393,6 +435,8 @@ msgid ""
 "send var files, config files and configured replications to other nodes for "
 "each node service"
 msgstr ""
+"Envoie les fichiers de var, les configuration de service et lance les réplications "
+"configurées, pour chaque service du noeud."
 
 # 59aa93c78bb24ee381f96d172b53843d
 #: ../../man.nodemgr.rst:125
@@ -400,11 +444,13 @@ msgid ""
 "set a node configuration parameter (pointed by --param) value (pointed by --"
 "value)"
 msgstr ""
+"Attribue à un paramètre (pointé par --param) de la configuration de noeud "
+"une valeur (passée par --value)."
 
 # 2cc671c937c943aeb55015167b7d0333
 #: ../../man.nodemgr.rst:220
 msgid "set a node configuration parameter value for the 'set --param' action"
-msgstr ""
+msgstr "Indique la valeur d'un paramètre à attribuer ppour l'action 'set --param'"
 
 # 09c35f782a9f4ee9b86cc2d376bacf2d
 #: ../../man.nodemgr.rst:44
@@ -413,57 +459,60 @@ msgid ""
 "specified by --begin/--end dates. --end defaults to now. --begin defaults to "
 "7 days ago"
 msgstr ""
+"Affiche la liste détaillée des actions. Une action précise peut être spécifiée "
+"par --id. Une période peut être spécifiée par --begin/--end. --end prend "
+"pour défaut l'instant présent. --begin prend pour défaut 7 jours auparavant."
 
 # 114b621a55994144bb1ba8fc48778241
 #: ../../man.nodemgr.rst:96
 msgid "show compliance modules status"
-msgstr ""
+msgstr "Affiche l'état de conformité des modules"
 
 # d937ad0cad654bd6a0e0e84b1ee87a57
 # 0084880ba174465f8fd69fa57c764d7f
 #: ../../man.nodemgr.rst:90 ../../man.nodemgr.rst:93
 msgid "show compliance rules applying to this node"
-msgstr ""
+msgstr "Affiche les règles de conformité applicables au noeud"
 
 # d1c175d270e846438d71327464a0cfb7
 #: ../../man.nodemgr.rst:102
 msgid "show persistent reservation key of this node"
-msgstr ""
+msgstr "Affiche la clé de réservation persistante scsi du noeud"
 
 # dcf272a287c1480895acfac3b1f4a31c
 #: ../../man.nodemgr.rst:189
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "Affiche la version de l'agent"
 
 # 58ca55107e2f4a63a73913725bd63929
 #: ../../man.nodemgr.rst:191
 msgid "show this help message and exit"
-msgstr ""
+msgstr "Affiche ce message d'aide"
 
 # 1cbfb408b6964b989f5ee0f2df15c699
 #: ../../man.nodemgr.rst:111
 msgid "shutdown the node to powered off state"
-msgstr ""
+msgstr "shutdown le noeud, jusqu'à coupure électrique"
 
 # 1a3491a9d7534d67b54ac389bcc802ba
 #: ../../man.nodemgr.rst:232
 msgid "specify an id to act on"
-msgstr ""
+msgstr "Précise un identifiant pour l'action"
 
 # a5c47de707e8428aa4b190333169db2e
 #: ../../man.nodemgr.rst:249
 msgid "svcmgr(8)"
-msgstr ""
+msgstr "svcmgr(8)"
 
 # a74f8dc63499491ea6f124f4b2566d3f
 #: ../../man.nodemgr.rst:230
 msgid "the acker name to log when used with the 'collector ack action' action"
-msgstr ""
+msgstr "Le nom de l'aquitteur à enregistrer lors d'une action 'collector ack action'"
 
 # cc5f7df1c4994d359bae3fd3836260a6
 #: ../../man.nodemgr.rst:129
 msgid "unset a node configuration parameter (pointed by --param)"
-msgstr ""
+msgstr "Supprime un paramètre (pointé par --param) de la configuration du noeud"
 
 # 0f83fddb57aa417fbd53769a6953ee60
 #: ../../man.nodemgr.rst:75
@@ -471,3 +520,5 @@ msgid ""
 "verify compliance fixes prerequisites. --ruleset <md5> instruct the "
 "collector to provide an historical ruleset."
 msgstr ""
+"Vérifie les prérequis aux mises en conformités. --ruleset <md5> indique au collecteur "
+"de fournir un jeu de règles historique."
