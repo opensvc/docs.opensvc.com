@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-08-07 18:10\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,9 @@ msgid ""
 "redistribute it. There is NO WARRANTY, to the extent permitted by law."
 msgstr ""
 "Copyright © 2012 OpenSVC SARL. Licence GPLv2 : GNU GPL version 2 <http://gnu."
-"org/licenses/gpl.html>. Ceci est un logiciel libre : vous êtes libre de "
-"le changer et de le redistribuer. Il n'y a aucune garantie, dans la "
-"mesure permie par la loi."
+"org/licenses/gpl.html>. Ceci est un logiciel libre : vous êtes libre de le "
+"changer et de le redistribuer. Il n'y a aucune garantie, dans la mesure "
+"permie par la loi."
 
 # 14da90a8c29343338cee21f541173de2
 #: ../../man.svcmgr.rst:15
@@ -102,10 +102,11 @@ msgid ""
 "configuration management, service-relative data push to the collector and "
 "service management."
 msgstr ""
-"La commande svcmgr contrôle tous les aspects relatifs à la gestion des services "
-"sur le noeud local. Interrogation du collecteur, changement des données concernant le service, "
-"gestion de la conformité de service, gestion des configurations de service, "
-"envoi de données du service au collecteur, gestion des services."
+"La commande svcmgr contrôle tous les aspects relatifs à la gestion des "
+"services sur le noeud local. Interrogation du collecteur, changement des "
+"données concernant le service, gestion de la conformité de service, gestion "
+"des configurations de service, envoi de données du service au collecteur, "
+"gestion des services."
 
 # 0231cdbac9a7454ab188040742cf9591
 #: ../../man.svcmgr.rst:346
@@ -113,15 +114,16 @@ msgid ""
 "a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "unavailability' action"
 msgstr ""
-"Une date de début exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
-"avec les actions 'collector ack' et 'pushstats'."
+"Une date de début exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser avec les "
+"actions 'collector ack' et 'pushstats'."
 
 # f582f3642ced4aa19fa905c8a9b0f031
 #: ../../man.svcmgr.rst:350
 msgid ""
 "a comment to log when used with the 'collector ack unavailability' action"
 msgstr ""
-"Un commentaire à enregistrer en complément de l'action 'collector ack unavailabilty'."
+"Un commentaire à enregistrer en complément de l'action 'collector ack "
+"unavailabilty'."
 
 # 32444eb79b57454986dc74e72ba44559
 #: ../../man.svcmgr.rst:342
@@ -129,7 +131,8 @@ msgid ""
 "a duration expressed in minutes. used with the 'collector ack "
 "unavailability' action"
 msgstr ""
-"Une durée exprimée en minutes. À utiliser avec l'action 'collector ack unavailability'."
+"Une durée exprimée en minutes. À utiliser avec l'action 'collector ack "
+"unavailability'."
 
 # 6d14ee8d164f4495974fea294a1c94a6
 #: ../../man.svcmgr.rst:348
@@ -137,13 +140,15 @@ msgid ""
 "a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "unavailability' action"
 msgstr ""
-"Une date de fin exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
-"avec l'action 'collector ack unavailability'."
+"Une date de fin exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser avec "
+"l'action 'collector ack unavailability'."
 
 # 20253035e11d4888bc71ffb6c741be6e
 #: ../../man.svcmgr.rst:320
 msgid "a resource definition in json dictionary format fed to create or update"
-msgstr "Une définition de ressource au format dictionnaire sérialisé JSON passée aux actions 'create' ou 'update'"
+msgstr ""
+"Une définition de ressource au format dictionnaire sérialisé JSON passée aux "
+"actions 'create' ou 'update'"
 
 # 66eb19595bc840128cc0fcd21c0df465
 #: ../../man.svcmgr.rst:23
@@ -162,10 +167,10 @@ msgid ""
 "acknowlegment can be completed by --author (defaults to root@nodename), --"
 "account (default to 1) and --comment"
 msgstr ""
-"Aquitter une période d'indisponibilité. La période est spécifiée par --begin/--"
-"end ou --begin/--duration. --begin prend pour défaut l'instant présent. "
-"Un aquittement peut être complété par --author (par défaut root@nodename), "
-"--account (par défaut 1) et --comment."
+"Aquitter une période d'indisponibilité. La période est spécifiée par --"
+"begin/--end ou --begin/--duration. --begin prend pour défaut l'instant "
+"présent. Un aquittement peut être complété par --author (par défaut "
+"root@nodename), --account (par défaut 1) et --comment."
 
 # 4c75c61ff7af4526af39a59db046de8c
 #: ../../man.svcmgr.rst:198
@@ -197,7 +202,8 @@ msgstr "Attache le jeu de règles spécifié par --ruleset à ce service"
 msgid ""
 "attach the modulesets specified during a compliance check/fix/fixable command"
 msgstr ""
-"Attache les jeux de modules spécifiés lors d'une commande check/fix/fixable de conformité"
+"Attache les jeux de modules spécifiés lors d'une commande check/fix/fixable "
+"de conformité"
 
 # a8f75e03322b4b388975b661b0291162
 #: ../../man.svcmgr.rst:189
@@ -205,8 +211,8 @@ msgid ""
 "combo action, activating standby disks, taking reservations, starting "
 "loopback devices and volume groups"
 msgstr ""
-"Action combinée, active les disques, aquiert les réservations scsi, démarre les "
-"disques loopback et les volume groups"
+"Action combinée, active les disques, aquiert les réservations scsi, démarre "
+"les disques loopback et les volume groups"
 
 # a934d7b228754d1eb880ef24846c30e6
 #: ../../man.svcmgr.rst:171
@@ -224,7 +230,8 @@ msgid ""
 "combo action, chaining syncnodes-syncdrp-syncupdate.  --force bypass the "
 "schedule check."
 msgstr ""
-"Action combinée, chaîne syncnodes-syncdrp-syncupdate. --force outre-passe la vérification de la planification"
+"Action combinée, chaîne syncnodes-syncdrp-syncupdate. --force outre-passe la "
+"vérification de la planification"
 
 # b4b7f942c17f4e91a4f1a994cdf2891f
 #: ../../man.svcmgr.rst:222
@@ -232,19 +239,23 @@ msgid ""
 "combo action, stopping volume groups and loopback devices, droping "
 "reservations, disabling standby disks"
 msgstr ""
-"Action combinée, stoppe les volume groups et les disques loopback, "
-"restitue les réservations scsi, désactive les disques"
+"Action combinée, stoppe les volume groups et les disques loopback, restitue "
+"les réservations scsi, désactive les disques"
 
 # 0117814f94264fdb90b1544475a0dd6c
 # 5dd8b552b9284e428ee67a89b770e303
 #: ../../man.svcmgr.rst:318 ../../man.svcmgr.rst:324
 msgid "comma-separated list of resource tags to limit action to"
-msgstr "Une liste de tags de ressource, séparés par des virgules, qui limite le périmètre de l'action aux ressources qui ont ces tags"
+msgstr ""
+"Une liste de tags de ressource, séparés par des virgules, qui limite le "
+"périmètre de l'action aux ressources qui ont ces tags"
 
 # a836286bc60f403da2b6ea4e6be291c2
 #: ../../man.svcmgr.rst:316
 msgid "comma-separated list of resource to limit action to"
-msgstr "Une liste d'identifiants de ressource, qui limite le périmètre de l'action à ces ressources"
+msgstr ""
+"Une liste d'identifiants de ressource, qui limite le périmètre de l'action à "
+"ces ressources"
 
 # da2a280021bf4586bba932c80888f303
 #: ../../man.svcmgr.rst:356
@@ -257,7 +268,8 @@ msgid ""
 "command provided to the heartbeat daemon to fence peer node in case of split "
 "brain"
 msgstr ""
-"Commande passée par le daemon de heartbeat pour évincer le noeud du cluster en cas de schizophrénie"
+"Commande passée par le daemon de heartbeat pour évincer le noeud du cluster "
+"en cas de schizophrénie"
 
 # d3f9edb116bb462f81ffb6690e5f6b8e
 #: ../../man.svcmgr.rst:330
@@ -270,7 +282,8 @@ msgid ""
 "compliance, set moduleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
-"Conformité, définit la liste des modules. La valeur 'all' peut être utilisée avec l'action 'detach'"
+"Conformité, définit la liste des modules. La valeur 'all' peut être utilisée "
+"avec l'action 'detach'"
 
 # c091235022e8426bbb59ad33d405e646
 #: ../../man.svcmgr.rst:334
@@ -278,7 +291,8 @@ msgid ""
 "compliance, set ruleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
-"Conformité, définit la liste de jeux de règles. La valeur 'all' peut être utilisée avec l'action 'detach'"
+"Conformité, définit la liste de jeux de règles. La valeur 'all' peut être "
+"utilisée avec l'action 'detach'"
 
 # ac45a76470e143aab4aca961c88086b3
 #: ../../man.svcmgr.rst:336
@@ -296,8 +310,8 @@ msgid ""
 "create a new service configuration file. --interactive triggers the "
 "interactive mode"
 msgstr ""
-"Initialise un fichier de configuration pour un nouveau service. --interactive "
-"déclenche le mode interactif"
+"Initialise un fichier de configuration pour un nouveau service. --"
+"interactive déclenche le mode interactif"
 
 # 5e99207de5dc4c7587a8b0210a412a42
 #: ../../man.svcmgr.rst:231
@@ -328,7 +342,8 @@ msgstr ""
 msgid ""
 "delete resources passed through --rid in services passed through --service"
 msgstr ""
-"Supprime les ressources spécifiées par --rid dans les services spécifiés par --service"
+"Supprime les ressources spécifiées par --rid dans les services spécifiés par "
+"--service"
 
 # 917e766788b14008897ac5fdda188b14
 #: ../../man.svcmgr.rst:228
@@ -356,8 +371,8 @@ msgid ""
 "disable resources passed through --rid in services passed through --service. "
 "Specifying no resource disables the whole service."
 msgstr ""
-"Désactive les ressources spécifiées par --rid dans les services spécifiés par "
-"--service. Ne pas spécifier de ressources désactive tout le service."
+"Désactive les ressources spécifiées par --rid dans les services spécifiés "
+"par --service. Ne pas spécifier de ressources désactive tout le service."
 
 # dba3a707735440ed974fe405e42bb774
 #: ../../man.svcmgr.rst:35
@@ -391,7 +406,9 @@ msgstr "Affiche l'état des ressources du service"
 # d09ad319ef51421497abf4ac2ba2d05a
 #: ../../man.svcmgr.rst:61
 msgid "display service status on all nodes, according to the collector."
-msgstr "Affiche les états de service sur tous les noeuds, tels que connus du collecteur."
+msgstr ""
+"Affiche les états de service sur tous les noeuds, tels que connus du "
+"collecteur."
 
 # e37cf52478b749bab6690f4832215f7c
 #: ../../man.svcmgr.rst:117
@@ -399,8 +416,8 @@ msgid ""
 "enable resources passed through --rid in services passed through --service. "
 "Specifying no resource enables the whole service."
 msgstr ""
-"Active les ressources spécifiées par --rid dans les services spécifiés par --service. "
-"Ne pas spécifier de ressource active tout le service."
+"Active les ressources spécifiées par --rid dans les services spécifiés par --"
+"service. Ne pas spécifier de ressource active tout le service."
 
 # 693f7215ca144b58ab36ab9d9feb19d1
 #: ../../man.svcmgr.rst:183
@@ -419,8 +436,9 @@ msgstr "Force l'action, ignore les avertissements"
 
 # 3daee9fd4fd441d4aa7c95a7c321b880
 #: ../../man.svcmgr.rst:285
-msgid "get the value of the node configuration parameter pointed by --param"
-msgstr "Affiche la valeur du paramètre de configuration de service pointé par --param"
+msgid "get the value of the service configuration parameter pointed by --param"
+msgstr ""
+"Affiche la valeur du paramètre de configuration de service pointé par --param"
 
 # 35675f12db9e4250acfd28d3ec94bfaf
 #: ../../man.svcmgr.rst:261
@@ -428,8 +446,8 @@ msgid ""
 "like syncupdate, but not triggered by the scheduler (thus adapted for clone/"
 "snap operations)"
 msgstr ""
-"Comme syncupdate, mais non déclenché par la planification (donc à utiliser pour les "
-"opérations de clone/snap)"
+"Comme syncupdate, mais non déclenché par la planification (donc à utiliser "
+"pour les opérations de clone/snap)"
 
 # b5ba2f38abe24e4a8642da88457dad61
 #: ../../man.svcmgr.rst:51
@@ -448,9 +466,9 @@ msgid ""
 "list actions on the service, whatever the node, during the period specified "
 "by --begin/--end. --end defaults to now. --begin defaults to 7 days ago"
 msgstr ""
-"Affiche les actions sur le service, quel que soit le noeud, pendant la période "
-"spécifiée par --begin/--end. --end prend pour défaut l'instant. --begin prend "
-"pour défaut 7 jours auparavant"
+"Affiche les actions sur le service, quel que soit le noeud, pendant la "
+"période spécifiée par --begin/--end. --end prend pour défaut l'instant. --"
+"begin prend pour défaut 7 jours auparavant"
 
 # 30e6797fd18442599bb3bb9568d6941e
 #: ../../man.svcmgr.rst:91
@@ -467,8 +485,8 @@ msgid ""
 "list available compliance rulesets. --ruleset f% limit the scope to rulesets "
 "matching the f% pattern."
 msgstr ""
-"Liste les jeux de règles disponibles. --ruleset f% limite le périmètre "
-"aux jeux de règles correspondants à l'expression f%."
+"Liste les jeux de règles disponibles. --ruleset f% limite le périmètre aux "
+"jeux de règles correspondants à l'expression f%."
 
 # e360e45e30334177b26c07dd8083078e
 #: ../../man.svcmgr.rst:132
@@ -487,7 +505,9 @@ msgstr "Consomme les fichiers de var/ reçus du noeud maître du service"
 # 85f03d34462e4b46926e5b0e7215b277
 #: ../../man.svcmgr.rst:360
 msgid "operate only on service flagged for autostart on this node"
-msgstr "Limite l'action aux services marqués pour démarrage automatique sur ce noeud (autostart_node)"
+msgstr ""
+"Limite l'action aux services marqués pour démarrage automatique sur ce noeud "
+"(autostart_node)"
 
 # 0dcbb54428334d4b924dbeac5bfbd17b
 #: ../../man.svcmgr.rst:358
@@ -497,17 +517,23 @@ msgstr "Limite l'action aux services dans l'état spécifié (up/down/warn)"
 # 1784680df0e4450d830e1e15c3df7d80
 #: ../../man.svcmgr.rst:362
 msgid "operate only on service not flagged for autostart on this node"
-msgstr "Limite l'action aux services non marqués pour démarrage automatique (autostart_node)"
+msgstr ""
+"Limite l'action aux services non marqués pour démarrage automatique "
+"(autostart_node)"
 
 # 07ccb9db9ca04def9d1cd5717004f428
 #: ../../man.svcmgr.rst:312
 msgid "option to set when excuting from a clusterware to disable safety net"
-msgstr "Option à passer pour outre-passer la sécurité sur les services en haute disponibilité"
+msgstr ""
+"Option à passer pour outre-passer la sécurité sur les services en haute "
+"disponibilité"
 
 # e0da63c36919433db121d9d3ab464567
 #: ../../man.svcmgr.rst:338
 msgid "point a service configuration parameter for the 'get' and 'set' actions"
-msgstr "Pointe un paramètre de configuration de service pour les actions 'get' ou 'set'"
+msgstr ""
+"Pointe un paramètre de configuration de service pour les actions 'get' ou "
+"'set'"
 
 # 18a50d4f31834b20aa3c6791cdbfda32
 #: ../../man.svcmgr.rst:135
@@ -515,7 +541,8 @@ msgid ""
 "prepare devices, logical volumes, mount service filesystems, bootstrap "
 "containers"
 msgstr ""
-"Prépare les devices, les volumes logiques, monte les systèmes de fichiers, démarrare les containers"
+"Prépare les devices, les volumes logiques, monte les systèmes de fichiers, "
+"démarrare les containers"
 
 # 8dc3e32142604620bb2bc152060b251a
 #: ../../man.svcmgr.rst:144
@@ -525,31 +552,40 @@ msgstr "Affiche la liste des disques du service"
 # d3ae6d9a5a244b3f9d54f0c15284520a
 #: ../../man.svcmgr.rst:314
 msgid "prompt user for a choice instead of going for defaults or failing"
-msgstr "Demande à l'utilisateur d'arbitrer plutôt que d'utiliser les valeurs par défaut ou d'échouer"
+msgstr ""
+"Demande à l'utilisateur d'arbitrer plutôt que d'utiliser les valeurs par "
+"défaut ou d'échouer"
 
 # 7fa3c76120b843d295eb4d17ee08a967
 #: ../../man.svcmgr.rst:129
 msgid ""
 "provide the resource and aggregated status in json format, for use by tier "
 "tools"
-msgstr "Affiche les états de ressources et les états aggrégés au format dictionnaire sérialisé JSON, utilisable par les outils tiers"
+msgstr ""
+"Affiche les états de ressources et les états aggrégés au format dictionnaire "
+"sérialisé JSON, utilisable par les outils tiers"
 
 # 3f48c42e26694df9817dac0f2e2f8d74
 #: ../../man.svcmgr.rst:126
 msgid "provide the service disk list in json format, for use by tier tools"
-msgstr "Affiche la liste des disques au format dictionnaire sérialisé JSON, utilisable par les outils tiers"
+msgstr ""
+"Affiche la liste des disques au format dictionnaire sérialisé JSON, "
+"utilisable par les outils tiers"
 
 # 1d625e5519e248b897fdde112060da5f
 #: ../../man.svcmgr.rst:322
 msgid ""
 "provision the service in addition to env file creation. defaults to False."
 msgstr ""
-"provisionne le service et ses ressources en plus de la création du fichier de configuration du service. Prend pour défaut Faux"
+"provisionne le service et ses ressources en plus de la création du fichier "
+"de configuration du service. Prend pour défaut Faux"
 
 # 44c5c26769074876868c7bdc91f31dfb
 #: ../../man.svcmgr.rst:165
 msgid "push service application launchers appinfo key/value pairs to database"
-msgstr "Envoie au collecteur les couples clé/valeur du appinfo des lanceurs du service"
+msgstr ""
+"Envoie au collecteur les couples clé/valeur du appinfo des lanceurs du "
+"service"
 
 # d80292dfb8924f729cbe0f312e8307d1
 #: ../../man.svcmgr.rst:162
@@ -559,7 +595,9 @@ msgstr "Envoie les configurations de service au collecteur"
 # 575ff9e6965a47c2bb6b8f863e293411
 #: ../../man.svcmgr.rst:258
 msgid "re-establish a broken storage hardware-assisted synchronization"
-msgstr "Rétablit la synchronisation d'une ressource sync pilotant une replication assistée par le matériel de stockage"
+msgstr ""
+"Rétablit la synchronisation d'une ressource sync pilotant une replication "
+"assistée par le matériel de stockage"
 
 # 3ce76ad189b84bb4b7edfcc903036518
 #: ../../man.svcmgr.rst:159
@@ -584,7 +622,8 @@ msgstr "Affiche l'état d'inhibition des actions sur le service"
 # c15f6b7523134065bae3421a9eae0ac5
 #: ../../man.svcmgr.rst:156
 msgid "report status of reservations on scsi disks held by this service"
-msgstr "Affiche l'état des réservations persistantes scsi tenues par le service"
+msgstr ""
+"Affiche l'état des réservations persistantes scsi tenues par le service"
 
 # c5b63a815e8341828512cd4b6285efbb
 #: ../../man.svcmgr.rst:153
@@ -611,8 +650,8 @@ msgid ""
 "run compliance fixes. --ruleset <md5> instruct the collector to provide an "
 "historical ruleset."
 msgstr ""
-"Lance une mise en conformité. --ruleset <md5> indique au collecteur "
-"de fournir un jeu de règles historique."
+"Lance une mise en conformité. --ruleset <md5> indique au collecteur de "
+"fournir un jeu de règles historique."
 
 # 396b073b588742f38457990f9a37620e
 #: ../../man.svcmgr.rst:246
@@ -620,9 +659,9 @@ msgid ""
 "send to drp nodes the service config files and additional files described in "
 "the config file. --force bypass the schedule check."
 msgstr ""
-"Envoie aux noeuds de PRA les fichiers de configuration du service et les fichiers "
-"additionnels définis dans la configuration de service. --force outre-passe la "
-"vérification de la plage autorisée de planification."
+"Envoie aux noeuds de PRA les fichiers de configuration du service et les "
+"fichiers additionnels définis dans la configuration de service. --force "
+"outre-passe la vérification de la plage autorisée de planification."
 
 # c74692e7f574438cb70e4638a716247c
 #: ../../man.svcmgr.rst:252
@@ -630,9 +669,9 @@ msgid ""
 "send to peer nodes the service config files and additional files described "
 "in the config file. --force bypass the schedule check."
 msgstr ""
-"Envoie aux noeuds pairs les fichiers de configuration du service et les fichiers "
-"additionnels définis dans la configuration de service. --force outre-passe la "
-"vérification de la plage autorisée de planification."
+"Envoie aux noeuds pairs les fichiers de configuration du service et les "
+"fichiers additionnels définis dans la configuration de service. --force "
+"outre-passe la vérification de la plage autorisée de planification."
 
 # b5d11f9cb22e4d789af7522d33f4410b
 #: ../../man.svcmgr.rst:288
@@ -647,7 +686,8 @@ msgstr ""
 #: ../../man.svcmgr.rst:340
 msgid ""
 "set a service configuration parameter value for the 'set --param' action"
-msgstr "Indique la valeur d'un paramètre à attribuer ppour l'action 'set --param'"
+msgstr ""
+"Indique la valeur d'un paramètre à attribuer ppour l'action 'set --param'"
 
 # d868b2e084d54cd089153279f23fda9c
 #: ../../man.svcmgr.rst:120
@@ -661,22 +701,18 @@ msgid ""
 "specified by --begin/--end dates. --end defaults to now. --begin defaults to "
 "7 days ago"
 msgstr ""
-"Affiche la liste détaillée des actions. Une action précise peut être spécifiée "
-"par --id. Une période peut être spécifiée par --begin/--end. --end prend "
-"pour défaut l'instant présent. --begin prend pour défaut 7 jours auparavant."
+"Affiche la liste détaillée des actions. Une action précise peut être "
+"spécifiée par --id. Une période peut être spécifiée par --begin/--end. --end "
+"prend pour défaut l'instant présent. --begin prend pour défaut 7 jours "
+"auparavant."
 
 # ff2eddf5d799492ba9fa989505af5b7a
 #: ../../man.svcmgr.rst:105
 msgid "show compliance modules status"
 msgstr "Affiche l'état de conformité des modules"
 
-# 9b6f3944432d4ad696a2f023a490a2d7
-#: ../../man.svcmgr.rst:102
-msgid "show compliance rules applying to this node"
-msgstr "Affiche les règles de conformité applicables au noeud"
-
 # 7927991175484a2db2093933f46b974d
-#: ../../man.svcmgr.rst:99
+#: ../../man.svcmgr.rst:99 ../../man.svcmgr.rst:102
 msgid "show compliance rules applying to this service"
 msgstr "Affiche les règles de conformité applicables au service"
 
@@ -695,7 +731,8 @@ msgstr "Affiche ce message d'aide"
 msgid ""
 "shutdown container, umount service filesystems, deactivate logical volumes"
 msgstr ""
-"Eteint le container, démonte les systèmes de fichiers, désactive les volumes logiques"
+"Eteint le container, démonte les systèmes de fichiers, désactive les volumes "
+"logiques"
 
 # 77156b64b3254bae82a2c7ffafed63b3
 #: ../../man.svcmgr.rst:354
@@ -713,8 +750,8 @@ msgid ""
 "start a service if executed on the primary node (or one of the primary nodes "
 "in case of a flex service), startstandby if not"
 msgstr ""
-"Démarre un service si exécuté sur un noeud primaire (ou un des noeuds primaires dans le cas d'un service flex), "
-"startstandby sinon"
+"Démarre un service si exécuté sur un noeud primaire (ou un des noeuds "
+"primaires dans le cas d'un service flex), startstandby sinon"
 
 # 8fb46895b3434485813c250c1097a311
 #: ../../man.svcmgr.rst:180
@@ -744,7 +781,8 @@ msgstr "Arrête un service, chaîne stopapp-stopdisk-stopip"
 # 25849c217de14286b4d4a629f02bbeb7
 #: ../../man.svcmgr.rst:177
 msgid "stop a service, disabling the background database logging"
-msgstr "Arrête un service en prenant soin d'envoyer les journaux de façon synchrone"
+msgstr ""
+"Arrête un service en prenant soin d'envoyer les journaux de façon synchrone"
 
 # b178a145cad64b55814429d818285014
 #: ../../man.svcmgr.rst:219
@@ -757,8 +795,8 @@ msgid ""
 "stop the service on the local node and start on the remote node. --to <node> "
 "specify the remote node to switch the service to."
 msgstr ""
-"Arrête le service sur le noeud local et le démarre sur le noeud distant. "
-"--to <node> spécifie le noeud distant vers le lequel le service est migré."
+"Arrête le service sur le noeud local et le démarre sur le noeud distant. --"
+"to <node> spécifie le noeud distant vers le lequel le service est migré."
 
 # 8bf1f90cbe8842e88ef40a84fcb54ebf
 # f1c65aaa531443379abff3261a3a3821
@@ -782,7 +820,8 @@ msgid ""
 "the acker name to log when used with the 'collector ack unavailability' "
 "action"
 msgstr ""
-"Le nom de l'aquitteur à enregistrer lors d'une action 'collector ack unavailability'"
+"Le nom de l'aquitteur à enregistrer lors d'une action 'collector ack "
+"unavailability'"
 
 # 3c190dfefd2c4e3c8b02d828ead96516
 #: ../../man.svcmgr.rst:249
@@ -792,7 +831,9 @@ msgstr "Déclenche une copie complète d'un volume vers sa cible"
 # 5cbb6b5722b644e4a998454988b89d35
 #: ../../man.svcmgr.rst:267
 msgid "trigger a one-time checksum-based verify of the volume and its target"
-msgstr "Déclenche une vérification basée sur un calcul de somme de contrôle d'un volume et de sa cible"
+msgstr ""
+"Déclenche une vérification basée sur un calcul de somme de contrôle d'un "
+"volume et de sa cible"
 
 # d566d16dc07140b4989864186bd027b1
 #: ../../man.svcmgr.rst:264
@@ -811,7 +852,7 @@ msgstr "Déconfigure les adresses internet du service"
 
 # 72446281feb14f0ab1bc251aed7411bf
 #: ../../man.svcmgr.rst:291
-msgid "unset a node configuration parameter pointed by --param"
+msgid "unset a service configuration parameter pointed by --param"
 msgstr "Supprime le paramètre de configuration de service pointé par --param"
 
 # 1098fc6f28814c71811e4c432f6877d4
@@ -829,7 +870,8 @@ msgstr "Met à jour les fichiers de var associés au service"
 msgid ""
 "used by cron'ed action to tell the collector to treat the log entries as such"
 msgstr ""
-"Utilisé par les actions planifiées pour indiquer au collecteur que les journaux doivent être marqués comme issus d'actions planifiées"
+"Utilisé par les actions planifiées pour indiquer au collecteur que les "
+"journaux doivent être marqués comme issus d'actions planifiées"
 
 # 82815b6e7dff4461b99101f549442af4
 #: ../../man.svcmgr.rst:87
@@ -837,5 +879,9 @@ msgid ""
 "verify compliance fixes prerequisites. --ruleset <md5> instruct the "
 "collector to provide an historical ruleset."
 msgstr ""
-"Vérifie les prérequis aux mises en conformités. --ruleset <md5> indique au collecteur "
-"de fournir un jeu de règles historique."
+"Vérifie les prérequis aux mises en conformités. --ruleset <md5> indique au "
+"collecteur de fournir un jeu de règles historique."
+
+# 9b6f3944432d4ad696a2f023a490a2d7
+#~ msgid "show compliance rules applying to this node"
+#~ msgstr "Affiche les règles de conformité applicables au noeud"

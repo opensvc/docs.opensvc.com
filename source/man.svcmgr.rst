@@ -99,7 +99,7 @@ Compliance
                    show compliance rules applying to this service
 
 :command:`compliance show ruleset`
-                   show compliance rules applying to this node
+                   show compliance rules applying to this service
 
 :command:`compliance show status`
                    show compliance modules status
@@ -282,13 +282,13 @@ Service configuration
            delete resources passed through --rid in services passed through --service
 
 :command:`get`
-              get the value of the node configuration parameter pointed by --param
+              get the value of the service configuration parameter pointed by --param
 
 :command:`set`
               set a service configuration parameter (pointed by --param) value (pointed by --value)
 
 :command:`unset`
-            unset a node configuration parameter pointed by --param
+            unset a service configuration parameter pointed by --param
 
 :command:`update`
            update definitions in an existing service configuration file
