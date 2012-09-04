@@ -12,3 +12,4 @@ Contents:
    storage.netapp
    storage.symclone
    storage.zfs
+   storage.btrfs
