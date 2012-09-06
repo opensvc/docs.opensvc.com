@@ -47,7 +47,7 @@ The repository must be known to the agent. This set up is done with either the n
 
 Example::
 
-        nodemgr set --value node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
+        nodemgr set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
 
 Updating the modules
 ====================

@@ -56,7 +56,7 @@ The repository must be known to the agent. This set up is done with either the n
 
 Example::
 
-	nodemgr set --value node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
+	nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
 
 Updating the agent
 ==================
