@@ -1,5 +1,5 @@
 btrfs data replication
-********************
+**********************
 
 Introduction
 ============
