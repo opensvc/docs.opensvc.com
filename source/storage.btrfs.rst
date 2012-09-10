@@ -32,11 +32,17 @@ Internals
 A replication action applies the following logic:
 
 - create @tosent readonly snapshots on sender
-- for each subvol-remote pair:
+
+- for each subvol-remote pair
+
 	- send/receive the @tosent snap
+
 	- rotate @tosent to @sent on remote
+
 	- recursive clean-up of the destination final location on remote
+
 	- install the @sent subvol as rw snapshots on remotes
+
 - rotate @tosent to @sent on sender
 
 Implementation details

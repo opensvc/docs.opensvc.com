@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-10 12:19\n"
+"POT-Creation-Date: 2012-09-10 22:07\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,27 +27,29 @@ msgid "Command set"
 msgstr "Commandes"
 
 # fd5662eed2be4c82a7a5b7c154cb9c8d
-#: ../../storage.btrfs.rst:68
+#: ../../storage.btrfs.rst:74
 msgid "Examples"
 msgstr "Exemples"
 
 # 8a290f6efcdc40a0b3c804737101deca
-#: ../../storage.btrfs.rst:71
+#: ../../storage.btrfs.rst:77
 msgid "Extract of a typical btrfs sync env file"
-msgstr "Extrait du fichier d'un configuration typique pour la synchronisation via btrfs"
+msgstr ""
+"Extrait du fichier d'un configuration typique pour la synchronisation via "
+"btrfs"
 
 # 9ac6f3ee449c4bdebbe788e7e4aeb57a
-#: ../../storage.btrfs.rst:100
+#: ../../storage.btrfs.rst:106
 msgid "Full synchronization"
 msgstr "Synchronisation complète"
 
 # 3add6cffefdc4db5839e37a2182311af
-#: ../../storage.btrfs.rst:43
+#: ../../storage.btrfs.rst:49
 msgid "Implementation details"
 msgstr "Détails d'implémentation"
 
 # db9534b1b9394853898e0703b2cb58b8
-#: ../../storage.btrfs.rst:139
+#: ../../storage.btrfs.rst:145
 msgid "Incremental synchronization"
 msgstr "Synchronisation incrémentale"
 
@@ -73,12 +75,14 @@ msgstr "Introdcution"
 # 304a8f1a6af94884a83a7fa9fd3db198
 #: ../../storage.btrfs.rst:24
 msgid "Last synchronization occured less than sync_max_delay minutes ago."
-msgstr "La dernière synchronisation a eu lieu il y a moins de sync_max_delay minutes."
+msgstr ""
+"La dernière synchronisation a eu lieu il y a moins de sync_max_delay minutes."
 
 # b4da58311b2a44c49006f4858a80722b
 #: ../../storage.btrfs.rst:27
 msgid "Last synchronization occured more than sync_max_delay minutes ago."
-msgstr "La dernière synchronisation a eu lieu il y a plus de sync_max_delay minutes."
+msgstr ""
+"La dernière synchronisation a eu lieu il y a plus de sync_max_delay minutes."
 
 # 6e21d6d2ceab47d3afcaba023ae8788e
 #: ../../storage.btrfs.rst:18
@@ -86,12 +90,12 @@ msgid "Same"
 msgstr "Idem"
 
 # bf1d5fe3a7c14e5eaac4662cc41680d7
-#: ../../storage.btrfs.rst:53
+#: ../../storage.btrfs.rst:59
 msgid "Service configuration"
 msgstr "Configuration de service"
 
 # 9e3902e6bc164bffb7978003d0db7083
-#: ../../storage.btrfs.rst:56
+#: ../../storage.btrfs.rst:62
 msgid "Service configuration file"
 msgstr "Fichier de configuration du service"
 
@@ -105,8 +109,8 @@ msgid ""
 msgstr ""
 "La source et la cible maintiennent un snapshot suffixé @sent pour identifier "
 "la dernière synchronisation incrémentale réussie. La présence de ce snapshot "
-"est utilisée pour savoir si la chaine de synchronisation a été rompue et donc si une "
-"synchronisation complète doit être planifiée"
+"est utilisée pour savoir si la chaine de synchronisation a été rompue et "
+"donc si une synchronisation complète doit être planifiée"
 
 # dd8e0ef6efcc4dc7a99d9de1ef877e17
 #: ../../storage.btrfs.rst:21
@@ -124,11 +128,13 @@ msgstr ""
 "incrémentales."
 
 # 8569656b70934bdfb7b4041e78b81210
-#: ../../storage.btrfs.rst:45
+#: ../../storage.btrfs.rst:51
 msgid ""
 "There are some shortcomings in the current btrfs send/receive implementation "
 "that opensvc works around :"
-msgstr "Il existe des lacunes dans l'implémentation actuelle de btrfs send/receive qu'OpenSVC contourne :"
+msgstr ""
+"Il existe des lacunes dans l'implémentation actuelle de btrfs send/receive "
+"qu'OpenSVC contourne :"
 
 # 8420d9931063428eb0e457c93b40687b
 #: ../../storage.btrfs.rst:2
@@ -136,48 +142,64 @@ msgid "btrfs data replication"
 msgstr "Réplication de données par btrfs"
 
 # 0e1d1379389d4fd4824829ba9d022eb9
-#: ../../storage.btrfs.rst:49
+#: ../../storage.btrfs.rst:55
 msgid ""
 "btrfs receive is easily confused when looking for a subvol parent id : for "
 "now opensvc has to mount the ID5 root vol on ``/opt/opensvc/var/btrfs/"
 "<label>`` and uses a flat/root-parented snapshot hosting. Once the btrfs "
 "feature matures we might move to a .osvcsnap/ dedicated subvol mounted in ``/"
 "opt/opensvc/var/btrfs/<label>.osvcnap/`` instead."
-msgstr "La commande btrfs receive est facilement confuse quand elle vérifie le parent id d'un subvolume : temporairement OpenSVC monte le subvolume d'ID 5 (la racine) sur ``/opt/opensvc/var/btrfs/<label>`` et utilise un plan de nommage des snapshots en arborescence plate à la racine du btrfs. Quand la fonctionnalité sera assez mature dans btrfs, les snapshots résideront dans un subvolume dédié monté dans ``/opt/opensvc/var/btrfs/<label>.osvcnap/``."
+msgstr ""
+"La commande btrfs receive est facilement confuse quand elle vérifie le "
+"parent id d'un subvolume : temporairement OpenSVC monte le subvolume d'ID 5 "
+"(la racine) sur ``/opt/opensvc/var/btrfs/<label>`` et utilise un plan de "
+"nommage des snapshots en arborescence plate à la racine du btrfs. Quand la "
+"fonctionnalité sera assez mature dans btrfs, les snapshots résideront dans "
+"un subvolume dédié monté dans ``/opt/opensvc/var/btrfs/<label>.osvcnap/``."
 
 # f79d679565be4e6e98d9c8214d2451a1
 #: ../../storage.btrfs.rst:34
 msgid "create @tosent readonly snapshots on sender"
 msgstr "Crée le snapshot @tosent en lecture seule sur l'émetteur"
 
+# 007d6d78f87b4c35bd95ef478435fa47
+#: ../../storage.btrfs.rst:36
+msgid "for each subvol-remote pair"
+msgstr "Pour chaque couple subvolume - noeud distant"
+
 # 0026b4adf4fb45cb81cbafcf70a8da8e
-#: ../../storage.btrfs.rst:39
+#: ../../storage.btrfs.rst:44
 msgid "install the @sent subvol as rw snapshots on remotes"
-msgstr "Installe le subvolume @sent sur les récepteurs sous la forme de snapshots en lecture/écriture"
+msgstr ""
+"Installe le subvolume @sent sur les récepteurs sous la forme de snapshots en "
+"lecture/écriture"
 
 # f204d478061f41b3b8cfcd794cfa606b
-#: ../../storage.btrfs.rst:47
+#: ../../storage.btrfs.rst:53
 msgid ""
 "no recursive snapshot/delete/send : for now you have to declare one sync "
 "resource per subvol, even if they are organised as a tree."
-msgstr "Pas de récursivité sur les snapshots/suppressions/envois : pour l'instant il faut déclarer une ressource de synchronisation par subvolume, même s'ils sont organisés en arbre."
+msgstr ""
+"Pas de récursivité sur les snapshots/suppressions/envois : pour l'instant il "
+"faut déclarer une ressource de synchronisation par subvolume, même s'ils "
+"sont organisés en arbre."
 
 # 200fe07b71924eeeb036f99784e33b5d
-#: ../../storage.btrfs.rst:38
+#: ../../storage.btrfs.rst:42
 msgid "recursive clean-up of the destination final location on remote"
 msgstr "Nettoyage récursif du chemin destination final sur les noeuds distants"
 
 # 43a2f2b89f4f4408aab5794f8468fde8
-#: ../../storage.btrfs.rst:37
+#: ../../storage.btrfs.rst:40
 msgid "rotate @tosent to @sent on remote"
 msgstr "permute @tosent et @sent sur la cible"
 
 # c4fa4e18bf1a44f1a7123ec7b434d4ea
-#: ../../storage.btrfs.rst:40
+#: ../../storage.btrfs.rst:46
 msgid "rotate @tosent to @sent on sender"
 msgstr "permute @tosent et @sent sur la source"
 
 # db261b5a2627487ca03cbd7fd06e2a28
-#: ../../storage.btrfs.rst:36
+#: ../../storage.btrfs.rst:38
 msgid "send/receive the @tosent snap"
 msgstr "envoie/reçoie le snapshost @tosent"
