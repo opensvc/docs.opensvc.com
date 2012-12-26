@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2012-12-26 16:37\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "règles que l'objet ``groups_membership``."
 
 # 751a40ec58ba4a97a8144ea5d11df622
-#: ../../compliance.objects.rst:334
+#: ../../compliance.objects.rst:363
 msgid ""
 "Checks a package is installed with a minimum release or not installed at "
 "all. Unices need to pass the URI of their package depot as last argument of "
@@ -45,27 +45,31 @@ msgid ""
 "``groups`` object."
 msgstr ""
 "Vérifie les groupes secondaires d'un utilisateur. Cet objet doit être "
-"séquencé après l'objet ``group`` afin que les groupes vérifiés existent "
-"déjà lors d'une exécution en mode fix. Cet objet partage les mêmes "
-"règles que l'objet ``group``."
+"séquencé après l'objet ``group`` afin que les groupes vérifiés existent déjà "
+"lors d'une exécution en mode fix. Cet objet partage les mêmes règles que "
+"l'objet ``group``."
 
 # 60690edfad8f45638602f3a017f8285c
 #: ../../compliance.objects.rst:37
 msgid "Checks an exact BIOS version, as returned by dmidecode or sysfs"
-msgstr "Vérifie que la version du BIOS, telle que fournie par sysfs, correspond exactement à la version spécifiée."
+msgstr ""
+"Vérifie que la version du BIOS, telle que fournie par sysfs, correspond "
+"exactement à la version spécifiée."
 
 # 314408023a0c43d2b963c7f7c13b111d
-#: ../../compliance.objects.rst:254
+#: ../../compliance.objects.rst:283
 msgid "Checks and sets the runlevel of startup scripts."
-msgstr "Vérifie et paramètre les planification des lanceurs de démarrage du système."
+msgstr ""
+"Vérifie et paramètre les planification des lanceurs de démarrage du système."
 
 # ca52d0c218d3427ab68e49465ae8c380
-#: ../../compliance.objects.rst:282
+#: ../../compliance.objects.rst:311
 msgid ""
 "Checks and sets values in /etc/sysctl.conf according the specific targets or "
 "thresholds."
 msgstr ""
-"Vérifie et paramètre les valeurs dans /etc/sysctl.conf selon les directives exactes ou par seuils."
+"Vérifie et paramètre les valeurs dans /etc/sysctl.conf selon les directives "
+"exactes ou par seuils."
 
 # 5c9e0a0d018c441383f727be57fe79ab
 #: ../../compliance.objects.rst:63
@@ -73,10 +77,11 @@ msgid ""
 "Checks and setup values in /etc/system respecting strict targets or "
 "thresholds."
 msgstr ""
-"Vérifie et paramètre les valeurs dans /etc/system selon les directives exactes ou par seuils."
+"Vérifie et paramètre les valeurs dans /etc/system selon les directives "
+"exactes ou par seuils."
 
 # b8a0509c91194d56af934f701d91ecda
-#: ../../compliance.objects.rst:200
+#: ../../compliance.objects.rst:229
 msgid ""
 "Checks packages installation. Installs packages. On Linux, the architecture "
 "can be specified as the package name suffix (ex: .i386). If not specified "
@@ -90,13 +95,18 @@ msgstr ""
 "l'installation de toutes les architectures du paquet disponibles."
 
 # 3d18744670b34d8985cfca7ec5cc5986
-#: ../../compliance.objects.rst:360
+#: ../../compliance.objects.rst:389
 msgid ""
 "Checks the configuration of a xinetd service. Sets up service xinetd "
 "configuration."
 msgstr ""
-"Vérifie la configuration d'un service xinetd. Paramètre un service "
-"xinetd."
+"Vérifie la configuration d'un service xinetd. Paramètre un service xinetd."
+
+# 3d18744670b34d8985cfca7ec5cc5986
+#: ../../compliance.objects.rst:200
+msgid "Checks the configuration of the opensvc node.conf parameters."
+msgstr ""
+"Vérifie la configuration des paramètres du fichier node.conf de opensvc."
 
 # 58f9b9b4ea6b4c43ba910395e17e5e53
 #: ../../compliance.objects.rst:89
@@ -108,14 +118,14 @@ msgid ""
 "created and the reference content is ignored."
 msgstr ""
 "Vérifie le contenu et installe des fichiers par rapport à une référence. "
-"Vérifie également l'utilisateur et le groupe propriétaire des fichiers. "
-"Le contenu de référence peut contenir des éléments de substitution, "
-"afin que ce contenu soit généré contextuellement pour le noeud ou le "
-"service. Si le chemin du fichier cible se termine par ``/``, un répertoire "
-"est créé et le contenu de référence est ignoré."
+"Vérifie également l'utilisateur et le groupe propriétaire des fichiers. Le "
+"contenu de référence peut contenir des éléments de substitution, afin que ce "
+"contenu soit généré contextuellement pour le noeud ou le service. Si le "
+"chemin du fichier cible se termine par ``/``, un répertoire est créé et le "
+"contenu de référence est ignoré."
 
 # 614ed1b4713240b8a0292b931df3a14e
-#: ../../compliance.objects.rst:227
+#: ../../compliance.objects.rst:256
 msgid ""
 "Checks the presence of a process and its ownership. Starts the process using "
 "the specified command. Used to start a daemon after package installation and "
@@ -135,19 +145,18 @@ msgid ""
 "filesystems, making use of the ``OSVC_COMP_SERVICES_SVC_NAME`` automatic "
 "rule. See the example data format below."
 msgstr ""
-"Vérifie la présence, le point d'ancrage et le propriétaire d'un système "
-"de fichiers. Créé le système de fichiers et le volume logique selon la "
-"politique fixée par la liste ordonnée de volume groups candidats à "
-"héberger le volume logique. Le chemin du point d'ancrage et le nom des "
-"volume groups peuvent contenir des expressions de substitution afin que "
-"leur valeur puisse être ajustées contextuellement. Cet objet est utile "
-"pour provisionner les systèmes de fichiers des services, faisant bon "
-"usage de la variable ``OSVC_COMP_SERVICES_SVC_NAME`` exportée "
-"automatiquement. Un exemple de règle consommée par cet objet est "
-"fourni ci-dessous."
+"Vérifie la présence, le point d'ancrage et le propriétaire d'un système de "
+"fichiers. Créé le système de fichiers et le volume logique selon la "
+"politique fixée par la liste ordonnée de volume groups candidats à héberger "
+"le volume logique. Le chemin du point d'ancrage et le nom des volume groups "
+"peuvent contenir des expressions de substitution afin que leur valeur puisse "
+"être ajustées contextuellement. Cet objet est utile pour provisionner les "
+"systèmes de fichiers des services, faisant bon usage de la variable "
+"``OSVC_COMP_SERVICES_SVC_NAME`` exportée automatiquement. Un exemple de "
+"règle consommée par cet objet est fourni ci-dessous."
 
 # 167d05c1dbc649d9bfde8caa6f1488fc
-#: ../../compliance.objects.rst:308
+#: ../../compliance.objects.rst:337
 msgid ""
 "Checks users have correctly setup /etc/passwd entries. Create users. To use "
 "in module after the ``groups`` object to be sure the primary groups exists "
@@ -155,8 +164,8 @@ msgid ""
 msgstr ""
 "Vérifie la configuration des utilisateurs dans /etc/passwd. Créé les "
 "utilisateurs. A ordonnancer dans les modules après l'appel à l'objet "
-"``group`` pour que le groupe primaire des utilisateurs à créer "
-"existe déjà lors de l'appel à cet objet."
+"``group`` pour que le groupe primaire des utilisateurs à créer existe déjà "
+"lors de l'appel à cet objet."
 
 # b62ce11c762a4bbbadd76a087e15e7f4
 #: ../../compliance.objects.rst:2
@@ -166,16 +175,17 @@ msgstr "Librairie d'objets de conformité"
 # ddc16a1f30b349539a3f2352f809acfa
 #: ../../compliance.objects.rst:9
 msgid "Install, remove ssh public keys from authorized_key files"
-msgstr "Installe, désinstalle des clés publiques dans les fichiers authorized_key"
+msgstr ""
+"Installe, désinstalle des clés publiques dans les fichiers authorized_key"
 
 # 63b0cd021d0d4e8095cffe54912b5c5a
 # d70931ad85c045a0b2895b8e2b08446d
 # 721a41dbe32b45f08bd76e603d190c69
 # 6ca5f31b1bae43619bdbf6bbee3f55f0
 # 2c1c9ad57c9f453d9038ea423f98706e
-#: ../../compliance.objects.rst:53 ../../compliance.objects.rst:220
-#: ../../compliance.objects.rst:275 ../../compliance.objects.rst:301
-#: ../../compliance.objects.rst:378
+#: ../../compliance.objects.rst:53 ../../compliance.objects.rst:249
+#: ../../compliance.objects.rst:304 ../../compliance.objects.rst:330
+#: ../../compliance.objects.rst:407
 msgid "Linux"
 msgstr "Linux"
 
@@ -198,8 +208,8 @@ msgstr "Solaris"
 # 73cc78a2782144599a3a087166c1729d
 #: ../../compliance.objects.rst:30 ../../compliance.objects.rst:110
 #: ../../compliance.objects.rst:167 ../../compliance.objects.rst:193
-#: ../../compliance.objects.rst:247 ../../compliance.objects.rst:327
-#: ../../compliance.objects.rst:353
+#: ../../compliance.objects.rst:222 ../../compliance.objects.rst:276
+#: ../../compliance.objects.rst:356 ../../compliance.objects.rst:382
 msgid "Unix"
 msgstr "Unix"
 
@@ -248,37 +258,42 @@ msgstr "groups"
 msgid "groups_membership"
 msgstr "groups_membership"
 
-# 1aa16ab24e8243ef8c1c58d03c3718ab
+# 88e20496a2704211b42bd0f21a210b31
 #: ../../compliance.objects.rst:196
+msgid "nodeconf"
+msgstr "nodeconf"
+
+# 1aa16ab24e8243ef8c1c58d03c3718ab
+#: ../../compliance.objects.rst:225
 msgid "packages"
 msgstr "packages"
 
 # cd7d249df27d4f3a9ae8fbb831ad3d21
-#: ../../compliance.objects.rst:223
+#: ../../compliance.objects.rst:252
 msgid "process"
 msgstr "process"
 
 # 74f0cfe8afaf48ff8a18c3a3e3e673ee
-#: ../../compliance.objects.rst:250
+#: ../../compliance.objects.rst:279
 msgid "rc"
 msgstr "rc"
 
 # 86858a4b8d954e75997d59fd6a4c38e5
-#: ../../compliance.objects.rst:278
+#: ../../compliance.objects.rst:307
 msgid "sysctl"
 msgstr "sysctl"
 
 # 611997d4d0624b5ab06aac6760ad2166
-#: ../../compliance.objects.rst:304
+#: ../../compliance.objects.rst:333
 msgid "users"
 msgstr "users"
 
 # ab751b0318434f1ca01df008107ca99a
-#: ../../compliance.objects.rst:330
+#: ../../compliance.objects.rst:359
 msgid "vuln"
 msgstr "vuln"
 
 # 8b96ae14ee234beab6a9c6c5c8f4a7a6
-#: ../../compliance.objects.rst:356
+#: ../../compliance.objects.rst:385
 msgid "xinetd"
 msgstr "xinetd"

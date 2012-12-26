@@ -192,6 +192,35 @@ groups
 
    Unix
 
+nodeconf
+========
+
+.. function:: description:
+
+   Checks the configuration of the opensvc node.conf parameters.
+
+.. function:: actions:
+
+   ::
+
+     check, fix
+
+.. function:: data format:
+
+   ::
+
+     [
+      {
+       "key": "node.repopkg",
+       "value": "http://repo.opensvc.com",
+       "op": "="
+      }
+     ]
+
+.. function:: supported operating systems:
+
+   Unix
+
 packages
 ========
 
