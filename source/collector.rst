@@ -16,3 +16,4 @@ Contents:
    collector.stats.availability
    collector.stats.oslifecycle
    collector.admin.obsolescence
+   collector.forms
