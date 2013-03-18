@@ -219,6 +219,8 @@ Keywords
 
 * :keyword:`Type`
 
+  Default: ``string``
+
   Candidates:
 
   * ``string``
