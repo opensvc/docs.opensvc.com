@@ -139,6 +139,14 @@ Keywords
 
     Save the submitted form data in a collector database table. In this mode, each input identifier must be a table column name.
 
+  * :keyword:`compliance variable`
+
+    Save the submitted form data in a compliance variable in a special ruleset. This output can be used in 'custo' type forms, where a selector asks the used to pick a service or a node to customize. The ruleset where the variable will be stored is named after the selected service or node.
+
+  * :keyword:`compliance fix`
+
+    This output type can be defined in forms with a peer :keyword:`compliance variable` output. In this case, compliance fix actions are dispatched to the selected service nodes, or to the selected node.
+
 * :keyword:`NextAssignee`
 
   If :keyword:`Dest` is set to workflow, this property defines the group or user, as known to the OpenSVC Collector user and group management tables, to assign to next workflow step to.
@@ -203,18 +211,27 @@ Keywords
   The form-wide unique identifier of this input. Other inputs can refer to this identifier when defining constraints or triggers as ``#this_id``.
 
 * :keyword:`Label`
+
   The label displayed next to the input in form edition mode.
 
 * :keyword:`DisplayModeLabel`
+
   The label displayed next to the input in form display mode.
 
+* :keyword:`DisplayInDigest`
+
+  If set to Yes, the input value is displayed in digest display mode. This mode is used to present nodes or services customizations. Default is No.
+
 * :keyword:`LabelCss`
+
   The name of the css class to use to decorate the :keyword:`Label` and :keyword:`DisplayModeLabel` in the form edition and display modes. The pointed class usually set a 16x16 icon on the left side.
 
 * :keyword:`Help`
+
   A help message displayed as a html title. It appears on hover over the question mark besides the input element.
 
 * :keyword:`Candidates`
+
   A list of candidate values used as OPTION html elements of the input SELECT html element.
 
 * :keyword:`Type`
@@ -353,6 +370,10 @@ Keywords
 * :keyword:`Args`
 
   A list of form input identifiers, specified as ``#some_input_id``, whose value to pass as argument to the JSON-RPC pointed by :keyword:`Function`. The order of the list elements is the order of the arguments to submit to the :keyword:`Function`.
+
+* :keyword:`DisplayModeTrim`
+
+  The maximum length of the input value representation string in display mode. If the actual value is longer than :keyword:`DisplayModeTrim`, only the first :keyword:`DisplayModeTrim` // 3 and the last :keyword:`DisplayModeTrim` // 3 * 2 characters will be displayed. This parameter is usually set on inputs with very long values, like public keys for example.
 
 Examples
 ++++++++
