@@ -45,15 +45,29 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   optional. A list of nodenames where to consider the 'monitor' value is
 	#   True. Also accepts the keywords 'nodes' and 'drpnodes'.
 	#
+	# 'pre_start'
+	# 'post_start'
+	# 'pre_stop'
+	# 'post_stop'
+	# 'pre_syncnodes'
+	# 'post_syncnodes'
+	# 'pre_syncdrp'
+	# 'post_syncdrp'
+	# 'pre_syncresync'
+	# 'post_syncresync'
+	#   optional. A command or script to exec before or after the resource
+	#   action. Arguments can be passed, but a single command is accepted.
+	#
+	#
 	# Every service config file must have a DEFAULT section.
 	#
-
+	
 	##############################################################################
 	#
 	# Main service definition
 	#
 	##############################################################################
-
+	
 	[DEFAULT]
 	#
 	# 'app'
@@ -61,7 +75,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   and provides a most useful filtering key. Better keep it a short code.
 	#
 	;app = OSVC
-
+	
 	#
 	# 'comment'
 	#   is optional, but helps users understand the role of the service, 
@@ -69,24 +83,24 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   service they are usualy responsible for.
 	#
 	;comment = opensvc web front-end
-
+	
 	#
 	# 'mode'
-	#   supported modes are 'lxc', 'zone', 'kvm', 'ldom', 'xen', 'hpvm', 'ovm',
-	#   'esx', or 'hosted'. The default is 'hosted'.
+	#   supported modes are 'hosted', 'sg' or 'rhcs'. The default is 'hosted'.
 	#   the mode decides upon disposition OpenSVC takes to bring a service up
-	#   or down : virtualized services need special actions to prepare and boot
-	#   the container for example, which is not needed for 'hosted' services.
+	#   or down. Tiers cluster modes for example inihibit stop*/start* actions,
+	#   auto-discovers resources and asks the tiers clusterware for resource
+	#   status.
 	#
-	;mode = lxc
-
+	;mode = hosted
+	
 	#
 	# 'drp_type'
 	#   supported values are 'standby' or 'srdf'. The default is 'standby'.
 	#   Not used for the moment.
 	#
 	;drp_type = standby
-
+	
 	#
 	# 'service_type'
 	#   supported values are 'DEV' and 'PRD'. There is no default, and this
@@ -95,14 +109,24 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#      can be startup on a DEV node (in a DRP situation).
 	#
 	;service_type = DEV
-
+	
+	#
+	# 'encapnodes'
+	#   optional list of virtual nodes in charge of the encapsulated service
+	#   described in this service configuration file. If set, other parameters
+	#   can be scoped using the 'param@encapnodes = ' syntax.
+	#   Not setting 'encapnodes' or setting it to an empty list disables the
+	#   encapsulated service management.
+	#
+	;encapnodes = vm1 vm2
+	
 	#
 	# 'nodes'
 	#   mandatory list of cluster nodes able to start the service when not in
 	#   a DRP situation
 	#
-	;nodes =  zezette
-
+	;nodes = titan
+	
 	#
 	# 'autostart_node'
 	#   A subset of 'nodes' where the service will try to start on upon node
@@ -112,8 +136,22 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   If not specified, the service will never be started at node boot-time,
 	#   which is rarely the expected behaviour.
 	#
-	;autostart_node = zezette
-
+	;autostart_node = titan
+	
+	#
+	# 'cluster'
+	#   Optional. The symbolic name of the cluster.
+	#
+	;cluster = clu1
+	
+	#
+	# 'anti_affinity'
+	#   a whitespace separated list of services this service is not
+	#   allowed to be started on the same node. The svcmgr --ignore-affinity
+	#   option can be set to override this policy.
+	#
+	;anti_affinity = svc2 svc3
+	
 	#
 	# 'cluster_type'
 	#   Optional. Defaults to 'failover'.
@@ -130,13 +168,13 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#
 	#
 	;cluster_type = failover
-
+	
 	#
 	# 'flex_primary'
 	#   the nodename of the node allowed to sync to other flex nodes.
 	#
-	;flex_primary = zezette
-
+	;flex_primary = titan
+	
 	#
 	# 'flex_min_nodes'
 	#   Default: 1
@@ -146,7 +184,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   put the service out of bounds.
 	#
 	;flex_min_nodes = 1
-
+	
 	#
 	# 'flex_max_nodes'
 	#   Default: the total number of nodes
@@ -156,7 +194,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   put the service out of bounds.
 	#
 	;flex_max_nodes = 10
-
+	
 	#
 	# 'flex_cpu_low_threshold'
 	#   Default: 10
@@ -166,7 +204,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   usage in bounds.
 	#
 	;flex_cpu_low_threshold = 10
-
+	
 	#
 	# 'flex_cpu_high_threshold'
 	#   Default: 10
@@ -176,7 +214,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   usage in bounds.
 	#
 	;flex_cpu_high_threshold = 90
-
+	
 	#
 	# 'drpnode'
 	#   optional. The backup node where the service is activated in a DRP
@@ -184,7 +222,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   resources (see below)
 	#
 	;drpnode = vm5
-
+	
 	#
 	# 'drpnodes'
 	#   optional. Alternate backup nodes, where the service could be activated
@@ -192,7 +230,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   also data synchronization targets for 'sync' resources (see below)
 	#
 	;drpnodes = vm6 vm7
-
+	
 	#
 	# 'scsireserv'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -206,7 +244,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   resource basis.
 	#
 	;scsireserv = false
-
+	
 	#
 	# 'no_preempt_abort'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -217,13 +255,13 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   per-resource basis.
 	#
 	;no_preempt_abort = False
-
+	
 	#
 	# 'bwlimit'
 	#   optional. Bandwidth limit in KB applied to all rsync transfers
 	#
 	;bwlimit = 3000
-
+	
 	#
 	# 'sync_interval'
 	#   optional. Set the minimum delay between syncs in minutes. If a sync is
@@ -233,14 +271,14 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   in /opt/opensvc/var/sync/[service]![dst]
 	#
 	;sync_interval = 30
-
+	
 	#
 	# 'sync_days'
 	#   optional. Defaults to 'every week day'.
 	#   Set the days this resource synchronization is allowed.
 	#
 	;sync_days = ["monday", "friday"]
-
+	
 	#
 	# 'sync_period'
 	#   optional. Defaults to 4am to 6am.
@@ -248,7 +286,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#
 	;sync_period = ["04:00", "06:00"]
 	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
-
+	
 	#
 	# 'sync_interval'
 	#   optional. Set the minimum delay between syncs in minutes. If a sync is
@@ -258,7 +296,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   in /opt/opensvc/var/sync/[service]![dst]
 	#
 	;sync_interval = 30
-
+	
 	#
 	# 'sync_max_delay'
 	#   optional. Default value is 1440 minutes (1 day). Unit is minutes.
@@ -268,14 +306,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   'sync_interval' and 'sync_max_delay'.
 	#
 	;sync_max_delay = 1440
-
-	#
-	# 'vm_name'
-	#   optional. Defaults to service name. This need to be set if the virtual
-	#   machine name is different from the service name.
-	# 
-	;vm_name = teddybear
-
+	
 	#
 	# 'presnap_trigger'
 	#   optional. Defaults to None. Define a command to run before creating
@@ -283,7 +314,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   put you data in a coherent state (alter begin backup and the like).
 	# 
 	;presnap_trigger = /bin/true
-
+	
 	#
 	# 'postsnap_trigger'
 	#   optional. Defaults to None. Define a command to run after snapshots are
@@ -291,7 +322,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   undo the actions of 'presnap_trigger'.
 	# 
 	;postsnap_trigger = /bin/true
-
+	
 	#
 	# 'containerize'
 	#   optional. Defaults to true. Use process containers when possible.
@@ -300,7 +331,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   of their startapp.
 	# 
 	;containerize = false
-
+	
 	#
 	# 'container_cpus'
 	#   optional. Defaults to all cpus. Allow service process to bind only
@@ -308,7 +339,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   0-2
 	# 
 	;container_cpus = 0-1
-
+	
 	#
 	# 'container_mems'
 	#   optional. Defaults to all memory nodes. Allow service process to bind
@@ -316,7 +347,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   range : 0,1,2 or 0-2
 	# 
 	;container_mems = 0
-
+	
 	#
 	# 'container_cpu_share'
 	#   optional. No default, kernel default value is used, which usually is
@@ -325,7 +356,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   on shares allowed to other services.
 	# 
 	;container_cpu_share = 1024
-
+	
 	#
 	# 'container_mem_limit'
 	#   optional. Defaults to all available memory. Ensures the service does
@@ -333,7 +364,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   get triggered in case of tresspassing.
 	# 
 	;container_mem_limit = 100000000
-
+	
 	#
 	# 'container_vmem_limit'
 	#   optional. Defaults to all available memory+swap. Ensures the service does
@@ -342,7 +373,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   than container_mem_limit
 	# 
 	;container_vmem_limit = 200000000
-
+	
 	#
 	# 'monitor_action'
 	#   optional. Possible values are 'freezestop', 'reboot' or 'crash'.
@@ -353,15 +384,62 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   schedule.
 	#
 	;monitor_action = freezestop
-
-
+	
+	
 	##############################################################################
 	#
 	# Service resources
 	#
 	##############################################################################
-
-
+	
+	##############################################################################
+	#
+	# 'container' resources
+	#   describe which container to drive for the service. Any number of containers
+	#   can be attached to the service.
+	#   If the container is already started on another node the service refuses
+	#   to start.
+	#   A container can have a list of disks. As such the 'scsireserv' and
+	#   'no_preemt_abort' parameters can be set. 
+	#
+	;[container#0]
+	
+	#
+	# 'type'
+	#   defines the container the virtualization driver for this container.
+	#   possible values are 'ldom', 'hpvm', 'kvm', 'xen', 'vbox', 'ovm', 'esx',
+	#   'zone', 'lxc', 'jail', 'vz', 'srp', 'vcloud', 'openstack'
+	#
+	;type = kvm
+	
+	#
+	# 'name'
+	#   defines the container name as reported by the virtualization technology.
+	#   'vz' uses only ids, so a valid name can be '101".
+	#
+	;name = vm1
+	
+	#
+	# 'uuid'
+	#   'ovm' needs this parameter set to the vm uuid.
+	#
+	;uuid = 70afba94-84bf-49a3-bc8e-cea320c98028
+	
+	#
+	# 'guestos'
+	#   optional. defaults to the hypervisor os. sets the guest operating system
+	#   inside the container handled by the service. Used to switch to proper
+	#   per-os routines.
+	#
+	;guestos = Windows
+	
+	#
+	# 'cf'
+	#  'lxc'-type resources can set this parameter to point their container config
+	#  file.
+	#
+	;cf = /srv/mycontainer/config
+	
 	##############################################################################
 	#
 	# 'ip' resources
@@ -369,6 +447,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   attached to the service, but ips are to be uniquely assigned to it.
 	#   In case of ip conflict, the service refuses to start.
 	#
+	
 	;[ip#1]
 	;disable = true
 	;disable_on = node12 node21
@@ -376,8 +455,30 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;optional_on = node12 node21
 	;monitor = true
 	;monitor_on = node12 node21
-
+	
 	#
+	# 'tags'
+	#    
+	#   encap
+	#    this tag tells opensvc to handle this resource using the agent
+	#    embedded in the service containers instead of the master agent.
+	#    The resource status is also evaluated by the slave agents and
+	#    handed to the master agent as a json structure.
+	#    
+	#   noalias
+	#    tells opensvc not to stack an ip alias but to plumb the ip on
+	#    the base ethernet interface. in this case, the netmask parameter
+	#    must be set for the resource as opensvc can not deduce the
+	#    netmask from the interface primary ip.
+	#    
+	#   noaction
+	#    disables the stop and start actions for the resource. The status
+	#    is still evaluated though. This tag can be used to describe
+	#    container ips activated and desactivated by the container boot
+	#    and shutdown sequence.
+	#
+	;tags = encap noaction
+	
 	# 'ipname'
 	#   the DNS name of the ip resource. Can be different from one node to the
 	#   other, in which case '@nodename' can be specified. This is most
@@ -385,18 +486,18 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   where subnets are likely to be different than those of the production
 	#   datacenter.
 	#
-	;ipname@zezette = unxdevweb
+	;ipname@titan = unxdevweb
 	;ipname@vm5 = unxdrpweb
-
+	
 	#
 	# 'ipdev'
 	#   the interface name over which OpenSVC will try to stack the service
 	#   ip. Can be different from one node to the other, in which case the
 	#   '@nodename' can be specified.
 	#
-	;ipdev@zezette = br0
+	;ipdev@titan = br0
 	;ipdev@vm5 = eth0
-
+	
 	#
 	# 'netmask'
 	#   optional if an ip is already plumbed on the root interface (if which
@@ -406,7 +507,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   the format is decimal, ex: 255.255.252.0
 	#
 	;netmask = 255.255.255.0
-
+	
 	#
 	# 'always_on'
 	#   optional. Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes',
@@ -416,8 +517,15 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   shared disk !! danger !!
 	#
 	;always_on = drpnodes
-
-
+	
+	#
+	# 'zone'
+	#   optional. 
+	#   This resource will start after the referenced zone startup.
+	#
+	;zone = zname
+	
+	
 	##############################################################################
 	#
 	# 'vg' resource
@@ -432,14 +540,14 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;optional_on = node12 node21
 	;monitor = true
 	;monitor_on = node12 node21
-
+	
 	#
 	# 'vgname'
 	#   mandatory, expect for the raw vg type.
 	#   The name of the volume group, as seen by the volume manager.
 	#
 	;vgname = unxtstsvc02
-
+	
 	#
 	# 'dsf'
 	#   optional. Boolean. HP-UX only. Default value is True.
@@ -447,7 +555,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   devices. Otherwize, ad-hoc multipathed /dev/disk/... devices.
 	#
 	;dsf = true
-
+	
 	#
 	# 'scsireserv'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -461,7 +569,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   from the 'default' section.
 	#
 	;scsireserv = false
-
+	
 	#
 	# 'no_preempt_abort'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -472,7 +580,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   per-resource basis.
 	#
 	;no_preempt_abort = False
-
+	
 	#
 	# 'always_on'
 	#   optional. Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes',
@@ -482,7 +590,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   shared disk !! danger !!
 	#
 	;always_on = drpnodes
-
+	
 	#
 	# 'type'
 	#   optional.
@@ -492,7 +600,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   the 'devs' parameter.
 	#
 	;type = veritas
-
+	
 	#
 	# 'devs'
 	#   mandatory for the 'raw' vg type.
@@ -502,7 +610,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   applied to them.
 	#
 	;devs = /dev/mapper/svc.d0 /dev/mapper/svc.d1
-
+	
 	##############################################################################
 	#
 	# 'pool' resource
@@ -517,19 +625,13 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;optional_on = node12 node21
 	;monitor = true
 	;monitor_on = node12 node21
-
+	
 	#
 	# 'poolname'
 	#   nothing special there
 	#
 	;poolname = zpool
-
-	#
-	# tags  = preboot may be used when zfs pool is required before container boot
-	# else postboot is presumed
-	#
-	;tags = preboot
-
+	
 	#
 	# 'scsireserv'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -543,7 +645,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   from the 'default' section.
 	#
 	;scsireserv = false
-
+	
 	#
 	# 'no_preempt_abort'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -554,7 +656,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   per-resource basis.
 	#
 	;no_preempt_abort = False
-
+	
 	#
 	# 'always_on'
 	#   optional. Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes',
@@ -564,20 +666,15 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   shared disk !! danger !!
 	#
 	;always_on = drpnodes
-
-	##############################################################################
+	
 	#
-	# 'vmdg' resource
-	#   HP-UX only, HP-VM only. The virtual machine disk group is the group of
-	#   disks given to a VM (pass-through device). As such, there can be only one
-	#   vmdg section for a hpvm-mode service.
-	#   This resource type is only present to allow setting the scsireserv option.
+	# 'zone'
+	#   optional. 
+	#   This resource will start after the referenced zone startup.
 	#
-	;[vmdg]
-	;scsireserv = false
-	;no_preemt_abort = false
-
-
+	;zone = zname
+	
+	
 	##############################################################################
 	#
 	# 'drbd' resource
@@ -587,7 +684,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   This is controlled by a set of tags: 'prevg', 'postvg'.
 	#
 	[drbd#0]
-
+	
 	#
 	# 'res'
 	#   mandatory. String. The name of the drbd resource associated with this
@@ -596,7 +693,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   care of replicating this file to remote nodes.
 	#
 	res = data
-
+	
 	#
 	# 'always_on'
 	#   state the expected status on nodes specified as value is 'up'. With drbd
@@ -604,7 +701,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   so always_on should point to all nodes participating in the drbd resource.
 	#
 	always_on = drpnodes nodes
-
+	
 	#
 	# 'tags'
 	#    prevg:  upon service 'start', drbd 'start' is scheduled before volume
@@ -615,8 +712,43 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#            volume group.
 	#
 	tags = prevg
-
-
+	
+	
+	##############################################################################
+	#
+	# 'share' resource
+	#   define a network share to setup upon service startup.
+	#
+	;[share#1]
+	;disable = true
+	;disable_on = node12 node21
+	;optional = true
+	;optional_on = node12 node21
+	;monitor = true
+	;monitor_on = node12 node21
+	
+	#
+	# 'type'
+	#   possible values:
+	#       nfs
+	
+	;type = nfs
+	
+	#
+	# 'path'
+	#    the full path name of the filesystem tree to share, as you would
+	#    set it in /etc/exports on Linux
+	#
+	;path = /opt/unxtstsvc01
+	
+	#
+	# 'opts'
+	#    the sharing options of the filesystem tree to pointed by path, as you
+	#    would set it in /etc/exports on Linux
+	#
+	;opts = *(ro) client1(rw)
+	
+	 
 	##############################################################################
 	#
 	# 'fs' resource
@@ -636,18 +768,19 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;mnt = /opt/unxtstsvc01
 	;mnt_opt = rw,loop
 	;type = ext4
-
+	;zone = zname
+	
 	;[fs#2]
 	;dev = zpool/app
 	;mnt = /unxtstsvc01/app
 	;type = zfs
-
+	
 	#
 	# 'type'
 	#   possible values:
 	#       zfs lofs ext3 ext4 ...
 	#
-
+	
 	#
 	# 'dev'
 	#   can have per-node value, using the 'dev@node' parameter syntax for
@@ -657,8 +790,8 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	# 
 	;dev@prdnode = prdnas:/vol/vol1
 	;dev@drpnode = drpnas:/vol/vol1
-
-
+	
+	
 	#
 	# 'always_on'
 	#   optional. Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes',
@@ -668,8 +801,22 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   shared disk !! danger !!
 	#
 	;always_on = drpnodes
-
-
+	
+	#
+	# 'zone'
+	#   optional. 
+	#   This resource will start after the referenced zone startup. The zone
+	#   path is prepended to the mnt parameter.
+	#
+	;zone = zname
+	
+	#
+	# 'globalfs'
+	#   optional. Defaults to false.
+	#   If set to true, don't reparent the the fs mount to the zone path.
+	#
+	;globalfs = true
+	
 	##############################################################################
 	#
 	# 'loop' resource
@@ -687,8 +834,8 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;monitor = true
 	;monitor_on = node12 node21
 	;file = /opt/unxtstsvc02.img
-
-
+	
+	
 	##############################################################################
 	#
 	# 'sync' resource
@@ -702,7 +849,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;optional_on = node12 node21
 	;monitor = true
 	;monitor_on = node12 node21
-
+	
 	#
 	# 'tags'
 	#   the sync resource supports the 'delay_snap' tag. This tag is used to
@@ -712,7 +859,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   'postsnap_trigger'.
 	#
 	;tags = delay_snap
-
+	
 	#
 	# 'src'
 	#   source of the sync. Can be a whitespace-separated list of files or dirs
@@ -720,28 +867,28 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   the rsync man page for details.
 	#
 	;src = /unxdevweb/
-
+	
 	#
 	# 'dst'
 	#   destination of the sync. Beware of the meaningful ending '/'. Refer to
 	#   the rsync man page for details.
 	#
 	;dst = /unxdevweb
-
+	
 	#
 	# 'exclude'
 	#   !deprecated!, optional. A whitespace-separated list of --exclude params
 	#   passed unchanged to rsync. The 'options' keyword is preferred now.
 	#
 	;exclude = --exclude=cache
-
+	
 	#
 	# 'options'
 	#   optional. A whitespace-separated list of params passed unchanged to rsync.
 	#   Typical usage is ACL preservation activation.
 	#
 	;options = -A
-
+	
 	#
 	# 'target'
 	#   mandatory. Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes'.
@@ -752,7 +899,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   SRDF-like paired storage must not be sync to 'drpnodes'.
 	#
 	;target = nodes drpnodes
-
+	
 	#
 	# 'snap'
 	#   optional. Possible values are 'true' or 'false'. Default is 'false'.
@@ -760,7 +907,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   parent of the source of the sync and try to sync from the snap.
 	#
 	;snap = true
-
+	
 	#
 	# 'dstfs'
 	#   optional. If set to a remote mount point, OpenSVC will verify that the
@@ -768,14 +915,14 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   as a safety net to not overflow the parent FS (may be root).
 	#
 	;dstfs = /remote/dir
-
+	
 	#
 	# 'bwlimit'
 	#   optional. Bandwidth limit in KB applied to this rsync transfer. Takes
 	#   precedence over 'bwlimit' set in [DEFAULT].
 	#
 	;bwlimit = 3000
-
+	
 	#
 	# 'sync_interval'
 	#   optional. Set the minimum delay between syncs in minutes. If a sync is
@@ -786,15 +933,15 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   /opt/opensvc/var/sync/[service]![dst]
 	#
 	;sync_interval = 30
-
+	
 	#
 	# 'type'
 	#   optional. Default is 'rsync'. Specify a data sync mode. Supported values
-	#   are: zfs, netapp, rsync, dds
+	#   are: zfs, netapp, rsync, dds, btrfs
 	#
 	;type = netapp
 	;type = zfs
-
+	
 	#
 	# 'zfs' type specific parameter.
 	#   The synchronization mecanism used is zfs send / zfs receive.
@@ -802,19 +949,42 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   src and dst can be different from one node to the
 	#   other, in which case '@nodename' can be specified.
 	#
-
+	
 	#
 	# 'recursive'
 	#   optional. (used when type = 'zfs')
 	#   Default is 'True'. So snapshots are created recursivly
 	#
 	;recursive = False
-
+	
+	#
+	# 'btrfs' type specific parameter.
+	#   The synchronization mecanism used is btrfs send / btrfs receive.
+	#   src and dst must be formatted as <label>:<subvol>
+	#   src and dst can be different from one node to the
+	#   other, in which case '@nodename', '@nodes' or '@drpnodes' can be
+	#   specified.
+	#   The destination must be umounted (do not set always_on on the
+	#   the corresponding fs resources).
+	#
+	;src = mysvc_data:mysvc_root
+	;dst = mysvc_data:mysvc_root
+	;dst@drpnodes = shared_data:mysvc_root
+	
+	#
+	# 'recursive'
+	#   optional. (used when type = 'btrfs')
+	#   Default is 'False'. Toggles recursive snapshots and sends.
+	#   Btrfs does not yet support this feature. It is included in
+	#   OpenSVC in anticipation.
+	#
+	;recursive = False
+	
 	#
 	# 'netapp' type specific parameter.
 	#   The synchronization mecanism used is snapmirror.
 	#
-
+	
 	#
 	# 'filer'
 	#   mandatory. 'filer' points the nas head to pass commands to. In most case
@@ -822,35 +992,35 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#
 	;filer@vm4 = nasprd
 	;filer@vm5 = nasdrp
-
+	
 	#
 	# 'path'
 	#   mandatory. Specifies the volume or qtree to drive snapmirror on.
 	#
 	;path = /vol/vol1
-
+	
 	#
 	# 'user'
 	#   mandatory. Specifies the user used to ssh connect the filers. Nodes should
 	#   be trusted by keys to access the filer with this user.
 	#
 	;user = nasadm
-
-
+	
+	
 	##############################################################################
 	#
 	# Symmetrix clones
 	#
 	;[sync#2]
 	;type = symclone
-
+	
 	#
 	# 'symdg'
 	#   mandatory. name of the symmetrix device group where the source and target
 	#   devices are grouped.
 	#
 	;symdg = DGCVI
-
+	
 	#
 	# 'precopy_timeout'
 	#   optional. default 300 secs. seconds to wait for a precopy (syncresync) to
@@ -860,7 +1030,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   context-dependent. Tune to your needs.
 	#
 	;precopy_timeout = 300
-
+	
 	#
 	# 'symdevs'
 	# 'symdevs@node'
@@ -870,8 +1040,33 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;symdevs@lmwbica0 = 000290101370:380D
 	;sync_interval = 30
 	;sync_max_delay = 1440
-
-
+	
+	
+	##############################################################################
+	#
+	# IBM DS8xxx FlashCopy
+	#
+	;[sync#2]
+	;type = ibmdssnap
+	
+	#
+	# 'array'
+	#   mandatory. Symbolic name of the DS8xxx array, as defined in the auth.conf
+	#   section.
+	#
+	;array = my-ds8xxx
+	
+	#
+	# 'pairs'
+	# 'pairs@node'
+	#   mandatory. whitespace-separated list of src_devid:dst_devid to drive with
+	#   this resource.
+	#
+	;pairs@host1 = 01DD:02DD 01DE:02DE
+	;sync_interval = 30
+	;sync_max_delay = 1440
+	
+	
 	##############################################################################
 	#
 	# DataCore snapshots
@@ -895,14 +1090,14 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;type = dcssnap
 	;sync_interval = 5
 	;sync_max_delay = 60
-
+	
 	#
 	# 'manager'
 	#   mandatory. A whitespace-separated list of DCS managers.
 	#   Also used as a section name in etc/auth.conf
 	#
 	;manager = dcsmanager1.opensvc.com dcsmanager2.opensvc.com
-
+	
 	#
 	# 'dcs'
 	#   mandatory. A whitespace-separated list of DCS appliances.
@@ -910,7 +1105,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   appliance.
 	#
 	;dcs = dcs1.opensvc.com dcs2.opensvc.com
-
+	
 	#
 	# 'snapname'
 	#   mandatory. A whitespace-separated list of DCS snapshot names.
@@ -919,8 +1114,8 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   must be quiesced before 'syncresync' action.
 	#
 	;snapname = svc1-snap1 svc1-snap2
-
-
+	
+	
 	##############################################################################
 	#
 	# HP StorageWorks EVA snapshots
@@ -947,14 +1142,24 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;type = evasnap
 	;sync_interval = 5
 	;sync_max_delay = 60
-
+	
 	#
 	# 'eva_name'
 	#   mandatory. The name of the EVA storage array, as seen by the manager.
 	#   Also used as a section name in etc/sssu.conf
 	#
 	;eva_name = EVA11
-
+	
+	#
+	# 'snap_name'
+	#   optional. The name of the EVA snapshot to create. If not set,
+	#   the snap name defaults to the service name. This parameter exists
+	#   to workaround the EVA limitation on snap names (32 chars), so that
+	#   admins can use this snap resource even if their service name is too
+	#   long.
+	#
+	;snap_name = footst2
+	
 	#
 	# 'pairs'
 	#   mandatory. A JSON-serialized list descibing the origin-snap relationships.
@@ -974,22 +1179,22 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	;	   "mask": ["\\Hosts\\Opensvc\\n1\\102"]
 	;         }
 	;        ]
-
-
+	
+	
 	##############################################################################
 	#
 	# Binary deltas based sync resource for Linux LVM.
 	#
 	;[sync#3]
 	;type = dds
-
+	
 	#
 	# 'src'
 	#   source logical volume. Mandatory. Points the origin of the snapshots to
 	#   replicate from.
 	#
 	;src = /dev/mapper/unxtstsvc02-data
-
+	
 	#
 	# 'dst'
 	#   target file or block device. Optional. Defaults to src. Points the media
@@ -997,7 +1202,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   a size superior or equal to source.
 	#
 	;dst = /tmp/dds.img
-
+	
 	#
 	# 'target'
 	#   Mandatory. Accepted values are 'drpnodes', 'nodes' or both, whitespace-separated.
@@ -1007,7 +1212,7 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   should not be used to replicate data between nodes with automated services failover.
 	#   
 	;target = drpnodes
-
+	
 	#
 	# 'snap_size'
 	#   Optional. Default to 10% of origin. In MB, rounded to physical extent boundaries
@@ -1018,11 +1223,11 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   necessary space always available.
 	#
 	;snap_size = 4
-
+	
 	;sync_interval = 1450
 	;sync_max_delay = 1
-
-
+	
+	
 	##############################################################################
 	#
 	# Virtual disk.
@@ -1036,8 +1241,8 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#
 	;path@node1 = /dev/mapper/unxtstsvc02-data
 	;path@node2 = /dev/mapper/vg0-unxtstsvc02_data
-
-
+	
+	
 	##############################################################################
 	#
 	# Heart beat.
@@ -1051,10 +1256,11 @@ Here is a copy of the template service env file available on the nodes at ``/opt
 	#   'LinuxHA'.
 	#
 	;type = OpenHA
-
+	
 	#
 	# 'name'
 	#   Optional. Applies to the OpenHA driver
 	#   Specify the service name used by the heartbeat. Defaults to the service name.
 	#
 	;name = SVCNAME
+	
