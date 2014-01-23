@@ -201,7 +201,7 @@ The OpenSVC agent on Windows depends on:
 
 - Python win32 library
 
-- Microsoft fcinfo for Fibre Channel SAN reporting (optionnal)
+- Microsoft fcinfo for Fibre Channel SAN reporting (optional)
 
 
 The provided OpenSVC executable installer brings everything except fcinfo tool.
