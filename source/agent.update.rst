@@ -19,13 +19,14 @@ Initialize the mirror
 
 A mirror can be set up using::
 
-	wget -m -A '*.deb' -A '*.rpm' -A '*.msi' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
+	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
 
 The resulting file tree must organized as::
 
 	repo.opensvc.com/
 	+- deb/
 	+- depot/
+	+- exe/
 	+- pkg/
 	+- rpms/
 	 +- current -> opensvc-1.4-49.rpm

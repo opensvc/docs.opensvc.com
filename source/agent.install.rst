@@ -201,12 +201,33 @@ The OpenSVC agent on Windows depends on:
 
 - Python win32 library
 
-- Microsoft fcinfo for Fibre Channel SAN reporting
+- Microsoft fcinfo for Fibre Channel SAN reporting (optionnal)
+
+
+The provided OpenSVC executable installer brings everything except fcinfo tool.
+
+
+Silent Install
+--------------
+
+It's possible to trigger a silent install by using the /S (uppercase) command line switch::
+	
+	OpenSVC.X.Y.exe /S
+
+There's also a command line option to specify the target installation folder (no quotes in folder name even with spaces inside)::
+
+	OpenSVC.X.Y.exe /S  /D=C:\My Path with spaces
+
+Graphical Install
+-----------------
+	
+Double click on OpenSVC.X.Y.exe and follow install wizard
 
 Upgrade
 -------
 
-Upgrading the OpenSVC msi package manually requires msiexec options::
+Upgrading the OpenSVC package manually is the same as an installation from scratch::
 
-	msiexec /i opensvc.msi REINSTALL=ALL REINSTALLMODE=vomus
+	OpenSVC.X.Z.exe /S
 
+The installer deals with installation directory detection, and upgrade software in the accurate folder. It's still a best practice to have a system/data backup before upgrading OpenSVC software.
