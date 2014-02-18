@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   howto.getting.started
    howto.lxc
    howto.ha
    howto.nfsha
