@@ -1,21 +1,21 @@
 Getting Started
 ***************
 
-This page will help you go through first steps with OpenSVC setup.
+This page will help you take your first steps with OpenSVC services setup.
 
-The aim is to discover the different tasks needed to achieve a simple but working dual node failover cluster.
+It will guide you through the sequence of tasks to achieve a simple but working dual-node failover cluster.
 
 Prerequisites
 =============
 
-First of all here is the list of materials building the environment :
+The demonstration environment is composed of:
 
-* Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles1`` => will act as first cluster node
-* Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles2`` => will act as second cluster node
-* Storage Array capable of exporting block devices to both nodes.
+* A Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles1`` => will act as first cluster node
+* A Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles2`` => will act as second cluster node
+* A Storage Array capable of exporting block devices to both nodes.
 
  * In this guide, we use iSCSI luns exported from an OpenFiler instance (http://www.openfiler.com)
- * It works also with FC Luns exported from high end arrays (EMC, HDS, IBM, ...) as soon as servers have the same storage view
+ * FC Luns exported from high end arrays (EMC, HDS, IBM, ...) would also work, as long as the server share the same logical units
 
 As we plan to create 2 OpenSVC services, we need 2 IP adresses, one for each service :
 
@@ -26,28 +26,28 @@ As we plan to create 2 OpenSVC services, we need 2 IP adresses, one for each ser
 iSCSI Target Configuration
 ==========================
 
-Basically, OpenFiler is web based, so we easilly create the following objects :
+OpenFiler configuration being web-based, we can easilly create the following objects:
 
 * 2 iSCSI Targets
-* 2 luns of 32 MBytes each
+* 2 x 32 MBytes Logical Units
 
-From a configuration point of view, we need to :
+And finally:
 
-* Map each lun to both iscsi targets
-* Allow nodes ``sles1`` and ``sles2`` to access both iscsi targets
+* Map both luns to both iscsi targets
+* Allow nodes ``sles1`` and ``sles2`` access through both iscsi targets
 
-This way we will have each lun seen through 2 paths, so as to simulate lun access redundancy.
+This setup serves each lun through 2 paths, thus simulating lun access redundancy.
 
 iSCSI Initiator Configuration
 =============================
 
-First of all we need the iscsi stuff installed on the SLES Servers. We will achieve that by installing the open-iscsi package :
+First, we need the iscsi initiator software installed on the SLES Servers. The open-iscsi package will be used for this setup:
 
 **On both nodes**::
 
 	sles1:/ # zypper install open-iscsi
 
-After, we have to specify iscsi initiator name for each node :
+Then, we have to specify iscsi initiator name for each node:
 
 **On both nodes**::
 
@@ -57,7 +57,7 @@ After, we have to specify iscsi initiator name for each node :
         sles2:/ # cat /etc/iscsi/initiatorname.iscsi
         InitiatorName=iqn.1994-05.com.suse:sles2
 
-We start iscsi services, and enable daemon to start at boot :
+We start iscsi services, and enable the daemon for boot-time start-up:
 
 **On both nodes**::
 
@@ -69,7 +69,7 @@ We start iscsi services, and enable daemon to start at boot :
         # chkconfig --add open-iscsi
         open-iscsi                0:off  1:off  2:off  3:on   4:off  5:on   6:off
 
-It's now time to discover the target ports exporting our iscsi luns :
+It's now time to discover the target ports serving our iscsi luns:
 
 **On both nodes**::
 
@@ -95,7 +95,7 @@ It's now time to discover the target ports exporting our iscsi luns :
         [3:0:0:0]    disk    OPNFILER VIRTUAL-DISK     0     /dev/sda
         [3:0:0:1]    disk    OPNFILER VIRTUAL-DISK     0     /dev/sdc
 
-As we have multiple paths to the same luns through multiple targets, we have to setup linux native multipath software :
+As we have multiple paths to the same luns, through multiple targets, we have to setup linux native multipath software :
 
 **On both nodes**::
 
@@ -122,12 +122,12 @@ As we have multiple paths to the same luns through multiple targets, we have to 
         `-+- policy='service-time 0' prio=0 status=enabled
           `- 3:0:0:1 sdc 8:32 active undef running
 
-Our shared storage configuration works.
+The shared storage setup is operational.
 
 Storage Configuration
 =====================
 
-We use Linux LVM to manage our storage. As we plan 2 services, we assign 1 lun per OpenSVC service.
+We use Linux LVM to manage our storage. As we plan 2 services, we assign 1 lun to each OpenSVC service.
 
 **On sles1 node**
 
@@ -198,19 +198,19 @@ Install OpenSVC Agent on both cluster nodes.
         0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/cron/opensvc ] && /opt/opensvc/bin/cron/opensvc >/dev/null 2>&1
         0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/perfagt.Linux ] && /opt/opensvc/bin/perfagt.Linux >/dev/null 2>&1
 
-This means that opensvc software is installed.
+The OpenSVC agent is now operational.
 
 SSH Keys Setup
 ==============
 
-We need to trust both nodes in our cluster. We will use ssh keys to achieve that.
+Cluster members commnuicate through ssh. They must trust each other to do so. We will use ssh keys to achieve that.
 
 * sles1 will be able to connect to sles2 as root.
 * sles2 will be able to connect to sles1 as root.
 
 .. note::
 
-        It is also possible to use an unprivileged user. In this case, sudo need to be used for OpenSVC commands to run as root. Those commands are ``nodemgr``, ``svcmgr``, ``rsync``.
+        It is also possible for the agent to login on peer cluster nodes using an unprivileged user. In this case, the agent needs sudo priviles to run the following commands as root: ``nodemgr``, ``svcmgr``, ``rsync``.
 
 **On sles1**::
 
@@ -240,7 +240,7 @@ Set Host Mode
 
 As we are in a lab, we do not need to specify the host mode because "TST" is the default.
 
-For other purposes than testing, we should have specify on both nodes the accurate mode with the method described `here <agent.install.html#set-host-mode>`_.
+For other purposes than testing, we would have defined on both nodes the relevant mode with the method described `here <agent.install.html#set-host-mode>`_.
 
 Service Creation
 ================
@@ -255,13 +255,13 @@ We will describe the manual option, for a better understanding of what happens.
 Step 1 : Service configuration file
 +++++++++++++++++++++++++++++++++++
 
-Basically, we just add the needed fields in the service configuration file. Expected filename is ``servicename.env``
+Basically, we just add the needed fields in the service configuration file. The expected file name is ``servicename.env``
 
-First section in the service file describes the service itself (human readable name, nodes where service is expected to run on, default node, ...).
+The DEFAULT section in the service file describes the service itself (human readable name, nodes where service is expected to run on, default node, ...).
 
-Each other sections point out a ressource on which depends the service.
+Every other section defines a ressource managed by the service.
 
-We describe below the service named ``p26.opensvc.com``, running on primary node ``sles1``, being able to failover on node ``sles2``, using 1 IP address named ``p26.opensvc.com`` (name to ip resolution is done by OpenSVC), 1 LVM volume groupe ``vgsvc1``, and 2 filesystems hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/vgsvc1-lvdatasvc1``.
+The following configuration describes a service named ``p26.opensvc.com``, running on primary node ``sles1``, failing-over to node ``sles2``, using 1 IP address named ``p26.opensvc.com`` (name to ip resolution is done by the OpenSVC agent), 1 LVM volume groupe ``vgsvc1``, and 2 filesystems hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/vgsvc1-lvdatasvc1``.
 
 **On sles1 node**::
 
@@ -302,16 +302,16 @@ We describe below the service named ``p26.opensvc.com``, running on primary node
 Step 2 : Service startup scripts directory
 ++++++++++++++++++++++++++++++++++++++++++
 
-As service are used to manage application, we need to specify a directory where all applications starters are located.
+As services are used to manage application, we need to specify a directory where all applications startup scripts are located.
 
-As an example, if we want to build a LAMP service, we would need at least 2 scripts, one for the mysql database, and another for the apache webserver. Those scripts have to be located in the service startup scripts directory ::
+As an example, if we want to build a LAMP service, we would use 2 scripts: one for the mysql database, and another for the apache webserver. Those scripts have to be located in the service startup scripts directory ::
 
         sles1:/opt/opensvc/etc # mkdir p26.opensvc.com.dir
         sles1:/opt/opensvc/etc # ln -s p26.opensvc.com.dir p26.opensvc.com.d
 
-We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com.dir`` may not be the best place for hosting this directory. No matter, the most important is to remember that the symlink ``p26.opensvc.com.d`` is the place where OpenSVC search for application launchers.
+We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com.dir`` may not be the best place for hosting this directory. Anyway, the symlink ``p26.opensvc.com.d`` is the only place where OpenSVC search for application launchers.
 
-At the moment, we just consider creating this directory and the symlink. No script are added now.
+For now, we just will just create this directory and the symlink. No script are added yet.
 
 Step 3 : Service management facility
 ++++++++++++++++++++++++++++++++++++
