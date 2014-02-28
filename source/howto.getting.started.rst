@@ -26,7 +26,7 @@ As we plan to create 2 OpenSVC services, we need 2 IP adresses, one for each ser
 iSCSI Target Configuration
 ==========================
 
-OpenFiler configuration being web-based, we can easilly create the following objects:
+The OpenFiler configuration being web-based, we can easilly create the following objects:
 
 * 2 iSCSI Targets
 * 2 x 32 MBytes Logical Units
@@ -127,7 +127,7 @@ The shared storage setup is operational.
 Storage Configuration
 =====================
 
-We use Linux LVM to manage our storage. As we plan 2 services, we assign 1 lun to each OpenSVC service.
+We use Linux LVM to manage our storage. As we plan to create 2 services, we assign 1 lun to each OpenSVC service.
 
 **On sles1 node**
 
@@ -145,7 +145,7 @@ Volume group creation::
         sles1:/ # vgcreate vgsvc2 /dev/mapper/14f504e46494c45526461484d656c2d5a6f416f2d33596b52
           Volume group "vgsvc2" successfully created
 
-Logical volume creation for first service::
+Logical volume creation for the first service::
 
         sles1:/ # lvcreate -L 10M -n lvdatasvc1 vgsvc1
           Rounding up size to full physical extent 12,00 MiB
@@ -154,7 +154,7 @@ Logical volume creation for first service::
           Rounding up size to full physical extent 12,00 MiB
           Logical volume "lvappsvc1" created
 
-Logical volume creation for second service::
+Logical volume creation for the second service::
 
         sles1:/ # lvcreate -L 10M -n lvdatasvc2 vgsvc2
           Rounding up size to full physical extent 12,00 MiB
@@ -183,7 +183,7 @@ OpenSVC Installation
 
 We will follow the steps described in `Nodeware installation <agent.install.html>`_
 
-Install OpenSVC Agent on both cluster nodes.
+Install the OpenSVC Agent on both cluster nodes.
 
 **On both nodes**::
 
@@ -203,14 +203,14 @@ The OpenSVC agent is now operational.
 SSH Keys Setup
 ==============
 
-Cluster members commnuicate through ssh. They must trust each other to do so. We will use ssh keys to achieve that.
+Cluster members communicate through ssh. Each node must trust its peer through key-based authentication to allow these communications.
 
 * sles1 will be able to connect to sles2 as root.
 * sles2 will be able to connect to sles1 as root.
 
 .. note::
 
-        It is also possible for the agent to login on peer cluster nodes using an unprivileged user. In this case, the agent needs sudo priviles to run the following commands as root: ``nodemgr``, ``svcmgr``, ``rsync``.
+        It is also possible for the agent to login on a peer cluster node using an unprivileged user, using the ruser node.conf parameter. In this case, the remote user needs sudo priviles to run the following commands as root: ``nodemgr``, ``svcmgr`` and ``rsync``.
 
 **On sles1**::
 
@@ -238,30 +238,30 @@ Cluster members commnuicate through ssh. They must trust each other to do so. We
 Set Host Mode
 =============
 
-As we are in a lab, we do not need to specify the host mode because "TST" is the default.
+As we are in a lab environment, we do not need to specify the host mode : "TST" is the default value, and is adequate.
 
 For other purposes than testing, we would have defined on both nodes the relevant mode with the method described `here <agent.install.html#set-host-mode>`_.
 
 Service Creation
 ================
 
-2 methods are available to create OpenSVC services::
+The OpenSVC service can be created using one of the following two methods::
 
-* wizard : svcmgr create with interactive option (-i)
+* wizard : ``svcmgr create`` with interactive option (-i)
 * manual : build config file from template (located in /opt/opensvc/usr/share/doc/template.env)
 
-We will describe the manual option, for a better understanding of what happens. 
+We will describe the second, manual option, for a better understanding of what happens. 
 
 Step 1 : Service configuration file
 +++++++++++++++++++++++++++++++++++
 
-Basically, we just add the needed fields in the service configuration file. The expected file name is ``servicename.env``
+The expected file name is ``servicename.env``
 
-The DEFAULT section in the service file describes the service itself (human readable name, nodes where service is expected to run on, default node, ...).
+The DEFAULT section in the service file describes the service itself: human readable name, nodes where the service is expected to run on, default node, ...
 
 Every other section defines a ressource managed by the service.
 
-The following configuration describes a service named ``p26.opensvc.com``, running on primary node ``sles1``, failing-over to node ``sles2``, using 1 IP address named ``p26.opensvc.com`` (name to ip resolution is done by the OpenSVC agent), 1 LVM volume groupe ``vgsvc1``, and 2 filesystems hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/vgsvc1-lvdatasvc1``.
+The following configuration describes a service named ``p26.opensvc.com``, running on the primary node ``sles1``, failing-over to node ``sles2``, using one IP address named ``p26.opensvc.com`` (name to ip resolution is done by the OpenSVC agent), one LVM volume group ``vgsvc1``, and two filesystems hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/vgsvc1-lvdatasvc1``.
 
 **On sles1 node**::
 
@@ -309,9 +309,9 @@ As an example, if we want to build a LAMP service, we would use 2 scripts: one f
         sles1:/opt/opensvc/etc # mkdir p26.opensvc.com.dir
         sles1:/opt/opensvc/etc # ln -s p26.opensvc.com.dir p26.opensvc.com.d
 
-We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com.dir`` may not be the best place for hosting this directory. Anyway, the symlink ``p26.opensvc.com.d`` is the only place where OpenSVC search for application launchers.
+We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com.dir`` may not be the best place for hosting the launchers. Anyway, the symlink ``p26.opensvc.com.d`` is the only place where OpenSVC actually search for application launchers.
 
-For now, we just will just create this directory and the symlink. No script are added yet.
+For now, we just will just create this directory and the symlink. No script is added yet.
 
 Step 3 : Service management facility
 ++++++++++++++++++++++++++++++++++++
@@ -331,7 +331,7 @@ With this symlink, we can directly use ::
 Step 4 : Service configuration check
 ++++++++++++++++++++++++++++++++++++
 
-As a final check, we list all entries that match our ``p26.opensvc.com`` service ::
+As a final check, we can list all entries that match our ``p26.opensvc.com`` service ::
 
         sles1:/opt/opensvc/etc # ls -lart | grep p26
         total 20
@@ -342,14 +342,14 @@ As a final check, we list all entries that match our ``p26.opensvc.com`` service
         lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
         drwxr-xr-x 3 root root 4096 17 févr. 14:15 .
 
-We need to find out :
+You should be able to see:
 
 - the service configuration file (service.env)
 - the directory where are stored the applications launchers (service.dir)
 - a symlink to the service.dir (service.d)
 - a symlink to the /opt/opensvc/bin/svcmgr command (service)
 
-At this point, we have configured a single service without application on node sles1.
+At this point, we have configured a single service with no application launcher on node sles1.
 
 Service Testing
 ===============
@@ -357,7 +357,7 @@ Service Testing
 Query service status
 ++++++++++++++++++++
 
-Our first service is now ready to use, we can query for its status.
+Our first service is now ready to use. We can query its status.
 
 **On sles1**::
 
@@ -375,17 +375,19 @@ Our first service is now ready to use, we can query for its status.
         |                                  # passive node needs update
         '- hb                     n/a
 
-This command allow us to gather status for each service ressource :
+This command collects and displays status for each service ressource :
 
 - overall status is ``warn`` due to the fact that all ressources are not in ``up`` status
-- ressource ``vg#0`` is up because the volume group is activated (we just did the LVM setup)
+- ressource ``vg#0`` is up because the volume group is activated (which is the expected status after vgcreate)
+- sync resources are in ``warn`` status because no synchronisation happened yet
 - all other ressources are ``down`` or non available ``n/a``
 
 Start service
 +++++++++++++
 
-The use of OpenSVC for your services management allow you to save a lot of time.
-Once the service is implemented on the node, you just need 1 command to start the overall application.
+The use of OpenSVC for your services management saves a lot of time and effort.
+Once the service is described on a node, you just need one command to start the overall application.
+
 Let's start the service ::
 
         sles1:/ # p26.opensvc.com start
@@ -409,7 +411,7 @@ Let's start the service ::
         
         14:40:11 INFO    P26.OPENSVC.COM.FS#1    mount -t ext3 /dev/mapper/vgsvc1-lvdatasvc1 /svc1/data
 
-We can see in the startup sequence :
+The startup sequence reads as:
 
 - check if service IP address is not already used somewhere
 - bring up service ip address 
@@ -417,13 +419,13 @@ We can see in the startup sequence :
 - fsck + mount of each filesystem
 
 
-We check for filesystem being mounted ::
+Manual filesystem mount check::
 
         sles1:/ # mount | grep svc1
         /dev/mapper/vgsvc1-lvappsvc1 on /svc1/app type ext3 (rw)
         /dev/mapper/vgsvc1-lvdatasvc1 on /svc1/data type ext3 (rw)
 
-We check for ip address being ip aliases on eth0 (p26.opensvc.com is 37.59.71.26) ::
+Manual ip address plumbing check on eth0 (p26.opensvc.com is 37.59.71.26)::
 
         sles1:/ # ip addr list eth0
         2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
@@ -433,7 +435,7 @@ We check for ip address being ip aliases on eth0 (p26.opensvc.com is 37.59.71.26
             inet6 fe80::5054:ff:fedb:db29/64 scope link
                valid_lft forever preferred_lft forever
 
-We confirm that everything is OK with ``print status`` command::
+We can confirm everything is OK with the service's ``print status`` command::
 
         sles1:/ # p26.opensvc.com print status
         p26.opensvc.com
@@ -455,16 +457,16 @@ At this point, we have a running service, configured to run on sles1 node.
 Application Integration
 =======================
 
-We have done the setup of a single service, but actually it does nothing. We will remediate that by integrating an application into our service.
+We have gone through the setup of a single service, but it does not start applications yet. Let's add an application to our service now.
 
-We will use a very simple example : tiny webserver with a single index.html file to serve
+We will use a very simple example : a tiny webserver with a single index.html file to serve
 
 Applications launcher directory
 +++++++++++++++++++++++++++++++
 
-You have to keep in mind the philosophy of an OpenSVC service. You have specified a directory structure as service ressource, so the applications you are integrating into a service have to be located only into this directory structure, because we want our service to be relocatable to other nodes.
+The OpenSVC service integration enables service relocation amongst nodes. The per-service launchers hosting directory layout is a consequence of this relocation feature. The service has an implicit synchronisation resource to replicate the /opt/opensvc/etc/<service>* files using rsync.
 
-That's why we have to relocate application launchers directory to a filesystem inside the service. We previously installed this directory in ``/opt/opensvc/etc/p26.opensvc.dir``, we move it to ``/svc1/app/init.d`` ::
+As a refinement, for services with dedicated shared disks, we can relocate the application launchers directory to a filesystem resource hosted in one such disk. The original location was ``/opt/opensvc/etc/p26.opensvc.dir``. Let's move it to ``/svc1/app/init.d``::
 
         sles1:/opt/opensvc/etc # ls -lart | grep p26
         total 20
@@ -490,7 +492,7 @@ That's why we have to relocate application launchers directory to a filesystem i
 Application Binary
 ++++++++++++++++++
 
-Inside the service directory structure, we put a standalone binary of Mongoose web server (https://code.google.com/p/mongoose/) ::
+In the service directory structure, we put a standalone binary of the Mongoose web server (https://code.google.com/p/mongoose/) ::
 
         sles1:/ # cd /svc1/app
         
@@ -509,7 +511,7 @@ Inside the service directory structure, we put a standalone binary of Mongoose w
         sles1:/svc1/app # ls -l /svc1/app/webserver
         -rwxr-xr-x 1 root root 1063420 Feb  1 18:11 /svc1/app/webserver
 
-We need to create a dummy web page to be served by our webserver, stored in ``/svc1/data/``  ::
+And create a dummy web page in ``/svc1/data/``, to be served by our webserver::
 
         sles1:/svc1/app # cd /svc1/data/
         
@@ -519,13 +521,15 @@ We need to create a dummy web page to be served by our webserver, stored in ``/s
 Applications launcher script
 ++++++++++++++++++++++++++++
 
-We have to create a management script for our web application. As a best practise, the script have to support the following arguments :
+We have to create a management script for our web application. At minimum, this script must support the ``start`` argument.
 
-- start
+As a best practice, the script should also support the additional arguments:
+
 - stop
 - status
+- info
 
-Of course, we will store our script named ``weblauncher`` in the directory previsouly created for this purpose ::
+Of course, we will store our script named ``weblauncher`` in the directory previsouly created for this purpose::
 
         sles1:/ # cd /svc1/app/init.d
         
@@ -570,7 +574,7 @@ Of course, we will store our script named ``weblauncher`` in the directory previ
         	;;
         esac
 
-You first need to ensure that your script is working fine outside of OpenSVC ::
+Make sure the script is working fine outside of the OpenSVC context::
 
         sles1:/svc1/app # ./weblauncher status
         sles1:/svc1/app # echo $?
@@ -584,7 +588,7 @@ You first need to ensure that your script is working fine outside of OpenSVC ::
         sles1:/svc1/app # echo $?
         1
 
-Once it's done, we can specify OpenSVC how to use this script to enable application management ::
+Now we can instruct OpenSVC to handle this script for service application management ::
 
         sles1:/svc1/app/init.d # ln -s weblauncher S10weblauncher
         sles1:/svc1/app/init.d # ln -s weblauncher K90weblauncher
@@ -598,15 +602,15 @@ Once it's done, we can specify OpenSVC how to use this script to enable applicat
         -rwxr-xr-x 1 root root 570 Feb 17 16:45 weblauncher
 
 
-By integrating this way, we just have told OpenSVC to call ``weblauncher`` script with :
+This configuration tells OpenSVC to call the ``weblauncher`` script with :
 
 - ``start`` argument when OpenSVC service starts (symlink S10weblauncher)
 - ``stop`` argument when OpenSVC service stops (symlink K90weblauncher)
 - ``status`` argument when OpenSVC service needs status on application (symlink C10weblauncher)
 
-When integrating multiple software into an OpenSVC service, you have to use the 2-digits number in the symlink name to specify the order that have to be followed for start/stop/check actions.
+When integrating multiple software into an OpenSVC service, you can to use the digits after [SKC] in the symlink name to specify the scripts execution sequencing for start/stop/check actions.
 
-Now we can give a try to our launcher script, though OpenSVC calls ::
+Now we can give a try to our launcher script, using OpenSVC commands::
 
         sles1:~ # p26.opensvc.com start
         16:52:31 INFO    P26.OPENSVC.COM.IP#0    checking 37.59.71.26 availability
@@ -638,7 +642,7 @@ Now we can give a try to our launcher script, though OpenSVC calls ::
 
 We can see that OpenSVC is now calling our startup script after mounting filesystems.
         
-We can query service status, please note that the ``app`` ressource is now reporting as being ``up`` ::
+Querying the service status, the ``app`` ressource is now reporting ``up``::
 
         sles1:~ # p26.opensvc.com print status
         p26.opensvc.com
@@ -654,7 +658,7 @@ We can query service status, please note that the ``app`` ressource is now repor
         |                                  # sles2 need update
         '- hb                     n/a
 
-Let's check if that is really true ::
+Let's check if that is really the case::
 
         sles1:/ # ps auxww|grep web
         root      5902  0.0  0.1   4596  2304 pts/2    S    16:52   0:00 /svc1/app/webserver -document_root /svc1/data -index_files index.html -listening_port 8080
@@ -663,7 +667,7 @@ Let's check if that is really true ::
         sles1:~ # wget -qO - http://p26.opensvc.com:8080/
         <html><body>It Works !</body></html>
 
-Now we can stop our service ::
+Now we can stop our service::
 
         sles1:/ # p26.opensvc.com stop
         15:32:31 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/K90weblauncher stop
@@ -683,12 +687,12 @@ Now we can stop our service ::
         15:32:32 INFO    P26.OPENSVC.COM.IP#0    ifconfig eth0:1 down
         15:32:32 INFO    P26.OPENSVC.COM.IP#0    checking 37.59.71.26 availability
 
-Once again, a single command line :
+Once again, a single command:
 
-- bring down application
-- unmount filesystems
-- deactivate volume group
-- disable service ip address
+- brings down the application
+- unmounts filesystems
+- deactivates the volume group
+- disables the service ip address
 
 The overall status is now reported as being down ::
 
@@ -706,7 +710,7 @@ The overall status is now reported as being down ::
         |                                  # sles2 need update
         '- hb                     n/a
 
-Let's restart the service to continue this tutorial ::
+Let's restart the service to continue this tutorial::
 
         sles1:/ # p26.opensvc.com start
         15:53:44 INFO    P26.OPENSVC.COM.IP#0    checking 37.59.71.26 availability
@@ -736,28 +740,28 @@ Let's restart the service to continue this tutorial ::
         15:53:49 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/S10weblauncher start
         15:53:49 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.008936 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_S10weblauncher.log
 
-At this point, we have a running service on node sles1, with webserver application embedded.
+At this point, we have a running service on node sles1, with a webserver application embedded.
 
 Service Failover
 ================
 
-We are fine with our service, but what happens if ``sles1`` node fails ? Our ``p26.opensvc.com`` service will fail also.
-That's why we will finalize the configuration so as to enable ``sles2`` node to manage service.
-This is done by propagating the service configuration to the ``sles2`` node. 
+Our service is running fine, but what happens if the ``sles1`` node fails ? Our ``p26.opensvc.com`` service will also fail.
+That's why we want to extend the service configuration to declare ``sles2`` as a failover node for this service.
+After this change, the service configuration needs replication to the ``sles2`` node. 
 
-First we check ``/opt/opensvc/etc/`` on sles2, it should be empty because we do a fresh install ::
+First we check ``/opt/opensvc/etc/`` on sles2, it should be empty because we've done a fresh install::
 
         sles1:/opt/opensvc/etc # ssh sles2 ls /opt/opensvc/etc/ | grep p26.opensvc.com
         sles1:/opt/opensvc/etc # 
 
-The configuration propagation will be allowed multiple conditions are met :
+The configuration replication will be possible if the following conditions are met:
 
-- the new node is declared in the service configuration file /opt/opensvc/etc/p26.opensvc.com.env. [parameter "nodes" in .env file]
-- the node sending config files (sles1) is trusted on the new node (sles2). [We have done that previously in the tutorial]
-- the node sending config files (sles1) must be running the service.
-- the timeframe where file synchronisation is allowed is OK, or the -force option is used to bypass the timeframe check.
+- the new node is declared in the service configuration file /opt/opensvc/etc/p26.opensvc.com.env (parameter "nodes" in the .env file)
+- the node sending config files (sles1) is trusted on the new node (sles2) (as described in a previous chapter of this tutorial)
+- the node sending config files (sles1) must be running the service (the service availability status, apps excluded, is up).
+- the previous synchronisation is older than the configured minimum delay, or the --force option is set to bypass the delay check.
 
-Let's propagate configuration files ::
+Let's replicate the configuration files::
 
         sles1:/opt/opensvc/etc # p26.opensvc.com syncnodes
         17:20:37 INFO    P26.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
@@ -771,7 +775,7 @@ Let's propagate configuration files ::
         lrwxrwxrwx 1 root root  16 17 févr. 16:48 p26.opensvc.com.d -> /svc1/app/init.d
         -rw-r--r-- 1 root root 396 17 févr. 14:21 p26.opensvc.com.env
 
-We can see that node sles2 is now ready to start our service.
+We can see that the ``sles2`` node is now ready to start our service.
 
 **On sles1**::
 
@@ -788,8 +792,9 @@ We can see that node sles2 is now ready to start our service.
         |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
         '- hb                     n/a
 
-Please note that ``sync#i0`` ressource is now up, due to both nodes being in sync from a service configuration point of view.
-Now, we try to start service on ``sles2``, after stopping it on ``sles1`` ::
+Note that the ``sync#i0`` ressource is now up, due to both nodes being in sync from a service configuration point of view.
+
+We can now try to start the service on ``sles2``, after stopping it on ``sles1``::
 
         sles1:/opt/opensvc/etc # p26.opensvc.com stop
         16:07:40 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/K90weblauncher stop
@@ -852,9 +857,9 @@ Now, we try to start service on ``sles2``, after stopping it on ``sles1`` ::
         |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
         '- hb                     n/a
 
-Service p26.opensvc.com is now running on node ``sles2``. Have you ever configured a second cluster node so easily ?
+Service p26.opensvc.com is now running on node ``sles2``. Service relocation operational, easy as that.
 
-Now, what happens if I try to start my service on ``sles1`` while it is already running on ``sles2`` ? ::
+Now, what happens if I try to start my service on ``sles1`` while already running on ``sles2`` ?::
 
         sles1:/ # p26.opensvc.com start
         16:19:39 INFO    P26.OPENSVC.COM.IP#0    checking 37.59.71.26 availability
@@ -865,6 +870,6 @@ Fortunately, OpenSVC IP address check prevent the service from starting on ``sle
 
 .. note::
 
-        At this point, we have a 2-nodes failover cluster. Although it may satisfy some customers who prefer that, the failover is _manual_ and that's not considered as high availability cluster.
+        At this point, we have a 2-node failover cluster. Although this setup meets most needs, the failover is _manual_, so does not qualify as a high availability cluster.
 
-        That's where we can followup with OpenHA setup on top of OpenSVC, to add the high availability part to our manual cluster.
+        To learn how to meet HA requirements with OpenSVC, you can now jump to the OpenHA HOWTO.
