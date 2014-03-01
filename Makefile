@@ -145,6 +145,7 @@ po_fr:
 	base_pot=`basename $$pot` ; \
 	po=$(TRANS_D)/fr/`echo $$base_pot | sed "s/t$$//"` ; \
 	echo "merge new strings in $$po" ; \
+	touch $$po ; \
 	msgmerge -s -U $$po $$pot ; \
 	done
 
