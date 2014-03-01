@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-03-01 10:16\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 9a34f89fb0e64ee79197781b38c13b8c
-#: ../../agent.update.rst:49
+#: ../../agent.update.rst:50
 msgid "**node.repo**"
 msgstr "**node.repo**"
 
 # ea4d31c4d3f24951ac53e234877861b6
-#: ../../agent.update.rst:53
+#: ../../agent.update.rst:54
 msgid "**node.repopkg**"
 msgstr "**node.repopkg**"
 
@@ -32,16 +32,16 @@ msgid "A mirror can be set up using::"
 msgstr "Un miroir peut être initialisé par ::"
 
 # ae3f6b69261049e2998e0c9eb4e22376
-#: ../../agent.update.rst:42
+#: ../../agent.update.rst:43
 msgid ""
 "After the mirror initialization, you have to update the current links "
 "according to your own policies. Beware, the mirroring step may have "
 "installed current links pointing to the lastest available agent packages."
 msgstr ""
-"Après l'initialisation du miroir, il reste à mettre à jour les liens "
-"current selon votre politique. Attention, l'étape de miroir peut avoir "
-"installé des liens current pointant sur les dernières versions disponibles "
-"de l'agent OpenSVC."
+"Après l'initialisation du miroir, il reste à mettre à jour les liens current "
+"selon votre politique. Attention, l'étape de miroir peut avoir installé des "
+"liens current pointant sur les dernières versions disponibles de l'agent "
+"OpenSVC."
 
 # 45dc5f5ed3e646da88c0ad7edeae6b17
 #: ../../agent.update.rst:11
@@ -53,7 +53,7 @@ msgstr ""
 "commandes de gestion de paquet spécifique au système d'exploitation."
 
 # 925176f269194260a72e70c2a7b9695c
-#: ../../agent.update.rst:57
+#: ../../agent.update.rst:58
 msgid "Example::"
 msgstr "Exemple ::"
 
@@ -106,17 +106,17 @@ msgstr ""
 "croissant :"
 
 # 9e64635208f74bf0afddaeaa1b8ff694
-#: ../../agent.update.rst:45
+#: ../../agent.update.rst:46
 msgid "Set up the agents"
 msgstr "Paramétrage des agents"
 
 # 4bd39e611a02483687e860b269032b12
-#: ../../agent.update.rst:38
+#: ../../agent.update.rst:39
 msgid "Set up the published versions"
 msgstr "Paramétrage des versions publiées"
 
 # c49a7074486842b084ebd4f8b7c374ae
-#: ../../agent.update.rst:40
+#: ../../agent.update.rst:41
 msgid ""
 "The OpenSVC agent downloads the file pointed by the link named ``current`` "
 "under the package category supported by the operating system running the "
@@ -129,21 +129,22 @@ msgstr ""
 "exécutant la commande 'nodemgr updatepkg' téléchargerait pkg/current."
 
 # 4245db92a0e84c86acc758d9b3dcc00b
-#: ../../agent.update.rst:47
+#: ../../agent.update.rst:48
 msgid ""
 "The repository must be known to the agent. This set up is done with either "
 "the node.repo or the node.repopkg ``node.conf`` parameters."
 msgstr ""
-"Le dépot doit être connu de l'agent. Cette configuration se fait par "
-"le paramètre node.repo ou node.repopkg du fichier ``node.conf``."
- 
+"Le dépot doit être connu de l'agent. Cette configuration se fait par le "
+"paramètre node.repo ou node.repopkg du fichier ``node.conf``."
+
 # 7bd417bdab7c42d894ed30a04072d35c
 #: ../../agent.update.rst:24
 msgid "The resulting file tree must organized as::"
-msgstr "L'arborescence de fichiers résultante doit être organisée comme suit ::"
+msgstr ""
+"L'arborescence de fichiers résultante doit être organisée comme suit ::"
 
 # e706baab59134abc8c889d2d565cad66
-#: ../../agent.update.rst:64
+#: ../../agent.update.rst:65
 msgid "The update command is::"
 msgstr "La commande de mise à jour est ::"
 
@@ -153,22 +154,22 @@ msgid "This chapter describes the last method."
 msgstr "Ce chapitre décrit cette dernière méthode."
 
 # 5472ad9c57a74a2493f7c34c8165ba2b
-#: ../../agent.update.rst:68
+#: ../../agent.update.rst:69
 msgid "This command is operating system agnostic."
 msgstr "Cette commande est agnostique au système d'exploitation."
 
 # 053ac8dac05149a49a21fbc7ceaccadb
-#: ../../agent.update.rst:55
+#: ../../agent.update.rst:56
 msgid ""
 "This parameter allows to set up a URI pointing to a pure OpenSVC agent "
 "packages repository. If specified node.repopkg overrides node.repo."
 msgstr ""
-"Ce paramètre permet de définir une URI pointant sur une arborescence "
-"de paquets OpenSVC respectant l'organisation maître. Si défini, le "
-"paramètre node.repopkg prend le pas sur node.repo."
+"Ce paramètre permet de définir une URI pointant sur une arborescence de "
+"paquets OpenSVC respectant l'organisation maître. Si défini, le paramètre "
+"node.repopkg prend le pas sur node.repo."
 
 # 435992fb67e64cbeac5d9fcd5203d451
-#: ../../agent.update.rst:51
+#: ../../agent.update.rst:52
 msgid ""
 "This parameter allows to set up a URI pointing to a repository hosting both "
 "compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
@@ -180,6 +181,6 @@ msgstr ""
 "répertoire packages."
 
 # da0baa5ea97b4809a7a5c5aca3309dfd
-#: ../../agent.update.rst:62
+#: ../../agent.update.rst:63
 msgid "Updating the agent"
 msgstr "Mise à jour de l'agent"

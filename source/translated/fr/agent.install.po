@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-12 08:27\n"
+"POT-Creation-Date: 2014-03-01 10:16\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,11 @@ msgstr ""
 msgid "Description"
 msgstr "Description"
 
+# 590c120a6e3f4248875bcca8556b5955
+#: ../../agent.install.rst:224
+msgid "Double click on OpenSVC.X.Y.exe and follow install wizard"
+msgstr ""
+
 # d4e633eed62148a3bf2f4f6f2f8eeef4
 #: ../../agent.install.rst:9
 msgid ""
@@ -173,10 +178,22 @@ msgstr ""
 "Enfin, vous pouvez accélérer la découverte du noeud en forçant l'exécution "
 "des tâches planifiée OpenSVC après l'installation du paquet ::"
 
+# e1f7dac2342045e5b6f941782a114d1a
+#: ../../agent.install.rst:222
+msgid "Graphical Install"
+msgstr ""
+
 # b7111564265d4bfe82287d11ca2c2c0b
 #: ../../agent.install.rst:156
 msgid "HP-UX specificities"
 msgstr "Spécificités HP-UX"
+
+# 82d35aac99c04abeadbd0dfa0d80f3af
+#: ../../agent.install.rst:213
+msgid ""
+"It's possible to trigger a silent install by using the /S (uppercase) "
+"command line switch::"
+msgstr ""
 
 # fcebd9cf9b604a5288967f3c32220b81
 #: ../../agent.install.rst:51
@@ -195,7 +212,8 @@ msgstr "Linux et HP-UX ont également une tâche de collecte de statistiques ::"
 
 # c79cb216d12e48dba0655e01757cb094
 #: ../../agent.install.rst:204
-msgid "Microsoft fcinfo for Fibre Channel SAN reporting"
+#, fuzzy
+msgid "Microsoft fcinfo for Fibre Channel SAN reporting (optional)"
 msgstr "fcinfo de Microsoft pour les inventaires de SAN Fibre Channel"
 
 # cba72f8f4f2f4311a8b879985982fc82
@@ -217,20 +235,21 @@ msgid ""
 "servers must not be trusted by production nodes. This setup is used for "
 "rsync file transfers and remote command execution."
 msgstr ""
-"Sur les systèmes Unix, si le compte root n'a pas de clé ssh, une clé dsa de 1024 bits est générée "
-"par la post-installation du paquet. Les clés des noeuds de production "
-"doivent être autorisées sur tous les noeuds du cluster (PRD et DRP), alors "
-"que les clés des noeuds de reprise sur sinistre ne doivent pas être "
-"autorisées sur les noeuds de production. Cette configuration est utilisée "
-"pour les synchronisations de données par rsync et pour les exécutions de "
-"commandes à distance."
+"Sur les systèmes Unix, si le compte root n'a pas de clé ssh, une clé dsa de "
+"1024 bits est générée par la post-installation du paquet. Les clés des "
+"noeuds de production doivent être autorisées sur tous les noeuds du cluster "
+"(PRD et DRP), alors que les clés des noeuds de reprise sur sinistre ne "
+"doivent pas être autorisées sur les noeuds de production. Cette "
+"configuration est utilisée pour les synchronisations de données par rsync et "
+"pour les exécutions de commandes à distance."
 
 # f988b949e9b54a9ca08c32433f129b8d
 #: ../../agent.install.rst:48
 msgid ""
 "On Windows, OpenSVC installs a dedicated service to schedule these tasks."
 msgstr ""
-"Sur Windows, OpenSVC installe un service dédié à la planification de ces tâches."
+"Sur Windows, OpenSVC installe un service dédié à la planification de ces "
+"tâches."
 
 # 00df508c063a455dad448a3baaeaba85
 #: ../../agent.install.rst:68
@@ -347,6 +366,11 @@ msgstr "Paramétrage du mode de noeud"
 msgid "Set schedules"
 msgstr "Paramétrage des planifications"
 
+# 95f231fa14644a179ceb3bc349b8a2e0
+#: ../../agent.install.rst:211
+msgid "Silent Install"
+msgstr ""
+
 # 74f565dda1d44f04b4449ce4cb926900
 #: ../../agent.install.rst:76
 msgid "Statistic Delay"
@@ -389,9 +413,9 @@ msgid ""
 "\\opensvc\\``  on Windows. This directory is referred to as ``<OSVCROOT>`` "
 "in this documentation."
 msgstr ""
-"L'agent est installé dans ``/opt/opensvc/`` sur Unix et dans "
-"``%%ProgramFiles%%\\opensvc\\`` sur Windows. Ce répertoire est référencé "
-"comme ``<OSVCROOT>`` dans cette documentation."
+"L'agent est installé dans ``/opt/opensvc/`` sur Unix et dans ``%%ProgramFiles"
+"%%\\opensvc\\`` sur Windows. Ce répertoire est référencé comme "
+"``<OSVCROOT>`` dans cette documentation."
 
 # 51dbf00e7e0545829666f5b573298b99
 #: ../../agent.install.rst:134
@@ -410,6 +434,14 @@ msgstr ""
 #: ../../agent.install.rst:65
 msgid "The host_mode setting is used to enforce the following policies:"
 msgstr "Le paramètre host_mode est utilisé dans les politiques suivantes :"
+
+# 3d7bbfd8cf6b4bb2afc9746001fabac0
+#: ../../agent.install.rst:233
+msgid ""
+"The installer deals with installation directory detection, and upgrade "
+"software in the accurate folder. It's still a best practice to have a system/"
+"data backup before upgrading OpenSVC software."
+msgstr ""
 
 # c2209a95cedc4bbd92e6554c9b326569
 #: ../../agent.install.rst:38
@@ -434,9 +466,16 @@ msgid ""
 "postinstall`` script. This script can be safely executed on a node where "
 "OpenSVC is already installed."
 msgstr ""
-"La post-installation du paquet est prise en charge par le script ``<OSVCROOT>"
-"/bin/postinstall``. Ce script peut être exécuté en toute sécurité sur "
-"un noeud où OpenSVC est déjà installé."
+"La post-installation du paquet est prise en charge par le script "
+"``<OSVCROOT>/bin/postinstall``. Ce script peut être exécuté en toute "
+"sécurité sur un noeud où OpenSVC est déjà installé."
+
+# 20fac5d639874053944a5730239c85d1
+#: ../../agent.install.rst:207
+msgid ""
+"The provided OpenSVC executable installer brings everything except fcinfo "
+"tool."
+msgstr ""
 
 # 4d2c9391681b478f8c93bc6e7550bbd9
 #: ../../agent.install.rst:158
@@ -476,6 +515,13 @@ msgstr ""
 "fichier n'existe pas. A noter que le fichier ``<OSVCROOT>/var/host_mode`` "
 "est déprécié. La mise à jour vers une version d'OpenSVC plus récente "
 "déplacera le paramètre host_mode vers ``<OSVCROOT>/etc/node.conf``."
+
+# e43986be116246a68443e261dc0acf18
+#: ../../agent.install.rst:217
+msgid ""
+"There's also a command line option to specify the target installation folder "
+"(no quotes in folder name even with spaces inside)::"
+msgstr ""
 
 # 905cb57f975b4736bf0d41c3898a66fb
 #: ../../agent.install.rst:132
@@ -518,14 +564,19 @@ msgid "Try a ``syncall`` action on all node's services"
 msgstr "Déclencher l'action ``syncall`` sur tous les services du noeud"
 
 # 3431c90e8c6340dea1760ba7d84760fa
-#: ../../agent.install.rst:207
+#: ../../agent.install.rst:227
 msgid "Upgrade"
 msgstr "Mise à jour"
 
 # 08428757f8af486f8f2e640b6ec48ab6
-#: ../../agent.install.rst:209
-msgid "Upgrading the OpenSVC msi package manually requires msiexec options::"
-msgstr "La mise à jour manuelle du paquet msi de OpenSVC nécessite les options suivantes ::"
+#: ../../agent.install.rst:229
+#, fuzzy
+msgid ""
+"Upgrading the OpenSVC package manually is the same as an installation from "
+"scratch::"
+msgstr ""
+"La mise à jour manuelle du paquet msi de OpenSVC nécessite les options "
+"suivantes ::"
 
 # fc10f272b1dc4725ab2210dca744c1b6
 #: ../../agent.install.rst:193
