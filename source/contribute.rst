@@ -115,7 +115,7 @@ Send patches with::
     done
 
 Contribute translations
------------------------
+=======================
 
 Install the sphinx documentation generator.
 
