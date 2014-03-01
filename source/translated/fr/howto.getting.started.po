@@ -1,0 +1,1224 @@
+# 0453bfbc10c74227bd0b4938c0426a24
+#: ../../howto.getting.started.rst:173
+msgid "**On both nodes**"
+msgstr ""
+
+# d15a0124a279412aac36e80c0f1c9d39
+# eb96327789234d8a849201bd0a634a06
+# 4e025639efb740b8b146af4e36b905e7
+# 4e98287701d942328b96c688ddf745b9
+# 728eb19c499347b49585f499aa46372c
+# 7322b183e5b24833b4693f7c5c451250
+# c275d9a8f21a430ea335d03dcbc57e34
+# 414a4534cd2e47bab7ac2f0ce9e033e8
+# 9683da17ffa444ba8b84e3e566b79b86
+# 88761f091ef24868b2eec000e76109ef
+# 4a96bc49e91d4cc79a7080c7725ef705
+# cd4f144b364244f589d11e1657451a31
+# dda02640eb0447208622873d0181179f
+# 6d55e3e87bb34a36b952cd2ee24e3871
+#: ../../howto.getting.started.rst:46 ../../howto.getting.started.rst:52
+#: ../../howto.getting.started.rst:62 ../../howto.getting.started.rst:74
+#: ../../howto.getting.started.rst:100 ../../howto.getting.started.rst:188
+#: ../../howto.getting.started.rst:951 ../../howto.getting.started.rst:971
+#: ../../howto.getting.started.rst:984 ../../howto.getting.started.rst:1001
+#: ../../howto.getting.started.rst:1012 ../../howto.getting.started.rst:1027
+#: ../../howto.getting.started.rst:1033 ../../howto.getting.started.rst:1045
+msgid "**On both nodes**::"
+msgstr ""
+
+# da1c2bd10b9d4e49a590c5369431c2ac
+#: ../../howto.getting.started.rst:224
+msgid "**On sles1 AND sles2**::"
+msgstr ""
+
+# 83e1da15cdf144f597f1591a4692d9e1
+#: ../../howto.getting.started.rst:132
+msgid "**On sles1 node**"
+msgstr ""
+
+# 5c49c8ed33684306a975f55c88ae0ed0
+# 04be75d83ace44c6a18c7e736a43e521
+# 658fe1c4534e493cb1ae246c87460a7e
+# 944c3b53395b45309a7c5525f0f0ecfd
+# 1585d0c21ca94a9f85be43b3e622bc3a
+# fa2914bf85394ff1853878285af0620d
+# c9ec1dd1a7dc4d7282516a0a1928ca6d
+#: ../../howto.getting.started.rst:266 ../../howto.getting.started.rst:1056
+#: ../../howto.getting.started.rst:1062 ../../howto.getting.started.rst:1072
+#: ../../howto.getting.started.rst:1082 ../../howto.getting.started.rst:1094
+#: ../../howto.getting.started.rst:1127
+msgid "**On sles1 node**::"
+msgstr ""
+
+# 2aca2bee2bed40cb9cdb6339c7dbe0b2
+# 034f678a55a6444fb1173c25c8c3c258
+# 0c191bb8cf48494f9bcce3d064433151
+# 3b2a7756aeef47809da5a7e1efd1a420
+#: ../../howto.getting.started.rst:215 ../../howto.getting.started.rst:228
+#: ../../howto.getting.started.rst:362 ../../howto.getting.started.rst:780
+msgid "**On sles1**::"
+msgstr ""
+
+# da2ffc2bd2a540de9a2e956c4d868881
+#: ../../howto.getting.started.rst:1113
+msgid "**On sles2 node**::"
+msgstr ""
+
+# 5dc83898402d419db771bc1f02d84dd9
+# e6df5d5c443f4e6797a7d773b9474fb2
+# 5786a9c6d8094a668858c474118bf4b6
+#: ../../howto.getting.started.rst:219 ../../howto.getting.started.rst:233
+#: ../../howto.getting.started.rst:817
+msgid "**On sles2**::"
+msgstr ""
+
+# 88936bc39394453587b361191eb5a3ef
+#: ../../howto.getting.started.rst:31
+msgid "2 iSCSI Targets"
+msgstr ""
+
+# c15210c93c594814b207f3bf2e158190
+#: ../../howto.getting.started.rst:32
+msgid "2 x 32 MBytes Logical Units"
+msgstr ""
+
+# a9513e8812e84779b7d5044c388f6fb9
+#: ../../howto.getting.started.rst:1090
+msgid ""
+"=> The ``STARTED`` state means that ``sles1`` node has finished the startup "
+"of the service, and the script return code was 0."
+msgstr ""
+
+# 7632152c2ee940b68f0e9282524dd0ae
+#: ../../howto.getting.started.rst:1080
+msgid ""
+"=> The ``STARTING`` state means that ``sles1`` node have initiated the "
+"service startup by calling the script ``/opt/opensvc/etc/p26.opensvc.com."
+"cluster`` specified in OpenHA service configuration with the ``start`` "
+"parameter."
+msgstr ""
+
+# 0971ae04eb1243a68eeac218237f1c26
+#: ../../howto.getting.started.rst:1070
+msgid ""
+"=> The ``START_READY`` state means that ``sles1`` node is ready to start the "
+"service, but waits for a couple of seconds to see if its peer node also "
+"transition to this same ``START_READY`` state. In this case OpenHA would "
+"start the service where it was previously running. In our case we keep "
+"``sles2`` in the ``FROZEN_STOP`` state, and a couple of seconds later we "
+"observe:"
+msgstr ""
+
+# f4b76267bbf848769f373a2592b97821
+#: ../../howto.getting.started.rst:1123
+msgid ""
+"=> The ``sles2`` node is not ready to take over the service, which is "
+"accurately reported as ``STOPPED``."
+msgstr ""
+
+# d2262fcfe67640dfb4968d6e3c1cfb97
+#: ../../howto.getting.started.rst:886
+msgid ""
+"A HA OpenSVC service handles a special resource: the heartbeat resource, "
+"which reports the service status from the point of view of the heartbeat. No "
+"action is handled by this resource type."
+msgstr ""
+
+# 5fba1a9ac0ed4e639bd34adcf6af15d8
+#: ../../howto.getting.started.rst:15
+msgid "A Storage Array capable of exporting block devices to both nodes."
+msgstr ""
+
+# fb1fb1f73590421bbd59268c0146d01d
+#: ../../howto.getting.started.rst:13
+msgid ""
+"A Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles1`` => will "
+"act as first cluster node"
+msgstr ""
+
+# 62c1f0134329406bbba823c557614a7b
+#: ../../howto.getting.started.rst:14
+msgid ""
+"A Suse Linux Enterprise Server 11 SP3 (SLES11SP3) named ``sles2`` => will "
+"act as second cluster node"
+msgstr ""
+
+# 5966bc6fd81b4548a6ac23d9ec5913e8
+#: ../../howto.getting.started.rst:979
+msgid "A network multicast ip heartbeat"
+msgstr ""
+
+# 3f0afb8df58e4b678c9e0f4864a07b7e
+#: ../../howto.getting.started.rst:980
+msgid ""
+"A shared disk heartbeat (a new lun has been provisionned from the OpenFiler "
+"host : /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c)"
+msgstr ""
+
+# 6504021190224eb5a89507a76fa28db5
+#: ../../howto.getting.started.rst:37
+msgid "Allow nodes ``sles1`` and ``sles2`` access through both iscsi targets"
+msgstr ""
+
+# 3256d5980fd04fb7a1d9ce49109b66b8
+#: ../../howto.getting.started.rst:514
+msgid ""
+"And create a dummy web page in ``/svc1/data/``, to be served by our "
+"webserver::"
+msgstr ""
+
+# 2eddde95d3994cdba6efcdae8abfdab7
+#: ../../howto.getting.started.rst:34
+msgid "And finally:"
+msgstr ""
+
+# f78c624aee88413598c9cdb9df21fcee
+#: ../../howto.getting.started.rst:493
+msgid "Application Binary"
+msgstr ""
+
+# 6ba30ab5bb1745adad5a9e62465889a5
+#: ../../howto.getting.started.rst:458
+msgid "Application Integration"
+msgstr ""
+
+# e6d86d1dbd444d56abfc0cb20ca87d80
+#: ../../howto.getting.started.rst:465
+msgid "Applications launcher directory"
+msgstr ""
+
+# a2ed946d111c46a5ad888e5f69c13268
+#: ../../howto.getting.started.rst:522
+msgid "Applications launcher script"
+msgstr ""
+
+# ad0193d7439f46718a25d95050c6fd44
+#: ../../howto.getting.started.rst:526
+msgid ""
+"As a best practice, the script should also support the additional arguments:"
+msgstr ""
+
+# f4546cd202ac45b388b85d200452aef7
+#: ../../howto.getting.started.rst:334
+msgid ""
+"As a final check, we can list all entries that match our ``p26.opensvc.com`` "
+"service ::"
+msgstr ""
+
+# 7dd789d9159b4367a84d55d52ef4d10e
+#: ../../howto.getting.started.rst:469
+msgid ""
+"As a refinement, for services with dedicated shared disks, we can relocate "
+"the application launchers directory to a filesystem resource hosted in one "
+"such disk. The original location was ``/opt/opensvc/etc/p26.opensvc.dir``. "
+"Let's move it to ``/svc1/app/init.d``::"
+msgstr ""
+
+# 086f8a647cdf4389ac4eba6d2840ebdc
+#: ../../howto.getting.started.rst:307
+msgid ""
+"As an example, if we want to build a LAMP service, we would use 2 scripts: "
+"one for the mysql database, and another for the apache webserver. Those "
+"scripts have to be located in the service startup scripts directory ::"
+msgstr ""
+
+# 70a031eba1cf42fe96471a332999e900
+#: ../../howto.getting.started.rst:305
+msgid ""
+"As services are used to manage application, we need to specify a directory "
+"where all applications startup scripts are located."
+msgstr ""
+
+# c3827e154bea4d1a909c302b366732a9
+#: ../../howto.getting.started.rst:960
+msgid ""
+"As specified in the documentation, we have to set environment variables to "
+"be able to use OpenHA commands. You can either set them system-wide (/etc/"
+"profile), or just set them when needed::"
+msgstr ""
+
+# 9e65ba448a5d4bc39813d96acdc02f3f
+#: ../../howto.getting.started.rst:241
+msgid ""
+"As we are in a lab environment, we do not need to specify the host mode : "
+"\"TST\" is the default value, and is adequate."
+msgstr ""
+
+# edb3e087186e40b1bc56985aa9aefe02
+#: ../../howto.getting.started.rst:98
+msgid ""
+"As we have multiple paths to the same luns, through multiple targets, we "
+"have to setup linux native multipath software :"
+msgstr ""
+
+# 49080d9e195249959aeb81eee38a9fc9
+#: ../../howto.getting.started.rst:20
+msgid ""
+"As we plan to create 2 OpenSVC services, we need 2 IP adresses, one for each "
+"service :"
+msgstr ""
+
+# 6f4944ee08c7447386083d57c911e339
+#: ../../howto.getting.started.rst:873
+msgid ""
+"At this point, we have a 2-node failover cluster. Although this setup meets "
+"most needs, the failover is _manual_, so does not qualify as a high "
+"availability cluster."
+msgstr ""
+
+# 234104b8bb6447c6898eba9165d01be2
+#: ../../howto.getting.started.rst:743
+msgid ""
+"At this point, we have a running service on node sles1, with a webserver "
+"application embedded."
+msgstr ""
+
+# 0a2d3b63b9724555b571c0241dd4e65d
+#: ../../howto.getting.started.rst:455
+msgid ""
+"At this point, we have a running service, configured to run on sles1 node."
+msgstr ""
+
+# 51c27f3e8db641e8afa13546a3914031
+#: ../../howto.getting.started.rst:352
+msgid ""
+"At this point, we have configured a single service with no application "
+"launcher on node sles1."
+msgstr ""
+
+# ad96e8a258694b46857d06c4d62a3ec5
+#: ../../howto.getting.started.rst:206
+msgid ""
+"Cluster members communicate through ssh. Each node must trust its peer "
+"through key-based authentication to allow these communications."
+msgstr ""
+
+# ce9f45e5cb154a49b06f54fbd15a5b13
+#: ../../howto.getting.started.rst:262
+msgid "Every other section defines a ressource managed by the service."
+msgstr ""
+
+# d5fe35e8148a47808b8c2a39721ae8a1
+#: ../../howto.getting.started.rst:1054
+msgid ""
+"Everything is working as expected. We can now allow ``sles1`` node to take "
+"over the service using the ``unfreeze`` command:"
+msgstr ""
+
+# 4af61436ed814f9aab96425f26015d7e
+#: ../../howto.getting.started.rst:18
+msgid ""
+"FC Luns exported from high end arrays (EMC, HDS, IBM, ...) would also work, "
+"as long as the server share the same logical units"
+msgstr ""
+
+# fe82c43a4c224c8489f24d8811bdcf54
+#: ../../howto.getting.started.rst:166
+msgid "Filesystem creation for both services::"
+msgstr ""
+
+# 270cf04d2c6f4991bcd53c95700a4d3c
+#: ../../howto.getting.started.rst:752
+msgid ""
+"First we check ``/opt/opensvc/etc/`` on sles2, it should be empty because "
+"we've done a fresh install::"
+msgstr ""
+
+# a7b84b4a91fa4c04a2ff355fb31e85f4
+#: ../../howto.getting.started.rst:969
+msgid ""
+"First, we describe the cluster nodes in the file ``/usr/local/cluster/conf/"
+"nodes``"
+msgstr ""
+
+# 674733b597ca41bca9ff21da862ae665
+#: ../../howto.getting.started.rst:44
+msgid ""
+"First, we need the iscsi initiator software installed on the SLES Servers. "
+"The open-iscsi package will be used for this setup:"
+msgstr ""
+
+# 49e7c11a2c694d259e65351706d65d6a
+#: ../../howto.getting.started.rst:314
+msgid ""
+"For now, we just will just create this directory and the symlink. No script "
+"is added yet."
+msgstr ""
+
+# e2fd828a8bcb4b22af8109f51300658c
+#: ../../howto.getting.started.rst:243
+msgid ""
+"For other purposes than testing, we would have defined on both nodes the "
+"relevant mode with the method described `here <agent.install.html#set-host-"
+"mode>`_."
+msgstr ""
+
+# 064d24da7c7a41fb9a3e97acd530bbb8
+#: ../../howto.getting.started.rst:869
+msgid ""
+"Fortunately, OpenSVC IP address check prevent the service from starting on "
+"``sles1``."
+msgstr ""
+
+# 01b2ac5ac74d415887efa183bf1597da
+#: ../../howto.getting.started.rst:2
+msgid "Getting Started"
+msgstr ""
+
+# fcd3d77020a44aaa958422eac74d10cb
+#: ../../howto.getting.started.rst:495
+msgid ""
+"In the service directory structure, we put a standalone binary of the "
+"Mongoose web server (https://code.google.com/p/mongoose/) ::"
+msgstr ""
+
+# 8a9a918f91224beca14050f3d572f5e8
+#: ../../howto.getting.started.rst:1023
+msgid ""
+"In this example the service p26.opensvc.com was stopped when the OpenHA "
+"daemons were started. It's also possible to install-configure-start or stop-"
+"upgrade-start OpenHA while keeping the service operational, but these "
+"procedures are not covered in this tutorial."
+msgstr ""
+
+# 0d27027b7c2841cb8f0192b24c6a93ae
+#: ../../howto.getting.started.rst:977
+msgid "In this example, we implement two heartbeats:"
+msgstr ""
+
+# 1f1f93a08c19443885c93c5e6b9851cc
+#: ../../howto.getting.started.rst:17
+msgid ""
+"In this guide, we use iSCSI luns exported from an OpenFiler instance (http://"
+"www.openfiler.com)"
+msgstr ""
+
+# 163041396cde4efd8e49b0223f1a4ec5
+#: ../../howto.getting.started.rst:949
+msgid "Install the OpenHA package on both cluster nodes."
+msgstr ""
+
+# e6f6c76bec15405aa0bd317169e0ba5e
+#: ../../howto.getting.started.rst:186
+msgid "Install the OpenSVC Agent on both cluster nodes."
+msgstr ""
+
+# ddcede25d678460485feccf62e914e31
+#: ../../howto.getting.started.rst:213
+msgid ""
+"It is also possible for the agent to login on a peer cluster node using an "
+"unprivileged user, using the ruser node.conf parameter. In this case, the "
+"remote user needs sudo priviles to run the following commands as root: "
+"``nodemgr``, ``svcmgr`` and ``rsync``."
+msgstr ""
+
+# 51072e11aa464c4dbae4ab7b7c7e3412
+#: ../../howto.getting.started.rst:6
+msgid ""
+"It will guide you through the sequence of tasks to achieve a simple but "
+"working dual-node failover cluster."
+msgstr ""
+
+# f8f83ca11b8a4a8289a15e50d0af4b01
+#: ../../howto.getting.started.rst:72
+msgid "It's now time to discover the target ports serving our iscsi luns:"
+msgstr ""
+
+# 4fb4fee4f79443dd93d00a1e1c678716
+#: ../../howto.getting.started.rst:661
+msgid "Let's check if that is really the case::"
+msgstr ""
+
+# 5088f4229cd643a8b8d2cee8ff072c31
+#: ../../howto.getting.started.rst:764
+msgid "Let's replicate the configuration files::"
+msgstr ""
+
+# 2fd3bc28df57442c950d9eb5c188472a
+#: ../../howto.getting.started.rst:713
+msgid "Let's restart the service to continue this tutorial::"
+msgstr ""
+
+# 64ceda7be1a64ce7b13bd4a3ba22b6ac
+#: ../../howto.getting.started.rst:391
+msgid "Let's start the service ::"
+msgstr ""
+
+# 1b36d74ca7d44c379be90c44ae09e51a
+#: ../../howto.getting.started.rst:148
+msgid "Logical volume creation for the first service::"
+msgstr ""
+
+# 75d6df9e452b4e1ead4464f19d44f387
+#: ../../howto.getting.started.rst:157
+msgid "Logical volume creation for the second service::"
+msgstr ""
+
+# e11efe66f2574a4b8301a27760801d51
+#: ../../howto.getting.started.rst:577
+msgid "Make sure the script is working fine outside of the OpenSVC context::"
+msgstr ""
+
+# 48c70fa80da24563ae408ac80763a976
+#: ../../howto.getting.started.rst:422
+msgid "Manual filesystem mount check::"
+msgstr ""
+
+# 872544f1164346c8aa91682816ae5937
+#: ../../howto.getting.started.rst:428
+msgid ""
+"Manual ip address plumbing check on eth0 (p26.opensvc.com is 37.59.71.26)::"
+msgstr ""
+
+# 79f3b828deda4b1fabee91f8a280cb88
+#: ../../howto.getting.started.rst:36
+msgid "Map both luns to both iscsi targets"
+msgstr ""
+
+# 110e079e28d54c6b94fe577c3da5bf4e
+#: ../../howto.getting.started.rst:175
+msgid "Mountpoint creation for both services::"
+msgstr ""
+
+# 159121fed2b649e0ba85be98759645f8
+#: ../../howto.getting.started.rst:795
+msgid ""
+"Note that the ``sync#i0`` ressource is now up, due to both nodes being in "
+"sync from a service configuration point of view."
+msgstr ""
+
+# cd0d2caed3404e438f04d4726921332c
+#: ../../howto.getting.started.rst:613
+msgid "Now we can give a try to our launcher script, using OpenSVC commands::"
+msgstr ""
+
+# e616cfd9831f41d195034dca2ae66bce
+#: ../../howto.getting.started.rst:591
+msgid ""
+"Now we can instruct OpenSVC to handle this script for service application "
+"management ::"
+msgstr ""
+
+# 809d9045b8ca425987d395ce6ac39746
+#: ../../howto.getting.started.rst:670
+msgid "Now we can stop our service::"
+msgstr ""
+
+# bee94f358a4f4c1fa08c5f5da9325d12
+#: ../../howto.getting.started.rst:862
+msgid ""
+"Now, what happens if I try to start my service on ``sles1`` while already "
+"running on ``sles2`` ?::"
+msgstr ""
+
+# 5156db4bb5014469920ef05a8c6754e3
+#: ../../howto.getting.started.rst:532
+msgid ""
+"Of course, we will store our script named ``weblauncher`` in the directory "
+"previsouly created for this purpose::"
+msgstr ""
+
+# 22467ba4fc00444f975d9ce51ae479d6
+#: ../../howto.getting.started.rst:690
+msgid "Once again, a single command:"
+msgstr ""
+
+# 473cf95399814d3e811ab77d09b809d3
+#: ../../howto.getting.started.rst:1021
+msgid ""
+"Once this setup is in place, OpenHA takes over the OpenSVC service "
+"management."
+msgstr ""
+
+# 5a03d9255f9540b6a810deea04301f5a
+#: ../../howto.getting.started.rst:967
+msgid "OpenHA Configuration"
+msgstr ""
+
+# 73b609c3bfa446699e8f1386ddb13f81
+#: ../../howto.getting.started.rst:947
+msgid "OpenHA Installation"
+msgstr ""
+
+# 7b08336125f749499cdb494af0505529
+#: ../../howto.getting.started.rst:878
+msgid "OpenHA Integration"
+msgstr ""
+
+# 69e1926d050942ff829dccae23c598e2
+#: ../../howto.getting.started.rst:1019
+msgid "OpenHA Testing"
+msgstr ""
+
+# 4183790e786940938523c5bcf0356126
+#: ../../howto.getting.started.rst:999
+msgid "OpenHA also requires monitored services to be declared :"
+msgstr ""
+
+# 711004c5bbf349d7bee0efa6929836ce
+#: ../../howto.getting.started.rst:884
+msgid "OpenSVC Heartbeat Ressource"
+msgstr ""
+
+# 3735df32807d49cfa1b4d97da9c0432b
+#: ../../howto.getting.started.rst:182
+msgid "OpenSVC Installation"
+msgstr ""
+
+# f2597b9f2b1849fbb2ee585ff154a5b5
+#: ../../howto.getting.started.rst:360
+msgid "Our first service is now ready to use. We can query its status."
+msgstr ""
+
+# cbf33f068c55418fa2caba8b45496337
+#: ../../howto.getting.started.rst:748
+msgid ""
+"Our service is running fine, but what happens if the ``sles1`` node fails ? "
+"Our ``p26.opensvc.com`` service will also fail. That's why we want to extend "
+"the service configuration to declare ``sles2`` as a failover node for this "
+"service. After this change, the service configuration needs replication to "
+"the ``sles2`` node."
+msgstr ""
+
+# defda2ca29e544b7a6c6db95014eb7d0
+#: ../../howto.getting.started.rst:134
+msgid "Physical volume creation::"
+msgstr ""
+
+# 3df9902fbb014bf39c66c2574a7e5502
+#: ../../howto.getting.started.rst:1008
+msgid ""
+"Please note that the configuration applied does not include any stonith "
+"callout, as the stonith is best handled through OpenSVC."
+msgstr ""
+
+# 2c509d4527f54e4cb944028a19d4cfb0
+#: ../../howto.getting.started.rst:9
+msgid "Prerequisites"
+msgstr ""
+
+# 0736e16c223b441dbad353200d52a347
+#: ../../howto.getting.started.rst:358
+msgid "Query service status"
+msgstr ""
+
+# 33b22bbc387b499283df1c751d072a23
+#: ../../howto.getting.started.rst:1060
+msgid ""
+"Querying the OpenHA service status at a ~1 second interval, we can see to "
+"status transitions:"
+msgstr ""
+
+# 1407cf7591534ea3bdc352898ec26eaf
+#: ../../howto.getting.started.rst:645
+msgid ""
+"Querying the service status, the ``app`` ressource is now reporting ``up``::"
+msgstr ""
+
+# 715b93bcc42e417fb33ef4bdd5d6176b
+#: ../../howto.getting.started.rst:204
+msgid "SSH Keys Setup"
+msgstr ""
+
+# 3e2fa5f0d8a94a0e99a46157febf840b
+#: ../../howto.getting.started.rst:246
+msgid "Service Creation"
+msgstr ""
+
+# 551779045b014622abdf4b09bf863cbb
+#: ../../howto.getting.started.rst:746
+msgid "Service Failover"
+msgstr ""
+
+# 1e97b502377e45619e019bbf512bfd54
+#: ../../howto.getting.started.rst:355
+msgid "Service Testing"
+msgstr ""
+
+# 9bf1745bb0de43dea65d665c408862b2
+#: ../../howto.getting.started.rst:860
+msgid ""
+"Service p26.opensvc.com is now running on node ``sles2``. Service relocation "
+"operational, easy as that."
+msgstr ""
+
+# f0fa75af5eb0494c8c68a7f37e83901a
+#: ../../howto.getting.started.rst:239
+msgid "Set Host Mode"
+msgstr ""
+
+# 9775b06656a2472589f2d2cbc98f8e5c
+#: ../../howto.getting.started.rst:386
+msgid "Start service"
+msgstr ""
+
+# 372f93d791b3448580ff098e5004125e
+#: ../../howto.getting.started.rst:256
+msgid "Step 1 : Service configuration file"
+msgstr ""
+
+# 47ec3e77575946be8acf040f8f79c211
+#: ../../howto.getting.started.rst:303
+msgid "Step 2 : Service startup scripts directory"
+msgstr ""
+
+# 885e3bede6ee4a4b87d66405096fe1a2
+#: ../../howto.getting.started.rst:317
+msgid "Step 3 : Service management facility"
+msgstr ""
+
+# a9613b6ed04042a0a5a24e749895aba5
+#: ../../howto.getting.started.rst:332
+msgid "Step 4 : Service configuration check"
+msgstr ""
+
+# 3f68b03361d945db938561c2b7b1ee65
+#: ../../howto.getting.started.rst:128
+msgid "Storage Configuration"
+msgstr ""
+
+# f567c99ce653444d9cf7890bf7086395
+#: ../../howto.getting.started.rst:260
+msgid ""
+"The DEFAULT section in the service file describes the service itself: human "
+"readable name, nodes where the service is expected to run on, default "
+"node, ..."
+msgstr ""
+
+# 3b1271e686414a92af586818c3143b51
+#: ../../howto.getting.started.rst:29
+msgid ""
+"The OpenFiler configuration being web-based, we can easilly create the "
+"following objects:"
+msgstr ""
+
+# 548761c57a9840a4abfc0f8c0bf1d945
+#: ../../howto.getting.started.rst:201
+msgid "The OpenSVC agent is now operational."
+msgstr ""
+
+# ead1b48c1bf34333b83d51d8c5c0b08c
+#: ../../howto.getting.started.rst:248
+msgid ""
+"The OpenSVC service can be created using one of the following two methods::"
+msgstr ""
+
+# 41afe739a2bf417aa57c66e499a75702
+#: ../../howto.getting.started.rst:467
+msgid ""
+"The OpenSVC service integration enables service relocation amongst nodes. "
+"The per-service launchers hosting directory layout is a consequence of this "
+"relocation feature. The service has an implicit synchronisation resource to "
+"replicate the /opt/opensvc/etc/<service>* files using rsync."
+msgstr ""
+
+# fa96939e165f410b99c7047a48365253
+#: ../../howto.getting.started.rst:1125
+msgid ""
+"The OpenSVC service management is now delegated to the OpenHA agents. "
+"OpenSVC makes sure administrators can not bypass the heartbeat daemon to "
+"submit actions directly to the OpenSVC service:"
+msgstr ""
+
+# e5b32854c07843709d9b3e9157eb2d8e
+#: ../../howto.getting.started.rst:893
+msgid ""
+"The ``name`` parameter can be set if the OpenSVC service name is different "
+"from the OpenHA service name. In this example, we use the same service name, "
+"so we omitted this parameter."
+msgstr ""
+
+# ef4ace7fbc794ee2b212c76c7660f6ca
+#: ../../howto.getting.started.rst:757
+msgid ""
+"The configuration replication will be possible if the following conditions "
+"are met:"
+msgstr ""
+
+# 208aa3da396e4daa977841a522c53c9d
+#: ../../howto.getting.started.rst:11
+msgid "The demonstration environment is composed of:"
+msgstr ""
+
+# d2268d1cb36a4af89551b5f156be58d9
+#: ../../howto.getting.started.rst:1041
+msgid ""
+"The double ``FROZEN_STOP`` status means that neither ``sles1`` nor ``sles2`` "
+"are capable of taking over the service."
+msgstr ""
+
+# 5e6ef5d273e64790b26df048c61e36f1
+#: ../../howto.getting.started.rst:258
+msgid "The expected file name is ``servicename.env``"
+msgstr ""
+
+# 78005d4334f849569eb5be34f4c2cece
+#: ../../howto.getting.started.rst:264
+msgid ""
+"The following configuration describes a service named ``p26.opensvc.com``, "
+"running on the primary node ``sles1``, failing-over to node ``sles2``, using "
+"one IP address named ``p26.opensvc.com`` (name to ip resolution is done by "
+"the OpenSVC agent), one LVM volume group ``vgsvc1``, and two filesystems "
+"hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/"
+"vgsvc1-lvdatasvc1``."
+msgstr ""
+
+# d818d78eb8d547dda021ecc820627346
+#: ../../howto.getting.started.rst:888
+msgid ""
+"The following section is appended to the ``p26.opensvc.com.env`` file on "
+"node ``sles1``::"
+msgstr ""
+
+# c2d9fc41c20e4e5e8b88baff36796961
+#: ../../howto.getting.started.rst:982
+msgid ""
+"The heartbeat configuration file ``/usr/local/cluster/conf/monitor`` "
+"contains the following lines on both nodes:"
+msgstr ""
+
+# eda077e7da7845369b14a34f98c04dd0
+#: ../../howto.getting.started.rst:1010
+msgid "The last setup step concerns OpenHA start/stop scripts."
+msgstr ""
+
+# 9f7e1a3b31b043368ba82a9e9f35280a
+#: ../../howto.getting.started.rst:924
+msgid ""
+"The new service configuration must now be pushed to the peer node ``sles2``::"
+msgstr ""
+
+# a040090a6abf4b6baa5d65f44fd938a4
+#: ../../howto.getting.started.rst:895
+msgid ""
+"The next ``svcmon`` or ``print status`` action will automatically complete "
+"the ``/opt/opensvc/etc`` directory with 2 new symlinks::"
+msgstr ""
+
+# 7b76624dba084b4f97a4e8e8032ab537
+#: ../../howto.getting.started.rst:697
+msgid "The overall status is now reported as being down ::"
+msgstr ""
+
+# 35303a75e0d5467a85dec99e9b6b3e4d
+#: ../../howto.getting.started.rst:1111
+msgid ""
+"The second node ``sles2`` is still in the ``FROZEN_STOP`` state. We have to "
+"allow it to take over the service, if need be."
+msgstr ""
+
+# 9cb732ae07cf42af807ede7609fac8fc
+#: ../../howto.getting.started.rst:125
+msgid "The shared storage setup is operational."
+msgstr ""
+
+# 7540d78149494f9cb87ea7615705364b
+#: ../../howto.getting.started.rst:414
+msgid "The startup sequence reads as:"
+msgstr ""
+
+# 6beaab89afaf4fd38ac815a41372f3ef
+#: ../../howto.getting.started.rst:388
+msgid ""
+"The use of OpenSVC for your services management saves a lot of time and "
+"effort. Once the service is described on a node, you just need one command "
+"to start the overall application."
+msgstr ""
+
+# c2fcb468079545929241c9a92fec7102
+#: ../../howto.getting.started.rst:50
+msgid "Then, we have to specify iscsi initiator name for each node:"
+msgstr ""
+
+# e7ec82491f7642a9bf9531e2d034bd13
+#: ../../howto.getting.started.rst:992
+msgid "These lines mean:"
+msgstr ""
+
+# 8872f99afab34659ad7f4b8aba47ecf2
+#: ../../howto.getting.started.rst:880
+msgid ""
+"This chapters presents the steps to upgrade a service from \"manual failover"
+"\" to \"automated failover\". It follows the instructions from `High "
+"Availability setup <howto.ha.html>`_"
+msgstr ""
+
+# 368e245fd35a49198bc32fb92ab45de3
+#: ../../howto.getting.started.rst:378
+msgid "This command collects and displays status for each service ressource :"
+msgstr ""
+
+# 3f001e72602d4d99a364fa6cdc0b342f
+#: ../../howto.getting.started.rst:605
+msgid ""
+"This configuration tells OpenSVC to call the ``weblauncher`` script with :"
+msgstr ""
+
+# f47bb8f792784e139a6cc4ec7d6c4c7c
+#: ../../howto.getting.started.rst:4
+msgid ""
+"This page will help you take your first steps with OpenSVC services setup."
+msgstr ""
+
+# cae7e8a85ea5457bb955712a712f5ad4
+#: ../../howto.getting.started.rst:39
+msgid ""
+"This setup serves each lun through 2 paths, thus simulating lun access "
+"redundancy."
+msgstr ""
+
+# 54d351757bda445f8de7810155593290
+#: ../../howto.getting.started.rst:875
+msgid ""
+"To learn how to meet HA requirements with OpenSVC, we will now describe the "
+"OpenHA heartbeat setup."
+msgstr ""
+
+# 77a78d5c9cc7418aac9d9595edc95206
+#: ../../howto.getting.started.rst:319
+msgid ""
+"To make service management easy, we create a symlink to OpenSVC core service "
+"management command ::"
+msgstr ""
+
+# 8c20fcba44264e1ead64585a2c35f461
+#: ../../howto.getting.started.rst:141
+msgid "Volume group creation::"
+msgstr ""
+
+# 75c82de0ad594678a0ecca17253fb88b
+#: ../../howto.getting.started.rst:1043
+msgid ""
+"We can also check for hearbeats status with the ``$EZ_BIN/hb -s`` command:"
+msgstr ""
+
+# ef31f88d87564a58a1a21bf5d8f4396c
+#: ../../howto.getting.started.rst:438
+msgid ""
+"We can confirm everything is OK with the service's ``print status`` command::"
+msgstr ""
+
+# 1cdbdfbd184146e98647ae9142bf03f2
+#: ../../howto.getting.started.rst:1092
+msgid ""
+"We can confirm that the service is running by querying its state through "
+"OpenSVC commands:"
+msgstr ""
+
+# 2f45d48027a148d9bcbae8a59f026b31
+#: ../../howto.getting.started.rst:797
+msgid ""
+"We can now try to start the service on ``sles2``, after stopping it on "
+"``sles1``::"
+msgstr ""
+
+# 9ccd223941bd4075bf8cd3410c1d51f1
+#: ../../howto.getting.started.rst:643
+msgid ""
+"We can see that OpenSVC is now calling our startup script after mounting "
+"filesystems."
+msgstr ""
+
+# ca3d94e2f9124a379d870ba3b8632f2e
+#: ../../howto.getting.started.rst:778
+msgid "We can see that the ``sles2`` node is now ready to start our service."
+msgstr ""
+
+# 041063d0618e4318b280d01a3245fe7a
+#: ../../howto.getting.started.rst:460
+msgid ""
+"We have gone through the setup of a single service, but it does not start "
+"applications yet. Let's add an application to our service now."
+msgstr ""
+
+# 6212f36394a64d288db80760d21bce87
+#: ../../howto.getting.started.rst:524
+msgid ""
+"We have to create a management script for our web application. At minimum, "
+"this script must support the ``start`` argument."
+msgstr ""
+
+# e4e37a5375b74d9596f7c7047b0d9c2b
+#: ../../howto.getting.started.rst:60
+msgid "We start iscsi services, and enable the daemon for boot-time start-up:"
+msgstr ""
+
+# 4e2dfcf3aa48462d85d17821267e83cd
+#: ../../howto.getting.started.rst:1025
+msgid "We start the OpenHA agents:"
+msgstr ""
+
+# 54d7292d4aac4fa89cf11008e2404ad8
+#: ../../howto.getting.started.rst:130
+msgid ""
+"We use Linux LVM to manage our storage. As we plan to create 2 services, we "
+"assign 1 lun to each OpenSVC service."
+msgstr ""
+
+# 3d7dc2b67f2349b792da95aa3c59a9ad
+#: ../../howto.getting.started.rst:253
+msgid ""
+"We will describe the second, manual option, for a better understanding of "
+"what happens."
+msgstr ""
+
+# e38b32127ca04c598a5ab496d257e527
+#: ../../howto.getting.started.rst:184
+msgid ""
+"We will follow the steps described in `Nodeware installation <agent.install."
+"html>`_"
+msgstr ""
+
+# 2339b4b3897248ba8f33b4b824f32b8c
+#: ../../howto.getting.started.rst:312
+msgid ""
+"We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com."
+"dir`` may not be the best place for hosting the launchers. Anyway, the "
+"symlink ``p26.opensvc.com.d`` is the only place where OpenSVC actually "
+"search for application launchers."
+msgstr ""
+
+# 271f9287731e412c9d37b1a0181a3f93
+#: ../../howto.getting.started.rst:462
+msgid ""
+"We will use a very simple example : a tiny webserver with a single index."
+"html file to serve"
+msgstr ""
+
+# 49e78e7fc82d44e5b0f673df029efb40
+#: ../../howto.getting.started.rst:611
+msgid ""
+"When integrating multiple software into an OpenSVC service, you can to use "
+"the digits after [SKC] in the symlink name to specify the scripts execution "
+"sequencing for start/stop/check actions."
+msgstr ""
+
+# 4ae076a6845c4880818e37274824ab37
+#: ../../howto.getting.started.rst:327
+msgid "With this symlink, we can directly use ::"
+msgstr ""
+
+# 55d81522ee324326bec63219208923dd
+#: ../../howto.getting.started.rst:323
+msgid ""
+"Without this symlink, we have to use the ``svcmgr`` command with arguments "
+"to manage our service ::"
+msgstr ""
+
+# af5d0ac99c7f44a7bb9dcc56d4f2ddf4
+#: ../../howto.getting.started.rst:1031
+msgid ""
+"You can query the OpenHA service configuration and states with the ``$EZ_BIN/"
+"service -s`` command:"
+msgstr ""
+
+# 22412b3cdee34fa8b5ca2444886c6553
+#: ../../howto.getting.started.rst:345
+msgid "You should be able to see:"
+msgstr ""
+
+# b3303e4304c7470a972eaed0e3d43e63
+#: ../../howto.getting.started.rst:607
+msgid "``start`` argument when OpenSVC service starts (symlink S10weblauncher)"
+msgstr ""
+
+# 2c9b4e13e32749348de704990ba5caa7
+#: ../../howto.getting.started.rst:609
+msgid ""
+"``status`` argument when OpenSVC service needs status on application "
+"(symlink C10weblauncher)"
+msgstr ""
+
+# f2a0831ac4d24ebb84a08ce4abc98535
+#: ../../howto.getting.started.rst:608
+msgid "``stop`` argument when OpenSVC service stops (symlink K90weblauncher)"
+msgstr ""
+
+# cd91409cc354431fb0d984c463942a21
+#: ../../howto.getting.started.rst:350
+msgid "a symlink to the /opt/opensvc/bin/svcmgr command (service)"
+msgstr ""
+
+# 985533a8ffc94a529b44e802878a9fd5
+#: ../../howto.getting.started.rst:349
+msgid "a symlink to the service.dir (service.d)"
+msgstr ""
+
+# a6a9b30acad64ee7a896ae17b49e343d
+#: ../../howto.getting.started.rst:383
+msgid "all other ressources are ``down`` or non available ``n/a``"
+msgstr ""
+
+# 84be2c1ab26a4f93b7642cb0927c563f
+#: ../../howto.getting.started.rst:417
+msgid "bring up service ip address"
+msgstr ""
+
+# 460afacc4f4f4eadb777c763267d30e1
+#: ../../howto.getting.started.rst:692
+msgid "brings down the application"
+msgstr ""
+
+# c018c337c55349e2b21117de93e666d7
+#: ../../howto.getting.started.rst:416
+msgid "check if service IP address is not already used somewhere"
+msgstr ""
+
+# 0974c6a6449c4aa6967389d4fa6af618
+#: ../../howto.getting.started.rst:694
+msgid "deactivates the volume group"
+msgstr ""
+
+# e6cc15cbcee941b38ae8c44a09b9d895
+#: ../../howto.getting.started.rst:695
+msgid "disables the service ip address"
+msgstr ""
+
+# 9b1052d407d14a99a03df5a993b9108f
+#: ../../howto.getting.started.rst:419
+msgid "fsck + mount of each filesystem"
+msgstr ""
+
+# c41daeecd28046cfa4f80be974eec866
+#: ../../howto.getting.started.rst:42
+msgid "iSCSI Initiator Configuration"
+msgstr ""
+
+# f432c26ccc984381a439de44836660b2
+#: ../../howto.getting.started.rst:27
+msgid "iSCSI Target Configuration"
+msgstr ""
+
+# 79765815c4ff4a15a6e3b45816d8ea63
+#: ../../howto.getting.started.rst:530
+msgid "info"
+msgstr ""
+
+# d092a8fe542341aaba64610dd50db3c2
+#: ../../howto.getting.started.rst:380
+msgid ""
+"overall status is ``warn`` due to the fact that all ressources are not in "
+"``up`` status"
+msgstr ""
+
+# f7652e486b564c0d803bb14aa58b2e2a
+#: ../../howto.getting.started.rst:22
+msgid "p26.opensvc.com <=> 37.59.71.26"
+msgstr ""
+
+# 7d6e1782e492483f923b73ab2def34a5
+#: ../../howto.getting.started.rst:23
+msgid "p27.opensvc.com <=> 37.59.71.27"
+msgstr ""
+
+# 9e333e5eda5e4736a06c22156619cc3f
+#: ../../howto.getting.started.rst:381
+msgid ""
+"ressource ``vg#0`` is up because the volume group is activated (which is the "
+"expected status after vgcreate)"
+msgstr ""
+
+# dd004acbf3e347acb6f5ba052b6d1327
+#: ../../howto.getting.started.rst:997
+msgid ""
+"sles1 node will read heartbeat on the third block of disk /dev/"
+"mapper/14f504e46494c45526967724d32682d553243692d4f336a4c, with a 10 seconds "
+"timeout"
+msgstr ""
+
+# 777c23ada30246c6a40f84ab6638abc2
+#: ../../howto.getting.started.rst:994
+msgid ""
+"sles1 node will send heartbeat through eth0 on multicast IP 239.131.50.10 "
+"port 1234, with a 10 seconds timeout"
+msgstr ""
+
+# 9f1b5a91cd4d4b398723564989f4cb6b
+#: ../../howto.getting.started.rst:995
+msgid ""
+"sles1 node will write heartbeat on the first block of disk /dev/"
+"mapper/14f504e46494c45526967724d32682d553243692d4f336a4c, with a 10 seconds "
+"timeout"
+msgstr ""
+
+# a14e1567fcbe4510b0694fc2a9ff1fd4
+#: ../../howto.getting.started.rst:208
+msgid "sles1 will be able to connect to sles2 as root."
+msgstr ""
+
+# 000cc73898a44c55a10b83b3775761db
+#: ../../howto.getting.started.rst:996
+msgid ""
+"sles1 will listen heartbeat through eth0 on multicast IP 239.131.50.10 port "
+"4321, with a 10 seconds timeout"
+msgstr ""
+
+# 07a95911a0644f86ad61236f129efc96
+#: ../../howto.getting.started.rst:209
+msgid "sles2 will be able to connect to sles1 as root."
+msgstr ""
+
+# 14da756675f64068922ee10d9d54e232
+#: ../../howto.getting.started.rst:529
+msgid "status"
+msgstr ""
+
+# 327d596880d943f8b889f8cb4b2af027
+#: ../../howto.getting.started.rst:528
+msgid "stop"
+msgstr ""
+
+# 20b37a6022e04c9fa27db93871c284e3
+#: ../../howto.getting.started.rst:382
+msgid ""
+"sync resources are in ``warn`` status because no synchronisation happened yet"
+msgstr ""
+
+# 3f4ae3643f864ead95180f557502fff8
+#: ../../howto.getting.started.rst:348
+msgid "the directory where are stored the applications launchers (service.dir)"
+msgstr ""
+
+# aec4ddf995f14cbf9faa9df04fa38d4e
+#: ../../howto.getting.started.rst:759
+msgid ""
+"the new node is declared in the service configuration file /opt/opensvc/etc/"
+"p26.opensvc.com.env (parameter \"nodes\" in the .env file)"
+msgstr ""
+
+# 7a4f673bcb96470cb665ea9355b5984e
+#: ../../howto.getting.started.rst:760
+msgid ""
+"the node sending config files (sles1) is trusted on the new node (sles2) (as "
+"described in a previous chapter of this tutorial)"
+msgstr ""
+
+# d45aaa4f36004174b11c924e0449e1d2
+#: ../../howto.getting.started.rst:761
+msgid ""
+"the node sending config files (sles1) must be running the service (the "
+"service availability status, apps excluded, is up)."
+msgstr ""
+
+# 5dfbcd65ed0141ecb986046291c45ecf
+#: ../../howto.getting.started.rst:762
+msgid ""
+"the previous synchronisation is older than the configured minimum delay, or "
+"the --force option is set to bypass the delay check."
+msgstr ""
+
+# fe1780e7b4444fe188682cf8215f3123
+#: ../../howto.getting.started.rst:347
+msgid "the service configuration file (service.env)"
+msgstr ""
+
+# 66c49898872e47a3964a4b8028bfe77c
+#: ../../howto.getting.started.rst:693
+msgid "unmounts filesystems"
+msgstr ""
+
+# 243416d90238423fba53cbcfbd99dc1b
+#: ../../howto.getting.started.rst:418
+msgid "volume group activation (if not already in the correct state)"
+msgstr ""

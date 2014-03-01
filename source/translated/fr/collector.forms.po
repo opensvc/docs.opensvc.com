@@ -1,0 +1,923 @@
+# eabd16a747264d8fb40183ea08009348
+#: ../../collector.forms.rst:370
+msgid ":keyword:`Args`"
+msgstr ""
+
+# 2da55bd3803848bbbcda75f47fed0dbd
+#: ../../collector.forms.rst:233
+msgid ":keyword:`Candidates`"
+msgstr ""
+
+# 36ccc71bbc3844389f1fcc67af5e3a4e
+#: ../../collector.forms.rst:328
+msgid ":keyword:`Condition`"
+msgstr ""
+
+# e177f2faa3894267ac42cbb11570e4f2
+#: ../../collector.forms.rst:82
+msgid ":keyword:`Css`"
+msgstr ""
+
+# e35ca3fd755148e6b65bcf5c49146847
+#: ../../collector.forms.rst:308
+msgid ":keyword:`Default`"
+msgstr ""
+
+# 490ae32a912649ac8b36eb4c5e0d3911
+#: ../../collector.forms.rst:78
+msgid ":keyword:`Desc`"
+msgstr ""
+
+# 04f768bc87634f7a95566706aa0fcfcc
+#: ../../collector.forms.rst:122
+msgid ":keyword:`Dest`"
+msgstr ""
+
+# b41f4cda90d2414da3a09592b25f384b
+#: ../../collector.forms.rst:221
+msgid ":keyword:`DisplayInDigest`"
+msgstr ""
+
+# e7a36023bd30435281057034c5322b1a
+#: ../../collector.forms.rst:217
+msgid ":keyword:`DisplayModeLabel`"
+msgstr ""
+
+# 5d2ff4d9619249088a156ef1f339831f
+#: ../../collector.forms.rst:374
+msgid ":keyword:`DisplayModeTrim`"
+msgstr ""
+
+# 5545acb4ae164c46932deea1dc4dd5e0
+#: ../../collector.forms.rst:63
+msgid ":keyword:`Form definition`"
+msgstr ""
+
+# bbe00025c02947449c4fefeef3ef0fc8
+#: ../../collector.forms.rst:51
+msgid ":keyword:`Form folder`"
+msgstr ""
+
+# bbeb91b4126d43288e2692d86164715a
+#: ../../collector.forms.rst:47
+msgid ":keyword:`Form name`"
+msgstr ""
+
+# d4d83905946a4343a6d07331147ade9d
+#: ../../collector.forms.rst:59
+msgid ":keyword:`Form publication`"
+msgstr ""
+
+# b4a9d336d1b64a77bff372c7d3eb40c0
+#: ../../collector.forms.rst:55
+msgid ":keyword:`Form responsible`"
+msgstr ""
+
+# ddb8148f6c9d4d4a957193ac80f2ba2e
+#: ../../collector.forms.rst:98
+msgid ":keyword:`Format`"
+msgstr ""
+
+# 2b80f75acb96442c8bad8e330bd75e12
+#: ../../collector.forms.rst:350
+msgid ":keyword:`Function`"
+msgstr ""
+
+# 803a019806fc44b0a0c109e288d6d7a7
+#: ../../collector.forms.rst:229
+msgid ":keyword:`Help`"
+msgstr ""
+
+# a3df7d8656b94d6f8cce81fba9710248
+#: ../../collector.forms.rst:338
+msgid ":keyword:`Hidden`"
+msgstr ""
+
+# ddd8be3ed4ee4967852009ab62a5f336
+#: ../../collector.forms.rst:209
+msgid ":keyword:`Id`"
+msgstr ""
+
+# 59de86696fc045c5ac384918058e61f1
+#: ../../collector.forms.rst:118
+msgid ":keyword:`Key`"
+msgstr ""
+
+# 6c7eab9da42a4849b7080843a32bbb7c
+#: ../../collector.forms.rst:225
+msgid ":keyword:`LabelCss`"
+msgstr ""
+
+# 7d7a9cbbeea243d5b153da15fa6e42f7
+# 72ae934b1b644bffbcd5ebdc8236741c
+#: ../../collector.forms.rst:74 ../../collector.forms.rst:213
+msgid ":keyword:`Label`"
+msgstr ""
+
+# 3eefb30f4dc54170966be2139d59b7e3
+#: ../../collector.forms.rst:296
+msgid ":keyword:`Mandatory`"
+msgstr ""
+
+# fb506efabbd54729b1254705f62f9402
+#: ../../collector.forms.rst:150
+msgid ":keyword:`NextAssignee`"
+msgstr ""
+
+# ae079d5b64f4424b85a19bbfe00cadcf
+#: ../../collector.forms.rst:154
+msgid ":keyword:`NextForms`"
+msgstr ""
+
+# ed12c96e314a447c85d13e771ab16968
+#: ../../collector.forms.rst:282
+msgid ":keyword:`ReadOnly`"
+msgstr ""
+
+# 58b41278308b42f089e213becdc174fb
+#: ../../collector.forms.rst:158
+msgid ":keyword:`Table`"
+msgstr ""
+
+# 8405db66a98e43da8e46bad28a24ad7b
+# 08686f201e8f4c8c898e01480139c244
+#: ../../collector.forms.rst:92 ../../collector.forms.rst:237
+msgid ":keyword:`Type`"
+msgstr ""
+
+# 068cd9fea7cd4f5f9e44a1e0ca130c9b
+#: ../../collector.forms.rst:146
+msgid ":keyword:`compliance fix`"
+msgstr ""
+
+# a9817a97a6bd4c498da184b989afc9c4
+#: ../../collector.forms.rst:142
+msgid ":keyword:`compliance variable`"
+msgstr ""
+
+# 56b380edfe1a437f954a374dea19e488
+#: ../../collector.forms.rst:138
+msgid ":keyword:`db`"
+msgstr ""
+
+# a8324f09966142c59b2c93253a417041
+#: ../../collector.forms.rst:130
+msgid ":keyword:`mail`"
+msgstr ""
+
+# 64bf17f7208a43a1a1651c4a42a588e2
+#: ../../collector.forms.rst:126
+msgid ":keyword:`script`"
+msgstr ""
+
+# 1b10b4046f3d467ea0e35cd9c95270e1
+#: ../../collector.forms.rst:134
+msgid ":keyword:`workflow`"
+msgstr ""
+
+# 425b6f47d9ea413cb10e600c1ef23abc
+#: ../../collector.forms.rst:108
+msgid ""
+"A Flat list of values. Adequate to store data submitted from multi-instance "
+"single-input forms"
+msgstr ""
+
+# 283e45c50ec34e2d9b8cde2927159b55
+#: ../../collector.forms.rst:65
+msgid "A YAML description of the form."
+msgstr ""
+
+# 6be757263d2249a69429bdaa295c99ab
+#: ../../collector.forms.rst:104
+msgid ""
+"A flat key-value representation. Adequate to store data submitted from "
+"single-instance multi-inputs forms."
+msgstr ""
+
+# 4e94cb5a59344c19a0864a29f8d8b2d4
+#: ../../collector.forms.rst:11
+msgid ""
+"A form can be defined to ease the creation of a json-structure variable "
+"value. OpenSVC ships such forms for all compliance objects available through "
+"OpenSVC. More can be defined by the users themselves."
+msgstr ""
+
+# 619c5e48892e472d99d555c2051b9347
+#: ../../collector.forms.rst:18
+msgid ""
+"A form is basically a collection of inputs and outputs. Possible outputs "
+"include:"
+msgstr ""
+
+# 100277e4b3d4401d92200db89b3f056a
+#: ../../collector.forms.rst:45
+msgid "A form is defined by the following properties:"
+msgstr ""
+
+# ec916724b40e4723ad518591daf8942a
+#: ../../collector.forms.rst:352
+msgid ""
+"A function exported by the OpenSVC collector as a JSON-RPC, called to "
+"determine the input value. This keyword can be coupled to the :keyword:"
+"`Args` keyword to select which form inputs provide the JSON-RPC arguments."
+msgstr ""
+
+# 7486c7f8fe804d53b8b99bf60d3fb6d3
+#: ../../collector.forms.rst:231
+msgid ""
+"A help message displayed as a html title. It appears on hover over the "
+"question mark besides the input element."
+msgstr ""
+
+# 7c60f8459b72487889b789e5d47073cf
+#: ../../collector.forms.rst:235
+msgid ""
+"A list of candidate values used as OPTION html elements of the input SELECT "
+"html element."
+msgstr ""
+
+# c09427e85378470a9454afc05e4271f6
+#: ../../collector.forms.rst:372
+msgid ""
+"A list of form input identifiers, specified as ``#some_input_id``, whose "
+"value to pass as argument to the JSON-RPC pointed by :keyword:`Function`. "
+"The order of the list elements is the order of the arguments to submit to "
+"the :keyword:`Function`."
+msgstr ""
+
+# eabf6e589ba4430e9d3f2c24a5ed224c
+#: ../../collector.forms.rst:57
+msgid "A list of groups of users allowed to edit the form."
+msgstr ""
+
+# e84eb779a9154c4d9198a3e494fa4581
+#: ../../collector.forms.rst:61
+msgid "A list of groups of users allowed to see and use the form."
+msgstr ""
+
+# a0a6ec4634474af28ad08e2ba4829be1
+#: ../../collector.forms.rst:175
+msgid ""
+"A mail output, sending a the submitted form to a specified destination, and "
+"to the submitter::"
+msgstr ""
+
+# 441a0c5170c34caf88809c0c6cc32560
+#: ../../collector.forms.rst:43
+msgid ""
+"A newly created form is owned by it's creator private group (user_n), and is "
+"not published to any group."
+msgstr ""
+
+# fb036b0d999a481589f3fbd9e3f340d9
+#: ../../collector.forms.rst:165
+msgid "A script execution output::"
+msgstr ""
+
+# f2eaf0d7c9744b86b38d2a1e86123466
+#: ../../collector.forms.rst:416
+msgid ""
+"A select input, whose options are fetched from the OpenSVC collector data, "
+"depending on the service name input content::"
+msgstr ""
+
+# 5ca81043e9224b758786e7387e7f364d
+#: ../../collector.forms.rst:403
+msgid "A select input, whose options are statically defined::"
+msgstr ""
+
+# b97247b4fcea471db080280d6dd81961
+#: ../../collector.forms.rst:381
+msgid "A simple string input::"
+msgstr ""
+
+# 57bf66180b454e069bdc2e3cd224dce5
+#: ../../collector.forms.rst:33
+msgid "A user is presented only with the forms pusblished to its groups."
+msgstr ""
+
+# 23fa6e544b734700a55562aa7bafd4f4
+#: ../../collector.forms.rst:310
+msgid ""
+"A value used to pre-fill the input element or choose a select option on form "
+"load. The default value accept some predefined keywords:"
+msgstr ""
+
+# 5c91571d52cb4c1abbaa9fa90f8619d3
+#: ../../collector.forms.rst:187
+msgid ""
+"A workflow head form output, sending the submitted form to the next assignee "
+"with a link to the next forms menu::"
+msgstr ""
+
+# 74cdb0f25eb743aeb1ca0b23832a4cee
+#: ../../collector.forms.rst:112
+msgid ""
+"Adequate to store data submitted from multi-instance, multi-inputs forms"
+msgstr ""
+
+# 0ac47f4ed9d4471eb7fc7bc699fb29aa
+#: ../../collector.forms.rst:116
+msgid ""
+"Adequate to store data submitted from multi-instance, multi-inputs forms, "
+"where the user benefits from a main index to address each data instance."
+msgstr ""
+
+# c09e6621a2d945e3b0e376430144e0d4
+#: ../../collector.forms.rst:330
+msgid ""
+"An expression evaluated by the form javascript to trigger the input "
+"visibility. If a condiftion is set, the input is hidden upon form load, and "
+"is displayed when the condition is met."
+msgstr ""
+
+# 84d2b2d6828f4a669086811e007b34b7
+#: ../../collector.forms.rst:49
+msgid "An internal name to identify the form."
+msgstr ""
+
+# 6a2a6a8b980e4cf0a46278fe54e59837
+#: ../../collector.forms.rst:354
+msgid "Available functions:"
+msgstr ""
+
+# fccae86526dd4690b4eee2ead9afcb10
+# 0343045dc91d471f87287c34eb43219f
+# 0a56aa1b779a4ec8a626163ccb177423
+# e8a8d42a7eb240fa8fef42d19150cd9d
+# c96ee00b4c2b4649951ff4c722801fb0
+# 84cba40e4f7b4e949cdf59af39e2ea51
+#: ../../collector.forms.rst:100 ../../collector.forms.rst:124
+#: ../../collector.forms.rst:241 ../../collector.forms.rst:286
+#: ../../collector.forms.rst:300 ../../collector.forms.rst:342
+msgid "Candidates:"
+msgstr ""
+
+# ab357446156d45df824dab53915e5059
+#: ../../collector.forms.rst:94
+msgid "Candidates: ``json``"
+msgstr ""
+
+# 3a81f91f32c341d09635b9ba669aefe5
+# 6eaa538fd7154de9bd1607128a5c2339
+# bdd3d1dcd7944540b8e182e68426f8f3
+#: ../../collector.forms.rst:284 ../../collector.forms.rst:298
+#: ../../collector.forms.rst:340
+msgid "Default: ``No``"
+msgstr ""
+
+# e039088f00444feeae550172cbfb2467
+#: ../../collector.forms.rst:239
+msgid "Default: ``string``"
+msgstr ""
+
+# 26b07733bcd841fcb573bbbf29cdbce6
+# 55927a32c2174986a9a66033327980db
+#: ../../collector.forms.rst:163 ../../collector.forms.rst:379
+msgid "Examples"
+msgstr ""
+
+# bb083cb3f8e84d79b7929347e46c94b7
+#: ../../collector.forms.rst:128
+msgid ""
+"Execute a script pointed by :keyword:`Path` with the submitted serialized "
+"data as argument."
+msgstr ""
+
+# 7627b2867b7d4bdeb699672275494a46
+#: ../../collector.forms.rst:69
+msgid "Form YAML definition"
+msgstr ""
+
+# b0baebb5dd7c47b38a32d6dd30685cdb
+#: ../../collector.forms.rst:37
+msgid "Form creation"
+msgstr ""
+
+# ea525946b6c144989b616a5c8341663f
+#: ../../collector.forms.rst:39
+msgid "Form creation requires the FormManager privilege."
+msgstr ""
+
+# 5a2d46511c6f4a20807d6a8f35feff10
+#: ../../collector.forms.rst:2
+msgid "Forms"
+msgstr ""
+
+# 8e894619390543edaa77ab72adc7019a
+#: ../../collector.forms.rst:31
+msgid "Forms are presented to users in a tree view to allow classification."
+msgstr ""
+
+# 68234fc22dc04988afb70a8459263dce
+#: ../../collector.forms.rst:72
+msgid "Header"
+msgstr ""
+
+# 525947d83ca64fbc8cf87be0c34c841b
+#: ../../collector.forms.rst:160
+msgid ""
+"If :keyword:`Dest` is set to ``db``, this property defines the collector "
+"database table to store the form, as a new line, into."
+msgstr ""
+
+# c574411dd7094e62930f478998c1e090
+#: ../../collector.forms.rst:156
+msgid ""
+"If :keyword:`Dest` is set to ``workflow``, this property defines a list of "
+"possible next forms to route the workflow to. Those candidates are proposed "
+"to the next assignee in a menu."
+msgstr ""
+
+# 95e1f19be4fd4256b8df2f9a2f9971ee
+#: ../../collector.forms.rst:152
+msgid ""
+"If :keyword:`Dest` is set to workflow, this property defines the group or "
+"user, as known to the OpenSVC Collector user and group management tables, to "
+"assign to next workflow step to."
+msgstr ""
+
+# 177bb479c811467aabaff59a44c9532d
+#: ../../collector.forms.rst:120
+msgid ""
+"If Format is set to ``dict of dict``, this property defines which input "
+"values to use as a key for the master dictionnary. :keyword:`Key` can be "
+"ommitted with other :keyword:`Formats` values."
+msgstr ""
+
+# 038e4b468de8432d8d12d55f5bbb7e10
+#: ../../collector.forms.rst:223
+msgid ""
+"If set to Yes, the input value is displayed in digest display mode. This "
+"mode is used to present nodes or services customizations. Default is No."
+msgstr ""
+
+# 646879c875cb4757b962c3dcd614f985
+#: ../../collector.forms.rst:15
+msgid "In this subsytem, a form is a step in the workflow."
+msgstr ""
+
+# 90ebe1db306d43a48e8ef14163c07af2
+#: ../../collector.forms.rst:204
+msgid "Inputs"
+msgstr ""
+
+# 2488fec5ef8048138e67b04027371b53
+#: ../../collector.forms.rst:5
+msgid "Introduction"
+msgstr ""
+
+# 6de94b41512b4de998d645706b07763e
+# 9846b8f5af5d4719835e51ad150890b5
+#: ../../collector.forms.rst:90 ../../collector.forms.rst:207
+msgid "Keywords"
+msgstr ""
+
+# 3ea19f0f0ffa4fc0adbe739c9cbcac9e
+#: ../../collector.forms.rst:87
+msgid "Outputs"
+msgstr ""
+
+# 6f4b31b8c9c5433cacffe0047a53e015
+#: ../../collector.forms.rst:140
+msgid ""
+"Save the submitted form data in a collector database table. In this mode, "
+"each input identifier must be a table column name."
+msgstr ""
+
+# 0c8d5dda3e214dc49f249db7a5593d3e
+#: ../../collector.forms.rst:144
+msgid ""
+"Save the submitted form data in a compliance variable in a special ruleset. "
+"This output can be used in 'custo' type forms, where a selector asks the "
+"used to pick a service or a node to customize. The ruleset where the "
+"variable will be stored is named after the selected service or node."
+msgstr ""
+
+# 22521088babb457c94fdc0595cf9deab
+#: ../../collector.forms.rst:136
+msgid ""
+"Save the submitted form data in the forms store. The saved object is linked "
+"to its head form and parent form in the workflow, and its parent form is "
+"updated to be linked to the newly saved object. These linking relations "
+"define form chains, also referred to as workflows."
+msgstr ""
+
+# 33faa9cb525c456399f42d445fd294fa
+#: ../../collector.forms.rst:132
+msgid ""
+"Send a mail to the addresses defined by the :keyword:`To` list-property, "
+"with the css-formatted submitted form."
+msgstr ""
+
+# 877414adb106444bb14e5dfb1c24aca0
+#: ../../collector.forms.rst:7
+msgid ""
+"The collector embeds a form editor. The defined forms are used in two "
+"different subsystems."
+msgstr ""
+
+# c6ce8d143a12495290cd2cb068388d47
+#: ../../collector.forms.rst:9
+msgid "The compliance subsytem"
+msgstr ""
+
+# ca0c74ffc17f49fd8171dcea9af873af
+#: ../../collector.forms.rst:41
+msgid "The dedicated view is `Admin --> Forms`."
+msgstr ""
+
+# 232dc1a25c414e8a9d0d2f42ace864a6
+#: ../../collector.forms.rst:332
+msgid ""
+"The expression is expressed in the form ``#some_input_id == some_value``."
+msgstr ""
+
+# f5ccfe08c6f34d6882362ba7ffb2833e
+#: ../../collector.forms.rst:80
+msgid ""
+"The form functional description displayed under the label in the forms tree "
+"view"
+msgstr ""
+
+# e496a23c85dd4a4ea6f3d50a75e91951
+#: ../../collector.forms.rst:304
+msgid ""
+"The form highlights those fields if they are left empty, to mark the fact "
+"that a value is mandatory for the form submission to succeed."
+msgstr ""
+
+# 6ee1ab2cffd4458b9d0f6e85b8ba1a76
+#: ../../collector.forms.rst:76
+msgid "The form label displayed in the forms tree view."
+msgstr ""
+
+# 0107b509235f40f6aefcd3f3ab2ea67f
+#: ../../collector.forms.rst:211
+msgid ""
+"The form-wide unique identifier of this input. Other inputs can refer to "
+"this identifier when defining constraints or triggers as ``#this_id``."
+msgstr ""
+
+# 4c1851f06d8f4ec59519c6e7abfc6058
+#: ../../collector.forms.rst:290
+msgid ""
+"The html element for this input will be flagged as readonly, so that the "
+"content can not be changed by the user. The element will appear greyed-out "
+"in the form and the input won't get the focus. This property is often added "
+"to inputs with a trigger attached, that fetches using ajax a value depending "
+"on other input values."
+msgstr ""
+
+# c185317f6c6d46a590b2a6428d93c223
+#: ../../collector.forms.rst:294
+msgid ""
+"The html element is not flagged readonly, which is the default behaviour."
+msgstr ""
+
+# aea84e402dc64d41906241776e758550
+#: ../../collector.forms.rst:265
+msgid ""
+"The html element used for this type is INPUT or SELECT if :keyword:"
+"`Candidates` is set."
+msgstr ""
+
+# 0fa6156babd5411993076895117c22f7
+#: ../../collector.forms.rst:346
+msgid "The input is not displayed."
+msgstr ""
+
+# 6498ff54949b4060b7a37e8c36e6b963
+#: ../../collector.forms.rst:219
+msgid "The label displayed next to the input in form display mode."
+msgstr ""
+
+# c520f4d27e964164b63e7e22196cb287
+#: ../../collector.forms.rst:215
+msgid "The label displayed next to the input in form edition mode."
+msgstr ""
+
+# 10f2057400d74022933263755749a37d
+#: ../../collector.forms.rst:376
+msgid ""
+"The maximum length of the input value representation string in display mode. "
+"If the actual value is longer than :keyword:`DisplayModeTrim`, only the "
+"first :keyword:`DisplayModeTrim` // 3 and the last :keyword:"
+"`DisplayModeTrim` // 3 * 2 characters will be displayed. This parameter is "
+"usually set on inputs with very long values, like public keys for example."
+msgstr ""
+
+# 5b24733cfb834547ad41633803d9923e
+#: ../../collector.forms.rst:84
+msgid ""
+"The name of the css class to use to decorate the :keyword:`Label` and :"
+"keyword:`Desc` in the form tree view. The pointed class usually set a 48x48 "
+"icon on the left side."
+msgstr ""
+
+# ead3b705ec804c4da320eebc4ddf9c39
+#: ../../collector.forms.rst:227
+msgid ""
+"The name of the css class to use to decorate the :keyword:`Label` and :"
+"keyword:`DisplayModeLabel` in the form edition and display modes. The "
+"pointed class usually set a 16x16 icon on the left side."
+msgstr ""
+
+# 2ea1c47798254fd5bc5004eafef60a96
+#: ../../collector.forms.rst:392
+msgid "The same input, display only if the nodename input is not empty::"
+msgstr ""
+
+# 8be1098286f74c1cbbcc92a83ea5dbb0
+#: ../../collector.forms.rst:96
+msgid "The serialization format to use to represent the form submitted data."
+msgstr ""
+
+# 20486420b1634cddb25717ca23c8e2cf
+#: ../../collector.forms.rst:245
+msgid ""
+"The submitted data for this input is stored in the object as a unicode "
+"string. The html element used for this type is INPUT or SELECT if :keyword:"
+"`Candidates` is set."
+msgstr ""
+
+# fe8d7e5441d54ef989a158c08cf229e0
+#: ../../collector.forms.rst:249
+msgid ""
+"The submitted data for this input is stored in the object as a unicode "
+"string. The html element used for this type is TEXTAREA."
+msgstr ""
+
+# 21cc38e57a89406482d57bbd3872e885
+#: ../../collector.forms.rst:257
+msgid ""
+"The submitted data for this input is stored in the object as an integer "
+"number of bytes, obtained by converting the submitted string formatted as "
+"{number}[ ]{0,1}{unit} where unit is one of:"
+msgstr ""
+
+# e2abf23390eb4216888e3a128ee1e7ff
+#: ../../collector.forms.rst:253
+msgid ""
+"The submitted data for this input is stored in the object as an integer. The "
+"html element used for this type is INPUT or SELECT if :keyword:`Candidates` "
+"is set."
+msgstr ""
+
+# 57ac6b1aa96b46de83e8215dc9f6be75
+#: ../../collector.forms.rst:277
+msgid ""
+"The submitted data is for this input is a string. The html element used for "
+"this type is INPUT with a date and time picker."
+msgstr ""
+
+# ef502cf1b77f433fafe4076e9eae920f
+#: ../../collector.forms.rst:269
+msgid ""
+"The submitted data is for this input is a string. The html element used for "
+"this type is INPUT with a date picker."
+msgstr ""
+
+# cefb3854e7ff4f0bafec3e15813f888b
+#: ../../collector.forms.rst:273
+msgid ""
+"The submitted data is for this input is a string. The html element used for "
+"this type is INPUT with a time picker."
+msgstr ""
+
+# ee7ef7b626ef4cebb9be1b0ef322aa58
+#: ../../collector.forms.rst:318
+msgid "The submitter email address."
+msgstr ""
+
+# 31b3f64881d54de1ad446e3d726fe952
+#: ../../collector.forms.rst:314
+msgid "The submitter first name and last name."
+msgstr ""
+
+# f4b1a47d73934f279ab08e9203579d68
+#: ../../collector.forms.rst:326
+msgid ""
+"The submitter primary group, as known to the OpenSVC collector "
+"authentication tables."
+msgstr ""
+
+# d85d223a10124a5bb1fc1d10d98d1187
+#: ../../collector.forms.rst:322
+msgid "The submitter work phone number."
+msgstr ""
+
+# 30f966a33c094277a2b132bd0f7d65aa
+#: ../../collector.forms.rst:334
+msgid "The supported operators are ``==`` and ``!=``."
+msgstr ""
+
+# f2d8561298ea4feba0056816a433b2f9
+#: ../../collector.forms.rst:336
+msgid ""
+"The supported values are either a free from string cast into the reference "
+"input type, or ``empty``."
+msgstr ""
+
+# 56250d6f620c48aeaa93d932880bb677
+#: ../../collector.forms.rst:13
+msgid "The workflow subsystem"
+msgstr ""
+
+# dcb7a939c15e4a048017ae7209fbfce8
+#: ../../collector.forms.rst:148
+msgid ""
+"This output type can be defined in forms with a peer :keyword:`compliance "
+"variable` output. In this case, compliance fix actions are dispatched to the "
+"selected service nodes, or to the selected node."
+msgstr ""
+
+# 15945e97bef443db9429e421b3a7ca8c
+#: ../../collector.forms.rst:280
+msgid "Unknown values will default to the ``string`` type."
+msgstr ""
+
+# f9e70bc594084520af9d64b818c82176
+#: ../../collector.forms.rst:53
+msgid ""
+"Where in the form tree to publish the form. This property can be left empty "
+"for forms used as non-initial workflow steps."
+msgstr ""
+
+# 46c937bebb9845189ba0a81a530e0584
+# 17a25236bfb742c49706f3910463dc51
+# 5c205ac546b741c0b23ef24aa7773d65
+#: ../../collector.forms.rst:292 ../../collector.forms.rst:306
+#: ../../collector.forms.rst:348
+msgid "``No``"
+msgstr ""
+
+# dbcdd5ddd7a048d0b2d6c3d0c5b62be0
+# 6bbfaa98a0c74c98a0d2ca6df5d0560f
+# abfb9b3ca9cc4ad282712a50c5a45cd5
+#: ../../collector.forms.rst:288 ../../collector.forms.rst:302
+#: ../../collector.forms.rst:344
+msgid "``Yes``"
+msgstr ""
+
+# 455e08154318417ea9e175638eb02610
+#: ../../collector.forms.rst:316
+msgid "``__user_email__``"
+msgstr ""
+
+# fdf3884e8ac64b53a7f8b732fee7ea21
+#: ../../collector.forms.rst:312
+msgid "``__user_name__``"
+msgstr ""
+
+# 03bde1efcd8e4bd19e1d9a22ef7c722d
+#: ../../collector.forms.rst:320
+msgid "``__user_phone_work__``"
+msgstr ""
+
+# decb1d8c5c0646a4b6bd8bfd6bd7c3b7
+#: ../../collector.forms.rst:324
+msgid "``__user_primary_group__``"
+msgstr ""
+
+# 544ad26eb8da4a549b73e7ea0bbf8b5e
+#: ../../collector.forms.rst:267
+msgid "``date``"
+msgstr ""
+
+# f25fd287cb654881bd195edcc21f7077
+#: ../../collector.forms.rst:275
+msgid "``datetime``"
+msgstr ""
+
+# c44757adb5b6449d889b31b21280e0a9
+#: ../../collector.forms.rst:114
+msgid "``dict of dict``"
+msgstr ""
+
+# 36e826d243dc4d7185c662df023f6c34
+#: ../../collector.forms.rst:102
+msgid "``dict``"
+msgstr ""
+
+# b4c0b5474de4454385673bad1da67463
+#: ../../collector.forms.rst:261
+msgid "``g`` or ``G``: gigabytes"
+msgstr ""
+
+# a715dde6e41b49d58f34a7bb27de6d33
+#: ../../collector.forms.rst:251
+msgid "``integer``"
+msgstr ""
+
+# 418c924d88ef4cee9ef0dcda664cf8d7
+#: ../../collector.forms.rst:358
+msgid "``json_node_environnement``"
+msgstr ""
+
+# 9964b2e9ee494dfdae936a991430c4fc
+#: ../../collector.forms.rst:356
+msgid "``json_node_loc_city``"
+msgstr ""
+
+# c7867dcd668c458d84c8472c7a6ecd7f
+#: ../../collector.forms.rst:360
+msgid "``json_node_os_concat``"
+msgstr ""
+
+# 785d67f2420a4ca0a5ce4faccb5f1efe
+#: ../../collector.forms.rst:362
+msgid "``json_node_portnames``"
+msgstr ""
+
+# 382fed71c2f84f5ea66626abf9db1706
+#: ../../collector.forms.rst:364
+msgid "``json_service_loc_city``"
+msgstr ""
+
+# b21a56490aa4487dad1a27542109feb2
+#: ../../collector.forms.rst:366
+msgid "``json_service_nodes``"
+msgstr ""
+
+# 4b91d42a4c9040a5a510360f847addf0
+#: ../../collector.forms.rst:368
+msgid "``json_service_portnames``"
+msgstr ""
+
+# b4397eaa04ed4cc1a6bf3a9912241db4
+#: ../../collector.forms.rst:259
+msgid "``k`` or ``K``: kilobytes"
+msgstr ""
+
+# 1a986a65e6bc41348e3b1d2e36259e79
+#: ../../collector.forms.rst:110
+msgid "``list of dict``"
+msgstr ""
+
+# ab9ae454e33b4796954f2d64f2c2ca73
+#: ../../collector.forms.rst:106
+msgid "``list``"
+msgstr ""
+
+# 9740e186de824a1aa9b028203f3e5ac1
+#: ../../collector.forms.rst:260
+msgid "``m`` or ``M``: megabytes"
+msgstr ""
+
+# 5ca0a7bb89564b43a4e8847f1eeff316
+#: ../../collector.forms.rst:263
+msgid "``p`` or ``P``: petabytes"
+msgstr ""
+
+# 7a18054c3213403b8bd661e8421b5801
+#: ../../collector.forms.rst:255
+msgid "``size``"
+msgstr ""
+
+# fa06022186e4414ba48f77b592ec3c41
+#: ../../collector.forms.rst:243
+msgid "``string``"
+msgstr ""
+
+# 09e10a82c75d43d799387dc2eca71828
+#: ../../collector.forms.rst:262
+msgid "``t`` or ``T``: terabytes"
+msgstr ""
+
+# b52ba0a7812a4a708643324205f661c7
+#: ../../collector.forms.rst:247
+msgid "``text``"
+msgstr ""
+
+# f1a9da7782c04ed8a621d0ede4cfd31e
+#: ../../collector.forms.rst:271
+msgid "``time``"
+msgstr ""
+
+# 718eb85987634fbaaec157e2daf4dbc5
+#: ../../collector.forms.rst:28
+msgid "mail the submitted form"
+msgstr ""
+
+# ceb661769c3d4aa796ed03f9781a5b48
+#: ../../collector.forms.rst:20
+msgid "script execution, using the inputs data as a JSON-formatted argument."
+msgstr ""
+
+# ac6a65c3cabe4269b838465ac616356f
+#: ../../collector.forms.rst:22
+msgid "store as a compliance rule in a ruleset"
+msgstr ""
+
+# 2b4975c6bea1491d81e33e23ec763c13
+#: ../../collector.forms.rst:26
+msgid ""
+"store as a raw form data submission for use in form chains, in the workflow "
+"subsystem"
+msgstr ""
+
+# 156666652ac642cd90f2a5d673ab46ed
+#: ../../collector.forms.rst:24
+msgid "store as a row in a collector database table"
+msgstr ""
