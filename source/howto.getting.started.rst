@@ -878,19 +878,21 @@ OpenHA Integration
 ==================
 
 This chapters presents the steps to upgrade a service from "manual failover" to "automated failover".
-Its follows the instructions from `High Availability setup <howto.ha.html>`_
+It follows the instructions from `High Availability setup <howto.ha.html>`_
 
 OpenSVC Heartbeat Ressource
 +++++++++++++++++++++++++++
 
-OpenSVC service deals with another kind of ressource, named a heartbeat ressource. This ressource is responsible of querying OpenHA for service status.
+A HA OpenSVC service handles a special resource: the heartbeat resource, which reports the service status from the point of view of the heartbeat. No action is handled by this resource type.
 
-This configuration section is appended to the ``p26.opensvc.com.env`` file on node ``sles1`` (no need to add ``name`` parameter as we use same service names for OpenSVC and OpenHA)::
+The following section is appended to the ``p26.opensvc.com.env`` file on node ``sles1``::
 
         [hb#0]
         type = OpenHA
 
-Just after we issue a ``print status`` action, which will automatically complete the ``/opt/opensvc/etc`` directory with 2 new symlinks ::
+The ``name`` parameter can be set if the OpenSVC service name is different from the OpenHA service name. In this example, we use the same service name, so we omitted this parameter.
+
+The next ``svcmon`` or ``print status`` action will automatically complete the ``/opt/opensvc/etc`` directory with 2 new symlinks::
 
         sles1:/opt/opensvc/etc # p26.opensvc.com print status
         send /opt/opensvc/etc/p26.opensvc.com.env to collector ... OK
@@ -919,7 +921,7 @@ Just after we issue a ``print status`` action, which will automatically complete
         lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.stonith -> ../bin/svcmgr
         lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.cluster -> ../bin/svcmgr
 
-The other node ``sles2`` also need to be informed that configuration have changed ::
+The new service configuration must now be pushed to the peer node ``sles2``::
 
         sles1:/ # p26.opensvc.com syncnodes --force 
         11:55:50 INFO    P26.OPENSVC.COM         exec '/opt/opensvc/etc/p26.opensvc.com --waitlock 3600 postsync' on node sles2
@@ -944,7 +946,7 @@ The other node ``sles2`` also need to be informed that configuration have change
 OpenHA Installation
 +++++++++++++++++++
 
-Install OpenHA Package on both cluster nodes.
+Install the OpenHA package on both cluster nodes.
 
 **On both nodes**::
 
@@ -955,7 +957,7 @@ Install OpenHA Package on both cluster nodes.
         # ls /usr/local/cluster
         bin  conf  doc  env.sh  ezha  log  services
 
-As specified in the documentation, we have to set environment variables to be able to manage OpenHA. You can either set them system-wide (/etc/profile) or just set them when needed ::
+As specified in the documentation, we have to set environment variables to be able to use OpenHA commands. You can either set them system-wide (/etc/profile), or just set them when needed::
 
         # export EZ=/usr/local/cluster
         # . /usr/local/cluster/env.sh
@@ -964,7 +966,7 @@ As specified in the documentation, we have to set environment variables to be ab
 OpenHA Configuration
 ++++++++++++++++++++
 
-First of all we describe the cluster nodes in the file ``/usr/local/cluster/conf/nodes``
+First, we describe the cluster nodes in the file ``/usr/local/cluster/conf/nodes``
 
 **On both nodes**::
 
@@ -972,12 +974,12 @@ First of all we describe the cluster nodes in the file ``/usr/local/cluster/conf
         sles1
         sles2
 
-In this example, we implement 2 heartbeats :
+In this example, we implement two heartbeats:
 
-- Network IP Multicast
-- Shared Disk [a new lun has been provisionned from the OpenFiler host : /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c]
+- A network multicast ip heartbeat
+- A shared disk heartbeat (a new lun has been provisionned from the OpenFiler host : /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c)
 
-The heartbeat configuration file ``/usr/local/cluster/conf/monitor`` is the following on both nodes: 
+The heartbeat configuration file ``/usr/local/cluster/conf/monitor`` contains the following lines on both nodes: 
 
 **On both nodes**::
 
@@ -987,14 +989,14 @@ The heartbeat configuration file ``/usr/local/cluster/conf/monitor`` is the foll
         sles2 net eth0 239.131.50.10 4321 10
         sles2 dio /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c 2 10
 
-The syntax means that :
+These lines mean:
 
 - sles1 node will send heartbeat through eth0 on multicast IP 239.131.50.10 port 1234, with a 10 seconds timeout
 - sles1 node will write heartbeat on the first block of disk /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c, with a 10 seconds timeout
 - sles1 will listen heartbeat through eth0 on multicast IP 239.131.50.10 port 4321, with a 10 seconds timeout
 - sles1 node will read heartbeat on the third block of disk /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c, with a 10 seconds timeout
 
-OpenHA also require monitored services to be declared :
+OpenHA also requires monitored services to be declared :
 
 **On both nodes**::
 
@@ -1003,9 +1005,9 @@ OpenHA also require monitored services to be declared :
         Make of services directory done
         Done.
 
-Please note that the configuration applied does not include any stonith callout.
+Please note that the configuration applied does not include any stonith callout, as the stonith is best handled through OpenSVC.
 
-Last setup step concerns OpenHA start/stop scripts.
+The last setup step concerns OpenHA start/stop scripts.
 
 **On both nodes**::
 
@@ -1016,17 +1018,17 @@ Last setup step concerns OpenHA start/stop scripts.
 OpenHA Testing
 ++++++++++++++
 
-Once the setup is done, OpenHA is now able to ensure the cluster management. 
+Once this setup is in place, OpenHA takes over the OpenSVC service management. 
 
-.. warning:: To improve understanding, we assume that the service p26.opensvc.com is stopped before enabling OpenHA. Actually, it's technically not a prerequisite to OpenHA implementation but this case won't be considered in this beginner tutorial.
+.. warning:: In this example the service p26.opensvc.com was stopped when the OpenHA daemons were started. It's also possible to install-configure-start or stop-upgrade-start OpenHA while keeping the service operational, but these procedures are not covered in this tutorial.
 
-We start the OpenHA agents :
+We start the OpenHA agents:
 
 **On both nodes**::
 
         # /usr/local/cluster/ezha start
 
-You can check OpenHA service configuration, and associated states with the ``$EZ_BIN/service -s`` command :
+You can query the OpenHA service configuration and states with the ``$EZ_BIN/service -s`` command:
 
 **On both nodes**::
 
@@ -1036,9 +1038,9 @@ You can check OpenHA service configuration, and associated states with the ``$EZ
         	Primary  : sles1, FROZEN_STOP
         	Secondary: sles2, FROZEN_STOP
 
-This command query OpenHA service configuration, and associated states. ``FROZEN_STOP`` state means that neither ``sles1`` nor ``sles2`` are capable of joining the cluster.
+The double ``FROZEN_STOP`` status means that neither ``sles1`` nor ``sles2`` are capable of taking over the service.
 
-It's also possible to check for hearbeats status with the ``$EZ_BIN/hb -s`` command :
+We can also check for hearbeats status with the ``$EZ_BIN/hb -s`` command:
 
 **On both nodes**::
 
@@ -1049,13 +1051,13 @@ It's also possible to check for hearbeats status with the ``$EZ_BIN/hb -s`` comm
         interface /dev/mapper/14f504e46494c45526967724d32682d553243692d4f336a4c:2 pid 23804 status UP, updated at Feb 19 20:59:55
 
 
-As everything is working as expected, we can authorize ``sles1`` node to joint the cluster using the ``unfreeze`` keyword :
+Everything is working as expected. We can now allow ``sles1`` node to take over the service using the ``unfreeze`` command:
 
 **On sles1 node**::
 
         sles1:/usr/local/cluster/conf # /usr/local/cluster/bin/service -A p26.opensvc.com unfreeze
 
-To deeply understand what happens, we query OpenHA service status at around 1 second interval :
+Querying the OpenHA service status at a ~1 second interval, we can see to status transitions:
 
 **On sles1 node**::
 
@@ -1065,7 +1067,7 @@ To deeply understand what happens, we query OpenHA service status at around 1 se
         	Primary  : sles1, START_READY
         	Secondary: sles2, FROZEN_STOP
 
-=> ``START_READY`` state means that ``sles1`` node have joined the cluster and is ready to start the OpenHA configured services.
+=> The ``START_READY`` state means that ``sles1`` node is ready to start the service, but waits for a couple of seconds to see if its peer node also transition to this same ``START_READY`` state. In this case OpenHA would start the service where it was previously running. In our case we keep ``sles2`` in the ``FROZEN_STOP`` state, and a couple of seconds later we observe:
 
 **On sles1 node**::
 
@@ -1075,7 +1077,7 @@ To deeply understand what happens, we query OpenHA service status at around 1 se
         	Primary  : sles1, STARTING
         	Secondary: sles2, FROZEN_STOP
 
-=> ``STARTING`` state means that ``sles1`` node have initiated the startup of the service by calling the script ``/opt/opensvc/etc/p26.opensvc.com.cluster`` specified in OpenHA service declaration
+=> The ``STARTING`` state means that ``sles1`` node have initiated the service startup by calling the script ``/opt/opensvc/etc/p26.opensvc.com.cluster`` specified in OpenHA service configuration with the ``start`` parameter.
 
 **On sles1 node**::
 
@@ -1085,9 +1087,9 @@ To deeply understand what happens, we query OpenHA service status at around 1 se
         	Primary  : sles1, STARTED
         	Secondary: sles2, FROZEN_STOP
 
-=> ``STARTED`` state means that ``sles1`` node have finished the startup of OpenHA configured services.
+=> The ``STARTED`` state means that ``sles1`` node has finished the startup of the service, and the script return code was 0.
 
-We can easilly confirm that the service is running by querying its state through OpenSVC commands:
+We can confirm that the service is running by querying its state through OpenSVC commands:
 
 **On sles1 node**::
         
@@ -1106,7 +1108,7 @@ We can easilly confirm that the service is running by querying its state through
            '- hb#0           .... up       hb.openha
 
 
-As the second node ``sles2`` is still in the ``FROZEN_STOP`` state, we need to authorize it to join the cluster:
+The second node ``sles2`` is still in the ``FROZEN_STOP`` state. We have to allow it to take over the service, if need be.
 
 **On sles2 node**::
 
@@ -1118,12 +1120,13 @@ As the second node ``sles2`` is still in the ``FROZEN_STOP`` state, we need to a
         	Primary  : sles1, STARTED
         	Secondary: sles2, STOPPED
 
-=> The ``sles2`` have joined the cluster, and is ready to failover the service, which is accurately reported as ``STOPPED``
+=> The ``sles2`` node is not ready to take over the service, which is accurately reported as ``STOPPED``.
 
-It's important to understand that the OpenSVC service management is now delegated to the OpenHA agents:
+The OpenSVC service management is now delegated to the OpenHA agents. OpenSVC makes sure administrators can not bypass the heartbeat daemon to submit actions directly to the OpenSVC service:
 
 **On sles1 node**::
 
         sles1:/ # p26.opensvc.com stop
         21:34:10 INFO    P26.OPENSVC.COM         this service is managed by a clusterware, thus direct service manipulation is disabled. the --cluster option circumvent this safety net.
         sles1:/ #
+
