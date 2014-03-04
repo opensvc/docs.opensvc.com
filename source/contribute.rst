@@ -56,7 +56,7 @@ Install :command:`git-send-email`, and :command:`msmtp` if you have to use Gmail
 
 Set up :command:`msmtp`::
 
-    cat - <<EOF >$HOME/msmtprc
+    cat - <<EOF >$HOME/.msmtprc
     defaults
     tls on
     tls_trust_file /usr/share/ncat/ca-bundle.crt
@@ -72,6 +72,8 @@ Set up :command:`msmtp`::
     # Set a default account
     account default : gmail
     EOF
+
+    chmod 600 $HOME/.msmtprc
 
 Set up :command:`git-send-email` to use :command:`msmtp`::
 
@@ -90,7 +92,7 @@ Install :command:`msmtp` if you have to use Gmail SMTP (no local MTA configured)
 
 Set up :command:`msmtp`::
 
-    cat - <<EOF >$HOME/msmtprc
+    cat - <<EOF >$HOME/.msmtprc
     defaults
     tls on
     tls_trust_file /usr/share/ncat/ca-bundle.crt
@@ -106,6 +108,8 @@ Set up :command:`msmtp`::
     # Set a default account
     account default : gmail
     EOF
+
+    chmod 600 $HOME/.msmtprc
 
 Send patches with::
 
