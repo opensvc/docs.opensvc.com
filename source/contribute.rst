@@ -172,6 +172,7 @@ You can now add your translation in the .po files in ``source/translated/<your l
 	msgid "Set up :command:`msmtp`::"
 	msgstr "Configuration de :command:`msmtp` ::"
 
+Don't forget to create the directory ``source/translated/<your language code>/LC_MESSAGES/``.
 Finally, create the .mo (binary translation) and html files with::
 
     make mo_<your language code> html_<your language code>
