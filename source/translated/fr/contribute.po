@@ -24,7 +24,7 @@ msgstr "Cloner le dépôt git approprié"
 # 616f4ca1618a41079ab2596da24890a2
 #: ../../contribute.rst:130
 msgid "Clone the documentation project::"
-msgstr ""
+msgstr "Clonez le projet de documentation::"
 
 # a2ae97b737b44f72a0e456cd50626df0
 #: ../../contribute.rst:39
@@ -43,14 +43,13 @@ msgstr "Contribution"
 
 # f3873eaef5544a4693125254d0ce48d5
 #: ../../contribute.rst:122
-#, fuzzy
 msgid "Contribute translations"
-msgstr "Contribution"
+msgstr "Participez aux traductions"
 
 # 23a75718256d43b99525f14b0c5de356
 #: ../../contribute.rst:166
 msgid "Create or refresh the translation files::"
-msgstr ""
+msgstr "Créez ou rafraîchissez les fichiers de traduction::"
 
 # c5d4875050f8497d851a518b62b4a2c5
 #: ../../contribute.rst:179
@@ -59,11 +58,15 @@ msgid ""
 "code>/LC_MESSAGES/``. Finally, create the .mo (binary translation) and html "
 "files with::"
 msgstr ""
+"N'oubliez pas de  créer le répertoire ``source/translated/<code de votre langue>/"
+"LC_MESSAGES/``. Et finalement, créez le .mo (traduction binaire) et les fichiers "
+"html avec::"
+
 
 # a321a49f899a4a93b405d7e913a49e86
 #: ../../contribute.rst:126
 msgid "For example, on a debian-based system::"
-msgstr ""
+msgstr "Par exemple, sur une distribution de type debian::"
 
 # 2b7ecd427d5e4441b35a9ccd3b34c4b0
 #: ../../contribute.rst:138
@@ -71,7 +74,9 @@ msgid ""
 "If starting a new translation, you have to add the new language support to "
 "the Makefile. Here are for example the definitions for the french "
 "translation you can clone::"
-msgstr ""
+msgstr "Si vous démarrez une nouvelle traduction, vous devez ajouter le support "
+"pour cette nouvelle langue dans le fichier Makefile. Ci-dessous un exemple pour "
+"la traduction en français sur laquelle vous pouvez vous inspirer"
 
 # a8c3f40653a14461b17e006c0d712e23
 #: ../../contribute.rst:52
@@ -105,7 +110,7 @@ msgstr "Installer git"
 # b52a3b5ee3e547a38070e3044da2b5f6
 #: ../../contribute.rst:124
 msgid "Install the sphinx documentation generator."
-msgstr ""
+msgstr "Installez le générateur de documentation sphinx"
 
 # ece72dbedb964ed8a9e5120117a55bb6
 #: ../../contribute.rst:184
@@ -113,6 +118,9 @@ msgid ""
 "Note you can see what string miss translating in the output of the mo "
 "target. For example::"
 msgstr ""
+"Remarquez que vous pouvez voir les chaines mal traduites dans la sortie de la"
+"commande pour générer les fichiers mo. Par exemple::"
+
 
 # 296d15d5f74842eba19654e41225a6f3
 #: ../../contribute.rst:4
@@ -158,12 +166,12 @@ msgstr "Configuration de :command:`msmtp` ::"
 # c70a0d32417649feaaba355cc93e968a
 #: ../../contribute.rst:134
 msgid "Step into the cloned project directory::"
-msgstr ""
+msgstr "Allez dans le répertoire du projet cloné"
 
 # 03d202dd69344ec29018e4cfa4b8ac45
 #: ../../contribute.rst:160
 msgid "Then plug your new targets in the generic targets::"
-msgstr ""
+msgstr "Puis rajouter vos nouvelles traductions dans les cibles génériques::"
 
 # e1bc0e6994d044eaa4b8dd26d1f7869c
 #: ../../contribute.rst:170
@@ -172,7 +180,10 @@ msgid ""
 "(translation) files. You can now add your translation in the .po files in "
 "``source/translated/<your language code>/``. Here is an example of "
 "translated content::"
-msgstr ""
+msgstr "Cette dernière commande rafraîchit les .pot (index de chaine) et crée les "
+"fichiers .po (traduction). Vous pouvez maintenant ajouter votre traduction dans "
+"les fichiers .po situés sous ``source/translated/<code de votre langue>/``. "
+"Voici un exemple de traduction d'une chaine::"
 
 # 7cae1cb1b219462db89c9815d2b19db7
 #: ../../contribute.rst:189
@@ -182,6 +193,10 @@ msgid ""
 "the .mo and html files), and submit your commits using the procedures "
 "described in the previous chapters."
 msgstr ""
+"Vérifiez votre traduction en browsant votre répertoire local. Quand vous êtes "
+"satisfait, utilisez ``git add`` et ``git commit`` pour versionner vos fichiers "
+"modifiés (ne versionnez pas les fichiers .mo et html), et soumettez vos commits "
+"en utilisant la procédures décrites dans les chapitres précédents."
 
 # 5577725b27c843e985c7d48c2ad4595f
 #: ../../contribute.rst:50
