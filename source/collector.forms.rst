@@ -44,23 +44,23 @@ A newly created form is owned by it's creator private group (user_n), and is not
 
 A form is defined by the following properties:
 
-* :keyword:`Form name`
+* **Form name**
 
   An internal name to identify the form.
 
-* :keyword:`Form folder`
+* **Form folder**
 
   Where in the form tree to publish the form. This property can be left empty for forms used as non-initial workflow steps.
 
-* :keyword:`Form responsible`
+* **Form responsible**
 
   A list of groups of users allowed to edit the form.
 
-* :keyword:`Form publication`
+* **Form publication**
 
   A list of groups of users allowed to see and use the form.
 
-* :keyword:`Form definition`
+* **Form definition**
 
   A YAML description of the form.
 
@@ -71,17 +71,17 @@ Form YAML definition
 Header
 ------
 
-* :keyword:`Label`
+* **Label**
 
   The form label displayed in the forms tree view.
 
-* :keyword:`Desc`
+* **Desc**
 
   The form functional description displayed under the label in the forms tree view
 
-* :keyword:`Css`
+* **Css**
 
-  The name of the css class to use to decorate the :keyword:`Label` and :keyword:`Desc` in the form tree view. The pointed class usually set a 48x48 icon on the left side.
+  The name of the css class to use to decorate the **Label** and **Desc** in the form tree view. The pointed class usually set a 48x48 icon on the left side.
 
 Outputs
 -------
@@ -89,13 +89,13 @@ Outputs
 Keywords
 ++++++++
 
-* :keyword:`Type`
+* **Type**
 
   Candidates: ``json``
 
   The serialization format to use to represent the form submitted data.
 
-* :keyword:`Format`
+* **Format**
 
   Candidates:
 
@@ -115,49 +115,49 @@ Keywords
 
     Adequate to store data submitted from multi-instance, multi-inputs forms, where the user benefits from a main index to address each data instance.
 
-* :keyword:`Key`
+* **Key**
 
-  If Format is set to ``dict of dict``, this property defines which input values to use as a key for the master dictionnary. :keyword:`Key` can be ommitted with other :keyword:`Formats` values.
+  If Format is set to ``dict of dict``, this property defines which input values to use as a key for the master dictionnary. **Key** can be ommitted with other **Formats** values.
 
-* :keyword:`Dest`
+* **Dest**
 
   Candidates:
 
-  * :keyword:`script`
+  * **script**
 
-    Execute a script pointed by :keyword:`Path` with the submitted serialized data as argument.
+    Execute a script pointed by **Path** with the submitted serialized data as argument.
 
-  * :keyword:`mail`
+  * **mail**
 
-    Send a mail to the addresses defined by the :keyword:`To` list-property, with the css-formatted submitted form.
+    Send a mail to the addresses defined by the **To** list-property, with the css-formatted submitted form.
 
-  * :keyword:`workflow`
+  * **workflow**
 
     Save the submitted form data in the forms store. The saved object is linked to its head form and parent form in the workflow, and its parent form is updated to be linked to the newly saved object. These linking relations define form chains, also referred to as workflows.
 
-  * :keyword:`db`
+  * **db**
 
     Save the submitted form data in a collector database table. In this mode, each input identifier must be a table column name.
 
-  * :keyword:`compliance variable`
+  * **compliance variable**
 
     Save the submitted form data in a compliance variable in a special ruleset. This output can be used in 'custo' type forms, where a selector asks the used to pick a service or a node to customize. The ruleset where the variable will be stored is named after the selected service or node.
 
-  * :keyword:`compliance fix`
+  * **compliance fix**
 
-    This output type can be defined in forms with a peer :keyword:`compliance variable` output. In this case, compliance fix actions are dispatched to the selected service nodes, or to the selected node.
+    This output type can be defined in forms with a peer **compliance variable** output. In this case, compliance fix actions are dispatched to the selected service nodes, or to the selected node.
 
-* :keyword:`NextAssignee`
+* **NextAssignee**
 
-  If :keyword:`Dest` is set to workflow, this property defines the group or user, as known to the OpenSVC Collector user and group management tables, to assign to next workflow step to.
+  If **Dest** is set to workflow, this property defines the group or user, as known to the OpenSVC Collector user and group management tables, to assign to next workflow step to.
 
-* :keyword:`NextForms`
+* **NextForms**
 
-  If :keyword:`Dest` is set to ``workflow``, this property defines a list of possible next forms to route the workflow to. Those candidates are proposed to the next assignee in a menu.
+  If **Dest** is set to ``workflow``, this property defines a list of possible next forms to route the workflow to. Those candidates are proposed to the next assignee in a menu.
 
-* :keyword:`Table`
+* **Table**
 
-  If :keyword:`Dest` is set to ``db``, this property defines the collector database table to store the form, as a new line, into.
+  If **Dest** is set to ``db``, this property defines the collector database table to store the form, as a new line, into.
 
 Examples
 ++++++++
@@ -206,35 +206,35 @@ Inputs
 Keywords
 ++++++++
 
-* :keyword:`Id`
+* **Id**
 
   The form-wide unique identifier of this input. Other inputs can refer to this identifier when defining constraints or triggers as ``#this_id``.
 
-* :keyword:`Label`
+* **Label**
 
   The label displayed next to the input in form edition mode.
 
-* :keyword:`DisplayModeLabel`
+* **DisplayModeLabel**
 
   The label displayed next to the input in form display mode.
 
-* :keyword:`DisplayInDigest`
+* **DisplayInDigest**
 
   If set to Yes, the input value is displayed in digest display mode. This mode is used to present nodes or services customizations. Default is No.
 
-* :keyword:`LabelCss`
+* **LabelCss**
 
-  The name of the css class to use to decorate the :keyword:`Label` and :keyword:`DisplayModeLabel` in the form edition and display modes. The pointed class usually set a 16x16 icon on the left side.
+  The name of the css class to use to decorate the **Label** and **DisplayModeLabel** in the form edition and display modes. The pointed class usually set a 16x16 icon on the left side.
 
-* :keyword:`Help`
+* **Help**
 
   A help message displayed as a html title. It appears on hover over the question mark besides the input element.
 
-* :keyword:`Candidates`
+* **Candidates**
 
   A list of candidate values used as OPTION html elements of the input SELECT html element.
 
-* :keyword:`Type`
+* **Type**
 
   Default: ``string``
 
@@ -242,7 +242,7 @@ Keywords
 
   * ``string``
 
-    The submitted data for this input is stored in the object as a unicode string. The html element used for this type is INPUT or SELECT if :keyword:`Candidates` is set.
+    The submitted data for this input is stored in the object as a unicode string. The html element used for this type is INPUT or SELECT if **Candidates** is set.
 
   * ``text``
 
@@ -250,7 +250,7 @@ Keywords
 
   * ``integer``
 
-    The submitted data for this input is stored in the object as an integer. The html element used for this type is INPUT or SELECT if :keyword:`Candidates` is set.
+    The submitted data for this input is stored in the object as an integer. The html element used for this type is INPUT or SELECT if **Candidates** is set.
 
   * ``size``
 
@@ -262,7 +262,7 @@ Keywords
     * ``t`` or ``T``: terabytes
     * ``p`` or ``P``: petabytes
 
-    The html element used for this type is INPUT or SELECT if :keyword:`Candidates` is set.
+    The html element used for this type is INPUT or SELECT if **Candidates** is set.
 
   * ``date``
 
@@ -279,7 +279,7 @@ Keywords
 
   Unknown values will default to the ``string`` type.
 
-* :keyword:`ReadOnly`
+* **ReadOnly**
 
   Default: ``No``
 
@@ -293,7 +293,7 @@ Keywords
 
     The html element is not flagged readonly, which is the default behaviour.
 
-* :keyword:`Mandatory`
+* **Mandatory**
 
   Default: ``No``
 
@@ -305,7 +305,7 @@ Keywords
 
   * ``No``
 
-* :keyword:`Default`
+* **Default**
 
   A value used to pre-fill the input element or choose a select option on form load. The default value accept some predefined keywords:
 
@@ -325,7 +325,7 @@ Keywords
 
     The submitter primary group, as known to the OpenSVC collector authentication tables.
 
-* :keyword:`Condition`
+* **Condition**
 
   An expression evaluated by the form javascript to trigger the input visibility. If a condiftion is set, the input is hidden upon form load, and is displayed when the condition is met.
 
@@ -335,7 +335,7 @@ Keywords
 
   * The supported values are either a free from string cast into the reference input type, or ``empty``.
 
-* :keyword:`Hidden`
+* **Hidden**
 
   Default: ``No``
 
@@ -347,9 +347,9 @@ Keywords
 
   * ``No``
 
-* :keyword:`Function`
+* **Function**
 
-  A function exported by the OpenSVC collector as a JSON-RPC, called to determine the input value. This keyword can be coupled to the :keyword:`Args` keyword to select which form inputs provide the JSON-RPC arguments.
+  A function exported by the OpenSVC collector as a JSON-RPC, called to determine the input value. This keyword can be coupled to the **Args** keyword to select which form inputs provide the JSON-RPC arguments.
 
   Available functions:
 
@@ -367,13 +367,13 @@ Keywords
 
   * ``json_service_portnames``
 
-* :keyword:`Args`
+* **Args**
 
-  A list of form input identifiers, specified as ``#some_input_id``, whose value to pass as argument to the JSON-RPC pointed by :keyword:`Function`. The order of the list elements is the order of the arguments to submit to the :keyword:`Function`.
+  A list of form input identifiers, specified as ``#some_input_id``, whose value to pass as argument to the JSON-RPC pointed by **Function**. The order of the list elements is the order of the arguments to submit to the **Function**.
 
-* :keyword:`DisplayModeTrim`
+* **DisplayModeTrim**
 
-  The maximum length of the input value representation string in display mode. If the actual value is longer than :keyword:`DisplayModeTrim`, only the first :keyword:`DisplayModeTrim` // 3 and the last :keyword:`DisplayModeTrim` // 3 * 2 characters will be displayed. This parameter is usually set on inputs with very long values, like public keys for example.
+  The maximum length of the input value representation string in display mode. If the actual value is longer than **DisplayModeTrim**, only the first **DisplayModeTrim** // 3 and the last **DisplayModeTrim** // 3 * 2 characters will be displayed. This parameter is usually set on inputs with very long values, like public keys for example.
 
 Examples
 ++++++++
