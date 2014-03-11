@@ -1,8 +1,94 @@
 Application launchers
 *********************
 
-Usage
-=====
+Introduction
+============
+
+An application launcher is a resource. As such, it supports the standard start, stop and status actions. Application resources are also involved in the ``push appinfo`` action. Application launchers can support the following parameters:
+
++----------------+--------------------+
+| Service action | Launcher parameter |
++================+====================+
+| start          | start              |
++----------------+--------------------+
+| stop           | stop               |
++----------------+--------------------+
+| status         | status             |
+| print status   |                    |
+| json status    |                    |
++----------------+--------------------+
+| push appinfo   | info               |
++----------------+--------------------+
+
+As a resource, an application launcher can be defined with a ``<svcname>.env`` section. This method permits complex application scheduling, mixing chaining and parallel execution, timeouts setting and scoping.
+
+For simple cases, the agent also supports a SysV-style launcher definitions.
+
+.. note::
+	SysV-style definitions can co-exist with non-conflicting app resources defined in the env file. In case of conflicting definitions, the env file definition takes precedence.
+
+Application resource definition
+===============================
+
+Section syntax
+--------------
+
+Here is a complete application resource section::
+
+	[app#1]
+	script = weblogic
+	start = 50
+	stop = 50
+	check = 50
+	info = 50
+	disable = false
+	optional = true
+	tags = group1
+	subset = web
+
+All these parameters support scoping, using the ``@<nodename>``, ``@nodes``, ``@drpnodes`` and ``@encapnodes`` suffixes.
+
++------------+---------+---------------------------------------------------------------------------------------------+
+| Parameter  | Type    | Role                                                                                        |
++============+=========+=============================================================================================+
+| script     | string  | Full path the the app launcher or basename of a launcher in ``etc/<svcname>.d/``.           |
++------------+---------+---------------------------------------------------------------------------------------------+
+| start      | integer | Flag the app launcher for execution with the start parameter on service startup.            |
+|            |         | The given value is used as the ascending sort key in the resource subset.                   |
+|            |         | Omit the parameter to disable app launcher execution on resource start action.              |
++------------+---------+---------------------------------------------------------------------------------------------+
+| stop       | integer | Flag the app launcher for execution with the stop parameter on service stop.                |
+|            |         | The given value is used as the ascending sort key in the resource subset.                   |
+|            |         | Omit the parameter to disable app launcher execution on resource stop action.               |
++------------+---------+---------------------------------------------------------------------------------------------+
+| status     | integer | Flag the app launcher for execution with the status parameter on service status evaluation. |
+|            |         | The given value is used as the ascending sort key in the resource subset.                   |
+|            |         | Omit the parameter to disable app launcher execution on resource status action.             |
++------------+---------+---------------------------------------------------------------------------------------------+
+| info       | integer | Flag the app launcher for execution with the info parameter on service push appinfo.        |
+|            |         | The given value is used as the ascending sort key in the resource subset.                   |
+|            |         | Omit the parameter to disable app launcher execution on resource appinfo action.            |
++------------+---------+---------------------------------------------------------------------------------------------+
+| subset     | string  | Add the resource to the specified app subset. In the given example, the full subset name is |
+|            |         | subset#app:web                                                                              |
++------------+---------+---------------------------------------------------------------------------------------------+
+
+About subsets
+-------------
+
+* Actions on subsets are chained in alphanumeric subset name order on start, status and info.
+* Actions on subsets are chained in reverse alphanumeric subset name order on stop.
+* The implicit subset name is ``subset#app``.
+* Scripts in a subset are executed either in parallel or serially (default).
+
+Here is a subset section::
+
+	[subset#app:web]
+	parallel = true
+
+
+SysV-style launcher definition
+==============================
 
 Application launchers are installed in the directory pointed by ``/opt/opensvc/etc/svcnamed.d``. They follow the SysV guidelines:
 
