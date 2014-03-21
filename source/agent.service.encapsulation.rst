@@ -6,7 +6,7 @@ Introduction
 
 Virtual machines and containers are often used to provide reliable service relocation, leveraging the vm mobility amongst its hypervisor pool nodes. Reliabilty is gained by the single operating system characteristic: the application integration can depend on system-provided files and tools with no burdain of idenfication and replication of these application-system inter-dependencies.
 
-As a service relocation mecanism, containers are fit for description as services in the OpenSVC framework. This chapter covers the OpenSVC agent features to handle such services.
+As a service relocation mecanism, containers are fit for description as service resources in the OpenSVC framework. This chapter covers the OpenSVC agent features to handle such services.
 
 Concepts
 ========
