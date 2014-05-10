@@ -13,3 +13,4 @@ Contents:
    storage.symclone
    storage.zfs
    storage.btrfs
+   storage.hp3par
