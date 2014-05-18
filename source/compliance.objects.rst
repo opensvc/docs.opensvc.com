@@ -1,33 +1,25 @@
 Compliance objects library
 **************************
 
-authkeys
-========
+Individual objects
+==================
 
-.. function:: description:
+.. toctree::
+   :maxdepth: 1
 
-   Install, remove ssh public keys from authorized_key files
+   compliance.objects.authkeys
+   compliance.objects.files
+   compliance.objects.groups
+   compliance.objects.groups_membership
+   compliance.objects.users
 
-.. function:: actions:
+Combining objects in modules
+============================
 
-   ::
+.. toctree::
+   :maxdepth: 1
 
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     {
-      "action": "add",                # optional, values: add or del, defaults to "add"
-      "authfile": "authorized_keys",  # optional, values: authorized_keys or authorized_keys2, defaults to "authorized_keys2"
-      "user": "foo",                  # mandatory
-      "key": "XXXX..."                # mandatory
-     }
-
-.. function:: supported operating systems:
-
-   Unix
+   compliance.objects.combo.account
 
 bios
 ====
@@ -81,34 +73,6 @@ etcsystem
 
    Solaris
 
-files
-=====
-
-.. function:: description:
-
-   Checks the content and installs reference files. Also checks and setup files' ownership and permissions. The reference content can include substitution variables, so that the content is contextually generated for the node or the service. If the path ends with a ``/``, a directory is created and the reference content is ignored.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     {
-      "path": "/some/path/to/file",
-      "fmt": "root@corp.com         %%HOSTNAME%%@corp.com",
-      "uid": 500,
-      "gid": 500,
-     }
-
-.. function:: supported operating systems:
-
-   Unix
-
 firmware
 ========
 
@@ -139,58 +103,6 @@ fs
 .. function:: supported operating systems:
 
    Linux, HP-UX
-
-groups_membership
-=================
-
-.. function:: description:
-
-   Checks a user has correct secondary group definitions. Must be used in modules after the ``groups`` object so that the group already exists on a fix run of this object. This object can share the same rules with the ``groups`` object.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     {
-      "tibco": {"members": "tibco,tibadm"},
-      "tibco1": {"members": "tibco"}
-     }
-
-.. function:: supported operating systems:
-
-   Unix
-
-groups
-======
-
-.. function:: description:
-
-   Checks a group exists and has correct gid. This object can share the same rules with the ``groups_membership`` object.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     {
-      "tibco": {"gid": 1000},
-      "tibco1": {"gid": 1001}
-     }
-
-.. function:: supported operating systems:
-
-   Unix
 
 nodeconf
 ========
@@ -328,32 +240,6 @@ sysctl
 .. function:: supported operating systems:
 
    Linux
-
-users
-=====
-
-.. function:: description:
-
-   Checks users have correctly setup /etc/passwd entries. Create users. To use in module after the ``groups`` object to be sure the primary groups exists before creating users.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     {
-      "tibco": {"shell": "/bin/ksh", "gecos": "a gecos"},
-      "tibco1": {"shell": "/bin/tcsh", "uid": 1001, "gid": 2, "homedir": "/home/tib", "shell": "/bin/false"}
-     }
-
-.. function:: supported operating systems:
-
-   Unix
 
 vuln
 ====
