@@ -1,7 +1,7 @@
 .. _howto.ha:
 
-High Availabity setup
-*********************
+High Availability setup
+***********************
 
 Introduction
 ============
@@ -72,6 +72,14 @@ In file :file:`/usr/local/cluster/conf/nodes`::
 Describe heartbeat paths
 ------------------------
 
+OpenHA supported heartbeat types are :
+
+- IP Multicast 
+- Disk
+- Raw device
+
+Heartbeats types can be mixed in the same OpenHA configuration
+
 To setup 3 multicast heartbeats, in file :file:`/usr/local/cluster/conf/monitor`::
 
    node108  net  eth1  239.131.50.10    1780  60
@@ -88,6 +96,15 @@ Where:
 *   param#3: multicast IP
 *   param#4: port number
 *   param#5: heartbeat period
+
+With this setup :
+
+- node108 will send heartbeat through eth1 on multicast IP 239.131.50.10 port 1780, with a 60 seconds timeout
+- node108 will send heartbeat through eth2 on multicast IP 239.131.51.10 port 1780, with a 60 seconds timeout
+- node108 will send heartbeat through eth3 on multicast IP 239.131.52.10 port 1780, with a 60 seconds timeout
+- node108 will listen heartbeat through eth1 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
+- node108 will listen heartbeat through eth2 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
+- node108 will listen heartbeat through eth3 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
 
 .. note::
 
