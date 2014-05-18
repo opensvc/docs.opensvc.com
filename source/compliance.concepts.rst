@@ -56,6 +56,17 @@ The compliance framework uses 3 types of obects.
     * All matching rulesets' rules are visible to all modules of attached modulesets
     * Each module picks the rules it is coded to pick
 
+
+Multi-tenancy
+=============
+
+Different groups, responsible for different sets of nodes and services, can define different and private compliance targets. The collector allows users to set owners to modulesets and rulesets, so that they are visible and attachable from services and nodes only if they share a common ownership.
+
+.. figure:: _static/compliance.ownership.png
+
+In this example diagram, Ruleset and Moduleset are visible and attachable only from Node1 and Service2 because they all share a common ownership by Group2.
+
+Note that node-to-ruleset and node-to-moduleset trust chains need only the group link, but service-to-ruleset and service-to-moduleset trust chains have an additional app link.
 	
 Collector compliance views
 ==========================
