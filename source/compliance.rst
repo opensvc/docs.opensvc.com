@@ -8,6 +8,7 @@ Contents:
 
    compliance.concepts
    compliance.usage
+   compliance.rulesets
    compliance.modules
    compliance.modules.deploy
    compliance.objects

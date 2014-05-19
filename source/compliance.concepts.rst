@@ -1,45 +1,63 @@
 Concept
 *******
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
 Introduction
 ============
 
-The "compliance" concept is all about mesuring the adherence of the hosts' configurations to the site's rules. The goals are:
+.. figure:: http://www.opensvc.com/init/static/comp_infra.png
+   :align: right
+   :figwidth: 810
 
-* Auditable host configurations
-* Ease change management
-* Use auditable scripts to apply changes to your hosts
+
+The "compliance" concept is all about mesuring the adherence of the hosts' configurations to the site's rules. The OpenSVC implementation goals are:
+
+* Make recurrent tasks fast, easy, outsourceable, whatever their complexity
+* Ensure recurrent tasks produce the same result, whoever the operator
+* Ease change management and IT mergers
+* Readable configuration rulesets
+* Minimize the design workload and its maintenance
+* Tight integration with the clustering layers
+* Auditable host and service configurations
+* Auditable scripts to apply changes to your hosts
 * Fast and reliable nodes and services provisioning
 
-OpenSVC implements a versatile compliance framework. It allows administrators to describe the corporate server configuration ruleset in a central, auditable place. OpenSVC agent modules compare the actual server configuration to the expected configuration and log the result to the collector.
+Administrators describe the corporate server configuration ruleset in a central, auditable place. OpenSVC agent modules compare the actual server configuration to the expected configuration and log the result to the collector.
 
-.. figure:: http://www.opensvc.com/init/static/comp_infra.png
-   :align:  center
+.. container:: clearer
 
-   Compliance framework workflow
-
-The compliance framework can be used for host post-installation. This strategy ensures a new delivered host is compliant with the current rulesets and is checked for drift afterwards.
+   |nbsp|
 
 .. figure:: http://www.opensvc.com/init/static/comp_cycle.png
-   :align:  center
+   :align:  left
 
-Compliance conceptual objects
-=============================
+The compliance framework can naturally be used for host post-installation. This strategy avoids extra maintenance of a systems post-installation framework, and ensures a newly delivered host is compliant with the current ruleset and is checked for drift after its delivery.
+
+.. container:: clearer
+
+   |nbsp|
+
+Compliance glossary
+===================
 
 .. figure:: http://www.opensvc.com/init/static/comp_objects.png
    :align:  right
 
-The compliance framework uses 3 types of obects.
+The compliance framework uses 3 types of objects.
 
-.. function:: Rulesets, Rules
+**Rulesets, Rules**
 
     * Rules are variable/value pairs exported in the execution environment of the modules.
+    * Only members of the 'CompManager' group are allowed to create or edit rulesets
     * A rule value can be complex, for example a json-serialized dictionnary. OpenSVC ships with python objects for you to use in your modules and corresponding collector wizard. These objects use such complex rules without you facing the complexity.
     * Rules are grouped into rulesets.
-    * Rulesets can be explicitely attached to nodes.
-    * Rulesets can be contextually attached to nodes through a filterset.
+    * Rulesets can be explicitely attached to nodes or services, or contextually presented to nodes and services through a filterset.
+    * Rulesets can be published or not
+    * Rulesets can encapsulate other rulesets
 
-.. function:: Filtersets, Filters
+**Filtersets, Filters**
 
     * A filter is a SQL-like condition on information available to the collector.
     * Filterable information is grouped into 3 categories : node, service and service status.
@@ -48,7 +66,7 @@ The compliance framework uses 3 types of obects.
     * Filtersets can be grouped into filtersets.
     * Upon grouping, the designer must choose a ``AND`` or ``OR`` logical operator and the components ordering
 
-.. function:: Modulesets, Modules
+**Modulesets, Modules**
 
     * Apply and verify the rules.
     * Modules are grouped into modulesets
@@ -60,28 +78,48 @@ The compliance framework uses 3 types of obects.
 Multi-tenancy
 =============
 
-Different groups, responsible for different sets of nodes and services, can define different and private compliance targets. The collector allows users to set owners to modulesets and rulesets, so that they are visible and attachable from services and nodes only if they share a common ownership.
-
 .. figure:: _static/compliance.ownership.png
+   :align: right
+   :scale: 60%
 
-In this example diagram, Ruleset and Moduleset are visible and attachable only from Node1 and Service2 because they all share a common ownership by Group2.
+Different groups, responsible for different sets of nodes and services, can define different and private compliance targets. For example, the front and back-office servers can be under the responsability of different teams. In this case, each team won't want to see the ruleset maintained by the other team.
 
-Note that node-to-ruleset and node-to-moduleset trust chains need only the group link, but service-to-ruleset and service-to-moduleset trust chains have an additional app link.
-	
+The collector allows users to set owners to modulesets and rulesets, so that they are visible and attachable from services and nodes only if they share a common ownership.
+
+**Example**
+
+In this diagram,
+
+* the orange ownership chains link the moduleset and ruleset to the node and services, meaning the endpoint moduleset and ruleset are visible and attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are visible and attachable only from Node1 and Service2 because they all share a common ownership by Group2.
+* the blue ownership chains do not link the moduleset and ruleset to the nodes and services, meaning the endpoint moduleset and ruleset are not visible nor attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are not visible nor attachable from Node2 and Service1 because they don't share common groups.
+
+**Trust chains charracteristics**
+
+* node-to-ruleset and node-to-moduleset trust chains need only the group link
+* service-to-ruleset and service-to-moduleset trust chains have an additional link : the service application code.
+	* This code is set in each service configuration file by the ``DEFAULT.app`` parameter
+	* It must map to an entry of the collector's application code registry
+	* This registry is rendered by the ``Admin > Apps`` view.
+	* The application codes ownership can be set by the collector administrators in this view
+
+.. container:: clearer
+
+   |nbsp|
+
 Collector compliance views
 ==========================
 
 Collector's interfaces to analyze compliance data and to configure the framework are all grouped in the menu ``Views > Compliance``.
 
-Switch between compliance sub-views using the menu:
+Switch between compliance views using the menu:
 
-.. figure:: http://www.opensvc.com/init/static/comp_menu.png
+.. figure:: _static/compliance.menu.png
    :align:  center
 
 Status
 ------
 
-This sub-view has 4 stacked panels. The top 3 are folded upon page load.
+This view has 4 stacked panels. The top 3 are folded upon page load.
 
 Per-module compliance status
 ++++++++++++++++++++++++++++
@@ -199,7 +237,7 @@ This panel present the compliant/not-compliant status without aggregation. It ca
 Logs
 ----
 
-This sub-view presents raw logs of the compliance modules runs on every nodes. It can be used to analyze failure patterns.
+This view presents raw logs of the compliance modules runs on every nodes. It can be used to analyze failure patterns.
 
 .. figure:: http://www.opensvc.com/init/static/comp_log.png
    :align:  center
@@ -231,15 +269,17 @@ This sub-view presents raw logs of the compliance modules runs on every nodes. I
 Rules
 -----
 
-Rules are expressed as variable/value pairs. Rules can be grouped into rulesets. Only members of the 'CompManager' group are allowed to create or edit rulesets.
-Contextual rulesets
+This tabular view is optimized for browsing and searching the configured compliance rules.
 
-Contextual ruleset variables are exported to the group of nodes matching the ruleset's filterset.
-Explicit rulesets
+Example searchs:
 
-Explicit ruleset variables are exported only to nodes explicitely attached to the ruleset. This attachment can be configured either through the collector interface (Described below), or through the agent command line tools::
+* Show all variables of class ``authkeys``
+* Show all variables referencing ``/etc/sudoers.d/``
+* Show all variables changed in the last week
+* Show variables of the ``prereq-tomcat`` ruleset
+* Show all variables exported to Red Hat 6 servers
 
-	# nodemgr compliance attach ruleset --ruleset rset1
+Some configuration actions are available in this view, but the preferred view for a compliance design session is ``Compliance > Designer``.
 
 Create an empty ruleset
 +++++++++++++++++++++++
