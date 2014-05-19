@@ -12,7 +12,7 @@ Individual objects
    compliance.objects.groups
    compliance.objects.groups_membership
    compliance.objects.nodeconf
-   compliance.objects.package
+   compliance.objects.packages
    compliance.objects.users
 
 Combining objects in modules

@@ -1,12 +1,12 @@
-package
-*******
+packages
+********
 
 Description
 ============
 
 * Checks packages installation
-* Installs packages
-* On Linux, the architecture can be specified as the package name suffix (ex: .i386)
+* Installs packages using the systems' package manager (yum, apt-get, zypper)
+* On Linux, the architecture can be specified as the package name suffix (ex: .i386).
 * If not specified the native operating system is selected. A wildcard suffix can be used to force selection of all available architectures.
 
 +-----------------------+-----+
@@ -33,7 +33,7 @@ Valid check::
 
 Invalid check::
 
-	package scsitools is not installed
+	ERR: package scsitools is not installed
 
 Fix::
 
