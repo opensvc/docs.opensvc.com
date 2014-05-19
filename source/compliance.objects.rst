@@ -11,6 +11,8 @@ Individual objects
    compliance.objects.files
    compliance.objects.groups
    compliance.objects.groups_membership
+   compliance.objects.nodeconf
+   compliance.objects.package
    compliance.objects.users
 
 Combining objects in modules
@@ -103,35 +105,6 @@ fs
 .. function:: supported operating systems:
 
    Linux, HP-UX
-
-nodeconf
-========
-
-.. function:: description:
-
-   Checks the configuration of the opensvc node.conf parameters.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     [
-      {
-       "key": "node.repopkg",
-       "value": "http://repo.opensvc.com",
-       "op": "="
-      }
-     ]
-
-.. function:: supported operating systems:
-
-   Unix
 
 packages
 ========
