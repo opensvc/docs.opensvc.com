@@ -13,6 +13,7 @@ Individual objects
    compliance.objects.groups_membership
    compliance.objects.nodeconf
    compliance.objects.packages
+   compliance.objects.process
    compliance.objects.users
 
 Combining objects in modules
@@ -105,60 +106,6 @@ fs
 .. function:: supported operating systems:
 
    Linux, HP-UX
-
-packages
-========
-
-.. function:: description:
-
-   Checks packages installation. Installs packages. On Linux, the architecture can be specified as the package name suffix (ex: .i386). If not specified the native operating system is selected. A wildcard suffix can be used to force selection of all available architectures.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     [
-      "gcc.*",
-      "compat-libstdc*.i386",
-      "rpm-build",
-     ]
-
-.. function:: supported operating systems:
-
-   Linux
-
-process
-=======
-
-.. function:: description:
-
-   Checks the presence of a process and its ownership. Starts the process using the specified command. Used to start a daemon after package installation and rc setup.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     [
-      {"command": "foo", "user": "foou", "comm": "/etc/init.d/foo start"},
-      {"command": "bar", "uid": "2345"},
-     ]
-
-
-.. function:: supported operating systems:
-
-   Unix
 
 rc
 ==
