@@ -30,6 +30,8 @@ The aggregation is done on the data cursor filtered in the downmost, unaggregate
 It helps answer the following questions:
 
 * What corporate rule is alarmingly not respected
+* What corporate rule is surprisingly well respected
+* How the compliance ratio of a rule evolved in the last year
 
 .. figure:: _static/compliance.status.module.png
    :align:  center
@@ -61,6 +63,12 @@ This panel present the compliant/not-compliant status aggregated by service.
 
 The aggregation is done on the data cursor filtered in the downmost, unaggregated, view.
 
+It helps answer the following questions:
+
+* Which are the least compliant services
+* Which are the most compliant services
+* How the compliance ratio of a service evolved in the last year
+
 .. function:: Service column
 
    The service name.
@@ -87,6 +95,14 @@ Per-node compliance status
 This panel present the compliant/not-compliant status aggregated by node.
 
 The aggregation is done on the data cursor filtered in the downmost, unaggregated, view.
+
+It helps answer the following questions:
+
+* Which are the least compliant nodes
+* Which are the most compliant nodes
+* How the compliance ratio of a node evolved in the last year
+
+This view is also used to pilot remediation campaigns, using the ``action`` tool on selected servers.
 
 .. figure:: _static/compliance.status.node.png
    :align:  center
@@ -115,6 +131,13 @@ Detailled compliance status
 +++++++++++++++++++++++++++
 
 This panel present the compliant/not-compliant status without aggregation. It can be used to filter the dataset aggregated in the above panels.
+
+It helps answer the following questions:
+
+* Which servers infringe a module's rules
+* Which Linux servers infringe a module's rules
+* Verify a single server compliance to the whole set of rules
+* Verify a single server compliance to a single module's rules
 
 .. figure:: _static/compliance.status.details.png
    :align:  center
@@ -146,7 +169,12 @@ This panel present the compliant/not-compliant status without aggregation. It ca
 Logs
 ----
 
-This view presents raw logs of the compliance modules runs on every nodes. It can be used to analyze failure patterns.
+This view presents raw logs of the compliance modules runs on every nodes.
+
+It helps answer the following questions:
+
+* Since when a server is not compliant to a modules' rules
+* What was the compliance state of a server at the date of a crisis situation (post-mortem analysis)
 
 .. figure:: _static/compliance.log.png
    :align:  center
@@ -185,10 +213,10 @@ Example searchs:
 * Show all variables of class ``authkeys``
 * Show all variables referencing ``/etc/sudoers.d/``
 * Show all variables changed in the last week
-* Show variables of the ``prereq-tomcat`` ruleset
+* Show all variables in the ``prereq-tomcat`` ruleset
 * Show all variables exported to Red Hat 6 servers
 
-Some configuration actions are available in this view, but the preferred view for a compliance design session is ``Compliance > Designer``.
+Some design actions are available from this view, but the preferred view for a compliance design session is ``Compliance > Designer``.
 
 Create an empty ruleset
 +++++++++++++++++++++++
@@ -299,5 +327,7 @@ Modules
 The modules view allow compliance administrators to group modules into modulesets. The modulesets can then be attached to nodes through the nodemgr command line::
 
 	# nodemgr compliance attach moduleset --moduleset modset1
+
+Only attached modulesets' modules are scheduled for a compliance check by the OpenSVC agents.
 
 Only member of the 'CompManager' group are allowed to create or edit modulesets.
