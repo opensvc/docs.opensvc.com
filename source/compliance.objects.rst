@@ -9,6 +9,7 @@ Individual objects
 
    compliance.objects.authkeys
    compliance.objects.bios
+   compliance.objects.etcsystem
    compliance.objects.files
    compliance.objects.groups
    compliance.objects.groups_membership
@@ -28,32 +29,6 @@ Combining objects in modules
 
 cron
 ====
-
-etcsystem
-=========
-
-.. function:: description:
-
-   Checks and setup values in /etc/system respecting strict targets or thresholds.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     [
-      {"key": "fcp:fcp_offline_delay", "op": ">=", "value": 21},
-      {"key": "ssd:ssd_io_time", "op": "=", "value": "0x3C"}
-     ]
-
-.. function:: supported operating systems:
-
-   Solaris
 
 firmware
 ========
