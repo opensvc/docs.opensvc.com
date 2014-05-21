@@ -57,3 +57,16 @@ The update command is::
 	nodemgr updatecomp
 
 This command is operating system agnostic.
+
+Automatic modules update
+========================
+
+The agent schedules a periodic compliance check run over modules of all attached modulesets.
+The default schedule is weekly, on sunday. It can be redefined in the ``compliance`` section of the ``node.conf`` file.
+
+When this schedule is triggered, the agent can run the ``updatecomp`` action before proceding with the check run. 
+This behaviour, not activated by default, is triggered by the ``auto_update = True`` in the ``compliance`` section of the ``node.conf`` file.
+
+This feature ensures the scheduled check runs always work with the lastest published modules.
+Be aware that, while reducing the infrastructure maintenance cost and optimizing its reliability, this feature extends the perimeter affected by a bug introduced in a module.
+
