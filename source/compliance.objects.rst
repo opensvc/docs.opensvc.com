@@ -15,6 +15,7 @@ Individual objects
    compliance.objects.packages
    compliance.objects.process
    compliance.objects.users
+   compliance.objects.vuln
 
 Combining objects in modules
 ============================
@@ -160,32 +161,6 @@ sysctl
 .. function:: supported operating systems:
 
    Linux
-
-vuln
-====
-
-.. function:: description:
-
-   Checks a package is installed with a minimum release or not installed at all. Unices need to pass the URI of their package depot as last argument of this object.
-
-.. function:: actions:
-
-   ::
-
-     check, fix
-
-.. function:: data format:
-
-   ::
-
-     [
-      {"pkgname": "kernel", "minver": "2.6.18-238.19.1.el5"},
-      {"pkgname": "kernel-xen", "minver": "2.6.18-238.19.1.el5"}
-     ]
-
-.. function:: supported operating systems:
-
-   Unix
 
 xinetd
 ======
