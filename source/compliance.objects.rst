@@ -8,6 +8,7 @@ Individual objects
    :maxdepth: 1
 
    compliance.objects.authkeys
+   compliance.objects.bios
    compliance.objects.files
    compliance.objects.groups
    compliance.objects.groups_membership
@@ -24,29 +25,6 @@ Combining objects in modules
    :maxdepth: 1
 
    compliance.objects.combo.account
-
-bios
-====
-
-.. function:: description:
-
-   Checks an exact BIOS version, as returned by dmidecode or sysfs
-
-.. function:: actions:
-
-   ::
-
-     check
-
-.. function:: data format:
-
-   ::
-
-    "XXXX"
-
-.. function:: supported operating systems:
-
-   Linux
 
 cron
 ====
