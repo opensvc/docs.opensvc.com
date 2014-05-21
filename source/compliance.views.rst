@@ -32,6 +32,7 @@ It helps answer the following questions:
 * What corporate rule is alarmingly not respected
 * What corporate rule is surprisingly well respected
 * How the compliance ratio of a rule evolved in the last year
+* Which modules runs on more than 1000 nodes
 
 .. figure:: _static/compliance.status.module.png
    :align:  center
@@ -68,6 +69,7 @@ It helps answer the following questions:
 * Which are the least compliant services
 * Which are the most compliant services
 * How the compliance ratio of a service evolved in the last year
+* Which services run less than 10 modules
 
 .. function:: Service column
 
@@ -101,6 +103,7 @@ It helps answer the following questions:
 * Which are the least compliant nodes
 * Which are the most compliant nodes
 * How the compliance ratio of a node evolved in the last year
+* Which servers run less than 10 modules
 
 This view is also used to pilot remediation campaigns, using the ``action`` tool on selected servers.
 
