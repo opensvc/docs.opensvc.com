@@ -53,61 +53,61 @@ Definition
 
 .. code-block:: yaml
 
-	Desc: |
-	  Describe a list of ssh public keys to authorize login as the specified Unix user.
-
-	Outputs:
-	  -
-	    Dest: compliance variable
-	    Type: json
-	    Format: dict
-	    Class: authkey
-
-	Inputs:
-	  -
-	    Id: action
-	    Label: Action
-	    DisplayModeLabel: action
-	    LabelCss: action16
-	    Mandatory: Yes
-	    Type: string
-	    Candidates:
-	      - add
-	      - del
-	    Help: Defines wether the public key must be installed or uninstalled.
-
-	  -
-	    Id: user
-	    Label: User
-	    DisplayModeLabel: user
-	    LabelCss: guy16
-	    Mandatory: Yes
-	    Type: string
-	    Help: Defines the Unix user name who will accept those ssh public keys.
-
-	  -
-	    Id: key
-	    Label: Public key
-	    DisplayModeLabel: key
-	    LabelCss: guy16
-	    Mandatory: Yes
-	    Type: text
-	    DisplayModeTrim: 60
-	    Help: The ssh public key as seen in authorized_keys files.
-
-	  -
-	    Id: authfile
-	    Label: Authorized keys file name
-	    DisplayModeLabel: authfile
-	    LabelCss: hd16
-	    Mandatory: Yes
-	    Candidates:
-	      - authorized_keys
-	      - authorized_keys2
-	    Default: authorized_keys2
-	    Type: string
-	    Help: The authorized_keys file to write the keys into.
-
+        Desc: |
+          Describe a list of ssh public keys to authorize login as the specified Unix user.
+        Css: comp48
+        
+        Outputs:
+          -
+            Dest: compliance variable
+            Type: json
+            Format: dict
+            Class: authkey
+        
+        Inputs:
+          -
+            Id: action
+            Label: Action
+            DisplayModeLabel: action
+            LabelCss: action16
+            Mandatory: Yes
+            Type: string
+            Candidates:
+              - add
+              - del
+            Help: Defines wether the public key must be installed or uninstalled.
+        
+          -
+            Id: user
+            Label: User
+            DisplayModeLabel: user
+            LabelCss: guy16
+            Mandatory: Yes
+            Type: string
+            Help: Defines the Unix user name who will accept those ssh public keys.
+        
+          -
+            Id: key
+            Label: Public key
+            DisplayModeLabel: key
+            LabelCss: guy16
+            Mandatory: Yes
+            Type: text
+            DisplayModeTrim: 60
+            Help: The ssh public key as seen in authorized_keys files.
+        
+          -
+            Id: authfile
+            Label: Authorized keys file name
+            DisplayModeLabel: authfile
+            LabelCss: hd16
+            Mandatory: Yes
+            Candidates:
+              - authorized_keys
+              - authorized_keys2
+            Default: authorized_keys2
+            Type: string
+            Help: The authorized_keys file to write the keys into.
 
 Data format
 ===========
