@@ -25,15 +25,18 @@ Ouputs
 
 Valid check::
 
-	todo
+        xinetd service vsftpd-server server_args: /etc/vsftpd/vsftpd.conf
+        xinetd service vsftpd-server disable: no
 
 Invalid check::
 
-	todo
+        ERR: xinetd service vsftpd-server server_args: /etc/ftpd.conf target: /etc/vsftpd/vsftpd.conf
+        ERR: xinetd service vsftpd-server disable: yes target: no
 
 Fix::
 
-	todo
+        set server_args = /etc/vsftpd/vsftpd.conf in /etc/xinetd.d/vsftpd-server
+        set disable = no in /etc/xinetd.d/vsftpd-server
 
 Form
 ====
@@ -88,7 +91,7 @@ Definition
 	      - "no"
 
           -
-            Id: serverargs
+            Id: server_args
             Label: Server Args
             DisplayModeLabel: args
             LabelCss: action16
@@ -101,9 +104,9 @@ Data format
 .. code-block:: json
 
 	{
-	  "gssftp": {
+	  "vsftpd-server": {
 	    "disable": "no",
-	    "server_args": "-l -a -u 022"
+	    "server_args": "/etc/vsftpd/vsftpd.conf"
 	  }
 	}
 
