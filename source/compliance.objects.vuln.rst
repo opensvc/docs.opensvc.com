@@ -65,43 +65,44 @@ Definition
 
 .. code-block:: yaml
 
-	Desc: |
-	  A rule defining a list of packages, with constraints about minimum version
-
-	Outputs:
-	  -
-	    Dest: compliance variable
-	    Class: vuln
-	    Type: json
-	    Format: dict of dict
-
-	Inputs:
-	  -
-	    Id: pkgname
-	    Label: Package name
-	    DisplayModeLabel: pkgname
-	    LabelCss: pkg16
-	    Mandatory: Yes
-	    Help: The package name, as known by the target system's package manager
-	    Type: string
-
+        Desc: |
+          A rule defining a list of vulnerable packages and their minimum release version fixing the vulnerability.
+        Css: comp48
+        
+        Outputs:
+          -
+            Dest: compliance variable
+            Type: json
+            Format: list of dict
+            Class: vuln
+        
+        Inputs:
+          -
+            Id: pkgname
+            Label: Package name
+            DisplayModeLabel: pkgname
+            LabelCss: pkg16
+            Mandatory: Yes
+            Type: string
+            Help: The package name, as known to the target system's package manager.
+        
           -
             Id: firstver
             Label: First vulnerable version
             DisplayModeLabel: firstver
             LabelCss: pkg16
             Mandatory: No
-	    Help: Package version that introduce the vulnerability
             Type: string
-
+            Help: The first vulnerable package version. In the security context, the package version introducing the vulnerability.
+        
           -
             Id: minver
             Label: Minimum version
             DisplayModeLabel: minver
             LabelCss: pkg16
             Mandatory: Yes
-            Help: Package version that fix the vulnerability
-            Type: yes/no
+            Type: string
+            Help: The package minimum version. In the security context, the package version fixing the vulnerability.
 
 Data format
 ===========
