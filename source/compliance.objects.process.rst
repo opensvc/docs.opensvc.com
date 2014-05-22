@@ -58,70 +58,72 @@ Definition
 
 .. code-block:: yaml
 
-	Desc: |
-	  A rule defining a list of unix processes, with their expected parameters, owner, state
-
-	Outputs:
-	  -
-	    Dest: compliance variable
-	    Class: process
-	    Type: json
-	    Format: dict of dict
-
-	Inputs:
-	  -
-	    Id: comm
-	    Label: Command
-	    DisplayModeLabel: comm
-	    LabelCss: action16
-	    Mandatory: Yes
-	    Help: The unix process command (ps -e -o comm)
-	    Type: string
-
+        Desc: |
+          A rule defining a process that should be running or not running on the target host, its owner's username and the command to launch it or to stop it.
+        Css: comp48
+        
+        Outputs:
+          -
+            Dest: compliance variable
+            Type: json
+            Format: list of dict
+            Class: process
+        
+        Inputs:
+          -
+            Id: comm
+            Label: Command
+            DisplayModeLabel: comm
+            LabelCss: action16
+            Mandatory: No
+            Type: string
+            Help: The Unix process command, as shown in the ps comm column.
+        
           -
             Id: args
             Label: Arguments
             DisplayModeLabel: args
             LabelCss: action16
             Mandatory: No
-	    Help: The unix process command (ps -e -o args)
             Type: string
-
+            Help: The Unix process arguments, as shown in the ps args column.
+        
           -
             Id: state
             Label: State
             DisplayModeLabel: state
             LabelCss: action16
+            Type: string
             Mandatory: Yes
-            Help: The expected process state
-            Type: yes/no
-
+            Default: on
+            Candidates:
+              - "on"
+              - "off"
+            Help: The expected process state.
+        
           -
             Id: uid
             Label: Owner user id
             DisplayModeLabel: uid
             LabelCss: guy16
-            Mandatory: No
-            Help: The unix user id owning the process
             Type: integer
-
+            Help: The Unix user id owning the process.
+        
           -
             Id: user
             Label: Owner user name
             DisplayModeLabel: user
             LabelCss: guy16
-            Mandatory: No
-            Help: The unix user name owning the process
             Type: string
-
+            Help: The Unix user name owning the process.
+        
           -
             Id: start
             Label: Start command
             DisplayModeLabel: start
             LabelCss: action16
-            Mandatory: Yes
-            Help: The command to start (if expected state is on) or stop (if expected state is off) the process, with full path and arguments
             Type: string
+            Help: The command to start or stop the process, including the executable arguments. The executable must be defined with full path.
 
 Data format
 ===========
