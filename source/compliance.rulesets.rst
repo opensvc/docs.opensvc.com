@@ -233,3 +233,25 @@ Encapsulation is a useful to
 * Customize rules of a ruleset based on contextual information. For example, a ruleset describing a monitoring agent configuration might want to point a different tarball based on which operating system and which version is executing the compliance module. For another example, a ruleset publishing the nameservers to use might want to publish different nameserver lists for different datacenters.
 * Keep the top level of the ruleset tree clean and lean
 * Minimize the number of filtersets necessary to cover all needs. As filters are cumulative in a nested contextual ruleset relationship, encapsulation aleviate the need to define as filtersets most filterset combinations. For example, ``x86 servers => linux servers``, ``x86 servers => solaris servers``, ``x86 servers => freebsd servers``, ``x86_86 servers => linux servers``, ``x86_86 servers => solaris servers``, ``x86_86 servers => freebsd servers`` would require 5 filtersets, where a flat ruleset design would require 6. The factorization factor increases dramatically with ruleset complexity.
+
+Ruleset ownership
++++++++++++++++++
+
+A ruleset is visible and attachable
+
+* from a server, if the team responsible property of the server matches one of the ruleset owner groups.
+* from a service, if one of its application code responsible groups matches one of the ruleset owner groups.
+
+A ruleset can also be visible because it is encapsulted in a visible top-level ruleset, whatever the encapsulation depth, and whatever the ownership of the child.
+
+Upon creation or cloning, the new ruleset is stored at the tree head and is owned by the creator's private group (``user_<n>``).
+
+With this default ownership and unencapsulated state, the ruleset
+
+* is not visible nor attachable from any node or service
+* is editable only by its creator
+
+The creator can then add, delete, rename, change the value of rules without the rulesets of servers and services being affected.
+
+When the design session is over, the creator's can attach new groups to the ruleset and/or insert the ruleset as a child of a visible ruleset.
+
