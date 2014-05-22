@@ -69,25 +69,26 @@ Definition
 
 .. code-block:: yaml
 
-	Desc: |
-	  A rule defining a list of packages that must be installed
-
-	Outputs:
-	  -
-	    Dest: compliance variable
-	    Class: package
-	    Type: json
-	    Format: dict
-
-	Inputs:
-	  -
-	    Id: package
-	    Label: Package name
-	    DisplayModeLabel: package
-	    LabelCss: action16
-	    Mandatory: Yes
-	    Help: Package name to install
-	    Type: string
+        Desc: |
+          A rule defining a set of packages, fed to the 'packages' compliance object for it to check each package installed or not-installed status.
+        Css: comp48
+        
+        Outputs:
+          -
+            Dest: compliance variable
+            Class: package
+            Type: json
+            Format: list
+        
+        Inputs:
+          -
+            Id: pkgname
+            Label: Package name
+            DisplayModeLabel: ""
+            LabelCss: pkg16
+            Mandatory: Yes
+            Help: Use '-' as a prefix to set 'not installed' as the target state. Use '*' as a wildcard for package name expansion for operating systems able to list packages available for installation.
+            Type: string
 
 Data format
 ===========
