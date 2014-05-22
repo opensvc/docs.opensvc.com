@@ -51,9 +51,10 @@ The compliance framework uses 3 types of objects.
 
     For detailled information about rulesets, read `this page <compliance.rulesets.html>`_.
 
-    * Rules are variable/value pairs exported in the execution environment of the modules.
+    * Rules are designed, stored and served by the collector
+    * Rules are variable/value pairs exported by the OpenSVC agent in the execution environment of the modules.
     * Only members of the 'CompManager' group are allowed to create or edit rulesets
-    * A rule value can be complex, for example a json-serialized dictionnary. OpenSVC ships with python objects for you to use in your modules and corresponding collector wizard. These objects use such complex rules without you facing the complexity.
+    * A rule value can be complex, for example a json-serialized dictionnary. OpenSVC ships with a library of compliance objects and corresponding rule edition wizard. Using the objects in modules code abstracts the complex rule parsing, and using the wizards hides the json structures from the designer.
     * Rules are grouped into rulesets.
     * Rulesets can be explicitely attached to nodes or services, or contextually presented to nodes and services through a filterset.
     * Rulesets can be published or not
