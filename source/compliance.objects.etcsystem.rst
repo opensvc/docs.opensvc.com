@@ -57,42 +57,51 @@ Definition
 
 .. code-block:: yaml
 
-	Desc: |
-	  A rule defining a list of /etc/system parameters, and their expected value
-
-	Outputs:
-	  -
-	    Dest: compliance variable
-	    Class: etcsystem
-	    Type: json
-	    Format: dict of dict
-
-	Inputs:
+        Desc: |
+          A rule to set a list of Solaris kernel parameters to be set in /etc/system. Current values can be checked as strictly equal, or superior/inferior to their target value.
+        Css: comp48
+        
+        Outputs:
+          -
+            Dest: compliance variable
+            Type: json
+            Format: list of dict
+            Class: etcsystem
+        
+        Inputs:
           -
             Id: key
             Label: Key
             DisplayModeLabel: key
             LabelCss: action16
             Mandatory: Yes
-            Help: The /etc/system parameter to check
             Type: string
-
-          -
-            Id: op
-            Label: Comparison operator
-            DisplayModeLabel: operator
-            LabelCss: action16
-            Help: "= > >= < <="
-            Type: operator
-
+            Help: The /etc/system parameter to check.
+        
           -
             Id: value
             Label: Value
-            DisplayModeLabel: fmt
+            DisplayModeLabel: value
             LabelCss: action16
             Mandatory: Yes
-            Help: The /etc/system parameter target value
-            Type: string or url or integer
+            Type: string or integer
+            Help: The /etc/system parameter target value.
+        
+          -
+            Id: op
+            Label: Comparison operator
+            DisplayModeLabel: op
+            LabelCss: action16
+            Mandatory: Yes
+            Type: string
+            Default: "="
+            Candidates:
+              - "="
+              - ">"
+              - ">="
+              - "<"
+              - "<="
+            Help: The comparison operator to use to check the parameter current value.
 
 Data format
 ===========
