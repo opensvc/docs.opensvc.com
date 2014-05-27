@@ -11,7 +11,7 @@ Service management features by operating system
 |             | * loop         | * lofs        | * fs          | * fs          | * md         | * fs         | * fs       |            |
 |             | * fs           | * zfs pool    | * vg          | * namefs      | * fs         | * sync       | * sync     |            |
 |             | * bind mounts  | * veritas vg  | * sync        | * sync        | * nullfs     |              |            |            |
-|             | * lvm2 vg      | * sync        |               |               | * zfs pool   |              |            |            |
+|             | * lvm2 vg      | * sync        |               | * vg          | * zfs pool   |              |            |            |
 |             | * veritas vg   |               |               |               | * sync       |              |            |            |
 |             | * sync         |               |               |               |              |              |            |            |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+------------+------------+
@@ -22,6 +22,7 @@ Service management features by operating system
 |             | * vbox         |               |               |               |              |              |            |            |
 |             | * ovm          |               |               |               |              |              |            |            |
 |             | * esx          |               |               |               |              |              |            |            |
+|             | * docker       |               |               |               |              |              |            |            |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+------------+------------+
 | scsi        | yes [#f1]_     | yes           | yes [#f2]_    | no            | yes          | no           | yes        |            |
 | persistent  | (sg_persist)   | (sg_persist)  | (scu)         |               | (sg_persist) |              | (scu)      |            |
@@ -87,6 +88,8 @@ Host and guest operating systems by virtualization product
 | lxc            | * Linux        | * Linux         |
 +----------------+----------------+-----------------+
 | vz             | * Linux        | * Linux         |
++----------------+----------------+-----------------+
+| docker         | * Linux        | * Linux         |
 +----------------+----------------+-----------------+
 | jail           | * FreeBSD      | * FreeBSD       |
 +----------------+----------------+-----------------+
@@ -173,6 +176,12 @@ Supported data replication modes
 +----------------+----------------+-----------------+-------------+-----------------+
 | HP EVA snap    | * syncresync   | * fc            | * scheduled | * local         |
 |                |                |                 | * on-demand |                 |
++----------------+----------------+-----------------+-------------+-----------------+
+| HP 3Par        | * syncupdate   | * fc            | * scheduled | * local         |
+| Remote Copy    | * syncbreak    |                 | * on-demand | * multi-site    |
+|                | * syncresume   |                 |             |                 |
+|                | * syncswap     |                 |             | * disaster      |
+|                |                |                 |             |   recovery      |
 +----------------+----------------+-----------------+-------------+-----------------+
 | Dds            | * syncfullsync | * ip            | * scheduled | * local         |
 |                | * syncupdate   |                 | * on-demand | * multi-site    |
