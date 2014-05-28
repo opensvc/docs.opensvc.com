@@ -6,7 +6,7 @@ Introduction
 
 Managing VM as services has many advantages:
 
-*   Same start/stop/status commands accross non-virtualized services on different operating systems and services encapsulating virtual machines from different technologies (kvm, xen, docker, esx, hpvm, zone, lxc, vz, ...)
+*   Same start/stop/status commands accross non-virtualized services on different operating systems and services encapsulating virtual machines from different technologies (kvm, xen, docker, esx, hpvm, zone, lxc, vz, ...). This is very convenient for people responsible of production run because they are always capable of standard management tasks (start/stop/status), regardless of the virtualisation/container technologies that are used in your company
 
 *   Mix virtualized and non-virtualized services on the same hosts without increasing complexity (except xen, ldom, esx)
 
@@ -14,7 +14,7 @@ Managing VM as services has many advantages:
 
 *   Benefit from all the OpenSVC data replication modes
 
-*   Benefit from the OpenSVC Collector performance monitoring, obsolescence management, alarming, and more. 
+*   Benefit from the OpenSVC Collector compliance features, performance monitoring, obsolescence management, alarming, and more. 
 
 
 OpenSVC deployment on an existing hypervisor is a straight-forward process which does not require service disruption. This cookbook details the steps involved:
