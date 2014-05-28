@@ -6,7 +6,7 @@ Introduction
 
 Managing VM as services has many advantages:
 
-*   Same start/stop/status commands accross non-virtualized services on different operating systems and services encapsulating virtual machines from different technologies (kvm, xen, esx, hpvm, zone, lxc, vz, ...)
+*   Same start/stop/status commands accross non-virtualized services on different operating systems and services encapsulating virtual machines from different technologies (kvm, xen, docker, esx, hpvm, zone, lxc, vz, ...)
 
 *   Mix virtualized and non-virtualized services on the same hosts without increasing complexity (except xen, ldom, esx)
 
@@ -43,15 +43,15 @@ Customize the service env file
 A typical VM service env file should look like::
 
 	[default]
-	vm_name = vm188
 	app = ERP
 	comment = recette gen db #2
-	mode = hpvm
 	service_type = DEV
 	nodes =  node109 node110 node111 node112
 	autostart_node = node109
-	;drpnode = vm5
-	;scsireserv = false
+
+        [container#1]
+        name = vm188
+        type = hpvm
 
 	[ip#1]
 	ipname = vm188
@@ -60,13 +60,13 @@ A typical VM service env file should look like::
 	[vmdg]
 	scsireserv = false
 
-**vm_name**
+**name**
 
   If this parameter is not set, the VM name defaults to the service name. When encapsulating an existing VM, chances are that you need to set it to the existing VM hostname. This name is used by the hypervisor to communicate with the VM, so you might need to use a fully qualified name if the hypersisor and the VM do not share the same DNS domain. Communication with zones use the zlogin utility, so fqdn are never needed in this case.
 
-**mode**
+**type**
 
-  Choose among kvm, xen, esx, hpvm, ldom, vbox, zone, vz and lxc.
+  Choose among kvm, xen, docker, esx, hpvm, ldom, vbox, zone, vz and lxc.
 
 **nodes**
 
@@ -127,7 +127,7 @@ This step does not apply to zones, as zlogin is always trusted. Other drivers us
 Populate the application startup scripts directory
 ==================================================
 
-This step is recommended but not mandatory. OpenSVC command set allows to start the virtual machine but not the embedded applications through the 'startapp'/'stopapp' commands. For this feature to work as expected, startup scripts should not reside in the operating system's proposed infrastructure (/etc/rcX.d, /sbin/rcX.d, DMF, ...). OpenSVC expects to find app launchers in /svc/etc/init.d in the guest file hierarchy.
+This step is recommended but not mandatory. OpenSVC command set allows to start the virtual machine but not the embedded applications through the 'startapp'/'stopapp' commands. For this feature to work as expected, startup scripts should not reside in the operating system's proposed infrastructure (/etc/rcX.d, /sbin/rcX.d, DMF, ...). OpenSVC expects to find app launchers in /svc/etc/init.d in the guest file hierarchy. This feature is useless in docker's context, where docker image maintainer should have dealt with applications startup when docker container is started.
 
 Test
 ====
