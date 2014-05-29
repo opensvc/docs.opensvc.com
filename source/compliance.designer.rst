@@ -60,4 +60,64 @@ To help present a readable tree, the following implementation choices were made:
 * All rulesets are created at the top of the rulesets tree branch
 * Not published rulesets disappear from the top of the rulesets tree branch as soon as they are encapsulated. They are now visible only as child of their parent rulesets.
 
+Actions
++++++++
+
+Drag-and-drop
+^^^^^^^^^^^^^
+
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| dropped (A)   |                                                dropped over (B)                                                                               |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+|               | ruleset               | rule                  | moduleset             | module                | filterset             | filter                |
++===============+=======================+=======================+=======================+=======================+=======================+=======================+
+| **ruleset**   | A becomes a child of  | N/A                   | N/A                   | N/A                   | N/A                   | N/A                   |
+|               | B. If B is not        |                       |                       |                       |                       |                       |
+|               | published, A is no    |                       |                       |                       |                       |                       |
+|               | longer visible at the |                       |                       |                       |                       |                       |
+|               | head of the ruleset   |                       |                       |                       |                       |                       |
+|               | branch.               |                       |                       |                       |                       |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| **rule**      | A is copied from the  | N/A                   | N/A                   | N/A                   | N/A                   | N/A                   |
+|               | parent ruleset to the |                       |                       |                       |                       |                       |
+|               | B ruleset.            |                       |                       |                       |                       |                       |
+|               |                       |                       |                       |                       |                       |                       |
+|               |                       |                       |                       |                       |                       |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| **moduleset** | N/A                   | N/A                   | N/A                   | N/A                   | N/A                   | N/A                   |
+|               |                       |                       |                       |                       |                       |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| **module**    | N/A                   | N/A                   | A is copied from its  | N/A                   | N/A                   | N/A                   |
+|               |                       |                       | parent moduleset to B |                       |                       |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| **filterset** | A is attached to B. if| N/A                   | N/A                   | N/A                   | A becomes a child of  | N/A                   |
+|               | B is explicit, it is  |                       |                       |                       | B. A default AND      |                       |
+|               | left explicit to avoid|                       |                       |                       | logical operator is   |                       |
+|               | unexpected detachment |                       |                       |                       | set and the ordering  |                       |
+|               | of B from nodes and   |                       |                       |                       | weight defaults to 0. |                       |
+|               | services it is        |                       |                       |                       |                       |                       |
+|               | currently attached to.|                       |                       |                       |                       |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+| **filter**    | N/A                   | N/A                   | N/A                   | N/A                   | A becomes a child of  | N/A                   |
+|               |                       |                       |                       |                       | B. A default AND      |                       |
+|               |                       |                       |                       |                       | logical operator is   |                       |
+|               |                       |                       |                       |                       | set and the ordering  |                       |
+|               |                       |                       |                       |                       | weight defaults to 0. |                       |
++---------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+
+Cloning
+^^^^^^^
+
+Rulesets are clonable.
+
+* A cloned ruleset's name is its ancestor's name suffixed with ``_clone``
+* A cloned ruleset retains its ancestor's
+	* publishing state
+	* contextual or explicit type
+	* filterset, if applicable
+	* child ruleset relations
+	* rules definitions
+* A cloned ruleset looses its ancestor's
+	* ownership information. It is owned only by the cloner private group so that the it is not visible from any node and services.
+	* parent ruleset relation. It appears at the head of the ruleset branch.
 
