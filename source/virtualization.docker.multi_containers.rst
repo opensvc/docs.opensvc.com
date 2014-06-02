@@ -330,6 +330,7 @@ Let's consider that you have to change from official image busybox/latest to goo
 .. note:: The image is in the local repository, with image id c8f0cfead624. We need this image id to modify OpenSVC service configuration file.
         
 **Remove the old container**::
+
         root@deb1:/opt/opensvc/lib# app.opensvc.com docker ps -a
         CONTAINER ID        IMAGE                      COMMAND               CREATED             STATUS                       PORTS                        NAMES
         c0a390acb80a        dhrp/sshd:latest           /usr/sbin/sshd -D     2 hours ago         Up 32 minutes                37.59.71.25:42222->22/tcp    app.opensvc.com.container.3
