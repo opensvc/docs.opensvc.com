@@ -1,8 +1,9 @@
 Docker Multi Containers
 =======================
 
-Docker is a great tool, but you may find it painful if you work with complex applications that rely on multiple docker containers. You may have to deal with different docker image providers, who will deliver you their respective part of the application. About your part, you have to make the whole containers work together, and also to be able to upgrade and test easily a new release of only one provider. You may also be responsible of scheduling the containers start/stop, this means that you have to take care of containers dependency and start/stop sequences.
-This tutorial will show up how you can deal with multiple containers management.
+Docker is a great tool, but you may find it painful if you work with complex applications that rely on multiple docker containers. You may have to deal with different docker image providers, who will deliver you their respective part of the application. You are to make all containers work together, and to be able to upgrade and test easily a new release of only one provider. You may also be responsible of scheduling the containers start and stop, meaning that you have to take care of containers dependencies during start and stop operations.
+
+This tutorial explains how you can ease multiple container management using the OpenSVC infrastructure.
 
 Pre-requisites
 --------------
@@ -10,7 +11,7 @@ Pre-requisites
 * OpenSVC service managing docker containers (As described in the `parent topic <virtualization.docker.html#installing-docker-as-an-opensvc-service>`_)
 * We assume that the docker images are available (It means that you already have docker pulled your needed images, check `here <virtualization.docker.html#service-startup>`_ if you need help for that part)
 
-Let's take an example and consider that we are responsible of hosting an application relying on 3 docker containers :
+Let's take an example and consider that we are responsible for hosting an application relying on 3 docker containers :
 
 * busybox 
 * shipyard/shipyard
@@ -65,11 +66,11 @@ Service Configuration File
         type = ext4
 
 
-We need to manage 3 containers to make our application working, so we declare 3 opensvc container objects, with ``docker`` type :
+We need to manage 3 containers to make this application working, so we declare 3 opensvc ``docker``-type container resources:
 
-* **[container#1]** is a busybox container, and has to be the first container to be launched for our application. We just need to spawn /bin/sh in the container.
-* **[container#2]** is the shipyard container and the second in sequence order. We have to present the docker socket inside the container (/opt/opensvc/var/app.opensvc.com/docker.sock will be available in the container as /docker.sock), and expose network ports (internal container port 8000 will be available on host port 8888)
-* **[container#3]** is the dhrp/sshd and must be the last container to be started. We present a data volume inside the container, and expose ssh port to host port 42222.
+* **[container#1]** is a busybox container, and has to be launched first for our application. We just need to spawn /bin/sh in the container.
+* **[container#2]** is the shipyard container and is second in the startup sequencing. We have to present the docker socket inside the container (``/opt/opensvc/var/app.opensvc.com/docker.sock`` will be available in the container as /docker.sock), and expose network ports (internal container port 8000 will be available on host port 8888)
+* **[container#3]** is the dhrp/sshd and must be the last container to start. We present a data volume inside the container, and expose ssh port to host port 42222.
 
 Service Startup
 ---------------
@@ -232,7 +233,7 @@ It is possible to manage containers together, either start or stop, by using the
 One container
 ^^^^^^^^^^^^^
 
-Like any other OpenSVC resource in the service configuration file, it is possible to manage it with its resource ID, by using the ``--rid resource_id`` option.
+Like any other OpenSVC resource in the service configuration file, it is possible to manage it with its resource ID, by using the ``--rid <resource_id>`` option.
 
 ::
 
