@@ -426,7 +426,7 @@ About the promises
 
    virtualization.docker.multi_containers
    virtualization.docker.private_registry
-   virtualization.docker.relocalisation
+   virtualization.docker.relocation
    virtualization.docker.high_availability
    virtualization.docker.multiple_docker_instances
    virtualization.docker.disaster_recovery_plan
