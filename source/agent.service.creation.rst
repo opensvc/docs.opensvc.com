@@ -8,7 +8,6 @@ Choose a service name
 
 Guidelines:
 
-*   Between 8 to 15 characters
 *   Make application code part of the name (first)
 *   Make service type (PRD, DEV) part of the name (second)
 *   Make the last part descriptive of the application role (web, transco)
@@ -32,7 +31,7 @@ Select a service mode
 
 Where virtualisation is unwanted : low-latency applications, restrictive product compatibility matrices, ...
 
-.. function:: zone, lxc, vz, jail
+.. function:: zone, lxc, vz, jail, docker
 
 Prefered mode where it is supported : quite low-latency, low mem and cpu overhead, good control of virtual system from the host system.
 
