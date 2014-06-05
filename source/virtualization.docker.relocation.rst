@@ -1,5 +1,5 @@
-Docker Relocalisation
-=====================
+Docker Relocation
+=================
 
 Why would I need to relocate my Docker infrastructure ? It works fine ! Actually, there are many reasons that can lead you to a service relocation :
 
