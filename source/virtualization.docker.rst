@@ -68,6 +68,16 @@ OpenSVC Installation
 
 Please follow the steps described in `OpenSVC installation <howto.getting.started.html#opensvc-installation>`_
 
+Quick links to OpenSVC software installation
+
+**DEB**::
+
+        curl -o /tmp/opensvc.latest.deb http://repo.opensvc.com/deb/current && dpkg -i /tmp/opensvc.latest.deb
+
+**RPM**::
+
+        curl -o /tmp/opensvc.latest.rpm http://repo.opensvc.com/rpms/current && rpm -ivh /tmp/opensvc.latest.rpm
+
 Service configuration
 =====================
 
