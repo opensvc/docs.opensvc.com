@@ -199,7 +199,7 @@ To workaround those problems, OpenSVC software use a concept named "scoping". Th
 Replicating datas
 ^^^^^^^^^^^^^^^^^
 
-One of the great OpenSVC feature is that it is very modular about data replication, you just have to declare a ``sync#X`` section, with a supported type, and you're done. Type corresponds to accurate replication driver like drdb, dds, netapp snapmirror, emc srdf, hp 3par remote copy... Each setup is just a question of teaching OpenSVC how to deal with your storage technology. Please consult `storage section <storage.html>`_ to discover storage technologies supported. Feel free to contribute if your storage equipment is not already supported, or contact us if you prefer that we develop it to suits your needs.
+One of the great OpenSVC feature is that it is very modular about data replication, you just have to declare a ``sync#X`` section, with a supported type, and you're done. Type corresponds to accurate replication driver like drdb, dds, netapp snapmirror, emc srdf, hp 3par remote copy... Each setup is just a question of teaching OpenSVC how to deal with your storage technology. Please consult `Supported data replication modes <agent.feature.matrix.html#supported-data-replication-modes>`_ to discover storage technologies supported. Feel free to contribute if your storage equipment is not already supported, or contact us if you prefer that we develop it to suits your needs.
 
 Data replication method have to be choosen depending on multiple criterias:
 
