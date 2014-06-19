@@ -126,10 +126,13 @@ With STONITH::
 Where:
 
 *   '-a': add open-ha service
-*   param#1: service name, align to OpenSVC is not required, advised anyway
-*   param#2: primary node
-*   param#3: secondary node
-*   param#4: service init script
+*   param#1: service name, align to OpenSVC is not required, advised anyway (15 characters maximum)
+*   param#2: OpenSVC service start/stop script
+*   param#3: primary node
+*   param#4: secondary node
+*   param#5: pre-launch checkup script
+
+  * this script is executed before starting the service. If its return code is anything else than 0, the service startup is aborted. It is often used to trigger the STONITH
 
 Startup
 -------
