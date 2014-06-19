@@ -1,17 +1,17 @@
 Docker
 ******
 
-Docker (https://www.docker.io/) is a very promising container technology. If you're not already informed about it, it's really worth having a look at one of the multiple tutorials available, to discover all the benefits of this solution, that will drastically change the way applications are deployed on linux type systems. This tutorial explains how OpenSVC is complementary to docker. 
+Docker (https://www.docker.io/) is a very promising container technology. If you're not already informed about it, it's really worth having a look at one of the multiple tutorials available, to discover all the benefits of this solution, that will drastically change the way applications are deployed on linux type systems. This tutorial explains how OpenSVC open source free agent is complementary to docker. 
 
 This tutorial is useful for all people who want to answer those questions :
 
-* My application is built on 3 Docker images, how do I launch them together ?
-* How do I setup my own private Docker registry ?
-* How do I relocate my Docker infrastructure on another physical server ?
-* How do I build a Docker high availability infrastructure ?
-* How do I host multiple Docker installations on the same host (dev, test, preproduction, ...)
-* Lots of people use Docker in my company, how do I setup a disaster recovery solution ?
-* Lots of people use Docker in my company, how do I chargeback docker usage depending on image or container count or even used space ?
+* `My application is built on 3 Docker images, how do I launch them together ? <virtualization.docker.multi_containers.html>`_ 
+* `How do I setup my own private Docker registry ? <virtualization.docker.private_registry.html>`_
+* `How do I relocate my Docker infrastructure on another physical server ? <virtualization.docker.relocation.html>`_
+* `How do I build a Docker high availability infrastructure ? <virtualization.docker.high_availability.html>`_
+* `How do I host multiple Docker installations on the same host (dev, test, preproduction, ...) ? <virtualization.docker.multiple_docker_instances.html>`_
+* `Lots of people use Docker in my company, how do I setup a disaster recovery solution ? <virtualization.docker.disaster_recovery_plan.html>`_
+* `Lots of people use Docker in my company, how do I chargeback docker usage depending on image or container count or even used space ? <virtualization.docker.chargeback.html>`_
 
 OpenSVC product will be used to encapsulate docker's containers like any other vm/container already supported (like kvm, xen, lxc, zones, jails, hpvm, ovm, ...)
 
