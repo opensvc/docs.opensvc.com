@@ -33,7 +33,9 @@ Application resource definition
 Section syntax
 --------------
 
-Here is a complete application resource section::
+Here is a complete application resource section:
+
+::
 
 	[app#1]
 	script = weblogic
@@ -81,7 +83,9 @@ About subsets
 * The implicit subset name is ``subset#app``.
 * Scripts in a subset are executed either in parallel or serially (default).
 
-Here is a subset section::
+Here is a subset section:
+
+::
 
 	[subset#app:web]
 	parallel = true
@@ -106,7 +110,9 @@ Application launchers are installed in the directory pointed by ``/opt/opensvc/e
 
 In containers and virtual machines OpenSVC the launchers are installed in ``/svc/etc/init.d/`` in the container file tree.
 
-Application can be started and stopped without touching the other service resources with::
+Application can be started and stopped without touching the other service resources with:
+
+::
 
 	/opt/opensvc/etc/myservice stopapp
 	/opt/opensvc/etc/myservice startapp
@@ -119,7 +125,9 @@ Common launchers
 Crontab handler
 ---------------
 
-Services often come with specific schedules. Either they start their own private scheduler, or they use the main system scheduler. In the later case, services' cron jobs must be installed upon service start and removed upon service stop to make sure the jobs don't get scheduled on multiple nodes. The following launcher script can be used to do that on hosts with split crontab support. It installs and removes the crontabs in ``/opt/opensvc/etc/myservice.d/cron.d/``::
+Services often come with specific schedules. Either they start their own private scheduler, or they use the main system scheduler. In the later case, services' cron jobs must be installed upon service start and removed upon service stop to make sure the jobs don't get scheduled on multiple nodes. The following launcher script can be used to do that on hosts with split crontab support. It installs and removes the crontabs in ``/opt/opensvc/etc/myservice.d/cron.d/``:
+
+::
 
 	#!/bin/bash
 
@@ -175,7 +183,9 @@ Services often come with specific schedules. Either they start their own private
 
 Note that an additional safety net is needed to keep the cron jobs from failing after a node unclean reboot: all cron jobs must verify the presence of their executable file.
 
-Example::
+Example:
+
+::
 
 	22 23 * * * [ -x /myservice/app/jobs/job1 ] && /myservice/app/jobs/job1
 	23 23 * * * [ -x /myservice/app/jobs/job2 ] && /myservice/app/jobs/job2
