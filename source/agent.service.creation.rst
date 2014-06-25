@@ -70,13 +70,17 @@ Create configuration files
 
 Those are created automatically by the ``svcmgr create`` command. Experienced users will find it easier to start from a copy of the env file of an existing similar service. The following information describes the steps needed to create a service manually.
 
-Service configuration files are in ``/opt/opensvc/etc``. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts::
+Service configuration files are in ``/opt/opensvc/etc``. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts:
+
+::
 
 	/opt/opensvc/etc/unxdevweb01.mydomain.com -> ../bin/svcmgr
 	/opt/opensvc/etc/unxdevweb01.mydomain.com.env
 	/opt/opensvc/etc/unxtstsvc01.mydomain.com.d -> /unxtstscv01/etc/init.d
 
-or::
+or:
+
+::
 
 	/opt/opensvc/etc/unxtstsvc01.mydomain.com.d -> unxdevweb01.mydomain.com.dir
 	/opt/opensvc/etc/unxdevweb01.mydomain.com.dir
@@ -108,7 +112,9 @@ At that point you should describe your service's ip addresses, filesystems, disk
 Test
 ====
 
-You should now be able to run succesfully::
+You should now be able to run succesfully:
+
+::
 
 	/opt/opensvc/etc/gieprdweb01 print status
 	/opt/opensvc/etc/gieprdweb01 start
