@@ -47,7 +47,9 @@ In addition to the above instructions, services handled by a clusterware have to
 Open-HA
 -------
 
-Download open-ha from `here <http://repo.opensvc.com/>`_. The default location of all this program's files is :file:`/usr/local/cluster`. Before using any open-ha commands, you have to setup some environment variables::
+Download open-ha from `here <http://repo.opensvc.com/>`_. The default location of all this program's files is :file:`/usr/local/cluster`. Before using any open-ha commands, you have to setup some environment variables:
+
+::
 
    # export EZ=/usr/local/cluster
    # . /usr/local/cluster/env.sh
@@ -58,7 +60,9 @@ Setup
 Describe cluster nodes
 ----------------------
 
-In file :file:`/usr/local/cluster/conf/nodes`::
+In file :file:`/usr/local/cluster/conf/nodes`:
+
+::
 
    node108
    node109
@@ -80,7 +84,9 @@ OpenHA supported heartbeat types are :
 
 Heartbeats types can be mixed in the same OpenHA configuration
 
-To setup 3 multicast heartbeats, in file :file:`/usr/local/cluster/conf/monitor`::
+To setup 3 multicast heartbeats, in file :file:`/usr/local/cluster/conf/monitor`:
+
+::
 
    node108  net  eth1  239.131.50.10    1780  60
    node108  net  eth2  239.131.51.10    1780  60
@@ -115,11 +121,15 @@ With this setup :
 Add services
 ------------
 
-Without STONITH::
+Without STONITH:
+
+::
 
    $EZ_BIN/service -a svc1 /opt/opensvc/etc/svc_name.cluster node108 node109 /bin/true
 
-With STONITH::
+With STONITH:
+
+::
 
    $EZ_BIN/service -a svc1 /opt/opensvc/etc/svc_name.cluster node108 node109 /opt/opensvc/etc/svc_name.stonith
 
@@ -137,13 +147,17 @@ Where:
 Startup
 -------
 
-Make sure the heartbeat daemons are setup for startup at boot. If not, depending on your system, apply some commands simalar to::
+Make sure the heartbeat daemons are setup for startup at boot. If not, depending on your system, apply some commands simalar to:
+
+::
 
    ln -s /usr/local/cluster/ezha /etc/rc3.d/S99cluster
    ln -s /usr/local/cluster/ezha /etc/rc0.d/K01cluster
    ln -s /usr/local/cluster/ezha /etc/rcS.d/K01cluster
 
-Then run::
+Then run:
+
+::
 
    /usr/local/cluster/ezha start
 
@@ -165,7 +179,9 @@ Use
 Querying
 --------
 
-Display the service cluster status::
+Display the service cluster status:
+
+::
 
    # /usr/local/cluster/bin/service -s
    service       owned_by  nodeA        nodeB
@@ -192,7 +208,9 @@ FROZEN_START   state reached after freezing through open-ha a stopped service. o
 Trigger a failover
 ------------------
 
-When a service is handled to any heartbeat daemon, you must not use stop/start OpenSVC commands to drive this service: the heartbeat daemon being in charge, you must use its command set only. On the node where the service is RUNNING::
+When a service is handled to any heartbeat daemon, you must not use stop/start OpenSVC commands to drive this service: the heartbeat daemon being in charge, you must use its command set only. On the node where the service is RUNNING:
+
+::
 
    # /usr/local/cluster/bin/service -A mysvc freeze-stop
    # /usr/local/cluster/bin/service -A mysvc unfreeze
@@ -205,7 +223,9 @@ Resource monitoring can be setup to trigger a service failover upon service reso
 Flag resources for monitoring
 -----------------------------
 
-A subset of the service's resources can be flagged for monitoring through::
+A subset of the service's resources can be flagged for monitoring through:
+
+::
 
    [res#1]
    monitor = True
@@ -216,7 +236,9 @@ A subset of the service's resources can be flagged for monitoring through::
 Schedule resource monitoring
 ----------------------------
 
-The ``resource_monitor`` action must be scheduled. For example in :file:`/etc/cron.d/opensvc`::
+The ``resource_monitor`` action must be scheduled. For example in :file:`/etc/cron.d/opensvc`:
+
+::
 
    * * * * * root [ -x /opt/opensvc/bin/allservices ] && /opt/opensvc/bin/allservices resource_monitor >/dev/null 2>&1
 
@@ -253,14 +275,18 @@ Stonith methods are implemented as resource drivers.
 Ilo stonith driver
 ------------------
 
-In service configuration file::
+In service configuration file:
+
+::
 
    [stonith#1]
    type = ilo
    target@node1 = node2-ilo
    target@node2 = node1-ilo
 
-The Ilo stonith driver uses key-based ssh authentication. The specific key can be pointed by the following configuration in :file:`etc/auth.conf`::
+The Ilo stonith driver uses key-based ssh authentication. The specific key can be pointed by the following configuration in :file:`etc/auth.conf`:
+
+::
 
    [node1-ilo]
    username = opensvc
