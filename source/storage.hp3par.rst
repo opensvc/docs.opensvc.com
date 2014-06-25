@@ -4,7 +4,7 @@ HP 3PAR Replication
 Introduction
 ============
 
-.. figure:: http://www.opensvc.com/init/static/opensvc_geocluster_hp_3par.png
+.. figure:: _static/opensvc_geocluster_hp_3par.png
    :align:  center
 
 HP 3Par arrays implement block level data replication between 2 or more arrays. This product is called "HP 3Par Remote Copy Software". This feature allow opensvc to drive services using a remote copy group, monitoring replication state at the array level, handling remote copy group "reverse" action, dealing with incremental updates when needed. This kind of service is often used to build metrocluster or geocluster systems, drastically lowering time needed to relocate production to another location, with application level granularity, and improving overall IT availability. The following documentation presents the configuration of such a service. This setup just require using the OpenSVC agent, which is free of charge.
@@ -80,7 +80,9 @@ Service configuration file
 
 Now it's time to explain OpenSVC software that the service is relying on HP 3Par storage volumes.
 
-If you are in a hurry, the config section to append to the ``service.env`` file is::
+If you are in a hurry, the config section to append to the ``service.env`` file is:
+
+::
 
 	[sync#1]
 	type = hp3par
@@ -92,7 +94,9 @@ If you are in a hurry, the config section to append to the ``service.env`` file 
 	sync_max_delay = 5
 
 
-Below is explained each configuration option::
+Below is explained each configuration option:
+
+::
 
 	#
 	# HP 3Par Remote Copy
@@ -137,7 +141,9 @@ OpenSVC Operations
 Query service status
 --------------------
 
-On node1 (production side)::
+On node1 (production side):
+
+::
 
 	root@node1:~ # svc1.opensvc.com print status
 	svc1.opensvc.com
@@ -156,7 +162,9 @@ On node1 (production side)::
 All ressources are up (except hb, which is not used here, because optional OpenHA sofware is not dealing with service high availability)
 
 
-On node2 (disaster recovery side)::
+On node2 (disaster recovery side):
+
+::
 
         root@node2:~ # svc1.opensvc.com print status
         svc1.opensvc.com
@@ -358,7 +366,7 @@ Introduction
 
 Considering an infrastructure where servers are segregated in 2 zones, internal, and dmz, every host in the internal lan is capable of connecting to the HP 3Par array. Therefore, there is a problem with servers located in the dmz zone. ssh traffic need to be opened from every host in dmz to HP 3Par array, which is located in the internal network. If we add the fact that the default role for opensvc user in the HP 3Par array is very permissive, we can say that this setup is not secured and highly increase risk of data loss if someone manage to get access to the HP 3Par array from inside the dmz.
 
-.. figure:: http://www.opensvc.com/init/static/proxy_hp_3par_opensvc.png
+.. figure:: _static/proxy_hp_3par_opensvc.png
    :width: 500px
    :align:  center
 
