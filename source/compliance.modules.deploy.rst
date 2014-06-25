@@ -19,7 +19,9 @@ This chapter describes the last method.
 Initialize the repository
 =========================
 
-The compliance repository file tree must organized as::
+The compliance repository file tree must organized as:
+
+::
 
 	ROOT
 	+- current -> compliance.tar.gz
@@ -45,14 +47,18 @@ The repository must be known to the agent. This set up is done with either the n
 
         This parameter allows to set up a URI pointing to a pure OpenSVC agent compliance repository. If specified node.repocomp overrides node.repo.
 
-Example::
+Example:
+
+::
 
         nodemgr set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
 
 Updating the modules
 ====================
 
-The update command is::
+The update command is:
+
+::
 
 	nodemgr updatecomp
 
