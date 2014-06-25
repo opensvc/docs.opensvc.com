@@ -4,7 +4,7 @@ Symmetrix clones
 Introduction
 ============
 
-.. figure:: http://www.opensvc.com/init/static/symclone.png
+.. figure:: _static/symclone.png
    :align:  center
 
 EMC Symmetrix arrays clones allow multi-target block device replication, splitting a set of cloned devices, resyncing and merging changes on a clone set to its source set. After the initial full copy, all resyncs are delta-based. These excellent features allow opensvc to drive services using a cloned device set, handling the splitting on start-up and providing a simple command for resync and merge-back. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
