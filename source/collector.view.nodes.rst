@@ -11,7 +11,7 @@ This view presents nodes information. Part of which is collected from the nodes 
 Screenshot
 ==========
 
-.. figure:: http://www.opensvc.com/init/static/nodes.png
+.. figure:: _static/nodes.png
 
 Tools
 =====
