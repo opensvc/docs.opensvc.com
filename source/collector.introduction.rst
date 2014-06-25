@@ -22,7 +22,7 @@ Navigation
 
 Data views are accessed through the tabulations in the site's pages header.
 
-.. image:: http://www.opensvc.com/init/static/tabs.png
+.. image:: _static/tabs.png
 
 Views
 =====
@@ -94,7 +94,7 @@ Service tabs
 
 In all views, clicking on a service name will open the service tabs to display the most comprehensive data set the collector knows about this service.
 
-.. figure:: http://www.opensvc.com/init/static/doc_collector_svc_tabs.png
+.. figure:: _static/doc_collector_svc_tabs.png
 
 properties
 ++++++++++
@@ -170,7 +170,7 @@ topology
 
 Sketches service-nodes-storage-sites relationships
 
-.. figure:: http://www.opensvc.com/init/static/doc_collector_svc_tabs_topo.png
+.. figure:: _static/doc_collector_svc_tabs_topo.png
 
 Node tabs
 ---------
@@ -182,7 +182,7 @@ server, os, mem, cpu, location, power
 
 Information displayed in these tabs are extracted from the asset table. Assets can be loaded from a tiers enterprise asset manager or filled-in manually.
 
-.. figure:: http://www.opensvc.com/init/static/doc_collector_node_tabs.png
+.. figure:: _static/doc_collector_node_tabs.png
 
 stats
 +++++
