@@ -117,7 +117,7 @@ Common launchers
 ================
 
 Crontab handler
-+++++++++++++++
+---------------
 
 Services often come with specific schedules. Either they start their own private scheduler, or they use the main system scheduler. In the later case, services' cron jobs must be installed upon service start and removed upon service stop to make sure the jobs don't get scheduled on multiple nodes. The following launcher script can be used to do that on hosts with split crontab support. It installs and removes the crontabs in ``/opt/opensvc/etc/myservice.d/cron.d/``::
 
