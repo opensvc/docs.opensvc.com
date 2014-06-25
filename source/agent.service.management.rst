@@ -135,7 +135,9 @@ All action logs are multiplexed to:
 Examples
 ========
 
-Print services status of a node::
+Print services status of a node:
+
+::
 
 	[root@node111 ~]# /opt/opensvc/bin/svcmon
 	service     service  container container ip        disk      fs        overall  
@@ -146,7 +148,9 @@ Print services status of a node::
 	aasprdora01 PRD      hosted    n/a       down      down      down      down     
 	aasprdosvc  PRD      hosted    n/a       up        up        up        up       
 
-Print resource status of a service::
+Print resource status of a service:
+
+::
 
 	[root@node111 ~]# /opt/opensvc/etc/gieprdtransco print_status
 	fs /dev/mapper/gieprdtransco-moteurs@/gieprdtransco/moteurs            up
@@ -161,7 +165,9 @@ Print resource status of a service::
 	ip gieprdtransco@bond0                                                 up
 	overall                                                                up
 
-Stop of a hosted Oracle service::
+Stop of a hosted Oracle service:
+
+::
 
 	[root@node111 ~]# /opt/opensvc/etc/aasprdora01 stop
 	* APP - INFO - spawn: /opt/opensvc/etc/aasprdora01.d/K50oracle stop
@@ -173,7 +179,9 @@ Stop of a hosted Oracle service::
 	* DISK.VG - INFO - vgchange -a n aasprdora01
 	* IP - INFO - ifconfig bond0:2 down
 
-Start of an HP-VM service::
+Start of an HP-VM service:
+
+::
 
 	2010-01-20 10:05:40,955 - DISK.VG - INFO - mksf -r -C disk -I 18 /dev/rdisk/vm089_system
 	* DISK.VG - INFO - mksf -r -C disk -I 15 /dev/rdisk/vm089_system2
@@ -206,7 +214,9 @@ Start of an HP-VM service::
 	* APP - INFO - spawn: /usr/bin/ssh vm089 /svc/etc/init.d/S80foo start
 	* APP - INFO - start done in 0:00:00.304998 - ret 0 - logs in /var/tmp/svc_aastmphpux_S80foo.log
 
-Start of an Xen service::
+Start of an Xen service:
+
+::
 
 	cgaliber@dell opensolaris:/$ pfexec /opt/opensvc/etc/xosolglo1.opensvc.com start
 	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --register-ignore --param-sark=0x114366380227 /dev/rdsk/xosolglo1-data
