@@ -55,7 +55,9 @@ Send patches with:
 With msmtp, with git send-email
 -------------------------------
 
-Install :command:`git-send-email`, and :command:`msmtp` if you have to use Gmail SMTP (no local MTA configured)::
+Install :command:`git-send-email`, and :command:`msmtp` if you have to use Gmail SMTP (no local MTA configured):
+
+::
 
     sudo apt-get install git-email
     sudo apt-get install msmtp
