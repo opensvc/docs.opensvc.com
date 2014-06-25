@@ -17,11 +17,15 @@ This chapter describes the last method.
 Initialize the mirror
 =====================
 
-A mirror can be set up using::
+A mirror can be set up using:
+
+::
 
 	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
 
-The resulting file tree must organized as::
+The resulting file tree must organized as:
+
+::
 
 	repo.opensvc.com/
 	+- deb/
@@ -55,14 +59,18 @@ The repository must be known to the agent. This set up is done with either the n
 
 	This parameter allows to set up a URI pointing to a pure OpenSVC agent packages repository. If specified node.repopkg overrides node.repo.
 
-Example::
+Example:
+
+::
 
 	nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
 
 Updating the agent
 ==================
 
-The update command is::
+The update command is:
+
+::
 
 	nodemgr updatepkg
 
