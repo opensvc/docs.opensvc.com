@@ -11,7 +11,7 @@ Source and targets maintain a state file to identify the last incremental synchr
 Delta generation
 ================	
 
-.. figure:: http://www.opensvc.com/init/static/dds.png
+.. figure:: _static/dds.png
    :align:  left
 
 dds reads the snap1 (oldest) snapshot cow table. For each changed chunk, fetch chunk data from snap2. In the diagram, chunk1 has not changed since snap2 creation, so data is actually read from origin, whereas chunk4 has changed since snap2 creation, so data is read from snap2 cow segment.
