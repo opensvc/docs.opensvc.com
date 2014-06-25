@@ -4,7 +4,7 @@ HP StorageWorks EVA snapshots
 Introduction
 ============
 
-.. figure:: http://www.opensvc.com/init/static/evasnap.png
+.. figure:: _static/evasnap.png
    :align:  center
 
 The EVA arrays snapshots driver allow multi-target block device replication and support the 'syncresync' action which automates the snapshot recreation and presentation to hosts. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
@@ -45,7 +45,9 @@ Pre-requisites
 
 The sssu binary must be installed on the node and symlinked from /opt/opensvc/bin/sssu. An /opt/opensvc/etc/sssu.conf must exist and contain credentials to access the Command View manager for each array. This sssu.conf file permissions should be 600 and owned by root. OpenSVC takes care of obfuscating the password in the output, local logs, and logs sent to the collector.
 
-Example sssu.conf::
+Example sssu.conf:
+
+::
 
 	[EVA11]
 	manager = manager.opensvc.com
