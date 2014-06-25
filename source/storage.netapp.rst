@@ -184,7 +184,9 @@ Trust keys
 
 Trust all PRD nodes root public keys on all filers. Trust DRP nodes root public keys only on their local filer.
 
-Append the keys to :file:`/nasprd/vol/vol0/etc/sshd/opensvc/.ssh/authorized_keys2`::
+Append the keys to :file:`/nasprd/vol/vol0/etc/sshd/opensvc/.ssh/authorized_keys2`:
+
+::
 
 	$ cat /nasprd/vol/vol0/etc/sshd/opensvc/.ssh/authorized_keys2
 	ssh-dss AAAAB3NzaC1kc3MAAACBAMGX7dH ... == root@vm5
