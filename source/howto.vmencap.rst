@@ -40,7 +40,9 @@ Follow the :ref:`agent.service.creation` guide.
 Customize the service env file
 ==============================
 
-A typical VM service env file should look like::
+A typical VM service env file should look like:
+
+::
 
 	[default]
 	app = ERP
@@ -132,7 +134,9 @@ This step is recommended but not mandatory. OpenSVC command set allows to start 
 Test
 ====
 
-You should now be able to run succesfully::
+You should now be able to run succesfully:
+
+::
 
 	/opt/opensvc/etc/yoursvc print_status
 	/opt/opensvc/etc/yoursvc push
