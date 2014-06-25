@@ -48,14 +48,14 @@ Filters can be designed from the :menuselection:`Admin --> Filters` view.
 Column selector
 ---------------
 
-|video-icon| `Watch a video <http://www.youtube.com/watch?feature=player_embedded&v=8PLTJuEOHRs>`_
+|video-icon| `Watch the column demo video <http://www.youtube.com/watch?feature=player_embedded&v=8PLTJuEOHRs>`_
 
 View columns can be toggled on and off from the column selector. Each view has a default set of column displayed. User column selection is stored in database, thus persistent across user sessions and different browsing devices.
 
 Column filters bar
 ------------------
 
-|video-icon| `Watch a video <http://www.youtube.com/watch?feature=player_embedded&v=32pyu623U7A>`_
+|video-icon| `Watch the column filtering demo video <http://www.youtube.com/watch?feature=player_embedded&v=32pyu623U7A>`_
 
 Each column of the table supports filtering. Filters are applied upon ``<enter>`` in any filter box. Filter box expressions are AND'ed. Filter syntax supports :
 
@@ -175,7 +175,7 @@ Sketches service-nodes-storage-sites relationships
 Node tabs
 ---------
 
-|video-icon| `Watch a video <http://www.youtube.com/watch?feature=player_embedded&v=tEqKPRZ4YeA>`_
+|video-icon| `Watch the node demo video <http://www.youtube.com/watch?feature=player_embedded&v=tEqKPRZ4YeA>`_
 
 In all views, clicking on a node name will open the node tabs to display the most comprehensive data set the collector knows about this node.
 server, os, mem, cpu, location, power
