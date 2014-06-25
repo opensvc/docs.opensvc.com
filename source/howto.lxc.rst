@@ -14,7 +14,9 @@ Before moving on to the next step, you should have a couple of servers delivered
 Additional packages
 -------------------
 
-Install::
+Install:
+
+::
 
     apt-get install lxc bridge-utils python2.6 python2.5 debootstrap rsync lvm2 ntp python-soappy
 
@@ -23,7 +25,9 @@ And opensvc from http://repo.opensvc.com/deb/
 Ethernet bridge
 ---------------
 
-Create a backend bridge connected to a dummy interface. In ``/etc/network/interfaces`` add the following block and activate the bridge using ifup br0::
+Create a backend bridge connected to a dummy interface. In ``/etc/network/interfaces`` add the following block and activate the bridge using ifup br0:
+
+::
 
     auto br0
     iface br0 inet static
@@ -38,7 +42,9 @@ Create a backend bridge connected to a dummy interface. In ``/etc/network/interf
 Kernel parameters
 -----------------
 
-In ``/etc/sysctl.conf`` set the following parameters and reload the configuration using ``sysctl -p``::
+In ``/etc/sysctl.conf`` set the following parameters and reload the configuration using ``sysctl -p``:
+
+::
 
     # lxc routing
     net.ipv4.ip_forward=1
@@ -47,11 +53,15 @@ In ``/etc/sysctl.conf`` set the following parameters and reload the configuratio
 Cgroup setup
 ------------
 
-In ``/etc/fstab`` add the following line::
+In ``/etc/fstab`` add the following line:
+
+::
 
     none /cgroup cgroup defaults 0 0
 
-Then::
+Then:
+
+::
 
     mkdir /cgroup
     mount /cgroup
@@ -62,7 +72,9 @@ Preparing the service
 Disk setup
 ----------
 
-OVH servers come with a 4 GB root filesystem, a ~4 GB swap partition and the rest of the disk is allocated to /home. The /home filesystem can be replaced by a single physical volume. Create a volume group over this pv and one or a set of logical volumes for each container. Format the logical volumes using the filesystem that suits you. Mount the logical volume set of the first container to create::
+OVH servers come with a 4 GB root filesystem, a ~4 GB swap partition and the rest of the disk is allocated to /home. The /home filesystem can be replaced by a single physical volume. Create a volume group over this pv and one or a set of logical volumes for each container. Format the logical volumes using the filesystem that suits you. Mount the logical volume set of the first container to create:
+
+::
 
     umount /home
     vi /etc/fstab   # remove the /home entry
@@ -76,11 +88,15 @@ OVH servers come with a 4 GB root filesystem, a ~4 GB swap partition and the res
 Container creation
 ------------------
 
-Prepare the lxc container creation wrapper::
+Prepare the lxc container creation wrapper:
+
+::
 
     gzip -dc /usr/share/doc/lxc/examples/lxc-debian.gz >/tmp/lxc-debian
 
-Create the container rootfs::
+Create the container rootfs:
+
+::
 
     /tmp/lxc-debian -p /opt/opensvc_name
 
@@ -95,7 +111,9 @@ Basic container setup
 Create the container
 --------------------
 
-create a lxc config file as ``/tmp/lxc.conf`` containing::
+create a lxc config file as ``/tmp/lxc.conf`` containing:
+
+::
 
 	lxc.utsname = service_name
 	lxc.tty = 4
@@ -119,23 +137,31 @@ create a lxc config file as ``/tmp/lxc.conf`` containing::
 	lxc.cgroup.devices.allow = c 5:2 rwm
 	lxc.cgroup.devices.allow = c 254:0 rwm
 
-and create the container with::
+and create the container with:
+
+::
 
     lxc-create -f /tmp/lxc.conf -n service_name
 
-Start the container::
+Start the container:
+
+::
 
     lxc-start -n service_name
 
 Opensvc service creation
 ------------------------
 
-Trust the node root account to ssh-login into the container::
+Trust the node root account to ssh-login into the container:
+
+::
 
     mkdir /opt/opensvc_name/rootfs/root/.ssh
     cat /root/.ssh/id_dsa.pub >>/opt/opensvc_name/rootfs/root/.ssh/authorized_keys
 
-Create the service configuration file::
+Create the service configuration file:
+
+::
 
 	[default]
 	app = MYAPP
@@ -169,13 +195,17 @@ Create the service configuration file::
 OVH routing and ipfailover
 --------------------------
 
-create the trigger scripts store, which is synchronized across nodes::
+create the trigger scripts store, which is synchronized across nodes:
+
+::
 
 	mkdir -p /opt/opensvc/etc/opt/opensvc_name.dir
 	cd /opt/opensvc/etc/
 	ln -s /opt/opensvc/etc/opt/opensvc_name.dir /opt/opensvc/etc/opt/opensvc_name.d
 
-create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/ovh_routes``::
+create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/ovh_routes``:
+
+::
 
 	#!/bin/bash
 
@@ -203,7 +233,9 @@ create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/
 		;;
 	esac
 
-and ``/opt/opensvc/etc/opt/opensvc_name.dir/ipfailover``::
+and ``/opt/opensvc/etc/opt/opensvc_name.dir/ipfailover``:
+
+::
 
 	#!/usr/bin/python2.5
 
