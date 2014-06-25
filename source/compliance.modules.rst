@@ -55,15 +55,21 @@ Modules are installed in ``/opt/openvc/var/compliance``.
 File naming conventions
 -----------------------
 
-A module can be either a file or a directory tree. The top-level file or directory name must comply to the naming convention::
+A module can be either a file or a directory tree. The top-level file or directory name must comply to the naming convention:
+
+::
 
     [S][0-9]+[-]modname
 
-If the module top-level object is a directory, the file tree under it must be either::
+If the module top-level object is a directory, the file tree under it must be either:
+
+::
 
     [S][0-9]+[-]modname/main
 
-or::
+or:
+
+::
 
     [S][0-9]+[-]modname/scripts/main
 
