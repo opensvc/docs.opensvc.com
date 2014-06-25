@@ -15,7 +15,9 @@ Files
 
 The agent is installed in ``/opt/opensvc/`` on Unix and in ``%%ProgramFiles%%\opensvc\``  on Windows. This directory is referred to as ``<OSVCROOT>`` in this documentation.
 
-The package installs the following directory tree::
+The package installs the following directory tree:
+
+::
 
 	<OSVCROOT>/
 	<OSVCROOT>/etc
@@ -35,13 +37,17 @@ The package installs the following directory tree::
 Cron jobs
 =========
 
-The package installs the following cron jobs, in (by order of preference), ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``::
+The package installs the following cron jobs, in (by order of preference), ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``:
+
+::
 
 	0,10,20,30,40,50 * * * * [ -x /opt/opensvc/bin/svcmon ] && /opt/opensvc/bin/svcmon --updatedb --maxdelaydb 120 >/dev/null 2>&1
 	0,10,20,30,40,50 * * * * [ -x /opt/opensvc/bin/cron/opensvc ] && /opt/opensvc/bin/cron/opensvc >/dev/null 2>&1
 
 
-Linux and HP-UX also have a helper to gather statistics::
+Linux and HP-UX also have a helper to gather statistics:
+
+::
 
 	0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/perfagt.Linux ] && /opt/opensvc/bin/perfagt.Linux >/dev/null 2>&1
 
@@ -100,7 +106,9 @@ Schedules are defined in ``<OSVCROOT>/etc/node.conf``. The OpenSVC agent schedul
 |              | services                                     |              |                     |                 |
 +--------------+----------------------------------------------+--------------+---------------------+-----------------+
 
-A typical schedule definition would look like::
+A typical schedule definition would look like:
+
+::
 
 	[section name]
 	interval = 121
@@ -123,7 +131,9 @@ Configuration for collector usage
 
 By default, the collector is contacted by the node using the generic name ``dbopensvc`` on ports ``80`` and ``8000``. This name should be known to your prefered resolving mecanism : hosts, dns, ... If you choose to use the internet shared collector, the corresponding ip address must be set to the address of ``collector.opensvc.com``.
 
-To override the default collector's xmlrpc urls, you can set them in node.conf::
+To override the default collector's xmlrpc urls, you can set them in node.conf:
+
+::
 
 	<OSVCROOT>/bin/nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
 	<OSVCROOT>/bin/nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
@@ -131,12 +141,16 @@ To override the default collector's xmlrpc urls, you can set them in node.conf::
 
 This override is recommended for xmlrpc encryption.
 
-The collector requires the nodes to provide an authentication token (shared secret) with each request. The token is forged by the collector and stored on the node in ``node.conf``. The token initialization is handled by the command::
+The collector requires the nodes to provide an authentication token (shared secret) with each request. The token is forged by the collector and stored on the node in ``node.conf``. The token initialization is handled by the command:
+
+::
 
 	<OSVCROOT>/bin/nodemgr register
 
 
-Finally, you can accelerate the node discovery by forcing the execution of opensvc cron jobs after the package installation::
+Finally, you can accelerate the node discovery by forcing the execution of opensvc cron jobs after the package installation:
+
+::
 
 	<OSVCROOT>/bin/nodemgr --force pushasset
 	<OSVCROOT>/bin/nodemgr --force pushpkg
@@ -146,7 +160,9 @@ Finally, you can accelerate the node discovery by forcing the execution of opens
 	<OSVCROOT>/bin/nodemgr --force checks
 
 
-To disable collector communications, use::
+To disable collector communications, use:
+
+::
 
 	<OSVCROOT>/bin/nodemgr set --param node.dbopensvc --value None
 	<OSVCROOT>/bin/nodemgr set --param node.dbcompliance --value None
@@ -169,14 +185,18 @@ This setup tells LVM2 commands to activate only the objects tagged with the host
 /etc/lvm/lvm.conf
 -----------------
 
-Add the following root-level configuration node::
+Add the following root-level configuration node:
+
+::
 
 	tags {
 	    hosttags = 1
 	    local {}
 	}
 
-And add the ``local`` tag to all local volume groups. For example::
+And add the ``local`` tag to all local volume groups. For example:
+
+::
 
 	vgchange --addtag local rootvg
 
@@ -185,7 +205,9 @@ Finally you need to rebuild the initrd/initramfs to prevent shared vg activation
 /etc/lvm/lvm_{node}.conf
 ------------------------
 
-Create this file, {node} being the output of uname -n and add the following configuration::
+Create this file, {node} being the output of uname -n and add the following configuration:
+
+::
 
 	activation { volume_list = ["@local", "@{node}"] }
 
@@ -210,11 +232,15 @@ The provided OpenSVC executable installer brings everything except fcinfo tool.
 Silent Install
 --------------
 
-It's possible to trigger a silent install by using the /S (uppercase) command line switch::
+It's possible to trigger a silent install by using the /S (uppercase) command line switch:
+
+::
 	
 	OpenSVC.X.Y.exe /S
 
-There's also a command line option to specify the target installation folder (no quotes in folder name even with spaces inside)::
+There's also a command line option to specify the target installation folder (no quotes in folder name even with spaces inside):
+
+::
 
 	OpenSVC.X.Y.exe /S  /D=C:\My Path with spaces
 
@@ -226,7 +252,9 @@ Double click on OpenSVC.X.Y.exe and follow install wizard
 Upgrade
 -------
 
-Upgrading the OpenSVC package manually is the same as an installation from scratch::
+Upgrading the OpenSVC package manually is the same as an installation from scratch:
+
+::
 
 	OpenSVC.X.Z.exe /S
 
