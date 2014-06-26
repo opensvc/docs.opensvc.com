@@ -196,11 +196,15 @@ Some events require that you relocate your production from one site to another (
 
 Synthetically, our service is relocated from one datacenter to the other as easilly as running the commands below :
 
-**Production Side**::
+**Production Side**:
+
+::
 
 	svc1.opensvc.com stop
 
-**Disaster Recovery Side**::
+**Disaster Recovery Side**:
+
+::
 
 	svc1.opensvc.com start
 
@@ -213,7 +217,9 @@ This chapter will detail each steps needed, with checks, and status gathering, t
 
 Let's begin our service relocation by first checking that the production is running fine on the production site:
 
-**Production Side : node1@site1**::
+**Production Side : node1@site1**:
+
+::
 
 	root@node1:~ # svc1.opensvc.com print status
 	svc1.opensvc.com
@@ -231,7 +237,9 @@ Let's begin our service relocation by first checking that the production is runn
 
 As service is running fine (overall status is up), we can proceed and stop the service.
 
-**Production Side : node1@site1**::
+**Production Side : node1@site1**:
+
+::
 
 	root@node1:~ # svc1.opensvc.com stop
 	13:29:15 INFO    SVC1.OPENSVC.COM         logs from svc1.opensvc.com child service:
@@ -258,7 +266,9 @@ OpenSVC stops the service by turning off the LXC container, umounting filesystem
 
 We control the service status, every ressource is now down, except replication ones, which is the expected state.
 
-**Production Side : node1@site1**::
+**Production Side : node1@site1**:
+
+::
 
 	root@node1:~ # svc1.opensvc.com print status
 	svc1.opensvc.com
@@ -275,7 +285,9 @@ We control the service status, every ressource is now down, except replication o
 
 As replication is asynchronous, we will ensure that same data image is present on both sides (site1 and site2)
 
-**Production Side : node1@site1**::
+**Production Side : node1@site1**:
+
+::
 
 	root@node1:~ # svc1.opensvc.com syncupdate
 	13:30:26 INFO    SVC1.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
@@ -292,7 +304,9 @@ As replication is asynchronous, we will ensure that same data image is present o
 	
 .. note:: we are now sure that same datas are physically located in both arrays. We can safelly start the production at site2 with guaranty of no data loss (RPO=0)
 
-**Disaster Recovery Side : node2@site2**::
+**Disaster Recovery Side : node2@site2**:
+
+::
 
 	root@node2:~ # svc1.opensvc.com start
 	13:32:10 INFO    SVC1.OPENSVC.COM.SYNC#1  we are joined with hp3par1.opensvc.com array
@@ -326,7 +340,9 @@ As replication is asynchronous, we will ensure that same data image is present o
 
 .. note:: first lines of log show up the HP 3Par stuff. OpenSVC agent on node2 confirm the replication relation with array on site1 (hp3par1.opensvc.com). It stops the RCG, and reverse it, so as to promote site2 storage volume as read/write. Once HP 3Par task is done, node2 puts scsi reservation on hp3par2.opensvc.com, add lvm tag on vg_svc1, activate the lvm volume group, mount filesystem, and start LXC container. As you can see in the logs, time needed is no more than 15 seconds.
 
-**Disaster Recovery Side : node2@site2**::
+**Disaster Recovery Side : node2@site2**:
+
+::
 
 	root@node2:~ # svc1.opensvc.com syncresume
 	13:33:43 INFO    SVC1.OPENSVC.COM.SYNC#1  startrcopygroup MYRCG.r12345
@@ -336,7 +352,9 @@ As replication is asynchronous, we will ensure that same data image is present o
 
 Let's check the service state after relocation at site2:
 
-**Disaster Recovery Side : node2@site2**::
+**Disaster Recovery Side : node2@site2**:
+
+::
 
 	root@node2:~ # svc1.opensvc.com print status
 	svc1.opensvc.com
@@ -383,7 +401,9 @@ Prerequisites
 Configuration
 -------------
 
-Below is an example of config.py::
+Below is an example of config.py:
+
+::
 
 	cli = "/opt/3PAR/inform_cli_3.1.2/bin/cli"
 	ssl_key = "/srv/svcproxy.opensvc.com/ssl/server.key"
