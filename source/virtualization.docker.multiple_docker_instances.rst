@@ -5,7 +5,7 @@ If you are engaged in Docker at an enterprise scale level, you may have problems
 
 * My docker based application is working fine but I'd like to have multiple environments of an application, like Production, Test, Dev, Integration, ...
 * I would like all those environments to be segmented, so as to avoid common docker layers dependencies between multiple environments. I definitively want to segregate, especially to be able to safely test modifications while production is running
-* I know that 5 more projects are currently looking at Docker, and I will certainly have to host them on the same physial host.
+* I know that 5 more projects are currently looking at Docker, and I will certainly have to host them on the same physical host.
 * How do I implement security between Docker environments ?
 
 To solve those constraints, the OpenSVC approach is a good solution because Docker in OpenSVC service naturally provides environments segregation. As there is no limit on service count a single host, you can **stack segregated docker environments**, like described in the picture below.
