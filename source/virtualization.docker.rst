@@ -12,6 +12,7 @@ This tutorial is useful for all people who want to answer those questions :
 * `How do I host multiple Docker installations on the same host (dev, test, preproduction, ...) ? <virtualization.docker.multiple_docker_instances.html>`_
 * `Lots of people use Docker in my company, how do I setup a disaster recovery solution ? <virtualization.docker.disaster_recovery_plan.html>`_
 * `Lots of people use Docker in my company, how do I chargeback docker usage depending on image or container count or even used space ? <virtualization.docker.chargeback.html>`_
+* `What kind of Docker architecture could I use in my company ? <virtualization.docker.enterprise_architecture.html>`_
 
 OpenSVC product will be used to encapsulate docker's containers like any other vm/container already supported (like kvm, xen, lxc, zones, jails, hpvm, ovm, ...)
 
@@ -441,3 +442,4 @@ About the promises
    virtualization.docker.multiple_docker_instances
    virtualization.docker.disaster_recovery_plan
    virtualization.docker.chargeback
+   virtualization.docker.enterprise_architecture
