@@ -24,6 +24,7 @@ You can create your own objects and associated forms, and you are welcome to con
    compliance.objects.packages
    compliance.objects.process
    compliance.objects.rc
+   compliance.objects.svcconf
    compliance.objects.sysctl
    compliance.objects.users
    compliance.objects.vuln
