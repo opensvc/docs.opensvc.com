@@ -259,3 +259,40 @@ Upgrading the OpenSVC package manually is the same as an installation from scrat
 	OpenSVC.X.Z.exe /S
 
 The installer deals with installation directory detection, and upgrade software in the accurate folder. It's still a best practice to have a system/data backup before upgrading OpenSVC software.
+
+Mac OS X specificities
+======================
+
+CLI Install
+-----------
+
+::
+
+        curl -o /tmp/opensvc.latest.pkg http://repo.opensvc.com/macos-pkg/current  
+        installer -pkg /tmp/opensvc.latest.pkg  -target /
+
+
+CLI Uninstall
+-------------
+
+As Mac OS does not provide a clean way to remove packages, we do it by ourselves
+
+.. warning:: Backup any configuration file (/opt/opensvc/etc/) before removing them from the hard disk drive
+
+::
+        
+        rm -rf /opt/opensvc
+        rm -f /Library/LaunchDaemons/com.opensvc.svcmgr.plist
+        pkgutil --forget com.opensvc.agent
+        crontab -l | grep -v '/opt/opensvc/bin' > /tmp/cron.new ; crontab /tmp/cron.new
+
+CLI Upgrade
+-----------
+
+As other OS flavors, agent upgrade can be triggered by
+
+::
+
+        /opt/opensvc/bin/nodemgr updatepkg
+
+.. note:: this works only if repopkg is defined in ``/opt/opensvc/etc/node.conf`` file ( ``<OSVCROOT>/bin/nodemgr set --param node.repopkg --value http://repo.opensvc.com/`` )
