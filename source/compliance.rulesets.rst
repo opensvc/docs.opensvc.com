@@ -256,3 +256,11 @@ The creator can then add, delete, rename, change the value of rules without the 
 
 When the design session is over, the creator's can attach new groups to the ruleset and/or insert the ruleset as a child of a visible ruleset.
 
+Known Issues
+++++++++++++
+
+ARG_MAX / envp
+^^^^^^^^^^^^^^
+
+As OpenSVC is executed on Unix familly systems, it is dependant on system limits. Among them, ARG_MAX and envp maximum values can be achieved, causing various error messages. On Unix systems with low limit values, huge ruleset list presented to system can hit the envp limit (environment related), while complex ruleset with many informations inside can hit the ARG_MAX limit (argument related).
+You can get detailed informations on `Sven Mascheck's page <http://www.in-ulm.de/~mascheck/various/argmax/>`_ (mirror available `here <_static/argmax.html>`_)
