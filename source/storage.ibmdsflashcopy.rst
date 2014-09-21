@@ -52,6 +52,7 @@ Example auth.conf:
 	hmc2 =
 	username = opensvc
 
+Use dscli commands to create pwfile in /opt/opensvc/var/. The pwfile's name must be the same as the array. For exemple, /opt/opensvc/var/IBM.XXXX-XXXXXXX.pwfile
 
 Service configuration file
 --------------------------
@@ -89,12 +90,12 @@ Service configuration file
 	# optional. Default True. The recording target allow resyncs delta-based and restore delta only. One recording target is possible.
 	#
 	;recording = true
-	#
 	
 	# flash copy with recording and bgcopy options looks like delta-based clone feature
 	# flash copy without recording and bgcopy options looks like snapshot feature
 	# flash copy without recording option but with bgcopy option looks like full copy feature
 	
+	#
 	#
 	;sync_min_delay = 30
 	;sync_max_delay = 1440
