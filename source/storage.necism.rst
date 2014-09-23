@@ -9,7 +9,7 @@ Introduction
 
 The NEC arrays snapshots driver allow multi-target block device replication and support the 'syncresync' action which automates the Snapshot Volume and relink Link Volume. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
 
-A service with only necismsnap sync resources can be defined to drive the snapshots of other servers, just for the benefit of centralised logging and scheduling.
+A service with only necismsnap sync resources can be defined to drive the snapshots of other servers, just for the benefit of centralized logging and scheduling.
 
 Command set
 ===========
@@ -62,7 +62,7 @@ You can setup as many sync resources as needed to ensure a consistent replicatio
 NEC iSM snapshots configuration
 ===============================
 
-You have to create the Snapshot Volumes and Link Volumes manually once and link SV and LV to present them to thes hosts. Theses properties can then be set in the service env file to ensure the snapshots will always be created and presented using those same properties. This is important to make the snapshot resync as transparent as possible to the operating system, and not to trigger device renames.
+You have to create the Snapshot Volumes and Link Volumes manually once and link SV and LV to present them to the hosts. These properties can then be set in the service env file to ensure the snapshots will always be created and presented using those same properties. This is important to make the snapshot resync as transparent as possible to the operating system, and not to trigger device renames.
 
 Examples
 ========

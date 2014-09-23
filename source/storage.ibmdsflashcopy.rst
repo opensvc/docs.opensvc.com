@@ -7,9 +7,9 @@ Introduction
 .. figure:: _static/ibmdsflashcopy.png
    :align:  center
 
-IBM Flash copy allow multi-target block device replication. After create initial flash copy, the relation can persist. These features allow opensvc to drive services using a flash copy device set. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
+IBM Flash copy allow multi-target block device replication. After create initial flash copy, the relation can persist. These features allow opensvc to drive services using a flash copy device set. Such services are often used for maintenance, pre-production and performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
 
-A service with only flash copy sync resource can be defined to drive the clone of other servers, just for the benefit of centralised logging and scheduling.
+A service with only flash copy sync resources can be defined to drive the clone of other servers, just for the benefit of centralized logging and scheduling.
 
 Command set
 ===========
@@ -38,7 +38,7 @@ Pre-requisites
 
 The dscli commands must be installed in the standard location on the nodes running this service resource type.
 
-An /opt/opensvc/etc/auth.conf must exist and contain credentials to access the manager for each array. This auth.conf file permissions should be 600 and owned by root. OpenSVC takes care of obfuscating the password in the output, local logs, and logs sent to the collector.
+An /opt/opensvc/etc/auth.conf must exist and contain credentials to access the manager for each array. This auth.conf file permissions should be 600 and owned by root.
 
 Example auth.conf:
 
@@ -51,6 +51,15 @@ Example auth.conf:
 	username = opensvc
 
 Use dscli commands to create pwfile in /opt/opensvc/var/. The pwfile's name must be the same as the array. For exemple, /opt/opensvc/var/IBM.XXXX-XXXXXXX.pwfile
+
+Example:
+
+::
+
+	dscli managepwfile -action add -mc1 1.2.3.4 -mc2 1.2.3.5
+	                   -pwfile /opt/opensvc/var/IBM.2107-00AAA00.pwfile
+	                   -name opensvc -pw xxx
+
 
 Service configuration file
 --------------------------
@@ -99,7 +108,7 @@ You can setup as many sync resources as needed to ensure a consistent replicatio
 IBM DS flash copy configuration
 ===========================
 
-You have to create the persistent falsh copy manually once. This requires two existing devices.
+You have to create the persistent flash copy manually once. This requires two existing devices.
 
 Examples
 ========
