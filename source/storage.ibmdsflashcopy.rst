@@ -27,10 +27,8 @@ Status
     The last resync occured less than 'sync_max_delay' minutes ago.
 
 :command:`warn`
-    The last replication occured more than ‘sync_max_delay’ minutes ago.
-
-:command:`down`
-    Device are in a unexpected state or not present in the flash copy persistent pair list.
+    *  The last replication occured more than ‘sync_max_delay’ minutes ago.
+    *  Device are in a unexpected state or not present in the flash copy persistent pair list.
 
 Service configuration
 =====================
@@ -64,6 +62,7 @@ Service configuration file
 	#
 	;[sync#1]
 	;type = ibmdssnap
+	;sync_max_delay = 10512000
 	
 	#
 	# 'array'
@@ -95,11 +94,6 @@ Service configuration file
 	# flash copy without recording and bgcopy options looks like snapshot feature
 	# flash copy without recording option but with bgcopy option looks like full copy feature
 	
-	#
-	#
-	;sync_min_delay = 30
-	;sync_max_delay = 1440
-
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
 
 IBM DS flash copy configuration

@@ -10,6 +10,7 @@ Contents:
    storage.drbd
    storage.evasnap
    storage.ibmdsflashcopy
+   storage.necism
    storage.netapp
    storage.symclone
    storage.zfs
