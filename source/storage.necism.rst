@@ -53,7 +53,7 @@ Service configuration file
 	#
 	# 'devs'
 	#   mandatory. whitespace-separated list of devices to drive with this resource.
-	#   devices are specified as 'array Snapshot Vomlume identifier:array Link Volume identifier' 
+	#   devices are specified as 'array Snapshot Volume identifier:array Link Volume identifier' 
 	#
 	;devs = SOURCE_0001_SV006D:SOURCE_0001_LV00A6 SOURCE_0002_SV0055:SOURCE_0002_LV009E
 
