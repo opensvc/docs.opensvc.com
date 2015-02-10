@@ -162,3 +162,11 @@ mo_fr:
 mo: mo_fr
 
 trans: pot po mo
+
+templates:
+	@echo "Service configuration file template\n***********************************\n" | tee source/agent.template.env.rst
+	@for t in `echo /opt/opensvc/usr/share/doc/template.*.gz` ; do \
+	base_t=`basename $$t | sed -e "s/template.//" -e "s/.env.gz//"` ; \
+	echo "$$base_t\n----\n\n::\n\n" | tee -a source/agent.template.env.rst ; \
+	gzip -dc $$t | sed -e "s/^/	/" | tee -a source/agent.template.env.rst ; \
+	done
