@@ -347,6 +347,22 @@ Keywords
 
   * ``No``
 
+* **Format**
+
+  The definition used to format a SELECT input options label from the dictionaries of a Rest API resultset. The dictionaries keys are referenced through the dash prefix.
+
+  Example:
+
+  * The ``#mac (#intf)`` format would render a label like ``01:02:03:04:05:06 (eth0)`` from a ``{"mac": "01:02:03:04:05:06", "intf": "eth0"}`` dictionary.
+
+* **Value**
+
+  The definition used to format a SELECT input options value from the dictionaries of a Rest API resultset. The dictionaries keys are referenced through the dash prefix.
+
+  Example:
+
+  * The ``#mac`` value would set a value of ``01:02:03:04:05:06`` from a ``{"mac": "01:02:03:04:05:06", "intf": "eth0"}`` dictionary.
+
 * **Function**
 
   The function parameter can be used to feed dynamic content in the form input. The collector supports two fetching methods: internal functions exposed as jsonrpc (deprecate), and the Rest API.
