@@ -210,6 +210,10 @@ Keywords
 
   The form-wide unique identifier of this input. Other inputs can refer to this identifier when defining constraints or triggers as ``#this_id``.
 
+* **Key**
+
+  If multiple inputs provide the same dictionary key, the ``Key`` parameter can be set to define its value as the dictionary key in addition to the ``Id`` key. Thus a script consuming the output can use the predictible ``Key`` key, whereas the collector still has the ``Id`` key available to redisplay the submitted form.
+
 * **Label**
 
   The label displayed next to the input in form edition mode.
