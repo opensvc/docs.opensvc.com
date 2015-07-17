@@ -16,7 +16,7 @@ Service management features by operating system
 |             | * sync         |               |               |               |              |              |            |            |
 +-------------+----------------+---------------+---------------+---------------+--------------+--------------+------------+------------+
 | containers  | * lxc          | * zone        | * hpvm        |               | * jail       | * vbox       |            |            |
-|             | * openvz       | * ldom        |               |               |              |              |            |            |
+|             | * openvz       | * ldom        | * srp         |               |              |              |            |            |
 |             | * xen          | * xen         |               |               |              |              |            |            |
 |             | * kvm          | * vbox        |               |               |              |              |            |            |
 |             | * vbox         |               |               |               |              |              |            |            |
