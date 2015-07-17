@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenSVC'
-copyright = u'2012, OpenSVC SARL'
+copyright = u'2015, OpenSVC SARL'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -81,7 +81,7 @@ exclude_patterns = []
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+#pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -91,7 +91,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'opensvc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -99,7 +99,7 @@ html_theme = 'default'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = ["_theme"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -229,7 +229,7 @@ man_pages = [
 epub_title = u'OpenSVC reference book'
 epub_author = u'Christophe Varoqui'
 epub_publisher = u'Christophe Varoqui'
-epub_copyright = u'2012, OpenSVC SARL'
+epub_copyright = u'2015, OpenSVC SARL'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

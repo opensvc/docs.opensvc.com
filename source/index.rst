@@ -1,17 +1,19 @@
-Welcome to OpenSVC documentation!
-=================================
+OpenSVC documentation
+=====================
 
-Translations:
+Translations
+------------
 
-+----------------------------+-----------------------------+
-| Country                    | Link                        |
-+============================+=============================+
-| .. figure:: _static/us.png | http://docs.opensvc.com/    |
-+----------------------------+-----------------------------+
-| .. figure:: _static/fr.png | http://docs.opensvc.com/fr/ |
-+----------------------------+-----------------------------+
+* .. figure:: _static/us.png
 
-Contents:
+  http://docs.opensvc.com/
+
+* .. figure:: _static/fr.png
+
+  http://docs.opensvc.com/fr/
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
@@ -26,10 +28,4 @@ Contents:
    manpages
    collector
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
 

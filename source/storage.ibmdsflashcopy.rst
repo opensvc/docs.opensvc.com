@@ -15,20 +15,20 @@ Command set
 ===========
 
 :command:`syncresync`
-    Resyncflash (or rmflash/mkflash) action to pair source/target. This command verifies the service is down before proceeding.
+	* Resyncflash (or rmflash/mkflash) action to pair source/target. This command verifies the service is down before proceeding.
 
 :command:`syncresync --force`
-    Bypass the sync_min_delay protection.
+	* Bypass the sync_min_delay protection.
 
 Status
 ======
 
 :command:`up`
-    The last resync occured less than 'sync_max_delay' minutes ago.
+	* The last resync occured less than 'sync_max_delay' minutes ago.
 
 :command:`warn`
-    *  The last replication occured more than ‘sync_max_delay’ minutes ago.
-    *  Device are in a unexpected state or not present in the flash copy persistent pair list.
+	* The last replication occured more than ‘sync_max_delay’ minutes ago.
+	* Device are in a unexpected state or not present in the flash copy persistent pair list.
 
 Service configuration
 =====================
@@ -118,7 +118,9 @@ Resync a started service snapshots
 
 ::
 
-	# /opt/opensvc/etc/iiststibmds stop && /opt/opensvc/etc/iiststibmds syncresync && /opt/opensvc/etc/iiststibmds start
+	# /opt/opensvc/etc/iiststibmds stop && \
+          /opt/opensvc/etc/iiststibmds syncresync && \
+          /opt/opensvc/etc/iiststibmds start
 
 Resync a stopped service snapshots
 ----------------------------------
