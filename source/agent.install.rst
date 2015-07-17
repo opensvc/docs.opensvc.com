@@ -41,7 +41,6 @@ The package installs the following cron jobs, in (by order of preference), ``/et
 
 ::
 
-	0,10,20,30,40,50 * * * * [ -x /opt/opensvc/bin/svcmon ] && /opt/opensvc/bin/svcmon --updatedb --maxdelaydb 120 >/dev/null 2>&1
 	0,10,20,30,40,50 * * * * [ -x /opt/opensvc/bin/cron/opensvc ] && /opt/opensvc/bin/cron/opensvc >/dev/null 2>&1
 
 
