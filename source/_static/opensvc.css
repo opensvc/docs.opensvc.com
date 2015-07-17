@@ -48,7 +48,12 @@ table {
     border-color: transparent;
 }
 
-li.right {
+div.related li {
+  float: left;
+  margin-right: 3px;
+}
+
+div.related li.right {
   float: right;
   margin-right: 3px;
 }
