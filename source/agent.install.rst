@@ -96,14 +96,9 @@ Schedules are defined in ``<OSVCROOT>/etc/node.conf``. The OpenSVC agent schedul
 | checks       | Send to the collector the node checks        | [checks]     | 4am-6am daily       | Yes             |
 |              | results (fs_u, fs_i, vg_u, ...)              |              |                     |                 |
 +--------------+----------------------------------------------+--------------+---------------------+-----------------+
-| compliance   | Send to the collector the compliance modules | [comp]       | 2am-6am sundays     | Yes             |
-| check	       | checks results                               |              |                     |                 |
-+--------------+----------------------------------------------+--------------+---------------------+-----------------+
-| pushservices | Send to the collector the service            | [svcconf]    | 4am-6am daily       | Yes             |
-|              | configurations                               |              |                     |                 |
-+--------------+----------------------------------------------+--------------+---------------------+-----------------+
-| syncservices | Try a ``syncall`` action on all node's       | None         | 4am-6am daily       | No              |
-|              | services                                     |              |                     |                 |
+| node 	       | Send to the collector the compliance modules | [compliance] | 2am-6am sundays     | Yes             |
+| compliance   | checks results                               |              |                     |                 |
+| check	       |                                              |              |                     |                 |
 +--------------+----------------------------------------------+--------------+---------------------+-----------------+
 
 A typical schedule definition would look like:
@@ -112,19 +107,12 @@ A typical schedule definition would look like:
 
 	[section name]
 	interval = 121
-	days = ["saturday", "sunday"]
-	period = [["02:00", "04:00"], ["19:00", "21:00"]]
+        schedule = 02:00-04:00@120 sat,sun
 
 
 A reference ``node.conf`` file can be found on the node at ``<OSVCROOT>/usr/share/doc/node.conf``.
 
-The syncservices action schedule is defined by the individual sync resource definitions in service configuration files, where ``sync_interval``, ``sync_days`` and ``sync_period`` parameters are available.
-
 All actions except data syncs can be statistically delayed. The probability of running increases linearly from 25% to 100% during the first half of the action allowed period. This delay helps level to collector load.
-
-.. warning::
-
-	The ``<OSVCROOT>/etc/.node.conf`` must not be edited by hand. It contains a cache of the computed schedules of all individual services' sync resources. As a cache, it is maintained by OpenSVC, and manual changes to this file would be overwritten.
 
 Configuration for collector usage
 =================================

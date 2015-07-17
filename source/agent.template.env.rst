@@ -7143,19 +7143,6 @@ fs
 	#
 	;size = foo
 	
-	#
-	# keyword:       tags
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: True
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#
-	;tags = foo
-	
 hb.LinuxHA
 ----
 
@@ -8044,6 +8031,365 @@ ip.crossbow
 	#
 	;post_syncresync = foo
 	
+ip
+----
+
+::
+
+
+	##############################################################################
+	#                                                                            #
+	# ip                                                                         #
+	#                                                                            #
+	##############################################################################
+	
+	[ip#0]
+	#
+	# keyword:       type
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None | crossbow
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  The opensvc ip driver name.
+	#
+	;type = None
+	
+	#
+	# keyword:       ipdev
+	# ----------------------------------------------------------------------------
+	#  required:     True
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The interface name over which OpenSVC will try to stack the service
+	#         ip. Can be different from one node to the other, in which case the
+	#         '@nodename' can be specified.
+	#
+	;ipdev = foo
+	
+	#
+	# keyword:       ipname
+	# ----------------------------------------------------------------------------
+	#  required:     True
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The DNS name of the ip resource. Can be different from one node to
+	#         the other, in which case '@nodename' can be specified. This is most
+	#         useful to specify a different ip when the service starts in DRP
+	#         mode, where subnets are likely to be different than those of the
+	#         production datacenter.
+	#
+	;ipname = foo
+	
+	#
+	# keyword:       zone
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The zone name the ip resource is linked to. If set, the ip is
+	#         plumbed from the global in the zone context.
+	#
+	;zone = zone1
+	
+	#
+	# keyword:       netmask
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  If an ip is already plumbed on the root interface (in which case the
+	#         netmask is deduced from this ip). Mandatory if the interface is
+	#         dedicated to the service (dummy interface are likely to be in this
+	#         case). The format is decimal for IPv4, ex: 255.255.252.0, and octal
+	#         for IPv6, ex: 64.
+	#
+	;netmask = 255.255.255.0
+	
+	#
+	# keyword:       restart
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      0
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The agent will try to restart a resource n times before falling back
+	#         to the monitor action.
+	#
+	;restart = 0
+	
+	#
+	# keyword:       tags
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A list of tags. Arbitrary tags can be used to limit action scope to
+	#         resources with a specific tag. Some tags can influence the driver
+	#         behaviour. For example the 'encap' tag assigns the resource to the
+	#         encapsulated service.
+	#
+	;tags = foo
+	
+	#
+	# keyword:       subset
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Assign the resource to a specific subset.
+	#
+	;subset = foo
+	
+	#
+	# keyword:       monitor
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A monitored resource will trigger a node suicide if the service has
+	#         a heartbeat resource in up state
+	#
+	;monitor = False
+	
+	#
+	# keyword:       disable
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A disabled resource will be ignored on service startup and shutdown.
+	#
+	;disable = False
+	
+	#
+	# keyword:       optional
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Possible values are 'true' or 'false'. Actions on resource will be
+	#         tried upon service startup and shutdown, but action failures will be
+	#         logged and passed over. Useful for resources like dump filesystems
+	#         for example.
+	#
+	;optional = False
+	
+	#
+	# keyword:       always_on
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   nodes | drpnodes | nodes drpnodes
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a
+	#         list of nodes. Sets the nodes on which the resource is always kept
+	#         up. Primary usage is file synchronization receiving on non-shared
+	#         disks. Don't set this on shared disk !! danger !!
+	#
+	;always_on = nodes
+	
+	#
+	# keyword:       pre_start
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource start action
+	#
+	;pre_start = foo
+	
+	#
+	# keyword:       post_start
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource start action
+	#
+	;post_start = foo
+	
+	#
+	# keyword:       pre_stop
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource stop action
+	#
+	;pre_stop = foo
+	
+	#
+	# keyword:       post_stop
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource stop action
+	#
+	;post_stop = foo
+	
+	#
+	# keyword:       pre_syncnodes
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncnodes action
+	#
+	;pre_syncnodes = foo
+	
+	#
+	# keyword:       post_syncnodes
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncnodes action
+	#
+	;post_syncnodes = foo
+	
+	#
+	# keyword:       pre_syncdrp
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncdrp action
+	#
+	;pre_syncdrp = foo
+	
+	#
+	# keyword:       post_syncdrp
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncdrp action
+	#
+	;post_syncdrp = foo
+	
+	#
+	# keyword:       pre_syncresync
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncresync action
+	#
+	;pre_syncresync = foo
+	
+	#
+	# keyword:       post_syncresync
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncresync action
+	#
+	;post_syncresync = foo
+	
+	#
+	# keyword:       gateway
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: True
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  A zone ip provisioning parameter used in the sysidcfg formatting.
+	#         The format is decimal for IPv4, ex: 255.255.252.0, and octal for
+	#         IPv6, ex: 64.
+	#
+	;gateway = foo
+	
 loop
 ----
 
@@ -8859,19 +9205,6 @@ pool
 	#
 	;post_syncresync = foo
 	
-	#
-	# keyword:       tags
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#
-	;tags = foo
-	
 share.nfs
 ----
 
@@ -9588,26 +9921,7 @@ sync.btrfs
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -9616,23 +9930,10 @@ sync.btrfs
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -9961,26 +10262,7 @@ sync.dcsckpt
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -9989,23 +10271,10 @@ sync.dcsckpt
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -10333,26 +10602,7 @@ sync.dcssnap
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -10361,23 +10611,10 @@ sync.dcssnap
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -10730,26 +10967,7 @@ sync.dds
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -10758,23 +10976,10 @@ sync.dds
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -11072,26 +11277,7 @@ sync.docker
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -11100,23 +11286,10 @@ sync.docker
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -11444,26 +11617,7 @@ sync.evasnap
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -11472,23 +11626,10 @@ sync.evasnap
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -11829,26 +11970,7 @@ sync.hp3par
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -11857,23 +11979,10 @@ sync.hp3par
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -12216,26 +12325,7 @@ sync.ibmdssnap
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -12244,23 +12334,10 @@ sync.ibmdssnap
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -12544,26 +12621,7 @@ sync.necismsnap
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -12572,23 +12630,10 @@ sync.necismsnap
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -12916,26 +12961,7 @@ sync.netapp
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -12944,23 +12970,10 @@ sync.netapp
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -13386,26 +13399,7 @@ sync.rsync
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -13414,23 +13408,10 @@ sync.rsync
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -13764,26 +13745,7 @@ sync.symclone
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -13792,23 +13754,10 @@ sync.symclone
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -14121,26 +14070,7 @@ sync.symsrdfs
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -14149,23 +14079,10 @@ sync.symsrdfs
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -14529,26 +14446,7 @@ sync.zfs
 	;post_syncresync = foo
 	
 	#
-	# keyword:       sync_interval
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      30
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. If no set in a resource
-	#         section, fallback to the value set in the 'default' section. The
-	#         mecanism is enforced by a timestamp created upon each sync
-	#         completion in /opt/opensvc/var/sync/[service]![dst]
-	#
-	;sync_interval = 30
-	
-	#
-	# keyword:       sync_days
+	# keyword:       schedule
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -14557,23 +14455,10 @@ sync.zfs
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  Set the days this resource synchronization is allowed.
+	#  desc:  Set the this resource synchronization schedule. See
+	#         usr/share/doc/node.conf for the schedule syntax reference.
 	#
-	;sync_days = ["monday", "friday"]
-	
-	#
-	# keyword:       sync_period
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  Set the time ranges this resource synchronization is allowed.
-	#
-	;sync_period = [["04:00", "06:00"], ["18:00", "20:00"]]
+	;schedule = ["00:00-01:00@61 mon", "02:00-03:00@61 tue-sun"]
 	
 	#
 	# keyword:       sync_max_delay
@@ -14868,6 +14753,334 @@ vdisk
 	#         path@nodename can be used to to set up different path on each node.
 	#
 	;path = foo
+	
+vg.md
+----
+
+::
+
+
+	##############################################################################
+	#                                                                            #
+	# vg, type md                                                                #
+	#                                                                            #
+	##############################################################################
+	
+	[vg#0]
+	;type = md
+	
+	#
+	# keyword:       uuid
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  The md uuid to use with mdadm assemble commands
+	#
+	;uuid = foo
+	
+	#
+	# keyword:       vgname
+	# ----------------------------------------------------------------------------
+	#  required:     True
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  The name of the volume group
+	#
+	;vgname = foo
+	
+	#
+	# keyword:       restart
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      0
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The agent will try to restart a resource n times before falling back
+	#         to the monitor action.
+	#
+	;restart = 0
+	
+	#
+	# keyword:       tags
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A list of tags. Arbitrary tags can be used to limit action scope to
+	#         resources with a specific tag. Some tags can influence the driver
+	#         behaviour. For example the 'encap' tag assigns the resource to the
+	#         encapsulated service.
+	#
+	;tags = foo
+	
+	#
+	# keyword:       subset
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Assign the resource to a specific subset.
+	#
+	;subset = foo
+	
+	#
+	# keyword:       monitor
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A monitored resource will trigger a node suicide if the service has
+	#         a heartbeat resource in up state
+	#
+	;monitor = False
+	
+	#
+	# keyword:       disable
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A disabled resource will be ignored on service startup and shutdown.
+	#
+	;disable = False
+	
+	#
+	# keyword:       optional
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Possible values are 'true' or 'false'. Actions on resource will be
+	#         tried upon service startup and shutdown, but action failures will be
+	#         logged and passed over. Useful for resources like dump filesystems
+	#         for example.
+	#
+	;optional = False
+	
+	#
+	# keyword:       always_on
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   nodes | drpnodes | nodes drpnodes
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a
+	#         list of nodes. Sets the nodes on which the resource is always kept
+	#         up. Primary usage is file synchronization receiving on non-shared
+	#         disks. Don't set this on shared disk !! danger !!
+	#
+	;always_on = nodes
+	
+	#
+	# keyword:       pre_start
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource start action
+	#
+	;pre_start = foo
+	
+	#
+	# keyword:       post_start
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource start action
+	#
+	;post_start = foo
+	
+	#
+	# keyword:       pre_stop
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource stop action
+	#
+	;pre_stop = foo
+	
+	#
+	# keyword:       post_stop
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource stop action
+	#
+	;post_stop = foo
+	
+	#
+	# keyword:       pre_syncnodes
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncnodes action
+	#
+	;pre_syncnodes = foo
+	
+	#
+	# keyword:       post_syncnodes
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncnodes action
+	#
+	;post_syncnodes = foo
+	
+	#
+	# keyword:       pre_syncdrp
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncdrp action
+	#
+	;pre_syncdrp = foo
+	
+	#
+	# keyword:       post_syncdrp
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncdrp action
+	#
+	;post_syncdrp = foo
+	
+	#
+	# keyword:       pre_syncresync
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute before the resource syncresync action
+	#
+	;pre_syncresync = foo
+	
+	#
+	# keyword:       post_syncresync
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  A script to execute after the resource syncresync action
+	#
+	;post_syncresync = foo
+	
+	#
+	# keyword:       dsf
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      True
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  HP-UX only. 'dsf' must be set to false for LVM to use never-
+	#         multipathed /dev/dsk/... devices. Otherwize, ad-hoc multipathed
+	#         /dev/disk/... devices.
+	#
+	;dsf = True
+	
+	#
+	# keyword:       scsireserv
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     False
+	#
+	#  desc:  If set to 'true', OpenSVC will try to acquire a type-5 (write
+	#         exclusive, registrant only) scsi3 persistent reservation on every
+	#         path to disks of every disk group attached to this service. Existing
+	#         reservations are preempted to not block service start-up. If the
+	#         start-up was not legitimate the data are still protected from being
+	#         written over from both nodes. If set to 'false' or not set,
+	#         'scsireserv' can be activated on a per-resource basis.
+	#
+	;scsireserv = False
 	
 vg.rados
 ----

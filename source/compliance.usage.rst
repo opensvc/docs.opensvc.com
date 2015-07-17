@@ -13,9 +13,7 @@ The default schedule can be altered in ``/opt/opensvc/etc/node.conf``:
 ::
 
     [compliance]
-    comp_interval = 241
-    comp_period = ["02:00", "06:00"]
-    comp_days = ["sunday", "wednesday"]
+    schedule = 02:00-06:00@241 sun,wed
 
 Manual execution
 ================
