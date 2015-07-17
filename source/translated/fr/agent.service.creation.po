@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 36a02d66b0ce407489de2bc678604504
-#: ../../agent.service.creation.rst:22
+#: ../../agent.service.creation.rst:21
 msgid "Allocate generic account and ip addresses"
 msgstr "Attribuer un compte générique et une adresse internet"
 
 # afe7b2e4cd644cf7911f42fab7ac7b3e
-#: ../../agent.service.creation.rst:52
+#: ../../agent.service.creation.rst:51
 msgid "App launchers in etc/init.d/"
 msgstr "Lanceurs applicatifs dans etc/init.d/"
 
 # e5dec207c836417ca85dfe9387b8158c
-#: ../../agent.service.creation.rst:60
+#: ../../agent.service.creation.rst:59
 msgid "Application data files"
 msgstr "Données de l'application"
 
 # f3e85e6205fb4e869145874de708f197
-#: ../../agent.service.creation.rst:107
+#: ../../agent.service.creation.rst:110
 msgid ""
 "At that point you should describe your service's ip addresses, filesystems, "
 "disk groups, file synchronizations ... The ``/opt/opensvc/usr/share/doc/"
@@ -46,18 +46,13 @@ msgstr ""
 "A ce point, vous devez décrire les adresses internet, les systèmes de "
 "fichiers, les groupes de disques, les synchronisations, ... de votre "
 "service. Le fichier-modèle ``/opt/opensvc/usr/share/doc/template.env`` "
-"illustre toutes les configurations possibles. La commande ``svcmgr create "
-"-s newsvc -i`` propose interactivement toutes ces configurations "
-"explique le rôle de chaque mot-clé, propose des valeurs par défaut, et "
-"valide la cohérence les valeurs saisies. Cette même commande en mode "
-"non-interactif peut être utilisée pour provisionner des services. Dans "
-"ce mode, les définitions de ressources sont passées sous forme de "
-"dictionnaires sérialisés au format JSON."
-
-# 11499d4e2fa74524aca1210870df95b7
-#: ../../agent.service.creation.rst:11
-msgid "Between 8 to 15 characters"
-msgstr "Entre 8 et 15 caractères"
+"illustre toutes les configurations possibles. La commande ``svcmgr create -s "
+"newsvc -i`` propose interactivement toutes ces configurations explique le "
+"rôle de chaque mot-clé, propose des valeurs par défaut, et valide la "
+"cohérence les valeurs saisies. Cette même commande en mode non-interactif "
+"peut être utilisée pour provisionner des services. Dans ce mode, les "
+"définitions de ressources sont passées sous forme de dictionnaires "
+"sérialisés au format JSON."
 
 # 7a8cfdfd0bab4645896087fc9c39dfe2
 #: ../../agent.service.creation.rst:7
@@ -65,51 +60,51 @@ msgid "Choose a service name"
 msgstr "Choisir un nom de service"
 
 # 1b6d9dbd71204589987f323835d56d9d
-#: ../../agent.service.creation.rst:86
+#: ../../agent.service.creation.rst:89
 msgid "Configuration files role"
 msgstr "Rôle des fichiers de configuration"
 
 # 2a98650364154b90b397e6d5d07f47ea
-#: ../../agent.service.creation.rst:44
+#: ../../agent.service.creation.rst:43
 msgid "Create a filesystem skeleton for the service"
 msgstr "Créer un squelette d'arborescence pour le service"
 
 # 2666649cfd2043db8bcc16ac699e3259
-#: ../../agent.service.creation.rst:70
+#: ../../agent.service.creation.rst:69
 msgid "Create configuration files"
 msgstr "Créer les fichiers de configuration"
 
 # 53ea68d73bb640b594cdedf3f1a8fe68
-#: ../../agent.service.creation.rst:105
+#: ../../agent.service.creation.rst:108
 msgid "Customize the service env file"
 msgstr "Personnaliser le fichier env du service"
 
 # d4b5dcd9236244d995d6c67aa26c767b
-#: ../../agent.service.creation.rst:19
+#: ../../agent.service.creation.rst:18
 msgid ""
 "Following this naming will help grasp importance, clients and role of "
 "service from the output of ``/opt/opensvc/bin/svcmon``"
 msgstr ""
-"Suivre cette nomenclature de service aide à percevoir l'importance, "
-"les utilisateurs et le rôle du service directement dans la sortie de "
-"la commande ``/opt/opensvc/bin/svcmon``"
+"Suivre cette nomenclature de service aide à percevoir l'importance, les "
+"utilisateurs et le rôle du service directement dans la sortie de la commande "
+"``/opt/opensvc/bin/svcmon``"
 
 # 075f1406865b468d96568ccad5477e5d
-#: ../../agent.service.creation.rst:62
+#: ../../agent.service.creation.rst:61
 msgid ""
 "For hosted service mode, prefer per-service private tools installations to "
 "enhance system/service insulation. This makes the service installation more "
 "painful, but there are no clients at this point, and it will make service "
 "relocation more reliable and operating system upgrades safer."
 msgstr ""
-"Pour les services en mode hosted, préférer l'installation privée des "
-"outils pour améliorer l'isolation du service par rapport au system hôte. "
-"Ce choix rend l'intégration du service plus pénible mais à ce point le "
-"service n'est pas encore utilisé et il rend les bascules plus fiables et "
-"les mises à jour du système hôte moins impactantes."
+"Pour les services en mode hosted, préférer l'installation privée des outils "
+"pour améliorer l'isolation du service par rapport au system hôte. Ce choix "
+"rend l'intégration du service plus pénible mais à ce point le service n'est "
+"pas encore utilisé et il rend les bascules plus fiables et les mises à jour "
+"du système hôte moins impactantes."
 
 # 4320bea771774e5fb802d0e9fea0aa97
-#: ../../agent.service.creation.rst:48
+#: ../../agent.service.creation.rst:47
 msgid ""
 "Give each service dedicated filesystems. Ideally one for data, one for tools "
 "(mysql, apache, ...) and one for launchers and eventually the virtual "
@@ -119,66 +114,69 @@ msgstr ""
 "les données, un pour les outils (mysql, apache, ...) et un pour les lanceurs "
 "et éventuellement l'instance de système d'exploitation du container. Nous "
 "recommandons l'organisation suivante :"
- 
+
 # 266e5ff289784f0f8d908873378fd140
 #: ../../agent.service.creation.rst:9
 msgid "Guidelines:"
 msgstr "Lignes directrices :"
 
 # ca86b31b353c463d81488690d0c09459
-#: ../../agent.service.creation.rst:46
+#: ../../agent.service.creation.rst:45
 msgid "Here is a set of guidelines you should respect."
 msgstr "Suit un jeu de lignes directrices qu'il serait bon de respecter."
 
 # 320c370e2d30432aaa893bcb1c8bb06a
-#: ../../agent.service.creation.rst:15
+#: ../../agent.service.creation.rst:14
 msgid ""
 "In case of multiple instance of similar services, happen a number as a suffix"
 msgstr ""
-"Dans le cas où plusieurs instance du même service cohabitent, suffixer d'un incrément numérique"
+"Dans le cas où plusieurs instance du même service cohabitent, suffixer d'un "
+"incrément numérique"
 
 # 07abac5b071c42b386a0888c217bfc85
-#: ../../agent.service.creation.rst:65
+#: ../../agent.service.creation.rst:64
 msgid "Install virtual host and applications"
 msgstr "Installer le container et les applications"
 
 # 09bc02cc769c42b1a9d049ee50188252
-#: ../../agent.service.creation.rst:12
+#: ../../agent.service.creation.rst:11
 msgid "Make application code part of the name (first)"
 msgstr "Intégrer le code applicatif dans le nom (première position)"
 
 # a77c1bb5c8fa4d9dbb977444fd320590
-#: ../../agent.service.creation.rst:13
+#: ../../agent.service.creation.rst:12
 msgid "Make service type (PRD, DEV) part of the name (second)"
 msgstr "Intégrer le type de service (PRD, DEV) dans le nom (deuxième position)"
 
 # e7a2833706de4edabe255765d10dd20c
-#: ../../agent.service.creation.rst:14
+#: ../../agent.service.creation.rst:13
 msgid "Make the last part descriptive of the application role (web, transco)"
-msgstr "Intégrer dans la dernière partie du nom une description fonctionnelle du service (web, transco, ...)"
+msgstr ""
+"Intégrer dans la dernière partie du nom une description fonctionnelle du "
+"service (web, transco, ...)"
 
 # fbad36e83b1944ff9e089b3d0a4dde10
-#: ../../agent.service.creation.rst:41
+#: ../../agent.service.creation.rst:40
 msgid ""
 "Perceptible latency and memory overhead. Host system must rely on tcp/ip "
 "communication with the virtual machine to control its resources (change ip "
 "addresses, start service applications, ...)"
 msgstr ""
 "Impact sur les latences et la mémoire perceptible. Le système hôte dépend "
-"des communications tcp/ip pour piloter les ressources de la machine virtuelle "
-"(démarrage des applications, ...)."
+"des communications tcp/ip pour piloter les ressources de la machine "
+"virtuelle (démarrage des applications, ...)."
 
 # fc5d1a1336ed41d489151cbbdefec746
-#: ../../agent.service.creation.rst:37
+#: ../../agent.service.creation.rst:36
 msgid ""
 "Prefered mode where it is supported : quite low-latency, low mem and cpu "
 "overhead, good control of virtual system from the host system."
 msgstr ""
-"Mode privilégié quand supporté : faible impact sur les latences, la "
-"mémoire et le cpu, bon contrôle du système containerisé depuis l'hôte."
+"Mode privilégié quand supporté : faible impact sur les latences, la mémoire "
+"et le cpu, bon contrôle du système containerisé depuis l'hôte."
 
 # a20c0492040e4a4cb151a047b868b766
-#: ../../agent.service.creation.rst:56
+#: ../../agent.service.creation.rst:55
 msgid ""
 "Private installation of tools. Tools must listen only on the private address "
 "to avoid conflicts with same tool of other services running on the same node."
@@ -188,17 +186,18 @@ msgstr ""
 "mais de services différents tournant sur le même noeud."
 
 # d088c2c941e945c4879ea08a68a784e4
-#: ../../agent.service.creation.rst:29
+#: ../../agent.service.creation.rst:28
 msgid "Select a service mode"
 msgstr "Choisir un mode de service"
 
 # 405ee3f3568b455694d9f426eb09b442
-#: ../../agent.service.creation.rst:74
+#: ../../agent.service.creation.rst:73
+#, fuzzy
 msgid ""
 "Service configuration files are in ``/opt/opensvc/etc``. Each service must "
 "have these three files present to be fully functional. Services using the "
 "internet shared collector must be named using the domainname as a suffix to "
-"avoid naming conflicts::"
+"avoid naming conflicts:"
 msgstr ""
 "Les fichiers de configuration d'un service sont dans ``/opt/opensvc/etc``. "
 "Chaque service doit avoir trois fichiers présents pour être complètement "
@@ -213,35 +212,37 @@ msgid "Service creation"
 msgstr "Création d'un service"
 
 # 4b5527a88ce74cc6a8cd89a2462c94b7
-#: ../../agent.service.creation.rst:110
+#: ../../agent.service.creation.rst:113
 msgid "Test"
 msgstr "Test"
 
 # 975c0b7824d341ddaee38a565e4de384
-#: ../../agent.service.creation.rst:67
+#: ../../agent.service.creation.rst:66
 msgid "The virtual host is not required for ``hosted`` services."
 msgstr "Cette étape n'est pas nécessaire pour les services en mode ``hosted``."
 
 # 07d3c57246d7400eb2583c4bd2e63d90
-#: ../../agent.service.creation.rst:17
+#: ../../agent.service.creation.rst:16
 msgid ""
 "This guidelines result in names like gieprdtransco01, infraprddns01, ..."
 msgstr ""
-"Ces lignes directrices produisent des noms de service tels que gieprdtransco01, infraprddns01, ..."
+"Ces lignes directrices produisent des noms de service tels que "
+"gieprdtransco01, infraprddns01, ..."
 
 # 444df487e3b4456c846f29aeac26bbe6
-#: ../../agent.service.creation.rst:94
+#: ../../agent.service.creation.rst:97
 msgid ""
 "This is the configuration file proper, including service description and "
 "resource definitions. A fully commented template is available on each node "
 "at /opt/opensvc/usr/share/doc/template.env. More on this below."
 msgstr ""
-"C'est le principal fichier de configuration. Il contient la description du service "
-"et de ses ressources. Un modèle complètement commenté est disponible sur chaque "
-"noeud dans ``/opt/opensvc/usr/share/doc/template.env``. Plus détails ci-bas."
+"C'est le principal fichier de configuration. Il contient la description du "
+"service et de ses ressources. Un modèle complètement commenté est disponible "
+"sur chaque noeud dans ``/opt/opensvc/usr/share/doc/template.env``. Plus "
+"détails ci-bas."
 
 # c2e3d6ad1dfd4de9a1e70c2da52b0fea
-#: ../../agent.service.creation.rst:102
+#: ../../agent.service.creation.rst:105
 msgid ""
 "This optional directory can be used to store locally the startup scripts. As "
 "such, it can be linked from /opt/opensvc/etc/unxdevweb01.mydomain.com.d. "
@@ -250,17 +251,17 @@ msgid ""
 "shared volume, this .dir is not needed but you will still have to create a "
 "sync resource to send them to the drpnodes."
 msgstr ""
-"Ce répertoire optionel peut être utilisé pour stocker localement les lanceurs "
-"applicatifs. En tant que tel, il peut être pointé par le lien "
-"/opt/opensvc/etc/unxdevweb01.mydomain.com.d. OpenSVC synchronise ce répertoire "
+"Ce répertoire optionel peut être utilisé pour stocker localement les "
+"lanceurs applicatifs. En tant que tel, il peut être pointé par le lien /opt/"
+"opensvc/etc/unxdevweb01.mydomain.com.d. OpenSVC synchronise ce répertoire "
 "avec les noeuds secondaires et les noeuds de reprise sur sinistre dans le "
-"cadre de la ressource interne de synchronisation sync#i0. Si les lanceurs sont "
-"placés dans un volume partagé, ce répertoire .dir n'est pas nécessaire, et "
-"il vous incombe de définir une synchronisation pour répliquer les lanceurs "
-"vers le site de reprise sur sinistre."
+"cadre de la ressource interne de synchronisation sync#i0. Si les lanceurs "
+"sont placés dans un volume partagé, ce répertoire .dir n'est pas nécessaire, "
+"et il vous incombe de définir une synchronisation pour répliquer les "
+"lanceurs vers le site de reprise sur sinistre."
 
 # 7d9834d4d1f44d5b803c7c3488210d7f
-#: ../../agent.service.creation.rst:90
+#: ../../agent.service.creation.rst:93
 msgid ""
 "This symbolic link is meant to be used as a shortcut to pass commands to a "
 "specific service. Like /opt/opensvc/etc/unxdevweb01.mydomain.com start for "
@@ -270,40 +271,40 @@ msgstr ""
 "Par exemple, /opt/opensvc/etc/unxdevweb01.mydomain.com start."
 
 # 582a85ea79ff4e90b0c9beb10852f110
-#: ../../agent.service.creation.rst:98
+#: ../../agent.service.creation.rst:101
 msgid ""
 "This symbolic link points to the directory hosting the service application "
 "launchers. The service is not considered active if this link is not present. "
 "The directory pointed is best hosted on a service-dedicated filesystem. The "
-"service application launchers are expected to be in SysV style: [SK][0-9]"
-"*appname. S for starters, K for stoppers, number for ordering. Starters and "
-"stoppers can be symlink to a single script. Starter are passed 'start' as "
-"first parameter, stoppers are passed 'stop' as first parameter."
+"service application launchers are expected to be in SysV style: [SK]"
+"[0-9]*appname. S for starters, K for stoppers, number for ordering. Starters "
+"and stoppers can be symlink to a single script. Starter are passed 'start' "
+"as first parameter, stoppers are passed 'stop' as first parameter."
 msgstr ""
-"Ce lien symbolique pointe le répertoire qui contient les lanceurs applicatifs. "
-"Le service n'est pas utilisable tant que ce lien n'existe pas. Le répertoire "
-"pointé devrait, quand c'est possible, être contenu par un système de fichier "
-"dédié au service. Les lanceurs sont au format SysV : [SK][0-9]*appname. S pour "
-"les lanceurs, K pour les stopeurs, le nombre pour l'ordonnancement. Les "
-"lanceurs et les stopeurs peuvent être des liens symboliques vers le même "
-"script. Les lanceurs se voient passer le paramètre 'start' et les stopeurs "
-"'stop'."
+"Ce lien symbolique pointe le répertoire qui contient les lanceurs "
+"applicatifs. Le service n'est pas utilisable tant que ce lien n'existe pas. "
+"Le répertoire pointé devrait, quand c'est possible, être contenu par un "
+"système de fichier dédié au service. Les lanceurs sont au format SysV : [SK]"
+"[0-9]*appname. S pour les lanceurs, K pour les stopeurs, le nombre pour "
+"l'ordonnancement. Les lanceurs et les stopeurs peuvent être des liens "
+"symboliques vers le même script. Les lanceurs se voient passer le paramètre "
+"'start' et les stopeurs 'stop'."
 
 # 314b46abf9084d6c9e9438c744c88b7e
-#: ../../agent.service.creation.rst:72
+#: ../../agent.service.creation.rst:71
 msgid ""
 "Those are created automatically by the ``svcmgr create`` command. "
 "Experienced users will find it easier to start from a copy of the env file "
 "of an existing similar service. The following information describes the "
 "steps needed to create a service manually."
 msgstr ""
-"Ceux-là sont créés automatiquement par la commande ``svcmgr create``. "
-"Les utilisateurs expérimentés trouveront plus simple de créer un service "
-"par copie du fichier de configuration d'un service similaire. Les étapes "
+"Ceux-là sont créés automatiquement par la commande ``svcmgr create``. Les "
+"utilisateurs expérimentés trouveront plus simple de créer un service par "
+"copie du fichier de configuration d'un service similaire. Les étapes "
 "suivantes décrivent la création manuelle d'un service."
 
 # c097e83cad2e4288bae1ce3513d71353
-#: ../../agent.service.creation.rst:26
+#: ../../agent.service.creation.rst:25
 msgid ""
 "We recommend to allocate service-dedicated generic accounts (one is ok most "
 "of the time), at least for ``hosted`` services, for better control on "
@@ -317,13 +318,13 @@ msgstr ""
 "seul est suffisant dans la plupart des cas), pour les services en mode "
 "``hosted``, pour mieux contrôler les privilèges. Tous les fichiers d'un "
 "service devraient appartenir à ce compte, exception faite des lanceurs qui "
-"doivent appartenir à root, puisqu'exécutés avec les privilèges de root. "
-"Le homdir de ce compte générique devrait être un lien pointant vers un "
-"sous-répertoire d'un des systèmes de fichiers dédiés au service (celui "
-"hébergeant les données est un bon candidat)."
+"doivent appartenir à root, puisqu'exécutés avec les privilèges de root. Le "
+"homdir de ce compte générique devrait être un lien pointant vers un sous-"
+"répertoire d'un des systèmes de fichiers dédiés au service (celui hébergeant "
+"les données est un bon candidat)."
 
 # f2d75356a9544e5fb9086b37c7dd4910
-#: ../../agent.service.creation.rst:24
+#: ../../agent.service.creation.rst:23
 msgid ""
 "We recommend to allocate service-dedicated ip addresses, to permit service "
 "failover to secondary nodes."
@@ -332,20 +333,27 @@ msgstr ""
 "pour permettre la bascule des services entre noeuds."
 
 # 2fd304ea81164b278b6ac8f3f8a423c7
-#: ../../agent.service.creation.rst:33
+#: ../../agent.service.creation.rst:32
 msgid ""
 "Where virtualisation is unwanted : low-latency applications, restrictive "
 "product compatibility matrices, ..."
 msgstr ""
 "Où la virtualisation est indésirable : applications basse-latence, "
-"applications dont la matrice de compatibilité ne supporte pas la virtualisation."
+"applications dont la matrice de compatibilité ne supporte pas la "
+"virtualisation."
 
 # a188f11177a64164b031f99e4785a38f
-#: ../../agent.service.creation.rst:112
-msgid "You should now be able to run succesfully::"
+#: ../../agent.service.creation.rst:115
+#, fuzzy
+msgid "You should now be able to run succesfully:"
 msgstr "Vous devriez désormais pouvoir lancer la commande suivante ::"
 
 # ee75143c3a7842a48b9f5157204285a8
-#: ../../agent.service.creation.rst:80
-msgid "or::"
+#: ../../agent.service.creation.rst:81
+#, fuzzy
+msgid "or:"
 msgstr "ou ::"
+
+# 11499d4e2fa74524aca1210870df95b7
+#~ msgid "Between 8 to 15 characters"
+#~ msgstr "Entre 8 et 15 caractères"

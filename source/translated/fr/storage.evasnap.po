@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# f254cf7597a945c08afb2a3ccf0ae679
+#: ../../storage.evasnap.rst:21
+msgid ":command:`syncresync --force`"
+msgstr ""
+
+# 7040fb927d9b43afafbde08ae8814228
+#: ../../storage.evasnap.rst:18
+#, fuzzy
+msgid ":command:`syncresync`"
+msgstr ":command:`warn`"
+
+# 7040fb927d9b43afafbde08ae8814228
+#: ../../storage.evasnap.rst:27
+#, fuzzy
+msgid ":command:`up`"
+msgstr ":command:`warn`"
 
 # 7040fb927d9b43afafbde08ae8814228
 #: ../../storage.evasnap.rst:29
@@ -28,9 +45,10 @@ msgid ""
 "snapshots of other servers, just for the benefit of centralised logging and "
 "scheduling."
 msgstr ""
-"Il est possible de créer un service contenant uniquement une ressource de synchronisation evasnap "
-"afin de piloter les rafraîchissements des snapshots consommés par d'autres serveurs, juste pour le "
-"bénéfice de la centralisation des journaux et pour la planification."
+"Il est possible de créer un service contenant uniquement une ressource de "
+"synchronisation evasnap afin de piloter les rafraîchissements des snapshots "
+"consommés par d'autres serveurs, juste pour le bénéfice de la centralisation "
+"des journaux et pour la planification."
 
 # 91e6a91582944120ac2b655a9649ccc0
 #: ../../storage.evasnap.rst:32
@@ -45,7 +63,9 @@ msgstr "Un des snapshots existe mais avec une origine incorrecte."
 # 303ffe5e7e9a4a5a8f3705936c7dd73a
 #: ../../storage.evasnap.rst:34
 msgid "A snapshot exist but with incorrect presentation (host or lunid)."
-msgstr "Un snapshot existe mais avec une présentation incorrecte (mauvais lun id ou mauvais hôte)"
+msgstr ""
+"Un snapshot existe mais avec une présentation incorrecte (mauvais lun id ou "
+"mauvais hôte)"
 
 # ad7a16c73f83493bb48a00987aba49b8
 #: ../../storage.evasnap.rst:21
@@ -63,20 +83,22 @@ msgid ""
 "Delete Logical Units and snapshots, then create new snapshots and present "
 "them."
 msgstr ""
-"Supprime les unités logiques et les snapshots, puis les recrée et les présente."
+"Supprime les unités logiques et les snapshots, puis les recrée et les "
+"présente."
 
 # 20aa5c95943a4916a62cd13719f2dbd4
-#: ../../storage.evasnap.rst:95
+#: ../../storage.evasnap.rst:97
 msgid "EVA snapshots configuration"
 msgstr "Configuration des snapshots EVA"
 
 # 996973ee1f50456991ec7ba646788730
 #: ../../storage.evasnap.rst:48
-msgid "Example sssu.conf::"
+#, fuzzy
+msgid "Example sssu.conf:"
 msgstr "Exemple de sssu.conf ::"
 
 # 5267e7c8deab4b8cb53363154bd28861
-#: ../../storage.evasnap.rst:100
+#: ../../storage.evasnap.rst:102
 msgid "Examples"
 msgstr "Exemples"
 
@@ -111,12 +133,12 @@ msgid "Pre-requisites"
 msgstr "Pré-requis"
 
 # f8d4bb6b815946ff9203e967c8b6f4d4
-#: ../../storage.evasnap.rst:103
+#: ../../storage.evasnap.rst:105
 msgid "Resync a started service snapshots"
 msgstr "Resynchronise les snapshots d'un service démarré"
 
 # 39ce7bdf17ec405e9ff652a37281297b
-#: ../../storage.evasnap.rst:110
+#: ../../storage.evasnap.rst:112
 msgid "Resync a stopped service snapshots"
 msgstr "Resynchronise les snapshots d'un service arrêté"
 
@@ -126,7 +148,7 @@ msgid "Service configuration"
 msgstr "Configuration du service"
 
 # d4759c42c64549589ae7e3c89b6f2d0c
-#: ../../storage.evasnap.rst:56
+#: ../../storage.evasnap.rst:58
 msgid "Service configuration file"
 msgstr "Fichier de configuration du service"
 
@@ -148,11 +170,12 @@ msgid ""
 msgstr ""
 "Le pilote des snapshots des baies de stockage EVA permet de répliquer une "
 "source vers plusieurs cibles. Il supporte l'action 'syncresync' qui "
-"automatise la recréation des snapshots et leur présentation aux noeuds. "
-"Un service OpenSVC peut facilement utiliser un jeu de devices snapshottés. "
-"Ce type de services est souvent utilisé pour les rôles de maintenance, "
-"pré-production et tests de performance où les disques sources sont utilisés "
-"en production. La présente documentation présente comment configurer un tel service."
+"automatise la recréation des snapshots et leur présentation aux noeuds. Un "
+"service OpenSVC peut facilement utiliser un jeu de devices snapshottés. Ce "
+"type de services est souvent utilisé pour les rôles de maintenance, pré-"
+"production et tests de performance où les disques sources sont utilisés en "
+"production. La présente documentation présente comment configurer un tel "
+"service."
 
 # 0d24b2e4062a4fc8b8ea2034f30f06fc
 #: ../../storage.evasnap.rst:38
@@ -162,12 +185,14 @@ msgstr "La baie de stockage n'est pas gérée par le gestionnaire spécifié."
 # 76613a9c4df247a1836509653e7bcf34
 #: ../../storage.evasnap.rst:27
 msgid "The last resync occured less than 'sync_max_delay' minutes ago."
-msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # 26d6f039ab0844b8bb9fc726a5099bda
 #: ../../storage.evasnap.rst:31
 msgid "The last resync occured more than 'sync_max_delay' minutes ago."
-msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # f2c97a636c5046caa2bf971a8472a688
 #: ../../storage.evasnap.rst:46
@@ -179,16 +204,16 @@ msgid ""
 "obfuscating the password in the output, local logs, and logs sent to the "
 "collector."
 msgstr ""
-"Le binaire sssu doit être installé sur le noeud et un lien symbolique "
-"/opt/opensvc/bin/sssu doit le pointer. Un fichier /opt/opensvc/etc/sssu.conf "
-"doit exister et contenir les informations d'autentification auprès du "
-"gestionnaire Command View pour chaque baie. Ce fichier de configuration "
-"de sssu doit avoir ses permissions positionnées à 600 et être propriété "
-"de root. OpenSVC se charge d'obfusquer le mot de passe dans les sorties "
-"et dans les journaux envoyés au collecteur."
+"Le binaire sssu doit être installé sur le noeud et un lien symbolique /opt/"
+"opensvc/bin/sssu doit le pointer. Un fichier /opt/opensvc/etc/sssu.conf doit "
+"exister et contenir les informations d'autentification auprès du "
+"gestionnaire Command View pour chaque baie. Ce fichier de configuration de "
+"sssu doit avoir ses permissions positionnées à 600 et être propriété de "
+"root. OpenSVC se charge d'obfusquer le mot de passe dans les sorties et dans "
+"les journaux envoyés au collecteur."
 
 # 4860fa0fcdf346bd9435d03596ddcae9
-#: ../../storage.evasnap.rst:92
+#: ../../storage.evasnap.rst:94
 msgid ""
 "You can setup as many sync resources as needed to ensure a consistent "
 "replication scenario."
@@ -197,7 +222,7 @@ msgstr ""
 "nécessaire pour assurer un scénario de réplication consistent."
 
 # a6a9d634633c4fe286f0e45d1ad41d9c
-#: ../../storage.evasnap.rst:97
+#: ../../storage.evasnap.rst:99
 msgid ""
 "You have to create the snapshots manually once and present them to thes "
 "hosts, so that the EVA array attributes new snapshots wwid and logical unit "

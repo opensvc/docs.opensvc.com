@@ -1,7 +1,7 @@
 .. _agent.update:
 
-OpenSVC agent updates
-*********************
+Agent updates
+*************
 
 Introduction
 ============

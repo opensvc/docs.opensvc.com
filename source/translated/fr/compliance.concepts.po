@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -16,849 +16,977 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# 6bf611fc6ebb449ca82cc1aa6fdaf2ae
-# 41a529022f144c80b08379ef0bba4b85
-# b443ca505fef40b9909720b12cb28cf8
-#: ../../compliance.concepts.rst:97 ../../compliance.concepts.rst:122
-#: ../../compliance.concepts.rst:150
-msgid "100 * Ok / Total."
-msgstr "100 * Ok / Total."
+# 586c3a8e1fcd4208b6a190299c34e18d
+#: ../../compliance.concepts.rst:92
+msgid "**Example**"
+msgstr ""
+
+# c61e4cd9eceb4f2b9a73eaf27155fc4b
+#: ../../compliance.concepts.rst:63
+msgid "**Filtersets, Filters**"
+msgstr ""
+
+# 4325559200d04f98a3fa74932e7587cd
+#: ../../compliance.concepts.rst:72
+msgid "**Modulesets, Modules**"
+msgstr ""
+
+# 6aca91d1c12a46bda375e842b31c4d64
+#: ../../compliance.concepts.rst:50
+msgid "**Rulesets, Rules**"
+msgstr ""
+
+# 83b0d3474621431680c997ee03ac477e
+#: ../../compliance.concepts.rst:99
+msgid "**Trust chains charracteristics**"
+msgstr ""
 
 # 0adce71c34d94772bf229ccbfdbe7a34
-#: ../../compliance.concepts.rst:44
+#: ../../compliance.concepts.rst:65
 msgid ""
 "A filter is a SQL-like condition on information available to the collector."
 msgstr ""
-"Un filtre est une expression conditionnelle similaire à une expression SQL qui s'applique à un type d'information disponible en base de données du collecteur."
-
-# 04ca6f6f334d4cefbacab8469e9d00bb
-#: ../../compliance.concepts.rst:293
-msgid ""
-"A filterset is a combination of filters or filtersets. Filters are created "
-"through the top table and filterset created through the bottom table. Only "
-"member of the 'CompManager' group are allowed to create or edit filters."
-msgstr ""
-"Un jeu de filtres est une combinaison entre filtres ou jeux de filtres. "
-"Les filtres sont créés par le tableau du haut et les jeux de filtres sont "
-"assemblés par le tableau du bas de paje. Seuls les membres du groupe "
-"'CompManager' sont autorisés à créer ou éditer des filtres."
+"Un filtre est une expression conditionnelle similaire à une expression SQL "
+"qui s'applique à un type d'information disponible en base de données du "
+"collecteur."
 
 # b3d01ec50fce43c19ce603073deaed9e
-#: ../../compliance.concepts.rst:37
+#: ../../compliance.concepts.rst:57
+#, fuzzy
 msgid ""
 "A rule value can be complex, for example a json-serialized dictionnary. "
-"OpenSVC ships with python objects for you to use in your modules and "
-"corresponding collector wizard. These objects use such complex rules without "
-"you facing the complexity."
+"OpenSVC ships with a library of compliance objects and corresponding rule "
+"edition wizard. Using the objects in modules code abstracts the complex rule "
+"parsing, and using the wizards hides the json structures from the designer."
 msgstr ""
-"La valeur d'une règle peut être complexe, par exemple un dictionnaire sérialisé au format JSON. "
-"OpenSVC livre des objets python utilisables dans vos propres modules de conformité. Ces objets "
-"utilisent de tels dictionnaires, mais leur complexité est masquée par la présence de wizards "
+"La valeur d'une règle peut être complexe, par exemple un dictionnaire "
+"sérialisé au format JSON. OpenSVC livre des objets python utilisables dans "
+"vos propres modules de conformité. Ces objets utilisent de tels "
+"dictionnaires, mais leur complexité est masquée par la présence de wizards "
 "qui facilitent la saisie et la visualisation des valeurs."
 
-# 5b1b4b3c32c44b3fbab62a470d686dea
-#: ../../compliance.concepts.rst:186
+# 1ea4e68be05347fea6a8fae1a22fc77f
+#: ../../compliance.concepts.rst:27
+#, fuzzy
 msgid ""
-"A run over run status sparkline. This columns present no timeline "
-"information."
+"Administrators describe the corporate server and service configuration "
+"ruleset in a central, auditable place. The OpenSVC agent modules compare the "
+"actual configurations to the expected configurations and log the result to "
+"the collector."
 msgstr ""
-"Une mini-courbe des résultats successifs des vérifications de conformité. Cette colonne ne contient pas d'informations temporelles."
-
-# 41daf3749aa24638b74fc99360e7479d
-#: ../../compliance.concepts.rst:291
-msgid ""
-"A typical filterset would be 'All Red Hat 4 servers whose team responsible "
-"is SomeTeam'."
-msgstr ""
-"Un jeu de filtre classique pourrait être 'Tous les serveurs Red Hat 4 dont l'équipe est responsable est MonEquipe"
-
-# f844a9a3b9c84aafa6c8cfbfdc4c19a5
-#: ../../compliance.concepts.rst:244
-msgid "Add variables"
-msgstr "Ajouter des variables"
+"OpenSVC embarque un sous-système de conformité très souple. Il permet aux "
+"administrateurs de décrire les règles de configuration des serveurs de "
+"l'entreprise dans un point central et auditable. Les agents OpenSVC font "
+"tourner des modules dont le rôle est de comparer les configurations réelles "
+"avec les configurations cibles, et de rapporter le résultat de l'analyse au "
+"collecteur."
 
 # 64feab1f431e426292772bb6501e4894
-#: ../../compliance.concepts.rst:56
+#: ../../compliance.concepts.rst:77
 msgid ""
 "All matching rulesets' rules are visible to all modules of attached "
 "modulesets"
-msgstr "Toutes les règles des jeux de règles correspondants sont visibles de tous les modules des jeux de modules attachés"
+msgstr ""
+"Toutes les règles des jeux de règles correspondants sont visibles de tous "
+"les modules des jeux de modules attachés"
 
 # 97442e0e7a134ce0bb03af4ab815f909
-#: ../../compliance.concepts.rst:53
+#: ../../compliance.concepts.rst:74
 msgid "Apply and verify the rules."
 msgstr "Appliquent et vérifient les règles."
 
-# 18a7eccb31d5464aab7463fb5b9b158c
-#: ../../compliance.concepts.rst:259
-msgid "Attach filterset"
-msgstr "Attacher un jeu de filtres"
-
-# 4346a44b346d485db00365e579434ca3
-#: ../../compliance.concepts.rst:278
-msgid "Attach rulesets to nodes"
-msgstr "Attcher un jeu de règles à des noeuds"
-
 # 341644e49b86429f8bd004e5500d81d9
-#: ../../compliance.concepts.rst:9
-msgid "Auditable host configurations"
+#: ../../compliance.concepts.rst:23
+#, fuzzy
+msgid "Auditable host and service configurations"
 msgstr "Configuration des noeuds auditables"
 
+# 6109d40451a24a4db50667b031e67cb3
+#: ../../compliance.concepts.rst:24
+#, fuzzy
+msgid "Auditable scripts to apply changes to your hosts"
+msgstr ""
+"Utilisation de scripts auditable pour prendre en charge tout changement de "
+"configuration sur les serveurs"
+
 # 3e043a9c01804afdbfb65e2860188f3a
-#: ../../compliance.concepts.rst:46
+#: ../../compliance.concepts.rst:67
 msgid ""
 "Available operators are ``>``, ``<``, ``=``, ``!=``, ``IN`` and ``LIKE``"
 msgstr ""
-"Les opérateurs disponibles sont ``>``, ``<``, ``=``, ``!=``, ``IN`` et ``LIKE``"
+"Les opérateurs disponibles sont ``>``, ``<``, ``=``, ``!=``, ``IN`` et "
+"``LIKE``"
 
-# 3ea228ca13ca4c62a09e592a71ee9ab6
-#: ../../compliance.concepts.rst:324
-msgid "Best practice"
-msgstr "Bonnes pratiques"
-
-# 1fa3ead66b2d4f69bcea377467b3dce3
-#: ../../compliance.concepts.rst:282
-msgid "Check the nodes in the left-side table"
-msgstr "Cocher les noeuds dans la table de gauche"
-
-# d9af63cb19be40e4baa13415f9cdd575
-#: ../../compliance.concepts.rst:283
-msgid "Check the rulesets in the right-side table"
-msgstr "Cocher les jeux de règles dans la table de droite"
-
-# 92c66a653d454721a89c84157e7ce18a
-#: ../../compliance.concepts.rst:300
-msgid ""
-"Choose a field name. Available field names: 'warranty_end', 'status', "
-"'role', 'environnement', 'mem_bytes', 'mem_banks', 'mem_slots', 'os_vendor', "
-"'os_name', 'os_kernel', 'os_release', 'os_arch', 'cpu_freq', 'cpu_dies', "
-"'cpu_cores', 'cpu_model', 'cpu_vendor', 'type', 'nodename', "
-"'team_responsible', 'serial', 'model', 'loc_addr', 'loc_city', 'loc_zip', "
-"'loc_rack', 'loc_floor', 'loc_country', 'loc_building', 'loc_room', "
-"'power_supply_nb', 'power_cabinet1', 'power_cabinet2', 'power_protect', "
-"'power_protect_breaker', 'power_breaker1', 'power_breaker2', 'updated'"
+# f1ba670973d14d03aa6588e8efaee073
+#: ../../compliance.concepts.rst:43
+msgid "Compliance glossary"
 msgstr ""
-"Choisir un nom de champ. Les champs disponibles sont : 'warranty_end', 'status', "
-"'role', 'environnement', 'mem_bytes', 'mem_banks', 'mem_slots', 'os_vendor', "
-"'os_name', 'os_kernel', 'os_release', 'os_arch', 'cpu_freq', 'cpu_dies', "
-"'cpu_cores', 'cpu_model', 'cpu_vendor', 'type', 'nodename', "
-"'team_responsible', 'serial', 'model', 'loc_addr', 'loc_city', 'loc_zip', "
-"'loc_rack', 'loc_floor', 'loc_country', 'loc_building', 'loc_room', "
-"'power_supply_nb', 'power_cabinet1', 'power_cabinet2', 'power_protect', "
-"'power_protect_breaker', 'power_breaker1', 'power_breaker2', 'updated'"
-
-# fe89d7a269974aed89bb03e00fbea113
-#: ../../compliance.concepts.rst:274
-msgid "Choose a name for the cloned ruleset"
-msgstr "Choisir un nom pour le jeu de règles cloné"
-
-# 9d3b81c254ed46f2b391035d32474380
-#: ../../compliance.concepts.rst:264
-msgid "Choose a pre-existing filterset from the list box"
-msgstr "Choisir un jeu de filtre existant depuis la liste"
-
-# 8dea677018aa4a2b812222b2b9cfbbfb
-#: ../../compliance.concepts.rst:273
-msgid "Choose a pre-existing ruleset from the list box"
-msgstr "Choisir un jeu de règle existant depuis la liste"
-
-# c435d64816fc48a88c3194937fd6fcc5
-#: ../../compliance.concepts.rst:299
-msgid "Choose a table name. Available table names: 'nodes'"
-msgstr "Choisir un nom de table. Les tables disponibles sont : 'nodes'"
-
-# 7698301c707749559ed7ebc2a86d2af1
-#: ../../compliance.concepts.rst:237
-msgid "Choose a unique ruleset name"
-msgstr "Choisir un nom de jeu de règle unique"
-
-# 46ee731838de4fd787e9754178eb932e
-#: ../../compliance.concepts.rst:247
-msgid "Choose a variable name"
-msgstr "Choisir un nom de variable"
-
-# 7715eb24b4bd44cc9270810b952bf51e
-#: ../../compliance.concepts.rst:248
-msgid "Choose a variable value"
-msgstr "Choisir une valeur de variable"
-
-# 42a5c021faad4fcf9dd74f66fa3dc345
-#: ../../compliance.concepts.rst:301
-msgid ""
-"Choose an operator. Available operators: '=', 'LIKE', 'NOT LIKE', '<', '<=', "
-"'>', '>=', 'IN', 'NOT IN'"
-msgstr ""
-"Choisir un opérateur. Les opérateurs disponibles sont '=', 'LIKE', 'NOT LIKE', '<', '<=', "
-"'>', '>=', 'IN', 'NOT IN'"
-
-# 87955b8a88bc4180bac425cffc371592
-#: ../../compliance.concepts.rst:238
-msgid "Choose contextual/explicit"
-msgstr "Choisir entre contextuel et explicite"
-
-# 4750e886c2404930b5febaeda1203fca
-#: ../../compliance.concepts.rst:318
-msgid "Choose the filterset or filter to attach in the list box"
-msgstr "Choisir le jeu de filtres ou le filtre à attacher depuis la liste"
-
-# 4def8117e80347d7b6c9cd2ef7d458cc
-#: ../../compliance.concepts.rst:317
-msgid "Choose the filterset to attach to in the list box"
-msgstr "Choisir le jeu de filtres à attacher depuis la liste"
-
-# a8d69137da9e471e9c601cfc90ff00d7
-#: ../../compliance.concepts.rst:246
-msgid "Click 'Add variable'"
-msgstr "Cliquer sur 'Ajouter une variable'"
-
-# 7aa05b7cdec742508cf4675a8a8f4286
-#: ../../compliance.concepts.rst:263
-msgid "Click 'Attach filterset'"
-msgstr "Cliquer sur 'Attacher un jeu de filtres'"
-
-# c65db6efce56496bb9fcced6a531e972
-#: ../../compliance.concepts.rst:316
-msgid "Click 'Attach filterset' or 'Attach filter'"
-msgstr "Cliquer sur 'Attacher un jeu de filtres' ou 'Attacher un filtre'"
-
-# ce9df15a88504d11b3ab679ef767c7f5
-#: ../../compliance.concepts.rst:284
-msgid "Click 'Attach ruleset'"
-msgstr "Cliquer sur 'Attacher un jeu de règles'"
-
-# 9f269d3d01c24dcdaa1cb8a2c9f5752b
-#: ../../compliance.concepts.rst:272
-msgid "Click 'Clone ruleset'"
-msgstr "Cliquer sur 'Cloner un jeu de règles'"
-
-# cdfefe0c1def4ef3a78f6d366f6ca487
-#: ../../compliance.concepts.rst:298
-msgid "Click 'Create filter'"
-msgstr "Cliquer sur 'Créer un filtre'"
-
-# a1de97a1b71240a7aba7caf9f37e1de9
-#: ../../compliance.concepts.rst:309
-msgid "Click 'Create filterset'"
-msgstr "Cliquer sur 'Créer un jeu de filtres'"
-
-# 4ac11d0f4b0a494daa9a4130afadf839
-#: ../../compliance.concepts.rst:236
-msgid "Click 'Create ruleset'"
-msgstr "Cliquer sur 'Créer un jeu de règles'"
-
-# ae797bfabb5541f99925bbd76807fff2
-# b7a4ea1f4ced4cf0a070e653501baec9
-# 9b547fcbd4a04e6d99868729f39fb7a6
-# 786090c9b1d746008d2bae94314a74df
-#: ../../compliance.concepts.rst:239 ../../compliance.concepts.rst:249
-#: ../../compliance.concepts.rst:265 ../../compliance.concepts.rst:275
-msgid "Click 'Submit'"
-msgstr "Cliquer sur 'Soumettre'"
-
-# 6d52159135f54917b47545b7a5963367
-#: ../../compliance.concepts.rst:254
-msgid ""
-"Click either the variable name or the variable value top-right 'edit' icon"
-msgstr ""
-"Cliquer sur le nom de la variable ou sur l'icône 'éditer' en haut à droite de sa valeur"
-
-# 1081b6c154e2493c82508a3449a77c5a
-# 3e19a85feee04a3189782928fff93a5a
-#: ../../compliance.concepts.rst:311 ../../compliance.concepts.rst:321
-msgid "Click on 'Submit'"
-msgstr "Cliquer sur 'Soumettre'"
-
-# 13040ae8906a4d89967133c5e19f146c
-#: ../../compliance.concepts.rst:268
-msgid "Clone ruleset"
-msgstr "Cloner un jeu de règles"
-
-# 127afd32c9f64250bba8dc4d9a76134d
-#: ../../compliance.concepts.rst:270
-msgid ""
-"Cloning a ruleset helps administrators who want their rulesets immutable : "
-"when a variable change is needed, the administrator clones the ruleset and "
-"apply the change to the clone. This governance policy implies ruleset names "
-"are versioned."
-msgstr ""
-"Le clonage de jeu de règles est notamment utile aux administrateurs qui souhaitent leurs jeux de règles immuables : "
-"Quand un changement de variable est nécessaire, l'administrateur clone le jeu de règle et applique le changement "
-"au clone. Cette politique de gouvernance implique le versionnement des noms de jeu de règles."
-
-# dc9683efb89a479a8848ed47b24ac7ff
-#: ../../compliance.concepts.rst:61
-msgid "Collector compliance views"
-msgstr "Vues du collecteur pour la conformité"
-
-# 467f9efbc40d42c694db51bcdf89ae3d
-#: ../../compliance.concepts.rst:63
-msgid ""
-"Collector's interfaces to analyze compliance data and to configure the "
-"framework are all grouped in the menu ``Views > Compliance``."
-msgstr ""
-"Les interfaces du collecteurs dédiées à l'analyse des données de conformité et à la configuration du sous-système sont "
-"groupées derrière le menu ``Vues -> Conformité``."
-
-# 62d30bce9e5c46b38b7e5bf629cb9d47
-#: ../../compliance.concepts.rst:27
-msgid "Compliance conceptual objects"
-msgstr "Objets conceptuels de la conformité"
 
 # 829b747ed3354558b6867e9f4e9b53a3
 #: ../../compliance.concepts.rst:2
 msgid "Concept"
 msgstr "Concept"
 
-# fb56aeeb84094d578c69677fb3ebb263
-#: ../../compliance.concepts.rst:226
+# 6e7f3d0996724f5cabb7e6386630daaf
+#: ../../compliance.concepts.rst:88
 msgid ""
-"Contextual ruleset variables are exported to the group of nodes matching the "
-"ruleset's filterset. Explicit rulesets"
+"Different groups, responsible for different sets of nodes and services, can "
+"define different and private compliance targets. For example, the front and "
+"back-office servers can be under the responsability of different teams. In "
+"this case, each team won't want to see the ruleset maintained by the other "
+"team."
 msgstr ""
-"Les variables des jeux de règles contextuels sont exportées au groupe de noeuds "
-"qui correspondent au jeu de filtres du jeu de règles."
-
-# c78a6819d16c40b4b54d19842392f218
-#: ../../compliance.concepts.rst:296
-msgid "Create a filter"
-msgstr "Créer un filtre"
-
-# 7b1754d87b184e5aadc9bf344a4dcfbb
-#: ../../compliance.concepts.rst:305
-msgid "Create a filterset"
-msgstr "Créer un jeu de filtres"
-
-# f90fdbccf8264c58a5e1a8284c0bbaec
-#: ../../compliance.concepts.rst:234
-msgid "Create an empty ruleset"
-msgstr "Créer un jeu de règles vide"
-
-# 26c6aa9c19a64d0eb5c4c07a1af92844
-#: ../../compliance.concepts.rst:157
-msgid "Detailled compliance status"
-msgstr "Etats détaillés de conformité"
 
 # e111dffa39714a90ba03003b9b2ff0ef
-#: ../../compliance.concepts.rst:57
+#: ../../compliance.concepts.rst:78
 msgid "Each module picks the rules it is coded to pick"
 msgstr "Chaque module consomme les règles auxquelles son code s'intéresse"
 
 # 5b329c566b4f4c709a89a1c5b6232abe
-#: ../../compliance.concepts.rst:10
-msgid "Ease change management"
+#: ../../compliance.concepts.rst:19
+#, fuzzy
+msgid "Ease change management and IT mergers"
 msgstr "Facilité la gestion du changement"
 
-# 107387d86e7e42a2a3923b96387122a8
-#: ../../compliance.concepts.rst:255
-msgid "Edit the input or content"
-msgstr "Editer le contenu de la cellule ou le formulaire"
-
-# 5acda8eabee5472a9acfe612e7bd456e
-#: ../../compliance.concepts.rst:252
-msgid "Edit variables"
-msgstr "Modifier les noms variables"
-
-# 432f41216b084eff88108987fd85d4c6
-#: ../../compliance.concepts.rst:229
+# 44d25b580d1643c2a94b4322238fd8e4
+#: ../../compliance.concepts.rst:18
 msgid ""
-"Explicit ruleset variables are exported only to nodes explicitely attached "
-"to the ruleset. This attachment can be configured either through the "
-"collector interface (Described below), or through the agent command line "
-"tools::"
+"Ensure recurrent configuration tasks produce the same result, whoever the "
+"operator"
 msgstr ""
-"Les variables des jeux de règles explicites ne sont exportées qu'aux noeuds explicitement attachés à ces jeux de règles. "
-"Ces attachement sont réalisés soit par l'interface du collecteur (voir ci-bas), soit par la ligne de commande de l'agent ::"
 
 # 441142e37c7740c0b620e4f43618962e
-#: ../../compliance.concepts.rst:12
+#: ../../compliance.concepts.rst:25
 msgid "Fast and reliable nodes and services provisioning"
 msgstr "Provisioning de noeuds et de services rapide et fiable"
 
 # 2ad3f5252d1041459f4eec90a9ef129c
-#: ../../compliance.concepts.rst:45
+#: ../../compliance.concepts.rst:66
 msgid ""
 "Filterable information is grouped into 3 categories : node, service and "
 "service status."
 msgstr ""
-"Les informations filtrables sont groupées en 3 catégories : noeud, service et états de services."
-
-# 49120febe78445669be482a9dceabb96
-#: ../../compliance.concepts.rst:287
-msgid "Filters"
-msgstr "Filtres"
+"Les informations filtrables sont groupées en 3 catégories : noeud, service "
+"et états de services."
 
 # c71c39377bb745d7b46db6c6cd8de07d
-#: ../../compliance.concepts.rst:47
+#: ../../compliance.concepts.rst:68
 msgid "Filters must be grouped into filtersets."
 msgstr "Les filtres doivent être groupés en jeux de filtres."
 
-# 81c6f68043b14b449999f1276b0741b0
-#: ../../compliance.concepts.rst:307
-msgid ""
-"Filtersets are created empty, then filters or filtersets are attached to the "
-"new filterset."
-msgstr ""
-"Les jeux de filtres sont initialisé vides, puis des filtres ou d'autres jeux de filtres y sont attachés."
-
 # ae11cdb1d83844a4ba408c789e88b04e
-#: ../../compliance.concepts.rst:48
+#: ../../compliance.concepts.rst:69
 msgid "Filtersets can be grouped into filtersets."
-msgstr "Les jeux de filtres sont aggrégeables pour former d'autres jeux de filtres."
-
-# af8ccf67025648b7be3ebef78fec5a50
-#: ../../compliance.concepts.rst:261
-msgid ""
-"If the ruleset is contextual, the following procedure attach a filter to the "
-"ruleset."
 msgstr ""
-"Si le jeu de règles est contextuel, la procédure suivante permet d'y attacher un jeu de filtre."
+"Les jeux de filtres sont aggrégeables pour former d'autres jeux de filtres."
+
+# 8abee84c19184192b31584e01fa5acd2
+#: ../../compliance.concepts.rst:52
+msgid ""
+"For detailled information about rulesets, read `this page <compliance."
+"rulesets.html>`_."
+msgstr ""
+
+# 71028f19b63040ba9c68ee2172e96ddb
+#: ../../compliance.concepts.rst:94
+msgid "In this diagram,"
+msgstr ""
 
 # 5558c80b72644fada44e7e303e099c0a
-#: ../../compliance.concepts.rst:5
+#: ../../compliance.concepts.rst:8
 msgid "Introduction"
 msgstr "Introduction"
 
-# cfaeec81107641c9a76a5f3b383cf672
-#: ../../compliance.concepts.rst:326
-msgid ""
-"It is recommended for readability to define filtersets combining with only "
-"one logical operator (only ANDs or ORs). For example, a filterset "
-"implementing 'all Linux or HP-UX servers whose team responsible is SOMETEAM "
-"should be implemented as 2 encapsulated filtersets:"
+# b3c7a8ca9a2e4a0ba02e2f5fe258cfd5
+#: ../../compliance.concepts.rst:104
+msgid "It must map to an entry of the collector's application code registry"
 msgstr ""
-"Il est recommandé pour des raisons de lisibilité de définir des jeux de filtres "
-"liant les filtres avec un seul type d'opératoire (soit que des ET, soit que des OU). "
-"Par exemple, un jeu de filtres traduisant 'Tous les serveur Linux ou HP-UX dont "
-"l'équipe responsable est MonEquipe' serait bâtie par encapsulation de deux jeux "
-"de filtres :"
 
-# 04dadd14c61840f1ac800446fd04ad1b
-#: ../../compliance.concepts.rst:189
-msgid "Logs"
-msgstr "Journaux"
+# 66cc9694eb504461a3d4b5203217a1e3
+#: ../../compliance.concepts.rst:17
+msgid ""
+"Make recurrent configuration tasks fast, easy, outsourceable, whatever their "
+"complexity"
+msgstr ""
 
-# 527982901674461db8c8c2182b4fd24b
-#: ../../compliance.concepts.rst:337
-msgid "Modules"
-msgstr "Modules"
+# 6b53c036ea04485fbdac1a1679c88f75
+#: ../../compliance.concepts.rst:21
+msgid "Minimize the design workload and its maintenance"
+msgstr ""
 
 # d6ffdc3f0cfb4a8297f34b7314a85c3b
-#: ../../compliance.concepts.rst:54
+#: ../../compliance.concepts.rst:75
 msgid "Modules are grouped into modulesets"
 msgstr "Les modules sont groupés en jeux de modules"
 
 # ac5062d3383147e8a0776ad17f0abab4
-#: ../../compliance.concepts.rst:55
+#: ../../compliance.concepts.rst:76
 msgid "Modulesets are explicitely attached to nodes"
 msgstr "Les jeux de modules sont attachés explicitement aux noeuds"
 
-# 8a6e3e6d484441b2a29e5545889a3559
-#: ../../compliance.concepts.rst:334
-msgid "Of course, more explicit filterset names are recommended."
-msgstr "Evidemment, des noms de jeu de filtres plus explicites sont recommandés."
+# 4ac21aa12f4c4ae7bb99d8d2e51182b9
+#: ../../compliance.concepts.rst:82
+msgid "Multi-tenancy"
+msgstr ""
 
 # 77fa35b7bc0b4cd99625197644f2573d
-#: ../../compliance.concepts.rst:343
+#: ../../compliance.concepts.rst:56
+#, fuzzy
 msgid ""
-"Only member of the 'CompManager' group are allowed to create or edit "
-"modulesets."
+"Only members of the 'CompManager' group are allowed to create or edit "
+"rulesets"
 msgstr ""
-"Seuls les membres de 'CompManager' sont habilités à créer ou modifier des jeux de modules."
+"Seuls les membres de 'CompManager' sont habilités à créer ou modifier des "
+"jeux de modules."
 
-# 1ea4e68be05347fea6a8fae1a22fc77f
-#: ../../compliance.concepts.rst:14
-msgid ""
-"OpenSVC implements a versatile compliance framework. It allows "
-"administrators to describe the corporate server configuration ruleset in a "
-"central, auditable place. OpenSVC agent modules compare the actual server "
-"configuration to the expected configuration and log the result to the "
-"collector."
+# 341644e49b86429f8bd004e5500d81d9
+#: ../../compliance.concepts.rst:20
+#, fuzzy
+msgid "Readable configuration rulesets"
+msgstr "Configuration des noeuds auditables"
+
+# a6065e3249724e3d8db67fd1a382d60f
+#: ../../compliance.concepts.rst:54
+msgid "Rules are designed, stored and served by the collector"
 msgstr ""
-"OpenSVC embarque un sous-système de conformité très souple. Il permet aux administrateurs "
-"de décrire les règles de configuration des serveurs de l'entreprise dans un point central et "
-"auditable. Les agents OpenSVC font tourner des modules dont le rôle est de comparer les "
-"configurations réelles avec les configurations cibles, et de rapporter le résultat de "
-"l'analyse au collecteur."
-
-# e5bac110dde8441d805659ef1474634d
-#: ../../compliance.concepts.rst:320
-msgid ""
-"Optionally set an order. Defaults to '0'. Ordering is important when you mix "
-"'AND' and 'OR' in the same filterset"
-msgstr ""
-"Eventuellement, forcer un rang. Le rang par défaut est '0'. Le rang est important quand les opérateur 'ET' et 'OU' sont utilisés simultanéement dans le même jeu de filtres."
-
-# 63c17aa87e0d4eb99001e5d6c5930a61
-#: ../../compliance.concepts.rst:76
-msgid "Per-module compliance status"
-msgstr "Etats de conformité aggrégés par module"
-
-# a1b04bf63c874cff8c6b3d495b35860f
-#: ../../compliance.concepts.rst:129
-msgid "Per-node compliance status"
-msgstr "Etats de conformité aggrégés par noeud"
-
-# d16c7c4f280e4ae79ee0600c7999374c
-#: ../../compliance.concepts.rst:104
-msgid "Per-service compliance status"
-msgstr "Etats de conformité aggrégés par service"
-
-# 362a83278dd647c0bdca9716f1c0a08e
-#: ../../compliance.concepts.rst:314
-msgid "Populate a filterset"
-msgstr "Polupler le jeu de filtres"
-
-# 453baa4eea2240fcb5151d0fb191877a
-#: ../../compliance.concepts.rst:256
-msgid "Press 'Enter' to save the change"
-msgstr "Appuyer sur 'Enter' pour sauvegarder les changements"
-
-# 54ce0d69fb6b439ea9a95357e130ff9f
-#: ../../compliance.concepts.rst:221
-msgid "Rules"
-msgstr "Règles"
-
-# eb3c2b481b22439d9b98d6dcce60e24f
-#: ../../compliance.concepts.rst:223
-msgid ""
-"Rules are expressed as variable/value pairs. Rules can be grouped into "
-"rulesets. Only members of the 'CompManager' group are allowed to create or "
-"edit rulesets. Contextual rulesets"
-msgstr ""
-"Les règles sont exprimées sous forme de couples variable/valeur. Elles peuvent être "
-"groupées en jeux de règles. Seuls les membres de 'CompManager sont habilités à créer "
-"ou modififier des jeux de règles."
 
 # ec12e468d0d14f6bb845fced883cd788
-#: ../../compliance.concepts.rst:38
+#: ../../compliance.concepts.rst:58
 msgid "Rules are grouped into rulesets."
 msgstr "Les règles sont groupées en jeux de règles."
 
 # 8bc01e7fc4084e14a8bd640960bffa61
-#: ../../compliance.concepts.rst:36
+#: ../../compliance.concepts.rst:55
+#, fuzzy
 msgid ""
-"Rules are variable/value pairs exported in the execution environment of the "
-"modules."
+"Rules are variable/value pairs exported by the OpenSVC agent in the "
+"execution environment of the modules."
 msgstr ""
-"Les règles sont des couples variable/valeur exportés dans l'environnement d'exécution des modules."
+"Les règles sont des couples variable/valeur exportés dans l'environnement "
+"d'exécution des modules."
 
 # dd154d4a9b854e16bccbf2b11039902e
-#: ../../compliance.concepts.rst:40
-msgid "Rulesets can be contextually attached to nodes through a filterset."
-msgstr "Les jeux de règles peuvent être contextuellement attachés à des noeuds, par l'intermédiaire d'un jeu de filtres."
+#: ../../compliance.concepts.rst:59
+#, fuzzy
+msgid ""
+"Rulesets can be explicitely attached to nodes or services, or contextually "
+"presented to nodes and services through a filterset."
+msgstr ""
+"Les jeux de règles peuvent être contextuellement attachés à des noeuds, par "
+"l'intermédiaire d'un jeu de filtres."
 
 # 5057dc670c754552b6ebcbe9a117bf15
-#: ../../compliance.concepts.rst:39
-msgid "Rulesets can be explicitely attached to nodes."
+#: ../../compliance.concepts.rst:60
+#, fuzzy
+msgid "Rulesets can be published or not"
 msgstr "Les jeux de règles peuvent être attachés explicitement à des noeuds."
 
-# ea9a278959814e92be336f45b90a84a9
-#: ../../compliance.concepts.rst:302
-msgid ""
-"Set a filter value. The wildcard character for the 'LIKE' and 'NOT LIKE' "
-"operators is '%'. List values for the 'IN' and 'NOT IN' operators are comma-"
-"separated."
+# b387bfedc4cf4688ba9c5b92c9c0f15c
+#: ../../compliance.concepts.rst:61
+msgid "Rulesets can encapsulate other rulesets"
 msgstr ""
-"Positionner une valeur au filtre. Le caractère va-tout pour les opérateur 'LIKE' et 'NOT LIKE' est '%'. "
-"Le séparateurs pour les valeurs en liste des les opérateurs 'IN' et 'NOT IN' est la virgule."
-
-# b40059fdae1c44c89691de1ed232ce8c
-#: ../../compliance.concepts.rst:310
-msgid "Set a filterset name"
-msgstr "Choisir un nom pour le jeu de filtres"
-
-# fe877de8aaf84e2c8d2be25eeaee8ad0
-#: ../../compliance.concepts.rst:319
-msgid ""
-"Set a logical operator to combine the filter/filterset with. Available "
-"logicial operators: 'AND', 'OR'."
-msgstr ""
-"Choisir un opérateur logique pour assembler les filtres ou jeux de filtres entre eux. Les opérateurs disponibles dont 'AND' et 'OR'."
-
-# c2c6f62aacf2402fa79f817e5e95d453
-#: ../../compliance.concepts.rst:71
-msgid "Status"
-msgstr "Etats"
-
-# bd2e187dd81e4d49b77b37a5af9ffa6e
-#: ../../compliance.concepts.rst:65
-msgid "Switch between compliance sub-views using the menu:"
-msgstr "La navigation entre les sous-vues de conformité en utilisant le menu :"
 
 # 8ba18d297d2446a4a3bca4c3b6dc91e3
-#: ../../compliance.concepts.rst:7
+#: ../../compliance.concepts.rst:15
+#, fuzzy
 msgid ""
 "The \"compliance\" concept is all about mesuring the adherence of the hosts' "
-"configurations to the site's rules. The goals are:"
+"configurations to the site's rules. The OpenSVC implementation goals are:"
 msgstr ""
-"Le concept de conformité a pour finalité la mesure de la disparité des configurations réelles des serveurs par rapport aux configurations prévues. "
+"Le concept de conformité a pour finalité la mesure de la disparité des "
+"configurations réelles des serveurs par rapport aux configurations prévues. "
 "Les enjeux en sont :"
 
-# 80e2d456b7334e39972f6781e6a97a42
-#: ../../compliance.concepts.rst:174
-msgid "The compliance  module name."
-msgstr "Le nom du module de conformité."
-
-# 91f01bdc983e486d9f9b64d4ed970444
-#: ../../compliance.concepts.rst:21
-msgid ""
-"The compliance framework can be used for host post-installation. This "
-"strategy ensures a new delivered host is compliant with the current rulesets "
-"and is checked for drift afterwards."
-msgstr ""
-"Le sous-système de conformité peut être utilisé en post-installation des serveurs. "
-"Cette stratégie garantie qu'un nouveau serveur préparé est conforme aux règles de site, "
-"et que la dérive de ses configurations après livraison sera mesurée."
-
-# 487a7b6ae3d545df8fed52e602a2a2fb
-#: ../../compliance.concepts.rst:32
-msgid "The compliance framework uses 3 types of obects."
-msgstr "Le sous-sytème de conformité utilise 3 types d'objet."
-
-# 2a75a8b1d4754d27ab0b0dc929abc960
-#: ../../compliance.concepts.rst:206
-msgid "The compliance module name"
-msgstr "Le nom du module de conformité"
-
-# f1492970e97846f9b5d92036ecf17ebc
-#: ../../compliance.concepts.rst:289
-msgid ""
-"The filters view allow compliance administrators to create complex "
-"filtersets to limit the ruleset scope to a specific node cursor. All fields "
-"from the node asset table can be combined."
-msgstr ""
-"La vue des filtres permet aux administrateurs de concevoir les jeux de filtres complexes pour limiter le périmètre de visibilité des jeux de règles à un ensemble de serveurs spécifique. Tous les champs de la vue des noeuds peuvent servir à la modélisation des jeux de filtres."
-
-# 9a95ea1ba60845a3b8ad480d15c1e6fe
-#: ../../compliance.concepts.rst:198
-msgid "The module action run date on the node."
-msgstr "L'horodatage de l'exécution du module sur le noeud."
-
-# dda487e717b841af8cbbc3d2066cc520
-#: ../../compliance.concepts.rst:214
-msgid ""
-"The module action run status. Can be 'ok' (0), 'not ok' (1) or 'not "
-"applicable' (2)."
-msgstr ""
-"L'état de conformité renvoyé par le module. Peut prendre les valeurs 'ok' (0), 'nok' (1), 'non applicable' (2)."
-
-# 59f80fb4f7014c5383687ef1e09e8fca
-#: ../../compliance.concepts.rst:178
-msgid ""
-"The module action which returned the logged status. Always 'check' in this "
-"view."
-msgstr ""
-"L'action demandée au module. Toujours 'check' dans cette vue."
-
-# 1c01add527a54f169ab4460b84f5f0cd
-#: ../../compliance.concepts.rst:210
-msgid ""
-"The module action which returned the logged status. Can be 'check', "
-"'fixable' or 'fix'."
-msgstr ""
-"L'action demandée au module. Peut être 'chack', 'fixable' ou 'fix'."
-
-# 941e358421534404bcc589b41469d498
-#: ../../compliance.concepts.rst:182
-msgid ""
-"The module check run status. Can be 'ok' (0), 'not ok' (1) or 'not "
-"applicable' (2)."
-msgstr ""
-"L'état de conformité renvoyé par le module. Peut prendre les valeurs 'ok' (0), 'nok' (1), 'non applicable' (2)."
-
-# cd6f5b0705ce45568effa7c6e11b0217
-#: ../../compliance.concepts.rst:85
-msgid "The module name."
-msgstr "Le nom du module."
-
-# 5997e3533d7e4e5f9638673fd3736918
-#: ../../compliance.concepts.rst:166
-msgid "The module run date on the node."
-msgstr "L'horodatage de l'exécution du module."
-
-# b1897065c532403eacae172947559904
-#: ../../compliance.concepts.rst:339
-msgid ""
-"The modules view allow compliance administrators to group modules into "
-"modulesets. The modulesets can then be attached to nodes through the nodemgr "
-"command line::"
-msgstr ""
-"La vue des modules permet aux administrateurs de la conformité de grouper les "
-"modules en jeux de modules. Les jeux de modules peuvent ensuite être attachés "
-"aux noeuds par l'interface du collecteur ou par la commande ::"
-
-# bc9b96e21e214006bd341bbb87263132
-#: ../../compliance.concepts.rst:241
-msgid ""
-"The new ruleset now appears in the ruleset list, ready to receive variables."
-msgstr ""
-"Le nouveau jeu de règle apparaît maintenant dans la liste des jeux de règles, "
-"prêt à recevoir des variables."
-
-# 9551a476469f4e5e8d148934f52c1a73
-# 1d2fe30919ed4c4494c94b04e79ed63e
-# ed74383bfbe0415f862b9806051148af
-#: ../../compliance.concepts.rst:138 ../../compliance.concepts.rst:170
-#: ../../compliance.concepts.rst:202
-msgid "The node name."
-msgstr "Le nom du noeud."
-
-# 64f0e7a376474256aaf5f1936cb89327
-#: ../../compliance.concepts.rst:114
-msgid "The number of modules checked for this service."
-msgstr "Le nombre de modules vérifiés pour ce service."
-
-# 2c981bdd5bf14d1f8438d823747de494
-#: ../../compliance.concepts.rst:146
-msgid "The number of modules passing compliance checks."
-msgstr "Le nombre de services ayant réussi les tests de conformité du module."
-
-# fe32ac60e9014a0491cfb64da0700d9f
-#: ../../compliance.concepts.rst:118
-msgid "The number of modules passing the compliance checks for this service."
-msgstr "Le nombre de modules ayant réussi les tests de conformité pour ce service."
-
-# 36b227c176224302853bca09e3d4e402
-#: ../../compliance.concepts.rst:142
-msgid "The number of modules run on the node."
-msgstr "Le nombre de modules ayant tourné sur ce noeud."
-
-# f47476c7f55e461b9ebfbfabc6248c1a
-#: ../../compliance.concepts.rst:89
-msgid "The number of nodes checked by this module."
-msgstr "Le nombre de noeuds vérifés par ce module."
-
-# 0af54d2fa1944d788e287413e27e9ed8
-#: ../../compliance.concepts.rst:93
-msgid "The number of nodes passing the compliance checks of the module."
-msgstr "Le nombre de noeuds ayant réussi les test de conformité du module."
-
-# d18f8350f0b6443388b084d825a1b115
-#: ../../compliance.concepts.rst:218
-msgid "The output of the compliance module for the run."
-msgstr "La sortie du module de conformité pour cette exécution."
-
-# 020b0e3f39ea45f3ad84b6adab5ed6ae
-#: ../../compliance.concepts.rst:110
-msgid "The service name."
-msgstr "Le nom du service."
-
-# c5c051d5f18e45059856a926028993e3
-#: ../../compliance.concepts.rst:280
-msgid ""
-"This facility is offered by the bottom tables of the ruleset view. The table "
-"filters are useful to select the nodes efficiently."
-msgstr ""
-"Cette fonctionnalité est apportée par les tables de l'outil 'Attachement jeux de règles/noeuds'. L'utilisation du filtrage permet de sélectionner efficacement les noeuds auxquels attacher les jeux de règles."
-
-# 07f19a8cce654d78a3d40422d3a20421
-#: ../../compliance.concepts.rst:78
-msgid ""
-"This panel present the compliant/not-compliant status aggregated by module."
-msgstr ""
-"Cet encart affiche les états de conformité aggrégé par module."
-
-# d5b773071e5047ddabb93b9b1c22c2de
-#: ../../compliance.concepts.rst:131
-msgid ""
-"This panel present the compliant/not-compliant status aggregated by node."
-msgstr ""
-"Cet encart affiche les états de conformité aggrégé par noeud."
-
-# f3724ba43ccb4882a2bfc8fb7f1a07ec
+# b1af7196717d4c8cbd647540c4938c17
 #: ../../compliance.concepts.rst:106
 msgid ""
-"This panel present the compliant/not-compliant status aggregated by service."
+"The application codes ownership can be set by the collector administrators "
+"in this view"
 msgstr ""
-"Cet encart affiche les états de conformité aggrégé par service."
 
-# 9b34b5dde2364179a72ad0e6b6ab7ca9
-#: ../../compliance.concepts.rst:159
+# 10256d90592d43e98391093767f05ad0
+#: ../../compliance.concepts.rst:90
 msgid ""
-"This panel present the compliant/not-compliant status without aggregation. "
-"It can be used to filter the dataset aggregated in the above panels."
+"The collector allows users to set owners to modulesets and rulesets, so that "
+"they are visible and attachable from services and nodes only if they share a "
+"common ownership."
 msgstr ""
-"Cet encart affiche les états de conformité sans aucune aggrégation. "
-"Il est utile pour filtrer les données qui sont aggrégées dans les encarts du "
-"haut de paje."
 
-
-# 497a86c76db5448781bdb6923d4b39fa
-#: ../../compliance.concepts.rst:73
+# 91f01bdc983e486d9f9b64d4ed970444
+#: ../../compliance.concepts.rst:36
+#, fuzzy
 msgid ""
-"This sub-view has 4 stacked panels. The top 3 are folded upon page load."
+"The compliance framework can naturally be used for host post-installation. "
+"This strategy avoids extra maintenance of a systems post-installation "
+"framework, and ensures a newly delivered host is compliant with the current "
+"ruleset and is checked for drift after its delivery."
 msgstr ""
-"Cette vue embarque 4 panneaux. Les trois supérieurs sont repliés par défaut au chargement de la paje."
+"Le sous-système de conformité peut être utilisé en post-installation des "
+"serveurs. Cette stratégie garantie qu'un nouveau serveur préparé est "
+"conforme aux règles de site, et que la dérive de ses configurations après "
+"livraison sera mesurée."
 
-# 14a84ae1c0164ea6a34888c97be809dd
-#: ../../compliance.concepts.rst:191
+# 487a7b6ae3d545df8fed52e602a2a2fb
+#: ../../compliance.concepts.rst:48
+#, fuzzy
+msgid "The compliance framework uses 3 types of objects."
+msgstr "Le sous-sytème de conformité utilise 3 types d'objet."
+
+# 1d7c1ff326d14fd6864024761e495f9b
+#: ../../compliance.concepts.rst:103
 msgid ""
-"This sub-view presents raw logs of the compliance modules runs on every "
-"nodes. It can be used to analyze failure patterns."
+"This code is set in each service configuration file by the ``DEFAULT.app`` "
+"parameter"
 msgstr ""
-"Cette vue présente les journaux bruts des exécutions de modules de conformité sur tous les noeuds. "
-"Elle est utile à l'analyse des récurrences de problème."
+
+# ad796b0473564775ad9de9823e107809
+#: ../../compliance.concepts.rst:105
+msgid "This registry is rendered by the ``Admin > Apps`` view."
+msgstr ""
+
+# 4478a87726544431a00116d6bdc4d651
+#: ../../compliance.concepts.rst:22
+msgid "Tight integration with the clustering layers"
+msgstr ""
 
 # b8f968c8fb16464abbf10265a094d127
-#: ../../compliance.concepts.rst:49
+#: ../../compliance.concepts.rst:70
 msgid ""
 "Upon grouping, the designer must choose a ``AND`` or ``OR`` logical operator "
 "and the components ordering"
 msgstr ""
-"Lors d'un regroupement, le designer doit choisir entre les opérateurs ``AND`` et ``OR`` "
-"et doit choisir l'ordre de prise en compte des membres."
+"Lors d'un regroupement, le designer doit choisir entre les opérateurs "
+"``AND`` et ``OR`` et doit choisir l'ordre de prise en compte des membres."
 
-# 6109d40451a24a4db50667b031e67cb3
-#: ../../compliance.concepts.rst:11
-msgid "Use auditable scripts to apply changes to your hosts"
-msgstr "Utilisation de scripts auditable pour prendre en charge tout changement de configuration sur les serveurs"
+# ad945f1edfd547c59e03ab2b981d8c3b
+#: ../../compliance.concepts.rst:101
+msgid ""
+"node-to-ruleset and node-to-moduleset trust chains need only the group link"
+msgstr ""
+
+# 8b3bfe9655c9462480ac704222406e43
+#: ../../compliance.concepts.rst:106
+msgid ""
+"service-to-ruleset and service-to-moduleset trust chains have an additional "
+"link : the service application code."
+msgstr ""
+
+# 22326230e1b64ea1b3d205b9dd8f9758
+#: ../../compliance.concepts.rst:97
+msgid ""
+"the blue ownership chains do not link the moduleset and ruleset to the nodes "
+"and services, meaning the endpoint moduleset and ruleset are not visible nor "
+"attachable from the node and services at the other end of the chains. In "
+"other words, Ruleset and Moduleset are not visible nor attachable from Node2 "
+"and Service1 because they don't share common groups."
+msgstr ""
+
+# e87768d891404729a39c445cc1eb9e5a
+#: ../../compliance.concepts.rst:96
+msgid ""
+"the orange ownership chains link the moduleset and ruleset to the node and "
+"services, meaning the endpoint moduleset and ruleset are visible and "
+"attachable from the node and services at the other end of the chains. In "
+"other words, Ruleset and Moduleset are visible and attachable only from "
+"Node1 and Service2 because they all share a common ownership by Group2."
+msgstr ""
+
+# 750b1da3ea3f4574827b84904ab52799
+# 8042117674ea4d6ca3c200a4ef0fc955
+# 35d7d5d16afc4c75923772fc35e8690a
+#: ../../compliance.concepts.rst:31 ../../compliance.concepts.rst:40
+#: ../../compliance.concepts.rst:110
+msgid "|nbsp|"
+msgstr ""
+
+# 6bf611fc6ebb449ca82cc1aa6fdaf2ae
+# 41a529022f144c80b08379ef0bba4b85
+# b443ca505fef40b9909720b12cb28cf8
+#~ msgid "100 * Ok / Total."
+#~ msgstr "100 * Ok / Total."
+
+# 04ca6f6f334d4cefbacab8469e9d00bb
+#~ msgid ""
+#~ "A filterset is a combination of filters or filtersets. Filters are "
+#~ "created through the top table and filterset created through the bottom "
+#~ "table. Only member of the 'CompManager' group are allowed to create or "
+#~ "edit filters."
+#~ msgstr ""
+#~ "Un jeu de filtres est une combinaison entre filtres ou jeux de filtres. "
+#~ "Les filtres sont créés par le tableau du haut et les jeux de filtres sont "
+#~ "assemblés par le tableau du bas de paje. Seuls les membres du groupe "
+#~ "'CompManager' sont autorisés à créer ou éditer des filtres."
+
+# 5b1b4b3c32c44b3fbab62a470d686dea
+#~ msgid ""
+#~ "A run over run status sparkline. This columns present no timeline "
+#~ "information."
+#~ msgstr ""
+#~ "Une mini-courbe des résultats successifs des vérifications de conformité. "
+#~ "Cette colonne ne contient pas d'informations temporelles."
+
+# 41daf3749aa24638b74fc99360e7479d
+#~ msgid ""
+#~ "A typical filterset would be 'All Red Hat 4 servers whose team "
+#~ "responsible is SomeTeam'."
+#~ msgstr ""
+#~ "Un jeu de filtre classique pourrait être 'Tous les serveurs Red Hat 4 "
+#~ "dont l'équipe est responsable est MonEquipe"
+
+# f844a9a3b9c84aafa6c8cfbfdc4c19a5
+#~ msgid "Add variables"
+#~ msgstr "Ajouter des variables"
+
+# 18a7eccb31d5464aab7463fb5b9b158c
+#~ msgid "Attach filterset"
+#~ msgstr "Attacher un jeu de filtres"
+
+# 4346a44b346d485db00365e579434ca3
+#~ msgid "Attach rulesets to nodes"
+#~ msgstr "Attcher un jeu de règles à des noeuds"
+
+# 3ea228ca13ca4c62a09e592a71ee9ab6
+#~ msgid "Best practice"
+#~ msgstr "Bonnes pratiques"
+
+# 1fa3ead66b2d4f69bcea377467b3dce3
+#~ msgid "Check the nodes in the left-side table"
+#~ msgstr "Cocher les noeuds dans la table de gauche"
+
+# d9af63cb19be40e4baa13415f9cdd575
+#~ msgid "Check the rulesets in the right-side table"
+#~ msgstr "Cocher les jeux de règles dans la table de droite"
+
+# 92c66a653d454721a89c84157e7ce18a
+#~ msgid ""
+#~ "Choose a field name. Available field names: 'warranty_end', 'status', "
+#~ "'role', 'environnement', 'mem_bytes', 'mem_banks', 'mem_slots', "
+#~ "'os_vendor', 'os_name', 'os_kernel', 'os_release', 'os_arch', 'cpu_freq', "
+#~ "'cpu_dies', 'cpu_cores', 'cpu_model', 'cpu_vendor', 'type', 'nodename', "
+#~ "'team_responsible', 'serial', 'model', 'loc_addr', 'loc_city', 'loc_zip', "
+#~ "'loc_rack', 'loc_floor', 'loc_country', 'loc_building', 'loc_room', "
+#~ "'power_supply_nb', 'power_cabinet1', 'power_cabinet2', 'power_protect', "
+#~ "'power_protect_breaker', 'power_breaker1', 'power_breaker2', 'updated'"
+#~ msgstr ""
+#~ "Choisir un nom de champ. Les champs disponibles sont : 'warranty_end', "
+#~ "'status', 'role', 'environnement', 'mem_bytes', 'mem_banks', 'mem_slots', "
+#~ "'os_vendor', 'os_name', 'os_kernel', 'os_release', 'os_arch', 'cpu_freq', "
+#~ "'cpu_dies', 'cpu_cores', 'cpu_model', 'cpu_vendor', 'type', 'nodename', "
+#~ "'team_responsible', 'serial', 'model', 'loc_addr', 'loc_city', 'loc_zip', "
+#~ "'loc_rack', 'loc_floor', 'loc_country', 'loc_building', 'loc_room', "
+#~ "'power_supply_nb', 'power_cabinet1', 'power_cabinet2', 'power_protect', "
+#~ "'power_protect_breaker', 'power_breaker1', 'power_breaker2', 'updated'"
+
+# fe89d7a269974aed89bb03e00fbea113
+#~ msgid "Choose a name for the cloned ruleset"
+#~ msgstr "Choisir un nom pour le jeu de règles cloné"
+
+# 9d3b81c254ed46f2b391035d32474380
+#~ msgid "Choose a pre-existing filterset from the list box"
+#~ msgstr "Choisir un jeu de filtre existant depuis la liste"
+
+# 8dea677018aa4a2b812222b2b9cfbbfb
+#~ msgid "Choose a pre-existing ruleset from the list box"
+#~ msgstr "Choisir un jeu de règle existant depuis la liste"
+
+# c435d64816fc48a88c3194937fd6fcc5
+#~ msgid "Choose a table name. Available table names: 'nodes'"
+#~ msgstr "Choisir un nom de table. Les tables disponibles sont : 'nodes'"
+
+# 7698301c707749559ed7ebc2a86d2af1
+#~ msgid "Choose a unique ruleset name"
+#~ msgstr "Choisir un nom de jeu de règle unique"
+
+# 46ee731838de4fd787e9754178eb932e
+#~ msgid "Choose a variable name"
+#~ msgstr "Choisir un nom de variable"
+
+# 7715eb24b4bd44cc9270810b952bf51e
+#~ msgid "Choose a variable value"
+#~ msgstr "Choisir une valeur de variable"
+
+# 42a5c021faad4fcf9dd74f66fa3dc345
+#~ msgid ""
+#~ "Choose an operator. Available operators: '=', 'LIKE', 'NOT LIKE', '<', "
+#~ "'<=', '>', '>=', 'IN', 'NOT IN'"
+#~ msgstr ""
+#~ "Choisir un opérateur. Les opérateurs disponibles sont '=', 'LIKE', 'NOT "
+#~ "LIKE', '<', '<=', '>', '>=', 'IN', 'NOT IN'"
+
+# 87955b8a88bc4180bac425cffc371592
+#~ msgid "Choose contextual/explicit"
+#~ msgstr "Choisir entre contextuel et explicite"
+
+# 4750e886c2404930b5febaeda1203fca
+#~ msgid "Choose the filterset or filter to attach in the list box"
+#~ msgstr "Choisir le jeu de filtres ou le filtre à attacher depuis la liste"
+
+# 4def8117e80347d7b6c9cd2ef7d458cc
+#~ msgid "Choose the filterset to attach to in the list box"
+#~ msgstr "Choisir le jeu de filtres à attacher depuis la liste"
+
+# a8d69137da9e471e9c601cfc90ff00d7
+#~ msgid "Click 'Add variable'"
+#~ msgstr "Cliquer sur 'Ajouter une variable'"
+
+# 7aa05b7cdec742508cf4675a8a8f4286
+#~ msgid "Click 'Attach filterset'"
+#~ msgstr "Cliquer sur 'Attacher un jeu de filtres'"
+
+# c65db6efce56496bb9fcced6a531e972
+#~ msgid "Click 'Attach filterset' or 'Attach filter'"
+#~ msgstr "Cliquer sur 'Attacher un jeu de filtres' ou 'Attacher un filtre'"
+
+# ce9df15a88504d11b3ab679ef767c7f5
+#~ msgid "Click 'Attach ruleset'"
+#~ msgstr "Cliquer sur 'Attacher un jeu de règles'"
+
+# 9f269d3d01c24dcdaa1cb8a2c9f5752b
+#~ msgid "Click 'Clone ruleset'"
+#~ msgstr "Cliquer sur 'Cloner un jeu de règles'"
+
+# cdfefe0c1def4ef3a78f6d366f6ca487
+#~ msgid "Click 'Create filter'"
+#~ msgstr "Cliquer sur 'Créer un filtre'"
+
+# a1de97a1b71240a7aba7caf9f37e1de9
+#~ msgid "Click 'Create filterset'"
+#~ msgstr "Cliquer sur 'Créer un jeu de filtres'"
+
+# 4ac11d0f4b0a494daa9a4130afadf839
+#~ msgid "Click 'Create ruleset'"
+#~ msgstr "Cliquer sur 'Créer un jeu de règles'"
+
+# ae797bfabb5541f99925bbd76807fff2
+# b7a4ea1f4ced4cf0a070e653501baec9
+# 9b547fcbd4a04e6d99868729f39fb7a6
+# 786090c9b1d746008d2bae94314a74df
+#~ msgid "Click 'Submit'"
+#~ msgstr "Cliquer sur 'Soumettre'"
+
+# 6d52159135f54917b47545b7a5963367
+#~ msgid ""
+#~ "Click either the variable name or the variable value top-right 'edit' icon"
+#~ msgstr ""
+#~ "Cliquer sur le nom de la variable ou sur l'icône 'éditer' en haut à "
+#~ "droite de sa valeur"
+
+# 1081b6c154e2493c82508a3449a77c5a
+# 3e19a85feee04a3189782928fff93a5a
+#~ msgid "Click on 'Submit'"
+#~ msgstr "Cliquer sur 'Soumettre'"
+
+# 13040ae8906a4d89967133c5e19f146c
+#~ msgid "Clone ruleset"
+#~ msgstr "Cloner un jeu de règles"
+
+# 127afd32c9f64250bba8dc4d9a76134d
+#~ msgid ""
+#~ "Cloning a ruleset helps administrators who want their rulesets "
+#~ "immutable : when a variable change is needed, the administrator clones "
+#~ "the ruleset and apply the change to the clone. This governance policy "
+#~ "implies ruleset names are versioned."
+#~ msgstr ""
+#~ "Le clonage de jeu de règles est notamment utile aux administrateurs qui "
+#~ "souhaitent leurs jeux de règles immuables : Quand un changement de "
+#~ "variable est nécessaire, l'administrateur clone le jeu de règle et "
+#~ "applique le changement au clone. Cette politique de gouvernance implique "
+#~ "le versionnement des noms de jeu de règles."
+
+# dc9683efb89a479a8848ed47b24ac7ff
+#~ msgid "Collector compliance views"
+#~ msgstr "Vues du collecteur pour la conformité"
+
+# 467f9efbc40d42c694db51bcdf89ae3d
+#~ msgid ""
+#~ "Collector's interfaces to analyze compliance data and to configure the "
+#~ "framework are all grouped in the menu ``Views > Compliance``."
+#~ msgstr ""
+#~ "Les interfaces du collecteurs dédiées à l'analyse des données de "
+#~ "conformité et à la configuration du sous-système sont groupées derrière "
+#~ "le menu ``Vues -> Conformité``."
+
+# 62d30bce9e5c46b38b7e5bf629cb9d47
+#~ msgid "Compliance conceptual objects"
+#~ msgstr "Objets conceptuels de la conformité"
+
+# fb56aeeb84094d578c69677fb3ebb263
+#~ msgid ""
+#~ "Contextual ruleset variables are exported to the group of nodes matching "
+#~ "the ruleset's filterset. Explicit rulesets"
+#~ msgstr ""
+#~ "Les variables des jeux de règles contextuels sont exportées au groupe de "
+#~ "noeuds qui correspondent au jeu de filtres du jeu de règles."
+
+# c78a6819d16c40b4b54d19842392f218
+#~ msgid "Create a filter"
+#~ msgstr "Créer un filtre"
+
+# 7b1754d87b184e5aadc9bf344a4dcfbb
+#~ msgid "Create a filterset"
+#~ msgstr "Créer un jeu de filtres"
+
+# f90fdbccf8264c58a5e1a8284c0bbaec
+#~ msgid "Create an empty ruleset"
+#~ msgstr "Créer un jeu de règles vide"
+
+# 26c6aa9c19a64d0eb5c4c07a1af92844
+#~ msgid "Detailled compliance status"
+#~ msgstr "Etats détaillés de conformité"
+
+# 107387d86e7e42a2a3923b96387122a8
+#~ msgid "Edit the input or content"
+#~ msgstr "Editer le contenu de la cellule ou le formulaire"
+
+# 5acda8eabee5472a9acfe612e7bd456e
+#~ msgid "Edit variables"
+#~ msgstr "Modifier les noms variables"
+
+# 432f41216b084eff88108987fd85d4c6
+#~ msgid ""
+#~ "Explicit ruleset variables are exported only to nodes explicitely "
+#~ "attached to the ruleset. This attachment can be configured either through "
+#~ "the collector interface (Described below), or through the agent command "
+#~ "line tools::"
+#~ msgstr ""
+#~ "Les variables des jeux de règles explicites ne sont exportées qu'aux "
+#~ "noeuds explicitement attachés à ces jeux de règles. Ces attachement sont "
+#~ "réalisés soit par l'interface du collecteur (voir ci-bas), soit par la "
+#~ "ligne de commande de l'agent ::"
+
+# 49120febe78445669be482a9dceabb96
+#~ msgid "Filters"
+#~ msgstr "Filtres"
+
+# 81c6f68043b14b449999f1276b0741b0
+#~ msgid ""
+#~ "Filtersets are created empty, then filters or filtersets are attached to "
+#~ "the new filterset."
+#~ msgstr ""
+#~ "Les jeux de filtres sont initialisé vides, puis des filtres ou d'autres "
+#~ "jeux de filtres y sont attachés."
+
+# af8ccf67025648b7be3ebef78fec5a50
+#~ msgid ""
+#~ "If the ruleset is contextual, the following procedure attach a filter to "
+#~ "the ruleset."
+#~ msgstr ""
+#~ "Si le jeu de règles est contextuel, la procédure suivante permet d'y "
+#~ "attacher un jeu de filtre."
+
+# cfaeec81107641c9a76a5f3b383cf672
+#~ msgid ""
+#~ "It is recommended for readability to define filtersets combining with "
+#~ "only one logical operator (only ANDs or ORs). For example, a filterset "
+#~ "implementing 'all Linux or HP-UX servers whose team responsible is "
+#~ "SOMETEAM should be implemented as 2 encapsulated filtersets:"
+#~ msgstr ""
+#~ "Il est recommandé pour des raisons de lisibilité de définir des jeux de "
+#~ "filtres liant les filtres avec un seul type d'opératoire (soit que des "
+#~ "ET, soit que des OU). Par exemple, un jeu de filtres traduisant 'Tous les "
+#~ "serveur Linux ou HP-UX dont l'équipe responsable est MonEquipe' serait "
+#~ "bâtie par encapsulation de deux jeux de filtres :"
+
+# 04dadd14c61840f1ac800446fd04ad1b
+#~ msgid "Logs"
+#~ msgstr "Journaux"
+
+# 527982901674461db8c8c2182b4fd24b
+#~ msgid "Modules"
+#~ msgstr "Modules"
+
+# 8a6e3e6d484441b2a29e5545889a3559
+#~ msgid "Of course, more explicit filterset names are recommended."
+#~ msgstr ""
+#~ "Evidemment, des noms de jeu de filtres plus explicites sont recommandés."
+
+# e5bac110dde8441d805659ef1474634d
+#~ msgid ""
+#~ "Optionally set an order. Defaults to '0'. Ordering is important when you "
+#~ "mix 'AND' and 'OR' in the same filterset"
+#~ msgstr ""
+#~ "Eventuellement, forcer un rang. Le rang par défaut est '0'. Le rang est "
+#~ "important quand les opérateur 'ET' et 'OU' sont utilisés simultanéement "
+#~ "dans le même jeu de filtres."
+
+# 63c17aa87e0d4eb99001e5d6c5930a61
+#~ msgid "Per-module compliance status"
+#~ msgstr "Etats de conformité aggrégés par module"
+
+# a1b04bf63c874cff8c6b3d495b35860f
+#~ msgid "Per-node compliance status"
+#~ msgstr "Etats de conformité aggrégés par noeud"
+
+# d16c7c4f280e4ae79ee0600c7999374c
+#~ msgid "Per-service compliance status"
+#~ msgstr "Etats de conformité aggrégés par service"
+
+# 362a83278dd647c0bdca9716f1c0a08e
+#~ msgid "Populate a filterset"
+#~ msgstr "Polupler le jeu de filtres"
+
+# 453baa4eea2240fcb5151d0fb191877a
+#~ msgid "Press 'Enter' to save the change"
+#~ msgstr "Appuyer sur 'Enter' pour sauvegarder les changements"
+
+# 54ce0d69fb6b439ea9a95357e130ff9f
+#~ msgid "Rules"
+#~ msgstr "Règles"
+
+# eb3c2b481b22439d9b98d6dcce60e24f
+#~ msgid ""
+#~ "Rules are expressed as variable/value pairs. Rules can be grouped into "
+#~ "rulesets. Only members of the 'CompManager' group are allowed to create "
+#~ "or edit rulesets. Contextual rulesets"
+#~ msgstr ""
+#~ "Les règles sont exprimées sous forme de couples variable/valeur. Elles "
+#~ "peuvent être groupées en jeux de règles. Seuls les membres de "
+#~ "'CompManager sont habilités à créer ou modififier des jeux de règles."
+
+# ea9a278959814e92be336f45b90a84a9
+#~ msgid ""
+#~ "Set a filter value. The wildcard character for the 'LIKE' and 'NOT LIKE' "
+#~ "operators is '%'. List values for the 'IN' and 'NOT IN' operators are "
+#~ "comma-separated."
+#~ msgstr ""
+#~ "Positionner une valeur au filtre. Le caractère va-tout pour les opérateur "
+#~ "'LIKE' et 'NOT LIKE' est '%'. Le séparateurs pour les valeurs en liste "
+#~ "des les opérateurs 'IN' et 'NOT IN' est la virgule."
+
+# b40059fdae1c44c89691de1ed232ce8c
+#~ msgid "Set a filterset name"
+#~ msgstr "Choisir un nom pour le jeu de filtres"
+
+# fe877de8aaf84e2c8d2be25eeaee8ad0
+#~ msgid ""
+#~ "Set a logical operator to combine the filter/filterset with. Available "
+#~ "logicial operators: 'AND', 'OR'."
+#~ msgstr ""
+#~ "Choisir un opérateur logique pour assembler les filtres ou jeux de "
+#~ "filtres entre eux. Les opérateurs disponibles dont 'AND' et 'OR'."
+
+# c2c6f62aacf2402fa79f817e5e95d453
+#~ msgid "Status"
+#~ msgstr "Etats"
+
+# bd2e187dd81e4d49b77b37a5af9ffa6e
+#~ msgid "Switch between compliance sub-views using the menu:"
+#~ msgstr ""
+#~ "La navigation entre les sous-vues de conformité en utilisant le menu :"
+
+# 80e2d456b7334e39972f6781e6a97a42
+#~ msgid "The compliance  module name."
+#~ msgstr "Le nom du module de conformité."
+
+# 2a75a8b1d4754d27ab0b0dc929abc960
+#~ msgid "The compliance module name"
+#~ msgstr "Le nom du module de conformité"
+
+# f1492970e97846f9b5d92036ecf17ebc
+#~ msgid ""
+#~ "The filters view allow compliance administrators to create complex "
+#~ "filtersets to limit the ruleset scope to a specific node cursor. All "
+#~ "fields from the node asset table can be combined."
+#~ msgstr ""
+#~ "La vue des filtres permet aux administrateurs de concevoir les jeux de "
+#~ "filtres complexes pour limiter le périmètre de visibilité des jeux de "
+#~ "règles à un ensemble de serveurs spécifique. Tous les champs de la vue "
+#~ "des noeuds peuvent servir à la modélisation des jeux de filtres."
+
+# 9a95ea1ba60845a3b8ad480d15c1e6fe
+#~ msgid "The module action run date on the node."
+#~ msgstr "L'horodatage de l'exécution du module sur le noeud."
+
+# dda487e717b841af8cbbc3d2066cc520
+#~ msgid ""
+#~ "The module action run status. Can be 'ok' (0), 'not ok' (1) or 'not "
+#~ "applicable' (2)."
+#~ msgstr ""
+#~ "L'état de conformité renvoyé par le module. Peut prendre les valeurs "
+#~ "'ok' (0), 'nok' (1), 'non applicable' (2)."
+
+# 59f80fb4f7014c5383687ef1e09e8fca
+#~ msgid ""
+#~ "The module action which returned the logged status. Always 'check' in "
+#~ "this view."
+#~ msgstr "L'action demandée au module. Toujours 'check' dans cette vue."
+
+# 1c01add527a54f169ab4460b84f5f0cd
+#~ msgid ""
+#~ "The module action which returned the logged status. Can be 'check', "
+#~ "'fixable' or 'fix'."
+#~ msgstr "L'action demandée au module. Peut être 'chack', 'fixable' ou 'fix'."
+
+# 941e358421534404bcc589b41469d498
+#~ msgid ""
+#~ "The module check run status. Can be 'ok' (0), 'not ok' (1) or 'not "
+#~ "applicable' (2)."
+#~ msgstr ""
+#~ "L'état de conformité renvoyé par le module. Peut prendre les valeurs "
+#~ "'ok' (0), 'nok' (1), 'non applicable' (2)."
+
+# cd6f5b0705ce45568effa7c6e11b0217
+#~ msgid "The module name."
+#~ msgstr "Le nom du module."
+
+# 5997e3533d7e4e5f9638673fd3736918
+#~ msgid "The module run date on the node."
+#~ msgstr "L'horodatage de l'exécution du module."
+
+# b1897065c532403eacae172947559904
+#~ msgid ""
+#~ "The modules view allow compliance administrators to group modules into "
+#~ "modulesets. The modulesets can then be attached to nodes through the "
+#~ "nodemgr command line::"
+#~ msgstr ""
+#~ "La vue des modules permet aux administrateurs de la conformité de grouper "
+#~ "les modules en jeux de modules. Les jeux de modules peuvent ensuite être "
+#~ "attachés aux noeuds par l'interface du collecteur ou par la commande ::"
+
+# bc9b96e21e214006bd341bbb87263132
+#~ msgid ""
+#~ "The new ruleset now appears in the ruleset list, ready to receive "
+#~ "variables."
+#~ msgstr ""
+#~ "Le nouveau jeu de règle apparaît maintenant dans la liste des jeux de "
+#~ "règles, prêt à recevoir des variables."
+
+# 9551a476469f4e5e8d148934f52c1a73
+# 1d2fe30919ed4c4494c94b04e79ed63e
+# ed74383bfbe0415f862b9806051148af
+#~ msgid "The node name."
+#~ msgstr "Le nom du noeud."
+
+# 64f0e7a376474256aaf5f1936cb89327
+#~ msgid "The number of modules checked for this service."
+#~ msgstr "Le nombre de modules vérifiés pour ce service."
+
+# 2c981bdd5bf14d1f8438d823747de494
+#~ msgid "The number of modules passing compliance checks."
+#~ msgstr ""
+#~ "Le nombre de services ayant réussi les tests de conformité du module."
+
+# fe32ac60e9014a0491cfb64da0700d9f
+#~ msgid ""
+#~ "The number of modules passing the compliance checks for this service."
+#~ msgstr ""
+#~ "Le nombre de modules ayant réussi les tests de conformité pour ce service."
+
+# 36b227c176224302853bca09e3d4e402
+#~ msgid "The number of modules run on the node."
+#~ msgstr "Le nombre de modules ayant tourné sur ce noeud."
+
+# f47476c7f55e461b9ebfbfabc6248c1a
+#~ msgid "The number of nodes checked by this module."
+#~ msgstr "Le nombre de noeuds vérifés par ce module."
+
+# 0af54d2fa1944d788e287413e27e9ed8
+#~ msgid "The number of nodes passing the compliance checks of the module."
+#~ msgstr "Le nombre de noeuds ayant réussi les test de conformité du module."
+
+# d18f8350f0b6443388b084d825a1b115
+#~ msgid "The output of the compliance module for the run."
+#~ msgstr "La sortie du module de conformité pour cette exécution."
+
+# 020b0e3f39ea45f3ad84b6adab5ed6ae
+#~ msgid "The service name."
+#~ msgstr "Le nom du service."
+
+# c5c051d5f18e45059856a926028993e3
+#~ msgid ""
+#~ "This facility is offered by the bottom tables of the ruleset view. The "
+#~ "table filters are useful to select the nodes efficiently."
+#~ msgstr ""
+#~ "Cette fonctionnalité est apportée par les tables de l'outil 'Attachement "
+#~ "jeux de règles/noeuds'. L'utilisation du filtrage permet de sélectionner "
+#~ "efficacement les noeuds auxquels attacher les jeux de règles."
+
+# 07f19a8cce654d78a3d40422d3a20421
+#~ msgid ""
+#~ "This panel present the compliant/not-compliant status aggregated by "
+#~ "module."
+#~ msgstr "Cet encart affiche les états de conformité aggrégé par module."
+
+# d5b773071e5047ddabb93b9b1c22c2de
+#~ msgid ""
+#~ "This panel present the compliant/not-compliant status aggregated by node."
+#~ msgstr "Cet encart affiche les états de conformité aggrégé par noeud."
+
+# f3724ba43ccb4882a2bfc8fb7f1a07ec
+#~ msgid ""
+#~ "This panel present the compliant/not-compliant status aggregated by "
+#~ "service."
+#~ msgstr "Cet encart affiche les états de conformité aggrégé par service."
+
+# 9b34b5dde2364179a72ad0e6b6ab7ca9
+#~ msgid ""
+#~ "This panel present the compliant/not-compliant status without "
+#~ "aggregation. It can be used to filter the dataset aggregated in the above "
+#~ "panels."
+#~ msgstr ""
+#~ "Cet encart affiche les états de conformité sans aucune aggrégation. Il "
+#~ "est utile pour filtrer les données qui sont aggrégées dans les encarts du "
+#~ "haut de paje."
+
+# 497a86c76db5448781bdb6923d4b39fa
+#~ msgid ""
+#~ "This sub-view has 4 stacked panels. The top 3 are folded upon page load."
+#~ msgstr ""
+#~ "Cette vue embarque 4 panneaux. Les trois supérieurs sont repliés par "
+#~ "défaut au chargement de la paje."
+
+# 14a84ae1c0164ea6a34888c97be809dd
+#~ msgid ""
+#~ "This sub-view presents raw logs of the compliance modules runs on every "
+#~ "nodes. It can be used to analyze failure patterns."
+#~ msgstr ""
+#~ "Cette vue présente les journaux bruts des exécutions de modules de "
+#~ "conformité sur tous les noeuds. Elle est utile à l'analyse des "
+#~ "récurrences de problème."
 
 # 350392d9975742399ad5916fd49a35fd
 # 50a88fcb57184cf0be3bf475cc0a1af8
-#: ../../compliance.concepts.rst:101 ../../compliance.concepts.rst:154
-msgid ""
-"Week over week plot of ok/not ok/not applicable status returned by modules "
-"for the node. The plotted status are the worst case in the week, meaning if "
-"a module returned 'not ok' then 'ok' during week 50, only 'not ok' will be "
-"accounted."
-msgstr ""
-"Courbe représentant l'évolution semaine après semaine les états de conformité renvoyés par les modules du serveur. "
-"Les états pris en compte sont les états \"au pire\", c'est-à-dire que si un module dans la même semaine a renvoyé "
-"un état non ok et un état ok, c'est l'état non ok qui est pris en compte."
+#~ msgid ""
+#~ "Week over week plot of ok/not ok/not applicable status returned by "
+#~ "modules for the node. The plotted status are the worst case in the week, "
+#~ "meaning if a module returned 'not ok' then 'ok' during week 50, only 'not "
+#~ "ok' will be accounted."
+#~ msgstr ""
+#~ "Courbe représentant l'évolution semaine après semaine les états de "
+#~ "conformité renvoyés par les modules du serveur. Les états pris en compte "
+#~ "sont les états \"au pire\", c'est-à-dire que si un module dans la même "
+#~ "semaine a renvoyé un état non ok et un état ok, c'est l'état non ok qui "
+#~ "est pris en compte."
 
 # 9cc6cd9f52464f37aae72ec3ebc38501
-#: ../../compliance.concepts.rst:126
-msgid ""
-"Week over week plot of ok/not ok/not applicable status returned by modules "
-"for the service. The plotted status are the worst case in the week, meaning "
-"if a module returned 'not ok' then 'ok' during week 50, only 'not ok' will "
-"be accounted."
-msgstr ""
-"Courbe représentant l'évolution semaine après semaine les états de conformité renvoyés par les modules du service. "
-"Les états pris en compte sont les états \"au pire\", c'est-à-dire que si un module dans la même semaine a renvoyé "
-"un état non ok et un état ok, c'est l'état non ok qui est pris en compte."
+#~ msgid ""
+#~ "Week over week plot of ok/not ok/not applicable status returned by "
+#~ "modules for the service. The plotted status are the worst case in the "
+#~ "week, meaning if a module returned 'not ok' then 'ok' during week 50, "
+#~ "only 'not ok' will be accounted."
+#~ msgstr ""
+#~ "Courbe représentant l'évolution semaine après semaine les états de "
+#~ "conformité renvoyés par les modules du service. Les états pris en compte "
+#~ "sont les états \"au pire\", c'est-à-dire que si un module dans la même "
+#~ "semaine a renvoyé un état non ok et un état ok, c'est l'état non ok qui "
+#~ "est pris en compte."
 
 # 2fe70ebbdfba472abab6230d3dd5c5c4
-#: ../../compliance.concepts.rst:328
-msgid "filter1: 'nodes.os_name = HP-UX'"
-msgstr "filtre1 : 'nodes.os_name = HP-UX'"
+#~ msgid "filter1: 'nodes.os_name = HP-UX'"
+#~ msgstr "filtre1 : 'nodes.os_name = HP-UX'"
 
 # df9eb5e704b740e389bbbb772381b0ae
-#: ../../compliance.concepts.rst:329
-msgid "filter2: 'nodes.os_name = Linux'"
-msgstr "filtre2 : 'nodes.os_name = Linux'"
+#~ msgid "filter2: 'nodes.os_name = Linux'"
+#~ msgstr "filtre2 : 'nodes.os_name = Linux'"
 
 # 769addd87f22414a95100fc9ca53a131
-#: ../../compliance.concepts.rst:330
-msgid "filter3: 'nodes.team_responsible = SOMETEAM'"
-msgstr "filtre3 : 'nodes.team_responsible = MonEquipe'"
+#~ msgid "filter3: 'nodes.team_responsible = SOMETEAM'"
+#~ msgstr "filtre3 : 'nodes.team_responsible = MonEquipe'"
 
 # 3159cf8925df4be48c6bd4bc0433582b
-#: ../../compliance.concepts.rst:331
-msgid "filterset1: filter1 OR filter2"
-msgstr "filterset1 : filtre1 OR filtre2"
+#~ msgid "filterset1: filter1 OR filter2"
+#~ msgstr "filterset1 : filtre1 OR filtre2"
 
 # 73808fb3bdec4c008ac621390d6a661f
-#: ../../compliance.concepts.rst:332
-msgid "filterset2: filterset1 AND filter3"
-msgstr "filterset2 : filterset1 AND filtre3"
+#~ msgid "filterset2: filterset1 AND filter3"
+#~ msgstr "filterset2 : filterset1 AND filtre3"

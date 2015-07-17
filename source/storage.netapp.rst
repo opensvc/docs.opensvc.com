@@ -1,5 +1,5 @@
-Netapp
-******
+Netapp snapmirror replication
+*****************************
 
 Command set
 ===========

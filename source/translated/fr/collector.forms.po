@@ -1,178 +1,178 @@
-# eabd16a747264d8fb40183ea08009348
+# e77243813899490097fdb66d27291185
 #: ../../collector.forms.rst:370
-msgid ":keyword:`Args`"
+msgid "**Args**"
 msgstr ""
 
-# 2da55bd3803848bbbcda75f47fed0dbd
+# 8e72b84f99214313b703ef8259419a19
 #: ../../collector.forms.rst:233
-msgid ":keyword:`Candidates`"
+msgid "**Candidates**"
 msgstr ""
 
-# 36ccc71bbc3844389f1fcc67af5e3a4e
+# 01a0447384ca4166bb72c678dec35cb8
 #: ../../collector.forms.rst:328
-msgid ":keyword:`Condition`"
+msgid "**Condition**"
 msgstr ""
 
-# e177f2faa3894267ac42cbb11570e4f2
+# e9df2a307a824216b669134b946a4028
 #: ../../collector.forms.rst:82
-msgid ":keyword:`Css`"
+msgid "**Css**"
 msgstr ""
 
-# e35ca3fd755148e6b65bcf5c49146847
+# 979c0138a1f74871a479cd79e2beae1f
 #: ../../collector.forms.rst:308
-msgid ":keyword:`Default`"
+msgid "**Default**"
 msgstr ""
 
-# 490ae32a912649ac8b36eb4c5e0d3911
+# 7b5b7f5ca2b14ed7bf2a05088639697b
 #: ../../collector.forms.rst:78
-msgid ":keyword:`Desc`"
+msgid "**Desc**"
 msgstr ""
 
-# 04f768bc87634f7a95566706aa0fcfcc
+# 6e6c4b5e987749f0b2e1db94694ad2a5
 #: ../../collector.forms.rst:122
-msgid ":keyword:`Dest`"
+msgid "**Dest**"
 msgstr ""
 
 # b41f4cda90d2414da3a09592b25f384b
 #: ../../collector.forms.rst:221
-msgid ":keyword:`DisplayInDigest`"
+msgid "**DisplayInDigest**"
 msgstr ""
 
-# e7a36023bd30435281057034c5322b1a
+# e3974e5c509d4667abcebe5b0c3de5ff
 #: ../../collector.forms.rst:217
-msgid ":keyword:`DisplayModeLabel`"
+msgid "**DisplayModeLabel**"
 msgstr ""
 
-# 5d2ff4d9619249088a156ef1f339831f
+# e9bc255542624001b1ff9071974c6fa6
 #: ../../collector.forms.rst:374
-msgid ":keyword:`DisplayModeTrim`"
+msgid "**DisplayModeTrim**"
 msgstr ""
 
-# 5545acb4ae164c46932deea1dc4dd5e0
+# a94228c826f849ed967b45af50a8b096
 #: ../../collector.forms.rst:63
-msgid ":keyword:`Form definition`"
+msgid "**Form definition**"
 msgstr ""
 
-# bbe00025c02947449c4fefeef3ef0fc8
+# 53d948ffd22b4e80a6660bdb795d52d9
 #: ../../collector.forms.rst:51
-msgid ":keyword:`Form folder`"
+msgid "**Form folder**"
 msgstr ""
 
-# bbeb91b4126d43288e2692d86164715a
+# 59c8e2f92cd246869f80d9a7cd2a5111
 #: ../../collector.forms.rst:47
-msgid ":keyword:`Form name`"
+msgid "**Form name**"
 msgstr ""
 
 # d4d83905946a4343a6d07331147ade9d
 #: ../../collector.forms.rst:59
-msgid ":keyword:`Form publication`"
+msgid "**Form publication**"
 msgstr ""
 
-# b4a9d336d1b64a77bff372c7d3eb40c0
+# dd50a984063f4e43b9a0b1680ddd97b6
 #: ../../collector.forms.rst:55
-msgid ":keyword:`Form responsible`"
+msgid "**Form responsible**"
 msgstr ""
 
-# ddb8148f6c9d4d4a957193ac80f2ba2e
+# 9544bf0a53de4931a1fbff855715dcfd
 #: ../../collector.forms.rst:98
-msgid ":keyword:`Format`"
+msgid "**Format**"
 msgstr ""
 
 # 2b80f75acb96442c8bad8e330bd75e12
 #: ../../collector.forms.rst:350
-msgid ":keyword:`Function`"
+msgid "**Function**"
 msgstr ""
 
-# 803a019806fc44b0a0c109e288d6d7a7
+# dcf973e93da64e408434cbb0031a3d22
 #: ../../collector.forms.rst:229
-msgid ":keyword:`Help`"
+msgid "**Help**"
 msgstr ""
 
-# a3df7d8656b94d6f8cce81fba9710248
+# 9b9b60fe4cca4369b0cca6f138c8dc77
 #: ../../collector.forms.rst:338
-msgid ":keyword:`Hidden`"
+msgid "**Hidden**"
 msgstr ""
 
-# ddd8be3ed4ee4967852009ab62a5f336
+# 56a30eb1978d4f27acea7013847adf7f
 #: ../../collector.forms.rst:209
-msgid ":keyword:`Id`"
+msgid "**Id**"
 msgstr ""
 
-# 59de86696fc045c5ac384918058e61f1
+# ae4d8ab203cb49eaa5385787561a6c39
 #: ../../collector.forms.rst:118
-msgid ":keyword:`Key`"
+msgid "**Key**"
+msgstr ""
+
+# 5b561c1f4e5b47bb91facd4b9c8d4b7c
+# cbe7d88da1e94cebb1bf976c80e1c198
+#: ../../collector.forms.rst:74 ../../collector.forms.rst:213
+msgid "**Label**"
 msgstr ""
 
 # 6c7eab9da42a4849b7080843a32bbb7c
 #: ../../collector.forms.rst:225
-msgid ":keyword:`LabelCss`"
-msgstr ""
-
-# 7d7a9cbbeea243d5b153da15fa6e42f7
-# 72ae934b1b644bffbcd5ebdc8236741c
-#: ../../collector.forms.rst:74 ../../collector.forms.rst:213
-msgid ":keyword:`Label`"
+msgid "**LabelCss**"
 msgstr ""
 
 # 3eefb30f4dc54170966be2139d59b7e3
 #: ../../collector.forms.rst:296
-msgid ":keyword:`Mandatory`"
+msgid "**Mandatory**"
 msgstr ""
 
-# fb506efabbd54729b1254705f62f9402
+# 85d2ef1eff254f34877cc3808a71e8dc
 #: ../../collector.forms.rst:150
-msgid ":keyword:`NextAssignee`"
+msgid "**NextAssignee**"
 msgstr ""
 
 # ae079d5b64f4424b85a19bbfe00cadcf
 #: ../../collector.forms.rst:154
-msgid ":keyword:`NextForms`"
+msgid "**NextForms**"
 msgstr ""
 
 # ed12c96e314a447c85d13e771ab16968
 #: ../../collector.forms.rst:282
-msgid ":keyword:`ReadOnly`"
+msgid "**ReadOnly**"
 msgstr ""
 
-# 58b41278308b42f089e213becdc174fb
+# 651627d1f02d4a7fb697622a05c4d3b8
 #: ../../collector.forms.rst:158
-msgid ":keyword:`Table`"
+msgid "**Table**"
 msgstr ""
 
-# 8405db66a98e43da8e46bad28a24ad7b
-# 08686f201e8f4c8c898e01480139c244
+# ef1fa87ffc5e4e28996797bef0d3dbe1
+# 0721cc2c8ae44a9a8ceab3c025dfbcba
 #: ../../collector.forms.rst:92 ../../collector.forms.rst:237
-msgid ":keyword:`Type`"
+msgid "**Type**"
 msgstr ""
 
 # 068cd9fea7cd4f5f9e44a1e0ca130c9b
 #: ../../collector.forms.rst:146
-msgid ":keyword:`compliance fix`"
+msgid "**compliance fix**"
 msgstr ""
 
-# a9817a97a6bd4c498da184b989afc9c4
+# 12c4727cbb864037816abfbda6be5d47
 #: ../../collector.forms.rst:142
-msgid ":keyword:`compliance variable`"
+msgid "**compliance variable**"
 msgstr ""
 
-# 56b380edfe1a437f954a374dea19e488
+# 3bd33c003a5240f28087f8bf9d355f56
 #: ../../collector.forms.rst:138
-msgid ":keyword:`db`"
+msgid "**db**"
 msgstr ""
 
-# a8324f09966142c59b2c93253a417041
+# 5f8b6a2242794398bdadab2c336df789
 #: ../../collector.forms.rst:130
-msgid ":keyword:`mail`"
+msgid "**mail**"
 msgstr ""
 
-# 64bf17f7208a43a1a1651c4a42a588e2
+# 14ed197ed44f40f982f819c0b71aafc0
 #: ../../collector.forms.rst:126
-msgid ":keyword:`script`"
+msgid "**script**"
 msgstr ""
 
-# 1b10b4046f3d467ea0e35cd9c95270e1
+# 96b41888114341dda8ae028e1157f55f
 #: ../../collector.forms.rst:134
-msgid ":keyword:`workflow`"
+msgid "**workflow**"
 msgstr ""
 
 # 425b6f47d9ea413cb10e600c1ef23abc
@@ -218,8 +218,8 @@ msgstr ""
 #: ../../collector.forms.rst:352
 msgid ""
 "A function exported by the OpenSVC collector as a JSON-RPC, called to "
-"determine the input value. This keyword can be coupled to the :keyword:"
-"`Args` keyword to select which form inputs provide the JSON-RPC arguments."
+"determine the input value. This keyword can be coupled to the **Args** "
+"keyword to select which form inputs provide the JSON-RPC arguments."
 msgstr ""
 
 # 7486c7f8fe804d53b8b99bf60d3fb6d3
@@ -240,9 +240,9 @@ msgstr ""
 #: ../../collector.forms.rst:372
 msgid ""
 "A list of form input identifiers, specified as ``#some_input_id``, whose "
-"value to pass as argument to the JSON-RPC pointed by :keyword:`Function`. "
-"The order of the list elements is the order of the arguments to submit to "
-"the :keyword:`Function`."
+"value to pass as argument to the JSON-RPC pointed by **Function**. The order "
+"of the list elements is the order of the arguments to submit to the "
+"**Function**."
 msgstr ""
 
 # eabf6e589ba4430e9d3f2c24a5ed224c
@@ -380,8 +380,8 @@ msgstr ""
 # bb083cb3f8e84d79b7929347e46c94b7
 #: ../../collector.forms.rst:128
 msgid ""
-"Execute a script pointed by :keyword:`Path` with the submitted serialized "
-"data as argument."
+"Execute a script pointed by **Path** with the submitted serialized data as "
+"argument."
 msgstr ""
 
 # 7627b2867b7d4bdeb699672275494a46
@@ -417,32 +417,32 @@ msgstr ""
 # 525947d83ca64fbc8cf87be0c34c841b
 #: ../../collector.forms.rst:160
 msgid ""
-"If :keyword:`Dest` is set to ``db``, this property defines the collector "
-"database table to store the form, as a new line, into."
+"If **Dest** is set to ``db``, this property defines the collector database "
+"table to store the form, as a new line, into."
 msgstr ""
 
 # c574411dd7094e62930f478998c1e090
 #: ../../collector.forms.rst:156
 msgid ""
-"If :keyword:`Dest` is set to ``workflow``, this property defines a list of "
-"possible next forms to route the workflow to. Those candidates are proposed "
-"to the next assignee in a menu."
+"If **Dest** is set to ``workflow``, this property defines a list of possible "
+"next forms to route the workflow to. Those candidates are proposed to the "
+"next assignee in a menu."
 msgstr ""
 
 # 95e1f19be4fd4256b8df2f9a2f9971ee
 #: ../../collector.forms.rst:152
 msgid ""
-"If :keyword:`Dest` is set to workflow, this property defines the group or "
-"user, as known to the OpenSVC Collector user and group management tables, to "
-"assign to next workflow step to."
+"If **Dest** is set to workflow, this property defines the group or user, as "
+"known to the OpenSVC Collector user and group management tables, to assign "
+"to next workflow step to."
 msgstr ""
 
 # 177bb479c811467aabaff59a44c9532d
 #: ../../collector.forms.rst:120
 msgid ""
 "If Format is set to ``dict of dict``, this property defines which input "
-"values to use as a key for the master dictionnary. :keyword:`Key` can be "
-"ommitted with other :keyword:`Formats` values."
+"values to use as a key for the master dictionnary. **Key** can be ommitted "
+"with other **Formats** values."
 msgstr ""
 
 # 038e4b468de8432d8d12d55f5bbb7e10
@@ -506,8 +506,8 @@ msgstr ""
 # 33faa9cb525c456399f42d445fd294fa
 #: ../../collector.forms.rst:132
 msgid ""
-"Send a mail to the addresses defined by the :keyword:`To` list-property, "
-"with the css-formatted submitted form."
+"Send a mail to the addresses defined by the **To** list-property, with the "
+"css-formatted submitted form."
 msgstr ""
 
 # 877414adb106444bb14e5dfb1c24aca0
@@ -578,8 +578,8 @@ msgstr ""
 # aea84e402dc64d41906241776e758550
 #: ../../collector.forms.rst:265
 msgid ""
-"The html element used for this type is INPUT or SELECT if :keyword:"
-"`Candidates` is set."
+"The html element used for this type is INPUT or SELECT if **Candidates** is "
+"set."
 msgstr ""
 
 # 0fa6156babd5411993076895117c22f7
@@ -601,26 +601,26 @@ msgstr ""
 #: ../../collector.forms.rst:376
 msgid ""
 "The maximum length of the input value representation string in display mode. "
-"If the actual value is longer than :keyword:`DisplayModeTrim`, only the "
-"first :keyword:`DisplayModeTrim` // 3 and the last :keyword:"
-"`DisplayModeTrim` // 3 * 2 characters will be displayed. This parameter is "
-"usually set on inputs with very long values, like public keys for example."
+"If the actual value is longer than **DisplayModeTrim**, only the first "
+"**DisplayModeTrim** // 3 and the last **DisplayModeTrim** // 3 * 2 "
+"characters will be displayed. This parameter is usually set on inputs with "
+"very long values, like public keys for example."
 msgstr ""
 
 # 5b24733cfb834547ad41633803d9923e
 #: ../../collector.forms.rst:84
 msgid ""
-"The name of the css class to use to decorate the :keyword:`Label` and :"
-"keyword:`Desc` in the form tree view. The pointed class usually set a 48x48 "
-"icon on the left side."
+"The name of the css class to use to decorate the **Label** and **Desc** in "
+"the form tree view. The pointed class usually set a 48x48 icon on the left "
+"side."
 msgstr ""
 
 # ead3b705ec804c4da320eebc4ddf9c39
 #: ../../collector.forms.rst:227
 msgid ""
-"The name of the css class to use to decorate the :keyword:`Label` and :"
-"keyword:`DisplayModeLabel` in the form edition and display modes. The "
-"pointed class usually set a 16x16 icon on the left side."
+"The name of the css class to use to decorate the **Label** and "
+"**DisplayModeLabel** in the form edition and display modes. The pointed "
+"class usually set a 16x16 icon on the left side."
 msgstr ""
 
 # 2ea1c47798254fd5bc5004eafef60a96
@@ -637,8 +637,8 @@ msgstr ""
 #: ../../collector.forms.rst:245
 msgid ""
 "The submitted data for this input is stored in the object as a unicode "
-"string. The html element used for this type is INPUT or SELECT if :keyword:"
-"`Candidates` is set."
+"string. The html element used for this type is INPUT or SELECT if "
+"**Candidates** is set."
 msgstr ""
 
 # fe8d7e5441d54ef989a158c08cf229e0
@@ -660,8 +660,7 @@ msgstr ""
 #: ../../collector.forms.rst:253
 msgid ""
 "The submitted data for this input is stored in the object as an integer. The "
-"html element used for this type is INPUT or SELECT if :keyword:`Candidates` "
-"is set."
+"html element used for this type is INPUT or SELECT if **Candidates** is set."
 msgstr ""
 
 # 57ac6b1aa96b46de83e8215dc9f6be75
@@ -727,9 +726,9 @@ msgstr ""
 # dcb7a939c15e4a048017ae7209fbfce8
 #: ../../collector.forms.rst:148
 msgid ""
-"This output type can be defined in forms with a peer :keyword:`compliance "
-"variable` output. In this case, compliance fix actions are dispatched to the "
-"selected service nodes, or to the selected node."
+"This output type can be defined in forms with a peer **compliance variable** "
+"output. In this case, compliance fix actions are dispatched to the selected "
+"service nodes, or to the selected node."
 msgstr ""
 
 # 15945e97bef443db9429e421b3a7ca8c

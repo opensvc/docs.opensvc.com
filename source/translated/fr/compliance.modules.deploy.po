@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,26 +17,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # feb8cd1740e94640ad1145fbd1812613
-#: ../../compliance.modules.deploy.rst:40
+#: ../../compliance.modules.deploy.rst:42
 msgid "**node.repo**"
 msgstr "**node.repo**"
 
 # 3a3357a5c67941ddb34d6268fb05457d
-#: ../../compliance.modules.deploy.rst:44
+#: ../../compliance.modules.deploy.rst:46
 msgid "**node.repocomp**"
 msgstr "**node.repocomp**"
 
 # f4fa350319ac4c518843c79e7d6f7da7
-#: ../../compliance.modules.deploy.rst:33
+#: ../../compliance.modules.deploy.rst:35
 msgid ""
 "After the mirror initialization, you have to update the current link "
 "according to your own policies."
 msgstr ""
-"Après l'initialisation du miroir, il reste à mettre à jour le lien current selon votre politique."
+"Après l'initialisation du miroir, il reste à mettre à jour le lien current "
+"selon votre politique."
+
+# 40bd0dd929074b3f9d422700b48a9228
+#: ../../compliance.modules.deploy.rst:68
+msgid "Automatic modules update"
+msgstr ""
 
 # ff734bdfc5f146398cc4c28565549e06
-#: ../../compliance.modules.deploy.rst:48
-msgid "Example::"
+#: ../../compliance.modules.deploy.rst:50
+#, fuzzy
+msgid "Example:"
 msgstr "Exemple ::"
 
 # a216d002dcd147c9b4e7ea3fe5e2a230
@@ -65,7 +72,8 @@ msgid ""
 "Pull mode : each node is responsible from fetching the modules from a "
 "repository"
 msgstr ""
-"Par récupération : chaque noeud est responsable de la récupération des modules depuis un dépôt"
+"Par récupération : chaque noeud est responsable de la récupération des "
+"modules depuis un dépôt"
 
 # 0d220038e9b04a0cb9d8e21faac63669
 #: ../../compliance.modules.deploy.rst:13
@@ -74,26 +82,35 @@ msgid ""
 "nodes. The difficult part is the target node listing. Such lists can be "
 "extracted from the collector database."
 msgstr ""
-"Par diffusion : un serveur de confiance est responsable de la diffusion des modules vers tous les noeuds. "
-"Le point délicat est l'inventaire des noeuds vers lesquels effectuer la diffusion. Cet inventaire peut "
-"être extrait de la base de données du collecteur."
+"Par diffusion : un serveur de confiance est responsable de la diffusion des "
+"modules vers tous les noeuds. Le point délicat est l'inventaire des noeuds "
+"vers lesquels effectuer la diffusion. Cet inventaire peut être extrait de la "
+"base de données du collecteur."
 
 # 1a17cc9eaf8446b4bdac6f4c6c33e9b2
-#: ../../compliance.modules.deploy.rst:36
+#: ../../compliance.modules.deploy.rst:38
 msgid "Set up the agents"
 msgstr "Configuration des agents"
 
 # 63dbd657cc184d579af1f0cdf8c6019c
-#: ../../compliance.modules.deploy.rst:29
+#: ../../compliance.modules.deploy.rst:31
 msgid "Set up the published version"
 msgstr "Configuration des versions publiées"
 
 # fc7f6846a8714438ba885b1463ad043a
-#: ../../compliance.modules.deploy.rst:31
+#: ../../compliance.modules.deploy.rst:33
 msgid ""
 "The OpenSVC agent downloads the file pointed by the link named ``current``."
 msgstr ""
 "L'agent OpenSVC télécharge le fichier pointé par le lien nommé ``current``."
+
+# b91ca931ba7749ec832e54e0d85f551a
+#: ../../compliance.modules.deploy.rst:70
+msgid ""
+"The agent schedules a periodic compliance check run over modules of all "
+"attached modulesets. The default schedule is weekly, on sunday. It can be "
+"redefined in the ``compliance`` section of the ``node.conf`` file."
+msgstr ""
 
 # bc8d4de9b49245f5bcb6461d27cf1692
 #: ../../compliance.modules.deploy.rst:9
@@ -103,27 +120,33 @@ msgid ""
 "attached modulesets are used. The modules must be installed in ``/opt/"
 "opensvc/var/compliance/``."
 msgstr ""
-"Les modules de conformité doivent être présents sur tous les noeuds sur lesquels sont attachés des jeux de modules. "
-"Tous les modules peuvent être déployés sans risque : seuls les modules des jeux de modules attachés seront planifiés "
-"pour exécution. Les modules doivent être présent dans ``/opt/opensvc/var/compliance/``."
+"Les modules de conformité doivent être présents sur tous les noeuds sur "
+"lesquels sont attachés des jeux de modules. Tous les modules peuvent être "
+"déployés sans risque : seuls les modules des jeux de modules attachés seront "
+"planifiés pour exécution. Les modules doivent être présent dans ``/opt/"
+"opensvc/var/compliance/``."
 
 # 1a734e87aaba463b9b6a33b27c0ab23b
 #: ../../compliance.modules.deploy.rst:22
-msgid "The compliance repository file tree must organized as::"
-msgstr "L'arborescence du dépôt de conformité doit être organisée comme suit ::"
+#, fuzzy
+msgid "The compliance repository file tree must organized as:"
+msgstr ""
+"L'arborescence du dépôt de conformité doit être organisée comme suit ::"
 
 # 111bcbeae6944f04a44872f024e899f9
-#: ../../compliance.modules.deploy.rst:38
+#: ../../compliance.modules.deploy.rst:40
 msgid ""
 "The repository must be known to the agent. This set up is done with either "
 "the node.repo or the node.repocomp ``node.conf`` parameters."
 msgstr ""
 "Le dépôt doit être connu de l'agent. Cette configuration est faite par les "
-"paramètres node.repo ou node.repocomp du fichier de configuration ``node.conf``."
+"paramètres node.repo ou node.repocomp du fichier de configuration ``node."
+"conf``."
 
 # 95c473c1f13c45dba0bc352acdca27dd
-#: ../../compliance.modules.deploy.rst:55
-msgid "The update command is::"
+#: ../../compliance.modules.deploy.rst:59
+#, fuzzy
+msgid "The update command is:"
 msgstr "La commande de mise à jour est ::"
 
 # a50cc6fc17844884b0ead1f4779bbc31
@@ -132,30 +155,51 @@ msgid "This chapter describes the last method."
 msgstr "Ce chapitre décrit cette dernière méthode."
 
 # c24769f222344423a7adfb1f3aef167e
-#: ../../compliance.modules.deploy.rst:59
+#: ../../compliance.modules.deploy.rst:65
 msgid "This command is operating system agnostic."
 msgstr "Cette commande est agnostique au système d'exploitation."
 
+# 1b7cbbbcd34748afb47698e9eda12d04
+#: ../../compliance.modules.deploy.rst:76
+msgid ""
+"This feature ensures the scheduled check runs always work with the lastest "
+"published modules. Be aware that, while reducing the infrastructure "
+"maintenance cost and optimizing its reliability, this feature extends the "
+"perimeter affected by a bug introduced in a module."
+msgstr ""
+
 # c787d7bc6bd54d54bacf8e0c44f74e5e
-#: ../../compliance.modules.deploy.rst:46
+#: ../../compliance.modules.deploy.rst:48
 msgid ""
 "This parameter allows to set up a URI pointing to a pure OpenSVC agent "
 "compliance repository. If specified node.repocomp overrides node.repo."
 msgstr ""
-"Ce paramètre permet de configurer une URI pointant un pur dépôt de conformité. "
-"Si le paramètre node.repocomp est configuré, il prend le pas sur node.repo."
+"Ce paramètre permet de configurer une URI pointant un pur dépôt de "
+"conformité. Si le paramètre node.repocomp est configuré, il prend le pas sur "
+"node.repo."
 
 # 3fa67ab82aa945aea97e26814bc7499e
-#: ../../compliance.modules.deploy.rst:42
+#: ../../compliance.modules.deploy.rst:44
 msgid ""
 "This parameter allows to set up a URI pointing to a repository hosting both "
 "compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
 "agent packages in the packages/ subdirectory."
 msgstr ""
-"Ce paramètre permet de configurer une URI pointant un dépôt hébergeant à la fois les tarball gzippés de la comformité "
-"dans le sous-répertoire compliance/ et les paquets de l'agent OpenSVC dans le sous-répertoire packages/."
+"Ce paramètre permet de configurer une URI pointant un dépôt hébergeant à la "
+"fois les tarball gzippés de la comformité dans le sous-répertoire "
+"compliance/ et les paquets de l'agent OpenSVC dans le sous-répertoire "
+"packages/."
 
 # 16534a28a72d43979d1f3b153bbb1ed1
-#: ../../compliance.modules.deploy.rst:53
+#: ../../compliance.modules.deploy.rst:57
 msgid "Updating the modules"
 msgstr "Mise à jour des modules"
+
+# 323e60e0f22c4a33bbaa99556859a902
+#: ../../compliance.modules.deploy.rst:73
+msgid ""
+"When this schedule is triggered, the agent can run the ``updatecomp`` action "
+"before proceding with the check run. This behaviour, not activated by "
+"default, is triggered by the ``auto_update = True`` in the ``compliance`` "
+"section of the ``node.conf`` file."
+msgstr ""

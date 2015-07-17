@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,26 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# 1110115946f54f0aabc0d4a13bfbf9c2
+#: ../../storage.zfs.rst:15
+msgid ":command:`syncnodes`"
+msgstr ""
+
+# 86ec6e0f628e4793912152e67b4ab7fa
+#: ../../storage.zfs.rst:18
+msgid ":command:`syncupdate`"
+msgstr ""
+
+# 4fce98115a7e46459e90dd66e6d47083
+#: ../../storage.zfs.rst:24
+msgid ":command:`up`"
+msgstr ""
+
+# dfc494beae434bf58cd09fe18e705a05
+#: ../../storage.zfs.rst:27
+msgid ":command:`warn`"
+msgstr ""
 
 # 6e104f96786e4cb295929afecdf81645
 #: ../../storage.zfs.rst:12
@@ -58,12 +78,15 @@ msgstr "Introduction"
 # e7b94b4ad60c43f7adddecbb25704c11
 #: ../../storage.zfs.rst:24
 msgid "Last synchronization occured less than sync_max_delay minutes ago."
-msgstr "La dernnière synchronisation a eu lieu il y a moins de sync_max_delay minutes."
+msgstr ""
+"La dernnière synchronisation a eu lieu il y a moins de sync_max_delay "
+"minutes."
 
 # d7eb70ab18e145d988825c313e082d44
 #: ../../storage.zfs.rst:27
 msgid "Last synchronization occured more than sync_max_delay minutes ago."
-msgstr "La dernnière synchronisation a eu lieu il y a plus de sync_max_delay minutes."
+msgstr ""
+"La dernnière synchronisation a eu lieu il y a plus de sync_max_delay minutes."
 
 # 113357c5385643039675d7547044b461
 #: ../../storage.zfs.rst:18
@@ -89,9 +112,9 @@ msgid ""
 "and a full sync must be scheduled"
 msgstr ""
 "La source et la cible maintiennent un snapshot nommé @sent pour identifier "
-"la dernière synchronisation incrémentale réussie. La présence de ce "
-"snapshot est utilisée pour savoir si la chaine de synchronisations incrémentale "
-"est brisée. Auquel cas, une alerte est émise et une synchronisation complète "
+"la dernière synchronisation incrémentale réussie. La présence de ce snapshot "
+"est utilisée pour savoir si la chaine de synchronisations incrémentale est "
+"brisée. Auquel cas, une alerte est émise et une synchronisation complète "
 "doit être planifiée."
 
 # 5d9041f54df147bd9d2ad94d8b2bf08c
@@ -105,8 +128,9 @@ msgid ""
 "The zfs replication scheme is based on zfs send/receive. OpenSVC uses ZFS "
 "snapshots to ensure incremental send/receive replication."
 msgstr ""
-"La stratégie de réplication par zfs est basée sur les commandes zfs send/receive. "
-"OpenSVC utilise les snapshots zfs pour assurer ces réplications incrémentales."
+"La stratégie de réplication par zfs est basée sur les commandes zfs send/"
+"receive. OpenSVC utilise les snapshots zfs pour assurer ces réplications "
+"incrémentales."
 
 # a7c3636d18b143f2935c09100aa40e30
 #: ../../storage.zfs.rst:2

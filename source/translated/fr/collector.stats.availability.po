@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -16,13 +16,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# 5f5fa914ef334e37957c8f83c0cf4bc5
+#: ../../collector.stats.availability.rst:17
+msgid "**acknowledged and accounted**"
+msgstr ""
+
+# 652c3fbf6f0447029d6444a7475a018d
+#: ../../collector.stats.availability.rst:20
+msgid "**acknowledged and unaccounted**"
+msgstr ""
+
+# 369c6d96479e4649a7f71033c7cc16a1
+#: ../../collector.stats.availability.rst:14
+msgid "**unacknowledged**"
+msgstr ""
+
 # c3a48c82cd07467e943db601cdf9ae3e
 #: ../../collector.stats.availability.rst:22
 msgid ""
 "An acknowledged range will show the ack message, ack author and ack date "
 "when the cursor moves over the range dates."
 msgstr ""
-"Un segment aquitté affiche le message d'aquittement, l'auteur de l'aquittement, et la date d'aquittement quand le curseur survole les dates limites du segment."
+"Un segment aquitté affiche le message d'aquittement, l'auteur de "
+"l'aquittement, et la date d'aquittement quand le curseur survole les dates "
+"limites du segment."
 
 # 1b98867901bb4dd3b1327f52fa5eda6a
 #: ../../collector.stats.availability.rst:24
@@ -30,7 +47,9 @@ msgid ""
 "Clicking on a date will display a state transition graph to help determine "
 "which ressource caused to outage."
 msgstr ""
-"Cliquer sur une date affiche un encart montrant les transitions d'état détaillées pour aider à déterminer quelle ressource est la cause d'une dégradation."
+"Cliquer sur une date affiche un encart montrant les transitions d'état "
+"détaillées pour aider à déterminer quelle ressource est la cause d'une "
+"dégradation."
 
 # 92038c58ece44f298dcc31cdd9be647c
 #: ../../collector.stats.availability.rst:11
@@ -59,10 +78,9 @@ msgid ""
 "This is used to explain an unavailability range that was either planned or "
 "due to a collection error. The chart draws this state in grey."
 msgstr ""
-"La durée de cette indisponibilité n'abaisse pas le taux de disponibilité. "
-"Ce mode est utilisé pour expliquer une indisponibilité prévue ou dûe à "
-"une interruption de service du collecteur. Le graphique montre cet état en "
-"gris."
+"La durée de cette indisponibilité n'abaisse pas le taux de disponibilité. Ce "
+"mode est utilisé pour expliquer une indisponibilité prévue ou dûe à une "
+"interruption de service du collecteur. Le graphique montre cet état en gris."
 
 # 6a1b78c134e042d699b167b5930b6bf8
 #: ../../collector.stats.availability.rst:14
@@ -70,8 +88,8 @@ msgid ""
 "The duration of this unvailability lowers the avail%. The chart draws this "
 "state in red."
 msgstr ""
-"La durée de cette interruption de service est décomptée du taux de disponibilité. "
-"Le graphique affiche cet état en rouge."
+"La durée de cette interruption de service est décomptée du taux de "
+"disponibilité. Le graphique affiche cet état en rouge."
 
 # c3fd7935a45848b3895d212519f89c7f
 #: ../../collector.stats.availability.rst:17
@@ -91,10 +109,10 @@ msgid ""
 "unavailability time range and aggregate availability ratio on the selected "
 "period."
 msgstr ""
-"Cette vue présente les informations sur la disponibilité des services dont le "
-"collecteur dispose. Un graphique aide à déceler les problèmes efficacement, et "
-"un tableau affiche chaque segment d'indisponibilité et calcule le taux de "
-"disponibilité sur la période analysée."
+"Cette vue présente les informations sur la disponibilité des services dont "
+"le collecteur dispose. Un graphique aide à déceler les problèmes "
+"efficacement, et un tableau affiche chaque segment d'indisponibilité et "
+"calcule le taux de disponibilité sur la période analysée."
 
 # d155eb77c97c4f3abe6c6d2265e4c226
 #: ../../collector.stats.availability.rst:5

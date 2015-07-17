@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # e9714258a30a4cb38f6c080aa4baee10
-#: ../../compliance.usage.rst:21
+#: ../../compliance.usage.rst:23
+#, fuzzy
 msgid ""
-"A compliance check of all attached modulesets on a node can be triggered by::"
+"A compliance check of all attached modulesets on a node can be triggered by:"
 msgstr ""
-"Une vérification de conformité de tous les jeux de modules attachés à un noeud peut être déclenchée par ::"
+"Une vérification de conformité de tous les jeux de modules attachés à un "
+"noeud peut être déclenchée par ::"
 
 # 554b7313b1e24e6a8c87981baf664aef
-#: ../../compliance.usage.rst:25
+#: ../../compliance.usage.rst:29
+#, fuzzy
 msgid ""
 "A compliance check of all attached modulesets on a service can be triggered "
-"by::"
+"by:"
 msgstr ""
-"Une vérification de conformité de tous les jeux de modules attachés à un service peut être déclenchée par ::"
+"Une vérification de conformité de tous les jeux de modules attachés à un "
+"service peut être déclenchée par ::"
 
 # 2d803e880abd41d48d885b42d7301b65
 #: ../../compliance.usage.rst:7
@@ -39,76 +43,85 @@ msgid ""
 "collector the node or service applicable ruleset and the applicable "
 "moduleset."
 msgstr ""
-"Une exécution des vérifications de conformité pour un noeud et ses services est "
-"planifié hebdomadairement à l'initiative de l'agent OpenSVC. Lors d'une "
+"Une exécution des vérifications de conformité pour un noeud et ses services "
+"est planifié hebdomadairement à l'initiative de l'agent OpenSVC. Lors d'une "
 "exécution, l'agent récupère depuis le collecteur les règles appropriées et "
 "la liste des modules à inclure dans l'exécution."
 
 # 063c8f66939d42e29c50ace19e9c648c
-#: ../../compliance.usage.rst:29
-msgid "A specific module compliance check::"
+#: ../../compliance.usage.rst:35
+#, fuzzy
+msgid "A specific module compliance check:"
 msgstr "Une vérification de conformité d'un module en particulier ::"
 
 # 789f194b7c8a4204b538a81b93a83a87
 # 22080514e7d24baa998f4214745e56c5
-#: ../../compliance.usage.rst:40 ../../compliance.usage.rst:59
-msgid "Attach a moduleset to a service::"
+#: ../../compliance.usage.rst:50 ../../compliance.usage.rst:77
+#, fuzzy
+msgid "Attach a moduleset to a service:"
 msgstr "Attacher un jeu de modules à un service ::"
 
 # 7abb0958f1b244e08d36554b6d97de85
-#: ../../compliance.usage.rst:36
-msgid "Attach a moduleset to the node::"
+#: ../../compliance.usage.rst:44
+#, fuzzy
+msgid "Attach a moduleset to the node:"
 msgstr "Attacher un jeu de modules à un noeud ::"
 
 # ca2f413154864ee6bf1e4534cca70926
-#: ../../compliance.usage.rst:55
-msgid "Attach a ruleset to the node::"
+#: ../../compliance.usage.rst:71
+#, fuzzy
+msgid "Attach a ruleset to the node:"
 msgstr "Attacher un jeu de règles à un noeud ::"
 
 # fd8a07d5e84248a48bb11af19f024971
 # 0d119447fb3941ccb6b61e4917b99d7f
-#: ../../compliance.usage.rst:48 ../../compliance.usage.rst:67
-msgid "Detach a moduleset from a service::"
+#: ../../compliance.usage.rst:62 ../../compliance.usage.rst:89
+#, fuzzy
+msgid "Detach a moduleset from a service:"
 msgstr "Détacher un jeu de modules d'un service ::"
 
 # 4b19da393bc24ecda57521bffe66774b
 # 50f18cde4e994edc8fc9cd093f82da72
-#: ../../compliance.usage.rst:44 ../../compliance.usage.rst:63
-msgid "Detach a moduleset from the node::"
+#: ../../compliance.usage.rst:56 ../../compliance.usage.rst:83
+#, fuzzy
+msgid "Detach a moduleset from the node:"
 msgstr "Détacher un jeu de modules d'un noeud ::"
 
 # 8746501f3cfb4cbaa3c6d389319390de
-#: ../../compliance.usage.rst:82
-msgid "List the available explicit rulesets::"
+#: ../../compliance.usage.rst:110
+#, fuzzy
+msgid "List the available explicit rulesets:"
 msgstr "Lister les jeux de règles explicites disponibles ::"
 
 # da7d9a4e8e0440829c33fd4d47924964
-#: ../../compliance.usage.rst:78
-msgid "List the available modulesets::"
+#: ../../compliance.usage.rst:104
+#, fuzzy
+msgid "List the available modulesets:"
 msgstr "Lister les jeux de modules disponibles ::"
 
 # 4dcf57906f5f439fa68c6237f89f514d
-#: ../../compliance.usage.rst:74
-msgid "List the installed modules::"
+#: ../../compliance.usage.rst:98
+#, fuzzy
+msgid "List the installed modules:"
 msgstr "Lister les modules installés ::"
 
 # 1b8bc52fab5147f5918d4009e5792bfa
-#: ../../compliance.usage.rst:34
+#: ../../compliance.usage.rst:42
 msgid "Managing moduleset attachments"
 msgstr "Gestion des attachements de jeux de modules"
 
 # 78a4158f9d6849bda82d4560c4b32459
-#: ../../compliance.usage.rst:53
+#: ../../compliance.usage.rst:69
 msgid "Managing ruleset attachments"
 msgstr "Gestion des attachements de jeux de règles"
 
 # f88c784337d84ef6a58e6d230b0c0b1c
-#: ../../compliance.usage.rst:19
+#: ../../compliance.usage.rst:21
 msgid "Manual execution"
 msgstr "Exécution manuelle"
 
 # 01673cffc4c040cabcc363e8dbbf28bc
-#: ../../compliance.usage.rst:72
+#: ../../compliance.usage.rst:96
 msgid "Querying the framework"
 msgstr "Interrogation du collecteur"
 
@@ -118,32 +131,42 @@ msgid "Scheduling"
 msgstr "Planification"
 
 # 7813d354abbc488088fe7f2d650b8464
-#: ../../compliance.usage.rst:86
-msgid "Show the currently attached modulesets::"
+#: ../../compliance.usage.rst:116
+#, fuzzy
+msgid "Show the currently attached modulesets:"
 msgstr "Afficher les jeux de modules actuellement attachés ::"
 
 # b2f2e42d83174b66b5e5f8f960a927f2
-#: ../../compliance.usage.rst:90
-msgid "Show the currently presented rulesets::"
+#: ../../compliance.usage.rst:122
+#, fuzzy
+msgid "Show the currently presented rulesets:"
 msgstr "Afficher les jeux de règles actuellement présentés ::"
 
 # bbc438174c624eefa810d38e9c3c254e
-#: ../../compliance.usage.rst:98
+#: ../../compliance.usage.rst:134
+#, fuzzy
 msgid ""
 "Show the status of modules, specified by pattern, last run, as known by the "
-"collector::"
+"collector:"
 msgstr ""
-"Affiche l'état des modules identifiés par une pattern, lors de leur dernière exécution, tel que connu du collecteur ::"
+"Affiche l'état des modules identifiés par une pattern, lors de leur dernière "
+"exécution, tel que connu du collecteur ::"
 
 # c762cc52aef1408faef7320ca7935d53
-#: ../../compliance.usage.rst:94
-msgid "Show the status of the modules last run, as known by the collector::"
-msgstr "Affiche l'état des modules lors de leur dernière exécution, tel que connu du collecteur ::"
+#: ../../compliance.usage.rst:128
+#, fuzzy
+msgid "Show the status of the modules last run, as known by the collector:"
+msgstr ""
+"Affiche l'état des modules lors de leur dernière exécution, tel que connu du "
+"collecteur ::"
 
 # 24cf1c794590415bbf4ff6f48b284d91
 #: ../../compliance.usage.rst:11
-msgid "The default schedule can be altered in ``/opt/opensvc/etc/node.conf``::"
-msgstr "La planification par défaut peut être changée dans ``/opt/opensvc/etc/node.conf`` ::"
+#, fuzzy
+msgid "The default schedule can be altered in ``/opt/opensvc/etc/node.conf``:"
+msgstr ""
+"La planification par défaut peut être changée dans ``/opt/opensvc/etc/node."
+"conf`` ::"
 
 # 3ae2345d79934a98badbc46765ec6c8d
 #: ../../compliance.usage.rst:9

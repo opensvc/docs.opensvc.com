@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,319 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# fe54fd06ce594547a1bc8ad809270c7e
+#: ../../man.nodemgr.rst:206
+msgid ":command:`--attach`"
+msgstr ""
+
+# a686d30e797c4aa094a8113b3ab986c3
+#: ../../man.nodemgr.rst:229
+msgid ":command:`--author=AUTHOR`"
+msgstr ""
+
+# 0be6ff31c06a4828be0d400c6d39a3c0
+#: ../../man.nodemgr.rst:223
+msgid ":command:`--begin=BEGIN`"
+msgstr ""
+
+# 45c949484e0448bd87074b02caf7fb03
+#: ../../man.nodemgr.rst:227
+msgid ":command:`--comment=COMMENT`"
+msgstr ""
+
+# 9aec4eef4d164fa39eb54a33749fea3c
+#: ../../man.nodemgr.rst:208
+msgid ":command:`--cron`"
+msgstr ""
+
+# c6e77b02e05a4de886341dfb01a4257b
+#: ../../man.nodemgr.rst:192
+msgid ":command:`--debug`"
+msgstr ""
+
+# d60dd7553f014a3ca2b208b891486d90
+#: ../../man.nodemgr.rst:221
+msgid ":command:`--duration=DURATION`"
+msgstr ""
+
+# d2c1fd7fd4b1486a8e37c74903699303
+#: ../../man.nodemgr.rst:225
+msgid ":command:`--end=END`"
+msgstr ""
+
+# ecb1b749a6fb4e76a2f481d97c80f114
+#: ../../man.nodemgr.rst:210
+msgid ":command:`--force`"
+msgstr ""
+
+# 18b276dc387a4bf995be88b27f0894cf
+#: ../../man.nodemgr.rst:232
+msgid ":command:`--id=ID`"
+msgstr ""
+
+# 81f1095875164a978a7a5349e98b4965
+#: ../../man.nodemgr.rst:197
+msgid ":command:`--module=MODULE`"
+msgstr ""
+
+# 392894d03ddb491496d5f1221b683d7c
+#: ../../man.nodemgr.rst:200
+msgid ":command:`--moduleset=MODULESET`"
+msgstr ""
+
+# af6e51486546424d91a0ffeade2cf219
+#: ../../man.nodemgr.rst:217
+msgid ":command:`--param=PARAM`"
+msgstr ""
+
+# 7d81370d3663471db92a755aad51fd1d
+#: ../../man.nodemgr.rst:204
+msgid ":command:`--ruleset-date=RULESET_DATE`"
+msgstr ""
+
+# 9f1491fcc97f4fb3bb9dfd443e4120f3
+#: ../../man.nodemgr.rst:202
+msgid ":command:`--ruleset=RULESET`"
+msgstr ""
+
+# 83243788fe5646ca962247a1a391526b
+#: ../../man.nodemgr.rst:195
+msgid ":command:`--stats-dir=STATS_DIR`"
+msgstr ""
+
+# 0ca02618b80440308b4ea81b1608b9f7
+#: ../../man.nodemgr.rst:215
+msgid ":command:`--symcli-db-file=SYMCLI_DB_FILE`"
+msgstr ""
+
+# ffc5396ddf4b4ddcb12a346e22fce436
+#: ../../man.nodemgr.rst:219
+msgid ":command:`--value=VALUE`"
+msgstr ""
+
+# 2bf5acf9d69f46b59f3b392a8b6bd2d7
+#: ../../man.nodemgr.rst:188
+msgid ":command:`--version`"
+msgstr ""
+
+# 0530026c302541dcaec06e537146dcd1
+#: ../../man.nodemgr.rst:190
+msgid ":command:`-h, --help`"
+msgstr ""
+
+# 499140528b254d24989dd0bb5dd25b24
+#: ../../man.nodemgr.rst:135
+msgid ":command:`checks`"
+msgstr ""
+
+# 1920f51663df406ea89a0e3f257beae5
+#: ../../man.nodemgr.rst:25
+msgid ":command:`collector ack action`"
+msgstr ""
+
+# 7da719cf607746879583d143f13db715
+#: ../../man.nodemgr.rst:28
+msgid ":command:`collector alerts`"
+msgstr ""
+
+# dac7846c6bf24921bba704955e3996ce
+#: ../../man.nodemgr.rst:31
+msgid ":command:`collector checks`"
+msgstr ""
+
+# 72acb8a8ece448cca75163d7ae9bc3a3
+#: ../../man.nodemgr.rst:36
+msgid ":command:`collector events`"
+msgstr ""
+
+# 0eb55a97385344e8a806286ca7ab702a
+#: ../../man.nodemgr.rst:41
+msgid ":command:`collector list actions`"
+msgstr ""
+
+# b47ab51aa81842e68f4a2d07e0ab9317
+#: ../../man.nodemgr.rst:46
+msgid ":command:`collector show actions`"
+msgstr ""
+
+# adcc66ca4d5d460d82def9ac5c586223
+#: ../../man.nodemgr.rst:49
+msgid ":command:`collector status`"
+msgstr ""
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:55
+#, fuzzy
+msgid ":command:`compliance attach moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 4414386297ed4fcfa86a0d54d665503e
+#: ../../man.nodemgr.rst:58
+msgid ":command:`compliance attach ruleset`"
+msgstr ""
+
+# c03061f691d142a49fb4234502cd0e45
+#: ../../man.nodemgr.rst:62
+msgid ":command:`compliance check`"
+msgstr ""
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:65
+#, fuzzy
+msgid ":command:`compliance detach moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:68
+#, fuzzy
+msgid ":command:`compliance detach ruleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 37f8eb3397d143e898e61992f49103a8
+#: ../../man.nodemgr.rst:72
+msgid ":command:`compliance fix`"
+msgstr ""
+
+# 625a8f43009040019cccc5a6e7dd097a
+#: ../../man.nodemgr.rst:76
+msgid ":command:`compliance fixable`"
+msgstr ""
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:79
+#, fuzzy
+msgid ":command:`compliance list module`"
+msgstr "Conformité, définit la liste des modules"
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:83
+#, fuzzy
+msgid ":command:`compliance list moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:87
+#, fuzzy
+msgid ":command:`compliance list ruleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 318c0b3f33f046babbe1e1ace4fc5575
+#: ../../man.nodemgr.rst:90
+#, fuzzy
+msgid ":command:`compliance show moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 2a5472e921b34ef5a7dc488702decb72
+#: ../../man.nodemgr.rst:93
+msgid ":command:`compliance show ruleset`"
+msgstr ""
+
+# 114b621a55994144bb1ba8fc48778241
+#: ../../man.nodemgr.rst:96
+#, fuzzy
+msgid ":command:`compliance show status`"
+msgstr "Affiche l'état de conformité des modules"
+
+# ddfd8f1f4b8d45cea7cb40ac7e4f8299
+#: ../../man.nodemgr.rst:118
+msgid ":command:`get`"
+msgstr ""
+
+# cca5b9e1e166410fa2bc4b42fb5daa88
+#: ../../man.nodemgr.rst:102
+msgid ":command:`prkey`"
+msgstr ""
+
+# c2b831fddf774b3385be7f60d451ae87
+#: ../../man.nodemgr.rst:139
+msgid ":command:`push appinfo`"
+msgstr ""
+
+# 0f7f705263374a1498246bbe35306cd9
+#: ../../man.nodemgr.rst:142
+msgid ":command:`pushasset`"
+msgstr ""
+
+# ea8fb7dda0d7499ab87dbdb49d9d6dd6
+#: ../../man.nodemgr.rst:145
+msgid ":command:`pushdcs`"
+msgstr ""
+
+# 412b2637e4aa4020bacbbb57f3fc5a79
+#: ../../man.nodemgr.rst:148
+msgid ":command:`pushdisks`"
+msgstr ""
+
+# b45dcfd0cd334876a3de64abe42c2be0
+#: ../../man.nodemgr.rst:151
+msgid ":command:`pusheva`"
+msgstr ""
+
+# abfe97fb237a413597f50cc59f7662c9
+#: ../../man.nodemgr.rst:154
+msgid ":command:`pushibmsvc`"
+msgstr ""
+
+# f138e4f523524b89be3b04988f64576d
+#: ../../man.nodemgr.rst:157
+msgid ":command:`pushpatch`"
+msgstr ""
+
+# 8c13bdab0fdd4a44bb5e7006eea3f88f
+#: ../../man.nodemgr.rst:160
+msgid ":command:`pushpkg`"
+msgstr ""
+
+# 96b7a7c28bc34262a3797b884f21990c
+#: ../../man.nodemgr.rst:163
+msgid ":command:`pushservices`"
+msgstr ""
+
+# ef73da956eae47c1b68dc947c4342cdf
+#: ../../man.nodemgr.rst:170
+msgid ":command:`pushstats`"
+msgstr ""
+
+# d25715ee275d4940a04e047985361a40
+#: ../../man.nodemgr.rst:173
+msgid ":command:`pushsym`"
+msgstr ""
+
+# c3ed162df31f488fad9bad52b6bd61ee
+#: ../../man.nodemgr.rst:108
+msgid ":command:`reboot`"
+msgstr ""
+
+# 2a81ddf7a8d24985bf0f30b56bab0a31
+#: ../../man.nodemgr.rst:122
+msgid ":command:`register`"
+msgstr ""
+
+# 5c6c54fedd27489abb7d8fb96e849af7
+#: ../../man.nodemgr.rst:126
+msgid ":command:`set`"
+msgstr ""
+
+# 4e26036cb98c4cee81652c9e1da369da
+#: ../../man.nodemgr.rst:111
+msgid ":command:`shutdown`"
+msgstr ""
+
+# e03d2c3994d0484d8e87a3251fcf6c20
+#: ../../man.nodemgr.rst:180
+msgid ":command:`syncservices`"
+msgstr ""
+
+# 646110b9178d46f1bc1e753a74debe21
+#: ../../man.nodemgr.rst:129
+msgid ":command:`unset`"
+msgstr ""
+
+# 31c717f54f8140279160232018c9d54f
+#: ../../man.nodemgr.rst:183
+msgid ":command:`updateservices`"
+msgstr ""
 
 # 9260c36a1e384546b987fde55a323af8
 #: ../../man.nodemgr.rst:242
@@ -39,9 +352,9 @@ msgid ""
 "redistribute it. There is NO WARRANTY, to the extent permitted by law."
 msgstr ""
 "Copyright © 2012 OpenSVC SARL. Licence GPLv2 : GNU GPL version 2 <http://gnu."
-"org/licenses/gpl.html>. Ceci est un logiciel libre : vous êtes libre de "
-"le changer et de le redistribuer. Il n'y a aucune garantie, dans la "
-"mesure permie par la loi."
+"org/licenses/gpl.html>. Ceci est un logiciel libre : vous êtes libre de le "
+"changer et de le redistribuer. Il n'y a aucune garantie, dans la mesure "
+"permie par la loi."
 
 # aab37a0b468a4c379f2afbe6e609a594
 #: ../../man.nodemgr.rst:15
@@ -119,8 +432,8 @@ msgstr ""
 "La commande nodemgr contrôle tous les concepts OpenSVC relatifs au noeud. "
 "Interrogation du collecteur, changement des données concernant le noeud, "
 "gestion de la conformité, gestion des configurations de noeud de l'agent, "
-"envoi de données du noeud au collecteur, gestion en groupe des services "
-"du noeud."
+"envoi de données du noeud au collecteur, gestion en groupe des services du "
+"noeud."
 
 # d9b2d6789e7a43109115133852f12c9e
 #: ../../man.nodemgr.rst:213
@@ -130,8 +443,8 @@ msgid ""
 "or <same_prefix_as_bin_file>.aclx"
 msgstr ""
 "[option de pushsym] utilise le mode déconnecté de symcli sur le fichier "
-"spécifié. Les fichiers aclx sont attendus dans ce même répertoire et peuvent être nommés "
-"<symid>.aclx ou <même_prefixe_que_le_bin_file>.aclx"
+"spécifié. Les fichiers aclx sont attendus dans ce même répertoire et peuvent "
+"être nommés <symid>.aclx ou <même_prefixe_que_le_bin_file>.aclx"
 
 # 4273bf13c82349a8945ee316526c89d1
 #: ../../man.nodemgr.rst:224
@@ -139,20 +452,23 @@ msgid ""
 "a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "action' and pushstats action"
 msgstr ""
-"Une date de début exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
-"avec les actions 'collector ack' et 'pushstats'."
+"Une date de début exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser avec les "
+"actions 'collector ack' et 'pushstats'."
 
 # e2d34ca3437c4da5b5fe67247b023727
 #: ../../man.nodemgr.rst:228
 msgid "a comment to log when used with the 'collector ack action' action"
-msgstr "Un commentaire à enregistrer en complément de l'action 'collector ack action'."
+msgstr ""
+"Un commentaire à enregistrer en complément de l'action 'collector ack "
+"action'."
 
 # 54a58fd289974a35b503e26210449991
 #: ../../man.nodemgr.rst:222
 msgid ""
 "a duration expressed in minutes. used with the 'collector ack action' action"
 msgstr ""
-"Une durée exprimée en minutes. À utiliser avec l'action 'collector ack action'."
+"Une durée exprimée en minutes. À utiliser avec l'action 'collector ack "
+"action'."
 
 # d908141420a94e67b34779d9e88fa141
 #: ../../man.nodemgr.rst:226
@@ -160,8 +476,8 @@ msgid ""
 "a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collector ack "
 "action' and pushstats action"
 msgstr ""
-"Une date de fin exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser "
-"avec les actions 'collector ack' et 'pushstats'."
+"Une date de fin exprimée au format 'AAAA-MM-JJ hh:mm'. À utiliser avec les "
+"actions 'collector ack' et 'pushstats'."
 
 # 4d2fff3e916b452eb76d0f4dba1a599a
 #: ../../man.nodemgr.rst:23
@@ -187,7 +503,8 @@ msgstr "Attache le jeu de règles spécifié par --ruleset à ce noeud"
 msgid ""
 "attach the modulesets specified during a compliance check/fix/fixable command"
 msgstr ""
-"Attache les jeux de modules spécifiés lors d'une commande check/fix/fixable de conformité"
+"Attache les jeux de modules spécifiés lors d'une commande check/fix/fixable "
+"de conformité"
 
 # 318c0b3f33f046babbe1e1ace4fc5575
 #: ../../man.nodemgr.rst:198
@@ -200,7 +517,8 @@ msgid ""
 "compliance, set moduleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
-"Conformité, définit la liste des modules. La valeur 'all' peut être utilisée avec l'action 'detach'"
+"Conformité, définit la liste des modules. La valeur 'all' peut être utilisée "
+"avec l'action 'detach'"
 
 # 6ae3faac448e4d94b2f4ea939a86da03
 #: ../../man.nodemgr.rst:203
@@ -208,7 +526,8 @@ msgid ""
 "compliance, set ruleset list. The 'all' value can be used in conjonction "
 "with detach."
 msgstr ""
-"Conformité, définit la liste de jeux de règles. La valeur 'all' peut être utilisée avec l'action 'detach'"
+"Conformité, définit la liste de jeux de règles. La valeur 'all' peut être "
+"utilisée avec l'action 'detach'"
 
 # f1eb414bc3a949959dd46d633c95ac50
 #: ../../man.nodemgr.rst:205
@@ -251,8 +570,9 @@ msgid ""
 "display node events during the period specified by --begin/--end. --end "
 "defaults to now. --begin defaults to 7 days ago"
 msgstr ""
-"Affiche les évènements sur le noeud pendant la période spécifiée par --begin/--end. "
-"--end prend la date actuelle pour défaut. --begin prend 7 jour auparavant pour défaut"
+"Affiche les évènements sur le noeud pendant la période spécifiée par --"
+"begin/--end. --end prend la date actuelle pour défaut. --begin prend 7 jour "
+"auparavant pour défaut"
 
 # e68f0ee63cd34401b3f836c327478e74
 #: ../../man.nodemgr.rst:49
@@ -267,7 +587,9 @@ msgstr "Force l'action"
 # 8af6178b75dc4ad6ace2a716d84e13c3
 #: ../../man.nodemgr.rst:117
 msgid "get the value of the node configuration parameter pointed by --param"
-msgstr "Affiche la valeur du paramètre de la configuration de noeud pointé par --param"
+msgstr ""
+"Affiche la valeur du paramètre de la configuration de noeud pointé par --"
+"param"
 
 # 49292520485c4d1e996334f5a52d9e25
 #: ../../man.nodemgr.rst:39
@@ -275,9 +597,9 @@ msgid ""
 "list actions on the node, whatever the service, during the period specified "
 "by --begin/--end. --end defaults to now. --begin defaults to 7 days ago"
 msgstr ""
-"Liste les actions sur le noeud, quel que soit le service, et durant la période "
-"spécifiée par --begin/--end. --end prend la date actuelle pour défaut. "
-"--begin prend 7 jour auparavant pour défaut"
+"Liste les actions sur le noeud, quel que soit le service, et durant la "
+"période spécifiée par --begin/--end. --end prend la date actuelle pour "
+"défaut. --begin prend 7 jour auparavant pour défaut"
 
 # 651f0aad50a94ab589b25372ca65bd0b
 #: ../../man.nodemgr.rst:82
@@ -294,8 +616,8 @@ msgid ""
 "list available compliance rulesets. --ruleset f% limit the scope to rulesets "
 "matching the f% pattern."
 msgstr ""
-"Liste les jeux de règles disponibles. --ruleset f% limite le périmètre "
-"aux jeux de règles correspondants à l'expression f%."
+"Liste les jeux de règles disponibles. --ruleset f% limite le périmètre aux "
+"jeux de règles correspondants à l'expression f%."
 
 # 94b42fe48cb94377802eca5759288607
 #: ../../man.nodemgr.rst:79
@@ -330,7 +652,8 @@ msgstr "Précise le paramètre de configuration pour les actions 'get' et 'set'"
 # 48e2186ac4b440848d2950db64767aca
 #: ../../man.nodemgr.rst:195
 msgid "points the directory where the metrics files are stored for pushstats"
-msgstr "Indique l'emplacement des fichiers de métriques pour l'action 'pushstats'"
+msgstr ""
+"Indique l'emplacement des fichiers de métriques pour l'action 'pushstats'"
 
 # 8d402f4812f742469e5daefe865eb300
 #: ../../man.nodemgr.rst:145
@@ -376,15 +699,17 @@ msgid ""
 "stats files are looked up can be changed using --stats-dir."
 msgstr ""
 "Envoie les métriques de performance au collecteur. Par défaut, l'intervale "
-"des statiqtiques poussées s'étend de hier au début de la période de planification autorisée, "
-"et se termine à l'instant. Cet interval peut être changé par les paramètres "
-"--begin/--end. L'emplacement où les fichiers de statistiques sont cherchés "
-"peut être changé par --stats-dir."
+"des statiqtiques poussées s'étend de hier au début de la période de "
+"planification autorisée, et se termine à l'instant. Cet interval peut être "
+"changé par les paramètres --begin/--end. L'emplacement où les fichiers de "
+"statistiques sont cherchés peut être changé par --stats-dir."
 
 # b65028f4919e4091bbf92fbb1962a4b4
 #: ../../man.nodemgr.rst:138
 msgid "push services application launchers appinfo key/value pairs to database"
-msgstr "Envoie au collecteur les couples clé/valeur du appinfo des lanceurs des services"
+msgstr ""
+"Envoie au collecteur les couples clé/valeur du appinfo des lanceurs des "
+"services"
 
 # 9d4b5f9136f24497b5a7abd882f5f1aa
 #: ../../man.nodemgr.rst:163
@@ -421,8 +746,8 @@ msgid ""
 "run compliance fixes. --ruleset <md5> instruct the collector to provide an "
 "historical ruleset."
 msgstr ""
-"Lance une mise en conformité. --ruleset <md5> indique au collecteur "
-"de fournir un jeu de règles historique."
+"Lance une mise en conformité. --ruleset <md5> indique au collecteur de "
+"fournir un jeu de règles historique."
 
 # f4ac1777a738414ebf38b1047fa795ca
 #: ../../man.nodemgr.rst:135
@@ -435,8 +760,8 @@ msgid ""
 "send var files, config files and configured replications to other nodes for "
 "each node service"
 msgstr ""
-"Envoie les fichiers de var, les configuration de service et lance les réplications "
-"configurées, pour chaque service du noeud."
+"Envoie les fichiers de var, les configuration de service et lance les "
+"réplications configurées, pour chaque service du noeud."
 
 # 59aa93c78bb24ee381f96d172b53843d
 #: ../../man.nodemgr.rst:125
@@ -450,7 +775,8 @@ msgstr ""
 # 2cc671c937c943aeb55015167b7d0333
 #: ../../man.nodemgr.rst:220
 msgid "set a node configuration parameter value for the 'set --param' action"
-msgstr "Indique la valeur d'un paramètre à attribuer ppour l'action 'set --param'"
+msgstr ""
+"Indique la valeur d'un paramètre à attribuer ppour l'action 'set --param'"
 
 # 09c35f782a9f4ee9b86cc2d376bacf2d
 #: ../../man.nodemgr.rst:44
@@ -459,9 +785,10 @@ msgid ""
 "specified by --begin/--end dates. --end defaults to now. --begin defaults to "
 "7 days ago"
 msgstr ""
-"Affiche la liste détaillée des actions. Une action précise peut être spécifiée "
-"par --id. Une période peut être spécifiée par --begin/--end. --end prend "
-"pour défaut l'instant présent. --begin prend pour défaut 7 jours auparavant."
+"Affiche la liste détaillée des actions. Une action précise peut être "
+"spécifiée par --id. Une période peut être spécifiée par --begin/--end. --end "
+"prend pour défaut l'instant présent. --begin prend pour défaut 7 jours "
+"auparavant."
 
 # 114b621a55994144bb1ba8fc48778241
 #: ../../man.nodemgr.rst:96
@@ -507,12 +834,14 @@ msgstr "svcmgr(8)"
 # a74f8dc63499491ea6f124f4b2566d3f
 #: ../../man.nodemgr.rst:230
 msgid "the acker name to log when used with the 'collector ack action' action"
-msgstr "Le nom de l'aquitteur à enregistrer lors d'une action 'collector ack action'"
+msgstr ""
+"Le nom de l'aquitteur à enregistrer lors d'une action 'collector ack action'"
 
 # cc5f7df1c4994d359bae3fd3836260a6
 #: ../../man.nodemgr.rst:129
 msgid "unset a node configuration parameter (pointed by --param)"
-msgstr "Supprime un paramètre (pointé par --param) de la configuration du noeud"
+msgstr ""
+"Supprime un paramètre (pointé par --param) de la configuration du noeud"
 
 # 0f83fddb57aa417fbd53769a6953ee60
 #: ../../man.nodemgr.rst:75
@@ -520,5 +849,5 @@ msgid ""
 "verify compliance fixes prerequisites. --ruleset <md5> instruct the "
 "collector to provide an historical ruleset."
 msgstr ""
-"Vérifie les prérequis aux mises en conformités. --ruleset <md5> indique au collecteur "
-"de fournir un jeu de règles historique."
+"Vérifie les prérequis aux mises en conformités. --ruleset <md5> indique au "
+"collecteur de fournir un jeu de règles historique."

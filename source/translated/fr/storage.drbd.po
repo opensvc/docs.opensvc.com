@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-31 17:51\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # a8b167f46f834ec3aa9649c98cc5b1c1
-#: ../../storage.drbd.rst:50
+#: ../../storage.drbd.rst:52
 msgid ":command:`postvg`"
 msgstr ":command:`postvg`"
 
 # b1f1b9afb42f425585cb096378f11a38
-#: ../../storage.drbd.rst:46
+#: ../../storage.drbd.rst:48
 msgid ":command:`prevg`"
 msgstr ":command:`prevg`"
 
 # 3fa76f548f514998ad1a440c3ef55f7b
-#: ../../storage.drbd.rst:35
+#: ../../storage.drbd.rst:37
 msgid ":command:`start`"
 msgstr ":command:`start`"
 
 # 968d24b8dc9744989814fdd2303f9053
-#: ../../storage.drbd.rst:39
+#: ../../storage.drbd.rst:41
 msgid ":command:`stop`"
 msgstr ":command:`stop`"
 
 # 968d24b8dc9744989814fdd2303f9053
-#: ../../storage.drbd.rst:31
+#: ../../storage.drbd.rst:33
 msgid "Command set"
 msgstr "Commandes"
 
 # ae2f85d9868d4a45adac9163fdd6c1d2
-#: ../../storage.drbd.rst:41
+#: ../../storage.drbd.rst:43
 msgid "Demote to 'secondary' state"
 msgstr "Transition vers le mode 'secondary'"
 
@@ -67,26 +67,27 @@ msgid "Drbd storage driver"
 msgstr "Pilote Drbd"
 
 # bd9164b1d4ab4133b9b3d04e8557b5d7
-#: ../../storage.drbd.rst:98
+#: ../../storage.drbd.rst:100
 msgid "Examples"
 msgstr "Exemples"
 
 # 2c169c8cc5ff48b3b8c42e9a7ac79031
-#: ../../storage.drbd.rst:22
+#: ../../storage.drbd.rst:24
 msgid "Files contributed to sync#i0"
 msgstr "Fichiers ajoutés à sync#i0"
 
 # ecd62071936742f28e8e310b36b15f41
 #: ../../storage.drbd.rst:16
+#, fuzzy
 msgid ""
 "If a vg is layered above drbd, a specific LVM configuration is recommended "
-"(link)::"
+"(link)"
 msgstr ""
 "Si un vg est empilé sur drbd, une configuration LVM spécifique est "
 "recommandée (link) ::"
 
 # c75d735149cd4770ab8c5e96eaad960a
-#: ../../storage.drbd.rst:100
+#: ../../storage.drbd.rst:102
 msgid ""
 "In this example the service drives an OpenVZ container installed in a "
 "filesystem (fs#1) build on a drbd (drbd#1, resource name 'data'). OpenSVC "
@@ -118,32 +119,32 @@ msgstr ""
 "n'assure que le pilotage nécessaire au moment des 'start' et 'stop'. "
 
 # 041f1b4160ac4ad6bf723563ae7cbf56
-#: ../../storage.drbd.rst:37
+#: ../../storage.drbd.rst:39
 msgid "Promote to 'primary' state"
 msgstr "Transition vers l'état 'primary'"
 
 # c49aa172be7b4a548f54afd054b9fbee
-#: ../../storage.drbd.rst:103
+#: ../../storage.drbd.rst:105
 msgid "Start"
 msgstr "Start"
 
 # a66b8c5c6e0b4530a4942b089384e3b6
-#: ../../storage.drbd.rst:130
+#: ../../storage.drbd.rst:132
 msgid "Stop"
 msgstr "Stop"
 
 # 104080b4e3884a7fb5018f2d507d5a2b
-#: ../../storage.drbd.rst:55
+#: ../../storage.drbd.rst:57
 msgid "Syntax"
 msgstr "Syntaxe"
 
 # 2ed449d222884b5c894d36d98c9d69a9
-#: ../../storage.drbd.rst:44
+#: ../../storage.drbd.rst:46
 msgid "Tags"
 msgstr "Tags"
 
 # 947537f0f3564dcf9db8e0666b313ccc
-#: ../../storage.drbd.rst:33
+#: ../../storage.drbd.rst:35
 msgid "The drbd driver is a member of the 'disk group' class."
 msgstr "Le pilote drbd est un membre de la classe 'disk group'."
 
@@ -157,7 +158,7 @@ msgstr ""
 "etc/drbd.d/${res}.res`."
 
 # 24f0959872144e90905d3627144881b8
-#: ../../storage.drbd.rst:28
+#: ../../storage.drbd.rst:30
 msgid ""
 "This file is thus replicated from the node running the service to the other "
 "nodes and drpnodes."
@@ -166,7 +167,7 @@ msgstr ""
 "vers les noeuds secondaires et de reprise d'activité. "
 
 # 513c872c79544f349852018d82ef460e
-#: ../../storage.drbd.rst:52
+#: ../../storage.drbd.rst:54
 msgid ""
 "Upon service 'start', drbd 'start' is scheduled after volume group 'start'. "
 "To use when the the drbd is layered over the volume group."
@@ -176,7 +177,7 @@ msgstr ""
 "drbd sont des volumes logiques."
 
 # a0a0caa0338d4e018a250e83a325c830
-#: ../../storage.drbd.rst:48
+#: ../../storage.drbd.rst:50
 msgid ""
 "Upon service 'start', drbd 'start' is scheduled before volume group 'start'. "
 "To use when the volume group is layered over the drbd."

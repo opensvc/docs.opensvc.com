@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-01 16:24\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,52 +17,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 662f8e1099a94810bc8bf678a5b228d4
-#: ../../howto.vmencap.rst:75
+#: ../../howto.vmencap.rst:77
 msgid "**autostart_node**"
 msgstr "**autostart_node**"
 
 # 7b7ba015144640718bb66c408be71dfd
-#: ../../howto.vmencap.rst:79
+#: ../../howto.vmencap.rst:81
 msgid "**drpnode**"
 msgstr "**drpnode**"
 
 # 7f2e2a94672e41e9a73815a874c8042f
-#: ../../howto.vmencap.rst:83
+#: ../../howto.vmencap.rst:85
 msgid "**drpnodes**"
 msgstr "**drpnodes**"
 
 # 7fef970b7526428aa26aa1d0894da35c
-#: ../../howto.vmencap.rst:97
+#: ../../howto.vmencap.rst:99
 msgid "**ip resources**"
 msgstr "**ressources ip**"
 
-# 5bf28dd9fbbf4cb4a2a019f9a8f3017e
-#: ../../howto.vmencap.rst:67
-msgid "**mode**"
-msgstr "**node**"
+# e81a125be3194ed4a092e5c6b745fe8b
+#: ../../howto.vmencap.rst:65
+#, fuzzy
+msgid "**name**"
+msgstr "**vm_name**"
 
 # 9b2f3cc25a474a3ab3ffbfac8decaf5f
-#: ../../howto.vmencap.rst:71
+#: ../../howto.vmencap.rst:73
 msgid "**nodes**"
 msgstr "**nodes**"
 
 # 277f6299aaba41a7b74c7dd47efc504b
-#: ../../howto.vmencap.rst:87
+#: ../../howto.vmencap.rst:89
 msgid "**scsireserv**"
 msgstr "**scsireserv**"
 
-# e81a125be3194ed4a092e5c6b745fe8b
-#: ../../howto.vmencap.rst:63
-msgid "**vm_name**"
-msgstr "**vm_name**"
+# 2250f7f7962048cebb325599d4284742
+#: ../../howto.vmencap.rst:69
+msgid "**type**"
+msgstr ""
 
 # 25e13b726e5e4e29a810a102c65f83a1
-#: ../../howto.vmencap.rst:105
+#: ../../howto.vmencap.rst:107
 msgid "**vmdg resource**"
 msgstr "**ressource vmdg**"
 
 # 83fa8c0c8f9b450798c0df4a13c7cef3
-#: ../../howto.vmencap.rst:103
+#: ../../howto.vmencap.rst:105
 msgid ""
 "*and* execute in the context of the guest operating system a command "
 "verifying the plumbing on the 'ipdev' adapter."
@@ -71,24 +72,25 @@ msgstr ""
 "vérifiant la présence de l'adresse internet sur la carte 'ipdev'."
 
 # 5de0ad6d37ee4f82b4d1761ce394cef3
-#: ../../howto.vmencap.rst:93
+#: ../../howto.vmencap.rst:95
 msgid "*and* the disks are dedicated to the service"
 msgstr "*et* les disques sont dédiés au service"
 
 # 63f7fc84921e4a7dbd59d362e76e4619
-#: ../../howto.vmencap.rst:95
+#: ../../howto.vmencap.rst:97
 msgid "*and* the disks support the scsi3 persistent reservation commands"
 msgstr ""
 "*et* les disques supportent les commandes de réservation persistante scsi3"
 
 # 7ddef349d48b40f49594fae0c44182c0
 #: ../../howto.vmencap.rst:43
-msgid "A typical VM service env file should look like::"
+#, fuzzy
+msgid "A typical VM service env file should look like:"
 msgstr ""
 "Un fichier de configuration typique de service avec VM ressemblerait à ::"
 
 # 4fe3c3c56afb40eca196376b586370f5
-#: ../../howto.vmencap.rst:107
+#: ../../howto.vmencap.rst:109
 msgid ""
 "Add this resource configlet if you pass-through block devices not handled by "
 "a volume manager to the virtual machine. The 'vmdg' resource is a special "
@@ -108,7 +110,7 @@ msgstr ""
 "disques."
 
 # 60e383aa24e94213b0fc2ee7647f4989
-#: ../../howto.vmencap.rst:99
+#: ../../howto.vmencap.rst:101
 msgid ""
 "All OpenSVC VM drivers except 'zone' leave the ip plumbing to the guest "
 "operating system. The ip resources described in the env file are used to "
@@ -126,16 +128,18 @@ msgstr "Bénéfice des pilotes de réplication de données de OpenSVC"
 
 # 340dba51474f466ab4d350820ae36aa8
 #: ../../howto.vmencap.rst:17
+#, fuzzy
 msgid ""
-"Benefit from the OpenSVC Collector performance monitoring, obsolescence "
-"management, alarming, and more."
+"Benefit from the OpenSVC Collector compliance features, performance "
+"monitoring, obsolescence management, alarming, and more."
 msgstr ""
 "Bénéfice des services de collecte de performance, de surveillance, de "
 "gestion de l'obsolescence, ... fournis par le collecteur."
 
 # 00d4a08d998c4202b2e6b423eaa1f4d3
-#: ../../howto.vmencap.rst:69
-msgid "Choose among kvm, xen, esx, hpvm, ldom, vbox, zone, vz and lxc."
+#: ../../howto.vmencap.rst:71
+#, fuzzy
+msgid "Choose among kvm, xen, docker, esx, hpvm, ldom, vbox, zone, vz and lxc."
 msgstr "Choisir parmi kvm, xen, esx, hpvm, ldom, vbox, zone, vz, et lxc."
 
 # 98e58e6e9e4549f98e9b1077717ef467
@@ -159,7 +163,7 @@ msgid "Follow the :ref:`agent.service.creation` guide."
 msgstr "Suivre le guide :ref:`agent.service.creation`."
 
 # e97d456ab109481b9a9c343a395e6010
-#: ../../howto.vmencap.rst:65
+#: ../../howto.vmencap.rst:67
 msgid ""
 "If this parameter is not set, the VM name defaults to the service name. When "
 "encapsulating an existing VM, chances are that you need to set it to the "
@@ -168,9 +172,9 @@ msgid ""
 "hypersisor and the VM do not share the same DNS domain. Communication with "
 "zones use the zlogin utility, so fqdn are never needed in this case."
 msgstr ""
-"Si ce paramètre n'est pas configuré, le nom de la VM prend pour valeur le nom "
-"du service. Quand la VM encapsulée est déjà existante, il est probable qu'il "
-"soit nécessaire d'utiliser ce paramètre pour s'adapter au nom de la VM "
+"Si ce paramètre n'est pas configuré, le nom de la VM prend pour valeur le "
+"nom du service. Quand la VM encapsulée est déjà existante, il est probable "
+"qu'il soit nécessaire d'utiliser ce paramètre pour s'adapter au nom de la VM "
 "certainement différent du nom du service. Ce nom est utilisé par "
 "l'hyperviseur pour communiquer avec la VM. Il est donc possible qu'il soit "
 "nécessaire de passer un nom complètement qualifié si le resolver de "
@@ -220,7 +224,7 @@ msgstr ""
 "de ce processus :"
 
 # 554d8936e99d464299e6053add6c53c8
-#: ../../howto.vmencap.rst:112
+#: ../../howto.vmencap.rst:114
 msgid ""
 "OpenSVC use ssh as root to execute commands in the other hypervisors "
 "context. Such commands are limited to:"
@@ -229,16 +233,21 @@ msgstr ""
 "autres hyperviseurs. Ces commandes se limitent à :"
 
 # 00bc28fd4f5a40fb81666fe511e25196
-#: ../../howto.vmencap.rst:128
+#: ../../howto.vmencap.rst:130
 msgid "Populate the application startup scripts directory"
 msgstr "Populer le répertoire des lanceurs applicatifs"
 
 # 9245754d69f94adaa427fcb85fa0a154
 #: ../../howto.vmencap.rst:9
+#, fuzzy
 msgid ""
 "Same start/stop/status commands accross non-virtualized services on "
 "different operating systems and services encapsulating virtual machines from "
-"different technologies (kvm, xen, esx, hpvm, zone, lxc, vz, ...)"
+"different technologies (kvm, xen, docker, esx, hpvm, zone, lxc, vz, ...). "
+"This is very convenient for people responsible of production run because "
+"they are always capable of standard management tasks (start/stop/status), "
+"regardless of the virtualisation/container technologies that are used in "
+"your company"
 msgstr ""
 "Unification des méthodes de start/stop/status avec les services non-"
 "virtualisés et quel que soit le système d'exploitation hôte et la "
@@ -257,12 +266,12 @@ msgid "Service creation"
 msgstr "Création du service"
 
 # 2def20044c5149c9881b3dde659bec03
-#: ../../howto.vmencap.rst:89
+#: ../../howto.vmencap.rst:91
 msgid "Set this parameter to true if:"
 msgstr "Positionner ce paramètre à true si :"
 
 # 80672b735ec349dabf508be23447dee8
-#: ../../howto.vmencap.rst:81
+#: ../../howto.vmencap.rst:83
 msgid ""
 "Set to the hypervisor where the virtual machine should run in a disaster "
 "recovery situation."
@@ -271,7 +280,7 @@ msgstr ""
 "cas de plan de reprise d'activité."
 
 # 9df35e6a417a4acbb6b968d5ce2cf352
-#: ../../howto.vmencap.rst:77
+#: ../../howto.vmencap.rst:79
 msgid ""
 "Set to the hypervisor where the virtual machine should run in a normal "
 "situation."
@@ -280,7 +289,7 @@ msgstr ""
 "mode nominal."
 
 # cab2c6af59f94a6dbe9113f2db22b4da
-#: ../../howto.vmencap.rst:73
+#: ../../howto.vmencap.rst:75
 msgid ""
 "Set to the list of hypervisors able to run the virtual machine in a normal "
 "situation."
@@ -289,7 +298,7 @@ msgstr ""
 "situation nominale."
 
 # 84aa7986ac744175ae9f139daa808830
-#: ../../howto.vmencap.rst:85
+#: ../../howto.vmencap.rst:87
 msgid ""
 "Set to the list of hypervisors where the virtual machine may run in a "
 "disaster recovery situation."
@@ -308,12 +317,12 @@ msgid "Setup a service configuration file (~15 lines)"
 msgstr "Configurer le fichier env du service (~15 lignes)"
 
 # f9007739a1344a798c69a56e8977c168
-#: ../../howto.vmencap.rst:133
+#: ../../howto.vmencap.rst:135
 msgid "Test"
 msgstr "Test"
 
 # 80d3f2d1f8174e0d955b3269c4d81f81
-#: ../../howto.vmencap.rst:121
+#: ../../howto.vmencap.rst:123
 msgid ""
 "This step does not apply to zones, as zlogin is always trusted. Other "
 "drivers use ssh as root to execute commands in the guest context. Such "
@@ -325,14 +334,17 @@ msgstr ""
 "limitent à :"
 
 # 85a479b424834197948abea2fb0033e4
-#: ../../howto.vmencap.rst:130
+#: ../../howto.vmencap.rst:132
+#, fuzzy
 msgid ""
 "This step is recommended but not mandatory. OpenSVC command set allows to "
 "start the virtual machine but not the embedded applications through the "
 "'startapp'/'stopapp' commands. For this feature to work as expected, startup "
 "scripts should not reside in the operating system's proposed infrastructure "
 "(/etc/rcX.d, /sbin/rcX.d, DMF, ...). OpenSVC expects to find app launchers "
-"in /svc/etc/init.d in the guest file hierarchy."
+"in /svc/etc/init.d in the guest file hierarchy. This feature is useless in "
+"docker's context, where docker image maintainer should have dealt with "
+"applications startup when docker container is started."
 msgstr ""
 "Cette étape est recommandée mais non nécessaire. Le jeu de commande OpenSVC "
 "permet de démarrer une machine virtuelle sans pour autant démarrer les "
@@ -343,14 +355,14 @@ msgstr ""
 "applicatifs dans /svc/etc/init.d/ dans l'arborescence de l'invité."
 
 # d87c411a81af4164bc2f02e5ce5900c7
-#: ../../howto.vmencap.rst:119
+#: ../../howto.vmencap.rst:121
 msgid "Trust the hypervisor-to-guest ssh root sessions"
 msgstr ""
 "Autoriser les communications ssh en tant que root entre les hyperviseurs et "
 "l'invité"
 
 # 3734a408d177423c8d2ce0c68e385c90
-#: ../../howto.vmencap.rst:110
+#: ../../howto.vmencap.rst:112
 msgid "Trust the hypervisor-to-hypervisor ssh root sessions"
 msgstr ""
 "Autoriser les communications ssh en tant que root entre les hyperviseurs"
@@ -361,38 +373,43 @@ msgid "VM encapsulation in a service"
 msgstr "Encapsulation d'une VM dans un service"
 
 # fa24509ed0e24b85aea611e9a43c5481
-#: ../../howto.vmencap.rst:135
-msgid "You should now be able to run succesfully::"
+#: ../../howto.vmencap.rst:137
+#, fuzzy
+msgid "You should now be able to run succesfully:"
 msgstr "Vous devriez désormais pouvoir exécuter ::"
 
 # 23586cd746ba432dba49ef58840c8402
-#: ../../howto.vmencap.rst:125
+#: ../../howto.vmencap.rst:127
 msgid "application start-up scripts execution in the context of the guest"
 msgstr "exécution des lanceurs applicatifs dans le contexte de l'invité"
 
 # cca4f7557d1b463693c41453ea3830ff
-#: ../../howto.vmencap.rst:123
+#: ../../howto.vmencap.rst:125
 msgid "ip resources health checking"
 msgstr "vérification de la santé des ressources ip"
 
 # ce835a24e4e14e35966c805404137f00
-#: ../../howto.vmencap.rst:101
+#: ../../howto.vmencap.rst:103
 msgid "ping 'ipname'"
 msgstr "ping 'ipname'"
 
 # 0a4381648e414b4ab3679c904b80c88f
-#: ../../howto.vmencap.rst:114
+#: ../../howto.vmencap.rst:116
 msgid "remote host mode checking"
 msgstr "vérification du host_mode distant"
 
 # 9e2f3bea46714a219830848356bc77a1
-#: ../../howto.vmencap.rst:116
+#: ../../howto.vmencap.rst:118
 msgid "remote host replication target mount point checking"
 msgstr ""
 "vérification des montages des systèmes de fichiers cibles des réplications "
 "de données"
 
 # 75bd80a899e946178efa00cd053aa207
-#: ../../howto.vmencap.rst:91
+#: ../../howto.vmencap.rst:93
 msgid "the disks are shared amongst hypervisors"
 msgstr "les disques sont partagés entre les hyperviseurs"
+
+# 5bf28dd9fbbf4cb4a2a019f9a8f3017e
+#~ msgid "**mode**"
+#~ msgstr "**node**"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# 5a87df7efb7945b3ab3371cd8c8fbd47
+#: ../../storage.dds.rst:48
+msgid ":command:`split`"
+msgstr ""
+
+# 7b89f9c68ae24a83872d13583dfdad00
+#: ../../storage.dds.rst:27
+msgid ":command:`syncfullsync`"
+msgstr ""
+
+# 208df28d1df448b4b99103918b235095
+#: ../../storage.dds.rst:30
+msgid ":command:`syncupdate`"
+msgstr ""
+
+# 91fc849f74844a3797c560b1a31f95cf
+#: ../../storage.dds.rst:36
+msgid ":command:`up`"
+msgstr ""
+
+# f0b572a5981d4cf6b62229a3abcf7929
+#: ../../storage.dds.rst:39
+msgid ":command:`warn`"
+msgstr ""
 
 # 6572135171424a9aa5ad9883c8ce9190
 #: ../../storage.dds.rst:21
@@ -59,8 +84,8 @@ msgid ""
 "chunk offset in the origin."
 msgstr ""
 "Autrement dit, le delta binaire contient toutes les données changées entre "
-"la création de snap1 et de snap2, plus la table des pointeurs qui "
-"stocke les offsets des chunks sur l'origine."
+"la création de snap1 et de snap2, plus la table des pointeurs qui stocke les "
+"offsets des chunks sur l'origine."
 
 # a7c9e261b874483394809465c3cee149
 #: ../../storage.dds.rst:131
@@ -85,11 +110,10 @@ msgid ""
 "though a storage bandwidth drain, works on a snapshot, so the service need "
 "not be down."
 msgstr ""
-"Synchronisation initiale. Basée sur dds. Fait transiter toutes les "
-"données sur le réseau. Egalement nécessaire lorsque la source et la "
-"cible sont dé-synchronisées. Cette opération, bien que consommatrice "
-"en bande passante, utilise un snapshot donc le service n'a pas "
-"besoin d'être arrêté."
+"Synchronisation initiale. Basée sur dds. Fait transiter toutes les données "
+"sur le réseau. Egalement nécessaire lorsque la source et la cible sont dé-"
+"synchronisées. Cette opération, bien que consommatrice en bande passante, "
+"utilise un snapshot donc le service n'a pas besoin d'être arrêté."
 
 # 50b108f85e624ad39cb918fd7384f349
 #: ../../storage.dds.rst:5
@@ -99,12 +123,14 @@ msgstr "Introduction"
 # 7704b75e6f914e859dcbe7b5f9b90f4e
 #: ../../storage.dds.rst:36
 msgid "Last synchronization occured less than sync_max_delay minutes ago."
-msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # ac7d56f12f3a4749a6ae89df01417593
 #: ../../storage.dds.rst:39
 msgid "Last synchronization occured more than sync_max_delay minutes ago."
-msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # f20073c4985f4bbcb7e155460d18e5a5
 #: ../../storage.dds.rst:42
@@ -125,10 +151,10 @@ msgid ""
 "sync must be scheduled."
 msgstr ""
 "La source et les cibles maintiennent un fichier d'état pour stocker "
-"l'horodatage de la dernière synchronisation incrémentale réussie. "
-"Cette information est utilisée pour vérifier que la séquence "
-"d'application des delta n'a pas été interrompue. Si elle l'a été, "
-"une alerte est émise et une synchronisation complète devient nécessaire."
+"l'horodatage de la dernière synchronisation incrémentale réussie. Cette "
+"information est utilisée pour vérifier que la séquence d'application des "
+"delta n'a pas été interrompue. Si elle l'a été, une alerte est émise et une "
+"synchronisation complète devient nécessaire."
 
 # 1be477e49e65433fa45c5f2a45448e66
 #: ../../storage.dds.rst:33
@@ -147,14 +173,14 @@ msgid ""
 "incremental logical volume replication."
 msgstr ""
 "Le mécanisme de réplication par dds est similaire à ddsnap, en plus simple, "
-"plus spécifique, et complètement userspace. Il repose sur l'outil dds, "
-"mis à disposition par OpenSVC via http://repo.opensvc.com. Cet outil "
-"consulte les tables de copy-on-write des snapshots LVM2 à la recherche des "
-"segments de données changés depuis la création du snapshot et rassemble "
-"les dernières données depuis l'origine du snapshot ou depuis un snapshot "
-"plus récent de la même origine. OpenSVC utilise ces fonctions bas-niveau "
-"pour implémenter un mécanisme de réplication de volumes logiques par "
-"envois incrémentaux de deltas binaires."
+"plus spécifique, et complètement userspace. Il repose sur l'outil dds, mis à "
+"disposition par OpenSVC via http://repo.opensvc.com. Cet outil consulte les "
+"tables de copy-on-write des snapshots LVM2 à la recherche des segments de "
+"données changés depuis la création du snapshot et rassemble les dernières "
+"données depuis l'origine du snapshot ou depuis un snapshot plus récent de la "
+"même origine. OpenSVC utilise ces fonctions bas-niveau pour implémenter un "
+"mécanisme de réplication de volumes logiques par envois incrémentaux de "
+"deltas binaires."
 
 # f0218801ae6e416cb3e23e478fce8ff2
 #: ../../storage.dds.rst:48
@@ -163,10 +189,10 @@ msgid ""
 "node, the dds replication is blocked from the DRP node. The return to "
 "production mode usually involves a full resynchronization."
 msgstr ""
-"C'est le mode par défaut de plan de reprise d'activité. Lors du "
-"démarrage d'un service sur un noeud DRP, la réplication dds est suspendue à "
-"l'initiative du noeud DRP. Le retour au mode de production normal "
-"implique dans le cas général une synchronisation complète."
+"C'est le mode par défaut de plan de reprise d'activité. Lors du démarrage "
+"d'un service sur un noeud DRP, la réplication dds est suspendue à "
+"l'initiative du noeud DRP. Le retour au mode de production normal implique "
+"dans le cas général une synchronisation complète."
 
 # 5388b29b4ccb40fd94f1614827c1ec16
 #: ../../storage.dds.rst:2
@@ -181,9 +207,8 @@ msgid ""
 "snap2 creation, so data is actually read from origin, whereas chunk4 has "
 "changed since snap2 creation, so data is read from snap2 cow segment."
 msgstr ""
-"dds lit la table de copy-on-write du snap1 (le plus agé). Pour chaque "
-"chunk changé, il récupère les données du chunk depuis snap2. Dans le "
-"diagramme, chunk1 n'a pas changé depsui la création de snap2, donc ses "
-"données sont lues depuis l'origine. chunk4, lui, a changé depuis la "
-"création de snap2, donc ses données sont lues depuis la table cow de "
-"snap2."
+"dds lit la table de copy-on-write du snap1 (le plus agé). Pour chaque chunk "
+"changé, il récupère les données du chunk depuis snap2. Dans le diagramme, "
+"chunk1 n'a pas changé depsui la création de snap2, donc ses données sont "
+"lues depuis l'origine. chunk4, lui, a changé depuis la création de snap2, "
+"donc ses données sont lues depuis la table cow de snap2."

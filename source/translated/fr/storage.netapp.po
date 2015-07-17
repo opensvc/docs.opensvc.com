@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,77 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# a3135d07e5244fcc940132d117d4251e
+#: ../../storage.netapp.rst:51
+msgid ":command:`down`"
+msgstr ""
+
+# f37aee13fa5c42cc8411f90a9a1eb7ee
+#: ../../storage.netapp.rst:63
+msgid ":command:`split`"
+msgstr ""
+
+# ea97f9d54de843579cdcd8740c6f5f0e
+#: ../../storage.netapp.rst:8
+msgid ":command:`start`"
+msgstr ""
+
+# f564a33d62124ed5af47a1fea8672312
+#: ../../storage.netapp.rst:11
+#, fuzzy
+msgid ":command:`stop`"
+msgstr "Commandes"
+
+# 089482f3d4ac4e96930d6035f0efd3ea
+#: ../../storage.netapp.rst:66
+msgid ":command:`swap`"
+msgstr ""
+
+# 91ece5d96d7e45f5995523af16830c7d
+#: ../../storage.netapp.rst:23
+msgid ":command:`syncbreak`"
+msgstr ""
+
+# 44bb3f5149964479bacf08472bfa5b26
+#: ../../storage.netapp.rst:17
+msgid ":command:`syncquiesce`"
+msgstr ""
+
+# c7b0b365bfd7494cbdc85b409c14b7d6
+#: ../../storage.netapp.rst:20
+msgid ":command:`syncresume`"
+msgstr ""
+
+# 1b0d2a0d85fb4a1896fc20f8f6245050
+#: ../../storage.netapp.rst:26
+msgid ":command:`syncresync`"
+msgstr ""
+
+# 51f195a6b15a47448ee03247ae2ef299
+#: ../../storage.netapp.rst:29
+msgid ":command:`syncswap`"
+msgstr ""
+
+# a54c2c5569a44d528074757ae45ada49
+#: ../../storage.netapp.rst:14
+msgid ":command:`syncupdate`"
+msgstr ""
+
+# 4830e2c381104b08ba176180f61bc3f7
+#: ../../storage.netapp.rst:48
+msgid ":command:`undef`"
+msgstr ""
+
+# ef8a95bc0c144c26a8006701df2ccbf1
+#: ../../storage.netapp.rst:40
+msgid ":command:`up`"
+msgstr ""
+
+# c39a7cb7ed8b453abbd3f539089f2367
+#: ../../storage.netapp.rst:45
+msgid ":command:`warn`"
+msgstr ""
 
 # 8fc53ed56bb14870bece1434007cf0c5
 #: ../../storage.netapp.rst:8
@@ -24,14 +95,15 @@ msgid ""
 "disaster recovery mode)."
 msgstr ""
 "Promeut l'accès aux ressources snapmirror en lecture-écriture. Soit par "
-"inversion du sens de réplication (en mode geocluster), soit par arrêt "
-"des synchronisations (mode classique de plan de reprise d'activité)."
+"inversion du sens de réplication (en mode geocluster), soit par arrêt des "
+"synchronisations (mode classique de plan de reprise d'activité)."
 
 # a6ce29ee2f7c4f729fb0a055649da68e
 #: ../../storage.netapp.rst:187
+#, fuzzy
 msgid ""
 "Append the keys to :file:`/nasprd/vol/vol0/etc/sshd/opensvc/.ssh/"
-"authorized_keys2`::"
+"authorized_keys2`:"
 msgstr ""
 "Ajouter les clés au fichier :file:`/nasprd/vol/vol0/etc/sshd/opensvc/.ssh/"
 "authorized_keys2` ::"
@@ -42,9 +114,10 @@ msgid "Break-off the snapmirror resource."
 msgstr "Arrêt de la synchronisation d'une ressource snapmirror"
 
 # c03a0fc494d84be29ced5263f25367a0
-#: ../../storage.netapp.rst:205
+#: ../../storage.netapp.rst:207
 msgid "Check that target toaster hostname in present in the file"
-msgstr "Vérifier que le nom d'hôte de la cible, toaster, est présent dans le fichier"
+msgstr ""
+"Vérifier que le nom d'hôte de la cible, toaster, est présent dans le fichier"
 
 # f564a33d62124ed5af47a1fea8672312
 #: ../../storage.netapp.rst:5
@@ -62,17 +135,17 @@ msgid "Create account"
 msgstr "Créer un compte"
 
 # 01eb7b12bc604eb7863e74f48b540b61
-#: ../../storage.netapp.rst:272
+#: ../../storage.netapp.rst:274
 msgid "Diskstart in disaster recovery (split) mode"
 msgstr "Diskstart en situation de plan de reprise d'activité (split mode)"
 
 # e6cbc72a9b534e7d9845a471af102ce0
-#: ../../storage.netapp.rst:283
+#: ../../storage.netapp.rst:285
 msgid "Diskstart in multi-site cluster (swap) mode"
 msgstr "Diskstart en situation de cluster multi-sites (swap mode)"
 
 # 1073aa1aefe64ead897ca172cd8b880e
-#: ../../storage.netapp.rst:237
+#: ../../storage.netapp.rst:239
 msgid "Examples"
 msgstr "Exemples"
 
@@ -87,8 +160,9 @@ msgid ""
 "If the ssh setup has already been done skip the following command. Run "
 "secureadmin status to check."
 msgstr ""
-"Si la configuration ssh a déjà été réalisée, sauter la commande suivante. "
-"La commande secureadmin peut être lancée pour vérifier la configuration actuelle."
+"Si la configuration ssh a déjà été réalisée, sauter la commande suivante. La "
+"commande secureadmin peut être lancée pour vérifier la configuration "
+"actuelle."
 
 # 4884375e7b1a45809bfc7d327b579540
 #: ../../storage.netapp.rst:59
@@ -114,31 +188,31 @@ msgid "Netapp user account setup"
 msgstr "Configuration du compte Netapp"
 
 # b0a0c7e0fdc34565abacd87b7a94d474
-#: ../../storage.netapp.rst:199
+#: ../../storage.netapp.rst:201
 msgid "On Source toaster : Ensure target toaster is trusted"
 msgstr "Sur le toaster source : s'assurer que la cible toaster est autorisée"
 
 # f21802b4bfd741dfaf6c08c0c5111d9a
-#: ../../storage.netapp.rst:222
+#: ../../storage.netapp.rst:224
 msgid ""
 "On Target toaster : Fill in the /etc/snapmirror.conf to specify the "
 "snapmirror policy"
 msgstr ""
-"Sur le toaster cible: renseigner le fichier /etc/snapmirror.conf pour "
-"qu'il définisse la politique snapmirror"
+"Sur le toaster cible: renseigner le fichier /etc/snapmirror.conf pour qu'il "
+"définisse la politique snapmirror"
 
 # de517058acbc42319b6a3f814c0f64f9
-#: ../../storage.netapp.rst:215
+#: ../../storage.netapp.rst:217
 msgid "On Target toaster : Initialize snapmirror replication"
 msgstr "Sur le toaster cible : initialiser la replication snapmirror"
 
 # 9a6a449d5f3d40afad50e94da942f9c3
-#: ../../storage.netapp.rst:208
+#: ../../storage.netapp.rst:210
 msgid "On Target toaster : Restrict destination volume"
 msgstr "Sur le toaster cible : restreindre au volume cible"
 
 # 8ccb73109bd04b3188c014610e49561f
-#: ../../storage.netapp.rst:196
+#: ../../storage.netapp.rst:198
 msgid ""
 "OpenSVC does not provide assistance in initial snapmirror configuration. The "
 "necessary steps are described below to help you kickstart a service setup. "
@@ -146,10 +220,10 @@ msgid ""
 "information please refer to Netapp documentations."
 msgstr ""
 "OpenSVC n'assiste pas à l'initialisation du snapmirror. Les étapes "
-"nécessaires sont décrites ci-bas pour aider à démarrer la configuration "
-"d'un service. OpenSVC décline toute responsabilité en cas de corruption "
-"de vos données. Pour une documentation exhaustive sur le sujet, vous "
-"êtes encouragés à vous réferrer aux à la base documentaire de Netapp."
+"nécessaires sont décrites ci-bas pour aider à démarrer la configuration d'un "
+"service. OpenSVC décline toute responsabilité en cas de corruption de vos "
+"données. Pour une documentation exhaustive sur le sujet, vous êtes "
+"encouragés à vous réferrer aux à la base documentaire de Netapp."
 
 # bf6fe616f0fa44eebfc2c166a282a07f
 #: ../../storage.netapp.rst:57
@@ -157,7 +231,7 @@ msgid "Pre-requisites"
 msgstr "Pré-requis"
 
 # 5d54d03d95dd44049ff5911fc8bf307a
-#: ../../storage.netapp.rst:240
+#: ../../storage.netapp.rst:242
 msgid "Quiesce a replication"
 msgstr "Mise en pause d'une réplication"
 
@@ -167,8 +241,8 @@ msgid ""
 "Re-establish the snapmirror synchronization using current destination as new "
 "source."
 msgstr ""
-"Rétablit la synchronisation snapmirror en utilisant la cible actuelle "
-"en tant que nouvelle source."
+"Rétablit la synchronisation snapmirror en utilisant la cible actuelle en "
+"tant que nouvelle source."
 
 # 4e4c430aa1ba43d8aee4b12e312b3c66
 #: ../../storage.netapp.rst:26
@@ -176,17 +250,19 @@ msgid "Re-establish the snapmirror synchronization."
 msgstr "Déclenche une resynchronisation snapmirror."
 
 # 54c18f65c4544a2b8d8598aef0635246
-#: ../../storage.netapp.rst:248
+#: ../../storage.netapp.rst:250
 msgid "Resume a replication"
 msgstr "Rétablissement d'une réplication en pause"
 
 # 0f8f1fabdfe6423aac4655f46b4a67d3
 #: ../../storage.netapp.rst:20
 msgid "Resume snapmirror sync schedule (rollbacks the effect of quiesce)."
-msgstr "Restaure la planification de synchronisation du snapmirror (annule les effets de quiesce)."
+msgstr ""
+"Restaure la planification de synchronisation du snapmirror (annule les "
+"effets de quiesce)."
 
 # de50b524e65a4763a4ba282039dcddb6
-#: ../../storage.netapp.rst:264
+#: ../../storage.netapp.rst:266
 msgid "Resync a replication"
 msgstr "Resynchronisation de la ressource"
 
@@ -206,12 +282,12 @@ msgid "Setup ssh key-based authentication"
 msgstr "Configuration de l'autentification par clé ssh"
 
 # 9708e5427a3742d6a388faaa597daa47
-#: ../../storage.netapp.rst:194
+#: ../../storage.netapp.rst:196
 msgid "Snapmirror configuration"
 msgstr "Configuration snapmirror"
 
 # 4589698efa2a40b4acb43c735a3e041d
-#: ../../storage.netapp.rst:256
+#: ../../storage.netapp.rst:258
 msgid "Split a replication"
 msgstr "Arrêt de la réplication"
 
@@ -228,9 +304,9 @@ msgid ""
 "means that the service will take over with a lagged data cursor."
 msgstr ""
 "Le paramètre --force est pris en compte par la commande 'start' uniquement. "
-"Il inhibe l'interruption sur échec de la séquence 'quiesce -> break'. Attention, "
-"cela signifie que le service va être démarré avec le dernier jeu de données "
-"reçu."
+"Il inhibe l'interruption sur échec de la séquence 'quiesce -> break'. "
+"Attention, cela signifie que le service va être démarré avec le dernier jeu "
+"de données reçu."
 
 # dfdc5266f6ea4a959e0842699d528960
 #: ../../storage.netapp.rst:68
@@ -240,20 +316,20 @@ msgid ""
 "split sync mode is selected."
 msgstr ""
 "Le mode est déduit du 'host mode' du noeud (:file:`/opt/opensvc/var/"
-"host_mode`) : un host_mode à PRD implique que le sens de synchronisation sera "
-"inversé (swap mode), autrement la réplication sera arrêtée (split mode)."
+"host_mode`) : un host_mode à PRD implique que le sens de synchronisation "
+"sera inversé (swap mode), autrement la réplication sera arrêtée (split mode)."
 
 # 1fd71d113fcb4fea8d48e479f6482be8
-#: ../../storage.netapp.rst:234
+#: ../../storage.netapp.rst:236
 msgid ""
 "The scheduling is disabled because syncs are drived by OpenSVC and that both "
 "replication directions are provisionned for swaps (one of them will appear "
 "as 'Uninitialized' in status)."
 msgstr ""
 "La planification est désactivée car les synchronisations sont prises en "
-"charge par OpenSVC et que les deux sens de réplications sont configurés "
-"pour les cas d'inversion de sens de réplication (l'un d'entre eux "
-"apparaîtra 'Uninitialized' dans les états)."
+"charge par OpenSVC et que les deux sens de réplications sont configurés pour "
+"les cas d'inversion de sens de réplication (l'un d'entre eux apparaîtra "
+"'Uninitialized' dans les états)."
 
 # ca51c4a628be44d9833d3db1d6baa635
 #: ../../storage.netapp.rst:43
@@ -261,13 +337,15 @@ msgid ""
 "The snapmirror are in one of the following state: *   transfer is in "
 "progress *   lag is beyond sync_max_delay"
 msgstr ""
-"Les snapmirrors peuvent être dans l'un des états suivant : *    transfert "
-"en cours *   retard au-delà de sync_max_delay"
+"Les snapmirrors peuvent être dans l'un des états suivant : *    transfert en "
+"cours *   retard au-delà de sync_max_delay"
 
 # 3302edba679e4c5f87d10735b9c23c20
 #: ../../storage.netapp.rst:40
 msgid "The snapmirror are operational and the lag in under sync_max_delay"
-msgstr "Les snapmirror sont opérationnels et le retard est en-dessous de sync_max_delay"
+msgstr ""
+"Les snapmirror sont opérationnels et le retard est en-dessous de "
+"sync_max_delay"
 
 # 894861106c7441ceb3f226e775e84bfa
 #: ../../storage.netapp.rst:63
@@ -279,8 +357,8 @@ msgid ""
 "primary filer before failback to production node)."
 msgstr ""
 "C'est le mode par défaut de plan de reprise d'activité. En cas d'activation "
-"du service sur un noeud de DRP, les ressources snapmirror sont mises en pause "
-"si la tête de stockage maître est encore joignable, puis arrêtées. Les "
+"du service sur un noeud de DRP, les ressources snapmirror sont mises en "
+"pause si la tête de stockage maître est encore joignable, puis arrêtées. Les "
 "données écrites sur les disques répliqués durant un PRA sont considérées "
 "volatiles (bien qu'elle puissent être synchronisées vers la tête de stockage "
 "primaire par des commandes manuelles avant la procédure de retour des "
@@ -294,11 +372,10 @@ msgid ""
 "swapped to set the 'source' to the filer local to the secondary node taking "
 "over the service."
 msgstr ""
-"Ce mode est dédié aux clusters multi-sites. En cas l'activation du "
-"service sur un noeud secondaire, les ressources snapmirror sont mis "
-"en pause et leur sens de réplication est inversé pour que la 'source' "
-"soit tenue par la tête de stockage en affinité de localisation avec le "
-"noeud qui prend le service."
+"Ce mode est dédié aux clusters multi-sites. En cas l'activation du service "
+"sur un noeud secondaire, les ressources snapmirror sont mis en pause et leur "
+"sens de réplication est inversé pour que la 'source' soit tenue par la tête "
+"de stockage en affinité de localisation avec le noeud qui prend le service."
 
 # f31e88a5e54042039657c66543873959
 #: ../../storage.netapp.rst:14
@@ -308,7 +385,9 @@ msgstr "Déclenche une synchronisation snapmirror."
 # 82d3c8c84f3a4e63afb2580b3b89bfd9
 #: ../../storage.netapp.rst:17
 msgid "Trigger an ultimate snapmirror sync then suspend the resync scheduling."
-msgstr "Déclenche une ultime réplication snapmirror puis suspend la planification de resynchronisation"
+msgstr ""
+"Déclenche une ultime réplication snapmirror puis suspend la planification de "
+"resynchronisation"
 
 # c13d073ec19d43f98259382061c12d37
 #: ../../storage.netapp.rst:185

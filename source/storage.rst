@@ -1,18 +1,11 @@
-Storage resources
-=================
+Service synchronization resources
+=================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   storage.dds
-   storage.drbd
-   storage.evasnap
-   storage.ibmdsflashcopy
-   storage.necism
-   storage.netapp
-   storage.symclone
-   storage.zfs
-   storage.btrfs
-   storage.hp3par
+   storage.replication.soft
+   storage.replication.hard
+   storage.snapclone.hard

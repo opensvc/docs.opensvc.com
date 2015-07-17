@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -16,15 +16,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# de521fcc438a47b488aea4e93d9af83f
+#: ../../collector.view.checks.rst:25
+msgid "**fm**"
+msgstr ""
+
+# 623f665675974225a18cb29e59bce881
+#: ../../collector.view.checks.rst:13
+msgid "**fs_i**"
+msgstr ""
+
+# 42efb052f9214bdf9e1419a69b63805e
+#: ../../collector.view.checks.rst:10
+msgid "**fs_u**"
+msgstr ""
+
+# 725a54afb7eb41aebcea734b4af8b643
+#: ../../collector.view.checks.rst:28
+msgid "**lag**"
+msgstr ""
+
+# cdf5f956b33a474998b68536f7793ec2
+#: ../../collector.view.checks.rst:19
+msgid "**mpath**"
+msgstr ""
+
+# 40480fc068bc4e9fa3f45a8199390a14
+#: ../../collector.view.checks.rst:22
+msgid "**raid**"
+msgstr ""
+
+# 447292406c99433f88bab2d8d9825322
+#: ../../collector.view.checks.rst:16
+msgid "**vg_u**"
+msgstr ""
+
 # 612abc2ad944400c8381c240aa0b9ee8
 #: ../../collector.view.checks.rst:34
 msgid ""
 "A check without value update for more than 24 hours will have its update "
 "date highlighted red. These checks instances should not be trusted."
 msgstr ""
-"Une sonde dont la valeur n'a pas été mise à jour pendant 24 heures aura "
-"son horadatage affiché en rouge. Ces valeurs de sonde sont à considérer "
-"avec suspicion."
+"Une sonde dont la valeur n'a pas été mise à jour pendant 24 heures aura son "
+"horadatage affiché en rouge. Ces valeurs de sonde sont à considérer avec "
+"suspicion."
 
 # 39b7bc8d8b1949329fc2786d1fdc46eb
 #: ../../collector.view.checks.rst:50
@@ -33,9 +68,9 @@ msgid ""
 "customized for each node and instance of the check or a threshold can be "
 "attached to a filterset."
 msgstr ""
-"Les familles de sondes ont des valeur par défaut pour les seuils haut et bas. "
-"Ces valeurs peuvent être changées pour chaque instance de chaque sonde, ou "
-"des seuils peuvent être attachées à un jeu de filtres."
+"Les familles de sondes ont des valeur par défaut pour les seuils haut et "
+"bas. Ces valeurs peuvent être changées pour chaque instance de chaque sonde, "
+"ou des seuils peuvent être attachées à un jeu de filtres."
 
 # e9b2a3bb8f6c42339e9219624eca9a29
 #: ../../collector.view.checks.rst:45
@@ -55,7 +90,9 @@ msgstr "Vue des sondes"
 # fe030e023d204406a9e31c05257d222b
 #: ../../collector.view.checks.rst:52
 msgid "Clicking a checker name opens a dialog to change the default value."
-msgstr "Cliquer un nom de sonde ouvre un encart qui permet de changer les valeurs de seuil par défaut."
+msgstr ""
+"Cliquer un nom de sonde ouvre un encart qui permet de changer les valeurs de "
+"seuil par défaut."
 
 # 8bedd0713b7d4d4384f1a8880495cf26
 #: ../../collector.view.checks.rst:42
@@ -71,9 +108,9 @@ msgid ""
 "checks view."
 msgstr ""
 "Chaque valeur de sonde est comparée à ses seuils haut et bas. Si la valeur "
-"actuelle est en dehors de ses limites, la sonde donne lieu à une alerte "
-"dans le tableau de bord. De plus la valeur et le seuil franchi sont "
-"affichés en rouge dans la vue des sondes."
+"actuelle est en dehors de ses limites, la sonde donne lieu à une alerte dans "
+"le tableau de bord. De plus la valeur et le seuil franchi sont affichés en "
+"rouge dans la vue des sondes."
 
 # 621b6d4737174e18a0bc423ebb4d4990
 #: ../../collector.view.checks.rst:25
@@ -93,7 +130,8 @@ msgstr "Taux d'utilisation d'un système de fichiers."
 # 2a95f3826ca5452b8857fe76b05cf92b
 #: ../../collector.view.checks.rst:28
 msgid "Link aggregate error count (Linux bonding, Solaris)."
-msgstr "Compteur d'erreurs des aggrégats de lien réseau (Linux bonding, Solaris)."
+msgstr ""
+"Compteur d'erreurs des aggrégats de lien réseau (Linux bonding, Solaris)."
 
 # 0a2033882d4c4846912201ee1f872a11
 #: ../../collector.view.checks.rst:30
@@ -106,7 +144,8 @@ msgid ""
 "Multipath valid path count (native multipath on Linux, HP-UX, Solaris, "
 "PowerPath)."
 msgstr ""
-"Compteur de chemins valides des multipaths (multipath natif sous Linux, HP-UX, Solaris et PowerPath)."
+"Compteur de chemins valides des multipaths (multipath natif sous Linux, HP-"
+"UX, Solaris et PowerPath)."
 
 # bee10356ea7b4469b5bffaa8fe90b361
 #: ../../collector.view.checks.rst:22
@@ -130,8 +169,8 @@ msgid ""
 "the nodes to the collector. Current implemented checks are:"
 msgstr ""
 "Les tâches planifiées de l'agent OpenSVC et la commande ``nodemgr checks`` "
-"envoient au collecteur les valeurs des sondes des noeuds. Les sondes implémentées "
-"à ce jour sont :" 
+"envoient au collecteur les valeurs des sondes des noeuds. Les sondes "
+"implémentées à ce jour sont :"
 
 # b5ace40de85d4253965ac29e9b02dd61
 #: ../../collector.view.checks.rst:54
@@ -140,10 +179,9 @@ msgid ""
 "corresponding rows in the table and click the :menuselection:`Set low "
 "threshold` or :menuselection:`Set high threshold`."
 msgstr ""
-"Pour changer les valeurs de seuil d'un groupe d'instances de sondes, "
-"cocher les lignes correspondantes du tableau et cliquer sur "
-":menuselection:`Paramétrer le seuil bas` or "
-":menuselection:`Paramétrer le seuil haut`."
+"Pour changer les valeurs de seuil d'un groupe d'instances de sondes, cocher "
+"les lignes correspondantes du tableau et cliquer sur :menuselection:"
+"`Paramétrer le seuil bas` or :menuselection:`Paramétrer le seuil haut`."
 
 # 37021a52d36847a09e8074cd01998cb5
 #: ../../collector.view.checks.rst:5

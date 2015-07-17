@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-01 10:16\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,22 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 9a34f89fb0e64ee79197781b38c13b8c
-#: ../../agent.update.rst:50
+#: ../../agent.update.rst:54
 msgid "**node.repo**"
 msgstr "**node.repo**"
 
 # ea4d31c4d3f24951ac53e234877861b6
-#: ../../agent.update.rst:54
+#: ../../agent.update.rst:58
 msgid "**node.repopkg**"
 msgstr "**node.repopkg**"
 
 # 7fc912038f8d45d69aea0b9b3fbfb939
 #: ../../agent.update.rst:20
-msgid "A mirror can be set up using::"
+#, fuzzy
+msgid "A mirror can be set up using:"
 msgstr "Un miroir peut être initialisé par ::"
 
 # ae3f6b69261049e2998e0c9eb4e22376
-#: ../../agent.update.rst:43
+#: ../../agent.update.rst:47
 msgid ""
 "After the mirror initialization, you have to update the current links "
 "according to your own policies. Beware, the mirroring step may have "
@@ -53,8 +54,9 @@ msgstr ""
 "commandes de gestion de paquet spécifique au système d'exploitation."
 
 # 925176f269194260a72e70c2a7b9695c
-#: ../../agent.update.rst:58
-msgid "Example::"
+#: ../../agent.update.rst:62
+#, fuzzy
+msgid "Example:"
 msgstr "Exemple ::"
 
 # db78f997c3e04dc1b5b62183b1dca483
@@ -106,17 +108,17 @@ msgstr ""
 "croissant :"
 
 # 9e64635208f74bf0afddaeaa1b8ff694
-#: ../../agent.update.rst:46
+#: ../../agent.update.rst:50
 msgid "Set up the agents"
 msgstr "Paramétrage des agents"
 
 # 4bd39e611a02483687e860b269032b12
-#: ../../agent.update.rst:39
+#: ../../agent.update.rst:43
 msgid "Set up the published versions"
 msgstr "Paramétrage des versions publiées"
 
 # c49a7074486842b084ebd4f8b7c374ae
-#: ../../agent.update.rst:41
+#: ../../agent.update.rst:45
 msgid ""
 "The OpenSVC agent downloads the file pointed by the link named ``current`` "
 "under the package category supported by the operating system running the "
@@ -129,7 +131,7 @@ msgstr ""
 "exécutant la commande 'nodemgr updatepkg' téléchargerait pkg/current."
 
 # 4245db92a0e84c86acc758d9b3dcc00b
-#: ../../agent.update.rst:48
+#: ../../agent.update.rst:52
 msgid ""
 "The repository must be known to the agent. This set up is done with either "
 "the node.repo or the node.repopkg ``node.conf`` parameters."
@@ -138,14 +140,16 @@ msgstr ""
 "paramètre node.repo ou node.repopkg du fichier ``node.conf``."
 
 # 7bd417bdab7c42d894ed30a04072d35c
-#: ../../agent.update.rst:24
-msgid "The resulting file tree must organized as::"
+#: ../../agent.update.rst:26
+#, fuzzy
+msgid "The resulting file tree must organized as:"
 msgstr ""
 "L'arborescence de fichiers résultante doit être organisée comme suit ::"
 
 # e706baab59134abc8c889d2d565cad66
-#: ../../agent.update.rst:65
-msgid "The update command is::"
+#: ../../agent.update.rst:71
+#, fuzzy
+msgid "The update command is:"
 msgstr "La commande de mise à jour est ::"
 
 # 482fb252c9a047089514212dcc9508ca
@@ -154,12 +158,12 @@ msgid "This chapter describes the last method."
 msgstr "Ce chapitre décrit cette dernière méthode."
 
 # 5472ad9c57a74a2493f7c34c8165ba2b
-#: ../../agent.update.rst:69
+#: ../../agent.update.rst:77
 msgid "This command is operating system agnostic."
 msgstr "Cette commande est agnostique au système d'exploitation."
 
 # 053ac8dac05149a49a21fbc7ceaccadb
-#: ../../agent.update.rst:56
+#: ../../agent.update.rst:60
 msgid ""
 "This parameter allows to set up a URI pointing to a pure OpenSVC agent "
 "packages repository. If specified node.repopkg overrides node.repo."
@@ -169,7 +173,7 @@ msgstr ""
 "node.repopkg prend le pas sur node.repo."
 
 # 435992fb67e64cbeac5d9fcd5203d451
-#: ../../agent.update.rst:52
+#: ../../agent.update.rst:56
 msgid ""
 "This parameter allows to set up a URI pointing to a repository hosting both "
 "compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC "
@@ -181,6 +185,6 @@ msgstr ""
 "répertoire packages."
 
 # da0baa5ea97b4809a7a5c5aca3309dfd
-#: ../../agent.update.rst:63
+#: ../../agent.update.rst:69
 msgid "Updating the agent"
 msgstr "Mise à jour de l'agent"

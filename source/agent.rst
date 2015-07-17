@@ -8,10 +8,14 @@ Contents:
 
    agent.feature.matrix
    agent.install
+   agent.update
    agent.items
    agent.service.creation
    agent.service.management
    agent.service.app
    agent.service.encapsulation
-   agent.update
+   storage
+   virtualization
+   howto
    agent.template.env
+   manpages

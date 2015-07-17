@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-10 22:07\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,26 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# 5fe5c2035b994ef6bb04298c058d8453
+#: ../../storage.btrfs.rst:15
+msgid ":command:`syncnodes`"
+msgstr ""
+
+# 65087ecef04648268ec901a3f402632c
+#: ../../storage.btrfs.rst:18
+msgid ":command:`syncupdate`"
+msgstr ""
+
+# ea3061fd843e4383b54ab7da2015bcdf
+#: ../../storage.btrfs.rst:24
+msgid ":command:`up`"
+msgstr ""
+
+# 21f85ece701f4c11873d6ff659d835eb
+#: ../../storage.btrfs.rst:27
+msgid ":command:`warn`"
+msgstr ""
 
 # 9bf6f06bc87c44a5903c4626f10a8cb0
 #: ../../storage.btrfs.rst:32

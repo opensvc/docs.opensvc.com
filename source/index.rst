@@ -21,11 +21,8 @@ Contents
    introduction
    contribute
    agent
-   compliance
-   storage
-   virtualization
-   howto
-   manpages
    collector
+   compliance
+   knowledge.base
 
 

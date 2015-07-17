@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-07 18:10\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -15,6 +15,586 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+# 72c7a84668f54c7eab8bdfc611270a19
+#: ../../man.svcmgr.rst:343
+msgid ":command:`--account`"
+msgstr ""
+
+# a121dc855fe844dd8637f72f77a371f7
+#: ../../man.svcmgr.rst:327
+msgid ":command:`--attach`"
+msgstr ""
+
+# 30a06562f4cf4f8b89ebe76fa0696144
+#: ../../man.svcmgr.rst:351
+msgid ":command:`--author=AUTHOR`"
+msgstr ""
+
+# bafcd96e9f8a45bb9db6dd427bccb0f9
+#: ../../man.svcmgr.rst:345
+msgid ":command:`--begin=BEGIN`"
+msgstr ""
+
+# 4ecebe118e7d47869c27544cca75d488
+#: ../../man.svcmgr.rst:349
+msgid ":command:`--comment=COMMENT`"
+msgstr ""
+
+# 879f3f44a35d4ecd9c4aaa22393db03f
+#: ../../man.svcmgr.rst:309
+msgid ":command:`--cron`"
+msgstr ""
+
+# ae8f8ff68d154126bbae24067943a865
+#: ../../man.svcmgr.rst:303
+msgid ":command:`--debug`"
+msgstr ""
+
+# 14247ee9cf3346e5a6b0615ba1e87eb2
+#: ../../man.svcmgr.rst:341
+msgid ":command:`--duration=DURATION`"
+msgstr ""
+
+# 40a2886a13a545d29c98f428bf54a221
+#: ../../man.svcmgr.rst:347
+msgid ":command:`--end=END`"
+msgstr ""
+
+# 29953e02ce1e47629443d80f9c2e9326
+#: ../../man.svcmgr.rst:353
+msgid ":command:`--id=ID`"
+msgstr ""
+
+# 99b68739158a4007bc60ef76d513e6c2
+#: ../../man.svcmgr.rst:329
+msgid ":command:`--module=MODULE`"
+msgstr ""
+
+# 76d8656db7354868a8f8649d273cbddc
+#: ../../man.svcmgr.rst:331
+msgid ":command:`--moduleset=MODULESET`"
+msgstr ""
+
+# 47ab73d20fe74dd2b857cd7c5a3429bb
+#: ../../man.svcmgr.rst:359
+msgid ":command:`--onlyprimary`"
+msgstr ""
+
+# 7aa72cda4883435b8d705571dcbef6b5
+#: ../../man.svcmgr.rst:362
+msgid ":command:`--onlysecondary`"
+msgstr ""
+
+# 33eb811193754cdf95b49e409395de8a
+#: ../../man.svcmgr.rst:337
+msgid ":command:`--param=PARAM`"
+msgstr ""
+
+# 90843ca7fc2f483786f374301c394dd5
+#: ../../man.svcmgr.rst:321
+msgid ":command:`--provision`"
+msgstr ""
+
+# 3c95ebc41025412fb101278eacb91854
+#: ../../man.svcmgr.rst:319
+msgid ":command:`--resource=RESOURCE`"
+msgstr ""
+
+# 004c9094662a4371b0dfd870ce4495af
+#: ../../man.svcmgr.rst:315
+msgid ":command:`--rid=PARM_RID`"
+msgstr ""
+
+# 508017f5965a47bb9c1faa82acbf2f23
+#: ../../man.svcmgr.rst:335
+msgid ":command:`--ruleset-date=RULESET_DATE`"
+msgstr ""
+
+# 92405ca06b1c4dce9ee64224ce0335e4
+#: ../../man.svcmgr.rst:333
+msgid ":command:`--ruleset=RULESET`"
+msgstr ""
+
+# 319ef88db17d4d12ae0bb4efdb5af903
+#: ../../man.svcmgr.rst:357
+msgid ":command:`--status=PARM_STATUS`"
+msgstr ""
+
+# 1c1ebe41643647e1889d19a1f612fd5f
+#: ../../man.svcmgr.rst:317
+msgid ":command:`--tags=PARM_TAGS`"
+msgstr ""
+
+# 48b37a6633114cc1bc59bbec672cf5e4
+#: ../../man.svcmgr.rst:325
+msgid ":command:`--to=PARM_DESTINATION_NODE`"
+msgstr ""
+
+# f0ffc2aa6ed845a98527f6f3785044e4
+#: ../../man.svcmgr.rst:339
+msgid ":command:`--value=VALUE`"
+msgstr ""
+
+# 5174d4dd12ac4ac8b0e54e8a9fae6cc9
+#: ../../man.svcmgr.rst:299
+msgid ":command:`--version`"
+msgstr ""
+
+# f19bf0504d0344b2b4a08c851abd4932
+#: ../../man.svcmgr.rst:323
+msgid ":command:`--waitlock=PARM_WAITLOCK`"
+msgstr ""
+
+# 4cb454e8ef8a45f6ace5f23e12f5db8a
+#: ../../man.svcmgr.rst:311
+msgid ":command:`-c, --cluster`"
+msgstr ""
+
+# a709885957dd4571b80fb64450edb957
+#: ../../man.svcmgr.rst:307
+msgid ":command:`-f, --force`"
+msgstr ""
+
+# 6592317473d94a8ea83f739fa0a339aa
+#: ../../man.svcmgr.rst:301
+msgid ":command:`-h, --help`"
+msgstr ""
+
+# f0afd0c3915648cea5a609b012974aa7
+#: ../../man.svcmgr.rst:313
+msgid ":command:`-i, --interactive`"
+msgstr ""
+
+# caed171cfc10418f8197677db474ad2b
+#: ../../man.svcmgr.rst:305
+msgid ":command:`-p, --parallel`"
+msgstr ""
+
+# 1eb4312b6aeb44e9bfc79903754acbc2
+#: ../../man.svcmgr.rst:355
+msgid ":command:`-s PARM_SVCS, --service=PARM_SVCS`"
+msgstr ""
+
+# b31a4d83f557447c897c584641943d6a
+#: ../../man.svcmgr.rst:111
+msgid ":command:`boot`"
+msgstr ""
+
+# 6c890947dec6486080b644c6d36d0806
+#: ../../man.svcmgr.rst:25
+msgid ":command:`collector ack action`"
+msgstr ""
+
+# f582f3642ced4aa19fa905c8a9b0f031
+#: ../../man.svcmgr.rst:32
+#, fuzzy
+msgid ":command:`collector ack unavailability`"
+msgstr ""
+"Un commentaire à enregistrer en complément de l'action 'collector ack "
+"unavailabilty'."
+
+# e845b83daa7a450794857b272049aa59
+#: ../../man.svcmgr.rst:35
+msgid ":command:`collector alerts`"
+msgstr ""
+
+# 8f116c55266148c590f2ad6a3bcf94e9
+#: ../../man.svcmgr.rst:38
+msgid ":command:`collector checks`"
+msgstr ""
+
+# 388f66865a114724bbd3671aad6b28cc
+#: ../../man.svcmgr.rst:43
+msgid ":command:`collector events`"
+msgstr ""
+
+# 5e192cb8a7034a2482a72664afecf874
+#: ../../man.svcmgr.rst:48
+msgid ":command:`collector list actions`"
+msgstr ""
+
+# 880ff9d7efd143019fc7006b07cb6468
+#: ../../man.svcmgr.rst:53
+msgid ":command:`collector list unavailability ack`"
+msgstr ""
+
+# 00c2410b2bd440d790e44eb15a1d9d20
+#: ../../man.svcmgr.rst:58
+msgid ":command:`collector show actions`"
+msgstr ""
+
+# ffc6d1a152c44781a3484022c9622139
+#: ../../man.svcmgr.rst:62
+msgid ":command:`collector status`"
+msgstr ""
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:68
+#, fuzzy
+msgid ":command:`compliance attach moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 1496e4bc3a9f419bbc956a0e3cd5717e
+#: ../../man.svcmgr.rst:71
+msgid ":command:`compliance attach ruleset`"
+msgstr ""
+
+# 4016328d10ae41069030e601ec9212b8
+#: ../../man.svcmgr.rst:75
+msgid ":command:`compliance check`"
+msgstr ""
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:78
+#, fuzzy
+msgid ":command:`compliance detach moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:81
+#, fuzzy
+msgid ":command:`compliance detach ruleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 8915b827c3ed4c82817c3c31d9e4bbac
+#: ../../man.svcmgr.rst:84
+msgid ":command:`compliance fix`"
+msgstr ""
+
+# 6752741f973840aba6f17315ac25d7c1
+#: ../../man.svcmgr.rst:88
+msgid ":command:`compliance fixable`"
+msgstr ""
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:92
+#, fuzzy
+msgid ":command:`compliance list moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:96
+#, fuzzy
+msgid ":command:`compliance list ruleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# d3f9edb116bb462f81ffb6690e5f6b8e
+#: ../../man.svcmgr.rst:99
+#, fuzzy
+msgid ":command:`compliance show moduleset`"
+msgstr "Conformité, définit la liste des modules"
+
+# 4b2a52d56f784493a8d279ef27001fb4
+#: ../../man.svcmgr.rst:102
+msgid ":command:`compliance show ruleset`"
+msgstr ""
+
+# ff2eddf5d799492ba9fa989505af5b7a
+#: ../../man.svcmgr.rst:105
+#, fuzzy
+msgid ":command:`compliance show status`"
+msgstr "Affiche l'état de conformité des modules"
+
+# 983fb6c4dd114098a2d2ad55f95fe0c2
+#: ../../man.svcmgr.rst:279
+msgid ":command:`create`"
+msgstr ""
+
+# f0748b0465e8475b9471082e47f2aae7
+#: ../../man.svcmgr.rst:282
+msgid ":command:`delete`"
+msgstr ""
+
+# c59df37102cc42339d57f84390416e6c
+#: ../../man.svcmgr.rst:114
+msgid ":command:`disable`"
+msgstr ""
+
+# b7c0be469aa14e6b9b88801dfcc2731a
+#: ../../man.svcmgr.rst:117
+msgid ":command:`enable`"
+msgstr ""
+
+# f9701bdfbc0146a3a34cec6646f9f81e
+#: ../../man.svcmgr.rst:120
+msgid ":command:`freeze`"
+msgstr ""
+
+# d2afd8db1d4d4718948439fa8afe219d
+#: ../../man.svcmgr.rst:123
+msgid ":command:`frozen`"
+msgstr ""
+
+# 4cab4e68607f450f81f860b45881e37b
+#: ../../man.svcmgr.rst:285
+msgid ":command:`get`"
+msgstr ""
+
+# 47b811a29b83404d92dfafaa45bbb424
+#: ../../man.svcmgr.rst:126
+msgid ":command:`json disklist`"
+msgstr ""
+
+# 6e3769d2ffee4f40bba9b5ea992c509d
+#: ../../man.svcmgr.rst:129
+msgid ":command:`json status`"
+msgstr ""
+
+# 7d222700a60a4d4180a02a193d5a50e2
+#: ../../man.svcmgr.rst:132
+msgid ":command:`migrate`"
+msgstr ""
+
+# 978fd17b935b4035a2813f866d61fd33
+#: ../../man.svcmgr.rst:135
+msgid ":command:`mount`"
+msgstr ""
+
+# a62d94dd24c14efa94c51bf8c3fbcf60
+#: ../../man.svcmgr.rst:138
+msgid ":command:`postsync`"
+msgstr ""
+
+# e5103e97970e47cc9f3261be5fbdbaf6
+#: ../../man.svcmgr.rst:141
+msgid ":command:`presync`"
+msgstr ""
+
+# d2e30aecf802482ba6cf7c25f38ccd6c
+#: ../../man.svcmgr.rst:144
+msgid ":command:`print disklist`"
+msgstr ""
+
+# c0a7ff2b2ba347cfa3f7f7dfe64a399c
+#: ../../man.svcmgr.rst:147
+msgid ":command:`print status`"
+msgstr ""
+
+# 9cf2f3d698cb41e1982633e4b9ddf51e
+#: ../../man.svcmgr.rst:150
+msgid ":command:`printsvc`"
+msgstr ""
+
+# 39611c5a4fd04257904036869d8da93a
+#: ../../man.svcmgr.rst:153
+msgid ":command:`prstart`"
+msgstr ""
+
+# 7a46f2f3234b4fb4901adc85635f6005
+#: ../../man.svcmgr.rst:156
+msgid ":command:`prstatus`"
+msgstr ""
+
+# 98ed016db9ae4abf8759e2d48560a875
+#: ../../man.svcmgr.rst:159
+msgid ":command:`prstop`"
+msgstr ""
+
+# aecb387dfcd5418ea5f011b6bdcd2a80
+#: ../../man.svcmgr.rst:165
+msgid ":command:`push appinfo`"
+msgstr ""
+
+# 333bb8a739f34224a1151c53e3dbd453
+#: ../../man.svcmgr.rst:162
+msgid ":command:`push`"
+msgstr ""
+
+# d40224691c314f37a42423829427395a
+#: ../../man.svcmgr.rst:168
+msgid ":command:`resource monitor`"
+msgstr ""
+
+# 8cb02f07b07e4c15ad833357cf18069d
+#: ../../man.svcmgr.rst:171
+msgid ":command:`restart`"
+msgstr ""
+
+# 59f1533171474e2c87b9fa3de419550a
+#: ../../man.svcmgr.rst:174
+msgid ":command:`resync`"
+msgstr ""
+
+# 52fc387779534b8985e0ee6b3e05e38d
+#: ../../man.svcmgr.rst:288
+msgid ":command:`set`"
+msgstr ""
+
+# 26ae5289bab64752a963da8742251423
+#: ../../man.svcmgr.rst:177
+msgid ":command:`shutdown`"
+msgstr ""
+
+# e8552ec81b8c49c2b6aba6f298b8c98d
+#: ../../man.svcmgr.rst:180
+msgid ":command:`start`"
+msgstr ""
+
+# 6388dc3993e645d0b8b2419d04aa4e87
+#: ../../man.svcmgr.rst:183
+msgid ":command:`startapp`"
+msgstr ""
+
+# 87b4cabe25f749468f6ec5db8c6e5ecd
+#: ../../man.svcmgr.rst:186
+msgid ":command:`startcontainer`"
+msgstr ""
+
+# 497a336887b54c09a7e57441acb656c1
+#: ../../man.svcmgr.rst:189
+msgid ":command:`startdisk`"
+msgstr ""
+
+# 50fbc923860e47f896dd39c9b7be1ff5
+#: ../../man.svcmgr.rst:192
+msgid ":command:`startip`"
+msgstr ""
+
+# 2397d2c0ddf84f07a1a643e517dfcf24
+#: ../../man.svcmgr.rst:195
+msgid ":command:`startloop`"
+msgstr ""
+
+# 8f5bdcc54a5e42ac870dd155923d653c
+#: ../../man.svcmgr.rst:198
+msgid ":command:`startpool`"
+msgstr ""
+
+# 7791205cba1d403da74fdd9520a91974
+#: ../../man.svcmgr.rst:201
+msgid ":command:`startstandby`"
+msgstr ""
+
+# f2ab0b0e06cd461f8e9844b75c600d04
+#: ../../man.svcmgr.rst:204
+msgid ":command:`startvg`"
+msgstr ""
+
+# 90e34f90d414464c8ba49c40e1f93c15
+#: ../../man.svcmgr.rst:207
+msgid ":command:`status`"
+msgstr ""
+
+# 63e6463df2f34945a274a424b3669f0c
+#: ../../man.svcmgr.rst:210
+msgid ":command:`stonith`"
+msgstr ""
+
+# e1e41b76917546cba02730cb5ab842c9
+#: ../../man.svcmgr.rst:213
+msgid ":command:`stop`"
+msgstr ""
+
+# 1913f0dc237742cbb7a5e71004a2e98e
+#: ../../man.svcmgr.rst:216
+msgid ":command:`stopapp`"
+msgstr ""
+
+# b458c383cdcb445495a81caa3aa08417
+#: ../../man.svcmgr.rst:219
+msgid ":command:`stopcontainer`"
+msgstr ""
+
+# e00f111848894e0288da8024be47256f
+#: ../../man.svcmgr.rst:222
+msgid ":command:`stopdisk`"
+msgstr ""
+
+# 78ece23e425d478b9e0592562ab33e45
+#: ../../man.svcmgr.rst:225
+msgid ":command:`stopip`"
+msgstr ""
+
+# bccdc1924bfd480eb07959f0d950b494
+#: ../../man.svcmgr.rst:228
+msgid ":command:`stoploop`"
+msgstr ""
+
+# b9b2f9c6c6304499ba6cba45ff1064de
+#: ../../man.svcmgr.rst:231
+msgid ":command:`stoppool`"
+msgstr ""
+
+# c6f144f25a574f6699024586671f9691
+#: ../../man.svcmgr.rst:234
+msgid ":command:`stopvg`"
+msgstr ""
+
+# 8b7e9807329a4d0ba68cf7ca6d87ca3a
+#: ../../man.svcmgr.rst:237
+msgid ":command:`switch`"
+msgstr ""
+
+# 0423329efc4a4f6c907e9ae0fcc1ab3b
+#: ../../man.svcmgr.rst:240
+msgid ":command:`syncall`"
+msgstr ""
+
+# 54c5376c77b94924b493fea1870f7fbb
+#: ../../man.svcmgr.rst:243
+msgid ":command:`syncbreak`"
+msgstr ""
+
+# 8119dacd4d1d4afea00772196b6636aa
+#: ../../man.svcmgr.rst:246
+msgid ":command:`syncdrp`"
+msgstr ""
+
+# 18161344804d46758aea9db5aa433285
+#: ../../man.svcmgr.rst:249
+msgid ":command:`syncfullsync`"
+msgstr ""
+
+# dc7d5e55a9cd4d62a671b9056dc39733
+#: ../../man.svcmgr.rst:252
+msgid ":command:`syncnodes`"
+msgstr ""
+
+# 6097fd8b306e444d889820aee46cb680
+#: ../../man.svcmgr.rst:255
+msgid ":command:`syncquiesce`"
+msgstr ""
+
+# 89b3a1d79a374ad2b15072898d012768
+#: ../../man.svcmgr.rst:258
+msgid ":command:`syncresume`"
+msgstr ""
+
+# b09a255139b04affaf0f34ad63433843
+#: ../../man.svcmgr.rst:261
+msgid ":command:`syncresync`"
+msgstr ""
+
+# 043e1ffa864a4202b4cdcdddb4503139
+#: ../../man.svcmgr.rst:264
+msgid ":command:`syncupdate`"
+msgstr ""
+
+# 0113225cb3994c0b9e467e160fe6d51c
+#: ../../man.svcmgr.rst:267
+msgid ":command:`syncverify`"
+msgstr ""
+
+# 5e768955edf24af98400ee1061a51373
+#: ../../man.svcmgr.rst:270
+msgid ":command:`thaw`"
+msgstr ""
+
+# 4333c28da5f04d5ca492428b874048c6
+#: ../../man.svcmgr.rst:273
+msgid ":command:`umount`"
+msgstr ""
+
+# bde49f856aa14800b6d82fad478397ae
+#: ../../man.svcmgr.rst:291
+msgid ":command:`unset`"
+msgstr ""
+
+# cd6f6c16fd05449dbc04c910af3f4eba
+#: ../../man.svcmgr.rst:294
+msgid ":command:`update`"
+msgstr ""
 
 # 390ee8e953dd44d5af9733345ab63284
 #: ../../man.svcmgr.rst:372

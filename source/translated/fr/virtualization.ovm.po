@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,27 +17,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 0b9920a91c2d47839eaaa116f05d75c4
-#: ../../virtualization.ovm.rst:70
+#: ../../virtualization.ovm.rst:76
+#, fuzzy
 msgid ""
 "Add the authentication information to /opt/opensvc/etc/auth.conf (check that "
-"this file is not world-readable)::"
+"this file is not world-readable)"
 msgstr ""
-"Ajouter les informations d'autentification au fichier /opt/opensvc/etc/auth.conf "
-"(vérifier que ce fichier n'est pas lisible par tous) ::"
+"Ajouter les informations d'autentification au fichier /opt/opensvc/etc/auth."
+"conf (vérifier que ce fichier n'est pas lisible par tous) ::"
 
 # 90b8d28cfc914c54b5908b4dbf967aec
-#: ../../virtualization.ovm.rst:98
+#: ../../virtualization.ovm.rst:106
 msgid "Examples"
 msgstr "Exemples"
 
 # c62328d3e1204ba1868242e1c1269f80
-#: ../../virtualization.ovm.rst:47
+#: ../../virtualization.ovm.rst:51
 msgid ""
 "For reference, Oracle Linux public repositories are available at http://"
 "public-yum.oracle.com/public-yum-ovm2.repo"
 msgstr ""
-"Pour mémoire, les dépôts publiques de Oracle Linux sont disponibles à "
-"http://public-yum.oracle.com/public-yum-ovm2.repo"
+"Pour mémoire, les dépôts publiques de Oracle Linux sont disponibles à http://"
+"public-yum.oracle.com/public-yum-ovm2.repo"
 
 # 86e8d33ac2934fddb28a70c571fbbfef
 #: ../../virtualization.ovm.rst:17
@@ -51,15 +52,16 @@ msgstr "Installer ovmcli"
 
 # d56732979b5e4a12afe83a778a41ebf8
 #: ../../virtualization.ovm.rst:27
+#, fuzzy
 msgid ""
 "Make sure you set up the following repositories in ``/etc/yum.conf`` or ``/"
-"etc/yum.repo.d/``::"
+"etc/yum.repo.d/``"
 msgstr ""
-"Assurez-vous de paramétrer les dépôts suivants dans ``/etc/yum.conf`` ou "
-"``/etc/yum.repo.d/`` ::"
+"Assurez-vous de paramétrer les dépôts suivants dans ``/etc/yum.conf`` ou ``/"
+"etc/yum.repo.d/`` ::"
 
 # fdeceafb5f92435b8cd81c1a15d3be57
-#: ../../virtualization.ovm.rst:130
+#: ../../virtualization.ovm.rst:138
 msgid "Migrate a OVM service"
 msgstr "Migrer un service OVM"
 
@@ -69,7 +71,7 @@ msgid "OVM server configuration"
 msgstr "Configuration d'un serveur OVM"
 
 # ea3813b6e1324280a35f5d04621a8831
-#: ../../virtualization.ovm.rst:68
+#: ../../virtualization.ovm.rst:74
 msgid "OpenSVC node configuration"
 msgstr "Configuration OpenSVC du noeud"
 
@@ -89,16 +91,16 @@ msgid ""
 "Oracle provides downloadable OVM server installation media and manager "
 "installation archives through its E-delivery website."
 msgstr ""
-"Oracle propose au téléchargement les média d'installation des serveurs "
-"OVM et du gestionnaire à travers le site E-delivery."
+"Oracle propose au téléchargement les média d'installation des serveurs OVM "
+"et du gestionnaire à travers le site E-delivery."
 
 # ae7502a7921a42c498b75d0b1aa5f6ff
 #: ../../virtualization.ovm.rst:12
 msgid ""
 "Oracle provides tuned and easily instanciable VM templates for those products"
 msgstr ""
-"Oracle met à disposition des images de machine virtuelle facilement instanciables "
-"avec ses produits applicatifs pré-installés."
+"Oracle met à disposition des images de machine virtuelle facilement "
+"instanciables avec ses produits applicatifs pré-installés."
 
 # 8544d31410a6427cae5cba5f06f9e43b
 #: ../../virtualization.ovm.rst:11
@@ -106,21 +108,21 @@ msgid ""
 "Oracle's products are certified on OVM (Oracle Linux, Solaris, database, "
 "PeopleSoft, middleware, ...)"
 msgstr ""
-"Les produits applicatifs d'Oracle sont certifiés sur OVM (Oracle Linux, Solaris, "
-"base de données, middleware, ...)"
+"Les produits applicatifs d'Oracle sont certifiés sur OVM (Oracle Linux, "
+"Solaris, base de données, middleware, ...)"
 
 # 12fa17598f9b49eab93eb1bdc13a43ac
-#: ../../virtualization.ovm.rst:77
+#: ../../virtualization.ovm.rst:85
 msgid "Service configuration"
 msgstr "Configuration du service"
 
 # 736373fdce1d46e5bb67ec19663d3409
-#: ../../virtualization.ovm.rst:113
+#: ../../virtualization.ovm.rst:121
 msgid "Start a OVM service"
 msgstr "Démarrage d'un service OVM"
 
 # d0cad062591a43adbdbcf624c5ecd8f7
-#: ../../virtualization.ovm.rst:101
+#: ../../virtualization.ovm.rst:109
 msgid "Stop a OVM service"
 msgstr "Arrêt d'un service OVM"
 
@@ -131,8 +133,8 @@ msgid ""
 "OpenSVC to handle service HA flag. This communication uses the ovmcli tool "
 "provided by Oracle."
 msgstr ""
-"Les serveurs OVM doivent pourvoir communiquer avec le gestionnaire "
-"afin qu'OpenSVC puisse prendre en charge la fonctionnalité HA. Cette "
+"Les serveurs OVM doivent pourvoir communiquer avec le gestionnaire afin "
+"qu'OpenSVC puisse prendre en charge la fonctionnalité HA. Cette "
 "communication utilise l'outil ovmcli fourni par Oracle."
 
 # 6d62e3efc0f249b48d5ab116d1482b49
@@ -150,15 +152,14 @@ msgid ""
 "and to configure per-VM failover policy."
 msgstr ""
 "L'infrastructure OVM est basée sur la technologie de virtualisation Xen et "
-"sur le gestionnaire de cluster d'Oracle. Les images de machine virtuelle sont "
-"stockées sous forme de fichiers sur un système de fichier réseau (NFS) ou sur "
-"le système de fichier cluster d'Oracle (OCFS2). Les hyperviseurs sont "
+"sur le gestionnaire de cluster d'Oracle. Les images de machine virtuelle "
+"sont stockées sous forme de fichiers sur un système de fichier réseau (NFS) "
+"ou sur le système de fichier cluster d'Oracle (OCFS2). Les hyperviseurs sont "
 "appelés serveurs OVM. Un gestionnaire OVM est nécessaire pour créer les "
-"grappes de serveurs OVM et pour configurer les politiques de reprise des "
-"VM."
+"grappes de serveurs OVM et pour configurer les politiques de reprise des VM."
 
 # 26c048d3625f4bcca03c08f8eab468f2
-#: ../../virtualization.ovm.rst:95
+#: ../../virtualization.ovm.rst:103
 msgid ""
 "The hb resource instruct OpenSVC that the virtual machine must have HA "
 "enabled. In this case, manual commands on the service must be submitted "
@@ -171,22 +172,24 @@ msgstr ""
 "désactivera HA lors des arrêts de service et le réactivera au démarrage."
 
 # 88d0add28d014ad0acb7ce836efc89d8
-#: ../../virtualization.ovm.rst:43
-msgid "Then you can install ovmcli with::"
+#: ../../virtualization.ovm.rst:45
+#, fuzzy
+msgid "Then you can install ovmcli with"
 msgstr "Vous pouvez ensuite install ovmcli avec ::"
 
 # bc4b2f06e9d44f269959f50ac011c8aa
-#: ../../virtualization.ovm.rst:52
+#: ../../virtualization.ovm.rst:56
+#, fuzzy
 msgid ""
 "You have to run the :command:`ovm config` command one time. You will then be "
-"prompted for the manager's access information::"
+"prompted for the manager's access information"
 msgstr ""
-"Il est nécessaire de passer au moins une fois la commande :command:`ovm config`. "
-"Cette commande sollicite interactivement la saisie du compte utilisateur du "
-"gestionnaire et son mot de passe ::"
+"Il est nécessaire de passer au moins une fois la commande :command:`ovm "
+"config`. Cette commande sollicite interactivement la saisie du compte "
+"utilisateur du gestionnaire et son mot de passe ::"
 
 # a17b99c1ec14465aa1a03f9dfb5b82c2
-#: ../../virtualization.ovm.rst:50
+#: ../../virtualization.ovm.rst:54
 msgid "ovmcli configuration"
 msgstr "configuration d'ovmcli"
 

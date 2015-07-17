@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -18,12 +18,14 @@ msgstr ""
 
 # b8ab780b7c2d4b7fbc7f66ec31de3358
 #: ../../compliance.modules.rst:58
+#, fuzzy
 msgid ""
 "A module can be either a file or a directory tree. The top-level file or "
-"directory name must comply to the naming convention::"
+"directory name must comply to the naming convention:"
 msgstr ""
-"Un module peut être composé d'un seul fichier, ou d'une arborescence parentée à un répertoire. "
-"Le fichier unique ou le répertoire père doit se conformer à la convention de nommage suivante ::"
+"Un module peut être composé d'un seul fichier, ou d'une arborescence "
+"parentée à un répertoire. Le fichier unique ou le répertoire père doit se "
+"conformer à la convention de nommage suivante ::"
 
 # 38c6f5f432124894a70194512241ef73
 #: ../../compliance.modules.rst:9
@@ -43,8 +45,7 @@ msgstr "Un module doit renvoyer une de ces trois valeurs"
 #: ../../compliance.modules.rst:19
 msgid ""
 "A module must support only one mandatory argument. Its' values can be either"
-msgstr ""
-"Un module ne doit supporter qu'un seul paramètre. Sa valeur peut être"
+msgstr "Un module ne doit supporter qu'un seul paramètre. Sa valeur peut être"
 
 # 258ccc71335e493a9446bf61c8a010b5
 #: ../../compliance.modules.rst:31
@@ -57,7 +58,7 @@ msgid "Basics"
 msgstr "Bases"
 
 # 8ea559b4b2a34c738b6685cedab07c9a
-#: ../../compliance.modules.rst:72
+#: ../../compliance.modules.rst:78
 msgid "Compliance Objects"
 msgstr "Objets de conformité"
 
@@ -68,7 +69,8 @@ msgid ""
 "made available to the module."
 msgstr ""
 "Les vérifications et les corrections de conformité ne sont pas applicables. "
-"Par exemple parcequ'aucune des règles attendues par le module ne sont exportées."
+"Par exemple parcequ'aucune des règles attendues par le module ne sont "
+"exportées."
 
 # 33fa1774b0cb41a98e385216e40088d8
 #: ../../compliance.modules.rst:44
@@ -86,12 +88,14 @@ msgid "File naming conventions"
 msgstr "Convention de nommage des fichiers"
 
 # 03ee19a5551c46829b82d5cdf41a7a9f
-#: ../../compliance.modules.rst:62
+#: ../../compliance.modules.rst:64
+#, fuzzy
 msgid ""
 "If the module top-level object is a directory, the file tree under it must "
-"be either::"
+"be either:"
 msgstr ""
-"Si l'object de plus haut niveau est un répertoire, l'arborescence sous-jacente doit être soit ::"
+"Si l'object de plus haut niveau est un répertoire, l'arborescence sous-"
+"jacente doit être soit ::"
 
 # 21aa691bc7064e2591de1583aaa95e1e
 #: ../../compliance.modules.rst:8
@@ -104,7 +108,7 @@ msgid "Location"
 msgstr "Emplacement"
 
 # 0c0305efb7d846c4bc2bac1cbf719b26
-#: ../../compliance.modules.rst:84
+#: ../../compliance.modules.rst:90
 msgid "Module skeleton"
 msgstr "Squelette d'un module"
 
@@ -119,25 +123,27 @@ msgid "Modules development"
 msgstr "Développement des modules"
 
 # e34caf8caa7043a3b3a19464a5010f80
-#: ../../compliance.modules.rst:76
+#: ../../compliance.modules.rst:82
 msgid ""
 "Objects take complex serialized rules as input, and the collector implements "
 "forms to easily create those rules."
 msgstr ""
-"Les objets utilisent des règles complexes sous forme de dictionnaire sérialisés, "
-"et le collecteur dispose de formulaires pour créer facilement ces règles."
+"Les objets utilisent des règles complexes sous forme de dictionnaire "
+"sérialisés, et le collecteur dispose de formulaires pour créer facilement "
+"ces règles."
 
 # b0a39a9e593249deacc46e177e543849
-#: ../../compliance.modules.rst:74
+#: ../../compliance.modules.rst:80
 msgid ""
 "OpenSVC distributes a collection of compliance objects, implemented as "
 "executable python classes, to ease module development. They implement common "
 "checks and fixes. The skeletons presented below make use of these objects."
 msgstr ""
-"OpenSVC distribue un ensemble d'objets de conformité, implémentées sous forme "
-"de classes python exécutables, afin de faciliter le développement des modules. "
-"Ils implémentent des fonctions de vérification et de correction pour les "
-"besoins de base. Les squelettes présentés ci-bas utilisent ces objets."
+"OpenSVC distribue un ensemble d'objets de conformité, implémentées sous "
+"forme de classes python exécutables, afin de faciliter le développement des "
+"modules. Ils implémentent des fonctions de vérification et de correction "
+"pour les besoins de base. Les squelettes présentés ci-bas utilisent ces "
+"objets."
 
 # 9a7bc41c80ee4fa2ae23a8b9a6b943a2
 #: ../../compliance.modules.rst:17
@@ -145,7 +151,7 @@ msgid "Parameters"
 msgstr "Paramètres"
 
 # 525d906f002b4da58806261c0ddb7017
-#: ../../compliance.modules.rst:119
+#: ../../compliance.modules.rst:125
 msgid "Python script"
 msgstr "Scripts python"
 
@@ -160,17 +166,17 @@ msgid "Rules"
 msgstr "Règles"
 
 # 37254e13a7cf4e769ea9538ed115f642
-#: ../../compliance.modules.rst:87
+#: ../../compliance.modules.rst:93
 msgid "Shell script"
 msgstr "Script shell"
 
 # ed3bbc1cb981458692b0b68493fa074d
-#: ../../compliance.modules.rst:80
+#: ../../compliance.modules.rst:86
 msgid "The called action : fix, fixable or check"
 msgstr "L'action demandée : fix, fixable ou check"
 
 # 453d44903dc24f21827fc3edd7cf33b4
-#: ../../compliance.modules.rst:78
+#: ../../compliance.modules.rst:84
 msgid "The calling modules have to specify to the object 2 informations:"
 msgstr "Les modules appelants doit spécifier aux objets deux informations :"
 
@@ -181,12 +187,12 @@ msgid ""
 "langages can use complex serialized variable values like JSON or XML."
 msgstr ""
 "Les règles sont passées aux modules par l'intermédiaire de variables "
-"d'environnement. Les langages de programmation avancés peut faire usage "
-"de valeurs de variables complexes sous forme de dictionnaires sérialisés "
-"par JSON ou XML."
+"d'environnement. Les langages de programmation avancés peut faire usage de "
+"valeurs de variables complexes sous forme de dictionnaires sérialisés par "
+"JSON ou XML."
 
 # 53851aca563f416db57cf9936dab8601
-#: ../../compliance.modules.rst:81
+#: ../../compliance.modules.rst:87
 msgid ""
 "The variable name prefix the object must care about. The object will search "
 "the environment for variables matching this prefix."
@@ -198,14 +204,19 @@ msgstr ""
 # 821adeb6059f4c43aaedf64b0f36a8dc
 #: ../../compliance.modules.rst:27
 msgid "Verify the module can apply the rules on the service or node."
-msgstr "Vérifier que le module est capable d'assurer les corrections sur le service ou le noeud."
+msgstr ""
+"Vérifier que le module est capable d'assurer les corrections sur le service "
+"ou le noeud."
 
 # 5d76db658fd3486a9f7bed3773d9bd40
 #: ../../compliance.modules.rst:23
 msgid "Verify the rules are applied on the node or service."
-msgstr "Vérifier que les règles sont correctement appliquées sur le noeud ou le service."
+msgstr ""
+"Vérifier que les règles sont correctement appliquées sur le noeud ou le "
+"service."
 
 # ed600cfbaae14a60885678d7a47e30e1
-#: ../../compliance.modules.rst:66
-msgid "or::"
+#: ../../compliance.modules.rst:70
+#, fuzzy
+msgid "or:"
 msgstr "ou ::"

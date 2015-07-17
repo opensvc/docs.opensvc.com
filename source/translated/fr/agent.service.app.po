@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 7481caf37db94e848ad9e81064b2b746
-#: ../../agent.service.app.rst:14
+#: ../../agent.service.app.rst:104
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service start"
 msgstr ""
@@ -25,7 +25,7 @@ msgstr ""
 "des démarrages de service"
 
 # 2d005688686a474e8e5ea9a3a1058562
-#: ../../agent.service.app.rst:18
+#: ../../agent.service.app.rst:108
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service status"
 msgstr ""
@@ -33,23 +33,66 @@ msgstr ""
 "des évalutions d'état du service"
 
 # f94c4a4580424020ab74f67c9e5e849a
-#: ../../agent.service.app.rst:16
+#: ../../agent.service.app.rst:106
 msgid ""
 "A symlink to mylauncher marking the script for schedule upon service stop"
 msgstr ""
 "Un lien symbolique vers mylauncher marquant le script pour exécution lors "
 "des arrêts de service"
 
+# 1d449e347ecc4652a2c1e79bcc2ef9de
+#: ../../agent.service.app.rst:79
+msgid "About subsets"
+msgstr ""
+
 # 869bb55b84e7474d893ab333bd689749
-#: ../../agent.service.app.rst:10
+#: ../../agent.service.app.rst:100
 msgid "Action"
 msgstr "Action"
 
+# c9f00cc593b4420ca8e5135d51c01271
+#: ../../agent.service.app.rst:81
+msgid ""
+"Actions on subsets are chained in alphanumeric subset name order on start, "
+"status and info."
+msgstr ""
+
+# c2c30313f41248e3a41e6c4b8847437c
+#: ../../agent.service.app.rst:82
+msgid ""
+"Actions on subsets are chained in reverse alphanumeric subset name order on "
+"stop."
+msgstr ""
+
+# c06f4f20654e454ab9bc9f846b2bb9a9
+#: ../../agent.service.app.rst:74
+msgid ""
+"Add the resource to the specified app subset. In the given example, the full "
+"subset name is subset#app:web"
+msgstr ""
+
+# 41d450de3e104d948e5268d837fdfd0e
+#: ../../agent.service.app.rst:51
+msgid ""
+"All these parameters support scoping, using the ``@<nodename>``, ``@nodes``, "
+"``@drpnodes`` and ``@encapnodes`` suffixes."
+msgstr ""
+
+# b3beb2195ab347778143ab77bb09a715
+#: ../../agent.service.app.rst:7
+msgid ""
+"An application launcher is a resource. As such, it supports the standard "
+"start, stop and status actions. Application resources are also involved in "
+"the ``push appinfo`` action. Application launchers can support the following "
+"parameters:"
+msgstr ""
+
 # b35593c23e1b4a9488280afda4bf4cb0
-#: ../../agent.service.app.rst:23
+#: ../../agent.service.app.rst:113
+#, fuzzy
 msgid ""
 "Application can be started and stopped without touching the other service "
-"resources with::"
+"resources with:"
 msgstr ""
 "Les applications peuvent être démarrées et arrêtées sans impacter les autres "
 "services par ::"
@@ -60,46 +103,118 @@ msgid "Application launchers"
 msgstr "Lanceurs applicatifs"
 
 # aca0c07a48cb48b3942b2530c56f0bb3
-#: ../../agent.service.app.rst:7
+#: ../../agent.service.app.rst:97
 msgid ""
 "Application launchers are installed in the directory pointed by ``/opt/"
 "opensvc/etc/svcnamed.d``. They follow the SysV guidelines:"
 msgstr ""
-"Les lanceurs applicatifs sont installés dans le répertoire pointé par "
-"``/opt/opensvc/etc/svcnamed.d``. Ils respectent les directives SysV :"
+"Les lanceurs applicatifs sont installés dans le répertoire pointé par ``/opt/"
+"opensvc/etc/svcnamed.d``. Ils respectent les directives SysV :"
+
+# 07a92b1ed43f41d592472d5086369949
+#: ../../agent.service.app.rst:31
+msgid "Application resource definition"
+msgstr ""
+
+# 0f7090cb0d284c4d9d8254339d005daa
+#: ../../agent.service.app.rst:23
+msgid ""
+"As a resource, an application launcher can be defined with a ``<svcname>."
+"env`` section. This method permits complex application scheduling, mixing "
+"chaining and parallel execution, timeouts setting and scoping."
+msgstr ""
 
 # b2827447401144d4ad73daee2bb90116
-#: ../../agent.service.app.rst:18
+#: ../../agent.service.app.rst:108
 msgid "C90mylauncher"
 msgstr "C90mylauncher"
 
 # f8dc38caf6cb468293d9e5e46f918334
-#: ../../agent.service.app.rst:31
+#: ../../agent.service.app.rst:123
 msgid "Common launchers"
 msgstr "Lanceurs usuels"
 
 # e4e5ba35f8a444938e25c5c8434a44bb
-#: ../../agent.service.app.rst:34
+#: ../../agent.service.app.rst:126
 msgid "Crontab handler"
 msgstr "Gestionnaire de tâches planifiées"
 
 # d2ee9e194caa487fbc8c024bfa16cc13
-#: ../../agent.service.app.rst:10
+#: ../../agent.service.app.rst:100
 msgid "Description"
 msgstr "Description"
 
 # 0ab10ea99ee041629c79c12988491dfe
-#: ../../agent.service.app.rst:92
-msgid "Example::"
+#: ../../agent.service.app.rst:186
+#, fuzzy
+msgid "Example:"
 msgstr "Exemple ::"
 
 # 78dfaea842df4236a7cb35ee7cf9e473
-#: ../../agent.service.app.rst:10
+#: ../../agent.service.app.rst:100
 msgid "File name"
 msgstr "Nom de fichier"
 
+# da05b5406ea9458387c0c0df47bc863c
+#: ../../agent.service.app.rst:70
+msgid ""
+"Flag the app launcher for execution with the info parameter on service push "
+"appinfo. The given value is used as the ascending sort key in the resource "
+"subset. Omit the parameter to disable app launcher execution on resource "
+"appinfo action."
+msgstr ""
+
+# 107b6c5dd9754a9f800c92d5e612517c
+#: ../../agent.service.app.rst:58
+msgid ""
+"Flag the app launcher for execution with the start parameter on service "
+"startup. The given value is used as the ascending sort key in the resource "
+"subset. Omit the parameter to disable app launcher execution on resource "
+"start action."
+msgstr ""
+
+# abda389680cf47809d62f00eade0a3b8
+#: ../../agent.service.app.rst:66
+msgid ""
+"Flag the app launcher for execution with the status parameter on service "
+"status evaluation. The given value is used as the ascending sort key in the "
+"resource subset. Omit the parameter to disable app launcher execution on "
+"resource status action."
+msgstr ""
+
+# 9ab3a9cbe0b54e589a8c3c7e4adc39cb
+#: ../../agent.service.app.rst:62
+msgid ""
+"Flag the app launcher for execution with the stop parameter on service stop. "
+"The given value is used as the ascending sort key in the resource subset. "
+"Omit the parameter to disable app launcher execution on resource stop action."
+msgstr ""
+
+# aa6473044aaa4a8197f3ebc624dd91d0
+#: ../../agent.service.app.rst:25
+msgid ""
+"For simple cases, the agent also supports a SysV-style launcher definitions."
+msgstr ""
+
+# e01cd4235896418e92f679d986f606c5
+#: ../../agent.service.app.rst:56
+msgid ""
+"Full path the the app launcher or basename of a launcher in ``etc/<svcname>."
+"d/``."
+msgstr ""
+
+# 5ebb6affc8fb40a0b3cdffb1fb98564c
+#: ../../agent.service.app.rst:36
+msgid "Here is a complete application resource section:"
+msgstr ""
+
+# acc0c3c116c74d5caaae6df5849a6070
+#: ../../agent.service.app.rst:86
+msgid "Here is a subset section:"
+msgstr ""
+
 # c8af2873cc1449148a5e9830913cabc7
-#: ../../agent.service.app.rst:21
+#: ../../agent.service.app.rst:111
 msgid ""
 "In containers and virtual machines OpenSVC the launchers are installed in ``/"
 "svc/etc/init.d/`` in the container file tree."
@@ -108,18 +223,28 @@ msgstr ""
 "lanceurs sont installés dans ``/svc/etc/init.d/`` dans l'arborescence du "
 "container."
 
+# e6c906f92e8543ffb4e26b555befcf99
+#: ../../agent.service.app.rst:5
+msgid "Introduction"
+msgstr ""
+
 # a73f58715d244f0bbcfd1a8a00f6466a
-#: ../../agent.service.app.rst:16
+#: ../../agent.service.app.rst:106
 msgid "K90mylauncher"
 msgstr "K90mylauncher"
 
+# d8f502aade734c76abf1032f6d146d5c
+#: ../../agent.service.app.rst:10
+msgid "Launcher parameter"
+msgstr ""
+
 # 8f25ffb8127c4a10b0917d0250950825
-#: ../../agent.service.app.rst:12
+#: ../../agent.service.app.rst:102
 msgid "N/A"
 msgstr "N/A"
 
 # d9e43ebc34494715bc80f4120ba6f663
-#: ../../agent.service.app.rst:90
+#: ../../agent.service.app.rst:184
 msgid ""
 "Note that an additional safety net is needed to keep the cron jobs from "
 "failing after a node unclean reboot: all cron jobs must verify the presence "
@@ -130,13 +255,40 @@ msgstr ""
 "redémarrage du noeud en court-circuit des stopeurs : toutes les tâches "
 "planifiées doivent vérifier la présence de leur exécutable."
 
+# 83ca7ad3d2d04a75a8c1e1c2e7d36820
+#: ../../agent.service.app.rst:54
+msgid "Parameter"
+msgstr ""
+
+# 9a773d7444cd4ae294f327bf50192357
+#: ../../agent.service.app.rst:54
+msgid "Role"
+msgstr ""
+
 # 604abec41ba448db95e1b46729d4bdd1
-#: ../../agent.service.app.rst:14
+#: ../../agent.service.app.rst:104
 msgid "S10mylauncher"
 msgstr "S10mylauncher"
 
+# be68656488c4430599fe4eedea7bb8b1
+#: ../../agent.service.app.rst:84
+msgid ""
+"Scripts in a subset are executed either in parallel or serially (default)."
+msgstr ""
+
+# e61d7b1e73dc4156aacb92349cb82725
+#: ../../agent.service.app.rst:34
+msgid "Section syntax"
+msgstr ""
+
+# f6728f6cfd6e4a228d986f49258af641
+#: ../../agent.service.app.rst:10
+msgid "Service action"
+msgstr ""
+
 # 3e58ad5774c24c9981266afaeecdbb31
-#: ../../agent.service.app.rst:36
+#: ../../agent.service.app.rst:128
+#, fuzzy
 msgid ""
 "Services often come with specific schedules. Either they start their own "
 "private scheduler, or they use the main system scheduler. In the later case, "
@@ -144,20 +296,33 @@ msgid ""
 "service stop to make sure the jobs don't get scheduled on multiple nodes. "
 "The following launcher script can be used to do that on hosts with split "
 "crontab support. It installs and removes the crontabs in ``/opt/opensvc/etc/"
-"myservice.d/cron.d/``::"
+"myservice.d/cron.d/``:"
 msgstr ""
 "Les services nécessitent souvent des planifications spécifiques de tâches. "
-"Soit ils peuvent démarrer leur propre planificateur, soit ils doivent partager "
-"le planificateur du système hôte. Dans ce dernier cas, les planifications "
-"du service doivent être installées au démarrage du service, et retirées à "
-"l'arrêt pour garantir que les tâches ne seront pas exécutées sur plusieurs "
-"noeud du cluster. Le lanceur suivant peut être utilisé à cette fin sur des "
-"noeuds dont le planificateur crond supporte les fichiers de configurations "
-"morcelés. Il installe et retire les configurations disponibles dans "
-"``/opt/opensvc/etc/myservice.d/cron.d/`` ::"
+"Soit ils peuvent démarrer leur propre planificateur, soit ils doivent "
+"partager le planificateur du système hôte. Dans ce dernier cas, les "
+"planifications du service doivent être installées au démarrage du service, "
+"et retirées à l'arrêt pour garantir que les tâches ne seront pas exécutées "
+"sur plusieurs noeud du cluster. Le lanceur suivant peut être utilisé à cette "
+"fin sur des noeuds dont le planificateur crond supporte les fichiers de "
+"configurations morcelés. Il installe et retire les configurations "
+"disponibles dans ``/opt/opensvc/etc/myservice.d/cron.d/`` ::"
+
+# 49cabdda427e4b2385bcab133eb21c3f
+#: ../../agent.service.app.rst:28
+msgid ""
+"SysV-style definitions can co-exist with non-conflicting app resources "
+"defined in the env file. In case of conflicting definitions, the env file "
+"definition takes precedence."
+msgstr ""
+
+# 0c426051e55c4a35b10184b01cc49f0b
+#: ../../agent.service.app.rst:95
+msgid "SysV-style launcher definition"
+msgstr ""
 
 # e178c953957d45648fe5ea443f870b21
-#: ../../agent.service.app.rst:28
+#: ../../agent.service.app.rst:120
 msgid ""
 "The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so "
 "that integrators can write reusable launcher scripts. Examples of this "
@@ -168,32 +333,86 @@ msgstr ""
 "lanceurs réutilisables. Des exemples d'utilisation de cette variable sont "
 "visibles ci-après."
 
+# 80781269ea5a428886e677c951b5feaf
+#: ../../agent.service.app.rst:83
+msgid "The implicit subset name is ``subset#app``."
+msgstr ""
+
 # 9ccd2a91317e4a68982c35852ba1e113
-#: ../../agent.service.app.rst:12
+#: ../../agent.service.app.rst:102
 msgid "The launcher script proper"
 msgstr "Le script de lancement"
 
-# 5ad4ce71b52b4ecaa14a02ccb3e668c7
-#: ../../agent.service.app.rst:5
-msgid "Usage"
-msgstr "Utilisation"
+# 1c0ca1970bd446209263d898472d5f40
+#: ../../agent.service.app.rst:54
+msgid "Type"
+msgstr ""
+
+# 062816db970e4b4c9dc0ba88a07d4517
+# 19ce69757ae3476ab4b2e621c4f6981f
+#: ../../agent.service.app.rst:20 ../../agent.service.app.rst:70
+msgid "info"
+msgstr ""
+
+# 0be01d4e485a4029ac2cdccfa8c6fe4e
+# 55fbb8b7a9764847901df51d604609ec
+# a3dd956c6cfd4133a6cf0c955bbf2734
+# a479a835d5f14bf19e9304587c66f1f4
+#: ../../agent.service.app.rst:58 ../../agent.service.app.rst:62
+#: ../../agent.service.app.rst:66 ../../agent.service.app.rst:70
+msgid "integer"
+msgstr ""
 
 # 7bb3f8d2e9e94956abded4d86091ab32
-#: ../../agent.service.app.rst:12
+#: ../../agent.service.app.rst:102
 msgid "mylauncher"
 msgstr "mylauncher"
 
+# d8b03a629e3f417f91e7a258d8b3c431
+#: ../../agent.service.app.rst:20
+msgid "push appinfo"
+msgstr ""
+
+# d2ee9e194caa487fbc8c024bfa16cc13
+#: ../../agent.service.app.rst:56
+#, fuzzy
+msgid "script"
+msgstr "Description"
+
 # 6706e4a8d0184b67980645c830805f8a
-#: ../../agent.service.app.rst:14
+#: ../../agent.service.app.rst:12 ../../agent.service.app.rst:58
+#: ../../agent.service.app.rst:104
 msgid "start"
 msgstr "start"
 
 # 087ef5a39b574b7187def5f3d022d7fc
-#: ../../agent.service.app.rst:18
+#: ../../agent.service.app.rst:16 ../../agent.service.app.rst:66
+#: ../../agent.service.app.rst:108
 msgid "status"
 msgstr "status"
 
-# cfe1ee8f0e6047edb7711163181adfe8
+# ba614d331be8449bbfee66f30752dcba
 #: ../../agent.service.app.rst:16
+msgid "status print status json status"
+msgstr ""
+
+# cfe1ee8f0e6047edb7711163181adfe8
+#: ../../agent.service.app.rst:14 ../../agent.service.app.rst:62
+#: ../../agent.service.app.rst:106
 msgid "stop"
 msgstr "stop"
+
+# 3d59073dfcdb4340af6540491f03625e
+# 36ce1b00e78945d79dfc05aa6e0c4032
+#: ../../agent.service.app.rst:56 ../../agent.service.app.rst:74
+msgid "string"
+msgstr ""
+
+# f95171ad557440dabc619c999f5c472e
+#: ../../agent.service.app.rst:74
+msgid "subset"
+msgstr ""
+
+# 5ad4ce71b52b4ecaa14a02ccb3e668c7
+#~ msgid "Usage"
+#~ msgstr "Utilisation"

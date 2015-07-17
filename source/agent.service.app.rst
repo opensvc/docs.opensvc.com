@@ -1,5 +1,5 @@
-Application launchers
-*********************
+Service application launchers
+*****************************
 
 Introduction
 ============

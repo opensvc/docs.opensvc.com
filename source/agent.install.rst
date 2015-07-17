@@ -1,7 +1,7 @@
 .. _agent.install:
 
-OpenSVC agent installation
-**************************
+Agent installation
+******************
 
 Package
 =======

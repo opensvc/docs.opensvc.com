@@ -1,4 +1,4 @@
-Service Encapsulation
+Service encapsulation
 *********************
 
 Introduction

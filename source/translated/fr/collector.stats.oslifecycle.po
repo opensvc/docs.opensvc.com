@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -19,7 +19,8 @@ msgstr ""
 # e569d739f2814141a9f423757b9bb7a1
 #: ../../collector.stats.oslifecycle.rst:11
 msgid "Current status of an operating system upgrade compaign"
-msgstr "Etats actuels d'une campagne de mise à jour des systèmes d'exploitation"
+msgstr ""
+"Etats actuels d'une campagne de mise à jour des systèmes d'exploitation"
 
 # 490042f4fb34479d8d4187a16ba8b656
 #: ../../collector.stats.oslifecycle.rst:9
@@ -29,6 +30,18 @@ msgstr "Dépendance à un système d'exploitation"
 # 116ef3f8fdcd4863ad64d29d2587cde8
 #: ../../collector.stats.oslifecycle.rst:2
 msgid "Operating system lifecycle"
+msgstr "Cycle de vie des systèmes d'exploitation"
+
+# 490042f4fb34479d8d4187a16ba8b656
+#: ../../collector.stats.oslifecycle.rst:22
+#, fuzzy
+msgid "Per operating system release statistics"
+msgstr "Dépendance à un système d'exploitation"
+
+# 116ef3f8fdcd4863ad64d29d2587cde8
+#: ../../collector.stats.oslifecycle.rst:18
+#, fuzzy
+msgid "Per operating system statistics"
 msgstr "Cycle de vie des systèmes d'exploitation"
 
 # caf4c06d70be4343a91b69ba25bfca75
@@ -44,10 +57,11 @@ msgid ""
 "charts focus on each family. These charts allow administrators and managers "
 "to analyse:"
 msgstr ""
-"Cette vue représente graphiquement les parts de chaque système d'exploitation dont "
-"les noeuds sont connus d'OpenSVC. Une première courbe montre les parts de chaque "
-"famille de système d'exploitation. Les courbes suivantes détaillent chaque famille. "
-"Ces courbes mettent en lumière pour les administrateurs et les responsables :"
+"Cette vue représente graphiquement les parts de chaque système "
+"d'exploitation dont les noeuds sont connus d'OpenSVC. Une première courbe "
+"montre les parts de chaque famille de système d'exploitation. Les courbes "
+"suivantes détaillent chaque famille. Ces courbes mettent en lumière pour les "
+"administrateurs et les responsables :"
 
 # 889e1ce462d24bc19014bbd7147d4622
 #: ../../collector.stats.oslifecycle.rst:5

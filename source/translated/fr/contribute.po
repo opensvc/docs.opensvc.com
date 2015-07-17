@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-05 22:37\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -22,12 +22,13 @@ msgid "Clone the appropriate git repository"
 msgstr "Cloner le dépôt git approprié"
 
 # 616f4ca1618a41079ab2596da24890a2
-#: ../../contribute.rst:130
-msgid "Clone the documentation project::"
+#: ../../contribute.rst:152
+#, fuzzy
+msgid "Clone the documentation project:"
 msgstr "Clonez le projet de documentation::"
 
 # a2ae97b737b44f72a0e456cd50626df0
-#: ../../contribute.rst:39
+#: ../../contribute.rst:41
 msgid "Configured local MTA, with git send-email"
 msgstr "MTA local configuré, avec git send-email"
 
@@ -42,62 +43,69 @@ msgid "Contribute"
 msgstr "Contribution"
 
 # f3873eaef5544a4693125254d0ce48d5
-#: ../../contribute.rst:122
+#: ../../contribute.rst:142
 msgid "Contribute translations"
 msgstr "Participez aux traductions"
 
 # 23a75718256d43b99525f14b0c5de356
-#: ../../contribute.rst:166
-msgid "Create or refresh the translation files::"
+#: ../../contribute.rst:196
+#, fuzzy
+msgid "Create or refresh the translation files:"
 msgstr "Créez ou rafraîchissez les fichiers de traduction::"
 
 # c5d4875050f8497d851a518b62b4a2c5
-#: ../../contribute.rst:179
+#: ../../contribute.rst:213
+#, fuzzy
 msgid ""
 "Don't forget to create the directory ``source/translated/<your language "
 "code>/LC_MESSAGES/``. Finally, create the .mo (binary translation) and html "
-"files with::"
+"files with:"
 msgstr ""
-"N'oubliez pas de  créer le répertoire ``source/translated/<code de votre langue>/"
-"LC_MESSAGES/``. Et finalement, créez le .mo (traduction binaire) et les fichiers "
-"html avec::"
-
+"N'oubliez pas de  créer le répertoire ``source/translated/<code de votre "
+"langue>/LC_MESSAGES/``. Et finalement, créez le .mo (traduction binaire) et "
+"les fichiers html avec::"
 
 # a321a49f899a4a93b405d7e913a49e86
-#: ../../contribute.rst:126
-msgid "For example, on a debian-based system::"
+#: ../../contribute.rst:146
+#, fuzzy
+msgid "For example, on a debian-based system:"
 msgstr "Par exemple, sur une distribution de type debian::"
 
 # 2b7ecd427d5e4441b35a9ccd3b34c4b0
-#: ../../contribute.rst:138
+#: ../../contribute.rst:164
+#, fuzzy
 msgid ""
 "If starting a new translation, you have to add the new language support to "
 "the Makefile. Here are for example the definitions for the french "
-"translation you can clone::"
-msgstr "Si vous démarrez une nouvelle traduction, vous devez ajouter le support "
-"pour cette nouvelle langue dans le fichier Makefile. Ci-dessous un exemple pour "
+"translation you can clone:"
+msgstr ""
+"Si vous démarrez une nouvelle traduction, vous devez ajouter le support pour "
+"cette nouvelle langue dans le fichier Makefile. Ci-dessous un exemple pour "
 "la traduction en français sur laquelle vous pouvez vous inspirer"
 
 # a8c3f40653a14461b17e006c0d712e23
-#: ../../contribute.rst:52
+#: ../../contribute.rst:58
+#, fuzzy
 msgid ""
 "Install :command:`git-send-email`, and :command:`msmtp` if you have to use "
-"Gmail SMTP (no local MTA configured)::"
+"Gmail SMTP (no local MTA configured):"
 msgstr ""
 "Installer la commande :command:`git-send-email`, ainsi que :command:`msmtp` "
 "si vous souhaitez utiliser le service SMTP de Gmail (sans MTA local "
 "configuré) ::"
 
 # 13607320e63a40bea26b1760c62332b1
-#: ../../contribute.rst:41
-msgid "Install :command:`git-send-email`::"
+#: ../../contribute.rst:43
+#, fuzzy
+msgid "Install :command:`git-send-email`:"
 msgstr "Installer la commande :command:`git-send-email` ::"
 
 # 39e1bbfde8964f9eaa5db412fc188169
-#: ../../contribute.rst:89
+#: ../../contribute.rst:103
+#, fuzzy
 msgid ""
 "Install :command:`msmtp` if you have to use Gmail SMTP (no local MTA "
-"configured)::"
+"configured):"
 msgstr ""
 "Installer la commande :command:`msmtp` si vous souhaitez utiliser le service "
 "SMTP de Gmail (sans MTA local configuré) ::"
@@ -108,19 +116,19 @@ msgid "Install git"
 msgstr "Installer git"
 
 # b52a3b5ee3e547a38070e3044da2b5f6
-#: ../../contribute.rst:124
+#: ../../contribute.rst:144
 msgid "Install the sphinx documentation generator."
 msgstr "Installez le générateur de documentation sphinx"
 
 # ece72dbedb964ed8a9e5120117a55bb6
-#: ../../contribute.rst:184
+#: ../../contribute.rst:220
+#, fuzzy
 msgid ""
 "Note you can see what string miss translating in the output of the mo "
-"target. For example::"
+"target. For example:"
 msgstr ""
-"Remarquez que vous pouvez voir les chaines mal traduites dans la sortie de la"
-"commande pour générer les fichiers mo. Par exemple::"
-
+"Remarquez que vous pouvez voir les chaines mal traduites dans la sortie de "
+"lacommande pour générer les fichiers mo. Par exemple::"
 
 # 296d15d5f74842eba19654e41225a6f3
 #: ../../contribute.rst:4
@@ -135,7 +143,8 @@ msgstr ""
 
 # ae9b1dc042a84a5bbfd553622e1dc53f
 #: ../../contribute.rst:31
-msgid "Send patch with::"
+#, fuzzy
+msgid "Send patch with:"
 msgstr "L'envoi d'un patch se fait par ::"
 
 # d27a9e2345e54389971b8d7823ab471f
@@ -146,64 +155,72 @@ msgstr "Envoi de patches"
 # 96585718395e45cbaacf90b48683b3c9
 # eee24fda110d4302aea11bb0ba599c35
 # 1cc1fffe69b84b429672f2069810488f
-#: ../../contribute.rst:45 ../../contribute.rst:82 ../../contribute.rst:114
-msgid "Send patches with::"
+#: ../../contribute.rst:49 ../../contribute.rst:94 ../../contribute.rst:132
+#, fuzzy
+msgid "Send patches with:"
 msgstr "L'envoi de patchs se fait par ::"
 
 # 8d450e63b57146b39749046209a40b8c
-#: ../../contribute.rst:78
-msgid "Set up :command:`git-send-email` to use :command:`msmtp`::"
+#: ../../contribute.rst:88
+#, fuzzy
+msgid "Set up :command:`git-send-email` to use :command:`msmtp`:"
 msgstr ""
 "Configurer :command:`git-send-email` pour l'utilisation de :command:"
 "`msmtp` ::"
 
 # 21aa40c7358948d9a69b6813104fd253
 # 27fda7e570224a56b6e2631b1c302fd7
-#: ../../contribute.rst:57 ../../contribute.rst:93
-msgid "Set up :command:`msmtp`::"
+#: ../../contribute.rst:65 ../../contribute.rst:109
+#, fuzzy
+msgid "Set up :command:`msmtp`:"
 msgstr "Configuration de :command:`msmtp` ::"
 
 # c70a0d32417649feaaba355cc93e968a
-#: ../../contribute.rst:134
-msgid "Step into the cloned project directory::"
+#: ../../contribute.rst:158
+#, fuzzy
+msgid "Step into the cloned project directory:"
 msgstr "Allez dans le répertoire du projet cloné"
 
 # 03d202dd69344ec29018e4cfa4b8ac45
-#: ../../contribute.rst:160
-msgid "Then plug your new targets in the generic targets::"
+#: ../../contribute.rst:188
+#, fuzzy
+msgid "Then plug your new targets in the generic targets:"
 msgstr "Puis rajouter vos nouvelles traductions dans les cibles génériques::"
 
 # e1bc0e6994d044eaa4b8dd26d1f7869c
-#: ../../contribute.rst:170
+#: ../../contribute.rst:202
+#, fuzzy
 msgid ""
 "This last command refreshed the .pot (strings index) and created the .po "
 "(translation) files. You can now add your translation in the .po files in "
 "``source/translated/<your language code>/``. Here is an example of "
-"translated content::"
-msgstr "Cette dernière commande rafraîchit les .pot (index de chaine) et crée les "
-"fichiers .po (traduction). Vous pouvez maintenant ajouter votre traduction dans "
-"les fichiers .po situés sous ``source/translated/<code de votre langue>/``. "
-"Voici un exemple de traduction d'une chaine::"
+"translated content:"
+msgstr ""
+"Cette dernière commande rafraîchit les .pot (index de chaine) et crée les "
+"fichiers .po (traduction). Vous pouvez maintenant ajouter votre traduction "
+"dans les fichiers .po situés sous ``source/translated/<code de votre langue>/"
+"``. Voici un exemple de traduction d'une chaine::"
 
 # 7cae1cb1b219462db89c9815d2b19db7
-#: ../../contribute.rst:189
+#: ../../contribute.rst:227
 msgid ""
 "Verify your translation pointing a web browser to your local directory. When "
 "satisfied, ``git add`` and ``git commit`` your touched files (don't track "
 "the .mo and html files), and submit your commits using the procedures "
 "described in the previous chapters."
 msgstr ""
-"Vérifiez votre traduction en browsant votre répertoire local. Quand vous êtes "
-"satisfait, utilisez ``git add`` et ``git commit`` pour versionner vos fichiers "
-"modifiés (ne versionnez pas les fichiers .mo et html), et soumettez vos commits "
-"en utilisant la procédures décrites dans les chapitres précédents."
+"Vérifiez votre traduction en browsant votre répertoire local. Quand vous "
+"êtes satisfait, utilisez ``git add`` et ``git commit`` pour versionner vos "
+"fichiers modifiés (ne versionnez pas les fichiers .mo et html), et soumettez "
+"vos commits en utilisant la procédures décrites dans les chapitres "
+"précédents."
 
 # 5577725b27c843e985c7d48c2ad4595f
-#: ../../contribute.rst:50
+#: ../../contribute.rst:56
 msgid "With msmtp, with git send-email"
 msgstr "Avec msmtp, avec git send-email"
 
 # 9ae5bca46e9e410e92e8d4b848790a92
-#: ../../contribute.rst:87
+#: ../../contribute.rst:101
 msgid "With msmtp, without git send-email"
 msgstr "Avec msmtp, sans git send-email"

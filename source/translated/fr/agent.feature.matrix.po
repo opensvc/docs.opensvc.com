@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-01 10:16\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,42 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 3fbb99201bc44b52b9ac851aac23dc1b
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
 msgid "AIX"
 msgstr ""
 
 # 357adf526bae4bfab6a6c52a7c46cd44
-#: ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:151
 msgid "Cluster mode"
 msgstr "Mode de cluster"
 
 # 609b45ebaba24002b2095f3c73227394
-#: ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:151
 msgid "Commands"
 msgstr "Commandes"
 
 # 291a0cf5b3d643d1a6d942e83277ea34
-#: ../../agent.feature.matrix.rst:202
+#: ../../agent.feature.matrix.rst:211
 msgid "Datacore replication"
 msgstr "réplication Datacore"
 
 # ca09240d31d541dd882a0b8571341438
-#: ../../agent.feature.matrix.rst:196
+#: ../../agent.feature.matrix.rst:205
 msgid "Datacore snap"
 msgstr ""
 
 # 7ed9ef96e70d476f9be94ba91b8cff76
-#: ../../agent.feature.matrix.rst:177
+#: ../../agent.feature.matrix.rst:186
 msgid "Dds"
 msgstr ""
 
 # 2f799aa9a018434a98cab888c551e555
-#: ../../agent.feature.matrix.rst:183
+#: ../../agent.feature.matrix.rst:192
 msgid "Drbd"
 msgstr ""
 
 # 1c38f5b1a1e7472ba0ce4dc734d8bdef
-#: ../../agent.feature.matrix.rst:111
+#: ../../agent.feature.matrix.rst:114
 msgid "ESX (Linux)"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgid "Feature Matrices"
 msgstr "Matrices des fonctionnalités"
 
 # ed4df3e87f034eeeba453449654632a6
-#: ../../agent.feature.matrix.rst:48
+#: ../../agent.feature.matrix.rst:49
 msgid "Footnotes"
 msgstr "Notes"
 
@@ -81,64 +81,69 @@ msgstr "Notes"
 # 73fcd2ee44094f32b08d51320331577d
 # 2363f8fb2c0f4649ad2b3448ad86c8cc
 # 05c779d2dafd40d3960ed84609041abb
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:91 ../../agent.feature.matrix.rst:98
-#: ../../agent.feature.matrix.rst:105 ../../agent.feature.matrix.rst:112
-#: ../../agent.feature.matrix.rst:119 ../../agent.feature.matrix.rst:127
-#: ../../agent.feature.matrix.rst:134 ../../agent.feature.matrix.rst:137
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:94 ../../agent.feature.matrix.rst:101
+#: ../../agent.feature.matrix.rst:108 ../../agent.feature.matrix.rst:115
+#: ../../agent.feature.matrix.rst:122 ../../agent.feature.matrix.rst:130
+#: ../../agent.feature.matrix.rst:137 ../../agent.feature.matrix.rst:140
 msgid "FreeBSD"
 msgstr ""
 
 # ceb767d2b2b746e7a426f5a776dd9993
-#: ../../agent.feature.matrix.rst:84
+#: ../../agent.feature.matrix.rst:85
 msgid "Guest operating systems"
 msgstr "Système d'exploitation de l'invité"
 
 # 7232406d0d854731b173e5e78c3b2a18
-#: ../../agent.feature.matrix.rst:36
+#: ../../agent.feature.matrix.rst:37
 msgid "HA plugin"
 msgstr ""
 
+# 3c6c269b60564405af06b36d0284c5d1
+#: ../../agent.feature.matrix.rst:180
+msgid "HP 3Par Remote Copy"
+msgstr ""
+
 # b90523ce07b949caa9491ebb42f81206
-#: ../../agent.feature.matrix.rst:174
+#: ../../agent.feature.matrix.rst:177
 msgid "HP EVA snap"
 msgstr ""
 
 # e0e3e015d6a244f0b0a5e99e6a8e881d
 # 43ed02b3e2074a9e82c76ca73325cea6
 # 3d39e73eab8e4f3491a51f9db8261c68
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:125
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:128
 msgid "HP-UX"
 msgstr ""
 
 # 426fdd2188dc4adabbe78fcb1fe491e0
-#: ../../agent.feature.matrix.rst:81
+#: ../../agent.feature.matrix.rst:82
 msgid "Host and guest operating systems by virtualization product"
 msgstr "Systèmes d'exploitation hôte et invité par produit de virtualisation"
 
 # be9f1667ac6a4a5c84e2645d1bcf7795
-#: ../../agent.feature.matrix.rst:84
+#: ../../agent.feature.matrix.rst:85
 msgid "Host operating systems"
 msgstr "Système d'exploitation de l'hôte"
 
 # d8a0b6b31ec54486a590bdb3c95d21ce
-#: ../../agent.feature.matrix.rst:208
+#: ../../agent.feature.matrix.rst:217
 msgid "IBM DS8xxx snap"
 msgstr ""
 
 # 1f28442962874cee873e3cfc53c8414f
-#: ../../agent.feature.matrix.rst:40
+#: ../../agent.feature.matrix.rst:41
 msgid "IPv6"
 msgstr ""
 
 # b03d930ab32e4646a8d6091fcbd268b4
-#: ../../agent.feature.matrix.rst:56
+#: ../../agent.feature.matrix.rst:57
 msgid "Inventory"
 msgstr ""
 
 # cfd208abad89451399eab7c514b3371a
-#: ../../agent.feature.matrix.rst:53
+#: ../../agent.feature.matrix.rst:54
 #, fuzzy
 msgid "Inventory features by operating system"
 msgstr "Fonctionnalités par système d'exploitation"
@@ -159,24 +164,24 @@ msgstr "Fonctionnalités par système d'exploitation"
 # c537738989574832a9559c43c5c47a68
 # f6c62afd38f24e55826a5ab42bf14174
 # ae3724fa162246fcbce1223d18ce08f4
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:87 ../../agent.feature.matrix.rst:89
-#: ../../agent.feature.matrix.rst:97 ../../agent.feature.matrix.rst:104
-#: ../../agent.feature.matrix.rst:111 ../../agent.feature.matrix.rst:118
-#: ../../agent.feature.matrix.rst:126 ../../agent.feature.matrix.rst:133
-#: ../../agent.feature.matrix.rst:136
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:88 ../../agent.feature.matrix.rst:90
+#: ../../agent.feature.matrix.rst:92 ../../agent.feature.matrix.rst:100
+#: ../../agent.feature.matrix.rst:107 ../../agent.feature.matrix.rst:114
+#: ../../agent.feature.matrix.rst:121 ../../agent.feature.matrix.rst:129
+#: ../../agent.feature.matrix.rst:136 ../../agent.feature.matrix.rst:139
 msgid "Linux"
 msgstr ""
 
 # 86cbafd67182451cb812f96689112b04
 # 6152eaa5444649e9b6712dfad2921525
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:138
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:141
 msgid "Mac OS X"
 msgstr ""
 
 # 0e7dd8e4d9d1413184d32886603155aa
-#: ../../agent.feature.matrix.rst:49
+#: ../../agent.feature.matrix.rst:50
 msgid ""
 "Multipaths with queue_if_no_path active are not supported for clustered "
 "services, patches coming."
@@ -185,32 +190,32 @@ msgstr ""
 "supportés avec les services en cluster, des patchs sont en préparation."
 
 # 0c425dfac01349ddb58ef9639e10e358
-#: ../../agent.feature.matrix.rst:156
+#: ../../agent.feature.matrix.rst:159
 msgid "Netapp snapmirror"
 msgstr ""
 
 # fe60a54d6c6c4382a3a54f70e13e54ec
-#: ../../agent.feature.matrix.rst:42
+#: ../../agent.feature.matrix.rst:43
 msgid "Per-service resource capping"
 msgstr "Limites de ressources par service"
 
 # 680f749e4a2840709f97b47fbd12a461
-#: ../../agent.feature.matrix.rst:185
+#: ../../agent.feature.matrix.rst:194
 msgid "Primary / Primary"
 msgstr ""
 
 # e997940b1d12422f887d6101da5148ea
-#: ../../agent.feature.matrix.rst:187
+#: ../../agent.feature.matrix.rst:196
 msgid "Primary / Secondary"
 msgstr ""
 
 # f4edffe0329c46a6a5eaf5aec4b0bde0
-#: ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:151
 msgid "Replication"
 msgstr "Réplication"
 
 # 452894c170ba43c28aa171313813a229
-#: ../../agent.feature.matrix.rst:150
+#: ../../agent.feature.matrix.rst:153
 msgid "Rsync"
 msgstr ""
 
@@ -230,11 +235,11 @@ msgstr "Fonctionnalités par système d'exploitation"
 # 5b3a64ca3de94d1f960d73f51de31318
 # 32a55ffb01dc44c7ab6888f6f8b87192
 # 80b5fdc83b114dc090ffb28133ef7e00
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:93 ../../agent.feature.matrix.rst:99
-#: ../../agent.feature.matrix.rst:106 ../../agent.feature.matrix.rst:113
-#: ../../agent.feature.matrix.rst:120 ../../agent.feature.matrix.rst:130
-#: ../../agent.feature.matrix.rst:137 ../../agent.feature.matrix.rst:138
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:96 ../../agent.feature.matrix.rst:102
+#: ../../agent.feature.matrix.rst:109 ../../agent.feature.matrix.rst:116
+#: ../../agent.feature.matrix.rst:123 ../../agent.feature.matrix.rst:133
+#: ../../agent.feature.matrix.rst:140 ../../agent.feature.matrix.rst:141
 msgid "Solaris"
 msgstr ""
 
@@ -247,50 +252,50 @@ msgstr ""
 # 8ddbb32e2da345d7aa2f3e1db01eb1d4
 # 5c6de83d936d46a0848b5754a4e633db
 # e9b6946c7d224123a43df9018af7e90a
-#: ../../agent.feature.matrix.rst:94 ../../agent.feature.matrix.rst:100
-#: ../../agent.feature.matrix.rst:105 ../../agent.feature.matrix.rst:107
-#: ../../agent.feature.matrix.rst:114 ../../agent.feature.matrix.rst:121
-#: ../../agent.feature.matrix.rst:131 ../../agent.feature.matrix.rst:139
+#: ../../agent.feature.matrix.rst:97 ../../agent.feature.matrix.rst:103
+#: ../../agent.feature.matrix.rst:108 ../../agent.feature.matrix.rst:110
+#: ../../agent.feature.matrix.rst:117 ../../agent.feature.matrix.rst:124
+#: ../../agent.feature.matrix.rst:134 ../../agent.feature.matrix.rst:142
 msgid "Solaris Express"
 msgstr ""
 
 # acc8f74fdaf34364a309b354fe45f891
-#: ../../agent.feature.matrix.rst:130
+#: ../../agent.feature.matrix.rst:133
 msgid "Solaris on T-series"
 msgstr "Solaris sur T-series"
 
 # f05ddd06ed1a49a7a9fd978f0e69f2dd
-#: ../../agent.feature.matrix.rst:145
+#: ../../agent.feature.matrix.rst:148
 msgid "Supported data replication modes"
 msgstr "Modes de réplication de données supportés"
 
 # 80bb772a328449c194e1eb20a362ba75
-#: ../../agent.feature.matrix.rst:167
+#: ../../agent.feature.matrix.rst:170
 msgid "Symmetrix SRDF-S"
 msgstr ""
 
 # 86032c5278d748689ad1c214f98ee1b4
-#: ../../agent.feature.matrix.rst:163
+#: ../../agent.feature.matrix.rst:166
 msgid "Symmetrix clone"
 msgstr ""
 
 # 13aaf9102d5d47ffb624abe16a69a0b8
-#: ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:151
 msgid "Transport"
 msgstr ""
 
 # cab1cd4785d94d22a3eb45a00c75f29b
-#: ../../agent.feature.matrix.rst:148
+#: ../../agent.feature.matrix.rst:151
 msgid "Trigger"
 msgstr "Déclencheur"
 
 # a7bc84336d1b4db896822c3863c924d4
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
 msgid "Tru64"
 msgstr ""
 
 # 206f075fb9bf467b96edbf95898c0447
-#: ../../agent.feature.matrix.rst:84
+#: ../../agent.feature.matrix.rst:85
 msgid "Virtualization technology"
 msgstr "Technologie de virtualisation"
 
@@ -300,25 +305,25 @@ msgstr "Technologie de virtualisation"
 # 95fde8d7f80d467dbd9319ce65ed704c
 # cc16933a7f1d49009e593d69b998a52e
 # 4e179d54460c4542b74726359a77321e
-#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:56
-#: ../../agent.feature.matrix.rst:102 ../../agent.feature.matrix.rst:109
-#: ../../agent.feature.matrix.rst:116 ../../agent.feature.matrix.rst:123
-#: ../../agent.feature.matrix.rst:128 ../../agent.feature.matrix.rst:141
+#: ../../agent.feature.matrix.rst:8 ../../agent.feature.matrix.rst:57
+#: ../../agent.feature.matrix.rst:105 ../../agent.feature.matrix.rst:112
+#: ../../agent.feature.matrix.rst:119 ../../agent.feature.matrix.rst:126
+#: ../../agent.feature.matrix.rst:131 ../../agent.feature.matrix.rst:144
 msgid "Windows"
 msgstr ""
 
 # cc8a0e765cd34983a933e931aafd3553
-#: ../../agent.feature.matrix.rst:50
+#: ../../agent.feature.matrix.rst:51
 msgid "With dsf devices."
 msgstr "Avec les devices dsf."
 
 # d5b88e341c3446c184ef960c5165991b
-#: ../../agent.feature.matrix.rst:190
+#: ../../agent.feature.matrix.rst:199
 msgid "Zfs"
 msgstr ""
 
 # b217945736e54739a542358de753a4d4
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "advfs clonefset"
 msgstr ""
 
@@ -331,8 +336,8 @@ msgstr ""
 # b9e9b236e3d3446f9e67e9267c6b6155
 # 42018d4defc843c8b38e30d824e2af26
 # ef868d07cc27476c9544f7d45bdaaecf
-#: ../../agent.feature.matrix.rst:152 ../../agent.feature.matrix.rst:185
-#: ../../agent.feature.matrix.rst:192 ../../agent.feature.matrix.rst:204
+#: ../../agent.feature.matrix.rst:155 ../../agent.feature.matrix.rst:194
+#: ../../agent.feature.matrix.rst:201 ../../agent.feature.matrix.rst:213
 msgid "cluster"
 msgstr ""
 
@@ -342,12 +347,12 @@ msgid "containers"
 msgstr ""
 
 # 9e1742ba50fc4156a3ccd7495d4f2e3f
-#: ../../agent.feature.matrix.rst:33
+#: ../../agent.feature.matrix.rst:34
 msgid "dds"
 msgstr ""
 
 # d7e30f0cecc34287ab18da3e8ca2d02c
-#: ../../agent.feature.matrix.rst:33
+#: ../../agent.feature.matrix.rst:34
 msgid "delta replication"
 msgstr ""
 
@@ -357,21 +362,27 @@ msgstr ""
 # d5211bc9551140f996929af67315ee7b
 # 08bab04474274b7dbc5176974fe5b5fb
 # 0ba7e6e88ae6417aa8b169e590ef0cf3
-#: ../../agent.feature.matrix.rst:153 ../../agent.feature.matrix.rst:159
-#: ../../agent.feature.matrix.rst:170 ../../agent.feature.matrix.rst:180
-#: ../../agent.feature.matrix.rst:186 ../../agent.feature.matrix.rst:193
-#: ../../agent.feature.matrix.rst:205
+#: ../../agent.feature.matrix.rst:156 ../../agent.feature.matrix.rst:162
+#: ../../agent.feature.matrix.rst:173 ../../agent.feature.matrix.rst:183
+#: ../../agent.feature.matrix.rst:189 ../../agent.feature.matrix.rst:195
+#: ../../agent.feature.matrix.rst:202 ../../agent.feature.matrix.rst:214
 msgid "disaster recovery"
 msgstr "reprise sur sinistre"
 
 # cce5580e65774bcf9dc509b8ed4be8d7
-#: ../../agent.feature.matrix.rst:60
+#: ../../agent.feature.matrix.rst:61
 msgid "disks"
+msgstr ""
+
+# d331c3bd51e94452a37184a727662693
+# c991c7530af94d13a25664d4c26083fe
+#: ../../agent.feature.matrix.rst:25 ../../agent.feature.matrix.rst:92
+msgid "docker"
 msgstr ""
 
 # 8a6eb3fa726e4ab8a003dff8e302a05b
 # e6e901168f264bd4a4a0ecfd7a5e6b41
-#: ../../agent.feature.matrix.rst:24 ../../agent.feature.matrix.rst:111
+#: ../../agent.feature.matrix.rst:24 ../../agent.feature.matrix.rst:114
 msgid "esx"
 msgstr ""
 
@@ -380,10 +391,10 @@ msgstr ""
 # 03766d8f8dd84fbabd5d63862cf5dbea
 # e72a00f7e65242b2b60d30b0ae153890
 # a782ab2f386d47f985c429c6113814fd
-#: ../../agent.feature.matrix.rst:157 ../../agent.feature.matrix.rst:163
-#: ../../agent.feature.matrix.rst:167 ../../agent.feature.matrix.rst:174
-#: ../../agent.feature.matrix.rst:196 ../../agent.feature.matrix.rst:202
-#: ../../agent.feature.matrix.rst:208
+#: ../../agent.feature.matrix.rst:160 ../../agent.feature.matrix.rst:166
+#: ../../agent.feature.matrix.rst:170 ../../agent.feature.matrix.rst:177
+#: ../../agent.feature.matrix.rst:180 ../../agent.feature.matrix.rst:205
+#: ../../agent.feature.matrix.rst:211 ../../agent.feature.matrix.rst:217
 msgid "fc"
 msgstr ""
 
@@ -398,13 +409,13 @@ msgid "fs"
 msgstr ""
 
 # f420a17101ce44689c6f15c78e73fc23
-#: ../../agent.feature.matrix.rst:37
+#: ../../agent.feature.matrix.rst:38
 msgid "heartbeatd"
 msgstr ""
 
 # b9776e4d5d704b9089ba1e7aff15f28b
 # dd756987933c4c77aaee17d07a0f643b
-#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:125
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:128
 msgid "hpvm"
 msgstr ""
 
@@ -419,50 +430,50 @@ msgstr ""
 # 3a335bac36d7421ba54945cf35efff36
 # 59f89c98a94044508179f2ff42534104
 # 9dd8ca8eaafa4fb4a2f3e19361b49d48
-#: ../../agent.feature.matrix.rst:10 ../../agent.feature.matrix.rst:150
-#: ../../agent.feature.matrix.rst:177 ../../agent.feature.matrix.rst:183
-#: ../../agent.feature.matrix.rst:190
+#: ../../agent.feature.matrix.rst:10 ../../agent.feature.matrix.rst:153
+#: ../../agent.feature.matrix.rst:186 ../../agent.feature.matrix.rst:192
+#: ../../agent.feature.matrix.rst:199
 msgid "ip"
 msgstr ""
 
 # 5338771406464d47bd7f24c1361e3e3e
-#: ../../agent.feature.matrix.rst:158
+#: ../../agent.feature.matrix.rst:161
 msgid "ip (nfs, smb)"
 msgstr ""
 
 # 70929ee3e24c4de889ca192e6a114569
 # 958e593e80034e3699c081937f6c82a8
 # fcf351b00e134e0e9522d600aaa77674
-#: ../../agent.feature.matrix.rst:156 ../../agent.feature.matrix.rst:197
-#: ../../agent.feature.matrix.rst:203
+#: ../../agent.feature.matrix.rst:159 ../../agent.feature.matrix.rst:206
+#: ../../agent.feature.matrix.rst:212
 msgid "iscsi"
 msgstr ""
 
 # 1e7ec15d9fbc40aabfec89de58bd4cc3
 # 91a24ee792954844ab8f7f1921bce4a5
-#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:91
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:94
 msgid "jail"
 msgstr ""
 
 # 52ca92c362e74e0a8726941ebe010a08
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "jfs2 snaps on lv"
 msgstr "jfs2 snaps sur lv"
 
 # 3b4d32f4c88941d18d7ac7246fd78506
-#: ../../agent.feature.matrix.rst:38
+#: ../../agent.feature.matrix.rst:39
 msgid "keepalived"
 msgstr ""
 
 # 5cc0f25b596948e297a83167c04af4ec
 # b4b88a8f74b947fdacc202d2effda9b4
-#: ../../agent.feature.matrix.rst:21 ../../agent.feature.matrix.rst:97
+#: ../../agent.feature.matrix.rst:21 ../../agent.feature.matrix.rst:100
 msgid "kvm"
 msgstr ""
 
 # ca8a8cdc0db041e3afbc644d7d7558dc
 # c3bccfe0930647588c4b8216099dd6ae
-#: ../../agent.feature.matrix.rst:19 ../../agent.feature.matrix.rst:130
+#: ../../agent.feature.matrix.rst:19 ../../agent.feature.matrix.rst:133
 msgid "ldom"
 msgstr ""
 
@@ -473,12 +484,12 @@ msgstr ""
 # 74ad677d1b264d4bb95bd4394af7ea59
 # d5bafe0c866a466788bfb6961dbcafb6
 # 3a87a23ea99045a58896db512b5c3f88
-#: ../../agent.feature.matrix.rst:150 ../../agent.feature.matrix.rst:156
-#: ../../agent.feature.matrix.rst:163 ../../agent.feature.matrix.rst:167
-#: ../../agent.feature.matrix.rst:174 ../../agent.feature.matrix.rst:177
-#: ../../agent.feature.matrix.rst:183 ../../agent.feature.matrix.rst:190
-#: ../../agent.feature.matrix.rst:196 ../../agent.feature.matrix.rst:202
-#: ../../agent.feature.matrix.rst:208
+#: ../../agent.feature.matrix.rst:153 ../../agent.feature.matrix.rst:159
+#: ../../agent.feature.matrix.rst:166 ../../agent.feature.matrix.rst:170
+#: ../../agent.feature.matrix.rst:177 ../../agent.feature.matrix.rst:180
+#: ../../agent.feature.matrix.rst:186 ../../agent.feature.matrix.rst:192
+#: ../../agent.feature.matrix.rst:199 ../../agent.feature.matrix.rst:205
+#: ../../agent.feature.matrix.rst:211 ../../agent.feature.matrix.rst:217
 msgid "local"
 msgstr ""
 
@@ -493,7 +504,7 @@ msgid "loop"
 msgstr ""
 
 # 23a1465ce6d7465aad0a25153ab00fec
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "lvm2 snaps"
 msgstr ""
 
@@ -504,7 +515,7 @@ msgstr ""
 
 # d24c1b59327c41669b357305702f6494
 # aff9bb68588d43bc8e0bcfd1df2d0f26
-#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:87
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:88
 msgid "lxc"
 msgstr ""
 
@@ -519,10 +530,10 @@ msgstr ""
 # 82da61be4ca046768c421db958ef60e4
 # bfff0f1beb344f4581aec5b6df4df928
 # 1d88bbeaf8f84aa9b444a04f74aa8a86
-#: ../../agent.feature.matrix.rst:151 ../../agent.feature.matrix.rst:157
-#: ../../agent.feature.matrix.rst:168 ../../agent.feature.matrix.rst:178
-#: ../../agent.feature.matrix.rst:184 ../../agent.feature.matrix.rst:191
-#: ../../agent.feature.matrix.rst:203
+#: ../../agent.feature.matrix.rst:154 ../../agent.feature.matrix.rst:160
+#: ../../agent.feature.matrix.rst:171 ../../agent.feature.matrix.rst:181
+#: ../../agent.feature.matrix.rst:187 ../../agent.feature.matrix.rst:193
+#: ../../agent.feature.matrix.rst:200 ../../agent.feature.matrix.rst:212
 msgid "multi-site"
 msgstr ""
 
@@ -531,8 +542,8 @@ msgstr ""
 # 3292c525d6944e26bb62c0969613be2b
 # 2f84ef7eeabb4808960a5268fe2608b2
 # 245e491bcd0a4674a80ab029fad8c390
-#: ../../agent.feature.matrix.rst:30 ../../agent.feature.matrix.rst:33
-#: ../../agent.feature.matrix.rst:64
+#: ../../agent.feature.matrix.rst:31 ../../agent.feature.matrix.rst:34
+#: ../../agent.feature.matrix.rst:65
 msgid "n/a"
 msgstr ""
 
@@ -542,12 +553,12 @@ msgid "namefs"
 msgstr ""
 
 # 544b385aa8124fb3989631cefa67fd8c
-#: ../../agent.feature.matrix.rst:58
+#: ../../agent.feature.matrix.rst:59
 msgid "network"
 msgstr ""
 
 # 2d19375a555c4a91bdcf30e918af349e
-#: ../../agent.feature.matrix.rst:76
+#: ../../agent.feature.matrix.rst:77
 msgid "networker index"
 msgstr ""
 
@@ -559,9 +570,9 @@ msgstr ""
 # 433f72e8871a438990ddc79afb5828b9
 # 875041e5ca084d91a66c187a97ac58e6
 # df85fbfd9f04494f884e16612cc273b4
-#: ../../agent.feature.matrix.rst:26 ../../agent.feature.matrix.rst:42
-#: ../../agent.feature.matrix.rst:66 ../../agent.feature.matrix.rst:72
-#: ../../agent.feature.matrix.rst:74 ../../agent.feature.matrix.rst:76
+#: ../../agent.feature.matrix.rst:27 ../../agent.feature.matrix.rst:43
+#: ../../agent.feature.matrix.rst:67 ../../agent.feature.matrix.rst:73
+#: ../../agent.feature.matrix.rst:75 ../../agent.feature.matrix.rst:77
 msgid "no"
 msgstr "non"
 
@@ -570,7 +581,7 @@ msgstr "non"
 # f7f2ca00ebaa473d91fa8235b3c874d6
 # acf15e72928c4f2e985914d34b8abe9e
 # 335e857a91724129ae644ce91c8a3732
-#: ../../agent.feature.matrix.rst:36 ../../agent.feature.matrix.rst:40
+#: ../../agent.feature.matrix.rst:37 ../../agent.feature.matrix.rst:41
 msgid "not tested"
 msgstr "non testé"
 
@@ -588,19 +599,19 @@ msgstr ""
 # 578a9a023c194db18199ff4d24edae2a
 # 443ce2b94ae34ba8bf608bcf95856935
 # 200a615e3bb740b18d176a6d9802e10f
-#: ../../agent.feature.matrix.rst:151 ../../agent.feature.matrix.rst:157
-#: ../../agent.feature.matrix.rst:164 ../../agent.feature.matrix.rst:167
-#: ../../agent.feature.matrix.rst:175 ../../agent.feature.matrix.rst:178
-#: ../../agent.feature.matrix.rst:184 ../../agent.feature.matrix.rst:191
-#: ../../agent.feature.matrix.rst:197 ../../agent.feature.matrix.rst:203
-#: ../../agent.feature.matrix.rst:209
+#: ../../agent.feature.matrix.rst:154 ../../agent.feature.matrix.rst:160
+#: ../../agent.feature.matrix.rst:167 ../../agent.feature.matrix.rst:170
+#: ../../agent.feature.matrix.rst:178 ../../agent.feature.matrix.rst:181
+#: ../../agent.feature.matrix.rst:187 ../../agent.feature.matrix.rst:193
+#: ../../agent.feature.matrix.rst:200 ../../agent.feature.matrix.rst:206
+#: ../../agent.feature.matrix.rst:212 ../../agent.feature.matrix.rst:218
 msgid "on-demand"
 msgstr "à la demande"
 
 # f1b2d46f94b34db6bac9d14c50a77a7e
 # efe7c72d5b684e54ae5c4e37ac873763
 # 787d5af1376441adba2202afd5fe72cf
-#: ../../agent.feature.matrix.rst:36
+#: ../../agent.feature.matrix.rst:37
 msgid "openha"
 msgstr ""
 
@@ -610,23 +621,23 @@ msgid "openvz"
 msgstr ""
 
 # 2e12f80813594b8493a9db852ccf383a
-#: ../../agent.feature.matrix.rst:62
+#: ../../agent.feature.matrix.rst:63
 msgid "os packages"
 msgstr ""
 
 # 2e12f80813594b8493a9db852ccf383a
-#: ../../agent.feature.matrix.rst:64
+#: ../../agent.feature.matrix.rst:65
 msgid "os patches"
 msgstr ""
 
 # e7b5dbf91be44ccda36899064aac059f
-#: ../../agent.feature.matrix.rst:66
+#: ../../agent.feature.matrix.rst:67
 msgid "os stats"
 msgstr ""
 
 # b2e579a890ca46e9a1eab7ad58e833ff
 # 7df8a9a7de6541c0923764e00b95801f
-#: ../../agent.feature.matrix.rst:23 ../../agent.feature.matrix.rst:118
+#: ../../agent.feature.matrix.rst:23 ../../agent.feature.matrix.rst:121
 msgid "ovm"
 msgstr ""
 
@@ -636,17 +647,17 @@ msgid "resources"
 msgstr "ressources"
 
 # 278935c11c08440a85828d7d9b3216ab
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "rsync on snap"
 msgstr "rsync sur snap"
 
 # 1ae8dd237999404b9d40ea8d48fe0951
-#: ../../agent.feature.matrix.rst:72
+#: ../../agent.feature.matrix.rst:73
 msgid "san arrays"
 msgstr ""
 
 # 22d307c4fa9a4773ae93e02661576933
-#: ../../agent.feature.matrix.rst:74
+#: ../../agent.feature.matrix.rst:75
 msgid "san switch"
 msgstr ""
 
@@ -659,46 +670,47 @@ msgstr ""
 # 697120a35ece42d8872b3b98fe306372
 # ec231f91768e4e77854f0495b2d061e4
 # c1cf03888e4e4a44bc160f83fc24b30c
-#: ../../agent.feature.matrix.rst:150 ../../agent.feature.matrix.rst:156
-#: ../../agent.feature.matrix.rst:163 ../../agent.feature.matrix.rst:174
-#: ../../agent.feature.matrix.rst:177 ../../agent.feature.matrix.rst:183
-#: ../../agent.feature.matrix.rst:190 ../../agent.feature.matrix.rst:196
-#: ../../agent.feature.matrix.rst:202 ../../agent.feature.matrix.rst:208
+#: ../../agent.feature.matrix.rst:153 ../../agent.feature.matrix.rst:159
+#: ../../agent.feature.matrix.rst:166 ../../agent.feature.matrix.rst:177
+#: ../../agent.feature.matrix.rst:180 ../../agent.feature.matrix.rst:186
+#: ../../agent.feature.matrix.rst:192 ../../agent.feature.matrix.rst:199
+#: ../../agent.feature.matrix.rst:205 ../../agent.feature.matrix.rst:211
+#: ../../agent.feature.matrix.rst:217
 msgid "scheduled"
 msgstr "planifié"
 
 # 01108bdbe5744c55a7872171de717ccb
-#: ../../agent.feature.matrix.rst:26
+#: ../../agent.feature.matrix.rst:27
 msgid "scsi persistent reservation"
 msgstr ""
 
 # e154d6aff34241249101fd1a12a64331
-#: ../../agent.feature.matrix.rst:68
+#: ../../agent.feature.matrix.rst:69
 msgid "server hw"
 msgstr ""
 
 # e154d6aff34241249101fd1a12a64331
-#: ../../agent.feature.matrix.rst:70
+#: ../../agent.feature.matrix.rst:71
 msgid "server os"
 msgstr ""
 
 # 5fdb4d653bd448289c86cfefc17df785
-#: ../../agent.feature.matrix.rst:183
+#: ../../agent.feature.matrix.rst:192
 msgid "start"
 msgstr ""
 
 # 9bef57f83a7c4f15921bea18db750ab0
-#: ../../agent.feature.matrix.rst:168
+#: ../../agent.feature.matrix.rst:171
 msgid "start on R2-side nodes"
 msgstr ""
 
 # 8d06ed4e7c1b49c59d1b1e94c42d3e81
-#: ../../agent.feature.matrix.rst:185
+#: ../../agent.feature.matrix.rst:194
 msgid "startstandby"
 msgstr ""
 
 # 3735bec9f4674f329a00c57185adc628
-#: ../../agent.feature.matrix.rst:184
+#: ../../agent.feature.matrix.rst:193
 msgid "stop"
 msgstr ""
 
@@ -717,44 +729,45 @@ msgstr ""
 
 # ea6b7e5b68b948668d615fa6130173a3
 # a2a6e1df5b7544228f0a4b97da7017ff
-#: ../../agent.feature.matrix.rst:152 ../../agent.feature.matrix.rst:192
+#: ../../agent.feature.matrix.rst:155 ../../agent.feature.matrix.rst:201
 msgid "syncall"
 msgstr ""
 
 # 9e96f9f99349493a9246ade7c8a9e9ba
 # 75b9734a4a08434b8f07c77d4beabd79
 # 53100b140bc7470bb5433320704ca92d
-#: ../../agent.feature.matrix.rst:159 ../../agent.feature.matrix.rst:163
-#: ../../agent.feature.matrix.rst:167 ../../agent.feature.matrix.rst:204
+#: ../../agent.feature.matrix.rst:162 ../../agent.feature.matrix.rst:166
+#: ../../agent.feature.matrix.rst:170 ../../agent.feature.matrix.rst:181
+#: ../../agent.feature.matrix.rst:213
 msgid "syncbreak"
 msgstr ""
 
 # 6b0a2e21c67f437b9dd8b9a430dc6736
 # 5d97bc58ddef4b88bc1a7341470ce08a
-#: ../../agent.feature.matrix.rst:151 ../../agent.feature.matrix.rst:191
+#: ../../agent.feature.matrix.rst:154 ../../agent.feature.matrix.rst:200
 msgid "syncdrp"
 msgstr ""
 
 # 1e5761a83ee84479b580a75fc128c67c
-#: ../../agent.feature.matrix.rst:177
+#: ../../agent.feature.matrix.rst:186
 msgid "syncfullsync"
 msgstr ""
 
 # b20f61a286404e30b21a1103a7ae7f25
 # 14989749dc424a4ab8b3eada6485b55e
-#: ../../agent.feature.matrix.rst:150 ../../agent.feature.matrix.rst:190
+#: ../../agent.feature.matrix.rst:153 ../../agent.feature.matrix.rst:199
 msgid "syncnodes"
 msgstr ""
 
 # 1642652dd90a44f2bd99ed237703e15f
-#: ../../agent.feature.matrix.rst:156
+#: ../../agent.feature.matrix.rst:159
 msgid "syncquiesce"
 msgstr ""
 
 # 996c6e909fbd44c481c9b67932164e20
 # f0cf086e001545ef91a7cbed0b5a22af
-#: ../../agent.feature.matrix.rst:157 ../../agent.feature.matrix.rst:168
-#: ../../agent.feature.matrix.rst:202
+#: ../../agent.feature.matrix.rst:160 ../../agent.feature.matrix.rst:171
+#: ../../agent.feature.matrix.rst:182 ../../agent.feature.matrix.rst:211
 msgid "syncresume"
 msgstr ""
 
@@ -762,14 +775,15 @@ msgstr ""
 # a6b12c93e267404aa85f58dc20f6bf51
 # 0f3a3320e7234fa19bd9457b3fc7a251
 # 5cff9269f5fd48718721e60fc77e408d
-#: ../../agent.feature.matrix.rst:160 ../../agent.feature.matrix.rst:164
-#: ../../agent.feature.matrix.rst:174 ../../agent.feature.matrix.rst:196
-#: ../../agent.feature.matrix.rst:208
+#: ../../agent.feature.matrix.rst:163 ../../agent.feature.matrix.rst:167
+#: ../../agent.feature.matrix.rst:177 ../../agent.feature.matrix.rst:205
+#: ../../agent.feature.matrix.rst:217
 msgid "syncresync"
 msgstr ""
 
 # cc48abefe2f849728287ca072d1393ef
-#: ../../agent.feature.matrix.rst:161 ../../agent.feature.matrix.rst:169
+#: ../../agent.feature.matrix.rst:164 ../../agent.feature.matrix.rst:172
+#: ../../agent.feature.matrix.rst:183
 msgid "syncswap"
 msgstr ""
 
@@ -777,13 +791,14 @@ msgstr ""
 # aa8cbeb0c19048968a1cdee8d287f535
 # 9a8a7eb88023444889a8010af295bdc3
 # aa580484064c41d2be8f372643d2d0bc
-#: ../../agent.feature.matrix.rst:158 ../../agent.feature.matrix.rst:178
-#: ../../agent.feature.matrix.rst:193 ../../agent.feature.matrix.rst:203
+#: ../../agent.feature.matrix.rst:161 ../../agent.feature.matrix.rst:180
+#: ../../agent.feature.matrix.rst:187 ../../agent.feature.matrix.rst:202
+#: ../../agent.feature.matrix.rst:212
 msgid "syncupdate"
 msgstr ""
 
 # 6297de78c2e7418ebb28b62192122403
-#: ../../agent.feature.matrix.rst:179
+#: ../../agent.feature.matrix.rst:188
 msgid "syncverify"
 msgstr ""
 
@@ -792,7 +807,7 @@ msgstr ""
 # 0b66d6cadabd49c4b43a0e50299431b4
 # 563b92ca80364e98ab04d2ec484aebd2
 #: ../../agent.feature.matrix.rst:22 ../../agent.feature.matrix.rst:21
-#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:136
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:139
 msgid "vbox"
 msgstr ""
 
@@ -803,24 +818,24 @@ msgid "veritas vg"
 msgstr ""
 
 # 87624c4b1e164fa38a42f718fe6b28ce
-#: ../../agent.feature.matrix.rst:12
+#: ../../agent.feature.matrix.rst:12 ../../agent.feature.matrix.rst:14
 msgid "vg"
 msgstr ""
 
 # bab6691a05f14e22a9bbf7275a76b199
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "vxfs snaps on lv"
 msgstr "vxfs snaps sur lv"
 
 # 3ce7947c74554e70867b61a15da72e65
-#: ../../agent.feature.matrix.rst:89
+#: ../../agent.feature.matrix.rst:90
 msgid "vz"
 msgstr ""
 
 # bc0e3e8c80e14d80a47ae49626f101bb
 # 5c2d8eb5dc7e41ea9827801b7269ecaf
 # 99fd6385c05f4baba87ac169080e52a5
-#: ../../agent.feature.matrix.rst:20 ../../agent.feature.matrix.rst:104
+#: ../../agent.feature.matrix.rst:20 ../../agent.feature.matrix.rst:107
 msgid "xen"
 msgstr ""
 
@@ -830,38 +845,38 @@ msgstr ""
 # 1b8d6b4921524fc3ab6eaea538bed996
 # 0f7304e3d4ac47d0ad33d0fbda6926f5
 # 605c8b700623474b9088955661187c4a
-#: ../../agent.feature.matrix.rst:40 ../../agent.feature.matrix.rst:58
-#: ../../agent.feature.matrix.rst:60 ../../agent.feature.matrix.rst:62
-#: ../../agent.feature.matrix.rst:64 ../../agent.feature.matrix.rst:66
-#: ../../agent.feature.matrix.rst:68 ../../agent.feature.matrix.rst:70
-#: ../../agent.feature.matrix.rst:72 ../../agent.feature.matrix.rst:74
-#: ../../agent.feature.matrix.rst:76
+#: ../../agent.feature.matrix.rst:41 ../../agent.feature.matrix.rst:59
+#: ../../agent.feature.matrix.rst:61 ../../agent.feature.matrix.rst:63
+#: ../../agent.feature.matrix.rst:65 ../../agent.feature.matrix.rst:67
+#: ../../agent.feature.matrix.rst:69 ../../agent.feature.matrix.rst:71
+#: ../../agent.feature.matrix.rst:73 ../../agent.feature.matrix.rst:75
+#: ../../agent.feature.matrix.rst:77
 msgid "yes"
 msgstr "oui"
 
 # 2bf9e47917ef4a2b90908333d66ca059
-#: ../../agent.feature.matrix.rst:42
+#: ../../agent.feature.matrix.rst:43
 msgid "yes (cgroup)"
 msgstr "oui (cgroup)"
 
 # 04065a459e1c45c9a8d49583527d22dc
-#: ../../agent.feature.matrix.rst:26
+#: ../../agent.feature.matrix.rst:27
 msgid "yes (scu)"
 msgstr "oui (scu)"
 
 # 65e5947567ba4cf8afeaa11d60d20165
 # 990d0bdb98ce4aaabed76f83cbb2826d
-#: ../../agent.feature.matrix.rst:26
+#: ../../agent.feature.matrix.rst:27
 msgid "yes (sg_persist)"
 msgstr "oui (sg_persist)"
 
 # 73cd0821cb504d578955b0db40e348fc
-#: ../../agent.feature.matrix.rst:26
+#: ../../agent.feature.matrix.rst:27
 msgid "yes [#f1]_ (sg_persist)"
 msgstr "oui [#f1]_ (sg_persist)"
 
 # 131a948c72324a32bcf3ed4c7a9d1de3
-#: ../../agent.feature.matrix.rst:26
+#: ../../agent.feature.matrix.rst:27
 msgid "yes [#f2]_ (scu)"
 msgstr "oui [#f2]_ (scu)"
 
@@ -873,18 +888,18 @@ msgstr ""
 
 # 4c40a2b15f5f45a58274d2e73efbefa0
 # 6fa78d1d1c56422087aabaa1c8f2afd3
-#: ../../agent.feature.matrix.rst:33
+#: ../../agent.feature.matrix.rst:34
 msgid "zfs send/recv"
 msgstr ""
 
 # 83291f6e892945fa81d99887706e54c0
 # a667499392bd4dac89dfd9a1dfae5d6c
-#: ../../agent.feature.matrix.rst:30
+#: ../../agent.feature.matrix.rst:31
 msgid "zfs snaps"
 msgstr ""
 
 # 9a2cb0e0951b49b2a2bf7bc4de2dd43f
 # 456bbe4fbbeb4cb1bbabe52af26f7992
-#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:93
+#: ../../agent.feature.matrix.rst:18 ../../agent.feature.matrix.rst:96
 msgid "zone"
 msgstr ""

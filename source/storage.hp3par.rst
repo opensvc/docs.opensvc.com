@@ -1,4 +1,4 @@
-HP 3PAR Replication
+HP 3PAR replication
 *******************
 
 Introduction

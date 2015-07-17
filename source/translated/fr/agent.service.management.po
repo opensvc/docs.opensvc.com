@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -52,7 +52,8 @@ msgstr "Appliquer l'action à tous les services du noeud en état 'down'."
 # 52950f4ce17e42449fdb2ddf8fcc7ce6
 #: ../../agent.service.management.rst:34
 msgid "Apply action to all node services in 'up' and 'warn' state."
-msgstr "Appliquer l'action à tous les services du noeud en état 'up' ou 'warn'."
+msgstr ""
+"Appliquer l'action à tous les services du noeud en état 'up' ou 'warn'."
 
 # 3db58a1c32ba4df39a0f55acab239948
 #: ../../agent.service.management.rst:24
@@ -62,11 +63,11 @@ msgid ""
 "opensvc rc script. The command ``/opt/opensvc/bin/allservices boot --"
 "parallel`` is triggered upon node startup by the opensvc rc script."
 msgstr ""
-"Appliquer l'action à tous les services du noeud. La commande "
-"``/opt/opensvc/bin/allservices shutdown --parallel`` est déclenchée "
-"lors de la séquence d'arrêt du noeud par le lanceur OpenSVC. La "
-"commande ``/opt/opensvc/bin/allservices boot --parallel``  est "
-"déclenchée lors du démarrage du noeud par le lanceur OpenSVC."
+"Appliquer l'action à tous les services du noeud. La commande ``/opt/opensvc/"
+"bin/allservices shutdown --parallel`` est déclenchée lors de la séquence "
+"d'arrêt du noeud par le lanceur OpenSVC. La commande ``/opt/opensvc/bin/"
+"allservices boot --parallel``  est déclenchée lors du démarrage du noeud par "
+"le lanceur OpenSVC."
 
 # 71edd2f786124d6194a90ef9f2ff2e59
 #: ../../agent.service.management.rst:5
@@ -118,13 +119,15 @@ msgid "Overview of all local node services status."
 msgstr "Enumération des états possibles d'un service sur un noeud."
 
 # 76713a8ba0d64f3c9adfe0ab113acbfb
-#: ../../agent.service.management.rst:149
-msgid "Print resource status of a service::"
+#: ../../agent.service.management.rst:151
+#, fuzzy
+msgid "Print resource status of a service:"
 msgstr "Afficher les états de chaque ressource d'un service ::"
 
 # b2130895cfed40b1b2ba9a4c0cee0967
 #: ../../agent.service.management.rst:138
-msgid "Print services status of a node::"
+#, fuzzy
+msgid "Print services status of a node:"
 msgstr "Afficher l'état général des services sur le noeud ::"
 
 # e3296c9cd5b64d17877f7927881aab96
@@ -152,13 +155,15 @@ msgid "Services status"
 msgstr "Etats des services"
 
 # 0bb6763c64a74f4582750bc26aefeb67
-#: ../../agent.service.management.rst:176
-msgid "Start of an HP-VM service::"
+#: ../../agent.service.management.rst:182
+#, fuzzy
+msgid "Start of an HP-VM service:"
 msgstr "Démarrage d'un service HP-VM ::"
 
 # 09a63c2cf55f4806a397a69e2993d7cc
-#: ../../agent.service.management.rst:209
-msgid "Start of an Xen service::"
+#: ../../agent.service.management.rst:217
+#, fuzzy
+msgid "Start of an Xen service:"
 msgstr "Démarrage d'un service Xen ::"
 
 # 296d15a2535f4e4fae0a80d77c89829b
@@ -179,7 +184,9 @@ msgstr "Démarre les ressources de type ip"
 # f4c2ccf1a24f4ab2a5987cea2fe5dfd0
 #: ../../agent.service.management.rst:56
 msgid "Start resources of type ip, loop, disk group, zpool, fs, container, app"
-msgstr "Démarre les ressources de type ip, loop, disk group, zpool, fs, container, app"
+msgstr ""
+"Démarre les ressources de type ip, loop, disk group, zpool, fs, container, "
+"app"
 
 # 7c9cdedee224405a9136634acbc10056
 #: ../../agent.service.management.rst:80
@@ -192,14 +199,16 @@ msgid "Start resources of type loop, disk group, zpool, fs"
 msgstr "Démarre les ressources de type loop, disk group, zpool, fs"
 
 # 0d8a020549bf44288de937abcf759d03
-#: ../../agent.service.management.rst:164
-msgid "Stop of a hosted Oracle service::"
+#: ../../agent.service.management.rst:168
+#, fuzzy
+msgid "Stop of a hosted Oracle service:"
 msgstr "Arrêt d'un service Oracle en mode hosted ::"
 
 # fa81313dfcda4b229fffe0f6ddff4b01
 #: ../../agent.service.management.rst:60
 msgid "Stop resources of type app, container, fs, zpool, disk group, loop, ip"
-msgstr "Arrête les ressources de type app, container, fs, zpool, disk group, loop, ip"
+msgstr ""
+"Arrête les ressources de type app, container, fs, zpool, disk group, loop, ip"
 
 # e7ddca3ab1994bdfb10289b5578cab2a
 #: ../../agent.service.management.rst:92
@@ -232,8 +241,8 @@ msgid ""
 "The prefered command to use to start an action on a specific group of "
 "services is ``/opt/opensvc/bin/svcmgr --service svc1,svc2 action``."
 msgstr ""
-"La commande à privilégier pour démarrer une action sur un groupe de "
-"services est ``/opt/opensvc/bin/svcmgr --service svc1,svc2 action``."
+"La commande à privilégier pour démarrer une action sur un groupe de services "
+"est ``/opt/opensvc/bin/svcmgr --service svc1,svc2 action``."
 
 # ba7102e739504643b4a9703fef6e7e8d
 #: ../../agent.service.management.rst:10
@@ -251,9 +260,10 @@ msgid ""
 "recovery nodes. Optionally creates snapshots to send a coherent file set. No-"
 "op if run from a node not running the service."
 msgstr ""
-"Déclenche les synchronisations codées en dur des fichiers du système vers les noeud "
-"de reprise sur sinistre. Eventuellement crée les snapshots pour envoyer un jeu "
-"de fichiers cohérents. Sans effet sur les noeud où le service n'est pas actif."
+"Déclenche les synchronisations codées en dur des fichiers du système vers "
+"les noeud de reprise sur sinistre. Eventuellement crée les snapshots pour "
+"envoyer un jeu de fichiers cohérents. Sans effet sur les noeud où le service "
+"n'est pas actif."
 
 # ed1760294b984c8eb5b95ae45a47b235
 #: ../../agent.service.management.rst:112
@@ -262,9 +272,10 @@ msgid ""
 "Optionally creates snapshots to send a coherent file set. No-op if run from "
 "a node not running the service."
 msgstr ""
-"Déclenche les synchronisations codées en dur et celles définies par l'utilisateur "
-"vers les noeuds secondaires du service. Eventuellement crée les snapshots pour envoyer un jeu "
-"de fichiers cohérents. Sans effet sur les noeud où le service n'est pas actif."
+"Déclenche les synchronisations codées en dur et celles définies par "
+"l'utilisateur vers les noeuds secondaires du service. Eventuellement crée "
+"les snapshots pour envoyer un jeu de fichiers cohérents. Sans effet sur les "
+"noeud où le service n'est pas actif."
 
 # e1e5bc222e904b07b365e9c357f67c3b
 #: ../../agent.service.management.rst:129
@@ -272,7 +283,8 @@ msgid ""
 "``/opt/opensvc/log/<svcname>.log`` Daily rotation on these files, and size "
 "limit rotation"
 msgstr ""
-"``/opt/opensvc/log/<svcname>.log`` Rotation quotidienne sur ces journaux, et rotation sur taille limite"
+"``/opt/opensvc/log/<svcname>.log`` Rotation quotidienne sur ces journaux, et "
+"rotation sur taille limite"
 
 # f916fb09db664566a1950e22c8256c9d
 #: ../../agent.service.management.rst:132

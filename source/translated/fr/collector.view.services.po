@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-23 15:33\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -26,35 +26,10 @@ msgstr "**App**"
 msgid "**Container type**"
 msgstr "**Type de container**"
 
-# 97f59f88f54c4abe889ef559d1d31940
-#: ../../collector.view.services.rst:25
-msgid ""
-"**Generate diagrams of clusters to better communicate on disaster recovery "
-"plans and allocated resources**"
-msgstr ""
-"**Génère des diagrammes des clusters pour aider à la communication lors de "
-"la préparation des plans de reprise d'activité et pour la compréhension "
-"des ressources allouées à un service."
-
-# 713c9294c9134bd4b7c5609246f93b2d
-#: ../../collector.view.services.rst:17
-msgid "**List services matching criteria**"
-msgstr "**Lister les services qui correspondent à certains critères**"
-
 # 1c0c729ba9e645e38e9b0130158b9ae9
 #: ../../collector.view.services.rst:72
 msgid "**Prefered node**"
 msgstr "**Noeud primaire**"
-
-# 64365c04d4024aed99036908bb31a3ca
-#: ../../collector.view.services.rst:37
-msgid "**Provision a new service from a template**"
-msgstr "**Provisionner un nouveau service depuis un modèle**"
-
-# d74a2eac61c74e0182b49908c40afca9
-#: ../../collector.view.services.rst:13
-msgid "**Quick insight of live service status**"
-msgstr "**Analyse rapide des états des services**"
 
 # dc183d2bb9ba443094730cdc9f13240c
 #: ../../collector.view.services.rst:68
@@ -71,14 +46,45 @@ msgstr "**Type de service**"
 msgid "**Status**"
 msgstr "**Etat**"
 
+# 97f59f88f54c4abe889ef559d1d31940
+#: ../../collector.view.services.rst:25
+#, fuzzy
+msgid ""
+":strong:`Generate diagrams of clusters to better communicate on disaster "
+"recovery plans and allocated resources`"
+msgstr ""
+"**Génère des diagrammes des clusters pour aider à la communication lors de "
+"la préparation des plans de reprise d'activité et pour la compréhension des "
+"ressources allouées à un service."
+
+# 713c9294c9134bd4b7c5609246f93b2d
+#: ../../collector.view.services.rst:17
+#, fuzzy
+msgid ":strong:`List services matching criteria`"
+msgstr "**Lister les services qui correspondent à certains critères**"
+
+# 64365c04d4024aed99036908bb31a3ca
+#: ../../collector.view.services.rst:37
+#, fuzzy
+msgid ":strong:`Provision a new service from a template`"
+msgstr "**Provisionner un nouveau service depuis un modèle**"
+
+# d74a2eac61c74e0182b49908c40afca9
+#: ../../collector.view.services.rst:13
+#, fuzzy
+msgid ":strong:`Quick insight of live service status`"
+msgstr "**Analyse rapide des états des services**"
+
 # e501dd754ad9430e9a84a69f537cbcdf
 #: ../../collector.view.services.rst:33
-msgid "**Trigger actions on a node or a group of nodes**"
+#, fuzzy
+msgid ":strong:`Trigger actions on a node or a group of nodes`"
 msgstr "**Déclencher des actions sur un seul ou un groupe de noeuds**"
 
 # d0d6b99092af4ae8934e0affbb0c19a1
 #: ../../collector.view.services.rst:29
-msgid "**Trigger actions on a service or a group of services**"
+#, fuzzy
+msgid ":strong:`Trigger actions on a service or a group of services`"
 msgstr "**Déclencher des actions sur un seul ou un groupe de services**"
 
 # 67fead3589664befaee0ecb4d2596b13

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -17,34 +17,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # 61cb7fc02a394429bf359582d01a398a
-#: ../../howto.ha.rst:111
+#: ../../howto.ha.rst:138
 msgid "'-a': add open-ha service"
 msgstr "'-a': ajouter un service open-ha"
 
-# 4d27b2a77eb1492a873f2e3356d141d0
-#: ../../howto.ha.rst:188
-msgid ""
-"A subset of the service's resources can be flagged for monitoring through::"
+# 7e6500e263f342918171a923207353de
+#: ../../howto.ha.rst:171
+msgid ":command:`heartc`"
 msgstr ""
-"Un sous-ensemble de ressources d'un service peut être marquée pour la surveillance par ::"
+
+# ddfef541ba2a42fe94a13d6d525b8684
+#: ../../howto.ha.rst:174
+msgid ":command:`heartd`"
+msgstr ""
+
+# 839969af44134ed6925555521c42ed89
+#: ../../howto.ha.rst:169
+msgid ":command:`nmond`"
+msgstr ""
+
+# 4d27b2a77eb1492a873f2e3356d141d0
+#: ../../howto.ha.rst:226
+#, fuzzy
+msgid ""
+"A subset of the service's resources can be flagged for monitoring through:"
+msgstr ""
+"Un sous-ensemble de ressources d'un service peut être marquée pour la "
+"surveillance par ::"
 
 # d5025dd903a241d68cc9390cfac0858b
-#: ../../howto.ha.rst:210
+#: ../../howto.ha.rst:252
 msgid "AND one or more monitored resources report a not up status"
 msgstr "ET une ou plusieurs ressources surveillées remontent un état non up"
 
 # 50b5de9cd05a4adfbdb886282fd85aed
-#: ../../howto.ha.rst:209
+#: ../../howto.ha.rst:251
 msgid "AND the heartbeat resource reports up status"
 msgstr "ET la ressource heartbeat remonte un état up"
 
 # 54423915269a4421a16be656a19547c3
-#: ../../howto.ha.rst:215
+#: ../../howto.ha.rst:257
 msgid "Action"
 msgstr "Action"
 
 # cd5b6e7d76764a4e82867720c6ebc5e6
-#: ../../howto.ha.rst:99
+#: ../../howto.ha.rst:122
 msgid "Add services"
 msgstr "Ajouter des services"
 
@@ -54,7 +71,7 @@ msgid "Best practice for heartbeat infrastructure:"
 msgstr "Bonnes pratiques pour l'infrastructure de heartbeat :"
 
 # 6382552cd216493e9ff47e931bb8f820
-#: ../../howto.ha.rst:219
+#: ../../howto.ha.rst:261
 msgid "Crash the node"
 msgstr "Crasher le noeud"
 
@@ -64,7 +81,7 @@ msgid "Create an additional symlink in :file:`/opt/opensvc/etc/`:"
 msgstr "Créer un lien symbolique additionel dans :file:`/opt/opensvc/etc/` :"
 
 # 56536b29484c4f318ca7d7d60d1251fe
-#: ../../howto.ha.rst:131
+#: ../../howto.ha.rst:165
 msgid "Daemons"
 msgstr "Daemons"
 
@@ -74,28 +91,35 @@ msgid ""
 "Declare a heartbeat resource in the env file: (Refer to :file:`/opt/opensvc/"
 "usr/share/doc/template.env` for detailled syntax information)."
 msgstr ""
-"Déclarer une ressource heartbeat dans le fichier env (se référer à "
-":file:`/opt/opensvc/usr/share/doc/template.env` pour les informations détaillées sur la syntaxe) :"
+"Déclarer une ressource heartbeat dans le fichier env (se référer à :file:`/"
+"opt/opensvc/usr/share/doc/template.env` pour les informations détaillées sur "
+"la syntaxe) :"
 
 # 55b4b7e102e4484a9383ef6fb487793a
-#: ../../howto.ha.rst:59
+#: ../../howto.ha.rst:61
 msgid "Describe cluster nodes"
 msgstr "Lister les noeuds du cluster"
 
 # df0a4bd9094f42b8b4b47fb5c8aa5e95
-#: ../../howto.ha.rst:73
+#: ../../howto.ha.rst:77
 msgid "Describe heartbeat paths"
 msgstr "Lister les chemins de heartbeat"
 
 # 3dbfa552b1484a64a7d77f362a5fe21b
 # 972ea523dcc34ed6be33ac8ad1629a25
-#: ../../howto.ha.rst:159 ../../howto.ha.rst:215
+#: ../../howto.ha.rst:195 ../../howto.ha.rst:257
 msgid "Description"
 msgstr "Description"
 
+# d13287058ae74202a13bee635fbaed1c
+#: ../../howto.ha.rst:82
+msgid "Disk"
+msgstr ""
+
 # 1714d026a2c04a068ea94b8b9bbd4f03
-#: ../../howto.ha.rst:148
-msgid "Display the service cluster status::"
+#: ../../howto.ha.rst:182
+#, fuzzy
+msgid "Display the service cluster status:"
 msgstr "Affiche l'état du service en cluster ::"
 
 # 73e9d4795e404e059b6317a84394ecdd
@@ -110,10 +134,11 @@ msgstr "Ne pas utiliser deux fois le même réseau"
 
 # f694c32ae78b448b85b8dd01119d58b5
 #: ../../howto.ha.rst:50
+#, fuzzy
 msgid ""
 "Download open-ha from `here <http://repo.opensvc.com/>`_. The default "
 "location of all this program's files is :file:`/usr/local/cluster`. Before "
-"using any open-ha commands, you have to setup some environment variables::"
+"using any open-ha commands, you have to setup some environment variables:"
 msgstr ""
 "Télecharger open-ha depuis http://repo.opensvc.com/. L'emplacement par "
 "défaut des fichiers installés est :file:`/usr/local/cluster`. Avant "
@@ -121,46 +146,57 @@ msgstr ""
 "d'environnement ::"
 
 # 67c2d46a210d40959ea41c21e756c201
-#: ../../howto.ha.rst:94
+#: ../../howto.ha.rst:117
 msgid ""
 "Each heartbeat end-point has a unique port number. Each heartbeat path has a "
 "unique multicast IP. The monitor file can be copied as-is to the other, "
 "except when Solaris IPMP is active (more listeners than senders in this "
 "case)."
 msgstr ""
-"Chaque extrèmité du lien de heartbeat a un numéro de port unique. "
-"Chaque chemin de heartbeat a une addresse multicast unique. Le fichier "
-"monitor peut-être copié à l'identique sur l'autre noeud du cluster, à "
-"l'exception des configuration IPMP sous Solaris (dans ce cas, il y a "
-"plus de d'émetteur que de récepteurs)."
+"Chaque extrèmité du lien de heartbeat a un numéro de port unique. Chaque "
+"chemin de heartbeat a une addresse multicast unique. Le fichier monitor peut-"
+"être copié à l'identique sur l'autre noeud du cluster, à l'exception des "
+"configuration IPMP sous Solaris (dans ce cas, il y a plus de d'émetteur que "
+"de récepteurs)."
 
 # 7ab6e118e48645348e07c936c41b7d76
-#: ../../howto.ha.rst:169
+#: ../../howto.ha.rst:205
 msgid "FROZEN_START"
 msgstr "FROZEN_START"
 
 # 81984fad069941749c99db9c793ea562
-#: ../../howto.ha.rst:168
+#: ../../howto.ha.rst:204
 msgid "FROZEN_STOP"
 msgstr "FROZEN_STOP"
 
 # 5de84fd11a65460cb6e961a6c602640d
-#: ../../howto.ha.rst:218
+#: ../../howto.ha.rst:260
 msgid "Fast reboot the node"
 msgstr "Reboot rapide du noeud"
 
 # 1af351265ec944dcb4066ae40e03b8be
-#: ../../howto.ha.rst:186
+#: ../../howto.ha.rst:224
 msgid "Flag resources for monitoring"
 msgstr "Marquer les ressources pour la surveillance"
 
+# f65d87aca070475f9a8d177409a6afc1
+#: ../../howto.ha.rst:85
+msgid "Heartbeats types can be mixed in the same OpenHA configuration"
+msgstr ""
+
 # d5cae97f8d6049eeacee6fb557c2c9fe
 #: ../../howto.ha.rst:4
-msgid "High Availabity setup"
+#, fuzzy
+msgid "High Availability setup"
 msgstr "Configuration de haute disponibilité"
 
+# 1cf738a67efb4630908d27c7cf61459d
+#: ../../howto.ha.rst:81
+msgid "IP Multicast"
+msgstr ""
+
 # aafc47918a614a8aa3003ca76d980118
-#: ../../howto.ha.rst:234
+#: ../../howto.ha.rst:276
 msgid "Ilo stonith driver"
 msgstr "Pilote de stonith Ilo"
 
@@ -174,13 +210,15 @@ msgstr ""
 "cluster doivent :"
 
 # b9587613a22f462cbe933fb8e914d0f9
-#: ../../howto.ha.rst:61
-msgid "In file :file:`/usr/local/cluster/conf/nodes`::"
+#: ../../howto.ha.rst:63
+#, fuzzy
+msgid "In file :file:`/usr/local/cluster/conf/nodes`:"
 msgstr "Dans le fichier :file:`/usr/local/cluster/conf/nodes`::"
 
 # 530a908e51354eeeaa84b41be1428a9a
-#: ../../howto.ha.rst:236
-msgid "In service configuration file::"
+#: ../../howto.ha.rst:278
+#, fuzzy
+msgid "In service configuration file:"
 msgstr "Dans le fichier de configuration du service ::"
 
 # e71990d4babe43c1a6267f4a66a628fd
@@ -194,29 +232,29 @@ msgid "Introduction"
 msgstr "Introduction"
 
 # a82b3706bb8c4638af35338e8a59f1bc
-#: ../../howto.ha.rst:120
+#: ../../howto.ha.rst:150
+#, fuzzy
 msgid ""
 "Make sure the heartbeat daemons are setup for startup at boot. If not, "
-"depending on your system, apply some commands simalar to::"
+"depending on your system, apply some commands simalar to:"
 msgstr ""
 "S'assurer que les daemons de heartbeat sont configurés pour démarrer au "
 "boot. Si ce n'est pas le cas, et en fonction du système d'exploitation, "
 "passer les commandes équivallentes à ::"
 
 # 8490b77e9dfe467fa817207ed70082c5
-#: ../../howto.ha.rst:204
+#: ../../howto.ha.rst:246
 msgid "Monitor action"
 msgstr "Action monitor"
 
 # 9b0c693b46234fcfa8f0d83ad05ad37b
-#: ../../howto.ha.rst:68
+#: ../../howto.ha.rst:72
 msgid ""
 "No trailing spaces. One node per line. All members of this cluster must be "
 "listed."
 msgstr ""
 "Pas de blancs en tête de mot. Un noeud par ligne. Tous les membres du "
 "cluster doivent être listés."
-
 
 # de2ebbbef6134324b20de048b054e95b
 #: ../../howto.ha.rst:48
@@ -229,8 +267,13 @@ msgid ""
 "OpenHA service names are limited to 15 characters and node names are limited "
 "to 127 characters."
 msgstr ""
-"Les noms de service OpenHA sont limités à 15 caractères et les noms des noeuds "
-"sont limités à 127 caractères."
+"Les noms de service OpenHA sont limités à 15 caractères et les noms des "
+"noeuds sont limités à 127 caractères."
+
+# 20c8a8826443486c816f1df35efed281
+#: ../../howto.ha.rst:79
+msgid "OpenHA supported heartbeat types are :"
+msgstr ""
 
 # 413b23b35bc7409ea49fa721c7c10ab7
 #: ../../howto.ha.rst:22
@@ -238,17 +281,22 @@ msgid "OpenSVC"
 msgstr "OpenSVC"
 
 # efd44b26fb7247c2ae08f710d82eb8a9
-#: ../../howto.ha.rst:146
+#: ../../howto.ha.rst:180
 msgid "Querying"
 msgstr "Interrogation"
 
+# 34e0f6a011784da1afe17217eb241bc2
+#: ../../howto.ha.rst:83
+msgid "Raw device"
+msgstr ""
+
 # aef65b994b9d4ce8aee06b497101f29d
-#: ../../howto.ha.rst:181
+#: ../../howto.ha.rst:219
 msgid "Resource monitoring"
 msgstr "Surveillance des ressources"
 
 # 8f6288772d5946ff817dafe5b38cd6ad
-#: ../../howto.ha.rst:183
+#: ../../howto.ha.rst:221
 msgid ""
 "Resource monitoring can be setup to trigger a service failover upon service "
 "resource failure: in other words, a TOC, short for Transfer Of Control. "
@@ -257,99 +305,98 @@ msgid ""
 msgstr ""
 "La surveillance des ressources peut être configurée pour déclencher la "
 "bascule du service lors d'une panne d'une des ressources : en d'autres "
-"termes, un TOC, acronyme de Transfer Of Control. Typiquement, les "
-"ressources surveillées sont les ip utilisées par les clients et les "
-"systèmes de fichier."
+"termes, un TOC, acronyme de Transfer Of Control. Typiquement, les ressources "
+"surveillées sont les ip utilisées par les clients et les systèmes de fichier."
 
 # 00644bd5e812415ba1476c0d0928c3c8
-#: ../../howto.ha.rst:162
+#: ../../howto.ha.rst:198
 msgid "STARTED"
 msgstr "STARTED"
 
 # 7b0dbdb4a5194a6f92868fe6712a6d3e
-#: ../../howto.ha.rst:166
+#: ../../howto.ha.rst:202
 msgid "STARTING"
 msgstr "STARTING"
 
 # 2c76c74eaf9a4e119a89d2c265a72df5
-#: ../../howto.ha.rst:164
+#: ../../howto.ha.rst:200
 msgid "START_FAILED"
 msgstr "START_FAILED"
 
 # 76eb9f95844c4deabaec48e69f0dd41a
-#: ../../howto.ha.rst:167
+#: ../../howto.ha.rst:203
 msgid "START_READY"
 msgstr "START_READY"
 
 # c223c05ee2b1427ba61dc8180acae39a
-#: ../../howto.ha.rst:161
+#: ../../howto.ha.rst:197
 msgid "STOPPED"
 msgstr "STOPPED"
 
 # 3f78c5d6b7d74fe886431e8b3a99fd41
-#: ../../howto.ha.rst:165
+#: ../../howto.ha.rst:201
 msgid "STOPPING"
 msgstr "STOPPING"
 
 # fb7a72afa1ff4784b7c545741ffb7760
-#: ../../howto.ha.rst:163
+#: ../../howto.ha.rst:199
 msgid "STOP_FAILED"
 msgstr "STOP_FAILED"
 
 # 9f4aa798dd284a6ba6a03b27eeab7f8f
-#: ../../howto.ha.rst:197
+#: ../../howto.ha.rst:237
 msgid "Schedule resource monitoring"
 msgstr "Planification de la surveillance des ressources"
 
 # b4fefdb2db664d92bab403b9c2c2fc86
-#: ../../howto.ha.rst:156
+#: ../../howto.ha.rst:192
 msgid "Service states"
 msgstr "Etats du service"
 
 # f84cbb2a01ac44cb8085b256b22ab4cc
-#: ../../howto.ha.rst:56
+#: ../../howto.ha.rst:58
 msgid "Setup"
 msgstr "Configuration"
 
 # aef0606f399044fdb61d5080e430e26b
-#: ../../howto.ha.rst:253
+#: ../../howto.ha.rst:299
 msgid ""
 "Some Ilo firmware versions refuse rsa authentication. To be on the safe "
 "side, use dsa keys. You may also be required to remove change the key "
 "comment to match the ILo login username."
 msgstr ""
-"Certaines version du firmware Ilo refusent l'autentification rsa. "
-"Pour s'assurer les meilleures chances de succès, utiliser des clés dsa. "
-"Il peut également être requis de changer le champ commentaire des clés "
-"pour qu'il corresponde au nom de l'utilisateur Ilo."
+"Certaines version du firmware Ilo refusent l'autentification rsa. Pour "
+"s'assurer les meilleures chances de succès, utiliser des clés dsa. Il peut "
+"également être requis de changer le champ commentaire des clés pour qu'il "
+"corresponde au nom de l'utilisateur Ilo."
 
 # 8538e45e059744d3ba80bdc7bc2ccf2d
-#: ../../howto.ha.rst:133
+#: ../../howto.ha.rst:167
 msgid "Starting the ezha init script will spawn the following daemons:"
 msgstr "Le démarrage du lanceur ezha va lancer les daemons suivants :"
 
 # 3431d95926044e6bae50c62c0aeb8b02
-#: ../../howto.ha.rst:118
+#: ../../howto.ha.rst:148
 msgid "Startup"
 msgstr "Démarrage"
 
 # eac005da691f45e292b0259cbe7376e9
-#: ../../howto.ha.rst:159
+#: ../../howto.ha.rst:195
 msgid "State"
 msgstr "Etat"
 
 # 8458a993fe1e47d78f089b49e9cc88e8
-#: ../../howto.ha.rst:223
+#: ../../howto.ha.rst:265
 msgid "Stonith"
 msgstr "Stonith"
 
 # 9e5aadb945f84b788f34b26389bf653c
-#: ../../howto.ha.rst:231
+#: ../../howto.ha.rst:273
 msgid "Stonith methods are implemented as resource drivers."
 msgstr "Les méthodes de stonith sont implémentés sous forme de ressources."
 
 # 5e40f92297c7496dbf9cfd45122ce95e
-#: ../../howto.ha.rst:217
+#: ../../howto.ha.rst:259
 msgid ""
 "Tell the OpenHA heartbeat to tear down the service and jump to FROZEN_STOP "
 "state"
@@ -358,69 +405,74 @@ msgstr ""
 "FROZEN_STOP"
 
 # 005b4540d5a04a768f607896126bfaed
-#: ../../howto.ha.rst:243
+#: ../../howto.ha.rst:287
+#, fuzzy
 msgid ""
 "The Ilo stonith driver uses key-based ssh authentication. The specific key "
-"can be pointed by the following configuration in :file:`etc/auth.conf`::"
+"can be pointed by the following configuration in :file:`etc/auth.conf`:"
 msgstr ""
 "Le pilote de stonith Ilo utilise l'autentification par clé ssh. Une clé "
-"spécifique peut être pointée par la configuration suivante dans "
-":file:`etc/auth.conf` ::"
+"spécifique peut être pointée par la configuration suivante dans :file:`etc/"
+"auth.conf` ::"
 
 # 3c16d81786124a1b8567486f27f221ca
-#: ../../howto.ha.rst:212
+#: ../../howto.ha.rst:254
 msgid "The ``DEFAULT.monitor_action`` can be either:"
 msgstr "``DEFAULT.monitor_action`` peut prendre les valeurs suivantes :"
 
 # ddb4dfac210b49efa8f6c6771236e447
-#: ../../howto.ha.rst:199
+#: ../../howto.ha.rst:239
+#, fuzzy
 msgid ""
 "The ``resource_monitor`` action must be scheduled. For example in :file:`/"
-"etc/cron.d/opensvc`::"
+"etc/cron.d/opensvc`:"
 msgstr ""
-"L'action ``resource_monitor`` doit être planifiée. Par exemple dans "
-":file:`/etc/cron.d/opensvc` ::"
+"L'action ``resource_monitor`` doit être planifiée. Par exemple dans :file:`/"
+"etc/cron.d/opensvc` ::"
 
 # 78cfb9e8b2c44f28babfbc318ca40273
-#: ../../howto.ha.rst:206
+#: ../../howto.ha.rst:248
 msgid ""
 "The ``resource_monitor`` service action triggers the ``DEFAULT."
 "monitor_action`` if:"
 msgstr ""
-"L'action de service ``resource_monitor`` déclencle ``DEFAULT.monitor_action`` dans les conditions suivantes :"
+"L'action de service ``resource_monitor`` déclencle ``DEFAULT."
+"monitor_action`` dans les conditions suivantes :"
 
 # f629e1c948264f1b90d2cd7cdcc91992
-#: ../../howto.ha.rst:229
+#: ../../howto.ha.rst:271
 msgid "The stonith action returns 1 to abort the switch-over, 0 otherwise."
 msgstr "L'action stonith retourne 1 pour annuler la bascule, 0 sinon."
 
 # 3093c39d40b7467da2c98d55496c731a
-#: ../../howto.ha.rst:227
+#: ../../howto.ha.rst:269
 msgid ""
 "The stonith mecanism is triggered by executing :file:`etc/svcname.stonith`. "
 "OpenHA can be configured to stonith by setting :file:`etc/svcname.stonith` "
 "as a check-up script."
 msgstr ""
-"Le mécanisme de stonith est déclenché en exécutant :file:`etc/svcname.stonith`. "
-"OpenHA peut être configuré pour déclencher un stonith en déclarant :file:`etc/svcname.stonith` "
-"en tant que check-up script."
+"Le mécanisme de stonith est déclenché en exécutant :file:`etc/svcname."
+"stonith`. OpenHA peut être configuré pour déclencher un stonith en "
+"déclarant :file:`etc/svcname.stonith` en tant que check-up script."
 
 # ad03c4e957214b9fb6867ca440253dc1
-#: ../../howto.ha.rst:225
+#: ../../howto.ha.rst:267
 msgid ""
 "The stonith mecanism is used to arbitrate split-brain situations, where "
 "nodes can't see each other and they can't determine if they can safely take "
 "over the service. In such situation a node will power cycle it's peer to be "
 "sure only one node has the service responsability at a time."
 msgstr ""
-"Le mécanisme de stonith est utilisé pour arbitrer les situations de schizophrénie du cluster, où "
-"les noeuds ne se voient plus et qu'ils ne peuvent déterminer si ils peuvent s'approprier le service "
-"en toute sécurité. Dans un telle situation, un noeud va couper le courrant de son pair pour être "
-"sûr que lui seul aura la responsabilité du service."
+"Le mécanisme de stonith est utilisé pour arbitrer les situations de "
+"schizophrénie du cluster, où les noeuds ne se voient plus et qu'ils ne "
+"peuvent déterminer si ils peuvent s'approprier le service en toute sécurité. "
+"Dans un telle situation, un noeud va couper le courrant de son pair pour "
+"être sûr que lui seul aura la responsabilité du service."
 
 # 5aacd00bdeab4049b7012df5c7dfab9e
-#: ../../howto.ha.rst:126
-msgid "Then run::"
+#: ../../howto.ha.rst:158
+#, fuzzy
+msgid "Then run:"
 msgstr "Puis lancer ::"
 
 # 58b437dd2e00456887c1a42d239ea610
@@ -429,8 +481,8 @@ msgid ""
 "This cookbook focuses on adding HA to an existing OpenSVC clustered service. "
 "Please refer to:"
 msgstr ""
-"Ce guide se concentre sur l'ajout de la configuration HA à un service OpenSVC "
-"existant. Vous pouvez vous référer à :"
+"Ce guide se concentre sur l'ajout de la configuration HA à un service "
+"OpenSVC existant. Vous pouvez vous référer à :"
 
 # 5db2ead7756d46f58788f6308396cbd9
 #: ../../howto.ha.rst:9
@@ -442,21 +494,23 @@ msgid ""
 "trigger support."
 msgstr ""
 "Ce guide présente les étapes nécessaires pour configurer une bascule "
-"automatique de service OpenSVC en utilisant OpenHA pour heartbeat. "
-"OpenHA est notre daemon heartbeat de référence car il tourne sur tous "
-"les systèmes Unix, propose plusieurs chemins de heartbeat réseau multicast "
-"ou SCSI, et implémente un système de déclencheurs souple."
+"automatique de service OpenSVC en utilisant OpenHA pour heartbeat. OpenHA "
+"est notre daemon heartbeat de référence car il tourne sur tous les systèmes "
+"Unix, propose plusieurs chemins de heartbeat réseau multicast ou SCSI, et "
+"implémente un système de déclencheurs souple."
 
 # dd866f3d1a4741929b2cc5a85de8bfeb
-#: ../../howto.ha.rst:75
+#: ../../howto.ha.rst:87
+#, fuzzy
 msgid ""
 "To setup 3 multicast heartbeats, in file :file:`/usr/local/cluster/conf/"
-"monitor`::"
+"monitor`:"
 msgstr ""
-"Pour configurer 3 heartbeats multicast, dans le fichier :file:`/usr/local/cluster/conf/monitor` ::"
+"Pour configurer 3 heartbeats multicast, dans le fichier :file:`/usr/local/"
+"cluster/conf/monitor` ::"
 
 # 418f4b5aff2b44a1a6865f0c3a807998
-#: ../../howto.ha.rst:173
+#: ../../howto.ha.rst:209
 msgid "Trigger a failover"
 msgstr "Déclenchement d'une bascule"
 
@@ -471,17 +525,18 @@ msgid "Try to configure one heartbeat on a dedicated LAN"
 msgstr "De préférence, configurer un heartbeat sur un LAN dédié"
 
 # 0605f382eb684effa659e938499fd940
-#: ../../howto.ha.rst:143
+#: ../../howto.ha.rst:177
 msgid "Use"
 msgstr "Utilisez"
 
 # daa978c3470c4abcb8b44113029a9b7b
-#: ../../howto.ha.rst:175
+#: ../../howto.ha.rst:211
+#, fuzzy
 msgid ""
 "When a service is handled to any heartbeat daemon, you must not use stop/"
 "start OpenSVC commands to drive this service: the heartbeat daemon being in "
 "charge, you must use its command set only. On the node where the service is "
-"RUNNING::"
+"RUNNING:"
 msgstr ""
 "Quand un service est donné en gestion à un daemon de heartbeat, il ne faut "
 "plus utiliser les commandes OpenSVC stop/start directement pour piloter le "
@@ -490,18 +545,25 @@ msgstr ""
 
 # 8ce391fff8024c21bb4d9cb8926186e7
 # 007705fe335841018e506523152d4b40
-#: ../../howto.ha.rst:84 ../../howto.ha.rst:109
+#: ../../howto.ha.rst:98 ../../howto.ha.rst:136
 msgid "Where:"
 msgstr "Où :"
 
 # 62cd7f1584504566bf870a9dd8c7740e
-#: ../../howto.ha.rst:105
-msgid "With STONITH::"
+#: ../../howto.ha.rst:130
+#, fuzzy
+msgid "With STONITH:"
 msgstr "Avec STONITH ::"
 
+# 556df05c9be24c7fb45c1a204eb68643
+#: ../../howto.ha.rst:106
+msgid "With this setup :"
+msgstr ""
+
 # 4b62e59e0725403e9e2e86e73f40f52b
-#: ../../howto.ha.rst:101
-msgid "Without STONITH::"
+#: ../../howto.ha.rst:124
+#, fuzzy
+msgid "Without STONITH:"
 msgstr "Sans STONITH ::"
 
 # 7323bf74e633440ca06d2efb668a54f9
@@ -515,118 +577,182 @@ msgid "`Service creation <agent.service.creation.html>`_"
 msgstr "`Création du service <agent.service.creation.html>`_"
 
 # 30fd04012037461f921b611095f7b0c1
-#: ../../howto.ha.rst:219
+#: ../../howto.ha.rst:261
 msgid "crash"
 msgstr "crash"
 
 # 2eed0ff135404ce1bd6994bf860621d0
-#: ../../howto.ha.rst:217
+#: ../../howto.ha.rst:259
 msgid "freezestop"
 msgstr "freezestop"
 
 # 0ff59049b5d84e81a0be3f3fb4d13f3f
-#: ../../howto.ha.rst:165
+#: ../../howto.ha.rst:201
 msgid "last run of the opensvc service shutdown command is pending completion."
-msgstr "la dernière tentative d'arrêt du service est toujours en cours d'exécution."
+msgstr ""
+"la dernière tentative d'arrêt du service est toujours en cours d'exécution."
 
 # 33e0c1a0b57a44feb93067580bc75417
-#: ../../howto.ha.rst:163
+#: ../../howto.ha.rst:199
 msgid ""
 "last run of the opensvc service shutdown command returned some error. open-"
 "ha restrains from running further service commands."
 msgstr ""
-"la dernière tentative d'arrêt du service a renvoyé une erreur. open-ha empêche toute nouvelle commande sur le service."
+"la dernière tentative d'arrêt du service a renvoyé une erreur. open-ha "
+"empêche toute nouvelle commande sur le service."
 
 # 9d896ef6a71249a6a7f852c1e2be3f62
-#: ../../howto.ha.rst:161
+#: ../../howto.ha.rst:197
 msgid "last run of the opensvc service shutdown command returned successfully."
 msgstr "la dernière tentative d'arrêt du service s'est terminée en succès."
 
 # 5d371e134ed34ffd9794a844e3333d2b
-#: ../../howto.ha.rst:166
+#: ../../howto.ha.rst:202
 msgid "last run of the opensvc service startup command is pending completion."
-msgstr "la dernière tentative de démarrage du service est toujours en cours d'exécution."
+msgstr ""
+"la dernière tentative de démarrage du service est toujours en cours "
+"d'exécution."
 
 # c60e014036cd4223a98bb644617e6170
-#: ../../howto.ha.rst:164
+#: ../../howto.ha.rst:200
 msgid ""
 "last run of the opensvc service startup command returned some error. open-ha "
 "restrains from running further service commands."
 msgstr ""
-"la dernière tentative de démarrage du service a renvoyé une erreur. open-ha empêche toute nouvelle commande sur le service."
+"la dernière tentative de démarrage du service a renvoyé une erreur. open-ha "
+"empêche toute nouvelle commande sur le service."
 
 # 814e40870a20407192c1c58f046ffb03
-#: ../../howto.ha.rst:162
+#: ../../howto.ha.rst:198
 msgid "last run of the opensvc service startup command returned successfully."
-msgstr "la dernière tentative de démarrage du service s'est terminée en succès."
+msgstr ""
+"la dernière tentative de démarrage du service s'est terminée en succès."
 
 # 3b7bb2b132c045798448ea9c2413b4e3
-#: ../../howto.ha.rst:138
+#: ../../howto.ha.rst:172
 msgid "multicast listener daemons, one per local heartbeat receiving end-point"
-msgstr "daemon de réception des paquets multicast, un par chemin de heartbeat multicast"
+msgstr ""
+"daemon de réception des paquets multicast, un par chemin de heartbeat "
+"multicast"
 
 # 3f0cfb5bc7e94d81bbb0049dd8baaa3d
-#: ../../howto.ha.rst:140
+#: ../../howto.ha.rst:174
 msgid "multicast sender daemons, one per local heartbeat sending end-point"
-msgstr "daemon d'émission des paquets multicast, un par chemin de heartbeat multicast"
+msgstr ""
+"daemon d'émission des paquets multicast, un par chemin de heartbeat multicast"
 
 # 617483ef194e4134a070e34efe701a36
-#: ../../howto.ha.rst:167
+#: ../../howto.ha.rst:203
 msgid "node is ready to take over the service."
 msgstr "le noeud est prêt à reprendre le service."
 
+# 50161a12d9ba4476ac7122fd4bb681d9
+#: ../../howto.ha.rst:111
+msgid ""
+"node108 will listen heartbeat through eth1 on multicast IP 239.131.50.10 "
+"port 1781, with a 60 seconds timeout"
+msgstr ""
+
+# ffb8a2f878394efe89fe608e06f917aa
+#: ../../howto.ha.rst:112
+msgid ""
+"node108 will listen heartbeat through eth2 on multicast IP 239.131.50.10 "
+"port 1781, with a 60 seconds timeout"
+msgstr ""
+
+# 3109fb2e7f344be89ff3f988aaf7a91a
+#: ../../howto.ha.rst:113
+msgid ""
+"node108 will listen heartbeat through eth3 on multicast IP 239.131.50.10 "
+"port 1781, with a 60 seconds timeout"
+msgstr ""
+
+# ba14c8cdbc214d408bf445e0ba6e7696
+#: ../../howto.ha.rst:108
+msgid ""
+"node108 will send heartbeat through eth1 on multicast IP 239.131.50.10 port "
+"1780, with a 60 seconds timeout"
+msgstr ""
+
+# 3f4cdf7398384263a27325902e512af2
+#: ../../howto.ha.rst:109
+msgid ""
+"node108 will send heartbeat through eth2 on multicast IP 239.131.51.10 port "
+"1780, with a 60 seconds timeout"
+msgstr ""
+
+# 0ad73b73600a472b85f67f19c0e582fa
+#: ../../howto.ha.rst:110
+msgid ""
+"node108 will send heartbeat through eth3 on multicast IP 239.131.52.10 port "
+"1780, with a 60 seconds timeout"
+msgstr ""
+
 # 8d8ab81dd3464a699b8ca2d8f5c0975e
-#: ../../howto.ha.rst:86
+#: ../../howto.ha.rst:100
 msgid "param#1: node hostname"
 msgstr "param#1: nom d'hôte du noeud"
 
 # e8cbcc73820d4297be180935385cf056
-#: ../../howto.ha.rst:112
-msgid "param#1: service name, align to OpenSVC is not required, advised anyway"
-msgstr "param#1: nom du service, pas nécessairement aligné sur le nom du service OpenSVC, mais recommandé"
+#: ../../howto.ha.rst:139
+#, fuzzy
+msgid ""
+"param#1: service name, align to OpenSVC is not required, advised anyway (15 "
+"characters maximum)"
+msgstr ""
+"param#1: nom du service, pas nécessairement aligné sur le nom du service "
+"OpenSVC, mais recommandé"
+
+# 75e57bb06d85411cb383dc8697186337
+#: ../../howto.ha.rst:140
+#, fuzzy
+msgid "param#2: OpenSVC service start/stop script"
+msgstr "param#4: lanceur du service"
 
 # 666b433345764e34b4143614bce69b7c
-#: ../../howto.ha.rst:87
+#: ../../howto.ha.rst:101
 msgid "param#2: heartbeat type"
 msgstr "param#2: type de heartbeat"
 
-# d3c99411cc2046a3a4a01ef1232bf3b6
-#: ../../howto.ha.rst:113
-msgid "param#2: primary node"
-msgstr "param#2: noeud primaire"
-
 # 6fb2277b03f94461955412402b805aa8
-#: ../../howto.ha.rst:88
+#: ../../howto.ha.rst:102
 msgid "param#3: multicast IP"
 msgstr "param#3: ip multicast"
 
-# 99baebfc1b9847388f6f2e1ab434c287
-#: ../../howto.ha.rst:114
-msgid "param#3: secondary node"
-msgstr "param#3: noeud secondaire"
+# d3c99411cc2046a3a4a01ef1232bf3b6
+#: ../../howto.ha.rst:141
+#, fuzzy
+msgid "param#3: primary node"
+msgstr "param#2: noeud primaire"
 
 # 0e87262ccb9c4ca1a4ed81473de29f4c
-#: ../../howto.ha.rst:89
+#: ../../howto.ha.rst:103
 msgid "param#4: port number"
 msgstr "param#4: numéro de port"
 
-# 75e57bb06d85411cb383dc8697186337
-#: ../../howto.ha.rst:115
-msgid "param#4: service init script"
-msgstr "param#4: lanceur du service"
+# 99baebfc1b9847388f6f2e1ab434c287
+#: ../../howto.ha.rst:142
+#, fuzzy
+msgid "param#4: secondary node"
+msgstr "param#3: noeud secondaire"
 
 # 59ceda272d5e4aa4892d8a40e1d99c39
-#: ../../howto.ha.rst:90
+#: ../../howto.ha.rst:104
 msgid "param#5: heartbeat period"
 msgstr "param#5: période du heartbeat"
 
+# 6c10b5b0e9894182a3ce538aa15825d3
+#: ../../howto.ha.rst:143
+msgid "param#5: pre-launch checkup script"
+msgstr ""
+
 # 18a0e6b2a6cc48678a5cd1d57510c56d
-#: ../../howto.ha.rst:218
+#: ../../howto.ha.rst:260
 msgid "reboot"
 msgstr "reboot"
 
 # ccffcfc9773c47debb1e5ea463cd7a2f
-#: ../../howto.ha.rst:168
+#: ../../howto.ha.rst:204
 msgid ""
 "state reached after a successful 'freeze-stop' open-ha command. open-ha "
 "restrains from running further service commands."
@@ -635,7 +761,7 @@ msgstr ""
 "empêche de passer des commandes sur le service par la suite."
 
 # 91f1bb7348c74054b479ba2d4c785e37
-#: ../../howto.ha.rst:169
+#: ../../howto.ha.rst:205
 msgid ""
 "state reached after freezing through open-ha a stopped service. open-ha "
 "restrains from running further service commands."
@@ -644,11 +770,19 @@ msgstr ""
 "empêche de passer des commandes sur le service par la suite."
 
 # 1474f764f52946c9ba9334d5524eb924
-#: ../../howto.ha.rst:136
+#: ../../howto.ha.rst:170
 msgid "state transition and trigger initiator daemon"
 msgstr "transitionne l'état et déclenche le daemon initiateur"
 
 # 9829259bf3244c60bede309c1889070f
-#: ../../howto.ha.rst:208
+#: ../../howto.ha.rst:250
 msgid "the service has a heartbeat resource"
 msgstr "le service possède une ressource heartbeat"
+
+# 7e937af97b6b4c8ca736fa4103c4241c
+#: ../../howto.ha.rst:145
+msgid ""
+"this script is executed before starting the service. If its return code is "
+"anything else than 0, the service startup is aborted. It is often used to "
+"trigger the STONITH"
+msgstr ""

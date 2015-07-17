@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSVC 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-18 11:41\n"
+"POT-Creation-Date: 2014-06-26 11:22+0200\n"
 "PO-Revision-Date: 2014-03-03 15:52+01\n"
 "Last-Translator: Christophe Varoqui <christophe.varoqui at opensvc.com>\n"
 "Language-Team: OpenSVC translation team <translation at opensvc.com>\n"
@@ -16,15 +16,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# 25b028471a8849f681168f85a41157e2
+#: ../../storage.symclone.rst:33
+msgid ":command:`down`"
+msgstr ""
+
+# 3fcfb9df3dc34688a2aefb02031f472f
+#: ../../storage.symclone.rst:18
+msgid ":command:`syncbreak`"
+msgstr ""
+
+# c1a883d648604f6c83896720b7c2e249
+#: ../../storage.symclone.rst:21
+msgid ":command:`syncresync`"
+msgstr ""
+
+# c801ab47d61840cca1d04b625c7673ed
+#: ../../storage.symclone.rst:27
+msgid ":command:`up`"
+msgstr ""
+
+# 5378d1b33ed64976ae447838e895c0e6
+#: ../../storage.symclone.rst:30
+msgid ":command:`warn`"
+msgstr ""
+
 # d397154bf8f44e49b119d80cf5914dd5
 #: ../../storage.symclone.rst:12
 msgid ""
 "A service with only symclone sync resource can be defined to drive the clone "
 "of other servers, just for the benefit of centralised logging and scheduling."
 msgstr ""
-"Il est possible de créer un service contenant uniquement une ressource de synchronisation symclone "
-"afin de piloter les rafraîchissements du clone consommé par d'autres serveurs, juste pour le "
-"bénéfice de la centralisation des journaux et pour la planification."
+"Il est possible de créer un service contenant uniquement une ressource de "
+"synchronisation symclone afin de piloter les rafraîchissements du clone "
+"consommé par d'autres serveurs, juste pour le bénéfice de la centralisation "
+"des journaux et pour la planification."
 
 # 1fa0b905b3df4ac5aee441866f28df83
 #: ../../storage.symclone.rst:18
@@ -32,9 +58,9 @@ msgid ""
 "Activate the resource devices, breaking the data-replication. The source "
 "starts to log differences. The devices are promoted to read-write access."
 msgstr ""
-"Active les devices de la ressource, casse les réplications de données. "
-"La source commence alors à journaliser les différences. L'accès aux devices "
-"est promu en lecture-écriture."
+"Active les devices de la ressource, casse les réplications de données. La "
+"source commence alors à journaliser les différences. L'accès aux devices est "
+"promu en lecture-écriture."
 
 # 398cbf069ee54128bbd5ce6d85ea6c94
 #: ../../storage.symclone.rst:94
@@ -78,19 +104,19 @@ msgid ""
 "source device set is used for production. The following documentation "
 "presents the configuration of such a service."
 msgstr ""
-"Les clones des baies de stockage EMC Symmetrix permettent d'entretenir "
-"la réplication des changements des disques source vers plusieurs jeux de "
+"Les clones des baies de stockage EMC Symmetrix permettent d'entretenir la "
+"réplication des changements des disques source vers plusieurs jeux de "
 "disques cibles, de casser la réplication vers un jeu de disques, de "
 "resynchroniser ou de fusionner les changements réalisés sur un clone vers "
 "son jeu de disque source. Après une copie complète initiale, toutes les "
 "resynchronisation sont faite de façon incrémentale. Ces excellentes "
 "fonctionnalités permettent à OpenSVC de gérer des services bâtis sur des "
 "disques clonés, auquel cas il gère la rupture de synchronisation au "
-"démarrage du service et propose une commande simple de resynchronisation "
-"ou de fusion vers la source. Ce type de services est souvent utilisé "
-"pour les rôles de maintenance, pré-production et tests de performance où "
-"les disques sources sont utilisés en production. La présente documentation "
-"présente comment configurer un tel service."
+"démarrage du service et propose une commande simple de resynchronisation ou "
+"de fusion vers la source. Ce type de services est souvent utilisé pour les "
+"rôles de maintenance, pré-production et tests de performance où les disques "
+"sources sont utilisés en production. La présente documentation présente "
+"comment configurer un tel service."
 
 # 691099a2a0b64c748337153dfbd84910
 #: ../../storage.symclone.rst:115
@@ -159,12 +185,14 @@ msgstr "Clones Symmetrix"
 # 90891a24ad38430dabc9e5140d69129a
 #: ../../storage.symclone.rst:27
 msgid "The last replication occured less than 'sync_max_delay' minutes ago."
-msgstr "La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a moins de 'sync_max_delay' minutes"
 
 # bde78aa08b5b42d2acd7d16c9aa9e791
 #: ../../storage.symclone.rst:30
 msgid "The last replication occured more than 'sync_max_delay' minutes ago."
-msgstr "La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
+msgstr ""
+"La dernière réplication a eu lieu il y a plus de 'sync_max_delay' minutes"
 
 # 2f65345e6a0a4103b26370ead28d15b9
 #: ../../storage.symclone.rst:41
@@ -183,7 +211,7 @@ msgid ""
 "database data first, then in a subsequent sync, clone the archivelogs."
 msgstr ""
 "Il est possible de définir autant de ressources de synchronisation que "
-"nécessaire pour assurer un scénario de réplication consistent. Par "
-"exemple, il possible de cloner dans une première étape les données "
-"d'une base de données Oracle, puis de cloner lors d'une synchronisation "
-"suivante les archivelogs de cette base."
+"nécessaire pour assurer un scénario de réplication consistent. Par exemple, "
+"il possible de cloner dans une première étape les données d'une base de "
+"données Oracle, puis de cloner lors d'une synchronisation suivante les "
+"archivelogs de cette base."
