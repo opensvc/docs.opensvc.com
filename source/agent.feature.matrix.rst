@@ -130,6 +130,8 @@ Host and guest operating systems by virtualization product
 |                |                | * FreeBSD       |
 |                |                | * Windows       |
 +----------------+----------------+-----------------+
+| srp            | * HP-UX        | * HP-UX         |
++----------------+----------------+-----------------+
 | ldom           | * Solaris on   | * Solaris       |
 |                |   T-series     | * Solaris       |
 |                |                |   Express       |
