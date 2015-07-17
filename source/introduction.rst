@@ -9,11 +9,13 @@ OpenSVC is a software product and the name of the commercial entity developping,
 OpenSVC is composed of two software components:
 
 * the agent
+
   The OpenSVC agent is basically a Cluster Resource Manager with extended reporting and configuration management capabilities.
   Coupled by a heartbeat software, the agent completes a full cluster stack.
   It is licensed under the GNU General Public License v2. 
 
 * the collector
+
   The collector aggregates the agents-reported data and the data fetched from the sites infrastructure (network, SAN, storage arrays, backup servers and asset managers).
   It also serves the configuration management targets.
   The collector is a commercially-licenced web 2.0 application.
