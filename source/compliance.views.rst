@@ -327,10 +327,12 @@ Of course, more explicit filterset names are recommended.
 Modules
 -------
 
-The modules view allow compliance administrators to group modules into modulesets. The modulesets can then be attached to nodes through the nodemgr command line::
+The modulesets view allow compliance administrators to group modules into modulesets.
+Only the designer view can render the moduleset encapsulations though.
+The modulesets can then be attached to nodes through the nodemgr command line::
 
-	# nodemgr compliance attach moduleset --moduleset modset1
+	# nodemgr compliance attach --moduleset modset1
 
-Only attached modulesets' modules are scheduled for a compliance check by the OpenSVC agents.
+Only attached modulesets' modules are scheduled for a compliance action by the OpenSVC agents.
 
 Only member of the 'CompManager' group are allowed to create or edit modulesets.

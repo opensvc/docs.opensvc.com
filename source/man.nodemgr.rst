@@ -51,21 +51,15 @@ Collector management
 Compliance
 ----------
 
-:command:`compliance attach moduleset`
-                   attach moduleset specified by --moduleset for this node
-
-:command:`compliance attach ruleset`
-                   attach ruleset specified by --ruleset for this node
+:command:`compliance attach`
+                   attach moduleset specified by --moduleset and rulesets specified by --ruleset to this node
 
 :command:`compliance check`
                    run compliance checks. --ruleset <md5> instruct the
                    collector to provide an historical ruleset.
 
-:command:`compliance detach moduleset`
-                   detach moduleset specified by --moduleset for this node
-
-:command:`compliance detach ruleset`
-                   detach ruleset specified by --ruleset for this node
+:command:`compliance detach`
+                   detach moduleset specified by --moduleset and rulesets specified by --ruleset from this node
 
 :command:`compliance fix`
                    run compliance fixes. --ruleset <md5> instruct the

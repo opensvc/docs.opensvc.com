@@ -58,14 +58,19 @@ div.related li.right {
   margin-right: 3px;
 }
 
-ul.simple {
+ul {
   list-style: initial;
   -webkit-padding-start: 0px;
   padding-left: 25px;
 }
 
+div.section ul {
+  padding-left: 25px;
+}
+
 div.related ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 div.related > h3 {

@@ -13,6 +13,8 @@ Base facts about rulesets :
     * Rulesets can be explicitely attached to nodes or services, or contextually presented to nodes and services through a filterset.
     * Rulesets can be published or not
     * Rulesets can encapsulate other rulesets
+    * Rulesets can be encapsulated in modulesets
+
 
 Variable names
 ++++++++++++++
@@ -235,32 +237,32 @@ Encapsulation is a useful to
 * Keep the top level of the ruleset tree clean and lean
 * Minimize the number of filtersets necessary to cover all needs. As filters are cumulative in a nested contextual ruleset relationship, encapsulation aleviate the need to define as filtersets most filterset combinations. For example, ``x86 servers => linux servers``, ``x86 servers => solaris servers``, ``x86 servers => freebsd servers``, ``x86_86 servers => linux servers``, ``x86_86 servers => solaris servers``, ``x86_86 servers => freebsd servers`` would require 5 filtersets, where a flat ruleset design would require 6. The factorization factor increases dramatically with ruleset complexity.
 
-Ruleset ownership
-+++++++++++++++++
+Ruleset ownership and publication
++++++++++++++++++++++++++++++++++
 
 A ruleset is visible and attachable
 
-* from a server, if the team responsible property of the server matches one of the ruleset owner groups.
-* from a service, if one of its application code responsible groups matches one of the ruleset owner groups.
+* from a server, if the team responsible property of the server matches one of the ruleset publication groups.
+* from a service, if one of its application code responsible groups matches one of the ruleset publication groups.
 
-A ruleset can also be visible because it is encapsulted in a visible top-level ruleset, whatever the encapsulation depth, and whatever the ownership of the child.
+A ruleset can also be visible because it is encapsulted in a visible top-level ruleset or moduleset, whatever the encapsulation depth, and whatever the ownership of the child.
 
-Upon creation or cloning, the new ruleset is stored at the tree head and is owned by the creator's private group (``user_<n>``).
+Upon creation or cloning, the new ruleset is stored at the tree head and is owned by and published to the creator's primary group, or the creator's private group (``user_<n>``) if he has no primary group set.
 
-With this default ownership and unencapsulated state, the ruleset
+With this default ownership, publication and unencapsulated state, the ruleset
 
-* is not visible nor attachable from any node or service
-* is editable only by its creator
+* is not visible nor attachable from any node or service not under the responsability of its creator
+* is editable only by its creator, or creator's team
 
 The creator can then add, delete, rename, change the value of rules without the rulesets of servers and services being affected.
 
 When the design session is over, the creator's can attach new groups to the ruleset and/or insert the ruleset as a child of a visible ruleset.
 
-Known Issues
-++++++++++++
+Limitations
++++++++++++
 
 ARG_MAX / envp
 ^^^^^^^^^^^^^^
 
-As OpenSVC is executed on Unix familly systems, it is dependant on system limits. Among them, ARG_MAX and envp maximum values can be achieved, causing various error messages. On Unix systems with low limit values, huge ruleset list presented to system can hit the envp limit (environment related), while complex ruleset with many informations inside can hit the ARG_MAX limit (argument related).
+As OpenSVC is executed on operating systems, it is dependent on their limits. Among them, ARG_MAX and envp maximum values can be exceded by the compliance data. On Unix systems with low limit values, huge ruleset list presented to system can hit the envp limit (environment related), while complex ruleset with many informations inside can hit the ARG_MAX limit (argument related).
 You can get detailed informations on `Sven Mascheck's page <http://www.in-ulm.de/~mascheck/various/argmax/>`_ (mirror available `here <_static/argmax.html>`_)

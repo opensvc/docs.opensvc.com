@@ -43,25 +43,25 @@ Attach a moduleset to the node:
 
 ::
 
-    /opt/opensvc/bin/nodemgr compliance attach moduleset --moduleset <modname>
+    /opt/opensvc/bin/nodemgr compliance attach --moduleset <modname>
 
 Attach a moduleset to a service:
 
 ::
 
-    /opt/opensvc/etc/<svcname> compliance attach moduleset --moduleset <modname>
+    /opt/opensvc/etc/<svcname> compliance attach --moduleset <modname>
 
 Detach a moduleset from the node:
 
 ::
 
-    /opt/opensvc/bin/nodemgr compliance detach moduleset --moduleset <modname>
+    /opt/opensvc/bin/nodemgr compliance detach --moduleset <modname>
 
 Detach a moduleset from a service:
 
 ::
 
-    /opt/opensvc/etc/<svcname> compliance detach moduleset --moduleset <modname>
+    /opt/opensvc/etc/<svcname> compliance detach --moduleset <modname>
 
 Managing ruleset attachments
 ============================
@@ -70,25 +70,25 @@ Attach a ruleset to the node:
 
 ::
 
-    /opt/opensvc/bin/nodemgr compliance attach ruleset --ruleset <rsetname>
+    /opt/opensvc/bin/nodemgr compliance attach --ruleset <rsetname>
 
 Attach a moduleset to a service:
 
 ::
 
-    /opt/opensvc/etc/<svcname> compliance attach ruleset --ruleset <rsetname>
+    /opt/opensvc/etc/<svcname> compliance attach --ruleset <rsetname>
 
 Detach a moduleset from the node:
 
 ::
 
-    /opt/opensvc/bin/nodemgr compliance detach ruleset --ruleset <rsetname>
+    /opt/opensvc/bin/nodemgr compliance detach --ruleset <rsetname>
 
 Detach a moduleset from a service:
 
 ::
 
-    /opt/opensvc/etc/<svcname> compliance detach ruleset --ruleset <rsetname>
+    /opt/opensvc/etc/<svcname> compliance detach --ruleset <rsetname>
 
 Querying the framework
 ======================

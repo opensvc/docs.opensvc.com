@@ -59,11 +59,12 @@ The compliance framework uses 3 types of objects.
     * Rulesets can be explicitely attached to nodes or services, or contextually presented to nodes and services through a filterset.
     * Rulesets can be published or not
     * Rulesets can encapsulate other rulesets
+    * Rulesets can be encapsulated in modulesets
 
 **Filtersets, Filters**
 
     * A filter is a SQL-like condition on information available to the collector.
-    * Filterable information is grouped into 3 categories : node, service and service status.
+    * Filterable information categories are : nodes, services, service resources, service status, disks, tags, moduleset attachments, application codes and node hbas.
     * Available operators are ``>``, ``<``, ``=``, ``!=``, ``IN`` and ``LIKE``
     * Filters must be grouped into filtersets.
     * Filtersets can be grouped into filtersets.
@@ -71,35 +72,50 @@ The compliance framework uses 3 types of objects.
 
 **Modulesets, Modules**
 
-    * Apply and verify the rules.
-    * Modules are grouped into modulesets
-    * Modulesets are explicitely attached to nodes
-    * All matching rulesets' rules are visible to all modules of attached modulesets
-    * Each module picks the rules it is coded to pick
+    * Modules apply and verify the rules.
+    * Modules are grouped into modulesets.
+    * Modulesets are explicitely attached to nodes or services.
+    * Modules from attached modulesets are executed by the agent scheduler in check or fix mode depending on the autofix modules property set by the designer.
+    * Rulesets can be encapsulated in modulesets.
+    * Rules of attached rulesets are visible to all modules of attached modulesets.
+    * Rules of rulesets encapsulated in a moduleset are only visible to all modules of the parent modulesets modulesets.
+    * Each module picks the rules it is coded to pick.
 
 
 Multi-tenancy
 =============
 
+Different groups, responsible for different sets of nodes and services, can define different and private compliance targets. For example, the front and back-office servers can be under the responsability of different teams. In this case, each team won't want to see the ruleset maintained by the other team.
+
+The collector allows designers to control publication of modulesets and rulesets through publication group attachments, so that they are visible and attachable from services and nodes only if their ownership matches a publication group.
+
+Rulesets and modulesets can have two types of group attachements:
+
+* Responsible groups (yellow group icon in the designer)
+
+  Users of those groups who are in the CompManager privilege group are allow the modify the compliance object.
+
+* Publication groups (grey group icon in the designer)
+
+  Users of those groups are allowed to see the compliance object in the designer.
+  Nodes and services under responsability of those groups are allowed to use the compliance object.
+
 .. figure:: _static/compliance.ownership.png
    :align: right
    :scale: 60%
-
-Different groups, responsible for different sets of nodes and services, can define different and private compliance targets. For example, the front and back-office servers can be under the responsability of different teams. In this case, each team won't want to see the ruleset maintained by the other team.
-
-The collector allows users to set owners to modulesets and rulesets, so that they are visible and attachable from services and nodes only if they share a common ownership.
 
 **Example**
 
 In this diagram,
 
-* the orange ownership chains link the moduleset and ruleset to the node and services, meaning the endpoint moduleset and ruleset are visible and attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are visible and attachable only from Node1 and Service2 because they all share a common ownership by Group2.
-* the blue ownership chains do not link the moduleset and ruleset to the nodes and services, meaning the endpoint moduleset and ruleset are not visible nor attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are not visible nor attachable from Node2 and Service1 because they don't share common groups.
+* the orange ownership-to-publication chains link the moduleset and ruleset to the node and services, meaning the endpoint moduleset and ruleset are visible and attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are visible and attachable only from Node1 and Service2 because they are published to Group2, responsible of Node1 and Service2.
+* the blue ownership-to-publication chains do not link the moduleset and ruleset to the nodes and services, meaning the endpoint moduleset and ruleset are not visible nor attachable from the node and services at the other end of the chains. In other words, Ruleset and Moduleset are not visible nor attachable from Node2 and Service1 because they not published to Group1 and Group3.
 
-**Trust chains charracteristics**
+**Habilitation chains characteristics**
 
-* node-to-ruleset and node-to-moduleset trust chains need only the group link
-* service-to-ruleset and service-to-moduleset trust chains have an additional link : the service application code.
+* node-to-ruleset and node-to-moduleset habilitation chains have a single link : the group link
+* service-to-ruleset and service-to-moduleset habilitation chains have an additional link : the service application code.
+
 	* This code is set in each service configuration file by the ``DEFAULT.app`` parameter
 	* It must map to an entry of the collector's application code registry
 	* This registry is rendered by the ``Admin > Apps`` view.

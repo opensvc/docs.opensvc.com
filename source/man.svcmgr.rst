@@ -64,21 +64,15 @@ Collector management
 Compliance
 ----------
 
-:command:`compliance attach moduleset`
-                   attach moduleset specified by --moduleset to this service
-
-:command:`compliance attach ruleset`
-                   attach ruleset specified by --ruleset to this service
+:command:`compliance attach`
+                   attach moduleset specified by --moduleset and rulesets specified by --ruleset to this service
 
 :command:`compliance check`
                    run compliance checks. --ruleset <md5> instruct the
                    collector to provide an historical ruleset.
 
-:command:`compliance detach moduleset`
-                   detach moduleset specified by --moduleset from this service
-
-:command:`compliance detach ruleset`
-                   detach ruleset specified by --ruleset from this service
+:command:`compliance detach`
+                   detach moduleset specified by --moduleset and rulesets specified by --ruleset from this service
 
 :command:`compliance fix`
    run compliance fixes. --ruleset <md5> instruct the collector to provide an historical ruleset.
