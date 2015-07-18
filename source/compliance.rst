@@ -15,3 +15,4 @@ Contents:
    compliance.modules
    compliance.modules.deploy
    compliance.objects
+   compliance.best.practice
