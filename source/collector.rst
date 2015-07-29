@@ -10,3 +10,4 @@ Contents:
    collector.privileges
    collector.views
    collector.forms
+   collector.reports

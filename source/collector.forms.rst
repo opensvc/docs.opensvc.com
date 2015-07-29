@@ -355,6 +355,8 @@ Keywords
 
   The definition used to format a SELECT input options label from the dictionaries of a Rest API resultset. The dictionaries keys are referenced through the dash prefix.
 
+  .. warning:: If the value starts with a # you have to double quote the string so that the YAML parser doesn't interpret it as a comment
+
   Example:
 
   * The ``#mac (#intf)`` format would render a label like ``01:02:03:04:05:06 (eth0)`` from a ``{"mac": "01:02:03:04:05:06", "intf": "eth0"}`` dictionary.
@@ -362,6 +364,8 @@ Keywords
 * **Value**
 
   The definition used to format a SELECT input options value from the dictionaries of a Rest API resultset. The dictionaries keys are referenced through the dash prefix.
+
+  .. warning:: If the value starts with a # you have to double quote the string so that the YAML parser doesn't interpret it as a comment
 
   Example:
 

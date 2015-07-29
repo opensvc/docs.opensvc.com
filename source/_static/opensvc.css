@@ -116,3 +116,19 @@ div.related > ul {
 .highlight {
   background: #FCF6E6;
 }
+
+.admonition {
+  background: #dddddd;
+  padding: 1em;
+  border-radius: 8px;
+ -moz-border-radius:8px;
+ -webkit-border-radius:8px;
+}
+
+.warning {
+  background: #ffffaa;
+}
+
+.admonition-title {
+  font-weight: bold;
+}
