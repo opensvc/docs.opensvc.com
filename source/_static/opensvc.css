@@ -85,19 +85,29 @@ div.body {
 }
 
 .headerlink {
+  display: none;
   float: right;
   color: #aaaaaa;
+}
+*:hover > .headerlink {
+  display: block;
 }
 
 h1 {
   background-color: #000000;
   color: #ffffff;
   padding: 8px 10px;
+  border-radius: 8px;
+ -moz-border-radius:8px;
+ -webkit-border-radius:8px;
 }
 h2 {
   background-color: #663333;
   color: #ffffff;
   padding: 6px 10px;
+  border-radius: 8px;
+ -moz-border-radius:8px;
+ -webkit-border-radius:8px;
 }
 h3 {
   font-size: 1.5em;
@@ -131,4 +141,21 @@ div.related > ul {
 
 .admonition-title {
   font-weight: bold;
+}
+
+cite {
+  font-family: monospace;
+  font-style: normal;
+  background: lightblue;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+}
+
+.menuselection {
+  background: black;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
 }
