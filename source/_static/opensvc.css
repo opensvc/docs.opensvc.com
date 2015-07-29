@@ -113,6 +113,18 @@ h3 {
   font-size: 1.5em;
 }
 
+.literal {
+  border-width: 1px;
+  border-color: lightgray;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+ -moz-border-radius:3px;
+ -webkit-border-radius:3px;
+  border-style: solid;
+  color: #555555;
+}
+
 pre {
   overflow-wrap: break-word;
 }

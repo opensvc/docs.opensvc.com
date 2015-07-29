@@ -38,7 +38,7 @@ Form creation
 
 Form creation requires the FormManager privilege.
 
-The dedicated view is `Admin --> Forms`.
+The dedicated view is :menuselection:`Admin --> Forms`.
 
 A newly created form is owned by it's creator private group (user_n), and is not published to any group.
 
@@ -212,7 +212,11 @@ Keywords
 
 * **Key**
 
-  If multiple inputs provide the same dictionary key, the ``Key`` parameter can be set to define its value as the dictionary key in addition to the ``Id`` key. Thus a script consuming the output can use the predictible ``Key`` key, whereas the collector still has the ``Id`` key available to redisplay the submitted form.
+  If multiple inputs provide the same dictionary key, the **Key** parameter can be set to define its value as the dictionary key in addition to the **Id** key. Thus a script consuming the output can use the predictible **Key** key, whereas the collector still has the **Id** key available to redisplay the submitted form.
+
+* **Constraint**
+
+  A constraint is an input value validator. As long as the constraint is not satisfied the form can not be submitted. The constraint syntax is an expression like ``<operator> <value>``, where ``operator`` can be either ``==``, ``>`` or ``match``. The ``value`` after a ``match`` operator is interpreted as a regular expression. The value after a ``>`` operator must be numeric.
 
 * **Label**
 
@@ -413,9 +417,9 @@ Keywords
 
   * Rest API
 
-    A list of arguments passed to the Rest API handler pointed by ``Function``. Of note, the ``limit = 0`` is most important to fetch all candidates, and not be limited to the default 20 first entries. ``meta = 0`` can also be used to spare some bytes on the wire, as the resultset metadata are not used by the form inputs. The ``query`` smart query parameter can be used to filter the entries on pertinent criteria.
+    A list of arguments passed to the Rest API handler pointed by **Function** Of note, the ``limit = 0`` is most important to fetch all candidates, and not be limited to the default 20 first entries. ``meta = 0`` can also be used to spare some bytes on the wire, as the resultset metadata are not used by the form inputs. The ``query`` smart query parameter can be used to filter the entries on pertinent criteria.
 
-    References can be used in **Args**. For example, ``query = loc_city = #loc_city`` can filter the node list returned by the ``/nodes`` handler using the city selected in the input with ``Id: loc_city``.
+    References can be used in **Args**. For example, ``query = "loc_city = #loc_city"`` can filter the node list returned by the ``/nodes`` handler using the city selected in the input with ``Id: loc_city``.
 
 
 * **DisplayModeTrim**
