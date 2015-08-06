@@ -119,6 +119,25 @@ Application can be started and stopped without touching the other service resour
 
 The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that integrators can write reusable launcher scripts. Examples of this variable usage below.
 
+Launcher scripts development guidelines
+=======================================
+
+A launcher script should support the following values for argument 1:
+
++------------+-------------------------------------------------------------------------------------------------------------+
+| Arg1       | Description                                                                                                 |
++============+=============================================================================================================+
+| start      | Triggers the application startup. The return code must be 0 for a succesful startup, and not 0 otherwise.   |
++------------+-------------------------------------------------------------------------------------------------------------+
+| stop       | Triggers the application shutdown. The return code must be 0 for a succesful shutdown, and not 0 otherwise. |
++------------+-------------------------------------------------------------------------------------------------------------+
+| status     | Return 0 if the application is up, or any other value if the application is not up. In this later case, the |
+|            | agent will report a warn status for the resource.                                                           |
++------------+-------------------------------------------------------------------------------------------------------------+
+| info       | Emits on stdout ``key: value`` pairs. These pairs will be reported to the collector for storage, and        |
+|            | historization if the value is numeric.                                                                      |
++------------+-------------------------------------------------------------------------------------------------------------+
+
 Common launchers
 ================
 
