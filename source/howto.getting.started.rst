@@ -955,7 +955,7 @@ Install the OpenHA package on both cluster nodes.
         # rpm -qa | grep openha
         openha-0.3.6.osvc2-0
         # ls /usr/local/cluster
-        bin  conf  doc  env.sh  ezha  log  services
+        bin  conf  doc  env.sh  ezha.init  log  services
 
 As specified in the documentation, we have to set environment variables to be able to use OpenHA commands. You can either set them system-wide (/etc/profile), or just set them when needed::
 
@@ -1026,7 +1026,7 @@ We start the OpenHA agents:
 
 **On both nodes**::
 
-        # /usr/local/cluster/ezha start
+        # /usr/local/cluster/ezha.init start
 
 You can query the OpenHA service configuration and states with the ``$EZ_BIN/service -s`` command:
 

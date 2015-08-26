@@ -369,7 +369,7 @@ Installation described in `Getting Started - OpenHA Integration <howto.getting.s
         # dpkg -l|grep -i openha
         ii  openha                                     0.4.1.osvc1-1                 amd64        EASY high-availability software.
         # ls /usr/local/cluster
-        bin  conf  doc  env.sh  ezha  log  services
+        bin  conf  doc  env.sh  ezha.init  log  services
 
 OpenHA configuration
 ^^^^^^^^^^^^^^^^^^^^
