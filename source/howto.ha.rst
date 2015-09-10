@@ -147,7 +147,7 @@ Where:
 Startup
 -------
 
-Make sure the heartbeat daemons are setup for startup at boot. If not, depending on your system, apply some commands simalar to:
+Make sure the heartbeat daemons are setup for startup at boot. If not, depending on your system, apply some commands similar to:
 
 ::
 
@@ -159,7 +159,7 @@ Then run:
 
 ::
 
-   /usr/local/cluster/ezha start
+   /usr/local/cluster/ezha.init start
 
 Daemons
 -------
