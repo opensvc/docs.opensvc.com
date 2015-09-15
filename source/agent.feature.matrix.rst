@@ -149,101 +149,101 @@ Host and guest operating systems by virtualization product
 Supported data replication modes
 ================================
 
-+----------------+----------------+-----------------+-------------+-----------------+
-| Replication    | Commands       | Transport       | Trigger     | Cluster mode    |
-+================+================+=================+=============+=================+
-| Rsync          | * syncnodes    | * ip            | * scheduled | * local         |
-|                | * syncdrp      |                 | * on-demand | * multi-site    |
-|                | * syncall      |                 |             | * cluster       |
-|                |                |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Netapp         | * syncquiesce  | * iscsi         | * scheduled | * local         |
-| snapmirror     | * syncresume   | * fc            | * on-demand | * multi-site    |
-|                | * syncupdate   | * ip (nfs, smb) |             |                 |
-|                | * syncbreak    |                 |             | * disaster      |
-|                | * syncresync   |                 |             |   recovery      |
-|                | * syncswap     |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Symmetrix      | * syncbreak    | * fc            | * on-demand | * local         |
-| SRDF-S         | * syncresume   |                 | * start on  | * multi-site    |
-|                | * syncswap     |                 |   R2-side   |                 |
-|                |                |                 |   nodes     | * disaster      |
-|                |                |                 |             |   recovery      |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| HP 3Par        | * syncupdate   | * fc            | * scheduled | * local         |
-| Remote Copy    | * syncbreak    |                 | * on-demand | * multi-site    |
-|                | * syncresume   |                 |             |                 |
-|                | * syncswap     |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Datacore       | * syncresume   | * fc            | * scheduled | * local         |
-| replication    | * syncupdate   | * iscsi         | * on-demand | * multi-site    |
-|                | * syncbreak    |                 |             | * cluster       |
-|                |                |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Dds            | * syncfullsync | * ip            | * scheduled | * local         |
-|                | * syncupdate   |                 | * on-demand | * multi-site    |
-|                | * syncverify   |                 |             |                 |
-|                |                |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Drbd           | * start        | * ip            | * scheduled | * local         |
-|                | * stop         |                 | * on-demand | * multi-site    |
-|                | * startstandby |                 | * Primary / | * cluster       |
-|                |                |                 |   Primary   | * disaster      |
-|                |                |                 | * Primary / |   recovery      |
-|                |                |                 |   Secondary |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Zfs            | * syncnodes    | * ip            | * scheduled | * local         |
-|                | * syncdrp      |                 | * on-demand | * multi-site    |
-|                | * syncall      |                 |             | * cluster       |
-|                | * syncupdate   |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Btrfs          | * syncnodes    | * ip            | * scheduled | * local         |
-|                | * syncdrp      |                 | * on-demand | * multi-site    |
-|                | * syncall      |                 |             | * disaster      |
-|                | * syncfullsync |                 |             |   recovery      |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Docker images  | * syncnodes    | * ip            | * scheduled | * local         |
-|                | * syncdrp      |                 | * on-demand | * multi-site    |
-|                | * syncall      |                 |             | * disaster      |
-|                |                |                 |             |   recovery      |
-|                |                |                 |             | * cluster       |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Symmetrix      | * syncbreak    | * fc            | * scheduled | * local         |
-| clone          | * syncresync   |                 | * on-demand |                 |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| HP EVA snap    | * syncresync   | * fc            | * scheduled | * local         |
-|                |                |                 | * on-demand |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Datacore snap  | * syncresync   | * fc            | * scheduled | * local         |
-|                |                | * iscsi         | * on-demand |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| IBM DS8xxx     | * syncresync   | * fc            | * scheduled | * local         |
-| snap           |                |                 | * on-demand |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| NEC ISM, Bull  | * syncresync   | * fc            | * scheduled | * local         |
-| Optima snap    |                |                 | * on-demand |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
-| Ceph RADOS     | * syncresync   | * ip            | * scheduled | * local         |
-| snap           |                |                 | * on-demand |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-|                |                |                 |             |                 |
-+----------------+----------------+-----------------+-------------+-----------------+
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Replication    | Commands       | Sync/Async   |Transport        | Trigger     | Cluster mode    |
++================+================+==============+=================+=============+=================+
+| Rsync          | * syncnodes    | Asynchronous | * ip            | * scheduled | * local         |
+|                | * syncdrp      | (hours)      |                 | * on-demand | * multi-site    |
+|                | * syncall      |              |                 |             | * cluster       |
+|                |                |              |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Netapp         | * syncquiesce  | Asynchronous | * iscsi         | * scheduled | * local         |
+| snapmirror     | * syncresume   | (seconds)    | * fc            | * on-demand | * multi-site    |
+|                | * syncupdate   |              | * ip (nfs, smb) |             |                 |
+|                | * syncbreak    |              |                 |             | * disaster      |
+|                | * syncresync   |              |                 |             |   recovery      |
+|                | * syncswap     |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Symmetrix      | * syncbreak    | Synchronous  | * fc            | * on-demand | * local         |
+| SRDF-S         | * syncresume   |              |                 | * start on  | * multi-site    |
+|                | * syncswap     |              |                 |   R2-side   |                 |
+|                |                |              |                 |   nodes     | * disaster      |
+|                |                |              |                 |             |   recovery      |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| HP 3Par        | * syncupdate   | Synchronous  | * fc            | * scheduled | * local         |
+| Remote Copy    | * syncbreak    | or           |                 | * on-demand | * multi-site    |
+|                | * syncresume   | Asynchronous |                 |             |                 |
+|                | * syncswap     | (seconds)    |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Datacore       | * syncresume   | Asynchronous | * fc            | * scheduled | * local         |
+| replication    | * syncupdate   | (seconds)    | * iscsi         | * on-demand | * multi-site    |
+|                | * syncbreak    |              |                 |             | * cluster       |
+|                |                |              |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Dds            | * syncfullsync | Asynchronous | * ip            | * scheduled | * local         |
+|                | * syncupdate   | (minutes)    |                 | * on-demand | * multi-site    |
+|                | * syncverify   |              |                 |             |                 |
+|                |                |              |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Drbd           | * start        | Synchronous  | * ip            | * scheduled | * local         |
+|                | * stop         | or           |                 | * on-demand | * multi-site    |
+|                | * startstandby | Asynchronous |                 | * Primary / | * cluster       |
+|                |                | (seconds)    |                 |   Primary   | * disaster      |
+|                |                |              |                 | * Primary / |   recovery      |
+|                |                |              |                 |   Secondary |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Zfs            | * syncnodes    | Asynchronous | * ip            | * scheduled | * local         |
+|                | * syncdrp      | (minutes)    |                 | * on-demand | * multi-site    |
+|                | * syncall      |              |                 |             | * cluster       |
+|                | * syncupdate   |              |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Btrfs          | * syncnodes    | Asynchronous | * ip            | * scheduled | * local         |
+|                | * syncdrp      | (minutes)    |                 | * on-demand | * multi-site    |
+|                | * syncall      |              |                 |             | * disaster      |
+|                | * syncfullsync |              |                 |             |   recovery      |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Docker images  | * syncnodes    | Asynchronous | * ip            | * scheduled | * local         |
+|                | * syncdrp      | (minutes)    |                 | * on-demand | * multi-site    |
+|                | * syncall      |              |                 |             | * disaster      |
+|                |                |              |                 |             |   recovery      |
+|                |                |              |                 |             | * cluster       |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Symmetrix      | * syncbreak    |              | * fc            | * scheduled | * local         |
+| clone          | * syncresync   |              |                 | * on-demand |                 |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| HP EVA snap    | * syncresync   |              | * fc            | * scheduled | * local         |
+|                |                |              |                 | * on-demand |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Datacore snap  | * syncresync   |              | * fc            | * scheduled | * local         |
+|                |                |              | * iscsi         | * on-demand |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| IBM DS8xxx     | * syncresync   |              | * fc            | * scheduled | * local         |
+| snap           |                |              |                 | * on-demand |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| NEC ISM, Bull  | * syncresync   |              | * fc            | * scheduled | * local         |
+| Optima snap    |                |              |                 | * on-demand |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
+| Ceph RADOS     | * syncresync   |              | * ip            | * scheduled | * local         |
+| snap           |                |              |                 | * on-demand |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
+|                |                |              |                 |             |                 |
++----------------+----------------+--------------+-----------------+-------------+-----------------+
 
