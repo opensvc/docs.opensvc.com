@@ -12,6 +12,7 @@ Contents:
    agent.items
    agent.service.creation
    agent.service.management
+   agent.service.ip
    agent.service.app
    agent.service.encapsulation
    agent.service.container
