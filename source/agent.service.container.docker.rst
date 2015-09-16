@@ -435,11 +435,11 @@ About the promises
 .. toctree::
    :maxdepth: 1
 
-   virtualization.docker.multi_containers
-   virtualization.docker.private_registry
-   virtualization.docker.relocation
-   virtualization.docker.high_availability
-   virtualization.docker.multiple_docker_instances
-   virtualization.docker.disaster_recovery_plan
-   virtualization.docker.chargeback
-   virtualization.docker.enterprise_architecture
+   agent.service.container.docker.multi_containers
+   agent.service.container.docker.private_registry
+   agent.service.container.docker.relocation
+   agent.service.container.docker.high_availability
+   agent.service.container.docker.multiple_docker_instances
+   agent.service.container.docker.disaster_recovery_plan
+   agent.service.container.docker.chargeback
+   agent.service.container.docker.enterprise_architecture

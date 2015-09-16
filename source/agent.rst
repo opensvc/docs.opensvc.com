@@ -14,8 +14,8 @@ Contents:
    agent.service.management
    agent.service.app
    agent.service.encapsulation
+   agent.service.container
    storage
-   virtualization
    howto
    agent.template.env
    manpages
