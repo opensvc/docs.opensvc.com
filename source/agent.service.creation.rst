@@ -22,22 +22,7 @@ Allocate generic account and ip addresses
 
 We recommend to allocate service-dedicated ip addresses, to permit service failover to secondary nodes.
 
-We recommend to allocate service-dedicated generic accounts (one is ok most of the time), at least for ``hosted`` services, for better control on privileges. All service files should be owned by these accounts except the application launchers, which must be owned by root as they are executed with root privileges. The generic account home directory should be a link redirecting to a subdirectory of one of the service-dedicated filesystems (the one hosting data is a good candidate).
-
-Select a service mode
-=====================
-
-.. function:: hosted.
-
-Where virtualisation is unwanted : low-latency applications, restrictive product compatibility matrices, ...
-
-.. function:: zone, lxc, vz, jail, docker
-
-Prefered mode where it is supported : quite low-latency, low mem and cpu overhead, good control of virtual system from the host system.
-
-.. function:: xen, kvm, hpvm, ldom, vbox, esx
-
-Perceptible latency and memory overhead. Host system must rely on tcp/ip communication with the virtual machine to control its resources (change ip addresses, start service applications, ...)
+We recommend to allocate service-dedicated generic accounts (one is ok most of the time) for better control on privileges. All service files should be owned by these accounts. The application launchers are executed by the agent using impersonnification as the launcher file owner. The generic account home directory should be a link redirecting to a subdirectory of one of the service-dedicated filesystems (the one hosting data is a good candidate).
 
 Create a filesystem skeleton for the service
 ============================================
@@ -58,12 +43,12 @@ Private installation of tools. Tools must listen only on the private address to 
 
 Application data files
 
-For hosted service mode, prefer per-service private tools installations to enhance system/service insulation. This makes the service installation more painful, but there are no clients at this point, and it will make service relocation more reliable and operating system upgrades safer.
+If the applications are not containerized, prefer per-service private tools installations to distribution packages installations. This choice provides better system/service insulation, more reliable relocation and safer operating system upgrades. This also makes the service installation harder.
 
-Install virtual host and applications
-=====================================
+Install virtual hosts and applications
+======================================
 
-The virtual host is not required for ``hosted`` services.
+Installing virtual hosts is only required for services with container resources.
 
 Create configuration files
 ==========================

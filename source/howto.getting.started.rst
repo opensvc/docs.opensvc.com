@@ -273,7 +273,6 @@ The following configuration describes a service named ``p26.opensvc.com``, runni
         service_type = TST				# specify is service runs production, test, dev, ...
         autostart_node = sles1				# default running node, name returned by « hostname » command
         nodes = sles1 sles2				# cluster nodes where the service is able to run on
-        mode = hosted					# default service mode for failover cluster services
 
         [ip#0]						# Ressource Section for ip address
         ipname = p26.opensvc.com			# specify the ip address on which the service will be bound
