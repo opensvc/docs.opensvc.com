@@ -80,4 +80,40 @@ Example configuration::
   ipdev = eth0
   tags = encap
 
+Failover with application installed as micro-containers
+*******************************************************
+
+In this use-case, the middlewares are installed as docker micro-containers. The micro-containers share a common namespace through the ``--net`` run parameter. The service plumbs a public ip in this namespace. Exposed middlewares bind this to ip. Non exposed middlewares can still bind the loopback ip 127.0.0.1 to service the other middlewares.
+
+.. image:: _static/agent.service.ip.failover.docker.png
+   :scale: 50 %
+
+Example configuration::
+
+  [DEFAULT]
+  nodes = n1 n2
+  drpnodes = n3
+  docker_data_dir = /srv/svc1/docker_data_dir
+  
+  [ip#0]
+  type = docker
+  ipdev = eth0
+  ipname = 10.0.3.3
+  netmask = 255.255.255.0
+  gateway = 10.0.3.1
+  container_rid = container#0
+  
+  [container#0]
+  type = docker
+  run_image = ubuntu:14.10
+  run_args = --net=none
+             -v /etc/localtime:/etc/localtime:ro
+  run_command = /bin/bash
+  
+  [container#1]
+  type = docker
+  run_image = opensvc/nginx:build5
+  run_args = -v /etc/localtime:/etc/localtime:ro
+             --net=container:svc1.container.0
+  
 
