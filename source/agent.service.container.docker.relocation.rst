@@ -16,7 +16,7 @@ This tutorial will show up how you can setup such a configuration with OpenSVC.
 Pre-requisites
 --------------
 
-* OpenSVC service managing docker container(s) (Lets use a simple container example as described in `Docker main page <virtualization.docker.html#service-configuration>`_ )
+* OpenSVC service managing docker container(s) (Lets use a simple container example as described in `Docker main page <agent.service.container.docker.html#service-configuration>`_ )
 * 2 physical servers both having :
 
   * network attachments on the same IP subnet

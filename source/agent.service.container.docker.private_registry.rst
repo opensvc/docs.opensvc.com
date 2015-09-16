@@ -7,7 +7,7 @@ This tutorial will show up how you can install and run your own Docker registry.
 Pre-requisites
 --------------
 
-* OpenSVC service managing docker containers (As described in the `parent topic <virtualization.docker.html#installing-docker-as-an-opensvc-service>`_)
+* OpenSVC service managing docker containers (As described in the `parent topic <agent.service.container.docker.html#installing-docker-as-an-opensvc-service>`_)
 * Official Docker Registry image
 
 Service Creation

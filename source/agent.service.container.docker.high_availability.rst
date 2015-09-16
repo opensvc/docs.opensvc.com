@@ -3,7 +3,7 @@ Docker High Availability
 
 Considering you are responsible of hosting docker production infrastructures, you are surely interested in improving the service availability. Just imagine you have stacked tens of docker environments on one physical host, you certainly want to ensure that all people accessing your platform won't be prevented from working due to a hardware failure.
 
-The first step consists in implementing a manual failover cluster, like described in `Docker relocation <virtualization.docker.relocation.html>`_ tutorial.
+The first step consists in implementing a manual failover cluster, like described in `Docker relocation <agent.service.container.docker.relocation.html>`_ tutorial.
 
 The second step, shown in this tutorial, will show up how you can followup with a HA configuration by implementing OpenHA on top of OpenSVC services, leading to a dual node high availability docker cluster.
 

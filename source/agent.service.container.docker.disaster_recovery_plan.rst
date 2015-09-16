@@ -7,7 +7,7 @@ This tutorial will show up how you can setup a Docker infrastructure, with a rea
 Pre-requisites
 --------------
 
-* OpenSVC service managing docker container(s) (We use same container as described in `Docker Relocation <virtualization.docker.relocation.html>`_ )
+* OpenSVC service managing docker container(s) (We use same container as described in `Docker Relocation <agent.service.container.docker.relocation.html>`_ )
 * 1 physical server acting as Production node
 * 1 physical server acting as DRP node
 * Both nodes have OpenSVC agent and Docker installed

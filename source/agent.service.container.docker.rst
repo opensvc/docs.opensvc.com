@@ -5,14 +5,14 @@ Docker (https://www.docker.io/) is a very promising container technology. If you
 
 This tutorial is useful for all people who want to answer those questions :
 
-* `My application is built on 3 Docker images, how do I launch them together ? <virtualization.docker.multi_containers.html>`_ 
-* `How do I setup my own private Docker registry ? <virtualization.docker.private_registry.html>`_
-* `How do I relocate my Docker infrastructure on another physical server ? <virtualization.docker.relocation.html>`_
-* `How do I build a Docker high availability infrastructure ? <virtualization.docker.high_availability.html>`_
-* `How do I host multiple Docker installations on the same host (dev, test, preproduction, ...) ? <virtualization.docker.multiple_docker_instances.html>`_
-* `Lots of people use Docker in my company, how do I setup a disaster recovery solution ? <virtualization.docker.disaster_recovery_plan.html>`_
-* `Lots of people use Docker in my company, how do I chargeback docker usage depending on image or container count or even used space ? <virtualization.docker.chargeback.html>`_
-* `What kind of Docker architecture could I use in my company ? <virtualization.docker.enterprise_architecture.html>`_
+* `My application is built on 3 Docker images, how do I launch them together ? <agent.service.container.docker.multi_containers.html>`_ 
+* `How do I setup my own private Docker registry ? <agent.service.container.docker.private_registry.html>`_
+* `How do I relocate my Docker infrastructure on another physical server ? <agent.service.container.docker.relocation.html>`_
+* `How do I build a Docker high availability infrastructure ? <agent.service.container.docker.high_availability.html>`_
+* `How do I host multiple Docker installations on the same host (dev, test, preproduction, ...) ? <agent.service.container.docker.multiple_docker_instances.html>`_
+* `Lots of people use Docker in my company, how do I setup a disaster recovery solution ? <agent.service.container.docker.disaster_recovery_plan.html>`_
+* `Lots of people use Docker in my company, how do I chargeback docker usage depending on image or container count or even used space ? <agent.service.container.docker.chargeback.html>`_
+* `What kind of Docker architecture could I use in my company ? <agent.service.container.docker.enterprise_architecture.html>`_
 
 OpenSVC product will be used to encapsulate docker's containers like any other vm/container already supported (like kvm, xen, lxc, zones, jails, hpvm, ovm, ...)
 

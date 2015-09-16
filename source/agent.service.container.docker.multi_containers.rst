@@ -8,8 +8,8 @@ This tutorial explains how you can ease multiple container management using the 
 Pre-requisites
 --------------
 
-* OpenSVC service managing docker containers (As described in the `parent topic <virtualization.docker.html#installing-docker-as-an-opensvc-service>`_)
-* We assume that the docker images are available (It means that you already have docker pulled your needed images, check `here <virtualization.docker.html#service-startup>`_ if you need help for that part)
+* OpenSVC service managing docker containers (As described in the `parent topic <agent.service.container.docker.html#installing-docker-as-an-opensvc-service>`_)
+* We assume that the docker images are available (It means that you already have docker pulled your needed images, check `here <agent.service.container.docker.html#service-startup>`_ if you need help for that part)
 
 Let's take an example and consider that we are responsible for hosting an application relying on 3 docker containers :
 

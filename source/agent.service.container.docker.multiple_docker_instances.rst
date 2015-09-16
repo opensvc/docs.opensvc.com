@@ -18,7 +18,7 @@ This tutorial explains how you can setup multiple docker environments on the sam
 Pre-requisites
 --------------
 
-* OpenSVC agent installed (As described in the `parent topic <virtualization.docker.html>`_)
+* OpenSVC agent installed (As described in the `parent topic <agent.service.container.docker.html>`_)
 
 Services Creation
 -----------------
@@ -130,7 +130,7 @@ This parameter will be passed to the docker daemon option '-g' (instead of using
 .. warning:: Be sure to use a different ``docker_data_dir`` for each service (we want to segregate datas !)
 
 We also have to specify that we want the service to manage docker container. 
-This tutorial is voluntary simple, and use 1 docker container per service, but you can implement complex schemes, like multiple docker containers in the same service (`Docker Multi Containers <http://docs.opensvc.com/virtualization.docker.multi_containers.html>`_), or even combining resources types in a service (like a service modelized with 1 docker container, 2 lxc containers, 3 kvm containers, 4 lvm volumes groups, 5 filesystems, hosted on a netapp filer with snapmirror data replication)
+This tutorial is voluntary simple, and use 1 docker container per service, but you can implement complex schemes, like multiple docker containers in the same service (`Docker Multi Containers <http://docs.opensvc.com/agent.service.container.docker.multi_containers.html>`_), or even combining resources types in a service (like a service modelized with 1 docker container, 2 lxc containers, 3 kvm containers, 4 lvm volumes groups, 5 filesystems, hosted on a netapp filer with snapmirror data replication)
 
 We can declare a docker container using the syntax below::
 

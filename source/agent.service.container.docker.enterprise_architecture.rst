@@ -23,9 +23,9 @@ This architecture is made of 3 main docker vertical lines :
 
 Each line has :
 
-* a dedicated pool of physical nodes to host `OpenSVC services running Docker <virtualization.docker.multiple_docker_instances.html>`_
-* a dedicated `docker private registry hub <virtualization.docker.private_registry.html>`_, storing the accurate docker images
-* a set of OpenSVC services, embedding `one or more docker containers <virtualization.docker.multi_containers.html>`_, rendering mass docker container management very powerful
+* a dedicated pool of physical nodes to host `OpenSVC services running Docker <agent.service.container.docker.multiple_docker_instances.html>`_
+* a dedicated `docker private registry hub <agent.service.container.docker.private_registry.html>`_, storing the accurate docker images
+* a set of OpenSVC services, embedding `one or more docker containers <agent.service.container.docker.multi_containers.html>`_, rendering mass docker container management very powerful
 
 Bullet Point 1
 ^^^^^^^^^^^^^^
@@ -122,10 +122,10 @@ Storage
 High Availability
 ^^^^^^^^^^^^^^^^^
 
-If you consider that some parts of the architecture have to be redundant and highly available, you should have a look at the `Docker high availability tutorial <virtualization.docker.high_availability.html>`_
+If you consider that some parts of the architecture have to be redundant and highly available, you should have a look at the `Docker high availability tutorial <agent.service.container.docker.high_availability.html>`_
 
 Disaster Recovery
 ^^^^^^^^^^^^^^^^^
 
-If you are concerned about disaster recovery plan, you should have a look at the `Docker Disaster Recovery Plan Tutorial <virtualization.docker.disaster_recovery_plan.html>`_
+If you are concerned about disaster recovery plan, you should have a look at the `Docker Disaster Recovery Plan Tutorial <agent.service.container.docker.disaster_recovery_plan.html>`_
 It can be easily enabled with simple replication tools like rsync, or even with proprietary solutions like block device replication (EMC SRDF, NetApp SnapMirror, HP 3Par Remote Replication, ...)
