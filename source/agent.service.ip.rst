@@ -20,6 +20,8 @@ This chapter presents the different ip management capabilities offered by the Op
 Failover
 ********
 
+In this use-case, the middlewares are installed in the node either through operating system packages or as service-private binaries. They bind the service ip address.
+
 .. image:: _static/agent.service.ip.failover.png
    :scale: 50 %
 
@@ -33,6 +35,8 @@ Example non-containerized ip resource definition::
 Flex with instance ip
 *********************
 
+In this use-case, the middlewares are installed in the node either through operating system packages or as service-private binaries. They bind each service instance ip addresses.
+
 .. image:: _static/agent.service.ip.flex.png
    :scale: 50 %
 
@@ -43,4 +47,37 @@ Example non-containerized ip resource definition::
   ipname@node2 = ipname2
   ipname@node3 = ipname3
   ipdev = eth0
+
+Failover with application installed in a container
+**************************************************
+
+In this use-case, the middlewares are installed in the container through operating system packages. They bind the container ip address.
+
+.. image:: _static/agent.service.ip.failover.container.png
+   :scale: 50 %
+
+Example configuration::
+
+  [container#0]
+  name = vm1
+
+Failover with application installed in a container with service encapsulation
+*****************************************************************************
+
+In this use-case, the middlewares are installed in the container through operating system packages or as service-private binaries. They bind the encapsulated service ip address. The service containers are set to start on each node just to highlight the fact that each container can have its own ip addresses. This can also be useful if you want sync resources at the encapsulated layer, as standby instance containers have to be running to receive the replication data.
+
+.. image:: _static/agent.service.ip.failover.encap.png
+   :scale: 50 %
+
+Example configuration::
+
+  [container#0]
+  name = vm1
+  always_on = nodes drpnodes
+  
+  [ip#0]
+  ipname = ipname1
+  ipdev = eth0
+  tags = encap
+
 
