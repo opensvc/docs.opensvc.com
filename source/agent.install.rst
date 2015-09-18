@@ -283,3 +283,12 @@ As other OS flavors, agent upgrade can be triggered by
         /opt/opensvc/bin/nodemgr updatepkg
 
 .. note:: this works only if repopkg is defined in ``/opt/opensvc/etc/node.conf`` file ( ``<OSVCROOT>/bin/nodemgr set --param node.repopkg --value http://repo.opensvc.com/`` )
+
+Python interpreter wrapper
+==========================
+
+The postinstall installs the ``/opt/opensvc/bin/python`` symlink and makes it point to the most appropriate version present.
+
+On some systems you may need to wrap the execution of this interpreter to set some variables like ``LD_PRELOAD`` or ``LD_LIBRARY_PATH``.
+In this case, you should not replace the ``/opt/opensvc/bin/python`` symlink, as it gets recreated upon every execution of the ``/opt/opensvc/bin/postinstall`` and of ``nodemgr updatepkg``. The postinstall checks for the existance of a file at ``/opt/opensvc/bin/python.wrapper`` and uses that as the target of ``/opt/opensvc/bin/python`` if present.
+
