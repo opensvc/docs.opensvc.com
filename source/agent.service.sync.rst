@@ -56,7 +56,6 @@ Example configuration::
   run_args = -v /etc/localtime:/etc/localtime:ro
              --net=container:svc1.container.0
   
-
   [fs#0]
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/docker
@@ -78,3 +77,61 @@ Example configuration::
   target = drpnodes
   src = svc1:data
   dst = svc1:data
+
+Flex with application installed as micro-containers
+***************************************************
+
+In this use-case, the middlewares are installed as docker micro-containers. The micro-containers see their data, configurations and logs through volume mappings from the host. The mappings are hosted on local disks and the service handles no replication for these, as their content would be delivered through app deployment tools.
+
+The docker data directory is stored on local disks too. The docker images are replicated through the docker driver, which makes sure all images ids referenced as container resources in the service configuration are present on the receiving end. If not, they are transfered through a docker save | ssh | docker load pipe.
+
+.. image:: _static/agent.service.sync.flex.docker.png
+   :scale: 50 %
+
+Example configuration::
+
+  [DEFAULT]
+  nodes = n1 n2 n3
+  flex_primary = n2
+  autostart_node = n1 n2 n3
+  docker_data_dir = /srv/svc1/docker_data_dir
+  
+  [ip#0]
+  type = docker
+  ipdev = eth0
+  ipname@n1 = 10.0.3.3
+  ipname@n2 = 10.0.3.4
+  ipname@n3 = 10.0.3.5
+  netmask = 255.255.255.0
+  gateway = 10.0.3.1
+  container_rid = container#0
+  
+  [container#0]
+  type = docker
+  run_image = ubuntu:14.10
+  run_args = --net=none
+             -v /etc/localtime:/etc/localtime:ro
+  run_command = /bin/bash
+  
+  [container#1]
+  type = docker
+  run_image = opensvc/nginx:build5
+  run_args = -v /etc/localtime:/etc/localtime:ro
+             --net=container:svc1.container.0
+  
+  [fs#0]
+  dev@nodes = /dev/mapper/svc1.d0
+  mnt = /srv/svc1/docker
+  mnt_opt = defaults,subvol=docker
+  always_on = drpnodes
+
+  [fs#1]
+  dev@nodes = /dev/mapper/svc1.d0
+  mnt = /srv/svc1/data
+  mnt_opt = defaults,subvol=data
+  always_on = drpnodes
+
+  [sync#0]
+  type = docker
+  target = drpnodes
+
