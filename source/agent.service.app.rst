@@ -119,6 +119,8 @@ Application can be started and stopped without touching the other service resour
 
 The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that integrators can write reusable launcher scripts. Examples of this variable usage below.
 
+Environment variable named ``OPENSVC_IP<n>`` are also set to let app launchers bind the appropriate service ips, for services with instances on different subnets. For example, the service might have a different ip address when starting on the disaster recovery site.
+
 Launcher scripts development guidelines
 =======================================
 
