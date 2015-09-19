@@ -123,6 +123,63 @@ Example configuration::
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/docker
   mnt_opt = defaults,subvol=docker
+
+  [fs#1]
+  dev@nodes = /dev/mapper/svc1.d0
+  mnt = /srv/svc1/data
+  mnt_opt = defaults,subvol=data
+
+  [sync#0]
+  type = docker
+  target = drpnodes
+
+
+Flex with application installed as micro-containers and failover site
+*********************************************************************
+
+This use case is a variant of the previous case, with instances on the secondary site in standby. The nodes on the secondary site can be used to run non-production service to avoid wasting resources.
+
+The major difference here is that the flex primary instance sends replication of the data and configuration to the remove site, so that application delivery can only care about the primary instances. In most cases this data cursor is small and changes only when new application versions are deployed, so a simple replication strategy like rsync is a good candidate.
+
+.. image:: _static/agent.service.sync.flexfailover.docker.png
+   :scale: 50 %
+
+Example configuration::
+
+  [DEFAULT]
+  nodes = n1 n2
+  drpnodes = n3
+  flex_primary = n2
+  autostart_node = n1 n2
+  docker_data_dir = /srv/svc1/docker_data_dir
+  
+  [ip#0]
+  type = docker
+  ipdev = eth0
+  ipname@n1 = 10.0.3.3
+  ipname@n2 = 10.0.3.4
+  ipname@n3 = 10.0.3.5
+  netmask = 255.255.255.0
+  gateway = 10.0.3.1
+  container_rid = container#0
+  
+  [container#0]
+  type = docker
+  run_image = ubuntu:14.10
+  run_args = --net=none
+             -v /etc/localtime:/etc/localtime:ro
+  run_command = /bin/bash
+  
+  [container#1]
+  type = docker
+  run_image = opensvc/nginx:build5
+  run_args = -v /etc/localtime:/etc/localtime:ro
+             --net=container:svc1.container.0
+  
+  [fs#0]
+  dev@nodes = /dev/mapper/svc1.d0
+  mnt = /srv/svc1/docker
+  mnt_opt = defaults,subvol=docker
   always_on = drpnodes
 
   [fs#1]
@@ -134,4 +191,12 @@ Example configuration::
   [sync#0]
   type = docker
   target = drpnodes
+
+  [sync#1]
+  src = /srv/svc1/data/
+  dst = /srv/svc1/data
+  dstfs = /srv/svc1/data
+  options = --exclude=/srv/svc1/data/logs/*
+  target = drpnodes
+
 
