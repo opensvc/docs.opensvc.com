@@ -14,6 +14,7 @@ Contents:
    agent.service.management
    agent.service.ip
    agent.service.app
+   agent.service.sync
    agent.service.encapsulation
    agent.service.container
    storage
