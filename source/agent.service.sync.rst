@@ -200,3 +200,16 @@ Example configuration::
   target = drpnodes
 
 
+A case of replicating middlewares
+*********************************
+
+Some middlewares can take care of their own data on-site and off-site replication. For example Oracle RAC, cassandra and most Big Data middlewares. In this case, users may ponder the choice of using those replication methods or OpenSVC sync resources.
+
+The trade-off is easy to state, but the choice is highly political:
+
+* Using OpenSVC sync resources, you don't have to commission experts for each middleware to activate a disaster recovery
+* Middleware replication drivers are most efficent, have a deep knowledge of how the middleware handles its data
+
+Even if OpenSVC does not handle the replication (or even the ip and disk resources as in a RAC cluster), a service can still be wrapped around the cluster to gain service inventory, cluster coherency analysis collector tools, service moniitoring and service configuration management.
+
+
