@@ -151,6 +151,8 @@ Supported data replication modes
 
 +----------------+----------------+--------------+-----------------+-------------+-----------------+
 | Replication    | Commands       | Sync/Async   |Transport        | Trigger     | Cluster mode    |
+|                |                | (typical     |                 |             |                 |
+|                |                |  period)     |                 |             |                 |
 +================+================+==============+=================+=============+=================+
 | Rsync          | * syncnodes    | Asynchronous | * ip            | * scheduled | * local         |
 |                | * syncdrp      | (hours)      |                 | * on-demand | * multi-site    |
