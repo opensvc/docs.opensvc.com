@@ -79,3 +79,31 @@ The inetd entry-point
 Optionally, users can plug OpenSVC into the system's inetd service. A listening port is allocated to the agent and when the node receives a packet for this port, inetd executes the ``nodemgr dequeue actions`` command. This command fetch from the collector the list of agent actions to execute, executes them, and send results to the collector. This is the ``pull`` mode.
 
 Alternaltively, the node can be configured to allow direct actions from the collector through ``ssh`` and ``sudo``. This is the ``push`` mode.
+
+Example configuration for the pull mode and systemd
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+``/etc/systemd/system/opensvc-actions@.service``::
+
+  [Unit]
+  Description=OpenSVC collector-queued actions handler
+  
+  [Service]
+  ExecStart=-/opt/opensvc/bin/nodemgr dequeue actions
+  
+``/etc/systemd/system/opensvc-actions@.socket``::
+
+  [Unit]
+  Description=OpenSVC socket to receive collector notifications that actions are queued for the local agent
+  
+  [Socket]
+  ListenStream=1214
+  Accept=yes
+  Service=opensvc-actions
+  
+  [Install]
+  WantedBy=sockets.target
+
+Activation::
+
+  # sudo systemctl start opensvc-actions.socket
