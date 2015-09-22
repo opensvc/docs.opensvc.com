@@ -10,6 +10,7 @@ Contents:
    agent.install
    agent.update
    agent.items
+   agent.architecture
    agent.service.creation
    agent.service.management
    agent.service.ip
