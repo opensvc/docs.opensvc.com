@@ -33,7 +33,7 @@ Example configuration::
   [DEFAULT]
   nodes = n1 n2
   drpnodes = n3
-  docker_data_dir = /srv/svc1/docker_data_dir
+  docker_data_dir = /srv/svc1/docker
   
   [ip#0]
   type = docker
@@ -94,7 +94,7 @@ Example configuration::
   nodes = n1 n2 n3
   flex_primary = n2
   autostart_node = n1 n2 n3
-  docker_data_dir = /srv/svc1/docker_data_dir
+  docker_data_dir = /srv/svc1/docker
   
   [ip#0]
   type = docker
@@ -151,7 +151,7 @@ Example configuration::
   drpnodes = n3
   flex_primary = n2
   autostart_node = n1 n2
-  docker_data_dir = /srv/svc1/docker_data_dir
+  docker_data_dir = /srv/svc1/docker
   
   [ip#0]
   type = docker
