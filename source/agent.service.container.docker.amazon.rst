@@ -16,6 +16,14 @@ This leaves us no other option that using the docker NATing.
 Instance configuration
 ======================
 
+Dependencies
+++++++++++++
+
+* Install ``awscli`` and configure the root account credentials.
+* Install arping
+* Install docker
+* Install the OpenSVC agent
+
 /etc/hosts
 ++++++++++
 
