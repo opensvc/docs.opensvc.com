@@ -49,8 +49,8 @@ Security groups
 * Allow ssh between instances in both directions
 * Allow services' middlewares' ingress ports for all services's instances
 
-Adresses
-++++++++
+Addresses
++++++++++
 
 * Allocate one secondary private ip per service
 * Allocate one public Elastic ip per service that need public access
@@ -108,4 +108,8 @@ Service configuration
   src = testeip:data
   dst = testeip:data
 
+References
+==========
+
+* Handling VIP relocation on Amazon EC2: https://aws.amazon.com/articles/2127188135977316
 
