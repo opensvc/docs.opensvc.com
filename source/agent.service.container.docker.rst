@@ -443,3 +443,4 @@ About the promises
    agent.service.container.docker.disaster_recovery_plan
    agent.service.container.docker.chargeback
    agent.service.container.docker.enterprise_architecture
+   agent.service.container.docker.amazon
