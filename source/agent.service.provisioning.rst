@@ -7,6 +7,7 @@ Introduction
 A service handle resources activation and desactivation: disk, volumes groups, filesystems for example. Upon creation of a service, the resources may or may not already exist. In the later case, the service can provision them, in other words the service can allocate disks and ip address, create volume groups and logical volume, format filesystems, create containers, pull docker images.
 
 This section describes:
+
 * how this provisioning feature work
 * how to provision and template services
 * some useful examples
