@@ -348,3 +348,60 @@ Provision:
   send /opt/opensvc/etc/testec2docker4.nsx.lab.net.env to collector ... OK
   update /opt/opensvc/var/testec2docker4.nsx.lab.net.push timestamp ... OK
 
+Docker service on amazon, btrfs on lvm
+++++++++++++++++++++++++++++++++++++++
+
+Template:
+
+::
+
+  [DEFAULT]
+  service_type = TST
+  nodes = node12.nsx.lab.net
+  docker_data_dir = /srv/__SVCNAME__/docker
+  docker_daemon_args = --storage-driver=btrfs
+  app = NSX
+   
+  [disk#0]
+  type = amazon
+  volumes = <size=15>
+  
+  [disk#1]
+  type = lvm
+  name = __SVCNAME__
+  pvs = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0
+  
+  [fs#1]
+  type = btrfs
+  mnt = /srv/__SVCNAME__
+  dev = /dev/__SVCNAME__/root
+  mnt_opt = defaults,subvol=root
+  vg = __SVCNAME__
+  size = 14G
+   
+  [fs#2]
+  type = btrfs
+  mnt = /srv/__SVCNAME__/data
+  dev = /dev/__SVCNAME__/root
+  mnt_opt = defaults,subvol=data
+   
+  [fs#3]
+  type = btrfs
+  mnt = /srv/__SVCNAME__/docker
+  dev = /dev/__SVCNAME__/root
+  mnt_opt = defaults,subvol=docker
+   
+  [container#0]
+  type = docker
+  run_image = ubuntu:latest
+  run_args = --net=none --hostname=__SVCNAME__
+  run_command = /bin/bash
+   
+  [container#1]
+  type = docker
+  run_image = ubuntu:latest
+  run_args = --net=container:__SVCNAME__.container.0
+       --volume /srv/__SVCNAME__/data:/data:rw
+  run_command = /bin/bash
+
+
