@@ -404,4 +404,54 @@ Template:
        --volume /srv/__SVCNAME__/data:/data:rw
   run_command = /bin/bash
 
+Docker service on amazon, btrfs on md raid
+++++++++++++++++++++++++++++++++++++++++++
+
+Template:
+
+::
+
+  [DEFAULT]
+  service_type = TST
+  nodes = node12.nsx.lab.net
+  docker_data_dir = /srv/__SVCNAME__/docker
+  docker_daemon_args = --storage-driver=btrfs
+  app = NSX
+   
+  [disk#0]
+  type = amazon
+  volumes = <size=5> <size-5> <size-5>
+  
+  [disk#1]
+  type = md
+  uuid = 
+  devs = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0 /opt/opensvc/var/__SVCNAME__/dev/disk.0.1 /opt/opensvc/var/__SVCNAME__/dev/disk.0.2
+  spares = 1
+  chunk = 1m
+  level = 1
+  
+  [fs#1]
+  type = btrfs
+  mnt = /srv/__SVCNAME__
+  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt_opt = defaults,subvol=root
+   
+  [fs#2]
+  type = btrfs
+  mnt = /srv/__SVCNAME__/data
+  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt_opt = defaults,subvol=data
+   
+  [fs#3]
+  type = btrfs
+  mnt = /srv/__SVCNAME__/docker
+  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt_opt = defaults,subvol=docker
+   
+  [container#0]
+  type = docker
+  run_image = ubuntu:latest
+  run_args = --net=none --hostname=__SVCNAME__
+  run_command = /bin/bash
+
 
