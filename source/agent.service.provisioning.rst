@@ -463,7 +463,7 @@ Single command provisioning:
 ::
 
   sudo svcmgr -s haproxy1.nsx.lab.net create --provision \
-    --resource '{"rtype": "DEFAULT", "nodes": "node12.nsx.lab.net", "docker_data_dir": "/srv/haproxy1.nsx.lab.net", "service_type": "TST"}' \
+    --resource '{"rtype": "DEFAULT", "nodes": "node12.nsx.lab.net", "docker_data_dir": "/srv/haproxy1.nsx.lab.net/docker", "service_type": "TST"}' \
     --resource '{"rtype": "ip", "type": "amazon", "ipname": "<allocate>", "ipdev": "eth0", "docker_daemon_ip": true, "cascade_allocation": "ip#1.ipname"}' \
     --resource '{"rtype": "ip", "ipdev": "eth0", "ipname": ""}' \
     --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
