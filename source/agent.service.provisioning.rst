@@ -469,6 +469,29 @@ Single command provisioning:
     --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
-    --resource '{"rtype": "container", "type": "docker", "run_image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -p 80:80 -p 443:443 --net=bridge"}'
+    --resource '{"rtype": "container", "type": "docker", "run_image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "run_command": "haproxy -db -f /data/etc/haproxy.cfg"}'
+
+Example haproxy.cfg file in ``/srv/haproxy1.nsx.lab.net/data/etc/haproxy.cfg``:
+
+::
+
+  global
+  	daemon
+  	maxconn 256
+  
+  defaults
+  	mode http
+  	timeout connect 5000ms
+  	timeout client 50000ms
+  	timeout server 50000ms
+  
+  frontend http-in
+  	bind *:80
+  	default_backend servers
+  
+  backend servers
+  	server server1 10.0.0.60:8000 maxconn 32
+  	server server1 10.0.0.61:8000 maxconn 32
+
 
 
