@@ -455,3 +455,20 @@ Template:
   run_command = /bin/bash
 
 
+Cluster-ready HAProxy service on amazon
++++++++++++++++++++++++++++++++++++++++
+
+Single command provisioning:
+
+::
+
+  sudo svcmgr -s haproxy1.nsx.lab.net create --provision \
+    --resource '{"rtype": "DEFAULT", "nodes": "node12.nsx.lab.net", "docker_data_dir": "/srv/haproxy1.nsx.lab.net", "service_type": "TST"}' \
+    --resource '{"rtype": "ip", "type": "amazon", "ipname": "<allocate>", "ipdev": "eth0", "docker_daemon_ip": true, "cascade_allocation": "ip#1.ipname"}' \
+    --resource '{"rtype": "ip", "ipdev": "eth0", "ipname": ""}' \
+    --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
+    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
+    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
+    --resource '{"rtype": "container", "type": "docker", "run_image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -p 80:80 -p 443:443 --net=bridge"}'
+
+
