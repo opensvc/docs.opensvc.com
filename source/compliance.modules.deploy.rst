@@ -12,7 +12,7 @@ Modules can be deployed using one of the following methods:
 
 * Push mode : a trusted server is responsible of pushing the modules to the nodes. The difficult part is the target node listing. Such lists can be extracted from the collector database.
 
-* Pull mode : each node is responsible from fetching the modules from a repository
+* Pull mode : each node is responsible from fetching the modules from a repository.
 
 This chapter describes the last method.
 

@@ -13,6 +13,7 @@ Contents:
    compliance.campaigns
    compliance.rulesets
    compliance.modules
+   compliance.modules.lifecycle
    compliance.modules.deploy
    compliance.objects
    compliance.best.practice
