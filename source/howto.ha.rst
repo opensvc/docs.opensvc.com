@@ -10,10 +10,11 @@ This cookbook presents the steps to setup an automated OpenSVC service failover 
 
 Best practice for heartbeat infrastructure:
 
-*   Try to configure an even number of heartbeats
-*   Try to configure one heartbeat on a dedicated LAN
+*   Try to use more than 2 heartbeat links
+*   Try to mix heartbeat drivers
 *   Don't use the same LAN twice for heartbeat
 *   Don't use LANs with a common point of failure
+*   Try to configure one heartbeat on a dedicated LAN
 
 Installation
 ============
@@ -69,18 +70,19 @@ In file :file:`/usr/local/cluster/conf/nodes`:
 
 .. note::
 
-    No trailing spaces.
-    One node per line.
-    All members of this cluster must be listed.
+    * No trailing spaces.
+    * One node per line.
+    * All members of this cluster must be listed.
 
 Describe heartbeat paths
 ------------------------
 
 OpenHA supported heartbeat types are :
 
-- IP Multicast 
-- Disk
-- Raw device
+- IP Multicast (net) 
+- IP Unicast (unicast)
+- Disk (dio)
+- Raw device (raw)
 
 Heartbeats types can be mixed in the same OpenHA configuration
 
@@ -89,34 +91,50 @@ To setup 3 multicast heartbeats, in file :file:`/usr/local/cluster/conf/monitor`
 ::
 
    node108  net  eth1  239.131.50.10    1780  60
-   node108  net  eth2  239.131.51.10    1780  60
-   node108  net  eth3  239.131.52.10    1780  60
+   node108  dio  /dev/mapper/3600512341234123412341234  0  60
+   node108  unicast  eth0  192.168.0.109    1700  60
    node109  net  eth1  239.131.50.10    1781  60
-   node109  net  eth2  239.131.51.10    1781  60
-   node109  net  eth3  239.131.52.10    1781  60
+   node109  dio  /dev/mapper/3600512341234123412341234  16  60
+   node109  unicast  eth0  192.168.0.108    1700  60
 
-Where:
+``net`` heartbeart parameters:
 
 *   param#1: node hostname
 *   param#2: heartbeat type
 *   param#3: multicast IP
 *   param#4: port number
-*   param#5: heartbeat period
+*   param#5: heartbeat timeout
+
+``unicast`` heartbeart parameters:
+
+*   param#1: node hostname
+*   param#2: heartbeat type
+*   param#3: remote ip address
+*   param#4: port number
+*   param#5: heartbeat timeout
+
+``dio`` or ``disk`` heartbeart parameters:
+
+*   param#1: node hostname
+*   param#2: heartbeat type
+*   param#3: device path (block for ``dio``, raw for ``raw``)
+*   param#4: offset of the exchanged data, in blocks
+*   param#5: heartbeat timeout
 
 With this setup :
 
-- node108 will send heartbeat through eth1 on multicast IP 239.131.50.10 port 1780, with a 60 seconds timeout
-- node108 will send heartbeat through eth2 on multicast IP 239.131.51.10 port 1780, with a 60 seconds timeout
-- node108 will send heartbeat through eth3 on multicast IP 239.131.52.10 port 1780, with a 60 seconds timeout
-- node108 will listen heartbeat through eth1 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
-- node108 will listen heartbeat through eth2 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
-- node108 will listen heartbeat through eth3 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
+- the ``heartd`` process on node108 will send heartbeat data through eth1 on multicast IP 239.131.50.10 port 1780
+- the ``heartd_dio`` process on node108 will write heartbeat data on /dev/mapper/3600512341234123412341234 at offset 0
+- the ``heartd_unicast`` process on node108 will send heartbeat data through eth0 on unicast IP 192.168.0.109 port 1700
+- the ``heartc`` process on node108 will listen for heartbeat data received on eth1 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
+- the ``heartc_dio`` process on node108 will listen read heartbeat data on /dev/mapper/3600512341234123412341234 at offset 16, with a 60 seconds timeout
+- the ``heartc_unicast`` process on node108 will listen for heartbeat data received on eth0 on multicast IP 192.168.0.108 port 1700, with a 60 seconds timeout
 
 .. note::
 
-    Each heartbeat end-point has a unique port number.
-    Each heartbeat path has a unique multicast IP.
-    The monitor file can be copied as-is to the other, except when Solaris IPMP is active (more listeners than senders in this case).
+    * Each heartbeat end-point has a unique port number.
+    * Each heartbeat path has a unique multicast IP.
+    * The monitor file can be copied as-is to the other, except when Solaris IPMP is active (more listeners than senders in this case).
 
 Add services
 ------------
@@ -208,7 +226,9 @@ FROZEN_START   state reached after freezing through open-ha a stopped service. o
 Trigger a failover
 ------------------
 
-When a service is handled to any heartbeat daemon, you must not use stop/start OpenSVC commands to drive this service: the heartbeat daemon being in charge, you must use its command set only. On the node where the service is RUNNING:
+When a service is handled to any heartbeat daemon, you must not use stop/start OpenSVC commands to drive this service: the heartbeat daemon being in charge, you must use its command set only.
+
+On the node where the service is RUNNING:
 
 ::
 
@@ -296,4 +316,8 @@ The Ilo stonith driver uses key-based ssh authentication. The specific key can b
    username = opensvc
    key = /home/opensvc/.ssh/id_dsa
 
-.. note:: Some Ilo firmware versions refuse rsa authentication. To be on the safe side, use dsa keys. You may also be required to remove change the key comment to match the ILo login username.
+.. note::
+
+    * Some Ilo firmware versions refuse rsa authentication. To be on the safe side, use dsa keys.
+    * You may also be required to remove or change the key's comment to match the ILo login username.
+
