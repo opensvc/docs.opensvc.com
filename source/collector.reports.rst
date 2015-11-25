@@ -145,6 +145,12 @@ A list structure. Each member is a dictionnary structure pointing to a metric de
 
   Render a shadow under the metric line or filled-in zone.
 
+* **unit**
+
+  Type: string
+
+  The unit to use when formatting the metric instance values. Example: "MB". Defaults to an empty string.
+
 Example YAML definition
 -----------------------
 
