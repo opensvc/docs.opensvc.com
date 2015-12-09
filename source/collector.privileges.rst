@@ -78,6 +78,11 @@ NetworkManager
 
 Privilege to add, delete and edit subnets in the collector's internal subnets table.
 
+NodeExec
+++++++++
+
+Privilege to post agent commands through the collector's interfaces.
+
 NodeManager
 +++++++++++
 
@@ -115,4 +120,9 @@ StorageExec
 +++++++++++
 
 Privilege to provision a storage volume through the collector provisioning drivers, in the limits fixed by the application code disk group quota. The user must be responsible for the application code the provisioning action is submitted for.
+
+TagManager
+++++++++++
+
+Privilege to create new tags, delete existing tags and modify tags anti-affinity.
 
