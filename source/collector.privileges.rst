@@ -126,3 +126,8 @@ TagManager
 
 Privilege to create new tags, delete existing tags and modify tags anti-affinity.
 
+UserManager
++++++++++++
+
+Privilege to create new user and groups, delete existing users and groups, and modify users and groups properties.
+
