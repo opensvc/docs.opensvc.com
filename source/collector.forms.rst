@@ -212,7 +212,7 @@ Keywords
 
 * **Key**
 
-  If multiple inputs provide the same dictionary key, the **Key** parameter can be set to define its value as the dictionary key in addition to the **Id** key. Thus a script consuming the output can use the predictible **Key** key, whereas the collector still has the **Id** key available to redisplay the submitted form.
+  If multiple inputs provide the same dictionary key, the **Key** parameter can be set to define its value as the dictionary key in addition to the **Id** key. Thus a script consuming the output can use the predictible **Key** key, whereas the collector still has the **Id** key available to redisplay the submitted form. An empty **Key** value insures the input value is not included in the submitted data.
 
 * **Constraint**
 
@@ -236,7 +236,7 @@ Keywords
 
 * **Help**
 
-  A help message displayed as a html title. It appears on hover over the question mark besides the input element.
+  A help message displayed as a html title. It appears on hover over the question mark besides the input element. If not specified, the icon is not displayed.
 
 * **Candidates**
 
