@@ -266,13 +266,18 @@ Keywords
 
   * ``size``
 
-    The submitted data for this input is stored in the object as an integer number of bytes, obtained by converting the submitted string formatted as {number}[ ]{0,1}{unit} where unit is one of:
+    The submitted data for this input is stored in the object as an integer number of bytes, obtained by converting the submitted string formatted as {number}[ ]{0,1}{unit} where unit is one of (case insensitive):
 
-    * ``k`` or ``K``: kilobytes
-    * ``m`` or ``M``: megabytes
-    * ``g`` or ``G``: gigabytes
-    * ``t`` or ``T``: terabytes
-    * ``p`` or ``P``: petabytes
+    * ``k`` or ``kb``: kilobytes
+    * ``m`` or ``mb``: megabytes
+    * ``g`` or ``gb``: gigabytes
+    * ``t`` or ``tb``: terabytes
+    * ``p`` or ``pb``: petabytes
+    * ``ki`` or ``kib``: kibibytes
+    * ``mi`` or ``mib``: mebibytes
+    * ``gi`` or ``gib``: gibibytes
+    * ``ti`` or ``tib``: tebibytes
+    * ``pi`` or ``pib``: pebibytes
 
     The html element used for this type is INPUT or SELECT if **Candidates** is set.
 
@@ -290,6 +295,10 @@ Keywords
 
 
   Unknown values will default to the ``string`` type.
+
+* **Unit**
+
+  Target unit used to convert size and integer Type input values. For example a "10m" value in an input with Unit "k" will result in a "10240" value in the resulting data.
 
 * **ReadOnly**
 
