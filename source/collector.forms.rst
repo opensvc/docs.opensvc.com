@@ -147,6 +147,10 @@ Keywords
 
     This output type can be defined in forms with a peer **compliance variable** output. In this case, compliance fix actions are dispatched to the selected service nodes, or to the selected node.
 
+  * **rest**
+
+    Execute a rest call for each dict with the submitter's privileges. The call type is defined by the **Handler** output parameter (POST, DELETE or PUT). The rest path is defined by the **Function** output parameter (example: /nodes/#nodename/tags). The keys to include in the call data are specified by the **Keys** output parameter. If **Keys** is not set, all available keys are included.
+
 * **NextAssignee**
 
   If **Dest** is set to workflow, this property defines the group or user, as known to the OpenSVC Collector user and group management tables, to assign to next workflow step to.
