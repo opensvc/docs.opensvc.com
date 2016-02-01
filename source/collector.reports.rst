@@ -133,6 +133,12 @@ A list structure. Each member is a dictionnary structure pointing to a metric de
   The metric `Id` as reported in the :menuselection:`Admin --> Metrics` view.
 
 
+* **label**
+
+  Type: string
+
+  The label representing the metric in the chart legend.
+
 * **fill**
 
   Candidates: ``Yes``, ``No``
