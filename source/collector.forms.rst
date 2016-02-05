@@ -293,6 +293,9 @@ Keywords
 
     The submitted data is for this input is a string. The html element used for this type is INPUT with a date and time picker.
 
+  * ``checklist``
+
+    The submitted data for this input is a list whose elements are the values of the checked items at submition. Proposed items can be defined through ``Candidates`` or through ``Function`` and ``Args``. ``ReadOnly``, ``Mandatory`` and ``Constraints`` are ignored.
 
   Unknown values will default to the ``string`` type.
 
