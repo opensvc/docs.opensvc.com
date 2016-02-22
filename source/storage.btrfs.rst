@@ -14,9 +14,6 @@ Command set
 :command:`syncnodes`
     Initial synchronization or incremental synchronisation. First one will be a Initial synchronisation, next will be incremental
 
-:command:`syncupdate`
-    Same
-
 Status
 ======
 
