@@ -204,12 +204,21 @@ A string describing the report. This string will be rendered with the chart, unl
 Sections
 ++++++++
 
-A dictionnary structure, supporting the following keys: `Charts` and `Metrics`. Values are a dictionnary structure.
-
-* `Charts` keys: `Title`, `Desc` and `chart_id`
-* `Charts` keys: `Title`, `Desc` and `chart_id`
+A dictionnary structure, supporting the following keys `Title`, `Desc` and `children`.
 
 Keys details:
+
+* **children**
+
+  A list of dictionnary structures. Each dictionnary can describe a chart or a metric
+
+  * Chart keys: `Title`, `Desc` and `chart_id`
+
+  * Metric keys: `Title`, `Desc` and `metric_id`
+
+  * **width**
+
+    The width in percent of the section element. Of note the padding and margin of elements are set to 1%, so the width must compensate for this, substracting 4% to each element width. For example to render a chart and a metric in 2/3 - 1/3 layout, the width should be set to 62% and 29%, the remaining 8% being used by 4 * 1% margins and 4 * 1% paddings.
 
 * **Title**
 
@@ -242,20 +251,23 @@ Example YAML definition
     
     Sections:
       -
-        Metrics:
+        children:
           -
             Title: Linux release dispatch
             metric_id: 48
+            width: 100%
     
-    Sections:
       -
-        Metrics:
+        Title: RAM
+        Desc: All about memory
+        children:
           -
             Title: Average RAM per node
             Desc: in megabytes
             metric_id: 49
-        Charts:
+            width: 62%
           -
             Title: Total RAM
             chart_id: 3
+            width: 29%
   
