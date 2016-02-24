@@ -11,6 +11,7 @@ Contents:
    agent.update
    agent.items
    agent.architecture
+   agent.scheduler
    agent.service.creation
    agent.service.provisioning
    agent.service.management
