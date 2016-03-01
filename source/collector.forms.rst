@@ -149,11 +149,44 @@ Keywords
 
   * **rest**
 
-    Execute a rest call for each dict with the submitter's privileges. The call type is defined by the **Handler** output parameter (POST, DELETE or PUT). The rest path is defined by the **Function** output parameter (example: /nodes/#nodename/tags). The keys to include in the call data are specified by the **Keys** output parameter. If **Keys** is not set, all available keys are included.
+    Execute a rest call for each dict with the submitter's privileges. The call type is defined by the **Handler** output parameter (POST, DELETE or PUT). The rest path is defined by the **Function** output parameter (example: /nodes/#nodename/tags). The keys to include in the call data are specified by the **Keys** output parameter. If **Keys** is not set, all available keys are included. If **Mangle** is set to a js function, use the returned data instead of the form data.
 
 * **NextAssignee**
 
   If **Dest** is set to workflow, this property defines the group or user, as known to the OpenSVC Collector user and group management tables, to assign to next workflow step to.
+
+* **Mangle**
+
+  This keyword is considered if the **Dest** is set to **rest**. The value is a javascript function definition used to mangle the form data before submitting the rest request. This function takes the form data as argument and returns a data structure compatible with the rest handler pointed by **Function**.
+
+  .. warning:: Due to yaml syntax limitation, the '<' character is not allowed in the mangle function. Hopefully, in most cases a negated test can workaround this issue.
+
+  Example: Output definition to prepare a pullable service configuration::
+
+    Outputs:
+      -
+        Type: json
+        Format: dict
+        Dest: rest
+        Function: /services
+        Handler: POST
+        Mangle: |
+          function(data) {
+            var template = `
+          [DEFAULT]
+          app = $(data.app)
+          nodes = $(data.nodes)
+
+          [fs#1]
+          type = btrfs
+          dev = LABEL=$(data.svcname).fs.1
+          mnt = /$(data.svcname)
+          `
+            ret = {
+              "svc_name": data.svcname,
+              "svc_envfile": template
+            }
+          }
 
 * **NextForms**
 
