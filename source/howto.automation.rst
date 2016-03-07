@@ -924,7 +924,7 @@ Automating the service configuration file generation
 Rationale
 +++++++++
 
-For a service with more than 260 resources, handling the service through a file editor is too tedious and error-prone. The OpenSVC collector can present too selected users a form entrusted with the service configuration file formatting.
+For a service with more than 260 resources, handling the service configuration through a file editor is too tedious and error-prone. The OpenSVC collector can present to selected users a form entrusted with the service configuration file formatting.
 
 This form prompts the user for:
 
