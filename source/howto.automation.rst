@@ -104,7 +104,7 @@ Node routes
 
 ::
 
-    for i in $(seq 1 32); do gcloud routes create rt-ip$i --next-hop-instance spd$(printf %.2d $i) --next-hop-instance-zone europe-west1-b --destination-range 10.0.0.$i/32 ; done
+    for i in $(seq 1 32); do gcloud compute routes create rt-ip$i --next-hop-instance spd$(printf %.2d $i) --next-hop-instance-zone europe-west1-b --destination-range 10.0.0.$i/32 ; done
 
 
 Configuration management
