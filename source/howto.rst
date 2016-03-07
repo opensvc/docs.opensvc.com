@@ -11,3 +11,4 @@ Contents:
    howto.ha
    howto.nfsha
    howto.vmencap
+   howto.automation
