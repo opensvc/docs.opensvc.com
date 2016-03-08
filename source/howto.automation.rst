@@ -980,11 +980,12 @@ Form configuration
     
             # factorize gce resource params here
             gce_zone = europe-west1-b
-            detach_on_stop = false
     
             [disk#00]
             type = gce
+            subset = gce
             size = 20g
+            always_on = nodes
             __DISK0NAMES__
     
             [fs#00]
@@ -999,6 +1000,9 @@ Form configuration
             [subset#ip:cge]
             parallel = true
     
+            [subset#container:containers]
+            parallel = true
+    
             `
     
             	var fmt_pod = String.raw`
@@ -1011,6 +1015,7 @@ Form configuration
             type = gce
             names = __SVCNAME__-pod__POD__
             size = 17g
+            always_on = nodes
             disable = true
             disable@__NODE__ = false
     
@@ -1050,6 +1055,7 @@ Form configuration
             [container#__POD_PADDED__sm]
             tags = sm sm.container sm.container.pod__POD_PADDED__ pod__POD_PADDED__
             type = docker
+            subset = containers
             run_image = __DISM__
             run_args = --net=none
             	-e MYSQL_ROOT_PASSWORD=__MY_ROOT_PWD__
@@ -1086,6 +1092,7 @@ Form configuration
             [container#__POD_PADDED__db]
             tags = db db.container db.container.pod__POD_PADDED__ pod__POD_PADDED__
             type = docker
+            subset = containers
             run_image = __DIDB__
             run_args = --net=none
             	-e MYSQL_ROOT_PASSWORD=__MY_ROOT_PWD__
@@ -1149,7 +1156,8 @@ Form configuration
             	}
             	ret = {
             		"svc_name": data["svcname"],
-            		"svc_envfile": buff
+            		"svc_envfile": buff,
+                            "svc_app": data.app
             	}
             	return ret
             }
@@ -1217,14 +1225,15 @@ Form configuration
         LabelCss: lock
         Type: string
         Mandatory: No
-    
+
+ 
 Service provisioning
 --------------------
 
 On the flex primary::
 
     sudo /opt/opensvc/bin/svcmgr -s spdsvc01 pull
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster pull
+    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 sync nodes
     sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster provision
     sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster compliance attach --moduleset sdpc.svc
     sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster compliance fix --moduleset sdpc.svc
