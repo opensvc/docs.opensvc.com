@@ -47,10 +47,10 @@ The private nodes ip addresses are plumbed on a backend bridge named br0. The ip
 Network Routes
 ++++++++++++++
 
-Google cloud routes are required to let the cloud routers known on which node a middleware instance is hosted. We'll name Google cloud routes ip-rt<n>, where <n> is the last packet of the cidr ip address. Example:
+Google cloud routes are required to let the cloud routers known on which node a middleware instance is hosted. We'll name Google cloud routes rt-ip<n>, where <n> is the last packet of the cidr ip address. Example:
 
-* ip-rt1: 10.0.0.1/32 next hop spd01
-* ip-rt2: 10.0.0.1/32 next hop spd01
+* rt-ip1: 10.0.0.1/32 next hop spd01
+* rt-ip2: 10.0.0.2/32 next hop spd01
 * ...
 
 Disks
