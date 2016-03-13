@@ -279,6 +279,10 @@ Keywords
 
   A list of candidate values used as OPTION html elements of the input SELECT html element.
 
+* **Form**
+
+  In conjonction with the ``form`` input type, this parameter points the encapsulated form by **name**.
+
 * **Type**
 
   Default: ``string``
@@ -328,9 +332,14 @@ Keywords
 
   * ``checklist``
 
-    The submitted data for this input is a list whose elements are the values of the checked items at submition. Proposed items can be defined through ``Candidates`` or through ``Function`` and ``Args``. ``ReadOnly``, ``Mandatory`` and ``Constraints`` are ignored.
+    The submitted data for this input is a list whose elements are the values of the checked items at submition. Proposed items can be defined through **Candidates** or through **Function** and **Args**. **ReadOnly**, **Mandatory** and **Constraints** are ignored.
 
   Unknown values will default to the ``string`` type.
+
+  * ``form``
+
+    The input value is the dataset produced by another form, pointed by the **Form** input keyword.
+
 
 * **Unit**
 
