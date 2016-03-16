@@ -279,6 +279,10 @@ Keywords
 
   A list of candidate values used as OPTION html elements of the input SELECT html element.
 
+* **StrictCandidates**
+
+  If set to ``yes``, add a constraint violation if the free text autocomplete value is not found in the candidates list.
+
 * **Form**
 
   In conjonction with the ``form`` input type, this parameter points the encapsulated form by **name**.
