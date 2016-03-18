@@ -46,6 +46,14 @@ Group management
 	ldap_group_member_attrib = "member"
 	ldap_allowed_groups = ["OPENSVC_ADMIN", "OPENSVC_CONSULTATION", "OPENSVC_EP", "OPENSVC_DBA"]
 
+
+The group mapping is useful to:
+
+* limit the local group creation to those resulting from the mapping, even if a LDAP user is member of other LDAP groups
+* assign collector's privilege groups to the users based on their LDAP group ownership, with no need for the LDAP to know about these privilege groups
+
+::
+
 	ldap_group_mapping = {
 	 "OPENSVC_ADMIN": ["OPENSVC_ADMIN", "Manager", "CompManager", "NodeManager", "CheckManager", "CompExec", "ObsManager", "NetworkManager", "DnsManager", "StorageManager", "StorageExec", "ProvisioningManager", "CheckExec", "FormsManager", "CheckRefresh", "TagManager", "SafeUploader", "NodeExec", "UserManager", "Everybody"],
 	 "OPENSVC_RO": ["OPENSVC_RO", "Everybody"],
