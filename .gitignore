@@ -1,5 +1,6 @@
 *.swp
 *.mo
+*~
 source/translated/pot/
 update_docs.bash
 build/

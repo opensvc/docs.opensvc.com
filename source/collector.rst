@@ -11,3 +11,4 @@ Contents:
    collector.views
    collector.forms
    collector.reports
+   collector.admin
