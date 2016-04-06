@@ -31,7 +31,7 @@ The resulting file tree must organized as:
 	+- deb/
 	+- depot/
 	+- exe/
-	+- pkg/
+	+- sunos-pkg/
 	+- rpms/
 	 +- current -> opensvc-1.4-49.rpm
 	 +- opensvc-1.4-48.rpm
