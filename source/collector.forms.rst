@@ -375,6 +375,10 @@ Keywords
 
   * ``No``
 
+* **DisableAutoDefault**
+
+  For inputs with candidates and no default value specified, disable the picking of the first candidate as the default value.
+
 * **Default**
 
   A value used to pre-fill the input element or choose a select option on form load. The default value accept some predefined keywords:
