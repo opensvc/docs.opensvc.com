@@ -16,13 +16,19 @@ Out of file descriptors on Solaris
 
 The number of file descriptors used by the agent augments with the number of services, notably during svcmon which spawns one subprocess per service.
 The python interpreter in Solaris may be build in 32 bits, limiting the maximum number of file descriptors to 256, whatever to value set as a ulimit. The limit is reached with ~62 service per host.
-To work around this issue, you can either switch to a 64 bits python build or setup a python wrapper::
+To work around this issue, you can either switch to a 64 bits python build or setup a python wrapper binary::
 
-	$ cat /opt/opensvc/bin/python.wrapper
-	#!/bin/bash
-	LD_PRELOAD_32=/usr/lib/extendedFILE.so.1 exec /usr/bin/python2.7 $*
+	$ cat <<EOF >/tmp/python.wrapper.c
+	#include <unistd.h>
+	main(int ac, char *av[], char *en[])
+	{
+		putenv("LD_PRELOAD_32=/usr/lib/extendedFILE.so.1");
+		execv("/usr/bin/python", av);
+	}
+	EOF
 
-	$ cd /opt/opensvc/bin && ln -sf python.wrapper python
+	$ sudo gcc -o /opt/opensvc/bin/python.wrapper /tmp/python.wrapper.c
+
 
 Note since opensvc-1.7-10222, the agent postinstall detects the presence of a wrapper in /opt/opensvc/bin/python.wrapper and uses it as a python symlink.
 
