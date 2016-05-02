@@ -238,9 +238,13 @@ Cluster members communicate through ssh. Each node must trust its peer through k
 Set Host Mode
 =============
 
-As we are in a lab environment, we do not need to specify the host mode : "TST" is the default value, and is adequate.
+Define on both nodes the relevant host mode with the method described `here <agent.install.html#set-host-mode>`_.
 
-For other purposes than testing, we would have defined on both nodes the relevant mode with the method described `here <agent.install.html#set-host-mode>`_.
+Example::
+
+	sles1:/ # nodemgr set --param node.host_mode --value TST
+	sles2:/ # nodemgr set --param node.host_mode --value TST
+
 
 Service Creation
 ================
