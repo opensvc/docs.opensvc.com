@@ -19,7 +19,7 @@ A form is basically a collection of inputs and outputs. Possible outputs include
 
 * script execution, using the inputs data as a JSON-formatted argument.
 
-* store as a compliance rule in a ruleset
+* GET, POST, DELETE, PUT request on the rest api
 
 * store as a row in a collector database table
 
@@ -89,6 +89,10 @@ Outputs
 Keywords
 ++++++++
 
+* **Id**
+
+  A string identifying uniquely the output. This id is used to index the hash storing the rest calls resulting data. If no **Id** is set for a rest output, its resulting data is discarded.
+
 * **Type**
 
   Candidates: ``json``
@@ -139,14 +143,6 @@ Keywords
 
     Save the submitted form data in a collector database table. In this mode, each input identifier must be a table column name.
 
-  * **compliance variable**
-
-    Save the submitted form data in a compliance variable in a special ruleset. This output can be used in 'custo' type forms, where a selector asks the used to pick a service or a node to customize. The ruleset where the variable will be stored is named after the selected service or node.
-
-  * **compliance fix**
-
-    This output type can be defined in forms with a peer **compliance variable** output. In this case, compliance fix actions are dispatched to the selected service nodes, or to the selected node.
-
   * **rest**
 
     Execute a rest call for each dict with the submitter's privileges. The call type is defined by the **Handler** output parameter (POST, DELETE or PUT). The rest path is defined by the **Function** output parameter (example: /nodes/#nodename/tags). The keys to include in the call data are specified by the **Keys** output parameter. If **Keys** is not set, all available keys are included. If **Mangle** is set to a js function, use the returned data instead of the form data.
@@ -157,7 +153,7 @@ Keywords
 
 * **Mangle**
 
-  This keyword is considered if the **Dest** is set to **rest**. The value is a javascript function definition used to mangle the form data before submitting the rest request. This function takes the form data as argument and returns a data structure compatible with the rest handler pointed by **Function**.
+  This keyword is considered if the **Dest** is set to **rest**. The value is a javascript function definition used to mangle the form data before submitting the rest request. This function takes the form data as first argument and the previously done rest calls resulting data hash as the second argument (see **Id**). The mangler returns a data structure compatible with the rest handler pointed by **Function**.
 
   .. warning:: Due to yaml syntax limitation, the '<' character is not allowed in the mangle function. Hopefully, in most cases a negated test can workaround this issue.
 
