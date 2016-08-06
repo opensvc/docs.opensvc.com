@@ -138,10 +138,10 @@ You should now be able to run succesfully:
 
 ::
 
-	/opt/opensvc/etc/yoursvc print_status
-	/opt/opensvc/etc/yoursvc push
-	/opt/opensvc/etc/yoursvc diskupdate
-	/opt/opensvc/etc/yoursvc stop
-	/opt/opensvc/etc/yoursvc start
+	sudo svcmgr -s yoursvc print status
+	sudo svcmgr -s yoursvc push
+	sudo svcmgr -s yoursvc diskupdate
+	sudo svcmgr -s yoursvc stop
+	sudo svcmgr -s yoursvc start
 
 

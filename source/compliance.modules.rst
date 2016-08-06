@@ -50,7 +50,7 @@ A module must return one of those three possible values
 Location
 --------
 
-Modules are installed in ``/opt/openvc/var/compliance``.
+Modules are installed in ``<OSVCVAR>/compliance``.
 
 File naming conventions
 -----------------------
@@ -126,7 +126,7 @@ Python script
 
 ::
 
-	#!/opt/opensvc/bin/python
+	#!/usr/bin/env python
 
 	import os
 	import sys

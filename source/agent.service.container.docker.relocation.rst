@@ -31,10 +31,10 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
 ::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com docker images
+        root@deb1:/# busybox.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com docker pull opensvc/busybox:date
+        root@deb1:/# busybox.opensvc.com docker pull opensvc/busybox:date
         Pulling repository opensvc/busybox
         b073e328878e: Download complete
         511136ea3c5a: Download complete
@@ -43,7 +43,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         98b9fdab1cb6: Download complete
         e2dda52210a3: Download complete
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -56,15 +56,15 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com startcontainer
-        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
+        root@deb1:/# busybox.opensvc.com startcontainer
+        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
         17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         b82cf3232b7982706b2889f11be0af15f33dc2872939cdbdd9ca39f8cbf56b03
         
         17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
         17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -76,7 +76,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com docker attach b82cf3232b79
+        root@deb1:/# busybox.opensvc.com docker attach b82cf3232b79
         Thu Jun  5 15:06:19 UTC 2014
         Thu Jun  5 15:06:20 UTC 2014
         Thu Jun  5 15:06:21 UTC 2014
@@ -119,7 +119,7 @@ Check Storage Prerequisites
 
 It's the same storage device, with serial 9NOL1o-3Abi-4vlT
 
-.. warning:: If you plan to use such a setup in production, you are strongly encouraged to enable scsi reservation on devices. Add ``scsireserv = true`` to ``[vg#1]`` config section in file ``/opt/opensvc/etc/busybox.opensvc.com.env``. OpenSVC will avoid data corruption risk by putting scsi reservation on devices belonging to your volume group. Storage equipment have to support this feature.
+.. warning:: If you plan to use such a setup in production, you are strongly encouraged to enable scsi reservation on devices. Add ``scsireserv = true`` to ``[vg#1]`` config section in file ``<OSVCETC>/busybox.opensvc.com.env``. OpenSVC will avoid data corruption risk by putting scsi reservation on devices belonging to your volume group. Storage equipment have to support this feature.
 
 Check mutual ssh trust
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -154,7 +154,7 @@ We need to change **one** parameter in the OpenSVC service config file
 
 This makes the service config file looks like::
 
-        root@deb1:/opt/opensvc/etc# cat busybox.opensvc.com.env
+        root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -189,9 +189,9 @@ This makes the service config file looks like::
 
 Let's check the status::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
-        send /opt/opensvc/etc/busybox.opensvc.com.env to collector ... OK
-        update /opt/opensvc/var/busybox.opensvc.com.push timestamp ... OK
+        root@deb1:/# busybox.opensvc.com print status
+        send /etc/opensvc/busybox.opensvc.com.env to collector ... OK
+        update /etc/opensvc/busybox.opensvc.com.push timestamp ... OK
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
@@ -209,13 +209,13 @@ Let's check the status::
 
 Pushing the configuration (always **from** the node owning the service)::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com syncnodes
+        root@deb1:/# busybox.opensvc.com syncnodes
         18:02:35 INFO    BUSYBOX.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com syncnodes --force
-        18:02:40 INFO    BUSYBOX.OPENSVC.COM         exec '/opt/opensvc/etc/busybox.opensvc.com --waitlock 3600 postsync' on node deb2.opensvc.com
+        root@deb1:/# busybox.opensvc.com syncnodes --force
+        18:02:40 INFO    BUSYBOX.OPENSVC.COM         exec '/usr/bin/svcmgr -s busybox.opensvc.com --waitlock 3600 postsync' on node deb2.opensvc.com
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -233,7 +233,7 @@ Pushing the configuration (always **from** the node owning the service)::
 
 Checking the service status on the passive node::
 
-        root@deb2:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb2:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   down
         |- avail                  down
@@ -257,7 +257,7 @@ Our environment is now ready to be relocated on node deb2.opensvc.com. Once you 
 **On deb1.opensvc.com**::
 
         root@deb1:/# busybox.opensvc.com stop
-        18:13:15 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock stop b82cf3232b79
+        18:13:15 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock stop b82cf3232b79
         18:13:25 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         b82cf3232b79
         
@@ -318,8 +318,8 @@ Our environment is now ready to be relocated on node deb2.opensvc.com. Once you 
         
         18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#2    mount -t ext4 /dev/mapper/vgbusybox-lvbusyboxdata /opt/busybox.opensvc.com/appdata
         18:13:37 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 starting docker daemon
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock -r=false -d -g /opt/busybox.opensvc.com/appdata -p /opt/opensvc/var/busybox.opensvc.com/docker.pid --ip 37.59.71.25
-        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock start b82cf3232b79
+        18:13:37 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock -r=false -d -g /opt/busybox.opensvc.com/appdata -p /var/lib/opensvc/busybox.opensvc.com/docker.pid --ip 37.59.71.25
+        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock start b82cf3232b79
         18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         b82cf3232b79
         

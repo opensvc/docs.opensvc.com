@@ -6,7 +6,7 @@ The OpenSVC embeds a scheduler. The node and each service has a private schedule
 Scheduler behaviour
 ===================
 
-The agent postinstall configures a system's scheduler task at a 10 minutes period executing the ``/opt/opensvc/bin/cron/opensvc`` script. This script runs the OpenSVC agent scheduler for the node and each service.
+The agent postinstall configures a system's scheduler job at a 1 minute period executing the ``nodemgr schedulers`` command. This ``schedulers`` action runs the OpenSVC agent scheduler for the node and each service.
 
 For each task, the scheduler determines if the current time meets the task's schedule definition constraints. If all constraints are met, the task action is run in a subprocess and the last run timestamp is updated.
 
@@ -26,14 +26,14 @@ Node schedule
 
 ::
 
-	$ sudo /opt/opensvc/bin/nodemgr print schedule
+	$ sudo nodemgr print schedule
 	action                last run               config parameter          schedule definition
 	------                --------               ----------------          -------------------
 	auto_reboot           2016-02-23 16:50:01    reboot.schedule           16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr
 	auto_rotate_root_pw   2015-02-25 17:17:17    rotate_root_pw.schedule   -
 	...
 
-The scheduled tasks can be configured in ``/opt/opensvc/etc/node.conf`` with a configlet like::
+The scheduled tasks can be configured in ``<OSVCETC>/node.conf`` with a configlet like::
 
 	[<section>]
 	<parameter> = <definition>
@@ -50,6 +50,7 @@ The supported schedules are:
 
 * Node inventoring tasks : pushasset, pushpatch, pushpkg, pushdisks
 * Node performance metrics inventoring : pushstats
+* Node performance metrics collection : collect_stats
 * Node file content tracking task : sysreport
 * Node configuration audit and/or remediation task : compliance_auto
 * Health checking task : checks
@@ -66,7 +67,7 @@ Service schedule
 
 ::
 
-	$ sudo /opt/opensvc/bin/svcmgr -s deb1.opensvc.com print schedule
+	$ sudo svcmgr -s deb1.opensvc.com print schedule
 	action                last run               config parameter          schedule definition
 	------                --------               ----------------          -------------------
 	compliance_auto       2016-02-24 03:00:08    DEFAULT.comp_schedule     00:00-06:00@361
@@ -78,7 +79,7 @@ Service schedule
 	...
 
 
-The scheduled tasks can be configured in ``/opt/opensvc/etc/<svcname>.env`` with a configlet like::
+The scheduled tasks can be configured in ``<OSVCETC>/<svcname>.env`` with a configlet like::
 
 	[<section>]
 	<parameter> = <definition>
@@ -102,7 +103,7 @@ The supported schedules are:
 Schedule definition
 ===================
 
-The complete and up-to-date schedule syntax reference is available in ``/opt/opensvc/usr/share/doc/node.conf`` template file.
+The complete and up-to-date schedule syntax reference is available in ``<OSVCDOC>/node.conf`` template file.
 
 ::
 
@@ -163,7 +164,7 @@ Executing the scheduler code file triggers a test routine.
 
 ::
 
-	$ /opt/opensvc/bin/python /opt/opensvc/lib/rcScheduler.py
+	$ python <OSVCLIB>/rcScheduler.py
 	passed : test '2015-02-27 10:00' in schedule ''       expected False => result False (no schedule)
 	passed : test '2015-02-27 10:00' in schedule '@0'     expected False => result False (interval set to 0)
 	passed : test '2015-02-27 10:00' in schedule '*@0'    expected False => result False (interval set to 0)

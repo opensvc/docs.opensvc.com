@@ -19,7 +19,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
 **Initial Service Configuration**::
 
-        root@deb1:/opt/opensvc/etc# cat busybox.opensvc.com.env
+        root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -53,7 +53,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
 ::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com docker images
+        root@deb1:/# busybox.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 
         root@deb1:/# busybox.opensvc.com print status
@@ -92,7 +92,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         '- hb                     n/a
 
         root@deb1:/# busybox.opensvc.com startcontainer
-        17:07:20 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
+        17:07:20 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
         17:07:22 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         ce6204fcec5a1e449a52d232c87d724fb0349cf9d932abfd8dfc9e976c10ab8b
         
@@ -137,7 +137,7 @@ We can do this modification while service is running : we will add a ``drpnodes`
 
 **Once it's done on deb1.opensvc.com**::
 
-        root@deb1:/opt/opensvc/etc# head -6 busybox.opensvc.com.env
+        root@deb1:/# busybox.opensvc.com.env print config | head -6
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -229,7 +229,7 @@ Config Summary
 
 The service configuration looks like::
 
-        root@deb1:/opt/opensvc/etc# cat busybox.opensvc.com.env
+        root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -288,7 +288,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
 
 ::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
@@ -310,7 +310,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
 
 We trigger an initial full data synchronization::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com syncfullsync
+        root@deb1:/# busybox.opensvc.com syncfullsync
         18:11:10 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap1 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:11:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -330,7 +330,7 @@ We trigger an initial full data synchronization::
         0+63178 enregistrements lus
         0+63178 enregistrements écrits
         1073741824 octets (1,1 GB) copiés, 22,4865 s, 47,8 MB/s
-        18:11:42 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state
+        18:11:42 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state
         18:11:42 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  dd if=/dev/vglocaldeb1/lvbusyboxroot_osvc_snap1 bs=1M | /usr/bin/ssh -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com dd bs=1M of=/dev/mapper/vglocaldeb2-lvbusyboxroot
         1024+0 records in
         1024+0 records out
@@ -338,9 +338,9 @@ We trigger an initial full data synchronization::
         0+62091 enregistrements lus
         0+62091 enregistrements écrits
         1073741824 octets (1,1 GB) copiés, 33,7645 s, 31,8 MB/s
-        18:12:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state
+        18:12:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
@@ -362,7 +362,7 @@ We trigger an initial full data synchronization::
 
 We trigger OpenSVC service configuration sync to drpnodes, which also initiate an incremental update of data synchronization::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com syncdrp --force
+        root@deb1:/# busybox.opensvc.com syncdrp --force
         18:13:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:13:25 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -395,7 +395,7 @@ We trigger OpenSVC service configuration sync to drpnodes, which also initiate a
           Renamed "lvbusyboxdata_osvc_snap2" to "lvbusyboxdata_osvc_snap1" in volume group "vglocaldeb1"
         
         18:14:13 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  update state file with snap uuid xCHoG0-ghs9-Rpzx-nEzk-1pLC-gPku-Mffsyk
-        18:14:13 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state
+        18:14:13 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state
         18:14:13 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  dds --extract --cow /dev/mapper/vglocaldeb1-lvbusyboxroot_osvc_snap1-cow --source /dev/vglocaldeb1/lvbusyboxroot_osvc_snap2 | /usr/bin/ssh -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com dds --merge --dest /dev/mapper/vglocaldeb2-lvbusyboxroot -v
         18:14:13 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  Snapshot header:
           magic             0x70416e53
@@ -418,10 +418,10 @@ We trigger OpenSVC service configuration sync to drpnodes, which also initiate a
           Renamed "lvbusyboxroot_osvc_snap2" to "lvbusyboxroot_osvc_snap1" in volume group "vglocaldeb1"
         
         18:14:23 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  update state file with snap uuid fCD6EK-Digj-cRk5-fEoM-3lnq-d38U-PzCOrp
-        18:14:23 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state
+        18:14:23 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state
         18:14:23 INFO    BUSYBOX.OPENSVC.COM         exec '/opt/opensvc/etc/busybox.opensvc.com --waitlock 3600 postsync' on node deb2.opensvc.com
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -449,7 +449,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
 
 ::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -469,7 +469,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
 
 Trigerring incremental data replication::
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com syncupdate --force
+        root@deb1:/# busybox.opensvc.com syncupdate --force
         19:08:41 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         19:08:48 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -502,7 +502,7 @@ Trigerring incremental data replication::
           Renamed "lvbusyboxdata_osvc_snap2" to "lvbusyboxdata_osvc_snap1" in volume group "vglocaldeb1"
         
         19:08:57 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  update state file with snap uuid 2hfvQV-OowW-JvqS-R6lw-5gW0-IEFa-pqd44j
-        19:08:57 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#2_dds_state
+        19:08:57 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#2_dds_state
         19:08:57 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  dds --extract --cow /dev/mapper/vglocaldeb1-lvbusyboxroot_osvc_snap1-cow --source /dev/vglocaldeb1/lvbusyboxroot_osvc_snap2 | /usr/bin/ssh -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com dds --merge --dest /dev/mapper/vglocaldeb2-lvbusyboxroot -v
         19:08:57 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  Snapshot header:
           magic             0x70416e53
@@ -525,12 +525,12 @@ Trigerring incremental data replication::
           Renamed "lvbusyboxroot_osvc_snap2" to "lvbusyboxroot_osvc_snap1" in volume group "vglocaldeb1"
         
         19:08:59 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  update state file with snap uuid TJwnak-FSZI-Py2s-V8Wr-AUbQ-wlXM-Sdm375
-        19:08:59 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/opt/opensvc/var/busybox.opensvc.com_sync#1_dds_state
+        19:08:59 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state
 
 Stopping service on **production** side::
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com stop
-        19:09:08 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock stop ce6204fcec5a
+        root@deb1:/# busybox.opensvc.com stop
+        19:09:08 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock stop ce6204fcec5a
         19:09:20 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         ce6204fcec5a
         
@@ -553,7 +553,7 @@ Stopping service on **production** side::
         19:09:28 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 down
         19:09:28 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
 
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   down
         |- avail                  down
@@ -574,7 +574,7 @@ Stopping service on **production** side::
         
 Starting service on **DRP** side::
 
-        root@deb2:/opt/opensvc/lib# busybox.opensvc.com print status
+        root@deb2:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   stdby up
         |- avail                  stdby up
@@ -592,7 +592,7 @@ Starting service on **DRP** side::
         |                                  # no destination nodes
         '- hb                     n/a
 
-        root@deb2:/opt/opensvc/lib# busybox.opensvc.com start
+        root@deb2:/# busybox.opensvc.com start
         19:09:40 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.24 availability
         19:09:44 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 37.59.71.24 netmask 255.255.255.224 up
         19:09:44 INFO    BUSYBOX.OPENSVC.COM.IP#1    arping -U -c 1 -I eth0 -s 37.59.71.24 37.59.71.24
@@ -608,15 +608,15 @@ Starting service on **DRP** side::
         
         19:09:46 INFO    BUSYBOX.OPENSVC.COM.FS#2    mount -t ext4 /dev/mapper/vglocaldeb2-lvbusyboxdata /opt/busybox.opensvc.com/appdata
         19:09:46 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 starting docker daemon
-        19:09:46 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock -r=false -d -g /opt/busybox.opensvc.com/appdata -p /opt/opensvc/var/busybox.opensvc.com/docker.pid --ip 37.59.71.24
-        19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/busybox.opensvc.com/docker.sock start ce6204fcec5a
+        19:09:46 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock -r=false -d -g /opt/busybox.opensvc.com/appdata -p /var/lib/opensvc/busybox.opensvc.com/docker.pid --ip 37.59.71.24
+        19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock start ce6204fcec5a
         19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         ce6204fcec5a
         
         19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
         19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
 
-        root@deb2:/opt/opensvc/lib# busybox.opensvc.com print status
+        root@deb2:/# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -633,14 +633,14 @@ Starting service on **DRP** side::
         |  '- sync#i1        .... n/a      rsync system files to drpnodes
         |                                  # no destination nodes
         '- hb                     n/a
-        root@deb2:/opt/opensvc/lib# busybox.opensvc.com docker attach ce6204fcec5a
+        root@deb2:/# busybox.opensvc.com docker attach ce6204fcec5a
         Fri Jun  6 17:10:09 UTC 2014
         Fri Jun  6 17:10:10 UTC 2014
         Fri Jun  6 17:10:11 UTC 2014
         Fri Jun  6 17:10:12 UTC 2014
         Fri Jun  6 17:10:13 UTC 2014
         
-        root@deb2:/opt/opensvc/lib# busybox.opensvc.com docker ps
+        root@deb2:/# busybox.opensvc.com docker ps
         CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS              PORTS               NAMES
         ce6204fcec5a        opensvc/busybox:date   /bin/sh -c 'while tr   2 hours ago         Up About a minute                       busybox.opensvc.com.container.1
 

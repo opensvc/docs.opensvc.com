@@ -6,7 +6,7 @@ Modules deployment
 Introduction
 ============
 
-The compliance modules must be installed on all nodes with modulesets attached. All modules can be safely installed : only the modules included in attached modulesets are used. The modules must be installed in ``/opt/opensvc/var/compliance/``.
+The compliance modules must be installed on all nodes with modulesets attached. All modules can be safely installed : only the modules included in attached modulesets are used. The modules must be installed in ``<OSVCVAR>/compliance/``.
 
 Modules can be deployed using one of the following methods:
 
@@ -51,7 +51,7 @@ Example:
 
 ::
 
-        nodemgr set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
+        sudo nodemgr set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
 
 Updating the modules
 ====================
@@ -60,7 +60,7 @@ The update command is:
 
 ::
 
-	nodemgr updatecomp
+	sudo nodemgr updatecomp
 
 This command is operating system agnostic.
 

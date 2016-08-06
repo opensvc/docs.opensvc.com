@@ -119,7 +119,7 @@ Resync service clones
 
 ::
 
-	# /opt/opensvc/etc/aastmphpux syncresync                                                                                           
+	# svcmgr -s aastmphpux syncresync                                                                                           
 	* IISTMPHPUX.SYNC#2 - INFO - /usr/symcli/bin/symclone -g DGCVI -noprompt recreate -precopy -i 20 -c 30 DEV001 sym ld CLONE001
 	* IISTMPHPUX.SYNC#2 - WARNING - command succesful but stderr
 
@@ -135,7 +135,7 @@ Start a service using clones
 
 ::
 
-	# /opt/opensvc/etc/aastmphpux start                                                                                                
+	# svcmgr -s aastmphpux start                                                                                                
 	* IISTMPHPUX.IP#1 - INFO - ifconfig lan900:1 192.168.32.41 netmask 255.255.252.0 up
 	* IISTMPHPUX.IP#1 - WARNING - arp annouce skipped. install 'arping'
 	* IISTMPHPUX.SYNC#2 - INFO - /usr/symcli/bin/symclone -g DGCVI -noprompt activate -i 20 -c 30 DEV001 sym ld CLONE001
@@ -150,7 +150,7 @@ Start a service using clones
 
 
 	* IISTMPHPUX.SYNC#2 - INFO - waiting for copied state (max 300 secs)
-	* IISTMPHPUX.VG#1 - INFO - vgimport -m /opt/opensvc/var/vg_aastmphpux_vgCVI.map -s -N vgCVI
+	* IISTMPHPUX.VG#1 - INFO - vgimport -m /var/lib/opensvc/vg_aastmphpux_vgCVI.map -s -N vgCVI
 	* IISTMPHPUX.VG#1 - INFO - vgchange -a y vgCVI
 	* IISTMPHPUX.FS#1 - INFO - fsck -F vxfs -y /dev/vgCVI/lv_CVI
 	* IISTMPHPUX.FS#1 - INFO - mount -F vxfs /dev/vgCVI/lv_CVI /aaststcvi

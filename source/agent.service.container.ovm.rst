@@ -73,7 +73,7 @@ You have to run the :command:`ovm config` command one time. You will then be pro
 OpenSVC node configuration
 --------------------------
 
-Add the authentication information to /opt/opensvc/etc/auth.conf (check that this file is not world-readable)
+Add the authentication information to ``<OSVCETC>/auth.conf`` (this file is not world-readable)
 
 ::
 
@@ -110,7 +110,7 @@ Stop a OVM service
 
 ::
 
-        [root@ovm1 opensvc]# /opt/opensvc/bin/svcmgr --cluster --service ovmguest1 stop
+        [root@ovm1 opensvc]# svcmgr --cluster --service ovmguest1 stop
         10:52:36 INFO    OVMGUEST1.HB#1    ovm -u admin -p XXXXXX vm conf -n ovmguest1 -s pool1 -d
         10:52:39 INFO    OVMGUEST1.HB#1    High availability has been disabled.
         
@@ -122,7 +122,7 @@ Start a OVM service
 
 ::
 
-        [root@ovm1 opensvc]# /opt/opensvc/bin/svcmgr --cluster --service ovmguest1 start
+        [root@ovm1 opensvc]# svcmgr --cluster --service ovmguest1 start
         10:54:46 INFO    OVMGUEST1.OVM     xm create /var/ovs/mount/6A17B0B225C6485D8E2D03275FD3B842/running_pool/ovmguest1/vm.cfg
         10:54:49 INFO    OVMGUEST1.OVM     output:
         Using config file "/var/ovs/mount/6A17B0B225C6485D8E2D03275FD3B842/running_pool/ovmguest1/vm.cfg".
@@ -139,8 +139,8 @@ Migrate a OVM service
 
 ::
 
-        [root@ovm2 opensvc]# /opt/opensvc/etc/ovmguest1 --cluster migrate --to ovm1
-        12:25:14 INFO    OVMGUEST1         exec '/opt/opensvc/etc/ovmguest1 --cluster --waitlock 60 mount' on node ovm1
+        [root@ovm2 opensvc]# svcmgr --cluster --service ovmguest1 migrate --to ovm1
+        12:25:14 INFO    OVMGUEST1         exec '/usr/bin:svcmgr -s ovmguest1 --cluster --waitlock 60 mount' on node ovm1
         12:25:19 INFO    OVMGUEST1.OVM     xm migrate -l ovmguest1 ovm1
-        12:26:59 INFO    OVMGUEST1         exec '/opt/opensvc/etc/ovmguest1 --cluster --waitlock 60 prstart' on node ovm1
+        12:26:59 INFO    OVMGUEST1         exec '/usr/bin/svcmgr -s ovmguest1 --cluster --waitlock 60 prstart' on node ovm1
 
