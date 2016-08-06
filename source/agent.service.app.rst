@@ -94,7 +94,7 @@ Here is a subset section:
 SysV-style launcher definition
 ==============================
 
-Application launchers are installed in the directory pointed by ``/opt/opensvc/etc/svcnamed.d``. They follow the SysV guidelines:
+Application launchers are installed in the directory pointed by ``<OSVCETC>/<svcname>.d``. They follow the SysV guidelines:
 
 +----------------+--------------------------+-----------------------------------------------------------------------------+
 | File name      | Action                   | Description                                                                 |
@@ -114,8 +114,8 @@ Application can be started and stopped without touching the other service resour
 
 ::
 
-	/opt/opensvc/etc/myservice stopapp
-	/opt/opensvc/etc/myservice startapp
+	sudo svcmgr -s myservice stopapp
+	sudo svcmgr -s myservice startapp
 
 The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that integrators can write reusable launcher scripts. Examples of this variable usage below.
 

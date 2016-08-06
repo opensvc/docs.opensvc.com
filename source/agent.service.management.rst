@@ -7,44 +7,48 @@ Commands
 Explicit service management
 +++++++++++++++++++++++++++
 
-The prefered command to use to start an action on a specific service is ``/opt/opensvc/etc/svcname action``.
+The prefered command to use to start an action on a specific service is ``sudo svcmgr -s <svcname> <action>``, or simply ``sudo <svcname> <action>``.
 
 Explicit group of services management
 +++++++++++++++++++++++++++++++++++++
 
-The prefered command to use to start an action on a specific group of services is ``/opt/opensvc/bin/svcmgr --service svc1,svc2 action``.
+The prefered command to use to start an action on a specific group of services is ``sudo svcmgr -s svc1,svc2 action``.
 
 Contextual group of services management
 +++++++++++++++++++++++++++++++++++++++
 
 OpenSVC provides a set of svcmgr links applying preset filters on local service.
 
-.. function:: allservices action
+.. function:: svcmgr <action>
 
 Apply action to all node services.
-The command ``/opt/opensvc/bin/allservices shutdown --parallel`` is triggered upon node shutdown by the opensvc rc script.
-The command ``/opt/opensvc/bin/allservices boot --parallel`` is triggered upon node startup by the opensvc rc script.
+The command ``svcmgr shutdown --parallel`` is triggered upon node shutdown by the opensvc rc script.
+The command ``svcmgr boot --parallel`` is triggered upon node startup by the opensvc rc script.
 
-.. function:: alldownservices action
+.. function:: svcmgr --state down <action>
 
 Apply action to all node services in 'down' state.
 
-.. function:: allupservices action
+.. function:: svcmgr --state up,warn
 
 Apply action to all node services in 'up' and 'warn' state.
 
-.. function:: allprimaryservices action
+.. function:: svcmgr --onlyprimary action
 
 Apply action to all node services having the node as an 'autostart_node' in their env file.
+
+.. function:: svcmgr --onlysecondary action
+
+Apply action to all node services not having the node as an 'autostart_node' in their env file.
 
 Services status
 ===============
 
-.. function:: /opt/opensvc/bin/svcmon
+.. function:: svcmon
 
 Overview of all local node services status.
 
-.. function:: /opt/opensvc/etc/svcname print status
+.. function:: <svcname> print status
 
 Detailled service resources status.
 
@@ -115,10 +119,6 @@ Trigger hard-coded and user-defined file synchronization to secondary nodes. Opt
 
 Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
-.. function:: <svcname> print status
-
-Print status of all service resources
-
 Logging
 =======
 
@@ -126,11 +126,14 @@ All action logs are multiplexed to:
 
 *   stdout
 
-*   ``/opt/opensvc/log/<svcname>.log``
+*   ``<OSVCLOG>/<svcname>.log``
     Daily rotation on these files, and size limit rotation
 
 *   collector database
     Optional, through asynchronous xmlrpc calls.
+
+*   syslog
+    Optional, disabled by default, configured in ``node.conf``
 
 Examples
 ========
@@ -139,7 +142,7 @@ Print services status of a node:
 
 ::
 
-	[root@node111 ~]# /opt/opensvc/bin/svcmon
+	[root@node111 ~]# svcmon
 	service     service  container container ip        disk      fs        overall  
 	name        type     type      status    status    status    status    status   
 	-------     -------  --------- --------- ------    ------    ------    -------  
@@ -152,7 +155,7 @@ Print resource status of a service:
 
 ::
 
-	[root@node111 ~]# /opt/opensvc/etc/gieprdtransco print_status
+	[root@node111 ~]# gieprdtransco print_status
 	fs /dev/mapper/gieprdtransco-moteurs@/gieprdtransco/moteurs            up
 	fs /dev/mapper/gieprdtransco-data01@/gieprdtransco/data01/oracle/XMETA up
 	fs /dev/mapper/gieprdtransco-bkp01@/gieprdtransco/bkp01/oracle/XMETA   up
@@ -169,7 +172,7 @@ Stop of a hosted Oracle service:
 
 ::
 
-	[root@node111 ~]# /opt/opensvc/etc/aasprdora01 stop
+	[root@node111 ~]# aasprdora01 stop
 	* APP - INFO - spawn: /opt/opensvc/etc/aasprdora01.d/K50oracle stop
 	* APP - INFO - stop done in 0:00:00.258900 - ret 0 - logs in /var/tmp/svc_aasprdora01_K50oracle.log
 	* FS - INFO - umount /aasprdora01/moteurs
@@ -218,7 +221,7 @@ Start of an Xen service:
 
 ::
 
-	cgaliber@dell opensolaris:/$ pfexec /opt/opensvc/etc/xosolglo1.opensvc.com start
+	cgaliber@dell opensolaris:/$ pfexec xosolglo1.opensvc.com start
 	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --register-ignore --param-sark=0x114366380227 /dev/rdsk/xosolglo1-data
 	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --reserve --param-rk=0x114366380227 --prout-type=5 /dev/rdsk/xosolglo1-data
 	* XOSOLGLO1.OPENSVC.COM.POOL#1 - INFO - zpool import xosolglo1-data
