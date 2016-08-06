@@ -72,14 +72,14 @@ Resync a started service snapshots
 
 ::
 
-	# /opt/opensvc/etc/iiststnec02 stop && /opt/opensvc/etc/iiststnec02 syncresync && /opt/opensvc/etc/iiststnec02 start
+	# svcmgr -s iiststnec02 stop && svcmgr -s iiststnec02 syncresync && svcmgr -s iiststnec02 start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# /opt/opensvc/etc/iiststnec02 syncresync
+	# svcmgr -s iiststnec02 syncresync
 
 	2014-09-18 05:14:25,547 - iiststnec02.SYNC#1 - INFO - iSMsc_unlink -lv SOURCE_0001_LV00A6 -lvflg ld
 	2014-09-18 05:14:26,020 - iiststnec02.SYNC#1 - INFO - iSMsc_unlink:Info: iSM20030: iSMsc_unlink has normally terminated.

@@ -8,14 +8,14 @@ OpenSVC HA setup
 
 Create a HA service, using the :ref:`howto.ha` howto.
 
-Make sure the ``/opt/opensvc/nfssvc.d`` symlink points to a directory hosted on a shared filesystem, handled by the nfssvc OpenSVC service. This howto uses ``/nfssvc`` as the root service shared filesystem.
+Make sure the ``<OSVCETC>/nfssvc.d`` symlink points to a directory hosted on a shared filesystem, handled by the nfssvc OpenSVC service. This howto uses ``/nfssvc`` as the root service shared filesystem.
 
 **On the master node**
 
 ::
 
         $ mkdir -p /nfssvc/etc/init.d
-        $ ln -s /nfssvc/etc/init.d /opt/opensvc/etc/nfssvc.d
+        $ ln -s /nfssvc/etc/init.d /etc/opensvc/nfssvc.d
 
 NFS configuration
 =================
@@ -43,7 +43,7 @@ Create the OpenSVC service startup script.
 
 ::
 
-        $ cat <<EOF >/opt/opensvc/nfssvc.d/nfs
+        $ cat <<EOF >/etc/opensvc/nfssvc.d/nfs
         #!/bin/bash
         
         nfsstart(){
@@ -81,7 +81,7 @@ On the master node
 
 ::
 
-        $ cd /opt/opensvc/nfssvc.d
+        $ cd /etc/opensvc/nfssvc.d
         $ ln -s nfs S10nfs
         $ ln -s nfs K10nfs
 
@@ -125,14 +125,14 @@ The exports list should also move with the service, to avoid configuration drift
 
 ::
 
-        $ mv /etc/exports /opt/opensvc/etc/nfssvc.d/
+        $ mv /etc/exports /etc/opensvc/nfssvc.d/
 
 **On both nodes**
 
 ::
 
         $ ln -sf /nfssvc/var/lib/nfs /var/lib/nfs
-        $ ln -sf /opt/opensvc/etc/nfssvc.d/exports /etc/exports
+        $ ln -sf /etc/opensvc/nfssvc.d/exports /etc/exports
 
 Configure nfs to listen on the service IP address
 

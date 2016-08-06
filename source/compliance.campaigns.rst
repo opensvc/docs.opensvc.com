@@ -59,9 +59,9 @@ Test on a representative server set
 
 On a set of servers exercising all possible ruleset contextualizations, test the module using the commands::
 
-  # sudo /opt/opensvc/bin/nodemgr updatecomp
+  # sudo nodemgr updatecomp
 
-  # sudo /opt/opensvc/bin/nodemgr compliance fix --module it.sys.linux.repo
+  # sudo nodemgr compliance fix --module it.sys.linux.repo
 
 Check the logs in the ``Compliance > Logs`` view or in the output of the fix command, verify that the package manager behaves as expected.
 

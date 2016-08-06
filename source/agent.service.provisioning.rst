@@ -114,13 +114,13 @@ Configuration template
 
 A template is a normal service configuration file with parts you can replace with placeholder strings. Templates can be stored anywhere.
 
-A template is instanciated by copying it as a service configuration file (``etc/<svcname>.env``), and substituting the placeholder strings. Both actions can be done with a command like::
+A template is instanciated by copying it as a service configuration file (``<OSVCETC>/<svcname>.env``), and substituting the placeholder strings. Both actions can be done with a command like::
 
-  sed -e "s/__SVCNAME_PLACEHOLDER__/mysvc/g" -e "s/__NODENAME1_PLACEHOLDER__/g" | sudo tee /opt/opensvc/etc/mysvc.env
+  sed -e "s/__SVCNAME_PLACEHOLDER__/mysvc/g" -e "s/__NODENAME1_PLACEHOLDER__/g" | sudo tee /etc/opensvc/mysvc.env
 
 Once instanciated the ``install`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set::
 
-  $ sudo /opt/opensvc/bin/svcmgr -s mysvc --envfile /opt/opensvc/etc/mysvc.env --provision install
+  $ sudo svcmgr -s mysvc --envfile /etc/opensvc/mysvc.env --provision install
 
 
 Provisioning examples
@@ -160,13 +160,13 @@ Template ``testec2docker.template``:
   mnt_opt = defaults,subvol=docker
   mnt = /srv/__SVCNAME__/docker
   always_on = drpnodes
-  dev = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0
+  dev = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
   
   [fs#1]
   type = btrfs
   mnt_opt = defaults,subvol=data
   mnt = /srv/__SVCNAME__/data
-  dev = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0
+  dev = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
   
   [container#0]
   run_image = ubuntu:14.10
@@ -196,14 +196,14 @@ Template contextualization into a service configuration file:
 
 ::
 
-  sed -e "s/__SVCNAME__/testec2docker4.nsx.lab.net/g" testec2docker.template | sudo tee /opt/opensvc/etc/testec2docker4.nsx.lab.net.env
+  sed -e "s/__SVCNAME__/testec2docker4.nsx.lab.net/g" testec2docker.template | sudo tee /etc/opensvc/testec2docker4.nsx.lab.net.env
 
 Provision:
 
 ::
 
-  $ sudo /opt/opensvc/bin/svcmgr -s testec2docker4.nsx.lab.net --envfile /opt/opensvc/etc/testec2docker4.nsx.lab.net.env --provision install
-  INFO    testec2docker4.nsx.lab.net                  /opt/opensvc/bin/svcmgr -s testec2docker4.nsx.lab.net --envfile /opt/opensvc/etc/testec2docker4.nsx.lab.net.env --provision install
+  $ sudo svcmgr -s testec2docker4.nsx.lab.net --envfile /etc/opensvc/testec2docker4.nsx.lab.net.env --provision install
+  INFO    testec2docker4.nsx.lab.net                  svcmgr -s testec2docker4.nsx.lab.net --envfile /etc/opensvc/testec2docker4.nsx.lab.net.env --provision install
   INFO    testec2docker4.nsx.lab.net.ip#0             aws --output=json ec2 assign-private-ip-addresses --network-interface-id eni-033adc4b --secondary-private-ip-address-count 1
   INFO    testec2docker4.nsx.lab.net.ip#0             public ip already provisioned
   INFO    testec2docker4.nsx.lab.net.ip#0             cascade 10.0.0.221 to ip#1.ipname
@@ -223,17 +223,17 @@ Provision:
   INFO    testec2docker4.nsx.lab.net.disk#0           /dev/xvdh is not present yet
   INFO    testec2docker4.nsx.lab.net.disk#0           /dev/xvdh is not present yet
   INFO    testec2docker4.nsx.lab.net.disk#0           /dev/xvdh is not present yet
-  INFO    testec2docker4.nsx.lab.net.fs#1             /opt/opensvc/var/testec2docker4.nsx.lab.net/dev/disk.0.0 is not formatted
-  INFO    testec2docker4.nsx.lab.net.fs#1             mkfs.btrfs /opt/opensvc/var/testec2docker4.nsx.lab.net/dev/disk.0.0
+  INFO    testec2docker4.nsx.lab.net.fs#1             /var/lib/opensvc/testec2docker4.nsx.lab.net/dev/disk.0.0 is not formatted
+  INFO    testec2docker4.nsx.lab.net.fs#1             mkfs.btrfs /var/lib/opensvc/testec2docker4.nsx.lab.net/dev/disk.0.0
   WARNING testec2docker4.nsx.lab.net.fs#1             command succesful but stderr:
   Turning ON incompat feature 'extref': increased hardlink limit per file to 65536
   INFO    testec2docker4.nsx.lab.net.fs#1             output:
   WARNING! - Btrfs v3.12 IS EXPERIMENTAL
   WARNING! - see http://btrfs.wiki.kernel.org before using
-  fs created label (null) on /opt/opensvc/var/testec2docker4.nsx.lab.net/dev/disk.0.0
+  fs created label (null) on /var/lib/opensvc/testec2docker4.nsx.lab.net/dev/disk.0.0
   nodesize 16384 leafsize 16384 sectorsize 4096 size 15.00GiB
   Btrfs v3.12
-  INFO    testec2docker4.nsx.lab.net.fs#1             mount -t btrfs -o subvolid=0 /opt/opensvc/var/testec2docker4.nsx.lab.net/dev/disk.0.0 /tmp/tmpuVZnvv
+  INFO    testec2docker4.nsx.lab.net.fs#1             mount -t btrfs -o subvolid=0 /var/lib/opensvc/testec2docker4.nsx.lab.net/dev/disk.0.0 /tmp/tmpuVZnvv
   INFO    testec2docker4.nsx.lab.net.fs#1             btrfs filesystem label /tmp/tmpuVZnvv testec2docker4.nsx.lab.net.fs.1
   INFO    testec2docker4.nsx.lab.net.fs#1             btrfs subvol create /tmp/tmpuVZnvv/data
   INFO    testec2docker4.nsx.lab.net.fs#1             output:
@@ -244,7 +244,7 @@ Provision:
   INFO    testec2docker4.nsx.lab.net.fs#1             output:
   Scanning for Btrfs filesystems
   INFO    testec2docker4.nsx.lab.net.fs#1             mount -t btrfs -o defaults,subvol=data LABEL=testec2docker4.nsx.lab.net.fs.1 /srv/testec2docker4.nsx.lab.net/data
-  INFO    testec2docker4.nsx.lab.net.fs#0             mount -t btrfs -o subvolid=0 /opt/opensvc/var/testec2docker4.nsx.lab.net/dev/disk.0.0 /tmp/tmpNPV_d8
+  INFO    testec2docker4.nsx.lab.net.fs#0             mount -t btrfs -o subvolid=0 /var/lib/opensvc/testec2docker4.nsx.lab.net/dev/disk.0.0 /tmp/tmpNPV_d8
   INFO    testec2docker4.nsx.lab.net.fs#0             btrfs subvol create /tmp/tmpNPV_d8/docker
   INFO    testec2docker4.nsx.lab.net.fs#0             output:
   Create subvolume '/tmp/tmpNPV_d8/docker'
@@ -255,8 +255,8 @@ Provision:
   Scanning for Btrfs filesystems
   INFO    testec2docker4.nsx.lab.net.fs#0             mount -t btrfs -o defaults,subvol=docker LABEL=testec2docker4.nsx.lab.net.fs.1 /srv/testec2docker4.nsx.lab.net/docker
   INFO    testec2docker4.nsx.lab.net.container#0      starting docker daemon
-  INFO    testec2docker4.nsx.lab.net.container#0      docker -H unix:///opt/opensvc/var/testec2docker4.nsx.lab.net/docker.sock -r=false -d -g /srv/testec2docker4.nsx.lab.net/docker -p /opt/opensvc/var/testec2docker4.nsx.lab.net/docker.pid --ip 10.0.0.221 --exec-opt native.cgroupdriver=cgroupfs
-  INFO    testec2docker4.nsx.lab.net.container#0      docker -H unix:///opt/opensvc/var/testec2docker4.nsx.lab.net/docker.sock run -t -i -d --name=testec2docker4.nsx.lab.net.container.0 --net=bridge -p 80:80 -v /etc/localtime:/etc/localtime:ro --cgroup-parent /testec2docker4.nsx.lab.net/container.docker/container.0 ubuntu:14.10 /bin/bash
+  INFO    testec2docker4.nsx.lab.net.container#0      docker -H unix:///var/lib/opensvc/testec2docker4.nsx.lab.net/docker.sock -r=false -d -g /srv/testec2docker4.nsx.lab.net/docker -p /var/lib/opensvc/testec2docker4.nsx.lab.net/docker.pid --ip 10.0.0.221 --exec-opt native.cgroupdriver=cgroupfs
+  INFO    testec2docker4.nsx.lab.net.container#0      docker -H unix:///var/lib/opensvc/testec2docker4.nsx.lab.net/docker.sock run -t -i -d --name=testec2docker4.nsx.lab.net.container.0 --net=bridge -p 80:80 -v /etc/localtime:/etc/localtime:ro --cgroup-parent /testec2docker4.nsx.lab.net/container.docker/container.0 ubuntu:14.10 /bin/bash
   WARNING testec2docker4.nsx.lab.net.container#0      command succesful but stderr:
   Unable to find image 'ubuntu:14.10' locally
   14.10: Pulling from ubuntu
@@ -287,7 +287,7 @@ Provision:
   bed299be99fabccf55087d0af1e9ebcf886158c5f83c32efd0819c457c579d03
   INFO    testec2docker4.nsx.lab.net.container#0      wait for container up status
   INFO    testec2docker4.nsx.lab.net.container#0      wait for container operational
-  INFO    testec2docker4.nsx.lab.net.container#1      docker -H unix:///opt/opensvc/var/testec2docker4.nsx.lab.net/docker.sock run -t -i -d --name=testec2docker4.nsx.lab.net.container.1 -v /etc/localtime:/etc/localtime:ro --net=container:testec2docker4.nsx.lab.net.container.0 --cgroup-parent /testec2docker4.nsx.lab.net/container.docker/container.1 nginx:latest
+  INFO    testec2docker4.nsx.lab.net.container#1      docker -H unix:///var/lib/opensvc/testec2docker4.nsx.lab.net/docker.sock run -t -i -d --name=testec2docker4.nsx.lab.net.container.1 -v /etc/localtime:/etc/localtime:ro --net=container:testec2docker4.nsx.lab.net.container.0 --cgroup-parent /testec2docker4.nsx.lab.net/container.docker/container.1 nginx:latest
   WARNING testec2docker4.nsx.lab.net.container#1      command succesful but stderr:
   Unable to find image 'nginx:latest' locally
   latest: Pulling from nginx
@@ -345,8 +345,8 @@ Provision:
   3512b1265a540d74d4deb1598434e9be7ddc14252a85b94b372d81cb3a5a8b34
   INFO    testec2docker4.nsx.lab.net.container#1      wait for container up status
   INFO    testec2docker4.nsx.lab.net.container#1      wait for container operational
-  send /opt/opensvc/etc/testec2docker4.nsx.lab.net.env to collector ... OK
-  update /opt/opensvc/var/testec2docker4.nsx.lab.net.push timestamp ... OK
+  send /etc/opensvc/testec2docker4.nsx.lab.net.env to collector ... OK
+  update /var/lib/opensvc/testec2docker4.nsx.lab.net.push timestamp ... OK
 
 Docker service on amazon, btrfs on lvm
 ++++++++++++++++++++++++++++++++++++++
@@ -369,7 +369,7 @@ Template:
   [disk#1]
   type = lvm
   name = __SVCNAME__
-  pvs = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0
+  pvs = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
   
   [fs#1]
   type = btrfs
@@ -425,7 +425,7 @@ Template:
   [disk#1]
   type = md
   uuid = 
-  devs = /opt/opensvc/var/__SVCNAME__/dev/disk.0.0 /opt/opensvc/var/__SVCNAME__/dev/disk.0.1 /opt/opensvc/var/__SVCNAME__/dev/disk.0.2
+  devs = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0 /var/lib/opensvc/__SVCNAME__/dev/disk.0.1 /var/lib/opensvc/__SVCNAME__/dev/disk.0.2
   spares = 1
   chunk = 1m
   level = 1
@@ -467,8 +467,8 @@ Single command provisioning:
     --resource '{"rtype": "ip", "type": "amazon", "ipname": "<allocate>", "ipdev": "eth0", "docker_daemon_ip": true, "cascade_allocation": "ip#1.ipname"}' \
     --resource '{"rtype": "ip", "ipdev": "eth0", "ipname": ""}' \
     --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
-    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
-    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/opt/opensvc/var/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
+    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
+    --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
     --resource '{"rtype": "container", "type": "docker", "run_image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "run_command": "haproxy -db -f /data/etc/haproxy.cfg"}'
 
 Example haproxy.cfg file in ``/srv/haproxy1.nsx.lab.net/data/etc/haproxy.cfg``:

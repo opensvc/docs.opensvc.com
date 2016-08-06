@@ -96,7 +96,7 @@ Service configuration file
 
 	#
 	# 'delta_store'
-	#   Optional. Defaults to /opt/opensvc/var.
+	#   Optional. Defaults to /var/lib/opensvc
 	#   Points the directory where deltas are generated and pushed to. There should be
 	#   enough space there to host one delta on the source and the targets. It is a
 	#   good practice to use a service-dedicated logical volume as a delta store to
@@ -115,7 +115,7 @@ Full synchronization
 
 ::
 
-	# /opt/opensvc/etc/unxtstsvc01 syncfullsync
+	# svcmgr -s unxtstsvc01 syncfullsync
 	* UNXTSTSVC01.SYNC#3 - INFO - lvcreate -s -n data_osvc_snap1 -L 4M /dev/unxtstsvc02/data
 	* UNXTSTSVC01.SYNC#3 - INFO - update state file with snap uuid HcJj5t-lPHf-2Jw6-6iLt-MUdf-UKby-LkVYJm
 	* UNXTSTSVC01.SYNC#3 - INFO - dd if=/dev/unxtstsvc02/data_osvc_snap1 bs=1M | /usr/bin/ssh vm5 dd bs=1M of=/tmp/dds.img
@@ -125,7 +125,7 @@ Full synchronization
 	0+2626 records in
 	0+2626 records out
 	33554432 bytes (34 MB) copied, 6.60506 seconds, 5.1 MB/s
-	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /opt/opensvc/var/sync#3_dds_state vm5:/opt/opensvc/var/sync#3_dds_state
+	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /var/lib/opensvc/sync#3_dds_state vm5:/var/lib/opensvc/sync#3_dds_state
 
 Incremental synchronization
 ---------------------------
@@ -135,12 +135,12 @@ Incremental synchronization
 	# etc/unxtstsvc01 syncupdate
 	* UNXTSTSVC01.SYNC#3 - INFO - lvcreate -s -n data_osvc_snap2 -L 4M /dev/unxtstsvc02/data
 	* UNXTSTSVC01.SYNC#3 - INFO - dds --extract --cow /dev/mapper/unxtstsvc02-data_osvc_snap1-cow
-					    --source /dev/unxtstsvc02/data_osvc_snap2 -v --dest /opt/opensvc/var/unxtstsvc02-data.delta
-	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /opt/opensvc/var/unxtstsvc02-data.delta vm5:/opt/opensvc/var/unxtstsvc02-data.delta
-	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/ssh vm5 dds -v --merge --cow /opt/opensvc/var/unxtstsvc02-data.delta --dest /tmp/dds.img
-	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /opt/opensvc/var/sync#3_dds_state vm5:/opt/opensvc/var/sync#3_dds_state
+					    --source /dev/unxtstsvc02/data_osvc_snap2 -v --dest /var/lib/opensvc/unxtstsvc02-data.delta
+	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /var/lib/opensvc/unxtstsvc02-data.delta vm5:/var/lib/opensvc/unxtstsvc02-data.delta
+	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/ssh vm5 dds -v --merge --cow /var/lib/opensvc/unxtstsvc02-data.delta --dest /tmp/dds.img
+	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /var/lib/opensvc/sync#3_dds_state vm5:/var/lib/opensvc/sync#3_dds_state
 	* UNXTSTSVC01.SYNC#3 - INFO - lvremove -f /dev/unxtstsvc02/data_osvc_snap1
 	* UNXTSTSVC01.SYNC#3 - INFO - lvrename unxtstsvc02 data_osvc_snap2 data_osvc_snap1
 	* UNXTSTSVC01.SYNC#3 - INFO - update state file with snap uuid gO9o05-Mmdp-lUDS-HVSQ-lpLd-Eq6Q-CPClcc
-	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /opt/opensvc/var/sync#3_dds_state vm5:/opt/opensvc/var/sync#3_dds_state
+	* UNXTSTSVC01.SYNC#3 - INFO - /usr/bin/scp /var/lib/opensvc/sync#3_dds_state vm5:/var/lib/opensvc/sync#3_dds_state
 

@@ -39,7 +39,7 @@ Service registry.opensvc.com
 
 Service configuration file::
 
-        root@deb1:/opt/opensvc/etc# cat registry.opensvc.com.env
+        root@deb1:/etc/opensvc# cat registry.opensvc.com.env
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -80,7 +80,7 @@ Service configuration file::
         
 Service state on node deb1.opensvc.com::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com print status
+        root@deb1:/etc/opensvc# registry.opensvc.com print status
         registry.opensvc.com
         overall                   up
         |- avail                  up
@@ -94,13 +94,13 @@ Service state on node deb1.opensvc.com::
         |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com docker ps
+        root@deb1:/etc/opensvc# registry.opensvc.com docker ps
         CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                        NAMES
         e9828ec4620a        registry:latest     /bin/sh -c 'exec doc   23 minutes ago      Up 23 minutes       37.59.71.25:5000->5000/tcp   registry.opensvc.com.container.1
         
 Service state on node deb2.opensvc.com::
 
-        root@deb2:/opt/opensvc/etc# registry.opensvc.com print status
+        root@deb2:/etc/opensvc# registry.opensvc.com print status
         registry.opensvc.com
         overall                   down
         |- avail                  down
@@ -120,7 +120,7 @@ Service busybox.opensvc.com
         
 Service configuration file::
         
-        root@deb1:/opt/opensvc/etc# cat busybox.opensvc.com.env
+        root@deb1:/etc/opensvc# cat busybox.opensvc.com.env
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -193,7 +193,7 @@ Service configuration file::
         
 Service state on deb1.opensvc.com::
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb1:/etc/opensvc# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -212,7 +212,7 @@ Service state on deb1.opensvc.com::
         |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com docker ps
+        root@deb1:/etc/opensvc# busybox.opensvc.com docker ps
         CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS              PORTS               NAMES
         59fca3cd2745        opensvc/busybox:date   /bin/sh -c 'while tr   13 minutes ago      Up 13 minutes                           busybox.opensvc.com.container.7
         173a812f4ed5        opensvc/busybox:date   /bin/sh -c 'while tr   13 minutes ago      Up 13 minutes                           busybox.opensvc.com.container.6
@@ -224,7 +224,7 @@ Service state on deb1.opensvc.com::
 
 Service state on deb2.opensvc.com::
 
-        root@deb2:/opt/opensvc/etc# busybox.opensvc.com print status
+        root@deb2:/etc/opensvc# busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   down
         |- avail                  down
@@ -257,7 +257,7 @@ From the physical nodes point of view, the services are in the following states 
 
 UP on node deb1.opensvc.com::
 
-        root@deb1:/opt/opensvc/etc# svcmon --service=registry.opensvc.com,busybox.opensvc.com
+        root@deb1:/etc/opensvc# svcmon --service=registry.opensvc.com,busybox.opensvc.com
         service              service container container ip        disk       fs         share      app        hb        sync      avail      overall
         name                 type    type      status    status    status     status     status     status     status    status    status     status     frozen
         -------              ------- --------- --------- ------    ------     ------     ------     ------     ------    ------    ------     -------    ------
@@ -266,7 +266,7 @@ UP on node deb1.opensvc.com::
         
 DOWN on node deb2.opensvc.com::
 
-        root@deb2:/opt/opensvc/etc# svcmon --service=registry.opensvc.com,busybox.opensvc.com
+        root@deb2:/etc/opensvc# svcmon --service=registry.opensvc.com,busybox.opensvc.com
         service              service container container ip        disk       fs         share      app        hb        sync      avail      overall
         name                 type    type      status    status    status     status     status     status     status    status    status     status     frozen
         -------              ------- --------- --------- ------    ------     ------     ------     ------     ------    ------    ------     -------    ------
@@ -303,47 +303,47 @@ OpenSVC Configuration
 
 First modification implementation::
 
-        root@deb1:/# cd /opt/opensvc/etc
-        root@deb1:/opt/opensvc/etc# cp registry.opensvc.com.env registry.opensvc.com.backup
-        root@deb1:/opt/opensvc/etc# cat registry.opensvc.com.backup | grep -v autostart_node > registry.opensvc.com.env
-        root@deb1:/opt/opensvc/etc# diff registry.opensvc.com.backup registry.opensvc.com.env
+        root@deb1:/# cd /etc/opensvc
+        root@deb1:/etc/opensvc# cp registry.opensvc.com.env registry.opensvc.com.backup
+        root@deb1:/etc/opensvc# cat registry.opensvc.com.backup | grep -v autostart_node > registry.opensvc.com.env
+        root@deb1:/etc/opensvc# diff registry.opensvc.com.backup registry.opensvc.com.env
         2d1
         < autostart_node = deb1.opensvc.com
-        root@deb1:/opt/opensvc/etc# cp busybox.opensvc.com.env busybox.opensvc.com.backup
-        root@deb1:/opt/opensvc/etc# cat busybox.opensvc.com.backup | grep -v autostart_node > busybox.opensvc.com.env
-        root@deb1:/opt/opensvc/etc# diff busybox.opensvc.com.backup busybox.opensvc.com.env
+        root@deb1:/etc/opensvc# cp busybox.opensvc.com.env busybox.opensvc.com.backup
+        root@deb1:/etc/opensvc# cat busybox.opensvc.com.backup | grep -v autostart_node > busybox.opensvc.com.env
+        root@deb1:/etc/opensvc# diff busybox.opensvc.com.backup busybox.opensvc.com.env
         2d1
         < autostart_node = deb1.opensvc.com
 
 Second modification implementation::
 
-        root@deb1:/opt/opensvc/etc# cat >> registry.opensvc.com.env << EOF
+        root@deb1:/etc/opensvc# cat >> registry.opensvc.com.env << EOF
 
         [hb#0]
         type = OpenHA
         name = registry
         EOF
         
-        root@deb1:/opt/opensvc/etc# cat >> busybox.opensvc.com.env << EOF
+        root@deb1:/etc/opensvc# cat >> busybox.opensvc.com.env << EOF
 
         [hb#0]
         type = OpenHA
         name = busybox
         EOF
 
-        root@deb1:/opt/opensvc/etc# tail -3 registry.opensvc.com.env
+        root@deb1:/etc/opensvc# tail -3 registry.opensvc.com.env
         [hb#0]
         type = OpenHA
         name = registry
         
-        root@deb1:/opt/opensvc/etc# tail -3 busybox.opensvc.com.env
+        root@deb1:/etc/opensvc# tail -3 busybox.opensvc.com.env
         [hb#0]
         type = OpenHA
         name = busybox
 
 Propagate configuration::
 
-        root@deb1:/opt/opensvc/etc# allupservices syncnodes --force
+        root@deb1:/etc/opensvc# allupservices syncnodes --force
 
 .. note:: this is a mass action command. Each service in "up" state will propagate its configuration to other nodes. We could have just required the push for our 2 services only.
 
@@ -351,8 +351,8 @@ To continue, we stop both services (not mandatory, but easier to understand in t
 
 on node deb1.opensvc.com::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com stop --cluster
-        root@deb1:/opt/opensvc/etc# busybox.opensvc.com stop --cluster
+        root@deb1:/etc/opensvc# registry.opensvc.com stop --cluster
+        root@deb1:/etc/opensvc# busybox.opensvc.com stop --cluster
 
 .. warning:: as OpenSVC is no more supposed to pilot services itself, due to the declared heartbeat resource in the <service>.env file, a security prevents it to stop service. It can be overridden by the ``--cluster`` option.
 
@@ -416,7 +416,7 @@ Loading cluster environment, on both nodes::
         
 Creating OpenHA service ``registry``, on both nodes::
 
-        # $EZ_BIN/service -a registry /opt/opensvc/etc/registry.opensvc.com.cluster deb1.opensvc.com deb2.opensvc.com /bin/true
+        # $EZ_BIN/service -a registry /etc/opensvc/registry.opensvc.com.cluster deb1.opensvc.com deb2.opensvc.com /bin/true
         Creating service registry :
         Directory /usr/local/cluster/services/registry created
         State file /usr/local/cluster/services/registry/STATE.deb1.opensvc.com created with initial state FROZEN_STOP
@@ -425,7 +425,7 @@ Creating OpenHA service ``registry``, on both nodes::
         
 Creating OpenHA service ``busybox``, on both nodes::
 
-        # $EZ_BIN/service -a busybox /opt/opensvc/etc/busybox.opensvc.com.cluster deb1.opensvc.com deb2.opensvc.com /bin/true
+        # $EZ_BIN/service -a busybox /etc/opensvc/busybox.opensvc.com.cluster deb1.opensvc.com deb2.opensvc.com /bin/true
         Creating service busybox :
         Directory /usr/local/cluster/services/busybox created
         State file /usr/local/cluster/services/busybox/STATE.deb1.opensvc.com created with initial state FROZEN_STOP
@@ -433,7 +433,7 @@ Creating OpenHA service ``busybox``, on both nodes::
         Done.
 
 * -a busybox : add an OpenHA service named busybox
-* /opt/opensvc/etc/busybox.opensvc.com.cluster : is the start/stop script for the service
+* /etc/opensvc/busybox.opensvc.com.cluster : is the start/stop script for the service
 * deb1.opensvc.com : is the primary node
 * deb2.opensvc.com : is the secondary node
 * /bin/true : is the check-up script ran before service startup. Should be replaced by a stonith command for production implementation.

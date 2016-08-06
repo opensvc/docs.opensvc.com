@@ -15,15 +15,15 @@ Service Creation
 
 **Preparing OpenSVC registry service**::
 
-        root@deb1:/opt/opensvc/etc# mkdir registry.opensvc.com.dir
-        root@deb1:/opt/opensvc/etc# ln -s registry.opensvc.com.dir registry.opensvc.com.d
-        root@deb1:/opt/opensvc/etc# ln -s ../bin/svcmgr registry.opensvc.com
-        root@deb1:/opt/opensvc/etc# getent hosts registry.opensvc.com
+        root@deb1:/etc/opensvc# mkdir registry.opensvc.com.dir
+        root@deb1:/etc/opensvc# ln -s registry.opensvc.com.dir registry.opensvc.com.d
+        root@deb1:/etc/opensvc# ln -s ../bin/svcmgr registry.opensvc.com
+        root@deb1:/etc/opensvc# getent hosts registry.opensvc.com
         37.59.71.25     registry.opensvc.com
 
 **Completing with service configuration file (copy/paste ready)**::
 
-        cat > /opt/opensvc/etc/registry.opensvc.com.env << EOF
+        cat > /etc/opensvc/registry.opensvc.com.env << EOF
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -73,9 +73,9 @@ Storage configuration consists in 3 logical volumes hosted in a volume group ded
 
 **Check if OpenSVC service is ready**::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com print status
-        send /opt/opensvc/etc/registry.opensvc.com.env to collector ... OK
-        update /opt/opensvc/var/registry.opensvc.com.push timestamp ... OK
+        root@deb1:/etc/opensvc# registry.opensvc.com print status
+        send /etc/opensvc/registry.opensvc.com.env to collector ... OK
+        update /var/lib/opensvc/registry.opensvc.com.push timestamp ... OK
         registry.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -96,11 +96,11 @@ We will use the official registry image (https://index.docker.io/_/registry/)
 
 **Start minimal resource to populate docker local data** ::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com startip
+        root@deb1:/etc/opensvc# registry.opensvc.com startip
         16:50:28 INFO    REGISTRY.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
         16:50:32 INFO    REGISTRY.OPENSVC.COM.IP#1    ifconfig eth0:1 37.59.71.25 netmask 255.255.255.224 up
         16:50:32 INFO    REGISTRY.OPENSVC.COM.IP#1    arping -U -c 1 -I eth0 -s 37.59.71.25 37.59.71.25
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com startfs
+        root@deb1:/etc/opensvc# registry.opensvc.com startfs
         16:50:36 INFO    REGISTRY.OPENSVC.COM.VG#1    vgchange --addtag @deb1.opensvc.com vgregistry
         16:50:37 INFO    REGISTRY.OPENSVC.COM.VG#1    output:
           Volume group "vgregistry" successfully changed
@@ -127,7 +127,7 @@ We will use the official registry image (https://index.docker.io/_/registry/)
         
         16:50:37 INFO    REGISTRY.OPENSVC.COM.FS#3    mount -t ext4 /dev/mapper/vgregistry-lvregistrydata /opt/registry.opensvc.com/registrydata
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com print status
+        root@deb1:/etc/opensvc# registry.opensvc.com print status
         registry.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -140,25 +140,25 @@ We will use the official registry image (https://index.docker.io/_/registry/)
         |  '- ip#1           .... up       registry.opensvc.com@eth0
         |- sync                   n/a
         '- hb                     n/a
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com docker images
+        root@deb1:/etc/opensvc# registry.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 
 **Pull docker image** ::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com docker pull registry:latest
+        root@deb1:/etc/opensvc# registry.opensvc.com docker pull registry:latest
         Pulling repository registry
         5670839b64ba: Download complete
         511136ea3c5a: Download complete
         /* removing download logs */
         
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com docker images
+        root@deb1:/etc/opensvc# registry.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         registry            latest              5670839b64ba        3 days ago          554 MB
 
 Docker Registry Setup
 ---------------------
 
-We have to configure our OpenSVC container object so as to run our private registry. Let's modify file ``/opt/opensvc/etc/registry.opensvc.com.env`` like below :
+We have to configure our OpenSVC container object so as to run our private registry. Let's modify file ``/etc/opensvc/registry.opensvc.com.env`` like below :
 
 Config Section::
 
@@ -179,9 +179,9 @@ Docker Registry Start
 
 **After modifying the service configuration file** ::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com print status
-        send /opt/opensvc/etc/registry.opensvc.com.env to collector ... OK
-        update /opt/opensvc/var/registry.opensvc.com.push timestamp ... OK
+        root@deb1:/etc/opensvc# registry.opensvc.com print status
+        send /etc/opensvc/registry.opensvc.com.env to collector ... OK
+        update /var/lib/opensvc/registry.opensvc.com.push timestamp ... OK
         registry.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -197,15 +197,15 @@ Docker Registry Start
         
 **Registry start** ::
 
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com startcontainer
-        17:03:12 INFO    REGISTRY.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/registry.opensvc.com/docker.sock run -t -i -d --name=registry.opensvc.com.container.1 -v /opt/registry.opensvc.com/registrydata:/registrydata -e STORAGE_PATH=/registrydata -p 5000:5000 5670839b64ba
+        root@deb1:/etc/opensvc# registry.opensvc.com startcontainer
+        17:03:12 INFO    REGISTRY.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/registry.opensvc.com/docker.sock run -t -i -d --name=registry.opensvc.com.container.1 -v /opt/registry.opensvc.com/registrydata:/registrydata -e STORAGE_PATH=/registrydata -p 5000:5000 5670839b64ba
         17:03:12 INFO    REGISTRY.OPENSVC.COM.CONTAINER#1 output:
         1c235fe957467097da19635f793ecf100d99100753ebdfe5d430142a70bfac73
         
         17:03:12 INFO    REGISTRY.OPENSVC.COM.CONTAINER#1 wait for container up status
         17:03:12 INFO    REGISTRY.OPENSVC.COM.CONTAINER#1 wait for container operational
         
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com print status
+        root@deb1:/etc/opensvc# registry.opensvc.com print status
         registry.opensvc.com
         overall                   up
         |- avail                  up
@@ -218,7 +218,7 @@ Docker Registry Start
         |- sync                   n/a
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# registry.opensvc.com docker ps
+        root@deb1:/etc/opensvc# registry.opensvc.com docker ps
         CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                        NAMES
         1c235fe95746        registry:latest     /bin/sh -c 'exec doc   21 seconds ago      Up 21 seconds       37.59.71.25:5000->5000/tcp   registry.opensvc.com.container.1
 

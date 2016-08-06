@@ -82,14 +82,14 @@ Quick links to OpenSVC software installation
 Service configuration
 =====================
 
-Copy/Paste the service configuration file in folder ``/opt/opensvc/etc`` and name it like ``servicename.env``. In the example below, we will name the service configuration file ``docker.opensvc.com.env``.
+Copy/Paste the service configuration file in folder ``<OSVCETC>`` and name it like ``servicename.env``. In the example below, we will name the service configuration file ``docker.opensvc.com.env``.
 
 ::
 
-        root@deb1:/opt/opensvc/etc# ls -l | grep docker*env
+        root@deb1:/etc/opensvc# ls -l | grep docker*env
         -rw-r--r-- 1 root root  853 mai   26 21:05 docker.opensvc.com.env
 
-        root@deb1:/opt/opensvc/etc# cat docker.opensvc.com.env
+        root@deb1:/etc/opensvc# cat docker.opensvc.com.env
         [DEFAULT]
         autostart_node = deb1.opensvc.com
         app = OSVCLAB
@@ -150,16 +150,16 @@ The service .env file is now ready, we have to finish the service creation in Op
 
 ::
 
-        root@deb1:/opt/opensvc/etc# ls -l | grep docker
+        root@deb1:/etc/opensvc# ls -l | grep docker
         -rw-r--r-- 1 root root  800 mai   29 05:14 docker.opensvc.com.env
 
-        root@deb1:/opt/opensvc/etc# mkdir docker.opensvc.com.dir
+        root@deb1:/etc/opensvc# mkdir docker.opensvc.com.dir
 
-        root@deb1:/opt/opensvc/etc# ln -s docker.opensvc.com.dir docker.opensvc.com.d
+        root@deb1:/etc/opensvc# ln -s docker.opensvc.com.dir docker.opensvc.com.d
 
-        root@deb1:/opt/opensvc/etc# ln -s ../bin/svcmgr docker.opensvc.com
+        root@deb1:/etc/opensvc# ln -s ../bin/svcmgr docker.opensvc.com
 
-        root@deb1:/opt/opensvc/etc# ls -l | grep docker
+        root@deb1:/etc/opensvc# ls -l | grep docker
         lrwxrwxrwx 1 root root   13 mai   29 05:52 docker.opensvc.com -> ../bin/svcmgr
         lrwxrwxrwx 1 root root   22 mai   29 05:51 docker.opensvc.com.d -> docker.opensvc.com.dir
         drwxr-xr-x 2 root root 4096 mai   29 05:51 docker.opensvc.com.dir
@@ -169,9 +169,9 @@ Now we can test if service setup is ok. We assume that the LVM setup is ok. If y
 
 ::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
-        send /opt/opensvc/etc/docker.opensvc.com.env to collector ... OK
-        update /opt/opensvc/var/docker.opensvc.com.push timestamp ... OK
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
+        send /etc/opensvc/docker.opensvc.com.env to collector ... OK
+        update /var/lib/opensvc/docker.opensvc.com.push timestamp ... OK
         docker.opensvc.com
         overall                   down
         |- avail                  down
@@ -196,7 +196,7 @@ With the configuration file like exposed previously, OpenSVC will take the follo
 * **[ip#1]** : add ip address corresponding to ``docker.opensvc.com`` on network interface ``eth0``
 * **[vg#1]** : import volume group named ``vgdocker``
 * **[fs#1]** and **[fs#2]** : first mount logical volume ``/dev/mapper/vgdocker-lvdockerroot`` on ``/opt/docker.opensvc.com``, and after mount logical volume ``/dev/mapper/vgdocker-lvdockerdata`` on ``/opt/docker.opensvc.com/appdata``
-* **[container#1]** : start docker as daemon with the following command line ``docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock -r=false -d -g /opt/docker.opensvc.com/appdata -p /opt/opensvc/var/docker.opensvc.com/docker.pid``. Note that container is assigned with number 1 because of #1.
+* **[container#1]** : start docker as daemon with the following command line ``docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock -r=false -d -g /opt/docker.opensvc.com/appdata -p /var/lib/opensvc/docker.opensvc.com/docker.pid``. Note that container is assigned with number 1 because of #1.
 
   * -H : attach docker daemon to local socket. The socket name is herited from the OpenSVC service name.
   * -r = false : we do not want docker to manage the container startup automatically. Instead we will rely on OpenSVC features to do that
@@ -204,7 +204,7 @@ With the configuration file like exposed previously, OpenSVC will take the follo
   * -g : tell docker where to store its files
   * -p : while in daemon mode, specify a pidfile.
 
-  Once docker daemon is operational, the container is started with command line ``docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock run -t -i -d --name=docker.opensvc.com.container.1 -v /opt/docker.opensvc.com/vol1:/vol1:rw f66342b343ae /bin/sh``
+  Once docker daemon is operational, the container is started with command line ``docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock run -t -i -d --name=docker.opensvc.com.container.1 -v /opt/docker.opensvc.com/vol1:/vol1:rw f66342b343ae /bin/sh``
 
   * -H : asks the docker cli to attach to the docker daemon previously launched
   * -t : allocate a pseudo-tty and attach to the standard input of docker container
@@ -223,7 +223,7 @@ The normal way of starting an OpenSVC service is ``service_name start``. But in 
 
 **bring up service Volume Group**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com startvg
+        root@deb1:/etc/opensvc# docker.opensvc.com startvg
         06:36:40 INFO    DOCKER.OPENSVC.COM.VG#1    vgchange --addtag @deb1.opensvc.com vgdocker
         06:36:40 INFO    DOCKER.OPENSVC.COM.VG#1    output:
           Volume group "vgdocker" successfully changed
@@ -232,7 +232,7 @@ The normal way of starting an OpenSVC service is ``service_name start``. But in 
         06:36:40 INFO    DOCKER.OPENSVC.COM.VG#1    output:
           2 logical volume(s) in volume group "vgdocker" now active
         
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -249,7 +249,7 @@ vg#1 is now reported as up
 
 **bring up service filesystems**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com startfs
+        root@deb1:/etc/opensvc# docker.opensvc.com startfs
         06:37:07 INFO    DOCKER.OPENSVC.COM.VG#1    vgdocker is already up
         06:37:07 INFO    DOCKER.OPENSVC.COM.FS#1    e2fsck -p /dev/mapper/vgdocker-lvdockerroot
         06:37:07 INFO    DOCKER.OPENSVC.COM.FS#1    output:
@@ -262,7 +262,7 @@ vg#1 is now reported as up
         
         06:37:08 INFO    DOCKER.OPENSVC.COM.FS#2    mount -t ext4 /dev/mapper/vgdocker-lvdockerdata /opt/docker.opensvc.com/appdata
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -279,12 +279,12 @@ fs#1 and fs#2 are now reported as up
 
 **bring up service ip**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com startip
+        root@deb1:/etc/opensvc# docker.opensvc.com startip
         06:37:22 INFO    DOCKER.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
         06:37:26 INFO    DOCKER.OPENSVC.COM.IP#1    ifconfig eth0:1 37.59.71.25 netmask 255.255.255.224 up
         06:37:26 INFO    DOCKER.OPENSVC.COM.IP#1    arping -U -c 1 -I eth0 -s 37.59.71.25 37.59.71.25
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -301,10 +301,10 @@ ip#1 is now reported as up
 
 **querying Docker repository**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com docker images
+        root@deb1:/etc/opensvc# docker.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -317,26 +317,26 @@ ip#1 is now reported as up
         |- sync                   n/a
         '- hb                     n/a
         
-        root@deb1:/opt/opensvc/etc# ps auxww | grep docker
+        root@deb1:/etc/opensvc# ps auxww | grep docker
         root      1411  0.0  0.1   7852   836 pts/0    R+   06:54   0:00 grep docker
-        root     14530  0.0  1.3 266112  7048 pts/0    Sl   06:47   0:00 docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock -r=false -d -g /opt/docker.opensvc.com/appdata -p /opt/opensvc/var/docker.opensvc.com/docker.pid
+        root     14530  0.0  1.3 266112  7048 pts/0    Sl   06:47   0:00 docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock -r=false -d -g /opt/docker.opensvc.com/appdata -p /var/lib/opensvc/docker.opensvc.com/docker.pid
 
 We have no images listed in the local Docker repository. We can see that the "docker daemon is not running" message is no more reported. Instead, docker daemon has been started silently, and OpenSVC complains about a missing container. We need to populate the repository to be able to start the container.
 
 **pulling Docker image**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com docker pull busybox:latest
+        root@deb1:/etc/opensvc# docker.opensvc.com docker pull busybox:latest
         Pulling repository busybox
         f66342b343ae: Download complete
         511136ea3c5a: Download complete
         569584af1fe2: Download complete
         b1bafeaa2233: Download complete
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com docker images
+        root@deb1:/etc/opensvc# docker.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
         busybox             latest              f66342b343ae        10 hours ago        2.433 MB
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -353,20 +353,20 @@ The image id ``f66342b343ae`` is no more printed out as a raw image id, but is r
 
 **starting the service**::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com start
+        root@deb1:/etc/opensvc# docker.opensvc.com start
         07:17:58 INFO    DOCKER.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
         07:17:58 INFO    DOCKER.OPENSVC.COM.IP#1    37.59.71.25 is already up on eth0
         07:17:58 INFO    DOCKER.OPENSVC.COM.VG#1    vgdocker is already up
         07:17:58 INFO    DOCKER.OPENSVC.COM.FS#1    fs(/dev/mapper/vgdocker-lvdockerroot /opt/docker.opensvc.com) is already mounted
         07:17:58 INFO    DOCKER.OPENSVC.COM.FS#2    fs(/dev/mapper/vgdocker-lvdockerdata /opt/docker.opensvc.com/appdata) is already mounted
-        07:17:58 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock run -t -i -d --name=docker.opensvc.com.container.1 -v /opt/docker.opensvc.com/vol1:/vol1:rw f66342b343ae /bin/sh
+        07:17:58 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock run -t -i -d --name=docker.opensvc.com.container.1 -v /opt/docker.opensvc.com/vol1:/vol1:rw f66342b343ae /bin/sh
         07:17:58 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 output:
         20f6aabc5ce1ed1a2d2e5a8c22cb98ddfbaaaeb5161ab90c1f1ee4ed749b9038
         
         07:17:58 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 wait for container up status
         07:17:58 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 wait for container operational
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   up
         |- avail                  up
@@ -378,13 +378,13 @@ The image id ``f66342b343ae`` is no more printed out as a raw image id, but is r
         |- sync                   n/a
         '- hb                     n/a
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com docker ps
+        root@deb1:/etc/opensvc# docker.opensvc.com docker ps
         CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
         20f6aabc5ce1        busybox:latest      /bin/sh             8 minutes ago       Up 7 minutes                            docker.opensvc.com.container.1
 
 The service startup is now ok. Docker instanciate and run a container id ``20f6aabc5ce1`` based on image ``busybox:latest``. We can see that the container is running, and owns tag ``docker.opensvc.com.container.1``.
 
-.. note:: You may have noticed that OpenSVC wraps Docker's commands. Every Docker supported option will be passed to the Docker binary, and OpenSVC ensure that return codes from docker binary are caught. The main advantage is that you don't have to worry about which Docker's daemon socket to use, it is automatically herited from the OpenSVC service calling the docker command. In our example, ``docker.opensvc.com docker ps`` will call ``docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock ps``
+.. note:: You may have noticed that OpenSVC wraps Docker's commands. Every Docker supported option will be passed to the Docker binary, and OpenSVC ensure that return codes from docker binary are caught. The main advantage is that you don't have to worry about which Docker's daemon socket to use, it is automatically herited from the OpenSVC service calling the docker command. In our example, ``docker.opensvc.com docker ps`` will call ``docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock ps``
 
 Service Shutdown
 ================
@@ -393,8 +393,8 @@ We stop the OpenSVC service with command ``service_name stop``.
 
 ::
 
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com stop
-        07:41:19 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 docker -H unix:///opt/opensvc/var/docker.opensvc.com/docker.sock stop 20f6aabc5ce1
+        root@deb1:/etc/opensvc# docker.opensvc.com stop
+        07:41:19 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/docker.opensvc.com/docker.sock stop 20f6aabc5ce1
         07:41:29 INFO    DOCKER.OPENSVC.COM.CONTAINER#1 output:
         20f6aabc5ce1
         
@@ -414,7 +414,7 @@ We stop the OpenSVC service with command ``service_name stop``.
         
         07:41:30 INFO    DOCKER.OPENSVC.COM.IP#1    ifconfig eth0:1 down
         07:41:30 INFO    DOCKER.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
-        root@deb1:/opt/opensvc/etc# docker.opensvc.com print status
+        root@deb1:/etc/opensvc# docker.opensvc.com print status
         docker.opensvc.com
         overall                   down
         |- avail                  down

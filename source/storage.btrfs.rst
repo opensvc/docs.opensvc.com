@@ -49,7 +49,7 @@ There are some shortcomings in the current btrfs send/receive implementation tha
 
 - no recursive snapshot/delete/send : for now you have to declare one sync resource per subvol, even if they are organised as a tree.
 
-- btrfs receive is easily confused when looking for a subvol parent id : for now opensvc has to mount the ID5 root vol on ``/opt/opensvc/var/btrfs/<label>`` and uses a flat/root-parented snapshot hosting. Once the btrfs feature matures we might move to a .osvcsnap/ dedicated subvol mounted in ``/opt/opensvc/var/btrfs/<label>.osvcnap/`` instead.
+- btrfs receive is easily confused when looking for a subvol parent id : for now opensvc has to mount the ID5 root vol on ``<OSVCVAR>/btrfs/<label>`` and uses a flat/root-parented snapshot hosting. Once the btrfs feature matures we might move to a .osvcsnap/ dedicated subvol mounted in ``<OSVCVAR>/btrfs/<label>.osvcnap/`` instead.
 
 
 Service configuration
@@ -104,93 +104,93 @@ Full synchronization
 
 ::
 
-	root@deb1.opensvc.com # /opt/opensvc/etc/btrfssvc syncnodes
-	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /opt/opensvc/var/btrfs/data/btrfssvc /opt/opensvc/var/btrfs/data/btrfssvc@tosend
+	root@deb1.opensvc.com # svcmgr -s btrfssvc syncnodes
+	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc /var/lib/opensvc/btrfs/data/btrfssvc@tosend
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Create a readonly snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc' in '/opt/opensvc/var/btrfs/data/btrfssvc@tosend'
+	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc' in '/var/lib/opensvc/btrfs/data/btrfssvc@tosend'
 	
-	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume snapshot -r /opt/opensvc/var/btrfs/data/btrfssvc/child /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend
+	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc/child /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Create a readonly snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc/child' in '/opt/opensvc/var/btrfs/data/btrfssvc_child@tosend'
+	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc/child' in '/var/lib/opensvc/btrfs/data/btrfssvc_child@tosend'
 	
-	* BTRFSSVC.SYNC#1 - INFO - btrfs send /opt/opensvc/var/btrfs/data/btrfssvc@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /opt/opensvc/var/btrfs/data
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /opt/opensvc/var/btrfs/data/btrfssvc@tosend /opt/opensvc/var/btrfs/data/btrfssvc@sent
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc/child && btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc
+	* BTRFSSVC.SYNC#1 - INFO - btrfs send /var/lib/opensvc/btrfs/data/btrfssvc@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /var/lib/opensvc/btrfs/data
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /var/lib/opensvc/btrfs/data/btrfssvc@tosend /var/lib/opensvc/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc/child && btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc/child'
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc/child'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc'
 	
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /opt/opensvc/var/btrfs/data/btrfssvc@sent /opt/opensvc/var/btrfs/data/btrfssvc
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /var/lib/opensvc/btrfs/data/btrfssvc@sent /var/lib/opensvc/btrfs/data/btrfssvc
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Create a snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc@sent' in '/opt/opensvc/var/btrfs/data/btrfssvc'
+	Create a snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc@sent' in '/var/lib/opensvc/btrfs/data/btrfssvc'
 	
-	* BTRFSSVC.SYNC#1 - INFO - mv /opt/opensvc/var/btrfs/data/btrfssvc@tosend /opt/opensvc/var/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - mv /var/lib/opensvc/btrfs/data/btrfssvc@tosend /var/lib/opensvc/btrfs/data/btrfssvc@sent
 	* BTRFSSVC.SYNC#1 - INFO - update state file with snap uuid 203
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/btrfssvc_sync#1_btrfs_state deb2.opensvc.com:/opt/opensvc/var/btrfssvc_sync\#1_btrfs_state
-	* BTRFSSVC.SYNC#2 - INFO - btrfs send /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /opt/opensvc/var/btrfs/data
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /opt/opensvc/var/btrfs/data/btrfssvc_child@sent /opt/opensvc/var/btrfs/data/btrfssvc/child
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/btrfssvc_sync#1_btrfs_state deb2.opensvc.com:/var/lib/opensvc/btrfssvc_sync\#1_btrfs_state
+	* BTRFSSVC.SYNC#2 - INFO - btrfs send /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /var/lib/opensvc/btrfs/data
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /var/lib/opensvc/btrfs/data/btrfssvc_child@sent /var/lib/opensvc/btrfs/data/btrfssvc/child
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Create a snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc_child@sent' in '/opt/opensvc/var/btrfs/data/btrfssvc/child'
+	Create a snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc_child@sent' in '/var/lib/opensvc/btrfs/data/btrfssvc/child'
 	
-	* BTRFSSVC.SYNC#2 - INFO - mv /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#2 - INFO - mv /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
 	* BTRFSSVC.SYNC#2 - INFO - update state file with snap uuid 204
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/btrfssvc_sync#2_btrfs_state deb2.opensvc.com:/opt/opensvc/var/btrfssvc_sync\#2_btrfs_state
-	* BTRFSSVC - INFO - exec '/opt/opensvc/etc/btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/btrfssvc_sync#2_btrfs_state deb2.opensvc.com:/var/lib/opensvc/btrfssvc_sync\#2_btrfs_state
+	* BTRFSSVC - INFO - exec 'svcmgr -s btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
 
 Incremental synchronization
 ---------------------------
 
 ::
 
-	root@deb1.opensvc.com # /opt/opensvc/etc/btrfssvc syncnodes
-	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /opt/opensvc/var/btrfs/data/btrfssvc /opt/opensvc/var/btrfs/data/btrfssvc@tosend
+	root@deb1.opensvc.com # svcmgr -s btrfssvc syncnodes
+	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc /var/lib/opensvc/btrfs/data/btrfssvc@tosend
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Create a readonly snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc' in '/opt/opensvc/var/btrfs/data/btrfssvc@tosend'
+	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc' in '/var/lib/opensvc/btrfs/data/btrfssvc@tosend'
 
-	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume snapshot -r /opt/opensvc/var/btrfs/data/btrfssvc/child /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend
+	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc/child /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Create a readonly snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc/child' in '/opt/opensvc/var/btrfs/data/btrfssvc_child@tosend'
+	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc/child' in '/var/lib/opensvc/btrfs/data/btrfssvc_child@tosend'
 
-	* BTRFSSVC.SYNC#1 - INFO - btrfs send -i /opt/opensvc/var/btrfs/data/btrfssvc@sent -p /opt/opensvc/var/btrfs/data/btrfssvc@sent /opt/opensvc/var/btrfs/data/btrfssvc@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /opt/opensvc/var/btrfs/data
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - btrfs send -i /var/lib/opensvc/btrfs/data/btrfssvc@sent -p /var/lib/opensvc/btrfs/data/btrfssvc@sent /var/lib/opensvc/btrfs/data/btrfssvc@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /var/lib/opensvc/btrfs/data
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc@sent
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc@sent'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc@sent'
 
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /opt/opensvc/var/btrfs/data/btrfssvc@tosend /opt/opensvc/var/btrfs/data/btrfssvc@sent
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc/child && btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /var/lib/opensvc/btrfs/data/btrfssvc@tosend /var/lib/opensvc/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc/child && btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc/child'
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc/child'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc'
 
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /opt/opensvc/var/btrfs/data/btrfssvc@sent /opt/opensvc/var/btrfs/data/btrfssvc
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /var/lib/opensvc/btrfs/data/btrfssvc@sent /var/lib/opensvc/btrfs/data/btrfssvc
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Create a snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc@sent' in '/opt/opensvc/var/btrfs/data/btrfssvc'
+	Create a snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc@sent' in '/var/lib/opensvc/btrfs/data/btrfssvc'
 
-	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc@sent
 	* BTRFSSVC.SYNC#1 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc@sent'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc@sent'
 
-	* BTRFSSVC.SYNC#1 - INFO - mv /opt/opensvc/var/btrfs/data/btrfssvc@tosend /opt/opensvc/var/btrfs/data/btrfssvc@sent
+	* BTRFSSVC.SYNC#1 - INFO - mv /var/lib/opensvc/btrfs/data/btrfssvc@tosend /var/lib/opensvc/btrfs/data/btrfssvc@sent
 	* BTRFSSVC.SYNC#1 - INFO - update state file with snap uuid 206
-	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/btrfssvc_sync#1_btrfs_state deb2.opensvc.com:/opt/opensvc/var/btrfssvc_sync\#1_btrfs_state
-	* BTRFSSVC.SYNC#2 - INFO - btrfs send -i /opt/opensvc/var/btrfs/data/btrfssvc_child@sent -p /opt/opensvc/var/btrfs/data/btrfssvc_child@sent /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /opt/opensvc/var/btrfs/data
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#1 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/btrfssvc_sync#1_btrfs_state deb2.opensvc.com:/var/lib/opensvc/btrfssvc_sync\#1_btrfs_state
+	* BTRFSSVC.SYNC#2 - INFO - btrfs send -i /var/lib/opensvc/btrfs/data/btrfssvc_child@sent -p /var/lib/opensvc/btrfs/data/btrfssvc_child@sent /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend | /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs receive /var/lib/opensvc/btrfs/data
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc_child@sent'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc_child@sent'
 
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /opt/opensvc/var/btrfs/data/btrfssvc_child@sent /opt/opensvc/var/btrfs/data/btrfssvc/child
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com mv /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/ssh -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 deb2.opensvc.com btrfs subvolume snapshot /var/lib/opensvc/btrfs/data/btrfssvc_child@sent /var/lib/opensvc/btrfs/data/btrfssvc/child
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Create a snapshot of '/opt/opensvc/var/btrfs/data/btrfssvc_child@sent' in '/opt/opensvc/var/btrfs/data/btrfssvc/child'
+	Create a snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc_child@sent' in '/var/lib/opensvc/btrfs/data/btrfssvc/child'
 
-	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume delete /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#2 - INFO - btrfs subvolume delete /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
 	* BTRFSSVC.SYNC#2 - INFO - output:
-	Delete subvolume '/opt/opensvc/var/btrfs/data/btrfssvc_child@sent'
+	Delete subvolume '/var/lib/opensvc/btrfs/data/btrfssvc_child@sent'
 
-	* BTRFSSVC.SYNC#2 - INFO - mv /opt/opensvc/var/btrfs/data/btrfssvc_child@tosend /opt/opensvc/var/btrfs/data/btrfssvc_child@sent
+	* BTRFSSVC.SYNC#2 - INFO - mv /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
 	* BTRFSSVC.SYNC#2 - INFO - update state file with snap uuid 207
-	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /opt/opensvc/var/btrfssvc_sync#2_btrfs_state deb2.opensvc.com:/opt/opensvc/var/btrfssvc_sync\#2_btrfs_state
-	* BTRFSSVC - INFO - exec '/opt/opensvc/etc/btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
+	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/btrfssvc_sync#2_btrfs_state deb2.opensvc.com:/var/lib/opensvc/btrfssvc_sync\#2_btrfs_state
+	* BTRFSSVC - INFO - exec '/etc/opensvc/btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
 
 

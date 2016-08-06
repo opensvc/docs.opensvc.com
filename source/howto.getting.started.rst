@@ -191,12 +191,6 @@ Install the OpenSVC Agent on both cluster nodes.
         # rpm -Uvh /tmp/opensvc.latest.rpm
         # rpm -qa | grep opensvc
         opensvc-1.5-10303
-        # ls /opt/opensvc/
-        bin  etc  lib  log  tmp  usr  var
-        # cat /etc/cron.d/opensvc
-        0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/svcmon ] && /opt/opensvc/bin/svcmon --updatedb --maxdelaydb 120 >/dev/null 2>&1
-        0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/cron/opensvc ] && /opt/opensvc/bin/cron/opensvc >/dev/null 2>&1
-        0,10,20,30,40,50 * * * * root [ -x /opt/opensvc/bin/perfagt.Linux ] && /opt/opensvc/bin/perfagt.Linux >/dev/null 2>&1
 
 The OpenSVC agent is now operational.
 
@@ -248,7 +242,8 @@ Service Creation
 The OpenSVC service can be created using one of the following two methods::
 
 * wizard : ``svcmgr create`` with interactive option (-i)
-* manual : build config file from template (located in /opt/opensvc/usr/share/doc/template.env)
+* manual : build config file from templates (located in ``<OSVCDOC>``)
+* provisioning
 
 We will describe the second, manual option, for a better understanding of what happens. 
 
@@ -265,9 +260,9 @@ The following configuration describes a service named ``p26.opensvc.com``, runni
 
 **On sles1 node**::
 
-        sles1:/ # cd /opt/opensvc/etc
+        sles1:/ # cd /etc/opensvc
 
-        sles1:/opt/opensvc/etc # cat p26.opensvc.com.env
+        sles1:/etc/opensvc # cat p26.opensvc.com.env
         [DEFAULT]					# Global section for service description
         app = MyApp					# service application friendly name
         service_type = TST				# specify is service runs production, test, dev, ...
@@ -301,14 +296,14 @@ The following configuration describes a service named ``p26.opensvc.com``, runni
 Step 2 : Service startup scripts directory
 ++++++++++++++++++++++++++++++++++++++++++
 
-As services are used to manage application, we need to specify a directory where all applications startup scripts are located.
+As services are used to manage application, we need to specify a directory where all applications startup scripts can be grouped.
 
 As an example, if we want to build a LAMP service, we would use 2 scripts: one for the mysql database, and another for the apache webserver. Those scripts have to be located in the service startup scripts directory ::
 
-        sles1:/opt/opensvc/etc # mkdir p26.opensvc.com.dir
-        sles1:/opt/opensvc/etc # ln -s p26.opensvc.com.dir p26.opensvc.com.d
+        sles1:/etc/opensvc # mkdir p26.opensvc.com.dir
+        sles1:/etc/opensvc # ln -s p26.opensvc.com.dir p26.opensvc.com.d
 
-We will see later in this tutorial that ``/opt/opensvc/etc/p26.opensvc.com.dir`` may not be the best place for hosting the launchers. Anyway, the symlink ``p26.opensvc.com.d`` is the only place where OpenSVC actually search for application launchers.
+We will see later in this tutorial that ``/etc/opensvc/p26.opensvc.com.dir`` may not be the best place for hosting the launchers. Anyway, the symlink ``p26.opensvc.com.d`` is the only place where OpenSVC actually search for application launchers defined as basenames.
 
 For now, we just will just create this directory and the symlink. No script is added yet.
 
@@ -317,7 +312,7 @@ Step 3 : Service management facility
 
 To make service management easy, we create a symlink to OpenSVC core service management command ::
 
-        sles1:/opt/opensvc/etc # ln -s /opt/opensvc/bin/svcmgr p26.opensvc.com
+        sles1:/etc/opensvc # ln -s /usr/bin/svcmgr p26.opensvc.com
 
 Without this symlink, we have to use the ``svcmgr`` command with arguments to manage our service ::
 
@@ -332,21 +327,21 @@ Step 4 : Service configuration check
 
 As a final check, we can list all entries that match our ``p26.opensvc.com`` service ::
 
-        sles1:/opt/opensvc/etc # ls -lart | grep p26
+        sles1:/etc/opensvc # ls -lart | grep p26
         total 20
         drwxr-xr-x 9 root root 4096 16 févr. 11:14 ..
         -rw-r--r-- 1 root root  423 17 févr. 14:12 p26.opensvc.com.env
         drwxr-xr-x 2 root root 4096 17 févr. 14:14 p26.opensvc.com.dir
         lrwxrwxrwx 1 root root   19 17 févr. 14:15 p26.opensvc.com.d -> p26.opensvc.com.dir
-        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
+        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /usr/bin/svcmgr
         drwxr-xr-x 3 root root 4096 17 févr. 14:15 .
 
 You should be able to see:
 
 - the service configuration file (service.env)
 - the directory where are stored the applications launchers (service.dir)
-- a symlink to the service.dir (service.d)
-- a symlink to the /opt/opensvc/bin/svcmgr command (service)
+- a symlink to the ``service.dir`` (service.d)
+- a symlink to the ``/usr/bin/svcmgr`` command (service)
 
 At this point, we have configured a single service with no application launcher on node sles1.
 
@@ -463,28 +458,28 @@ We will use a very simple example : a tiny webserver with a single index.html fi
 Applications launcher directory
 +++++++++++++++++++++++++++++++
 
-The OpenSVC service integration enables service relocation amongst nodes. The per-service launchers hosting directory layout is a consequence of this relocation feature. The service has an implicit synchronisation resource to replicate the /opt/opensvc/etc/<service>* files using rsync.
+The OpenSVC service integration enables service relocation amongst nodes. The per-service launchers hosting directory layout is a consequence of this relocation feature. The service has an implicit synchronisation resource to replicate the ``<OSVCETC>/<service>*`` files using rsync.
 
-As a refinement, for services with dedicated shared disks, we can relocate the application launchers directory to a filesystem resource hosted in one such disk. The original location was ``/opt/opensvc/etc/p26.opensvc.dir``. Let's move it to ``/svc1/app/init.d``::
+As a refinement, for services with dedicated shared disks, we can relocate the application launchers directory to a filesystem resource hosted in one such disk. The original location was ``<OSVCETC>/p26.opensvc.dir``. Let's move it to ``/svc1/app/init.d``::
 
-        sles1:/opt/opensvc/etc # ls -lart | grep p26
+        sles1:/etc/opensvc # ls -lart | grep p26
         total 20
         drwxr-xr-x 9 root root 4096 16 févr. 11:14 ..
         -rw-r--r-- 1 root root  423 17 févr. 14:12 p26.opensvc.com.env
         drwxr-xr-x 2 root root 4096 17 févr. 14:14 p26.opensvc.com.dir
         lrwxrwxrwx 1 root root   19 17 févr. 14:15 p26.opensvc.com.d -> p26.opensvc.com.dir
-        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
+        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /usr/bin/svcmgr
         drwxr-xr-x 3 root root 4096 17 févr. 14:15 .
 
-        sles1:/opt/opensvc/etc # rm -f p26.opensvc.com.d
-        sles1:/opt/opensvc/etc # rmdir p26.opensvc.com.dir
+        sles1:/etc/opensvc # rm -f p26.opensvc.com.d
+        sles1:/etc/opensvc # rmdir p26.opensvc.com.dir
 
-        sles1:/opt/opensvc/etc # mkdir /svc1/app/init.d
-        sles1:/opt/opensvc/etc # ln -s /svc1/app/init.d p26.opensvc.com.d
+        sles1:/etc/opensvc # mkdir /svc1/app/init.d
+        sles1:/etc/opensvc # ln -s /svc1/app/init.d p26.opensvc.com.d
 
-        sles1:/opt/opensvc/etc # ls -lart | grep p26
+        sles1:/etc/opensvc # ls -lart | grep p26
         total 12
-        lrwxrwxrwx 1 root root  23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
+        lrwxrwxrwx 1 root root  23 17 févr. 14:15 p26.opensvc.com -> /usr/bin/svcmgr
         lrwxrwxrwx 1 root root  16 17 févr. 16:48 p26.opensvc.com.d -> /svc1/app/init.d
         -rw-r--r-- 1 root root 396 17 févr. 14:21 p26.opensvc.com.env
 
@@ -636,8 +631,8 @@ Now we can give a try to our launcher script, using OpenSVC commands::
         /dev/mapper/vgsvc1-lvdatasvc1: clean, 13/3072 files, 1532/12288 blocks
         
         16:52:37 INFO    P26.OPENSVC.COM.FS#1    mount -t ext3 /dev/mapper/vgsvc1-lvdatasvc1 /svc1/data
-        16:52:37 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/S10weblauncher start
-        16:52:37 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.007657 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_S10weblauncher.log
+        16:52:37 INFO    P26.OPENSVC.COM.APP     spawn: /etc/opensvc/p26.opensvc.com.d/S10weblauncher start
+        16:52:37 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.007657 - ret 0 - logs in /var/tmp/opensvc/svc_p26.opensvc.com_S10weblauncher.log
 
 We can see that OpenSVC is now calling our startup script after mounting filesystems.
         
@@ -669,8 +664,8 @@ Let's check if that is really the case::
 Now we can stop our service::
 
         sles1:/ # p26.opensvc.com stop
-        15:32:31 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/K90weblauncher stop
-        15:32:31 INFO    P26.OPENSVC.COM.APP     stop done in 0:00:00.004676 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_K90weblauncher.log
+        15:32:31 INFO    P26.OPENSVC.COM.APP     spawn: /etc/opensvc/p26.opensvc.com.d/K90weblauncher stop
+        15:32:31 INFO    P26.OPENSVC.COM.APP     stop done in 0:00:00.004676 - ret 0 - logs in /var/tmp/opensvc/svc_p26.opensvc.com_K90weblauncher.log
         15:32:32 INFO    P26.OPENSVC.COM.FS#1    umount /svc1/data
         15:32:32 INFO    P26.OPENSVC.COM.FS#0    umount /svc1/app
         15:32:32 INFO    P26.OPENSVC.COM.VG#0    vgchange --deltag @sles1 vgsvc1
@@ -736,8 +731,8 @@ Let's restart the service to continue this tutorial::
         /dev/mapper/vgsvc1-lvdatasvc1: clean, 13/3072 files, 1532/12288 blocks
         
         15:53:49 INFO    P26.OPENSVC.COM.FS#1    mount -t ext3 /dev/mapper/vgsvc1-lvdatasvc1 /svc1/data
-        15:53:49 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/S10weblauncher start
-        15:53:49 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.008936 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_S10weblauncher.log
+        15:53:49 INFO    P26.OPENSVC.COM.APP     spawn: /etc/opensvc/p26.opensvc.com.d/S10weblauncher start
+        15:53:49 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.008936 - ret 0 - logs in /var/tmp/opensvc/svc_p26.opensvc.com_S10weblauncher.log
 
 At this point, we have a running service on node sles1, with a webserver application embedded.
 
@@ -748,29 +743,29 @@ Our service is running fine, but what happens if the ``sles1`` node fails ? Our 
 That's why we want to extend the service configuration to declare ``sles2`` as a failover node for this service.
 After this change, the service configuration needs replication to the ``sles2`` node. 
 
-First we check ``/opt/opensvc/etc/`` on sles2, it should be empty because we've done a fresh install::
+First we check ``<OSVCETC>`` on sles2, it should be empty because we've done a fresh install::
 
-        sles1:/opt/opensvc/etc # ssh sles2 ls /opt/opensvc/etc/ | grep p26.opensvc.com
-        sles1:/opt/opensvc/etc # 
+        sles1:/etc/opensvc # ssh sles2 ls /etc/opensvc/ | grep p26.opensvc.com
+        sles1:/etc/opensvc # 
 
 The configuration replication will be possible if the following conditions are met:
 
-- the new node is declared in the service configuration file /opt/opensvc/etc/p26.opensvc.com.env (parameter "nodes" in the .env file)
+- the new node is declared in the service configuration file ``<OSVCETC>/p26.opensvc.com.env`` (parameter "nodes" in the .env file)
 - the node sending config files (sles1) is trusted on the new node (sles2) (as described in a previous chapter of this tutorial)
 - the node sending config files (sles1) must be running the service (the service availability status, apps excluded, is up).
 - the previous synchronisation is older than the configured minimum delay, or the --force option is set to bypass the delay check.
 
 Let's replicate the configuration files::
 
-        sles1:/opt/opensvc/etc # p26.opensvc.com syncnodes
+        sles1:/ # svcmgr -s p26.opensvc.com syncnodes
         17:20:37 INFO    P26.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
         
-        sles1:/opt/opensvc/etc # p26.opensvc.com syncnodes --force
-        17:20:41 INFO    P26.OPENSVC.COM         exec '/opt/opensvc/etc/p26.opensvc.com --waitlock 3600 postsync' on node sles2
+        sles1:/ # svcmgr -s p26.opensvc.com syncnodes --force
+        17:20:41 INFO    P26.OPENSVC.COM         exec 'svcmgr -s p26.opensvc.com --waitlock 3600 postsync' on node sles2
         
-        sles1:/opt/opensvc/etc # ssh sles2 ls -l /opt/opensvc/etc | grep p26.opensvc.com
+        sles1:/ # ssh sles2 ls -l /etc/opensvc | grep p26.opensvc.com
         total 8
-        lrwxrwxrwx 1 root root  23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
+        lrwxrwxrwx 1 root root  23 17 févr. 14:15 p26.opensvc.com -> /usr/bin/svcmgr
         lrwxrwxrwx 1 root root  16 17 févr. 16:48 p26.opensvc.com.d -> /svc1/app/init.d
         -rw-r--r-- 1 root root 396 17 févr. 14:21 p26.opensvc.com.env
 
@@ -778,7 +773,7 @@ We can see that the ``sles2`` node is now ready to start our service.
 
 **On sles1**::
 
-        sles1:/opt/opensvc/etc # p26.opensvc.com print status
+        sles1:/ # svcmgr -s p26.opensvc.com print status
         p26.opensvc.com
         overall                   up
         |- avail                  up
@@ -795,9 +790,9 @@ Note that the ``sync#i0`` ressource is now up, due to both nodes being in sync f
 
 We can now try to start the service on ``sles2``, after stopping it on ``sles1``::
 
-        sles1:/opt/opensvc/etc # p26.opensvc.com stop
-        16:07:40 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/K90weblauncher stop
-        16:07:40 INFO    P26.OPENSVC.COM.APP     stop done in 0:00:00.004513 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_K90weblauncher.log
+        sles1:/ # svcmgr -s p26.opensvc.com stop
+        16:07:40 INFO    P26.OPENSVC.COM.APP     spawn: /etc/opensvc/p26.opensvc.com.d/K90weblauncher stop
+        16:07:40 INFO    P26.OPENSVC.COM.APP     stop done in 0:00:00.004513 - ret 0 - logs in /var/tmp/opensvc/svc_p26.opensvc.com_K90weblauncher.log
         16:07:40 INFO    P26.OPENSVC.COM.FS#1    umount /svc1/data
         16:07:40 INFO    P26.OPENSVC.COM.FS#0    umount /svc1/app
         16:07:40 INFO    P26.OPENSVC.COM.VG#0    vgchange --deltag @sles1 vgsvc1
@@ -840,8 +835,8 @@ We can now try to start the service on ``sles2``, after stopping it on ``sles1``
         /dev/mapper/vgsvc1-lvdatasvc1: clean, 13/3072 files, 1532/12288 blocks
         
         16:08:43 INFO    P26.OPENSVC.COM.FS#1    mount -t ext3 /dev/mapper/vgsvc1-lvdatasvc1 /svc1/data
-        16:08:43 INFO    P26.OPENSVC.COM.APP     spawn: /opt/opensvc/etc/p26.opensvc.com.d/S10weblauncher start
-        16:08:43 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.009601 - ret 0 - logs in /opt/opensvc/tmp/svc_p26.opensvc.com_S10weblauncher.log
+        16:08:43 INFO    P26.OPENSVC.COM.APP     spawn: /etc/opensvc/p26.opensvc.com.d/S10weblauncher start
+        16:08:43 INFO    P26.OPENSVC.COM.APP     start done in 0:00:00.009601 - ret 0 - logs in /var/tmp/opensvc/svc_p26.opensvc.com_S10weblauncher.log
 
         sles2:~ # p26.opensvc.com print status
         p26.opensvc.com
@@ -891,14 +886,14 @@ The following section is appended to the ``p26.opensvc.com.env`` file on node ``
 
 The ``name`` parameter can be set if the OpenSVC service name is different from the OpenHA service name. In this example, we use the same service name, so we omitted this parameter.
 
-The next ``svcmon`` or ``print status`` action will automatically complete the ``/opt/opensvc/etc`` directory with 2 new symlinks::
+The next ``svcmon`` or ``print status`` action will automatically complete the ``<OSVCETC>`` directory with 2 new symlinks::
 
-        sles1:/opt/opensvc/etc # p26.opensvc.com print status
-        send /opt/opensvc/etc/p26.opensvc.com.env to collector ... OK
-        update /opt/opensvc/var/p26.opensvc.com.push timestamp ... OK
+        sles1:/ # svcmgr -s p26.opensvc.com print status
+        send /etc/opensvc/p26.opensvc.com.env to collector ... OK
+        update /var/lib/opensvc/p26.opensvc.com.push timestamp ... OK
         p26.opensvc.com
-        11:19:37 INFO    P26.OPENSVC.COM.HB#0  /opt/opensvc/etc/p26.opensvc.com.cluster: not regular file nor symlink. fix. 
-        11:19:37 INFO    P26.OPENSVC.COM.HB#0  /opt/opensvc/etc/p26.opensvc.com.stonith: not regular file nor symlink. fix.
+        11:19:37 INFO    P26.OPENSVC.COM.HB#0  /etc/opensvc/p26.opensvc.com.cluster: not regular file nor symlink. fix. 
+        11:19:37 INFO    P26.OPENSVC.COM.HB#0  /etc/opensvc/p26.opensvc.com.stonith: not regular file nor symlink. fix.
         overall                   warn
         |- avail                  up
         |  |- vg#0           .... up       vgsvc1
@@ -912,22 +907,22 @@ The next ``svcmon`` or ``print status`` action will automatically complete the `
            '- hb#0           .... warn     hb.openha
                                            # open-ha daemons are not running
         
-        sles1:/opt/opensvc/etc # ls -lart | grep p26
-        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /opt/opensvc/bin/svcmgr
+        sles1:/etc/opensvc # ls -lart | grep p26
+        lrwxrwxrwx 1 root root   23 17 févr. 14:15 p26.opensvc.com -> /usr/bin/svcmgr
         lrwxrwxrwx 1 root root   16 17 févr. 16:48 p26.opensvc.com.d -> /svc1/app/init.d
         -rw-r--r-- 1 root root  428 19 févr. 08:29 p26.opensvc.com.env.before.openha
         -rw-r--r-- 1 root root  450 19 févr. 08:30 p26.opensvc.com.env
-        lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.stonith -> ../bin/svcmgr
-        lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.cluster -> ../bin/svcmgr
+        lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.stonith -> /usr/bin/svcmgr
+        lrwxrwxrwx 1 root root   13 19 févr. 11:19 p26.opensvc.com.cluster -> /usr/bin/svcmgr
 
 The new service configuration must now be pushed to the peer node ``sles2``::
 
-        sles1:/ # p26.opensvc.com syncnodes --force 
-        11:55:50 INFO    P26.OPENSVC.COM         exec '/opt/opensvc/etc/p26.opensvc.com --waitlock 3600 postsync' on node sles2
+        sles1:/ # svcmgr -s p26.opensvc.com syncnodes --force 
+        11:55:50 INFO    P26.OPENSVC.COM         exec '/etc/opensvc/p26.opensvc.com --waitlock 3600 postsync' on node sles2
 
-        sles1:/ # ssh sles2 p26.opensvc.com print status
-        18:18:56 INFO    P26.OPENSVC.COM.HB#0    /opt/opensvc/etc/p26.opensvc.com.cluster: not regular file nor symlink. fix.
-        18:18:56 INFO    P26.OPENSVC.COM.HB#0    /opt/opensvc/etc/p26.opensvc.com.stonith: not regular file nor symlink. fix.
+        sles1:/ # ssh sles2 svcmgr -s p26.opensvc.com print status
+        18:18:56 INFO    P26.OPENSVC.COM.HB#0    /etc/opensvc/p26.opensvc.com.cluster: not regular file nor symlink. fix.
+        18:18:56 INFO    P26.OPENSVC.COM.HB#0    /etc/opensvc/p26.opensvc.com.stonith: not regular file nor symlink. fix.
         p26.opensvc.com
         overall                   down
         |- avail                  down
@@ -999,7 +994,7 @@ OpenHA also requires monitored services to be declared :
 
 **On both nodes**::
 
-        # $EZ_BIN/service -a p26.opensvc.com /opt/opensvc/etc/p26.opensvc.com.cluster sles1 sles2 /bin/true
+        # $EZ_BIN/service -a p26.opensvc.com /etc/opensvc/p26.opensvc.com.cluster sles1 sles2 /bin/true
         Creating service p26.opensvc.com :
         Make of services directory done
         Done.
@@ -1076,7 +1071,7 @@ Querying the OpenHA service status at a ~1 second interval, we can see to status
         	Primary  : sles1, STARTING
         	Secondary: sles2, FROZEN_STOP
 
-=> The ``STARTING`` state means that ``sles1`` node have initiated the service startup by calling the script ``/opt/opensvc/etc/p26.opensvc.com.cluster`` specified in OpenHA service configuration with the ``start`` parameter.
+=> The ``STARTING`` state means that ``sles1`` node have initiated the service startup by calling the script ``<OSVCETC>/p26.opensvc.com.cluster`` specified in OpenHA service configuration with the ``start`` parameter.
 
 **On sles1 node**::
 
