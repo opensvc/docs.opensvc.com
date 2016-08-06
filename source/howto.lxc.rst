@@ -182,8 +182,8 @@ Create the service configuration file:
 	[ip#1]
 	ipdev = br0
 	ipname = service_name
-	post_start = /opt/opensvc/etc/opt/opensvc_name.d/ovh_routes start service_name 1.2.3.4
-	pre_stop = /opt/opensvc/etc/opt/opensvc_name.d/ovh_routes stop service_name 1.2.3.4
+	post_start = /etc/opensvc/opensvc_name.d/ovh_routes start service_name 1.2.3.4
+	pre_stop = /etc/opensvc/opensvc_name.d/ovh_routes stop service_name 1.2.3.4
 
 	[sync#0]
 	src = /opt/opensvc_name/
@@ -199,11 +199,11 @@ create the trigger scripts store, which is synchronized across nodes:
 
 ::
 
-	mkdir -p /opt/opensvc/etc/opt/opensvc_name.dir
-	cd /opt/opensvc/etc/
-	ln -s /opt/opensvc/etc/opt/opensvc_name.dir /opt/opensvc/etc/opt/opensvc_name.d
+	mkdir -p /etc/opensvc/opensvc_name.dir
+	cd /etc/opensvc/
+	ln -s opensvc_name.dir opensvc_name.d
 
-create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/ovh_routes``:
+create and adapt the trigger scripts as ``/etc/opensvc/opensvc_name.dir/ovh_routes``:
 
 ::
 
@@ -221,7 +221,7 @@ create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/
 	case $1 in
 	start)
 		has_route || ip route add $route
-		/opt/opensvc/etc/$svc.d/ipfailover
+		/etc/opensvc/etc/$svc.d/ipfailover
 		# make sure proxy_arp and ip_forwarding settings are set
 		sysctl -p >/dev/null 2>&1
 		# containers are not able to load kernel modules.
@@ -233,7 +233,7 @@ create and adapt the trigger scripts as ``/opt/opensvc/etc/opt/opensvc_name.dir/
 		;;
 	esac
 
-and ``/opt/opensvc/etc/opt/opensvc_name.dir/ipfailover``:
+and ``/etc/opensvc/opensvc_name.dir/ipfailover``:
 
 ::
 

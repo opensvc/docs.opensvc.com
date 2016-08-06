@@ -18,7 +18,7 @@ Most tasks produce data sent to the collector for site-level aggregation.
 Node scheduler tasks
 ++++++++++++++++++++
 
-The node scheduler tasks schedules are defined in ``/opt/opensvc/etc/node.conf``. Each task has its own section supporting the ``schedule`` parameter. The section name is visible in ``nodemgr print schedule`` output in the ``config parameter`` column.
+The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the ``schedule`` parameter. The section name is visible in ``sudo nodemgr print schedule`` output in the ``config parameter`` column.
 
 ::
 
@@ -53,7 +53,7 @@ The node scheduler tasks schedules are defined in ``/opt/opensvc/etc/node.conf``
 Service scheduler tasks
 +++++++++++++++++++++++
 
-The node scheduler tasks schedules are defined in ``/opt/opensvc/etc/<svcname>.env``. The section and parameter names are visible in ``nodemgr print schedule`` output in the ``config parameter`` column.
+A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in ``sudo svcmgr -s <svcname> print schedule`` output in the ``config parameter`` column.
 
 ::
 
@@ -89,7 +89,7 @@ Example configuration for the pull mode and systemd
   Description=OpenSVC collector-queued actions handler
   
   [Service]
-  ExecStart=-/opt/opensvc/bin/nodemgr dequeue actions
+  ExecStart=-/usr/bin/nodemgr dequeue actions
   
 ``/etc/systemd/system/opensvc-actions@.socket``::
 

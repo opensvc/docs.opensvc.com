@@ -29,7 +29,7 @@ This cookbook focuses on adding HA to an existing OpenSVC clustered service. Ple
 
 In addition to the above instructions, services handled by a clusterware have to:
 
-*   Declare a heartbeat resource in the env file: (Refer to :file:`/opt/opensvc/usr/share/doc/template.env` for detailled syntax information).
+*   Declare a heartbeat resource in the env file: (Refer to :file:`<OSVCDOC>/template.env` for detailled syntax information).
 
    ::
 
@@ -39,11 +39,11 @@ In addition to the above instructions, services handled by a clusterware have to
 
 .. warning:: OpenHA service names are limited to 15 characters and node names are limited to 127 characters.
 
-*   Create an additional symlink in :file:`/opt/opensvc/etc/`:
+*   Create an additional symlink in :file:`<OSVCETC>`:
 
    ::
 
-      cd /opt/opensvc/etc && ln -s ../bin/svcmgr svc1.cluster
+      cd /etc/opensvc && ln -s ../bin/svcmgr svc1.cluster
 
 Open-HA
 -------
@@ -143,13 +143,13 @@ Without STONITH:
 
 ::
 
-   $EZ_BIN/service -a svc1 /opt/opensvc/etc/svc_name.cluster node108 node109 /bin/true
+   $EZ_BIN/service -a svc1 /etc/opensvc/svc_name.cluster node108 node109 /bin/true
 
 With STONITH:
 
 ::
 
-   $EZ_BIN/service -a svc1 /opt/opensvc/etc/svc_name.cluster node108 node109 /opt/opensvc/etc/svc_name.stonith
+   $EZ_BIN/service -a svc1 /etc/opensvc/svc_name.cluster node108 node109 /etc/opensvc/svc_name.stonith
 
 Where:
 
@@ -252,15 +252,6 @@ A subset of the service's resources can be flagged for monitoring through:
 
    [res#2]
    monitor_on = nodes
-
-Schedule resource monitoring
-----------------------------
-
-The ``resource_monitor`` action must be scheduled. For example in :file:`/etc/cron.d/opensvc`:
-
-::
-
-   * * * * * root [ -x /opt/opensvc/bin/allservices ] && /opt/opensvc/bin/allservices resource_monitor >/dev/null 2>&1
 
 Monitor action
 --------------

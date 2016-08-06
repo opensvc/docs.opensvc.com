@@ -65,7 +65,7 @@ Cluster mode
 :command:`swap`
     This mode is dedicated to multi-site clusters. Upon service startup on a secondary node, the snapmirrored are quiesced and sync directions are swapped to set the 'source' to the filer local to the secondary node taking over the service.
 
-The mode is deduced from the node's host mode (:file:`/opt/opensvc/var/host_mode`) : a PRD host mode implies the swap sync mode, otherwise the split sync mode is selected.
+The mode is deduced from the node's host mode : a PRD host mode implies the swap sync mode, otherwise the split sync mode is selected.
 
 Service configuration file
 --------------------------
@@ -243,7 +243,7 @@ Quiesce a replication
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap syncquiesce
+	# svcmgr -s unxprdencap syncquiesce
 	2010-02-09 16:51:22,419 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 
 Resume a replication
@@ -251,7 +251,7 @@ Resume a replication
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap syncresume
+	# svcmgr -s unxprdencap syncresume
 	2010-02-09 16:49:29,059 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resume nasdrp:vol1
 
 Split a replication
@@ -259,7 +259,7 @@ Split a replication
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap syncbreak
+	# svcmgr -s unxprdencap syncbreak
 	2010-02-09 16:41:15,359 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1
 
 Resync a replication
@@ -267,7 +267,7 @@ Resync a replication
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap syncresync
+	# svcmgr -s unxprdencap syncresync
 	2010-02-09 16:54:59,290 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resync -f nasdrp:vol1
 
 Diskstart in disaster recovery (split) mode
@@ -275,7 +275,7 @@ Diskstart in disaster recovery (split) mode
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap startdisk
+	# svcmgr -s unxprdencap startdisk
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 	* SYNC.NETAPP - INFO - start waiting quiesce to finish (max 300 seconds)
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1
@@ -286,7 +286,7 @@ Diskstart in multi-site cluster (swap) mode
 
 ::
 
-	# /opt/opensvc/etc/unxprdencap startdisk
+	# svcmgr -s unxprdencap startdisk
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasprd snapmirror quiesce nasprd:vol1
 	* SYNC.NETAPP - INFO - start waiting quiesce to finish (max 60 seconds)
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasprd snapmirror break nasprd:vol1

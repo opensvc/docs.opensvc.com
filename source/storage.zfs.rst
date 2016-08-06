@@ -63,22 +63,22 @@ Full synchronization
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec /opt/opensvc/etc/z3.opensvc.com syncupdate
+	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com syncupdate
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R osol1_z3_root@tosend | /usr/bin/ssh osol2.opensvc.com \
 					   /usr/sbin/zfs receive -dF osol2_z3_root
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/bin/ssh -n osol2.opensvc.com zfs rename -r osol2_z3_root@tosend osol2_z3_root@sent
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs rename -r osol1_z3_root@tosend osol1_z3_root@sent
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - update state file with snap uuid Sat Jun 19  2:55 2010
-	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/bin/scp /opt/opensvc/var/z3.opensvc.com_sync#1_zfs_state \
-					   osol2.opensvc.com:/opt/opensvc/var/z3.opensvc.com_sync#1_zfs_state
+	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/bin/scp /var/lib/opensvc/z3.opensvc.com_sync#1_zfs_state \
+					   osol2.opensvc.com:/var/lib/opensvc/z3.opensvc.com_sync#1_zfs_state
 
 Incremental synchronization
 ---------------------------
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec /opt/opensvc/etc/z3.opensvc.com syncupdate
+	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com syncupdate
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3_root/data@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R -i osol1_z3_root/data@sent osol1_z3_root/data@tosend | \
 					   /usr/bin/ssh osol2.opensvc.com /usr/sbin/zfs receive -dF osol2_z3_root
@@ -87,6 +87,6 @@ Incremental synchronization
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs destroy -r osol1_z3_root/data@sent
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs rename -r osol1_z3_root/data@tosend osol1_z3_root/data@sent
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - update state file with snap uuid Sat Jun 19 14:30 2010
-	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/bin/scp /opt/opensvc/var/z3.opensvc.com_sync#1_zfs_state \
-					   osol2.opensvc.com:/opt/opensvc/var/z3.opensvc.com_sync#1_zfs_state
+	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/bin/scp /var/lib/opensvc/z3.opensvc.com_sync#1_zfs_state \
+					   osol2.opensvc.com:/var/lib/opensvc/z3.opensvc.com_sync#1_zfs_state
 

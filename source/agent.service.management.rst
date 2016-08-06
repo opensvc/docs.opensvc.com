@@ -173,7 +173,7 @@ Stop of a hosted Oracle service:
 ::
 
 	[root@node111 ~]# aasprdora01 stop
-	* APP - INFO - spawn: /opt/opensvc/etc/aasprdora01.d/K50oracle stop
+	* APP - INFO - spawn: /etc/opensvc/aasprdora01.d/K50oracle stop
 	* APP - INFO - stop done in 0:00:00.258900 - ret 0 - logs in /var/tmp/svc_aasprdora01_K50oracle.log
 	* FS - INFO - umount /aasprdora01/moteurs
 	* FS - INFO - umount /aasprdora01/data01/oracle/XMETA
@@ -225,9 +225,9 @@ Start of an Xen service:
 	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --register-ignore --param-sark=0x114366380227 /dev/rdsk/xosolglo1-data
 	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --reserve --param-rk=0x114366380227 --prout-type=5 /dev/rdsk/xosolglo1-data
 	* XOSOLGLO1.OPENSVC.COM.POOL#1 - INFO - zpool import xosolglo1-data
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - virsh define /opt/opensvc/var/xosolglo1.xml
+	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - virsh define /var/lib/opensvc/xosolglo1.xml
 	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - output
-	Domain xosolglo1 defined from /opt/opensvc/var/xosolglo1.xml
+	Domain xosolglo1 defined from /var/lib/opensvc/xosolglo1.xml
 	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - virsh start xosolglo1
 	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - output
 	Domain xosolglo1 started

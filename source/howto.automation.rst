@@ -354,7 +354,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "file",
-                        "var_value": "{\"path\": \"/etc/systemd/system/opensvc-actions@.service\", \"fmt\": \"[Unit]\\nDescription=OpenSVC collector-queued actions handler\\n\\n[Service]\\nExecStart=-/opt/opensvc/bin/nodemgr dequeue actions\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
+                        "var_value": "{\"path\": \"/etc/systemd/system/opensvc-actions@.service\", \"fmt\": \"[Unit]\\nDescription=OpenSVC collector-queued actions handler\\n\\n[Service]\\nExecStart=-/usr/bin/nodemgr dequeue actions\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
                         "var_updated": "2015-12-01 19:23:19",
                         "var_name": "opensvc_dequeue_actions_file_service",
                         "id": 212
@@ -386,7 +386,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "file",
-                        "var_value": "{\"path\": \"%%ENV:OPENSVC_DEQUEUE_ACTIONS_MANIFEST_PATH%%\", \"fmt\": \"<?xml version='1.0'?>\\n<!DOCTYPE service_bundle SYSTEM '/usr/share/lib/xml/dtd/service_bundle.dtd.1'>\\n<service_bundle type='manifest' name='export'>\\n  <service name='network/opensvc-dequeue-actions/tcp' type='service' version='0'>\\n    <restarter>\\n      <service_fmri value='svc:/network/inetd:default'/>\\n    </restarter>\\n    <exec_method name='inetd_start' type='method' exec='/opt/opensvc/bin/nodemgr dequeue_actions' timeout_seconds='0'>\\n      <method_context>\\n        <method_credential user='root' group='root'/>\\n      </method_context>\\n    </exec_method>\\n    <exec_method name='inetd_disable' type='method' exec=':kill' timeout_seconds='0'>\\n      <method_context/>\\n    </exec_method>\\n    <property_group name='inetd' type='framework'>\\n      <propval name='endpoint_type' type='astring' value='stream'/>\\n      <propval name='isrpc' type='boolean' value='false'/>\\n      <propval name='name' type='astring' value='opensvc-dequeue-actions'/>\\n      <propval name='proto' type='astring' value='tcp'/>\\n      <propval name='wait' type='boolean' value='false'/>\\n      <propval name='tcp_wrappers' type='boolean' value='false'/>\\n      <propval name='tcp_trace' type='boolean' value='false'/>\\n    </property_group>\\n    <instance name='default' enabled='true'>\\n      <property_group name='inetd' type='framework'>\\n        <propval name='wait' type='boolean' value='false'/>\\n      </property_group>\\n    </instance>\\n    <stability value='External'/>\\n    <template>\\n      <common_name>\\n        <loctext xml:lang='C'>opensvc-dequeue-actions</loctext>\\n      </common_name>\\n    </template>\\n  </service>\\n</service_bundle>\\n\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
+                        "var_value": "{\"path\": \"%%ENV:OPENSVC_DEQUEUE_ACTIONS_MANIFEST_PATH%%\", \"fmt\": \"<?xml version='1.0'?>\\n<!DOCTYPE service_bundle SYSTEM '/usr/share/lib/xml/dtd/service_bundle.dtd.1'>\\n<service_bundle type='manifest' name='export'>\\n  <service name='network/opensvc-dequeue-actions/tcp' type='service' version='0'>\\n    <restarter>\\n      <service_fmri value='svc:/network/inetd:default'/>\\n    </restarter>\\n    <exec_method name='inetd_start' type='method' exec='/usr/bin/nodemgr dequeue_actions' timeout_seconds='0'>\\n      <method_context>\\n        <method_credential user='root' group='root'/>\\n      </method_context>\\n    </exec_method>\\n    <exec_method name='inetd_disable' type='method' exec=':kill' timeout_seconds='0'>\\n      <method_context/>\\n    </exec_method>\\n    <property_group name='inetd' type='framework'>\\n      <propval name='endpoint_type' type='astring' value='stream'/>\\n      <propval name='isrpc' type='boolean' value='false'/>\\n      <propval name='name' type='astring' value='opensvc-dequeue-actions'/>\\n      <propval name='proto' type='astring' value='tcp'/>\\n      <propval name='wait' type='boolean' value='false'/>\\n      <propval name='tcp_wrappers' type='boolean' value='false'/>\\n      <propval name='tcp_trace' type='boolean' value='false'/>\\n    </property_group>\\n    <instance name='default' enabled='true'>\\n      <property_group name='inetd' type='framework'>\\n        <propval name='wait' type='boolean' value='false'/>\\n      </property_group>\\n    </instance>\\n    <stability value='External'/>\\n    <template>\\n      <common_name>\\n        <loctext xml:lang='C'>opensvc-dequeue-actions</loctext>\\n      </common_name>\\n    </template>\\n  </service>\\n</service_bundle>\\n\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
                         "var_updated": "2015-12-02 16:25:31",
                         "var_name": "opensvc_dequeue_actions_file_manifest",
                         "id": 209
@@ -426,7 +426,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "file",
-                        "var_value": "{\"path\": \"/etc/xinetd.d/opensvc-actions\", \"fmt\": \"service opensvc-actions\\n{\\n  socket_type = stream\\n  protocol = tcp\\n  wait = no\\n  user = root\\n  server = /opt/opensvc/bin/nodemgr dequeue actions\\n}\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
+                        "var_value": "{\"path\": \"/etc/xinetd.d/opensvc-actions\", \"fmt\": \"service opensvc-actions\\n{\\n  socket_type = stream\\n  protocol = tcp\\n  wait = no\\n  user = root\\n  server = /usr/bin/nodemgr dequeue actions\\n}\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
                         "var_updated": "2015-12-02 10:55:28",
                         "var_name": "opensvc_dequeue_actions_file_service",
                         "id": 214
@@ -484,7 +484,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "file",
-                        "var_value": "{\"path\":\"/etc/sudoers.d/opensvc\",\"mode\":644,\"uid\":\"root\",\"gid\":\"root\",\"fmt\":\"Defaults        secure_path=\\\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/opensvc/bin:/opt/opensvc/etc\\\"\"}",
+                        "var_value": "{\"path\":\"/etc/sudoers.d/opensvc\",\"mode\":644,\"uid\":\"root\",\"gid\":\"root\",\"fmt\":\"Defaults        secure_path=\\\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/etc/opensvc\\\"\"}",
                         "var_updated": "2016-03-01 17:59:38",
                         "var_name": "spdc_opensvc_file_sudo",
                         "id": 224
@@ -911,18 +911,18 @@ Node installation
     # install and configure opensvc
     wget -O/tmp/opensvc.deb  http://repo.opensvc.com/deb/current
     sudo dpkg -i /tmp/opensvc.deb
-    sudo /opt/opensvc/bin/nodemgr set --param node.repopkg --value http://repo.opensvc.com/
-    sudo /opt/opensvc/bin/nodemgr set --param node.repocomp --value http://repo.opensvc.com/compliance/
-    sudo /opt/opensvc/bin/nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
-    sudo /opt/opensvc/bin/nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
-    sudo /opt/opensvc/bin/nodemgr set --param node.host_mode --value PRD
-    sudo /opt/opensvc/bin/nodemgr updatecomp
-    sudo /opt/opensvc/bin/nodemgr register
-    sudo /opt/opensvc/bin/nodemgr pushasset
+    sudo nodemgr set --param node.repopkg --value http://repo.opensvc.com/
+    sudo nodemgr set --param node.repocomp --value http://repo.opensvc.com/compliance/
+    sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
+    sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
+    sudo nodemgr set --param node.host_mode --value PRD
+    sudo nodemgr updatecomp
+    sudo nodemgr register
+    sudo nodemgr pushasset
 
     # node compliance (net bridge, opensvc config, packages)
-    sudo /opt/opensvc/bin/nodemgr compliance attach --moduleset sdpc.node
-    sudo /opt/opensvc/bin/nodemgr compliance fix --moduleset sdpc.node
+    sudo nodemgr compliance attach --moduleset sdpc.node
+    sudo nodemgr compliance fix --moduleset sdpc.node
 
 
 Automating the service configuration file generation
@@ -1232,11 +1232,11 @@ Service provisioning
 
 On the flex primary::
 
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 pull
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 sync nodes
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster provision
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster compliance attach --moduleset sdpc.svc
-    sudo /opt/opensvc/bin/svcmgr -s spdsvc01 --cluster compliance fix --moduleset sdpc.svc
+    sudo svcmgr -s spdsvc01 pull
+    sudo svcmgr -s spdsvc01 sync nodes
+    sudo svcmgr -s spdsvc01 --cluster provision
+    sudo svcmgr -s spdsvc01 --cluster compliance attach --moduleset sdpc.svc
+    sudo svcmgr -s spdsvc01 --cluster compliance fix --moduleset sdpc.svc
 
 
 The provision action takes care of:
@@ -1252,7 +1252,7 @@ The provision action takes care of:
 
 At the end of this action, the service is up and running. The status of the first instance is::
 
-    $ sudo  /opt/opensvc/etc/spdsvc01 print status
+    $ sudo svcmgr -s spdsvc01 print status
     spdsvc01
     overall                   up         
     |- avail                  up         
@@ -1337,18 +1337,18 @@ This example replaces the spider image.
 Run from the flex primary spd01::
 
     # stop instances
-    sudo /opt/opensvc/etc/spdsvc01 stopcontainer --tags sm --cluster
+    sudo svcmgr -s spdsvc01 stopcontainer --tags sm --cluster
 
     # remove the old docker instances
-    sudo /opt/opensvc/etc/spdsvc01 --cluster docker rm %instances%
+    sudo svcmgr -s spdsvc01 --cluster docker rm %instances%
 
     # update the service configuration using the form
 
     # pull the new configuration on all nodes
-    sudo /opt/opensvc/etc/spdsvc01 --cluster pull
+    sudo svcmgr -s spdsvc01 --cluster pull
 
     # start
-    sudo /opt/opensvc/etc/spdsvc01 startcontainer --tags sm --cluster
+    sudo svcmgr -s spdsvc01 startcontainer --tags sm --cluster
 
 
 Migrate a pod
@@ -1357,15 +1357,15 @@ Migrate a pod
 ::
 
     # stop the pod resources where it runs
-    sudo /opt/opensvc/etc/spdsvc01 stop --tags pod16
+    sudo svcmgr -s spdsvc01 stop --tags pod16
 
     # update the service configuration using the form
 
     # pull the new configuration on all nodes
-    sudo /opt/opensvc/etc/spdsvc01 --cluster pull
+    sudo svcmgr -s spdsvc01 --cluster pull
 
     # start the pod on the destination node
-    sudo /opt/opensvc/etc/spdsvc01 start --tags pod16
+    sudo svcmgr -s spdsvc01 start --tags pod16
 
 Conclusion
 ----------

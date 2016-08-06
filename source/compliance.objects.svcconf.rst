@@ -49,8 +49,8 @@ Another invalid check::
 
 Fix::
 
-	/opt/opensvc/bin/svcmgr -s app2.prd set --param DEFAULT.docker_data_dir --value /opt/app2.prd
-        /opt/opensvc/bin/svcmgr -s app2.prd set --param container#1.disable --value no
+	svcmgr -s app2.prd set --param DEFAULT.docker_data_dir --value /opt/app2.prd
+        svcmgr -s app2.prd set --param container#1.disable --value no
 	
 Form
 ====

@@ -38,7 +38,7 @@ Pre-requisites
 
 The dscli commands must be installed in the standard location on the nodes running this service resource type.
 
-An /opt/opensvc/etc/auth.conf must exist and contain credentials to access the manager for each array. This auth.conf file permissions should be 600 and owned by root.
+An ``<OSVCETC>/auth.conf`` must exist and contain credentials to access the manager for each array. The agent enforce this file permissions is 600 and is owned by root.
 
 Example auth.conf:
 
@@ -50,14 +50,14 @@ Example auth.conf:
 	hmc2 =
 	username = opensvc
 
-Use dscli commands to create pwfile in /opt/opensvc/var/. The pwfile's name must be the same as the array. For exemple, /opt/opensvc/var/IBM.XXXX-XXXXXXX.pwfile
+Use dscli commands to create pwfile in <OSVCVAR>. The pwfile's name must be the same as the array. For exemple ``<OSVCVAR>/IBM.XXXX-XXXXXXX.pwfile``.
 
 Example:
 
 ::
 
 	dscli managepwfile -action add -mc1 1.2.3.4 -mc2 1.2.3.5
-	                   -pwfile /opt/opensvc/var/IBM.2107-00AAA00.pwfile
+	                   -pwfile /var/lib/opensvc/IBM.2107-00AAA00.pwfile
 	                   -name opensvc -pw xxx
 
 
@@ -118,17 +118,17 @@ Resync a started service snapshots
 
 ::
 
-	# /opt/opensvc/etc/iiststibmds stop && \
-          /opt/opensvc/etc/iiststibmds syncresync && \
-          /opt/opensvc/etc/iiststibmds start
+	# svcmgr -s iiststibmds stop && \
+          svcmgr -s iiststibmds syncresync && \
+          svcmgr -s iiststibmds start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# /opt/opensvc/etc/iiststibmds syncresync
-	2014-09-18 23:04:02,189 - IISTSTIBMDS.SYNC#1 - INFO - resyncflash - dev IBM.XXXX-XXXXXXX -persist -record -cp 0001:0002 0101:0102 0003:0004 | /opt/ibm/dscli/dscli -hmc1 10.10.10.10 -user opensvc -pwfile /opt/opensvc/var/IBM.XXXX-XXXXXXX.pwfile
+	# svcmgr -s iiststibmds syncresync
+	2014-09-18 23:04:02,189 - IISTSTIBMDS.SYNC#1 - INFO - resyncflash - dev IBM.XXXX-XXXXXXX -persist -record -cp 0001:0002 0101:0102 0003:0004 | /opt/ibm/dscli/dscli -hmc1 10.10.10.10 -user opensvc -pwfile /var/lib/opensvc/IBM.XXXX-XXXXXXX.pwfile
 	2014-09-18 23:04:05,621 - IISTSTIBMDS.SYNC#1 - INFO - Date/Time: September 18, 2014 11:04:04 PM CEST IBM DSCLI Version: 7.7.10.317 DS: IBM.XXXX-XXXXXXX
 	
 	 Date/Time: September 18, 2014 11:04:04 PM CEST IBM DSCLI Version: 7.7.10.317 DS: IBM.XXXX-XXXXXXX

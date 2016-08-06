@@ -106,7 +106,7 @@ Start
 
 ::
 
-        root@deb1:/opt/opensvc# /opt/opensvc/etc/drbdsvc.opensvc.com start
+        root@deb1:/# svcmgr -s drbdsvc.opensvc.com start
         DRBD#0  INFO    drbd resource data is already up
         DRBD#0  INFO    drbdadm primary data
         FS#1    INFO    e2fsck -p /dev/drbd0
@@ -126,7 +126,7 @@ Start
         VZ      INFO    wait for container up status
         VZ      INFO    wait for container operational
         APP     INFO    spawn: vzctl exec 101 /svc/etc/init.d/S10foo start
-        APP     INFO    start done in 0:00:00.068714 - ret 0 - logs in /opt/opensvc/tmp/svc_drbdsvc.opensvc.com_S10foo.log
+        APP     INFO    start done in 0:00:00.068714 - ret 0 - logs in /var/tmp/opensvc/svc_drbdsvc.opensvc.com_S10foo.log
 
 Stop
 ----
@@ -134,7 +134,7 @@ Stop
 ::
 
         APP     INFO    spawn: vzctl exec 101 /svc/etc/init.d/K90foo stop
-        APP     INFO    stop done in 0:00:00.039901 - ret 0 - logs in /opt/opensvc/tmp/svc_drbdsvc.opensvc.com_K90foo.log
+        APP     INFO    stop done in 0:00:00.039901 - ret 0 - logs in /var/tmp/opensvc/svc_drbdsvc.opensvc.com_K90foo.log
         VZ      INFO    vzctl stop 101
         VZ      INFO    output:
         Stopping container ...
