@@ -159,6 +159,9 @@ The collector requires the nodes to provide an authentication token (shared secr
 
 	sudo nodemgr register
 
+Collectors in SaaS mode, like https://collector.opensvc.com, require that you specify the application you want the node joined to, and that you prove your identity. The command is thus::
+
+	sudo nodemgr register --app MYAPP --user my.self@my.com
 
 Finally, you can anticipate the node discovery scheduled tasks by forcing their execution after the package installation:
 
