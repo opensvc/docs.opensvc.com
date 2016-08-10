@@ -88,14 +88,21 @@ Commandline actions
 
 The provisioners are activated by setting the ``--provision`` with the following actions:
 
-* create
+* ``create``
+
   Creates a service using definitions passed as ``--resource`` arguments.
 
-* update
+* ``update``
+
   Add or change a resource definition to an existing service. Definitions are passed as ``--resource`` arguments.
 
-* install
+* ``install``
+
   Creates a service using a configuration file pointed by ``--envfile``.
+
+* ``pull``
+
+  Creates a service using the configuration file of the service fetched from the collector.
 
 Commandline arguments
 +++++++++++++++++++++
@@ -116,7 +123,7 @@ A template is a normal service configuration file with parts you can replace wit
 
 A template is instanciated by copying it as a service configuration file (``<OSVCETC>/<svcname>.env``), and substituting the placeholder strings. Both actions can be done with a command like::
 
-  sed -e "s/__SVCNAME_PLACEHOLDER__/mysvc/g" -e "s/__NODENAME1_PLACEHOLDER__/g" | sudo tee /etc/opensvc/mysvc.env
+  cat <template> | sed -e "s/__SVCNAME_PLACEHOLDER__/mysvc/g" -e "s/__NODENAME1_PLACEHOLDER__/node1/g" | sudo tee /etc/opensvc/mysvc.env
 
 Once instanciated the ``install`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set::
 
