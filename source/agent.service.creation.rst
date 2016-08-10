@@ -6,28 +6,165 @@ Service creation
 Choose a service name
 =====================
 
-Guidelines:
+A service name must be unique in its application code namespace.
 
-*   Make application code part of the name (first)
-*   Make service type (PRD, DEV) part of the name (second)
-*   Make the last part descriptive of the application role (web, transco)
-*   In case of multiple instance of similar services, happen a number as a suffix
+A best practice is to allocate unique service names in the corporate namespace, even if it is not mandatory.
 
-This guidelines result in names like gieprdtransco01, infraprddns01, ...
+Create the service
+==================
 
-Following this naming will help grasp importance, clients and role of service from the output of ``svcmon``
+The following actions only modify files in ``<OSVCETC>``. No operating system configuration file is modified, so they are safe to experiment with.
+
+From scratch, non interactive
+-----------------------------
+
+Create a service with minimal configuration. No resources are described.
+
+::
+
+	sudo svcmgr -s <svcname> create
+
+From scratch, interactive
+-------------------------
+
+::
+
+	sudo svcmgr -s <svcname> create -i
+
+From an existing local configuration file
+-----------------------------------------
+
+Experienced users may find it easier to start from a copy of the env file of an existing similar service. The following information describes the steps needed to create a service manually.
+
+::
+
+	sudo svcmgr -s <svcname> install --envfile <path to config file>
+
+From a collector's service
+--------------------------
+
+::
+
+	sudo svcmgr -s <svcname> pull
+
+Service configuration files
+===========================
+
+Service configuration files are in ``<OSVCETC>``. They are created automatically by the above ``svcmgr`` commands. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts:
+
+::
+
+	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
+	<OSVCETC>/<svcname>.env
+	<OSVCETC>/<svcname>.d -> /<svcname>/etc/init.d
+
+or:
+
+::
+
+	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
+	<OSVCETC>/<svcname>.env
+	<OSVCETC>/<svcname>.d -> <svcname>.dir
+	<OSVCETC>/<svcname>.dir
+
+Configuration files role
+========================
+
+.. function:: <OSVCETC>/<svcname> -> /usr/bin/svcmgr
+
+    This symbolic link is meant to be used as a shortcut to pass commands to a specific service. Like /etc/opensvc/unxdevweb01.mydomain.com start for example
+
+.. function:: <OSVCETC>/<svcname>.env
+
+    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>``. More on this below.
+
+.. function:: <OSVCETC>/<svcname>.d -> <svcname>.dir
+
+    This symbolic link points to the directory hosting the service application launchers. The service is not considered active if this link is not present. The directory pointed is best hosted on a service-dedicated filesystem. The service application launchers are expected to be in SysV style: [SK][0-9]*appname. S for starters, K for stoppers, number for ordering. Starters and stoppers can be symlink to a single script. Starter are passed 'start' as first parameter, stoppers are passed 'stop' as first parameter.
+
+.. function:: <OSVCETC>/<svcname>.dir
+
+    This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/unxdevweb01.mydomain.com.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
+
+Customize the service env file
+==============================
+
+At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
+
+Interactive
+-----------
+
+::
+
+	sudo svcmgr -s <svcname> edit config
+
+The configuration file syntax is checked upon editor exit. The new configuration is installed if the syntax is found correct, or save in a temporary location if not. In this later case, two options are possible:
+
+* Discard the erroneous configuration::
+
+	sudo svcmgr -s <svcname> edit config --discard
+
+* Re-edit the erroneous configuration::
+
+	sudo svcmgr -s <svcname> edit config --recover
+
+
+Non-interactive resource addition
+---------------------------------
+
+::
+
+	sudo svcmgr -s <svcname> update --resource '{"rtype": "fs", "foo": "bar"}'
+
+The resource identifier (rid) must not be specified. The resource type must be specified (rtype). A free rid will be allocated.
+
+Non-interactive resource modification
+-------------------------------------
+
+::
+
+	sudo svcmgr -s <svcname> update --resource '{"rid": "fs#1", "foo": "bar"}'
+
+The resource identifier must be specified.
+
+Non-interactive resource deletion
+---------------------------------
+
+::
+
+	sudo svcmgr -s <svcname> delete --rid fs#1
+
+Test
+====
+
+You should now be able to run succesfully:
+
+::
+
+	sudo svcmgr -s <svcname> print config
+	sudo svcmgr -s <svcname> print status
+	sudo svcmgr -s <svcname> start
+	sudo svcmgr -s <svcname> stop
+
+Service deletion
+================
+
+::
+
+	sudo svcmgr -s <svcname> delete
+
+Best practice
+=============
 
 Allocate generic account and ip addresses
-=========================================
+-----------------------------------------
 
 We recommend to allocate service-dedicated ip addresses, to permit service failover to secondary nodes.
 
 We recommend to allocate service-dedicated generic accounts (one is ok most of the time) for better control on privileges. All service files should be owned by these accounts. The application launchers are executed by the agent using impersonnification as the launcher file owner. The generic account home directory should be a link redirecting to a subdirectory of one of the service-dedicated filesystems (the one hosting data is a good candidate).
 
 Create a filesystem skeleton for the service
-============================================
-
-Here is a set of guidelines you should respect.
+--------------------------------------------
 
 Give each service dedicated filesystems. Ideally one for data, one for tools (mysql, apache, ...) and one for launchers and eventually the virtual operating system instance. We recommand the following layout:
 
@@ -44,65 +181,5 @@ Private installation of tools. Tools must listen only on the private address to 
 Application data files
 
 If the applications are not containerized, prefer per-service private tools installations to distribution packages installations. This choice provides better system/service insulation, more reliable relocation and safer operating system upgrades. This also makes the service installation harder.
-
-Install virtual hosts and applications
-======================================
-
-Installing virtual hosts is only required for services with container resources.
-
-Create configuration files
-==========================
-
-Those are created automatically by the ``svcmgr create`` command. Experienced users will find it easier to start from a copy of the env file of an existing similar service. The following information describes the steps needed to create a service manually.
-
-Service configuration files are in ``<OSVCETC>``. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts:
-
-::
-
-	<OSVCETC>/unxdevweb01.mydomain.com -> /usr/bin/svcmgr
-	<OSVCETC>/unxdevweb01.mydomain.com.env
-	<OSVCETC>/unxtstsvc01.mydomain.com.d -> /unxtstscv01/etc/init.d
-
-or:
-
-::
-
-	<OSVCETC>/unxtstsvc01.mydomain.com.d -> unxdevweb01.mydomain.com.dir
-	<OSVCETC>/unxdevweb01.mydomain.com.dir
-
-Configuration files role
-========================
-
-.. function:: <OSVCETC>/unxdevweb01.mydomain.com -> /usr/bin/svcmgr
-
-    This symbolic link is meant to be used as a shortcut to pass commands to a specific service. Like /etc/opensvc/unxdevweb01.mydomain.com start for example
-
-.. function:: <OSVCETC>/unxdevweb01.mydomain.com.env
-
-    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>``. More on this below.
-
-.. function:: <OSVCETC>/unxdevweb01.mydomain.com.d -> /unxtstscv01/etc/init.d
-
-    This symbolic link points to the directory hosting the service application launchers. The service is not considered active if this link is not present. The directory pointed is best hosted on a service-dedicated filesystem. The service application launchers are expected to be in SysV style: [SK][0-9]*appname. S for starters, K for stoppers, number for ordering. Starters and stoppers can be symlink to a single script. Starter are passed 'start' as first parameter, stoppers are passed 'stop' as first parameter.
-
-.. function:: <OSVCETC>/unxdevweb01.mydomain.com.dir
-
-    This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/unxdevweb01.mydomain.com.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
-
-Customize the service env file
-==============================
-
-At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
-
-Test
-====
-
-You should now be able to run succesfully:
-
-::
-
-	sudo svcmgr -s gieprdweb01 print status
-	sudo svcmgr -s gieprdweb01 start
-	sudo svcmgr -s gieprdweb01 stop
 
 
