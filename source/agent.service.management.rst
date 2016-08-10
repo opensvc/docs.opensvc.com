@@ -1,54 +1,81 @@
 Service management
 ******************
 
-Commands
-========
+Selecting services
+==================
 
-Explicit service management
-+++++++++++++++++++++++++++
+All services
+++++++++++++
 
-The prefered command to use to start an action on a specific service is ``sudo svcmgr -s <svcname> <action>``, or simply ``sudo <svcname> <action>``.
+::
 
-Explicit group of services management
-+++++++++++++++++++++++++++++++++++++
+	sudo svcmgr <action>
 
-The prefered command to use to start an action on a specific group of services is ``sudo svcmgr -s svc1,svc2 action``.
-
-Contextual group of services management
-+++++++++++++++++++++++++++++++++++++++
-
-OpenSVC provides a set of svcmgr links applying preset filters on local service.
-
-.. function:: svcmgr <action>
-
-Apply action to all node services.
 The command ``svcmgr shutdown --parallel`` is triggered upon node shutdown by the opensvc rc script.
 The command ``svcmgr boot --parallel`` is triggered upon node startup by the opensvc rc script.
 
-.. function:: svcmgr --state down <action>
+Single service
+++++++++++++++
 
-Apply action to all node services in 'down' state.
+::
 
-.. function:: svcmgr --state up,warn
+	sudo svcmgr -s <svcname> <action>
 
-Apply action to all node services in 'up' and 'warn' state.
+or
 
-.. function:: svcmgr --onlyprimary action
+::
+
+	sudo <svcname> <action>
+
+List of services
+++++++++++++++++
+
+::
+
+	sudo svcmgr -s svc1,svc2 <action>
+
+All services particular states
+++++++++++++++++++++++++++++++
+
+::
+
+	sudo svcmgr --state down <action>
+
+Applies action to all services in 'down' state.
+
+::
+
+	sudo svcmgr --state up,warn <action>
+
+Applies action to all services in 'up' and 'warn' state.
+
+All services the node is primary or secondary for
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+::
+
+	sudo svcmgr --onlyprimary <action>
 
 Apply action to all node services having the node as an 'autostart_node' in their env file.
 
-.. function:: svcmgr --onlysecondary action
+::
+
+	sudo svcmgr --onlysecondary <action>
 
 Apply action to all node services not having the node as an 'autostart_node' in their env file.
 
 Services status
 ===============
 
-.. function:: svcmon
+::
+
+	sudo svcmon
 
 Overview of all local node services status.
 
-.. function:: <svcname> print status
+::
+
+	sudo svcmgr -s <svcname> print status
 
 Detailled service resources status.
 
