@@ -164,11 +164,13 @@ mo: mo_fr
 trans: pot po mo
 
 templates:
-	@echo "Service configuration file template\n***********************************\n" | tee source/agent.template.env.rst
-	@for t in `echo /opt/opensvc/usr/share/doc/template.*.gz` ; do \
-	base_t=`basename $$t | sed -e "s/template.//" -e "s/.env.gz//"` ; \
-	echo "$$base_t\n----\n\n::\n\n" | tee -a source/agent.template.env.rst ; \
-	gzip -dc $$t | sed -e "s/^/	/" | tee -a source/agent.template.env.rst ; \
+	@echo "Service configuration file template\n***********************************\n\nContents:\n\n.. toctree::\n   :maxdepth: 2\n" | tee source/agent.template.env.rst
+	@for t in `echo /opt/opensvc/usr/share/doc/template.*` ; do \
+	base_t=`basename $$t | sed -e "s/template.//" -e "s/.env//"` ; \
+	echo $$base_t | egrep -q "comp_" && continue ; \
+        echo "   agent.template.$$base_t.env" | tee -a source/agent.template.env.rst ; \
+	echo "$$base_t resource template\n----\n\n::\n\n" | tee source/agent.template.$$base_t.env.rst ; \
+	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.env.rst ; \
 	done
 
 manpages:
