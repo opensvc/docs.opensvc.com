@@ -76,7 +76,7 @@ Configuration files role
 
 .. function:: <OSVCETC>/<svcname>.env
 
-    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>``. More on this below.
+    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>`` and online :doc:`here <agent.template.env>`.
 
 .. function:: <OSVCETC>/<svcname>.d -> <svcname>.dir
 
@@ -84,7 +84,7 @@ Configuration files role
 
 .. function:: <OSVCETC>/<svcname>.dir
 
-    This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/unxdevweb01.mydomain.com.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
+    This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/<svcname>.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
 
 Customize the service env file
 ==============================
