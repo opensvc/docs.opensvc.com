@@ -170,3 +170,9 @@ templates:
 	echo "$$base_t\n----\n\n::\n\n" | tee -a source/agent.template.env.rst ; \
 	gzip -dc $$t | sed -e "s/^/	/" | tee -a source/agent.template.env.rst ; \
 	done
+
+manpages:
+	@for t in nodemgr svcmgr svcmon ; do \
+	echo "$$t manpage\n**************\n\n::\n" | tee source/agent.man.$$t.rst ; \
+	COLUMNS=90 man /opt/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
+	done

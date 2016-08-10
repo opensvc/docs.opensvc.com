@@ -1,5 +1,5 @@
-Installed items details
-***********************
+Agent installed items
+*********************
 
 File tree
 =========
