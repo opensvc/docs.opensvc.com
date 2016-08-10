@@ -1,7 +1,7 @@
 Agent scheduler
 ***************
 
-The OpenSVC embeds a scheduler. The node and each service has a private schedule.
+The OpenSVC agent embeds a scheduler. The node and each service has a private schedule.
 
 Scheduler behaviour
 ===================

@@ -24,16 +24,16 @@ The package installs the following directory tree:
 	<OSVCROOT>/                       -                        <OSVCROOT>
 	<OSVCROOT>/etc                    /etc/opensvc             <OSVCETC>
 	<OSVCROOT>/tmp                    /var/tmp/opensvc         <OSVCTMP>
-	<OSVCROOT>/bin                    /usr/lib/opensvc/bin     <OSVCBIN>
+	<OSVCROOT>/bin                    /usr/share/opensvc/bin   <OSVCBIN>
 	<OSVCROOT>/var                    /var/lib/opensvc         <OSVCVAR>
 	<OSVCROOT>/usr/share/doc          /usr/share/doc/opensvc   <OSVCDOC>
-	<OSVCROOT>/lib                    /usr/lib/opensvc/lib     <OSVCLIB>
+	<OSVCROOT>/lib                    /usr/share/opensvc/lib   <OSVCLIB>
 	<OSVCROOT>/log                    /var/log/opensvc         <OSVCLOG>
 
 Cron jobs
 =========
 
-On Unix, the package installs the following cron job, in (by order of preference), ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``:
+On Unix, the package installs the following cron job, in either (order of preference) ``/etc/cron.d/opensvc``, ``/var/spool/cron/crontabs/root``, ``/var/spool/cron/root``:
 
 ::
 
@@ -55,9 +55,28 @@ Set host mode
 	sudo nodemgr set --param node.host_mode --value PRD
 
 
-The valid host mode values are PRD, PPRD, REC, INT, DEV, TST, TMP, DRP, FOR, PRA, PRJ, STG. The setting is stored in ``<OSVCETC>/node.conf``. On a fresh install this file does not exist. Note that the ``<OSVCVAR>/host_mode`` file is deprecated. Upgrading to a recent OpenSVC package on a system with a ``<OSVCVAR>/host_mode`` file will move the value to ``<OSVCETC>/node.conf``.
+The valid host mode values are:
 
-The host_mode setting is used to enforce the following policies:
+::
+
+	host_mode  behaves as  description
+        ---------  ----------  ------------------
+	PRD        PRD         Production
+	PPRD       PRD         Pre Production
+	REC        not PRD     Prod-like testing
+	INT        not PRD     Integration
+	DEV        not PRD     Development
+	TST        not PRD     Testing
+	TMP        not PRD     Temporary
+	DRP        not PRD     Disaster recovery
+	FOR        not PRD     Training
+	PRA        not PRD     Disaster recovery
+	PRJ        not PRD     Project
+	STG        not PRD     Staging
+
+The setting is stored in ``<OSVCETC>/node.conf``. On a fresh install this file does not exist. Note that the ``<OSVCVAR>/host_mode`` file is deprecated. Upgrading to a recent OpenSVC package on a system with a ``<OSVCVAR>/host_mode`` file will move the value to ``<OSVCETC>/node.conf``.
+
+The ``host_mode`` setting is used to enforce the following policies:
 
 *   Only PRD services are allowed to start on a PRD node
 *   Only PRD nodes are allowed to push data to a PRD node
@@ -65,57 +84,22 @@ The host_mode setting is used to enforce the following policies:
 Set schedules
 =============
 
-Node schedules are defined in ``<OSVCETC>/node.conf``. The OpenSVC agent schedules the following actions:
+The agent executes periodic tasks. All tasks have a default schedule, which you may want to change.
 
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| Action              | Description                                  | Section name       | Default             | Statistic Delay |
-+=====================+==============================================+====================+=====================+=================+
-| collect_stats       | Collect performance metrics not available    | [stats_collection] | @10                 | Yes             |
-|                     | in the systems' collect tools                |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| pushstats           | Send to the collector the collected          | [stats]            | 4am-6am daily       | Yes             |
-|                     | performance metrics since last pushstats     |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| pushasset           | Send to the collector the collected node     | [asset]            | 4am-6am daily       | Yes             |
-|                     | information (cpu, memory, board, ...)        |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| pushpkg             | Send to the collector the node installed     | [packages]         | 4am-6am daily       | Yes             |
-|                     | package database                             |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| pushpatch           | Send to the collector the node installed     | [patches]          | 4am-6am daily       | Yes             |
-|                     | patch database                               |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| checks              | Send to the collector the node checks        | [checks]           | 4am-6am daily       | Yes             |
-|                     | results (fs_u, fs_i, vg_u, ...)              |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| node 	              | Send to the collector the compliance modules | [compliance]       | 2am-6am sundays     | Yes             |
-| compliance          | checks results                               |                    |                     |                 |
-| check	              |                                              |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| sysreport           | Send to the collector the tracked files      | [sysreport]        | 0am-6am daily       | Yes             |
-|                     | changed since the last run. The collector    |                    |                     |                 |
-|                     | tracks diffs in a git repository.            |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| auto_reboot         | Reboot the node in the defined schedule      | [reboot]           | never               | Yes             |
-|                     | if the node is flagged for reboot            |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-| auto_rotate_root_pw | Change the root password to a random string  | [reboot]           | never               | Yes             |
-|                     | securely sent to/stored on the collector     |                    |                     |                 |
-+---------------------+----------------------------------------------+--------------------+---------------------+-----------------+
-
-A typical schedule definition would look like:
+A schedule configuration can be applied using
 
 ::
 
-	[section name]
+	sudo nodemgr set --param brocade.schedule --value "02:00-04:00@120 sat,sun"
+
+Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command would produce this section:
+
+::
+
+	[brocade]
         schedule = 02:00-04:00@120 sat,sun
 
-
-A reference ``node.conf`` file can be found on the node at ``<OSVCDOC>/node.conf``.
-
-All actions except data syncs can be statistically delayed. The probability of running increases linearly from 25% to 100% during the first half of the action allowed period. This delay helps level to collector load.
-
-The live scheduler configuration can be extracted with
+The live scheduler configuration and states can be extracted with
 
 ::
 
@@ -151,6 +135,8 @@ The live scheduler configuration can be extracted with
 	pushvioserver          -                      vioserver.schedule        -
 	sysreport              -                      sysreport.schedule        00:00-06:00@361 mon-sun
 
+
+The agent scheduler documentation is :doc:`here <agent.scheduler>`.
 
 Configuration for collector usage
 =================================
@@ -325,7 +311,7 @@ As other OS flavors, agent upgrade can be triggered by
 Python interpreter wrapper
 ==========================
 
-On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/opensvc`` that support defaults injection.
+On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/opensvc`` that supports defaults injection.
 
 Defaults file location:
 
