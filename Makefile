@@ -178,3 +178,15 @@ manpages:
 	echo "$$t manpage\n**************\n\n::\n" | tee source/agent.man.$$t.rst ; \
 	COLUMNS=90 man /opt/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
 	done
+
+compobjs:
+	@for t in `echo /opt/opensvc/var/compliance/com.opensvc/*.py` ; do \
+	base_t=`basename $$t | sed -e "s/\.py//"` ; \
+	echo $$base_t | egrep -q "comp|utilities|chkconfig|keyval_parser|sysvinit" && continue ; \
+        echo "   $$base_t" | tee -a source/compliance.objects.rst ; \
+	echo "$$base_t\n----\n\n" | tee source/compliance.objects.$$base_t.rst ; \
+	buff=`$$t info` 2>/dev/null || continue ; \
+	echo "$$buff" | tee -a source/compliance.objects.$$base_t.rst ; \
+	done
+
+

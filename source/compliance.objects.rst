@@ -15,21 +15,40 @@ You can create your own objects and associated forms, and you are welcome to con
 
    compliance.objects.authkeys
    compliance.objects.bios
+   compliance.objects.cron
+   compliance.objects.crontabentry
    compliance.objects.etcsystem
+   compliance.objects.fileinc
+   compliance.objects.fileinccom
+   compliance.objects.fileprop
+   compliance.objects.firmware
    compliance.objects.files
    compliance.objects.fs
    compliance.objects.groups
    compliance.objects.groups_membership
+   compliance.objects.hosts
+   compliance.objects.ini
+   compliance.objects.keyval
+   compliance.objects.linux.mpath
    compliance.objects.nodeconf
    compliance.objects.packages
    compliance.objects.process
    compliance.objects.rc
+   compliance.objects.remove_files
    compliance.objects.smfcfgs
+   compliance.objects.sudoers
    compliance.objects.svcconf
+   compliance.objects.symlink
    compliance.objects.sysctl
+   compliance.objects.timectl
+   compliance.objects.timedatectl
    compliance.objects.users
    compliance.objects.vuln
    compliance.objects.xinetd
+   compliance.objects.zfs
+   compliance.objects.zpool
+   compliance.objects.zprop
+
 
 Combining objects in modules
 ============================
@@ -88,3 +107,108 @@ A lot of minor differences between operating systems are candidate to be abstrac
 * the preferred filesystem to format with is surely a per operating system, and often a per release, preference
 
 
+   authkeys
+   bios
+   cron
+   crontabentry
+   etcsystem
+   fileinc
+   fileinccom
+   fileprop
+   files
+   firmware
+   fs
+   groups
+   groups_membership
+   hosts
+   ini
+   keyval
+   linux.mpath
+   nodeconf
+   packages
+   process
+   rc
+   remove_files
+   smfcfgs
+   sudoers
+   svcconf
+   symlink
+   sysctl
+   timectl
+   timedatectl
+   users
+   vuln
+   xinetd
+   zfs
+   zpool
+   zprop
+   authkeys
+   bios
+   cron
+   crontabentry
+   etcsystem
+   fileinc
+   fileinccom
+   fileprop
+   files
+   firmware
+   fs
+   groups
+   groups_membership
+   hosts
+   ini
+   keyval
+   linux.mpath
+   nodeconf
+   packages
+   process
+   rc
+   remove_files
+   smfcfgs
+   sudoers
+   svcconf
+   symlink
+   sysctl
+   timectl
+   timedatectl
+   users
+   vuln
+   xinetd
+   zfs
+   zpool
+   zprop
+   authkeys
+   bios
+   cron
+   crontabentry
+   etcsystem
+   fileinc
+   fileinccom
+   fileprop
+   files
+   firmware
+   fs
+   groups
+   groups_membership
+   hosts
+   ini
+   keyval
+   linux.mpath
+   nodeconf
+   packages
+   process
+   rc
+   remove_files
+   smfcfgs
+   sudoers
+   svcconf
+   symlink
+   sysctl
+   timectl
+   timedatectl
+   users
+   vuln
+   xinetd
+   zfs
+   zpool
+   zprop

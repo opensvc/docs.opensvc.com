@@ -1,11 +1,11 @@
-nodeconf
+linux.mpath
 ----
 
 
 Description
 ===========
 
-    * Verify opensvc agent configuration parameter
+    * Setup and verify the Linux native multipath configuration
     
 
 Example rule
@@ -15,13 +15,13 @@ Example rule
 
     [
         {
-            "value": "ftp://ftp.opensvc.com/opensvc",
-            "key": "node.repopkg",
-            "op": "="
+            "value": 20,
+            "key": "defaults.polling_interval",
+            "op": ">="
         },
         {
-            "value": "ftp://ftp.opensvc.com/compliance",
-            "key": "node.repocomp",
+            "value": "alua",
+            "key": "device.HP.HSV210.prio",
             "op": "="
         }
     ]
@@ -33,23 +33,29 @@ Form definition
 
     
     Desc: |
-      A rule to set a parameter in OpenSVC node.conf configuration file. Used by the 'nodeconf' compliance object.
-    Css: comp48
+      A rule to set a list of Linux multipath.conf parameters. Current values can be checked as strictly equal, or superior/inferior to their target value.
     Outputs:
       -
         Dest: compliance variable
         Type: json
         Format: list of dict
-        Class: nodeconf
+        Class: linux_mpath
     Inputs:
       -
         Id: key
         Label: Key
+        DisplayModeTrim: 64
         DisplayModeLabel: key
         LabelCss: action16
         Mandatory: Yes
         Type: string
-        Help: The OpenSVC node.conf parameter to check.
+        Help: >
+         The multipath.conf parameter to check.
+         ex: defaults.polling_interval or
+             device.device.HP.HSV100 or
+             multipaths.multipath.6006000000000000 or
+             blacklist.wwid or
+             blacklist.device.HP.HSV210
       -
         Id: op
         Label: Comparison operator
@@ -64,7 +70,7 @@ Form definition
           - ">="
           - "<"
           - "<="
-        Help: The comparison operator to use to check the parameter value.
+        Help: The comparison operator to use to check the parameter current value.
       -
         Id: value
         Label: Value
@@ -72,5 +78,5 @@ Form definition
         LabelCss: action16
         Mandatory: Yes
         Type: string or integer
-        Help: The OpenSVC node.conf parameter value to check.
+        Help: The multipath.conf parameter target value.
     
