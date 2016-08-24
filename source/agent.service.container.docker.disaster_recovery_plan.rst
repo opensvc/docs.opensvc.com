@@ -46,7 +46,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/busybox.opensvc.com/appdata
         dev = /dev/mapper/vglocaldeb1-lvbusyboxdata
         type = ext4
@@ -189,7 +189,7 @@ To workaround those problems, OpenSVC software use a concept named "scoping". Th
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/busybox.opensvc.com/appdata
         dev@deb1.opensvc.com = /dev/mapper/vglocaldeb1-lvbusyboxdata
         dev@deb2.opensvc.com = /dev/mapper/vglocaldeb2-lvbusyboxdata
@@ -262,7 +262,7 @@ The service configuration looks like::
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/busybox.opensvc.com/appdata
         dev@deb1.opensvc.com = /dev/mapper/vglocaldeb1-lvbusyboxdata
         dev@deb2.opensvc.com = /dev/mapper/vglocaldeb2-lvbusyboxdata

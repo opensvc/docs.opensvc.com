@@ -117,7 +117,7 @@ Copy/Paste the service configuration file in folder ``<OSVCETC>`` and name it li
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/docker.opensvc.com/appdata
         dev = /dev/mapper/vgdocker-lvdockerdata
         type = ext4

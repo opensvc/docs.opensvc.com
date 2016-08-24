@@ -182,7 +182,7 @@ This makes the service config file looks like::
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/busybox.opensvc.com/appdata
         dev = /dev/mapper/vgbusybox-lvbusyboxdata
         type = ext4

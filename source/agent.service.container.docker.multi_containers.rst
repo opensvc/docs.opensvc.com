@@ -60,7 +60,7 @@ Service Configuration File
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/app.opensvc.com/appdata
         dev = /dev/mapper/vgapp-lvappdata
         type = ext4
@@ -486,7 +486,7 @@ Let's have a look at our dummy application service configuration file
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/busybox.opensvc.com/appdata
         dev = /dev/mapper/vgbusybox-lvbusyboxdata
         type = ext4

@@ -50,13 +50,13 @@ Service Creation
         type = ext4
         
         [fs#2]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/registry.opensvc.com/dockerdata
         dev = /dev/mapper/vgregistry-lvdockerdata
         type = ext4
 
         [fs#3]
-        mnt_opts = rw
+        mnt_opt = rw
         mnt = /opt/registry.opensvc.com/registrydata
         dev = /dev/mapper/vgregistry-lvregistrydata
         type = ext4
