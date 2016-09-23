@@ -68,6 +68,15 @@ A form is defined by the following properties:
 Form YAML definition
 ====================
 
+References
+----------
+
+A reference is a ``#<key>`` or ``#<key>.<key>`` word replaced by the value referenced.
+
+References can be used in **Function**, **Args** and **Condition** input keywords. In those cases, ``<key>`` is the value of the **Key** input keyword, or the value of the **Id** input keyword if **Key** is not set, or the value of a key mapped through the **Keys** input keyword.
+
+References can also be used in **Format**, **Value** and **Keys** input keywords. In those cases, ``<key>`` is the value of a key of a candidate dict. If candidates are in "dict of dict" format, the reference can be spelled as ``#<key>.<key>``.
+
 Header
 ------
 
@@ -246,6 +255,14 @@ Keywords
 * **Key**
 
   If multiple inputs provide the same dictionary key, the **Key** parameter can be set to define its value as the dictionary key in addition to the **Id** key. Thus a script consuming the output can use the predictible **Key** key, whereas the collector still has the **Id** key available to redisplay the submitted form. An empty **Key** value insures the input value is not included in the submitted data.
+
+* **Keys**
+
+  If the input has candidates in the "list of dict" format, either staticly defined or fetched from the Rest API, this parameter allows to map selected candidate keys to result dict keys. A typical use case is to embed in the result dict both node_id and nodename fetched from the Rest API. References substitution values are looked up in the result dict, so keys defined with the **Keys** keyword can be referenced too, like **Id** or **Key**. Example mapping::
+
+    Keys:
+      - node_id = #svcmon.node_id
+      - nodename = #nodes.nodename
 
 * **Constraint**
 
