@@ -7,6 +7,74 @@ Introduction
 The collector can act as docker private registries v2 authenticator, habilitator, logger and search provider.
 This documentation shows how to setup the collector and the registries, and explains the Access Control policies applied by the collector.
 
+Collector objects
+-----------------
+
+Registry
+********
+
+A registry describes a private docker registry v2 instance.
+The following properties are attached to this object:
+
+* **service**
+
+  The unique identifier of the registry, as set with the REGISTRY_AUTH_TOKEN_SERVICE docker image parameter.
+
+* **url**
+
+  The url the collector uses to join the docker registry api
+
+* **insecure**
+
+  If set to True, the ssl certificate checks are disabled.
+
+* **restricted**
+
+  If set to True, authenticated users with the DockerRegistriesPusher privilege can push images to their users/<id>, groups/<id> and apps/<id> if the registry is simply published to one of their group. If set to False, authenticated users with the DockerRegistriesPusher privilege can push images to their users/<id>, groups/<id> and apps/<id> if the registry responsibility is given to one of their group.
+
+* **publications**
+
+  Allow search, pull, get on the collector api only to the publication groups.
+  Allow push of users/<id>, groups/<id> and apps/<id> prefixed repositories on unrestricted registries
+
+* **responsibles**
+
+  Allow push, post, delete on the collector api only to the responsible groups.
+
+Repository
+**********
+
+A repository is a collection of image tags.
+Only repository are returned by a docker search.
+The following properties are attached to this object:
+
+* **name**
+
+  The repository name, as returned in docker search results
+
+* **description**
+
+  The repository description, as returned in docker search results
+
+* **stars**
+
+  The repository scoring, as returned in docker search results
+
+* **official**
+
+  The repository official flag, as returned in docker search results
+
+* **automated**
+
+  The repository automated flag, as returned in docker search results
+
+Tag
+***
+
+A tag is a revision of a repository.
+Tags only have a name property.
+Tags are deleteable through the collector gui and rest api. Deleting a tag also deletes the tag on the private registry if allowed by the REGISTRY_STORAGE_DELETE_ENABLED docker image parameter.
+
 Access control
 --------------
 
@@ -16,35 +84,38 @@ The collector applies standard policies to specific repository paths.
 users/<user_id> or users/<username>
 ***********************************
 
-The user identified by <user_id> or <username> is the only one allowed to push and pull repositories with that prefix.
-Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups.
-Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-A service can never push or pull repositories with a users/ prefix.
+* The user identified by <user_id> or <username> is the only one allowed to push and pull repositories with that prefix.
+* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
+* A service can never push or pull repositories with a users/ prefix.
 
 groups/<group_id> or groups/<groupname>
 ***************************************
 
-Members of the group identified by <group_id> or <groupname> are allowed to push and pull repositories with that prefix.
-Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups.
-Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-A service can never push or pull repositories with a groups/ prefix.
+* Members of the group identified by <group_id> or <groupname> are allowed to push and pull repositories with that prefix.
+* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
+* A service can never push or pull repositories with a groups/ prefix.
 
 apps/<app_id> or apps/<appname>
 *******************************
 
-Members of the groups the application identified by <app_id> or <appname> is published to are allowed to pull repositories with that prefix.
-Members of the groups responsible for the application identified by <app_id> or <appname> are allowed to push repositories with that prefix.
-Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups.
-Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-A service can never push repositories with a apps/ prefix.
-Services with a matching application code are allowed to pull repositories with a apps/ prefix.
+* Members of the groups the application identified by <app_id> or <appname> is published to are allowed to pull repositories with that prefix.
+* Members of the groups responsible for the application identified by <app_id> or <appname> are allowed to push repositories with that prefix.
+* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
+* A service can never push repositories with a apps/ prefix.
+* Services with a matching application code are allowed to pull repositories with a apps/ prefix.
 
 other prefixes
 **************
 
-Only users member of one of the registry responsible groups and with the DockerRegistriesPusher privilege are allowed to push to an arbitrarily prefixed repository.
-Users member of one of the registry publication groups and with the DockerRegistriesPuller privilege are allowed to pull from an arbitrarily prefixed repository.
-Service whose application code is published to registry publication group are allowed to pull from an arbitrarily prefixed repository.
+* Only users member of one of the registry responsible groups and with the DockerRegistriesPusher privilege are allowed to push to an arbitrarily prefixed repository.
+* Users member of one of the registry publication groups and with the DockerRegistriesPuller privilege are allowed to pull from an arbitrarily prefixed repository.
+* Service whose application code is published to registry publication group are allowed to pull from an arbitrarily prefixed repository.
 
 Public collector policies
 -------------------------
@@ -192,8 +263,8 @@ Note:
 	}
 
 
-Collector configuration
------------------------
+Collector configuration and usage
+---------------------------------
 
 Add a registry
 **************
@@ -215,5 +286,68 @@ Searching for registries objects
 ********************************
 
 In the search box, to obtain only docker objects in the resultset use the "docker: " prefix.
+
+Using the registries
+--------------------
+
+Login as a user
+***************
+
+::
+
+	$ sudo registry docker logout 10.0.3.4
+	Remove login credentials for 10.0.3.4
+
+	$ sudo registry docker login -u test2@opensvc.com -p test --email test2@opensvc.com 10.0.3.4
+	Login Succeeded
+
+
+Login as a service
+******************
+
+::
+
+	$ sudo registry docker logout 10.0.3.4
+	Remove login credentials for 10.0.3.4
+
+	$ sudo registry docker login %as_service% 10.0.3.4
+	Login Succeeded
+
+Searching the registry
+**********************
+
+::
+
+	$ sudo registry docker search 10.0.3.4/b
+	NAME                   DESCRIPTION       STARS     OFFICIAL   AUTOMATED
+	opensvc/busybox        opensvc busybox   10        [OK]       [OK]
+	busybox                                  0                    
+	apps/opensvc/busybox                  
+
+Pulling from the registry
+*************************
+
+::
+
+	$ sudo registry docker pull 10.0.3.4/apps/opensvc/busybox
+	Using default tag: latest
+	latest: Pulling from apps/opensvc/busybox
+	363a10951ae2: Already exists 
+	5356a35496ab: Already exists 
+	Digest: sha256:ea94d086ef3ef20ab38169d0137ad2d25d21d2447c7c5eb744fa4c83fb6b647f
+	Status: Image is up to date for 10.0.3.4/apps/opensvc/busybox:latest
+
+Pushing to the registry
+***********************
+
+::
+
+	$ sudo registry docker tag busybox:latest 10.0.3.4/users/1/opensvc/busybox:latest
+
+	$ sudo registry docker push 10.0.3.4/users/1/opensvc/busybox:latest
+	The push refers to a repository [10.0.3.4/users/1/opensvc/busybox] (len: 1)
+	5356a35496ab: Image successfully pushed 
+	363a10951ae2: Image successfully pushed 
+	latest: digest: sha256:d0c79b1dbb6b8433a1122f2e0346f14c1494b3ca43b3d972effd8520d7325e98 size: 2105
 
 
