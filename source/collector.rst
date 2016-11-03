@@ -12,3 +12,4 @@ Contents:
    collector.forms
    collector.reports
    collector.admin
+   collector.docker.registries
