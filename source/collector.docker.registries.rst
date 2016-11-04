@@ -13,6 +13,8 @@ Other products, like portus or Censenta docker auth, are available to assume the
 * Zero maintenance ACLs : the collector already knows about users, groups, apps responsibles, apps publications, services' app
 * Zero maintenance user management : the collector already has a user base and authentication mecanism, either internal, LDAP, AD, radius, ...
 * Provide a service login and ACLs in addition to user login and ACLs, so users don't have to let docker store their own credentials on the nodes for pull ops.
+* Working docker search on private registries, with results honoring the ACLs
+* Expose the registries ops through the collector Rest API and CLI, honoring ACLs
 
 This documentation shows how to setup the collector and the registries, and explains the Access Control policies applied by the collector.
 
