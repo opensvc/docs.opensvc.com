@@ -5,6 +5,15 @@ Introduction
 ------------
 
 The collector can act as docker private registries v2 authenticator, habilitator, logger and search provider.
+
+Other products, like portus or Censenta docker auth, are available to assume these roles. The OpenSVC implementation has the following distinctive features:
+
+* No additional service integration for users with a private collector or using the public collector
+* All other collector features available (services and assets management, service monitoring, configuration management, nodes config file versioning, reporting, forms and workflows, ...)
+* Zero maintenance ACLs : the collector already knows about users, groups, apps responsibles, apps publications, services' app
+* Zero maintenance user management : the collector already has a user base and authentication mecanism, either internal, LDAP, AD, radius, ...
+* Provide a service login and ACLs in addition to user and ACLs, so users don't have to let docker store their own credentials on the nodes for pull ops.
+
 This documentation shows how to setup the collector and the registries, and explains the Access Control policies applied by the collector.
 
 Collector objects
@@ -120,7 +129,14 @@ other prefixes
 Public collector policies
 -------------------------
 
-Users created on the public collector all have the DockerRegistriesPusher and DockerRegistriesPuller privileges, so they can declare their own private registry on the public collector and control its responsible an publication groups. A new registry has its responsible and publication group set to the creator's primary group, which is quite restrictive.
+Users created on the public collector all have the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privileges, so they can declare their own private registry on the public collector and control its responsible an publication groups. A new registry has its responsible and publication group set to the creator's primary group, which is quite restrictive.
+
+Private collector policies
+--------------------------
+
+On a private collector, the collector managers have the choice to give the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privilege to a selected population.
+
+The DockerRegistriesPuller and DockerRegistriesPusher privilege are sufficient to publish images in allowed users/ groups/ and apps/. The DockerRegistriesManager is required to publish images to arbitrary locations (global/, site/ for example).
 
 Setup a registry
 ----------------
@@ -269,13 +285,15 @@ Collector configuration and usage
 Add a registry
 **************
 
+This operation requires the DockerRegistriesManager privilege.
+
 In any table's action menu, click :menuselection:`Add --> Docker Registry`, enter the service name as it is configured in REGISTRY_AUTH_TOKEN_SERVICE, submit.
 The user's primary group is setup as the initial registry's responsible and publication group.
 
 Discovery
 *********
 
-A discovery task is scheduled every two minutes.
+A registries content discovery task is scheduled every two minutes.
 
 Delete a repository tag
 ***********************
