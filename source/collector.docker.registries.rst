@@ -12,7 +12,7 @@ Other products, like portus or Censenta docker auth, are available to assume the
 * All other collector features available (services and assets management, service monitoring, configuration management, nodes config file versioning, reporting, forms and workflows, ...)
 * Zero maintenance ACLs : the collector already knows about users, groups, apps responsibles, apps publications, services' app
 * Zero maintenance user management : the collector already has a user base and authentication mecanism, either internal, LDAP, AD, radius, ...
-* Provide a service login and ACLs in addition to user and ACLs, so users don't have to let docker store their own credentials on the nodes for pull ops.
+* Provide a service login and ACLs in addition to user login and ACLs, so users don't have to let docker store their own credentials on the nodes for pull ops.
 
 This documentation shows how to setup the collector and the registries, and explains the Access Control policies applied by the collector.
 
@@ -134,9 +134,9 @@ Users created on the public collector all have the DockerRegistriesManager, Dock
 Private collector policies
 --------------------------
 
-On a private collector, the collector managers have the choice to give the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privilege to a selected population.
+On a private collector, the collector managers have the choice to give the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privileges to a selected population.
 
-The DockerRegistriesPuller and DockerRegistriesPusher privilege are sufficient to publish images in allowed users/ groups/ and apps/. The DockerRegistriesManager is required to publish images to arbitrary locations (global/, site/ for example).
+The DockerRegistriesPuller and DockerRegistriesPusher privileges are sufficient to publish images in allowed users/ groups/ and apps/. The DockerRegistriesManager is required to publish images to arbitrary locations (global/, site/ for example).
 
 Setup a registry
 ----------------
