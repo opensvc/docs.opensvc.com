@@ -6,7 +6,7 @@ Introduction
 
 The collector can act as docker private registries v2 authenticator, habilitator, logger and search provider.
 
-Other products, like portus or Censenta docker auth, are available to assume these roles. The OpenSVC implementation has the following distinctive features:
+Other products, like SuSE Portus or Cesenta docker auth, are available to assume these roles. The OpenSVC implementation has the following distinctive features:
 
 * No additional service integration for users with a private collector or using the public collector
 * All other collector features available (services and assets management, service monitoring, configuration management, nodes config file versioning, reporting, forms and workflows, ...)
