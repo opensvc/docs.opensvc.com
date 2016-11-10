@@ -633,7 +633,7 @@ share.nfs.conf resource template
 	;blocking_post_sync_update = foo
 	
 	#
-	# keyword:       unprovision_depends
+	# keyword:       unprovision_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -647,10 +647,10 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;unprovision_depends = 
+	;unprovision_requires = 
 	
 	#
-	# keyword:       provision_depends
+	# keyword:       provision_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -664,10 +664,10 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;provision_depends = 
+	;provision_requires = 
 	
 	#
-	# keyword:       start_depends
+	# keyword:       start_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -681,10 +681,10 @@ share.nfs.conf resource template
 	#         states are ommited, 'up,stdby up' is used as the default expected
 	#         states.
 	#
-	;start_depends = 
+	;start_requires = 
 	
 	#
-	# keyword:       stop_depends
+	# keyword:       stop_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -698,10 +698,10 @@ share.nfs.conf resource template
 	#         states are ommited, 'up,stdby up' is used as the default expected
 	#         states.
 	#
-	;stop_depends = 
+	;stop_requires = 
 	
 	#
-	# keyword:       sync_nodes_depends
+	# keyword:       sync_nodes_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -715,10 +715,10 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;sync_nodes_depends = 
+	;sync_nodes_requires = 
 	
 	#
-	# keyword:       sync_drp_depends
+	# keyword:       sync_drp_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -732,10 +732,10 @@ share.nfs.conf resource template
 	#         If states are ommited, 'up,stdby up' is used as the default expected
 	#         states.
 	#
-	;sync_drp_depends = 
+	;sync_drp_requires = 
 	
 	#
-	# keyword:       sync_update_depends
+	# keyword:       sync_update_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -749,10 +749,10 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;sync_update_depends = 
+	;sync_update_requires = 
 	
 	#
-	# keyword:       sync_break_depends
+	# keyword:       sync_break_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -766,10 +766,10 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;sync_break_depends = 
+	;sync_break_requires = 
 	
 	#
-	# keyword:       sync_resync_depends
+	# keyword:       sync_resync_requires
 	# ----------------------------------------------------------------------------
 	#  required:     False
 	#  provisioning: False
@@ -783,5 +783,5 @@ share.nfs.conf resource template
 	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
 	#         the default expected states.
 	#
-	;sync_resync_depends = 
+	;sync_resync_requires = 
 	

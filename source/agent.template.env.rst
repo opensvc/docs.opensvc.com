@@ -41,6 +41,8 @@ Contents:
    agent.template.fs.directory.conf.env
    agent.template.hb.LinuxHA.conf.env
    agent.template.hb.OpenHA.conf.env
+   agent.template.hb.linuxha.conf.env
+   agent.template.hb.openha.conf.env
    agent.template.ip.amazon.conf.env
    agent.template.ip.conf.env
    agent.template.ip.crossbow.conf.env
