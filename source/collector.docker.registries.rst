@@ -140,25 +140,52 @@ On a private collector, the collector managers have the choice to give the Docke
 
 The DockerRegistriesPuller and DockerRegistriesPusher privileges are sufficient to publish images in allowed users/ groups/ and apps/. The DockerRegistriesManager is required to publish images to arbitrary locations (global/, site/ for example).
 
-Setup a registry
-----------------
+Provision a registry service
+----------------------------
 
-Here is an example OpenSVC service configuration for a private registry::
+::
+
+	sudo svcmgr -s <svcname> create \
+		--template docker.registry \
+		--provision \
+		--env bridge=<front-facing bridge device> \
+		--env ipaddr=<service listen ip address> \
+		--env netmask=<netmask in cidr or octal notation> \
+		--env gateway=<gateway ip address>
+
+Note, <svcname> should be set to a fully qualified domain name to be able to use the registry over internet. Example: registry.opensvc.com
+
+Unprovision a registry service
+------------------------------
+
+::
+
+	sudo svcmgr -s <svcname> delete --unprovision
+
+Provisioning details
+--------------------
+
+Service template
+****************
+
+Here is the template OpenSVC service configuration served by the public OpenSVC collector under the name "docker.registry".
+
+::
 
 	[DEFAULT]
 	docker_data_dir = /srv/{svcname}/docker
 	docker_daemon_args = --log-opt max-size=1m
 
 	[ip#0]
-	ipdev = br0
-	ipname = 37.59.71.24
-	netmask = 255.255.255.224
-	gateway = 37.59.71.30
+	ipdev = {env.bridge}
+	ipname = {env.ipaddr}
+	netmask = {env.netmask}
+	gateway = {env.gateway}
 	container_rid = container#0
 	tags = docker
-	optional = true
 
 	[disk#0]
+	type = loop
 	file = /srv/{svcname}.img
 	size = 10g
 
@@ -172,8 +199,9 @@ Here is an example OpenSVC service configuration for a private registry::
 	[fs#2]
 	type = btrfs
 	mnt = /srv/{svcname}/data
-	dev = {disk#0.file}
+	dev = {fs#1.dev}
 	mnt_opt = defaults,subvol=data
+	post_provision = svcmgr -s {svcname} compliance fix --moduleset com.opensvc.svc.docker.registry --attach
 
 	[container#0]
 	type = docker
@@ -198,7 +226,7 @@ Here is an example OpenSVC service configuration for a private registry::
 		-e REGISTRY_AUTH_TOKEN_SERVICE="registry.mydomain.com"
 		-e REGISTRY_AUTH_TOKEN_ISSUER=opensvc
 		-e REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE=/ssl/collector.opensvc.com.crt
-		-e REGISTRY_HTTP_SECRET={svcname}2016
+		-e REGISTRY_HTTP_SECRET={env.secret}
 		-e REGISTRY_STORAGE_DELETE_ENABLED=true
 
 	[container#2]
@@ -209,9 +237,28 @@ Here is an example OpenSVC service configuration for a private registry::
 		-v /srv/{svcname}/data/nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
 		-v /srv/{svcname}/data/nginx/conf/ssl:/etc/nginx/ssl
 
-This example uses a static ip address help by container#0 and the network namespace is shared by all containers.
+	[env]
+	bridge = docker0
+	ipaddr =
+	netmask =
+	gateway =
+	secret = {svcname}.secret
 
-Note:
+
+This template describes:
+
+* A static ip address held by container#0. All containers share the network namespace.
+* A 10g loopback file formatted as btrfs, "data" and "docker" subvolumes, mounted under /srv/{svname}.
+* A nginx docker instance, proxying requests to either the registry or the OpenSVC public collector.
+* A docker registry v2 docker instance, with persistent data store in the volume binding.
+
+Tuning the provisioning command
+*******************************
+
+Each --env parameter in the provisioning command override the corresponding parameter in the [env] section.
+
+Registry container runtime configuration
+****************************************
 
 * REGISTRY_STORAGE_DELETE_ENABLED=true is required for the collector to be able to delete manifests
 * REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE is required for the registry to validate the JSON Web Tokens provenance
@@ -220,12 +267,30 @@ Note:
 * REGISTRY_AUTH_TOKEN_REALM=https://collector.opensvc.com/init/registry/token should be changed to your private collector url if needed
 * REGISTRY_HTTP_ADDR=localhost:5000 is the listening address. nginx hold the listener on the public address
 
-/srv/{svcname}/data/registry/conf/config.yml contains::
+In-provisioning service configuration management
+************************************************
+
+Provisioning this template runs a "compliance fix" after the data subvolume is provisionned, and before the docker instances are started. This step deploys the following configuration files, needed by the docker volume bindings:
+
+::
+
+	/srv/{svcname}/data/registry/conf/config.yml
+	/srv/{svcname}/data/nginx/conf/nginx.conf
+	/srv/{svcname}/data/registry/ssl/collector.opensvc.com.crt
+	/srv/{svcname}/data/registry/ssl/server.key
+	/srv/{svcname}/data/registry/ssl/server.crt
+
+The files content is contextualized for the provisionned service.
+
+/srv/{svcname}/data/registry/conf/config.yml
+++++++++++++++++++++++++++++++++++++++++++++
+
+::
 
 	version: 0.1
 	log:
 	  fields:
-	    service: registry.opensvc.com
+	    service: <svcname>
 	storage:
 	  cache:
 	    blobdescriptor: inmemory
@@ -248,11 +313,14 @@ Note:
 	      threshold: 5
 	      backoff: 1s
 
-/srv/{svcname}/data/nginx/conf/nginx.conf contains::
+/srv/{svcname}/data/nginx/conf/nginx.conf
++++++++++++++++++++++++++++++++++++++++++
+
+::
 
 	server {
 		listen 443 ssl;
-		server_name registry.opensvc.com;
+		server_name <svcname>;
 	 
 		chunked_transfer_encoding on;
 		client_max_body_size 0;
