@@ -378,6 +378,10 @@ In the search box, to obtain only docker objects in the resultset use the "docke
 Using the registries
 --------------------
 
+The following usage examples exercize a "registry" OpenSVC service dedicated docker daemon. All docker commands are wrapped by the service executable, so the communication socket to the docker daemon is set by the wrapper.
+
+All these examples, except "login %as_service%", are applicable to the unwrapped system's docker daemon.
+
 Login as a user
 ***************
 
