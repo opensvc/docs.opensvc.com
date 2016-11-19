@@ -1,0 +1,75 @@
+Service configuration file template
+***********************************
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.template.DEFAULT.conf
+   agent.template.app.conf
+   agent.template.container.amazon.conf
+   agent.template.container.docker.conf
+   agent.template.container.esx.conf
+   agent.template.container.hpvm.conf
+   agent.template.container.jail.conf
+   agent.template.container.kvm.conf
+   agent.template.container.ldom.conf
+   agent.template.container.lxc.conf
+   agent.template.container.openstack.conf
+   agent.template.container.ovm.conf
+   agent.template.container.srp.conf
+   agent.template.container.vbox.conf
+   agent.template.container.vcloud.conf
+   agent.template.container.vz.conf
+   agent.template.container.xen.conf
+   agent.template.container.zone.conf
+   agent.template.disk.amazon.conf
+   agent.template.disk.drbd.conf
+   agent.template.disk.gce.conf
+   agent.template.disk.loop.conf
+   agent.template.disk.lvm.conf
+   agent.template.disk.md.conf
+   agent.template.disk.rados.conf
+   agent.template.disk.raw.conf
+   agent.template.disk.vdisk.conf
+   agent.template.disk.veritas.conf
+   agent.template.disk.vg.conf
+   agent.template.disk.vmdg.conf
+   agent.template.disk.zpool.conf
+   agent.template.fs.conf
+   agent.template.fs.directory.conf
+   agent.template.hb.LinuxHA.conf
+   agent.template.hb.OpenHA.conf
+   agent.template.hb.linuxha.conf
+   agent.template.hb.openha.conf
+   agent.template.ip.amazon.conf
+   agent.template.ip.conf
+   agent.template.ip.crossbow.conf
+   agent.template.ip.docker.conf
+   agent.template.ip.gce.conf
+   agent.template.share.nfs.conf
+   agent.template.stonith.callout.conf
+   agent.template.stonith.ilo.conf
+   agent.template.subset.conf
+   agent.template.sync.btrfs.conf
+   agent.template.sync.btrfssnap.conf
+   agent.template.sync.dcsckpt.conf
+   agent.template.sync.dcssnap.conf
+   agent.template.sync.dds.conf
+   agent.template.sync.docker.conf
+   agent.template.sync.evasnap.conf
+   agent.template.sync.hp3par.conf
+   agent.template.sync.hp3parsnap.conf
+   agent.template.sync.ibmdssnap.conf
+   agent.template.sync.necismsnap.conf
+   agent.template.sync.netapp.conf
+   agent.template.sync.rados.conf
+   agent.template.sync.rsync.conf
+   agent.template.sync.s3.conf
+   agent.template.sync.symclone.conf
+   agent.template.sync.symsnap.conf
+   agent.template.sync.symsrdfs.conf
+   agent.template.sync.zfs.conf
+   agent.template.sync.zfssnap.conf
+   agent.template.sysreport.conf
