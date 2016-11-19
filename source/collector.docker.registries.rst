@@ -29,7 +29,7 @@ The following properties are attached to this object:
 
 * **service**
 
-  The unique identifier of the registry, as set with the REGISTRY_AUTH_TOKEN_SERVICE docker image parameter.
+  The unique identifier of the registry, as set with the ``REGISTRY_AUTH_TOKEN_SERVICE`` docker image parameter.
 
 * **url**
 
@@ -37,20 +37,22 @@ The following properties are attached to this object:
 
 * **insecure**
 
-  If set to True, the ssl certificate checks are disabled.
+  If set to ``True``, the ssl certificate checks are disabled.
 
 * **restricted**
 
-  If set to True, authenticated users with the DockerRegistriesPusher privilege can push images to their users/<id>, groups/<id> and apps/<id> if the registry is simply published to one of their group. If set to False, authenticated users with the DockerRegistriesPusher privilege can push images to their users/<id>, groups/<id> and apps/<id> if the registry responsibility is given to one of their group.
+  If set to ``True``, authenticated users with the ``DockerRegistriesPusher`` privilege can push images to their ``users/<id>``, ``groups/<id>`` and ``apps/<id>`` if the registry is simply published to one of their group.
+
+  If set to ``False``, authenticated users with the ``DockerRegistriesPusher`` privilege can push images to their ``users/<id>``, ``groups/<id>`` and ``apps/<id>`` if the registry responsibility is given to one of their group.
 
 * **publications**
 
   Allow search, pull, get on the collector api only to the publication groups.
-  Allow push of users/<id>, groups/<id> and apps/<id> prefixed repositories on unrestricted registries
+  Allow push of ``users/<id>``, ``groups/<id>`` and ``apps/<id>`` prefixed repositories on unrestricted registries
 
 * **responsibles**
 
-  Allow push, post, delete on the collector api only to the responsible groups.
+  Allow PUSH, POST, DELETE on the collector api only to the responsible groups.
 
 Repository
 **********
@@ -84,7 +86,7 @@ Tag
 
 A tag is a revision of a repository.
 Tags only have a name property.
-Tags are deleteable through the collector gui and rest api. Deleting a tag also deletes the tag on the private registry if allowed by the REGISTRY_STORAGE_DELETE_ENABLED docker image parameter.
+Tags are deleteable through the collector gui and rest api. Deleting a tag also deletes the tag on the private registry if allowed by the ``REGISTRY_STORAGE_DELETE_ENABLED`` docker image parameter.
 
 Access control
 --------------
@@ -95,50 +97,50 @@ The collector applies standard policies to specific repository paths.
 users/<user_id> or users/<username>
 ***********************************
 
-* The user identified by <user_id> or <username> is the only one allowed to push and pull repositories with that prefix.
-* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
-* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
-* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-* A service can never push or pull repositories with a users/ prefix.
+* The user identified by ``<user_id>`` or ``<username>`` is the only one allowed to push and pull repositories with that prefix.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the ``DockerRegistriesPuller`` privilege and registry publication to one of the user's groups.
+* A service can never push or pull repositories with a ``users/`` prefix.
 
 groups/<group_id> or groups/<groupname>
 ***************************************
 
-* Members of the group identified by <group_id> or <groupname> are allowed to push and pull repositories with that prefix.
-* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
-* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
-* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-* A service can never push or pull repositories with a groups/ prefix.
+* Members of the group identified by ``<group_id>`` or ``<groupname>`` are allowed to push and pull repositories with that prefix.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the ``DockerRegistriesPuller`` privilege and registry publication to one of the user's groups.
+* A service can never push or pull repositories with a ``groups/`` prefix.
 
 apps/<app_id> or apps/<appname>
 *******************************
 
-* Members of the groups the application identified by <app_id> or <appname> is published to are allowed to pull repositories with that prefix.
-* Members of the groups responsible for the application identified by <app_id> or <appname> are allowed to push repositories with that prefix.
-* Pushing also requires the DockerRegistriesPusher privilege and registry publication to one of the user's groups on unrestricted registries.
-* Pushing also requires the DockerRegistriesPusher privilege and registry responsibility to one of the user's groups on restricted registries.
-* Pulling also requires the DockerRegistriesPuller privilege and registry publication to one of the user's groups.
-* A service can never push repositories with a apps/ prefix.
-* Services with a matching application code are allowed to pull repositories with a apps/ prefix.
+* Members of the groups the application identified by ``<app_id>`` or ``<appname>`` is published to are allowed to pull repositories with that prefix.
+* Members of the groups responsible for the application identified by ``<app_id>`` or ``<appname>`` are allowed to push repositories with that prefix.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry publication to one of the user's groups on unrestricted registries.
+* Pushing also requires the ``DockerRegistriesPusher`` privilege and registry responsibility to one of the user's groups on restricted registries.
+* Pulling also requires the ``DockerRegistriesPuller`` privilege and registry publication to one of the user's groups.
+* A service can never push repositories with a ``apps/`` prefix.
+* Services with a matching application code are allowed to pull repositories with a ``apps/`` prefix.
 
 other prefixes
 **************
 
-* Only users member of one of the registry responsible groups and with the DockerRegistriesPusher privilege are allowed to push to an arbitrarily prefixed repository.
-* Users member of one of the registry publication groups and with the DockerRegistriesPuller privilege are allowed to pull from an arbitrarily prefixed repository.
+* Only users member of one of the registry responsible groups and with the ``DockerRegistriesPusher`` privilege are allowed to push to an arbitrarily prefixed repository.
+* Users member of one of the registry publication groups and with the ``DockerRegistriesPuller`` privilege are allowed to pull from an arbitrarily prefixed repository.
 * Service whose application code is published to registry publication group are allowed to pull from an arbitrarily prefixed repository.
 
 Public collector policies
 -------------------------
 
-Users created on the public collector all have the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privileges, so they can declare their own private registry on the public collector and control its responsible an publication groups. A new registry has its responsible and publication group set to the creator's primary group, which is quite restrictive.
+Users created on the public collector all have the ``DockerRegistriesManager``, ``DockerRegistriesPusher`` and ``DockerRegistriesPuller`` privileges, so they can declare their own private registry on the public collector and control its responsible an publication groups. A new registry has its responsible and publication group set to the creator's primary group, which is quite restrictive.
 
 Private collector policies
 --------------------------
 
-On a private collector, the collector managers have the choice to give the DockerRegistriesManager, DockerRegistriesPusher and DockerRegistriesPuller privileges to a selected population.
+On a private collector, the collector managers have the choice to give the ``DockerRegistriesManager``, ``DockerRegistriesPusher`` and ``DockerRegistriesPuller`` privileges to a selected population.
 
-The DockerRegistriesPuller and DockerRegistriesPusher privileges are sufficient to publish images in allowed users/ groups/ and apps/. The DockerRegistriesManager is required to publish images to arbitrary locations (global/, site/ for example).
+The DockerRegistriesPuller and DockerRegistriesPusher privileges are sufficient to publish images in allowed ``users/`` ``groups/`` and ``apps/``. The DockerRegistriesManager is required to publish images to arbitrary locations (``global/``, ``site/`` for example).
 
 Provision a registry service
 ----------------------------
@@ -153,7 +155,10 @@ Provision a registry service
 		--env netmask=<netmask in cidr or octal notation> \
 		--env gateway=<gateway ip address>
 
-Note, <svcname> should be set to a fully qualified domain name to be able to use the registry over internet. Example: registry.opensvc.com
+
+* ``<svcname>`` should be set to a DNS resolved fully qualified domain name to be able to use the registry over internet. Example: ``registry.opensvc.com``
+* This command does not handle the DNS configuration.
+* The OpenSVC agent running this command must be registered on the OpenSVC public collector, hence the user running the command must have an account on this collector (free).
 
 Unprovision a registry service
 ------------------------------
@@ -168,7 +173,7 @@ Provisioning details
 Service template
 ****************
 
-Here is the template OpenSVC service configuration served by the public OpenSVC collector under the name "docker.registry".
+Here is the template OpenSVC service configuration served by the public OpenSVC collector under the name ``docker.registry``.
 
 ::
 
@@ -247,30 +252,30 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 
 This template describes:
 
-* A static ip address held by container#0. All containers share the network namespace.
-* A 10g loopback file formatted as btrfs, "data" and "docker" subvolumes, mounted under /srv/{svname}.
+* A static ip address held by ``container#0``. All containers share the network namespace.
+* A 10g loopback file formatted as btrfs, ``data`` and ``docker`` subvolumes, mounted under ``/srv/{svname}``.
 * A nginx docker instance, proxying requests to either the registry or the OpenSVC public collector.
-* A docker registry v2 docker instance, with persistent data store in the volume binding.
+* A docker registry v2 docker instance, with persistent data stored in the volume binding.
 
 Tuning the provisioning command
 *******************************
 
-Each --env parameter in the provisioning command override the corresponding parameter in the [env] section.
+Each ``--env`` parameter in the provisioning command overrides the corresponding parameter in the ``[env]`` section.
 
 Registry container runtime configuration
 ****************************************
 
-* REGISTRY_STORAGE_DELETE_ENABLED=true is required for the collector to be able to delete manifests
-* REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE is required for the registry to validate the JSON Web Tokens provenance
-* REGISTRY_AUTH_TOKEN_ISSUER=opensvc is required for the registry to validate the JSON Web Tokens provenance
-* REGISTRY_AUTH_TOKEN_SERVICE=registry.mydomain.com is used as a unique registry identifier by the collector, so make sure you used a fqdn
-* REGISTRY_AUTH_TOKEN_REALM=https://collector.opensvc.com/init/registry/token should be changed to your private collector url if needed
-* REGISTRY_HTTP_ADDR=localhost:5000 is the listening address. nginx hold the listener on the public address
+* ``REGISTRY_STORAGE_DELETE_ENABLED=true`` is required for the collector to be able to delete manifests
+* ``REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE`` is required for the registry to validate the JSON Web Tokens provenance
+* ``REGISTRY_AUTH_TOKEN_ISSUER=opensvc`` is required for the registry to validate the JSON Web Tokens provenance
+* ``REGISTRY_AUTH_TOKEN_SERVICE=registry.mydomain.com`` is used as a unique registry identifier by the collector, so make sure you use a fqdn
+* ``REGISTRY_AUTH_TOKEN_REALM=https://collector.opensvc.com/init/registry/token`` should be changed to your private collector url if needed
+* ``REGISTRY_HTTP_ADDR=localhost:5000`` is the listening address. nginx hold the listener on the public address
 
 In-provisioning service configuration management
 ************************************************
 
-Provisioning this template runs a "compliance fix" after the data subvolume is provisionned, and before the docker instances are started. This step deploys the following configuration files, needed by the docker volume bindings:
+Provisioning this template runs a ``compliance fix`` after the data subvolume is provisionned, and before the docker instances are started. This step deploys the following configuration files, needed by the docker volume bindings:
 
 ::
 
@@ -355,9 +360,9 @@ Collector configuration and usage
 Add a registry
 **************
 
-This operation requires the DockerRegistriesManager privilege.
+This operation requires the ``DockerRegistriesManager`` privilege.
 
-In any table's action menu, click :menuselection:`Add --> Docker Registry`, enter the service name as it is configured in REGISTRY_AUTH_TOKEN_SERVICE, submit.
+In any table's action menu, click :menuselection:`Add --> Docker Registry`, enter the service name as it is configured in ``REGISTRY_AUTH_TOKEN_SERVICE``, submit.
 The user's primary group is setup as the initial registry's responsible and publication group.
 
 Discovery
@@ -373,14 +378,14 @@ Select tags in the docker registries view and in the action menu click :menusele
 Searching for registries objects
 ********************************
 
-In the search box, to obtain only docker objects in the resultset use the "docker: " prefix.
+In the search box, to obtain only docker objects in the resultset use the ``docker:`` prefix.
 
 Using the registries
 --------------------
 
-The following usage examples exercize a "registry" OpenSVC service dedicated docker daemon. All docker commands are wrapped by the service executable, so the communication socket to the docker daemon is set by the wrapper.
+The following usage examples exercize a ``registry`` OpenSVC service dedicated docker daemon. All docker commands are wrapped by the service executable, so the communication socket to the docker daemon is set by the wrapper.
 
-All these examples, except "login %as_service%", are applicable to the unwrapped system's docker daemon.
+All these examples, except ``login %as_service%``, are applicable to the unwrapped system's docker daemon.
 
 Login as a user
 ***************
