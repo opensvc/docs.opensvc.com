@@ -17,62 +17,81 @@ Provisioning
 
 Each resource driver can implement a provisioner, but not all resources actually do. The list of provisioner can be extracted using::
 
-  $ ls -1 lib/prov*py
-  lib/provDiskDcs.py
-  lib/provDiskFreenas.py
-  lib/provFsBtrfs.py
-  lib/provFsExt2.py
-  lib/provFsExt3.py
-  lib/provFsExt4.py
-  lib/provFs.py
-  lib/provFsVxfs.py
-  lib/provFsZfs.py
-  lib/provIpAmazon.py
-  lib/provIp.py
-  lib/provisioning.py
-  lib/provKvm.py
-  lib/provLoopLinux.py
-  lib/provLxc.py
-  lib/provSrp.py
-  lib/provVgAmazon.py
-  lib/provVgHP-UX.py
-  lib/provVgLinux.py
-  lib/provVgRadosLinux.py
-  lib/provZone.py
+	$ ls -1 lib/prov*py
+	lib/provDiskDcs.py
+	lib/provDiskFreenas.py
+	lib/provFsBtrfs.py
+	lib/provFsExt2.py
+	lib/provFsExt3.py
+	lib/provFsExt4.py
+	lib/provFs.py
+	lib/provFsVxfs.py
+	lib/provFsZfs.py
+	lib/provIpAmazon.py
+	lib/provIp.py
+	lib/provisioning.py
+	lib/provKvm.py
+	lib/provLoopLinux.py
+	lib/provLxc.py
+	lib/provSrp.py
+	lib/provVgAmazon.py
+	lib/provVgHP-UX.py
+	lib/provVgLinux.py
+	lib/provVgRadosLinux.py
+	lib/provZone.py
 
 The resource provisioner may need additional parameters. The resource configuration templates in ``usr/share/doc/`` highlight these particular parameters with ``provisioning = True``. The list of provisioning parameters can thus be extracted using::
 
-  $ grep -B 3 "provisioning: True" usr/share/doc/template.*env | grep keyword
-  usr/share/doc/template.container.esx.env-# keyword:       snap
-  usr/share/doc/template.container.esx.env-# keyword:       snapof
-  usr/share/doc/template.container.kvm.env-# keyword:       virtinst
-  usr/share/doc/template.container.kvm.env-# keyword:       snap
-  usr/share/doc/template.container.kvm.env-# keyword:       snapof
-  usr/share/doc/template.container.lxc.env-# keyword:       rootfs
-  usr/share/doc/template.container.lxc.env-# keyword:       cf
-  usr/share/doc/template.container.lxc.env-# keyword:       template
-  usr/share/doc/template.container.ovm.env-# keyword:       virtinst
-  usr/share/doc/template.container.ovm.env-# keyword:       snap
-  usr/share/doc/template.container.ovm.env-# keyword:       snapof
-  usr/share/doc/template.container.srp.env-# keyword:       ip
-  usr/share/doc/template.container.srp.env-# keyword:       rootpath
-  usr/share/doc/template.container.srp.env-# keyword:       prm_cores
-  usr/share/doc/template.container.vz.env-# keyword:       rootfs
-  usr/share/doc/template.container.vz.env-# keyword:       template
-  usr/share/doc/template.container.xen.env-# keyword:       virtinst
-  usr/share/doc/template.container.xen.env-# keyword:       snap
-  usr/share/doc/template.container.xen.env-# keyword:       snapof
-  usr/share/doc/template.container.zone.env-# keyword:       rootfs
-  usr/share/doc/template.container.zone.env-# keyword:       template
-  usr/share/doc/template.container.zone.env-# keyword:       snap
-  usr/share/doc/template.container.zone.env-# keyword:       snapof
-  usr/share/doc/template.container.zone.env-# keyword:       container_origin
-  usr/share/doc/template.fs.env-# keyword:       vg
-  usr/share/doc/template.fs.env-# keyword:       size
-  usr/share/doc/template.ip.env-# keyword:       gateway
-  usr/share/doc/template.loop.env-# keyword:       size
-  usr/share/doc/template.vg.rados.env-# keyword:       size
-  usr/share/doc/template.vg.rados.env-# keyword:       image_format
+	$ grep -B 3 "provisioning: True" usr/share/doc/template.*conf | grep keyword
+	usr/share/doc/template.container.esx.conf-# keyword:       snap
+	usr/share/doc/template.container.esx.conf-# keyword:       snapof
+	usr/share/doc/template.container.kvm.conf-# keyword:       virtinst
+	usr/share/doc/template.container.kvm.conf-# keyword:       snap
+	usr/share/doc/template.container.kvm.conf-# keyword:       snapof
+	usr/share/doc/template.container.lxc.conf-# keyword:       rootfs
+	usr/share/doc/template.container.lxc.conf-# keyword:       cf
+	usr/share/doc/template.container.lxc.conf-# keyword:       template
+	usr/share/doc/template.container.ovm.conf-# keyword:       virtinst
+	usr/share/doc/template.container.ovm.conf-# keyword:       snap
+	usr/share/doc/template.container.ovm.conf-# keyword:       snapof
+	usr/share/doc/template.container.srp.conf-# keyword:       ip
+	usr/share/doc/template.container.srp.conf-# keyword:       rootpath
+	usr/share/doc/template.container.srp.conf-# keyword:       prm_cores
+	usr/share/doc/template.container.vz.conf-# keyword:       rootfs
+	usr/share/doc/template.container.vz.conf-# keyword:       template
+	usr/share/doc/template.container.xen.conf-# keyword:       virtinst
+	usr/share/doc/template.container.xen.conf-# keyword:       snap
+	usr/share/doc/template.container.xen.conf-# keyword:       snapof
+	usr/share/doc/template.container.zone.conf-# keyword:       rootfs
+	usr/share/doc/template.container.zone.conf-# keyword:       template
+	usr/share/doc/template.container.zone.conf-# keyword:       snap
+	usr/share/doc/template.container.zone.conf-# keyword:       snapof
+	usr/share/doc/template.container.zone.conf-# keyword:       container_origin
+	usr/share/doc/template.disk.gce.conf-# keyword:       size
+	usr/share/doc/template.disk.gce.conf-# keyword:       description
+	usr/share/doc/template.disk.gce.conf-# keyword:       image
+	usr/share/doc/template.disk.gce.conf-# keyword:       image_project
+	usr/share/doc/template.disk.gce.conf-# keyword:       source_snapshot
+	usr/share/doc/template.disk.gce.conf-# keyword:       disk_type
+	usr/share/doc/template.disk.loop.conf-# keyword:       size
+	usr/share/doc/template.disk.lvm.conf-# keyword:       options
+	usr/share/doc/template.disk.lvm.conf-# keyword:       pvs
+	usr/share/doc/template.disk.md.conf-# keyword:       devs
+	usr/share/doc/template.disk.md.conf-# keyword:       level
+	usr/share/doc/template.disk.md.conf-# keyword:       chunk
+	usr/share/doc/template.disk.md.conf-# keyword:       layout
+	usr/share/doc/template.disk.md.conf-# keyword:       spares
+	usr/share/doc/template.disk.rados.conf-# keyword:       size
+	usr/share/doc/template.disk.rados.conf-# keyword:       image_format
+	usr/share/doc/template.disk.vg.conf-# keyword:       options
+	usr/share/doc/template.disk.vg.conf-# keyword:       pvs
+	usr/share/doc/template.disk.zpool.conf-# keyword:       vdev
+	usr/share/doc/template.fs.conf-# keyword:       vg
+	usr/share/doc/template.fs.conf-# keyword:       size
+	usr/share/doc/template.ip.amazon.conf-# keyword:       cascade_allocation
+	usr/share/doc/template.ip.amazon.conf-# keyword:       docker_daemon_ip
+	usr/share/doc/template.ip.conf-# keyword:       gateway
+
 
 A provisioner can update other service DEFAULT and resources configuration parameters. For example, the amazon ip provisioner can cascade the allocated ip address the ``docker_daemon_args`` as a ``--ip x.x.x.x`` argument, and cascade to a ip resource ``ipname`` parameter.
 
@@ -88,17 +107,21 @@ Commandline actions
 
 The provisioners are activated by setting the ``--provision`` with the following actions:
 
-* ``create``
+* ``create --template <uri>|<template>``
+
+  Creates a service using a configuration file pointed by ``--template``. ``<uri>`` being a local or remote path. ``<template>`` being a collector served template id or template name. Served templates can be searched with ``nodemgr collector search --like prov:<substring>``
+
+* ``create --config <uri>``
+
+  Creates a service using a configuration file pointed by ``--config <uri>``. ``<uri>`` being a local or remote path.
+
+* ``create --resource <json definition> ...``
 
   Creates a service using definitions passed as ``--resource`` arguments.
 
 * ``update``
 
   Add or change a resource definition to an existing service. Definitions are passed as ``--resource`` arguments.
-
-* ``install``
-
-  Creates a service using a configuration file pointed by ``--envfile``.
 
 * ``pull``
 
@@ -119,15 +142,27 @@ A ``--resource`` argument takes a JSON formatted dictionary. The keys are the re
 Configuration template
 ++++++++++++++++++++++
 
-A template is a normal service configuration file with parts you can replace with placeholder strings. Templates can be stored anywhere.
+A template is a normal service configuration file with parts you can replace with references and/or arithmetic evaluations. Templates can be stored in the local fs, served through ftp, http, https, or served by the collector with publications ACL.
 
-A template is instanciated by copying it as a service configuration file (``<OSVCETC>/<svcname>.env``), and substituting the placeholder strings. Both actions can be done with a command like::
+A template is instanciated by copying its content as a service configuration file (``<OSVCETC>/<svcname>.conf``).
 
-  cat <template> | sed -e "s/__SVCNAME_PLACEHOLDER__/mysvc/g" -e "s/__NODENAME1_PLACEHOLDER__/node1/g" | sudo tee /etc/opensvc/mysvc.env
+The arithmetic evaluation format is ``$(<expr>)``. An evaluation can contain references.
 
-Once instanciated the ``install`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set::
+The reference format is ``{[<section>.]<option>}``, where section is a configuration file section name, and <option> is the option name in the pointed section. If section is ommited, the ``DEFAULT`` section is implicitely used. A reference can also contain arithmetic evaluations.
 
-  $ sudo svcmgr -s mysvc --envfile /etc/opensvc/mysvc.env --provision install
+References to the ``env`` section are special:
+
+* Options in the ``env`` are not submitted to synthaxic checks.
+
+* The ``--interactive`` create option asks for env keys values, and proposes the value set in the template as default
+
+* ``--env <option>:<value>`` create options override the env options default values.
+
+* System's uppercased environment variables override the env options default values and values specified with ``--env``.
+
+The ``create`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set::
+
+  $ sudo svcmgr -s mysvc --config /etc/opensvc/mysvc.conf --provision create
 
 
 Provisioning examples
@@ -143,7 +178,7 @@ Template ``testec2docker.template``:
   [DEFAULT]
   service_type = TST
   nodes = node12.nsx.lab.net
-  docker_data_dir = /srv/__SVCNAME__/docker
+  docker_data_dir = /srv/{svcname}/docker
   docker_daemon_args = 
   
   [ip#0]
@@ -165,15 +200,15 @@ Template ``testec2docker.template``:
   [fs#0]
   type = btrfs
   mnt_opt = defaults,subvol=docker
-  mnt = /srv/__SVCNAME__/docker
+  mnt = /srv/{svcname}/docker
   always_on = drpnodes
-  dev = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
+  dev = /var/lib/opensvc/{svcname}/dev/disk.0.0
   
   [fs#1]
   type = btrfs
   mnt_opt = defaults,subvol=data
-  mnt = /srv/__SVCNAME__/data
-  dev = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
+  mnt = /srv/{svcname}/data
+  dev = /var/lib/opensvc/{svcname}/dev/disk.0.0
   
   [container#0]
   run_image = ubuntu:14.10
@@ -186,7 +221,7 @@ Template ``testec2docker.template``:
   run_image = nginx:latest
   type = docker
   run_args = -v /etc/localtime:/etc/localtime:ro
-  	--net=container:__SVCNAME__.container.0
+  	--net=container:{svcname}.container.0
   
   
   [sync#0]
@@ -194,23 +229,17 @@ Template ``testec2docker.template``:
   target = nodes drpnodes
   
   [sync#1]
-  src = __SVCNAME__.fs.0:data
-  dst = __SVCNAME__.fs.0:data
+  src = {svcname}.fs.0:data
+  dst = {svcname}.fs.0:data
   type = btrfs
   target = drpnodes
-
-Template contextualization into a service configuration file:
-
-::
-
-  sed -e "s/__SVCNAME__/testec2docker4.nsx.lab.net/g" testec2docker.template | sudo tee /etc/opensvc/testec2docker4.nsx.lab.net.env
 
 Provision:
 
 ::
 
-  $ sudo svcmgr -s testec2docker4.nsx.lab.net --envfile /etc/opensvc/testec2docker4.nsx.lab.net.env --provision install
-  INFO    testec2docker4.nsx.lab.net                  svcmgr -s testec2docker4.nsx.lab.net --envfile /etc/opensvc/testec2docker4.nsx.lab.net.env --provision install
+  $ sudo svcmgr -s testec2docker4.nsx.lab.net --config testec2docker.template --provision create
+  INFO    testec2docker4.nsx.lab.net                  svcmgr -s testec2docker4.nsx.lab.net --config /etc/opensvc/testec2docker4.nsx.lab.net.conf --provision create
   INFO    testec2docker4.nsx.lab.net.ip#0             aws --output=json ec2 assign-private-ip-addresses --network-interface-id eni-033adc4b --secondary-private-ip-address-count 1
   INFO    testec2docker4.nsx.lab.net.ip#0             public ip already provisioned
   INFO    testec2docker4.nsx.lab.net.ip#0             cascade 10.0.0.221 to ip#1.ipname
@@ -352,7 +381,7 @@ Provision:
   3512b1265a540d74d4deb1598434e9be7ddc14252a85b94b372d81cb3a5a8b34
   INFO    testec2docker4.nsx.lab.net.container#1      wait for container up status
   INFO    testec2docker4.nsx.lab.net.container#1      wait for container operational
-  send /etc/opensvc/testec2docker4.nsx.lab.net.env to collector ... OK
+  send /etc/opensvc/testec2docker4.nsx.lab.net.conf to collector ... OK
   update /var/lib/opensvc/testec2docker4.nsx.lab.net.push timestamp ... OK
 
 Docker service on amazon, btrfs on lvm
@@ -364,8 +393,7 @@ Template:
 
   [DEFAULT]
   service_type = TST
-  nodes = node12.nsx.lab.net
-  docker_data_dir = /srv/__SVCNAME__/docker
+  docker_data_dir = /srv/{svcname}/docker
   docker_daemon_args = --storage-driver=btrfs
   app = NSX
    
@@ -375,40 +403,40 @@ Template:
   
   [disk#1]
   type = lvm
-  name = __SVCNAME__
-  pvs = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0
+  name = {svcname}
+  pvs = /var/lib/opensvc/{svcname}/dev/disk.0.0
   
   [fs#1]
   type = btrfs
-  mnt = /srv/__SVCNAME__
-  dev = /dev/__SVCNAME__/root
+  mnt = /srv/{svcname}
+  dev = /dev/{svcname}/root
   mnt_opt = defaults,subvol=root
-  vg = __SVCNAME__
+  vg = {svcname}
   size = 14G
    
   [fs#2]
   type = btrfs
-  mnt = /srv/__SVCNAME__/data
-  dev = /dev/__SVCNAME__/root
+  mnt = /srv/{svcname}/data
+  dev = /dev/{svcname}/root
   mnt_opt = defaults,subvol=data
    
   [fs#3]
   type = btrfs
-  mnt = /srv/__SVCNAME__/docker
-  dev = /dev/__SVCNAME__/root
+  mnt = /srv/{svcname}/docker
+  dev = /dev/{svcname}/root
   mnt_opt = defaults,subvol=docker
    
   [container#0]
   type = docker
   run_image = ubuntu:latest
-  run_args = --net=none --hostname=__SVCNAME__
+  run_args = --net=none --hostname={svcname}
   run_command = /bin/bash
    
   [container#1]
   type = docker
   run_image = ubuntu:latest
-  run_args = --net=container:__SVCNAME__.container.0
-       --volume /srv/__SVCNAME__/data:/data:rw
+  run_args = --net=container:{svcname}.container.0
+       --volume /srv/{svcname}/data:/data:rw
   run_command = /bin/bash
 
 Docker service on amazon, btrfs on md raid
@@ -420,8 +448,7 @@ Template:
 
   [DEFAULT]
   service_type = TST
-  nodes = node12.nsx.lab.net
-  docker_data_dir = /srv/__SVCNAME__/docker
+  docker_data_dir = /srv/{svcname}/docker
   docker_daemon_args = --storage-driver=btrfs
   app = NSX
    
@@ -432,33 +459,33 @@ Template:
   [disk#1]
   type = md
   uuid = 
-  devs = /var/lib/opensvc/__SVCNAME__/dev/disk.0.0 /var/lib/opensvc/__SVCNAME__/dev/disk.0.1 /var/lib/opensvc/__SVCNAME__/dev/disk.0.2
+  devs = /var/lib/opensvc/{svcname}/dev/disk.0.0 /var/lib/opensvc/{svcname}/dev/disk.0.1 /var/lib/opensvc/{svcname}/dev/disk.0.2
   spares = 1
   chunk = 1m
   level = 1
   
   [fs#1]
   type = btrfs
-  mnt = /srv/__SVCNAME__
-  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt = /srv/{svcname}
+  dev = /dev/md/{svcname}.disk.1
   mnt_opt = defaults,subvol=root
    
   [fs#2]
   type = btrfs
-  mnt = /srv/__SVCNAME__/data
-  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt = /srv/{svcname}/data
+  dev = /dev/md/{svcname}.disk.1
   mnt_opt = defaults,subvol=data
    
   [fs#3]
   type = btrfs
-  mnt = /srv/__SVCNAME__/docker
-  dev = /dev/md/__SHORT_SVCNAME__.disk.1
+  mnt = /srv/{svcname}/docker
+  dev = /dev/md/{svcname}.disk.1
   mnt_opt = defaults,subvol=docker
    
   [container#0]
   type = docker
   run_image = ubuntu:latest
-  run_args = --net=none --hostname=__SVCNAME__
+  run_args = --net=none --hostname={svcname}
   run_command = /bin/bash
 
 
