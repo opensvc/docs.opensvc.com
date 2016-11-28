@@ -73,3 +73,4 @@ Contents:
    agent.template.sync.zfs.conf
    agent.template.sync.zfssnap.conf
    agent.template.sysreport.conf
+   agent.template.task.conf

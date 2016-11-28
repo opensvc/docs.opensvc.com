@@ -38,7 +38,7 @@ Experienced users may find it easier to start from a copy of the env file of an 
 
 ::
 
-	sudo svcmgr -s <svcname> install --envfile <path to config file>
+	sudo svcmgr -s <svcname> create --config <path to config file>
 
 From a collector's service
 --------------------------

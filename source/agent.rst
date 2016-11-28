@@ -20,6 +20,7 @@ Contents:
    agent.service.sync
    agent.service.encapsulation
    agent.service.container
+   agent.service.task
    storage
    howto
    agent.template.conf
