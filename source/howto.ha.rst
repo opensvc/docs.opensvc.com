@@ -128,7 +128,7 @@ With this setup :
 - the ``heartd_unicast`` process on node108 will send heartbeat data through eth0 on unicast IP 192.168.0.109 port 1700
 - the ``heartc`` process on node108 will listen for heartbeat data received on eth1 on multicast IP 239.131.50.10 port 1781, with a 60 seconds timeout
 - the ``heartc_dio`` process on node108 will listen read heartbeat data on /dev/mapper/3600512341234123412341234 at offset 16, with a 60 seconds timeout
-- the ``heartc_unicast`` process on node108 will listen for heartbeat data received on eth0 on multicast IP 192.168.0.108 port 1700, with a 60 seconds timeout
+- the ``heartc_unicast`` process on node108 will listen for heartbeat data received on eth0 on unicast IP 192.168.0.108 port 1700, with a 60 seconds timeout
 
 .. note::
 
