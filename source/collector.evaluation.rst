@@ -1,7 +1,7 @@
 Collector evaluation
 ====================
 
-The evaluation license is accessible at http://www.opensvc.com/init/views/evaluation_license.txt.
+The evaluation license is accessible at http://www.opensvc.com/init/static/eval/evaluation_agreement.txt.
 
 
 Prerequisites
