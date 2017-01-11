@@ -13,4 +13,5 @@ Contents:
    collector.forms
    collector.reports
    collector.admin
+   collector.safe
    collector.docker.registries
