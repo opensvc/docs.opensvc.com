@@ -66,14 +66,14 @@ Installation
 
 Interactive method::
 
-	# sudo /opt/opensvc/bin/svcmgr -s collector_eval create \
+	# sudo svcmgr -s collector_eval create \
 		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
 		--provision \
 		--interactive
 
 Or non-interactive method::
 
-	# sudo /opt/opensvc/bin/svcmgr -s collector_eval create \
+	# sudo svcmgr -s collector_eval create \
 		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
 		--env accept_license=yes \
 		--env ipaddr=<ipaddr> \
@@ -104,3 +104,11 @@ Enjoy the experience, and send feedback to support@opensvc.com.
 
 Contact sales@opensvc.com for meetings, support, training, production licenses.
 
+End of evaluation
+*****************
+
+Clean up the service and all data using the command
+
+::
+
+	# sudo svcmgr -s collector_eval delete --unprovision
