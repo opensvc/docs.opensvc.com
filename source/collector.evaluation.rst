@@ -111,4 +111,6 @@ Clean up the service and all data using the command
 
 ::
 
-	# sudo svcmgr -s collector_eval delete --unprovision
+	# sudo svcmgr -s collector_eval delete \
+		--unprovision
+
