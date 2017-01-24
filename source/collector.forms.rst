@@ -505,6 +505,10 @@ Keywords
 
   The maximum length of the input value representation string in display mode. If the actual value is longer than **DisplayModeTrim**, only the first **DisplayModeTrim** // 3 and the last **DisplayModeTrim** // 3 * 2 characters will be displayed. This parameter is usually set on inputs with very long values, like public keys for example.
 
+* **CheckOnLoad**
+
+  With the checklist type, setting CheckOnLoad to "all" tells the renderer to check all checkboxes on load.
+
 Examples
 ++++++++
 
@@ -556,6 +560,22 @@ A select input, whose options are fetched from the OpenSVC collector data, depen
       Function: json_service_loc_city
       Args:
         - "svcname = #svcname"
+
+A checklist of a node visible target ports::
+
+  Inputs:
+    -
+    Id: targets
+    Label: Targets
+    DisplayModeLabel: targets
+    LabelCss: db16
+    Type: checklist
+    Format: "#tgt_id"
+    Value: "#tgt_id"
+    CheckOnLoad: all
+    Function: /nodes/#node_id/targets
+    Args:
+       - props = stor_zone.tgt_id
 
 
 
