@@ -92,6 +92,18 @@ Header
 
   The name of the css class to use to decorate the **Label** and **Desc** in the form tree view. The pointed class usually set a 48x48 icon on the left side.
 
+* **Async**
+
+  A boolean value. If set to ``True``, the submit task is run in background. Set to ``True`` if you the task duration may exceed the wsgi gateway timeout.
+
+* **Vertical**
+
+  A boolean value. If set to ``True``, the form is rendered in a vertical layout, placing the labels above the input.
+
+* **Width**
+
+  The css width applied to the form inputs.
+
 Outputs
 -------
 
@@ -170,13 +182,14 @@ Keywords
 
     Outputs:
       -
+        Id: create_service
         Type: json
         Format: dict
         Dest: rest
         Function: /services
         Handler: POST
         Mangle: |
-          function(data) {
+          function(data, results) {
             var template = `
           [DEFAULT]
           app = $(data.app)
@@ -200,6 +213,14 @@ Keywords
 * **Table**
 
   If **Dest** is set to ``db``, this property defines the collector database table to store the form, as a new line, into.
+
+* **WaitResult**
+
+  Wait for ``WaitResult`` seconds for a non empty resultset as the result of this output. Useful for example to wait for an enqueued action to finish to use its stdout in the following outputs.
+
+* **SkipOnErrors**
+
+  A boolean value. Default is False. If set to ``True``, the output is skipped if a previous output returned an error.
 
 Examples
 ++++++++
