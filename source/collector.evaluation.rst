@@ -10,11 +10,17 @@ Prerequisites
 System
 ++++++
 
-* The provisioning template is made for a Linux system supporting btrfs, ext4 and docker 1.8+.
+The provisioning template targets a Linux deployment on a server meeting the following requirements:
+
+* Linux kernel >= 3.8.
 * 12 GB available in a single mounted writeable filesystem.
 * sudo rules to execute opensvc agent commands as root.
 * A configured bridge, either backend or frontend depending on the desired evaluation collector visibility.
 * A free ip address useable on the bridge, either routable or non-routable depending on the desired evaluation collector visibility.
+* git
+* btrfs tools and kernel module
+* ext4 tools and kernel module
+* docker >= 1.8, preferably installed from the upstream packaging
 
 OpenSVC agent
 +++++++++++++
@@ -24,6 +30,8 @@ This agent does not need registering on the collector.opensvc.com collector.
 
 The agent installation instructions are accessible at http://docs.opensvc.com/agent.install.html.
 Agent packages are available at http://repo.opensvc.com.
+
+Note docker 1.13 support requires an OpenSVC agent version >= 1.8-829.
 
 Proxies and firewalls
 +++++++++++++++++++++
