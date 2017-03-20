@@ -8,6 +8,7 @@ Contents:
 
    collector.evaluation
    collector.introduction
+   collector.search
    collector.privileges
    collector.views
    collector.forms
