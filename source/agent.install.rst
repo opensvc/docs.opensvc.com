@@ -141,17 +141,28 @@ The agent scheduler documentation is :doc:`here <agent.scheduler>`.
 Configuration for collector usage
 =================================
 
-By default, the collector is contacted by the node using the generic name ``dbopensvc`` on ports ``80`` and ``8000``. This name should be known to your prefered resolving mecanism : hosts, dns, ... If you choose to use the internet shared collector, the corresponding ip address must be set to the address of ``collector.opensvc.com``.
+By default, the agent does not communicate with a collector.
 
-To override the default collector's xmlrpc urls, you can set them in node.conf:
+To enable communications with a collector, the ``node.dbopensvc`` node configuration parameter must be set. The simplest expression is:
 
 ::
 
+	sudo nodemgr set --param node.dbopensvc --value collector.opensvc.com
+
+Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
+The following expressions are also supported:
+
+::
+
+	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com
 	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
+
+The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcompliance`` can be set to overide the default, which is deduced from the ``node.dbopensvc`` value.
+
+::
+
 	sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
 
-
-This override is recommended for xmlrpc encryption.
 
 The collector requires the nodes to provide an authentication token (shared secret) with each request. The token is forged by the collector and stored on the node in ``<OSVCETC>/node.conf``. The token initialization is handled by the command:
 
@@ -159,11 +170,13 @@ The collector requires the nodes to provide an authentication token (shared secr
 
 	sudo nodemgr register
 
-Collectors in SaaS mode, like https://collector.opensvc.com, require that you specify the application you want the node joined to, and that you prove your identity. The command is thus::
+Collectors in SaaS mode, like https://collector.opensvc.com, require that you prove your identity. The command is thus::
 
-	sudo nodemgr register --app MYAPP --user my.self@my.com
+	sudo nodemgr register --user my.self@my.com [--app MYAPP]
 
-Finally, you can anticipate the node discovery scheduled tasks by forcing their execution after the package installation:
+If ``--app`` is not specified the collector automatically choose one the user is responsible of.
+
+A succesful register is followed by a node discovery, so the collector has detailled information about the node and can serve contextualized compliance rulesets up front. The discovery is also scheduled daily, and can be manually replayed with:
 
 ::
 
