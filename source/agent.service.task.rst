@@ -69,8 +69,9 @@ Task Configuration
 ******************
 
 ::
+
 	[task#0]
 	command = id
 	user = admin
 
-The complete reference is available `here <agent.template.task.conf.html>`
+The complete reference is available :doc:`here <agent.template.task.conf>`.

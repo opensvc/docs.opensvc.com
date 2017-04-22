@@ -388,14 +388,14 @@ Considering an infrastructure where servers are segregated in 2 zones, internal,
    :width: 500px
    :align:  center
 
-OpenSVC company decided to develop a software called "HP 3Par Proxy" (`Source tracked here <http://git.opensvc.com/>`_), so as to increase level of security, and lower risk of compromission. This software is provided and maintained by OpenSVC. It is written in python, and basically works like that : listen to incoming connections from OpenSVC agents, checks if requests are allowed or not, deny access if request does not match config file entry or forward the command to the HP 3Par array if access is allowed, after that send back array answer to the OpenSVC agent as a json data structure.
+OpenSVC company decided to develop a software called "HP 3Par Proxy" (`Source tracked here <https://git.opensvc.com/>`_), so as to increase level of security, and lower risk of compromission. This software is provided and maintained by OpenSVC. It is written in python, and basically works like that : listen to incoming connections from OpenSVC agents, checks if requests are allowed or not, deny access if request does not match config file entry or forward the command to the HP 3Par array if access is allowed, after that send back array answer to the OpenSVC agent as a json data structure.
 
 Prerequisites
 -------------
 
 * dmz/firewalled servers installed with OpenSVC agent, and OpenSVC services relying on HP 3Par storage volumes
 * firewall rule allowing every dmz server to https to the proxy service ip address on the internal lan
-* HP 3Par Proxy Software (`Provided by OpenSVC <http://git.opensvc.com/?p=proxy3par/.git;a=snapshot;h=HEAD;sf=tgz>`_ ), which is integrated as an OpenSVC service, somewhere on the internal lan
+* HP 3Par Proxy Software (`Provided by OpenSVC <https://git.opensvc.com/?p=proxy3par/.git;a=snapshot;h=HEAD;sf=tgz>`_ ), which is integrated as an OpenSVC service, somewhere on the internal lan
 * HP 3Par Command Line utilities, installed on the node where the proxy is running
 
 Configuration

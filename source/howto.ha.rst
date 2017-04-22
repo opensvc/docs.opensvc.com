@@ -48,7 +48,7 @@ In addition to the above instructions, services handled by a clusterware have to
 Open-HA
 -------
 
-Download open-ha from `here <http://repo.opensvc.com/>`_. The default location of all this program's files is :file:`/usr/local/cluster`. Before using any open-ha commands, you have to setup some environment variables:
+Download open-ha from `here <https://repo.opensvc.com/>`_. The default location of all this program's files is :file:`/usr/local/cluster`. Before using any open-ha commands, you have to setup some environment variables:
 
 ::
 

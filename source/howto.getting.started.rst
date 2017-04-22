@@ -187,7 +187,7 @@ Install the OpenSVC Agent on both cluster nodes.
 
 **On both nodes**::
 
-        # wget -O /tmp/opensvc.latest.rpm http://repo.opensvc.com/rpms/current
+        # wget -O /tmp/opensvc.latest.rpm https://repo.opensvc.com/rpms/current
         # rpm -Uvh /tmp/opensvc.latest.rpm
         # rpm -qa | grep opensvc
         opensvc-1.5-10303
@@ -217,7 +217,7 @@ Cluster members communicate through ssh. Each node must trust its peer through k
 
 **On sles1 AND sles2**::
 
-	# cat /tmp/id_dsa.pub >> /root/.ssh/authorized_keys2
+	cat /tmp/id_dsa.pub >> /root/.ssh/authorized_keys2
 
 **On sles1**::
 
@@ -239,7 +239,7 @@ For other purposes than testing, we would have defined on both nodes the relevan
 Service Creation
 ================
 
-The OpenSVC service can be created using one of the following two methods::
+The OpenSVC service can be created using one of the following two methods:
 
 * wizard : ``svcmgr create`` with interactive option (-i)
 * manual : build config file from templates (located in ``<OSVCDOC>``)
@@ -944,7 +944,7 @@ Install the OpenHA package on both cluster nodes.
 
 **On both nodes**::
 
-        # wget -O /tmp/openha.latest.rpm http://repo.opensvc.com/rpms/deps/el6/openha-0.3.6.osvc2-0.x86_64.rpm
+        # wget -O /tmp/openha.latest.rpm https://repo.opensvc.com/rpms/deps/el6/openha-0.3.6.osvc2-0.x86_64.rpm
         # rpm -Uvh /tmp/openha.latest.rpm
         # rpm -qa | grep openha
         openha-0.3.6.osvc2-0

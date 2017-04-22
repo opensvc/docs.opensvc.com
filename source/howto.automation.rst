@@ -476,7 +476,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "nodeconf",
-                        "var_value": "[{\"value\": \"http://repo.opensvc.com/compliance/\", \"key\": \"node.repocomp\", \"op\": \"=\"}, {\"value\": \"https://collector.opensvc.com/feed/default/call/xmlrpc\", \"key\": \"node.dbopensvc\", \"op\": \"=\"}, {\"value\": \"https://collector.opensvc.com/init/compliance/call/xmlrpc\", \"key\": \"node.dbcompliance\", \"op\": \"=\"}, {\"value\": \"true\", \"key\": \"compliance.auto_update\", \"op\": \"=\"}, {\"value\": \"@1440\", \"key\": \"compliance.schedule\", \"op\": \"=\"}, {\"value\": \"@60\", \"key\": \"stats.schedule\", \"op\": \"=\"}, {\"value\": \"http://repo.opensvc.com/\", \"key\": \"node.repopkg\", \"op\": \"=\"}]",
+                        "var_value": "[{\"value\": \"https://repo.opensvc.com/compliance/\", \"key\": \"node.repocomp\", \"op\": \"=\"}, {\"value\": \"https://collector.opensvc.com/feed/default/call/xmlrpc\", \"key\": \"node.dbopensvc\", \"op\": \"=\"}, {\"value\": \"https://collector.opensvc.com/init/compliance/call/xmlrpc\", \"key\": \"node.dbcompliance\", \"op\": \"=\"}, {\"value\": \"true\", \"key\": \"compliance.auto_update\", \"op\": \"=\"}, {\"value\": \"@1440\", \"key\": \"compliance.schedule\", \"op\": \"=\"}, {\"value\": \"@60\", \"key\": \"stats.schedule\", \"op\": \"=\"}, {\"value\": \"https://repo.opensvc.com/\", \"key\": \"node.repopkg\", \"op\": \"=\"}]",
                         "var_updated": "2016-02-26 20:49:08",
                         "var_name": "spdc_opensvc_nodeconf",
                         "id": 218
@@ -909,10 +909,10 @@ Node installation
 ::
 
     # install and configure opensvc
-    wget -O/tmp/opensvc.deb  http://repo.opensvc.com/deb/current
+    wget -O/tmp/opensvc.deb  https://repo.opensvc.com/deb/current
     sudo dpkg -i /tmp/opensvc.deb
-    sudo nodemgr set --param node.repopkg --value http://repo.opensvc.com/
-    sudo nodemgr set --param node.repocomp --value http://repo.opensvc.com/compliance/
+    sudo nodemgr set --param node.repopkg --value https://repo.opensvc.com/
+    sudo nodemgr set --param node.repocomp --value https://repo.opensvc.com/compliance/
     sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
     sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
     sudo nodemgr set --param node.host_mode --value PRD

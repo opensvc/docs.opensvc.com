@@ -6,7 +6,7 @@ Agent installation
 Package
 =======
 
-Download the lastest OpenSVC package available for your operating system of choice from http://repo.opensvc.com and install it. Depending on the operating system, and operating system version, you might need to satisfy dependencies using packages provided on this website.
+Download the lastest OpenSVC package available for your operating system of choice from https://repo.opensvc.com and install it. Depending on the operating system, and operating system version, you might need to satisfy dependencies using packages provided on this website.
 
 The package post-installation steps are handled by the ``<OSVCROOT>/bin/postinstall`` script. This script can be safely executed on a node where OpenSVC is already installed.
 
@@ -141,6 +141,9 @@ The agent scheduler documentation is :doc:`here <agent.scheduler>`.
 Configuration for collector usage
 =================================
 
+Set a collector url
+-------------------
+
 By default, the agent does not communicate with a collector.
 
 To enable communications with a collector, the ``node.dbopensvc`` node configuration parameter must be set. The simplest expression is:
@@ -148,6 +151,11 @@ To enable communications with a collector, the ``node.dbopensvc`` node configura
 ::
 
 	sudo nodemgr set --param node.dbopensvc --value collector.opensvc.com
+
+.. rst-class:: html-toggle
+
+More
+----
 
 Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
 The following expressions are also supported:
@@ -163,6 +171,8 @@ The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcomplia
 
 	sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
 
+Register the node
+-----------------
 
 The collector requires the nodes to provide an authentication token (shared secret) with each request. The token is forged by the collector and stored on the node in ``<OSVCETC>/node.conf``. The token initialization is handled by the command:
 
@@ -296,7 +306,7 @@ CLI Install
 
 ::
 
-        curl -o /tmp/opensvc.latest.pkg http://repo.opensvc.com/macos-pkg/current  
+        curl -o /tmp/opensvc.latest.pkg https://repo.opensvc.com/macos-pkg/current  
         installer -pkg /tmp/opensvc.latest.pkg  -target /
 
 
@@ -322,7 +332,7 @@ As other OS flavors, agent upgrade can be triggered by
 
         sudo nodemgr updatepkg
 
-.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file ( ``sudo nodemgr set --param node.repopkg --value http://repo.opensvc.com/`` )
+.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file ( ``sudo nodemgr set --param node.repopkg --value https://repo.opensvc.com/`` )
 
 Python interpreter wrapper
 ==========================

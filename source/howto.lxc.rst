@@ -20,7 +20,7 @@ Install:
 
     apt-get install lxc bridge-utils python2.6 python2.5 debootstrap rsync lvm2 ntp python-soappy
 
-And opensvc from http://repo.opensvc.com/deb/
+And opensvc from https://repo.opensvc.com/deb/
 
 Ethernet bridge
 ---------------

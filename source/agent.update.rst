@@ -6,11 +6,11 @@ Agent updates
 Introduction
 ============
 
-OpenSVC provides packages for all supported operating systems at http://repo.opensvc.com. Agents can be updated using one of the following methods, ordered by scalability:
+OpenSVC provides packages for all supported operating systems at https://repo.opensvc.com. Agents can be updated using one of the following methods, ordered by scalability:
 
 * Download the required opensvc package to your hosts and use operating system specific local package management commands.
 * Feed the opensvc packages into your existing per operating system package depots and use operating system specific network-aware package management commands.
-* Mirror http://repo.opensvc.com on a corporate server and set up the opensvc agent to use this mirror as a package source.
+* Mirror https://repo.opensvc.com on a corporate server and set up the opensvc agent to use this mirror as a package source.
 
 This chapter describes the last method.
 
@@ -21,7 +21,7 @@ A mirror can be set up using:
 
 ::
 
-	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' -A '*.pkg' -A '*.tbz' -A '*.depot' http://repo.opensvc.com
+	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' -A '*.pkg' -A '*.tbz' -A '*.depot' https://repo.opensvc.com
 
 The resulting file tree must organized as:
 

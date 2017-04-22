@@ -1,7 +1,7 @@
 Collector evaluation
 ====================
 
-The evaluation license is accessible at http://www.opensvc.com/init/static/eval/evaluation_agreement.txt.
+The evaluation license is accessible at https://www.opensvc.com/init/static/eval/evaluation_agreement.txt.
 
 
 Prerequisites
@@ -28,8 +28,8 @@ OpenSVC agent
 The OpenSVC must be installed, as the provisioning method exposed here creates a OpenSVC service.
 This agent does not need registering on the collector.opensvc.com collector.
 
-The agent installation instructions are accessible at http://docs.opensvc.com/agent.install.html.
-Agent packages are available at http://repo.opensvc.com.
+The agent installation instructions are accessible at https://docs.opensvc.com/agent.install.html.
+Agent packages are available at https://repo.opensvc.com.
 
 Note docker 1.13 support requires an OpenSVC agent version >= 1.8-829.
 
@@ -100,7 +100,7 @@ The default administrator account is root@localhost.localdomain with the opensvc
 
 You can now:
 
-* register the agent on this collector, using instructions at http://docs.opensvc.com/agent.install.html.
+* register the agent on this collector, using instructions at https://docs.opensvc.com/agent.install.html.
 * changes default passwords.
 * add new users, remove the default admin user
 * import compliance designs

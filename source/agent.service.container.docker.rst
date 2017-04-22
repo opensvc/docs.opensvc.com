@@ -73,11 +73,11 @@ Quick links to OpenSVC software installation
 
 **DEB**::
 
-        curl -o /tmp/opensvc.latest.deb http://repo.opensvc.com/deb/current && dpkg -i /tmp/opensvc.latest.deb
+        curl -o /tmp/opensvc.latest.deb https://repo.opensvc.com/deb/current && dpkg -i /tmp/opensvc.latest.deb
 
 **RPM**::
 
-        curl -o /tmp/opensvc.latest.rpm http://repo.opensvc.com/rpms/current && rpm -ivh /tmp/opensvc.latest.rpm
+        curl -o /tmp/opensvc.latest.rpm https://repo.opensvc.com/rpms/current && rpm -ivh /tmp/opensvc.latest.rpm
 
 Service configuration
 =====================

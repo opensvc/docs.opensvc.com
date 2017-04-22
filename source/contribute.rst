@@ -1,7 +1,7 @@
 Contribute
 **********
 
-OpenSVC projects are tracked with the git source tracker. The documentation is also managed as a git tracked project. A GitWeb interface is available at http://git.opensvc.com.
+OpenSVC projects are tracked with the git source tracker. The documentation is also managed as a git tracked project. A GitWeb interface is available at https://git.opensvc.com.
 
 Install git
 ===========
@@ -17,10 +17,10 @@ Clone the appropriate git repository
 
 ::
 
-    git clone http://git.opensvc.com/docs.opensvc.com/.git
-    git clone http://git.opensvc.com/opensvc/.git
-    git clone http://git.opensvc.com/openha/.git
-    git clone http://git.opensvc.com/dds/.git
+    git clone https://git.opensvc.com/docs.opensvc.com/.git
+    git clone https://git.opensvc.com/opensvc/.git
+    git clone https://git.opensvc.com/openha/.git
+    git clone https://git.opensvc.com/dds/.git
 
 Send patches
 ============
@@ -153,7 +153,7 @@ Clone the documentation project:
 
 ::
 
-    git clone http://git.opensvc.com/docs.opensvc.com/.git
+    git clone https://git.opensvc.com/docs.opensvc.com/.git
 
 Step into the cloned project directory:
 

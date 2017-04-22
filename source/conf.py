@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+import cloud_sptheme as csp
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -80,8 +81,9 @@ exclude_patterns = []
 # output. They are ignored by default.
 #show_authors = False
 
+highlight_language = 'none'
 # The name of the Pygments (syntax highlighting) style to use.
-#pygments_style = 'sphinx'
+pygments_style = 'none'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -91,15 +93,25 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'opensvc'
+#html_theme = 'opensvc'
+html_theme = 'greencloud'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    "roottarget": "index",
+    "stickysidebar": True,
+    "highlighttoc": True,
+#    "lighter_header_decor": True,
+    "borderless_decor": True,
+#    "minimal_layout_text_size": "87.5%",
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ["_theme"]
+#html_theme_path = ["_theme"]
+html_theme_path = ["_theme", csp.get_theme_dir()]
+
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
