@@ -5,7 +5,8 @@ fileinccom
 Description
 ===========
 
-    Verify file content. 
+    Verify file content.
+    Alert if a pattern is present but never fix.
     The variable format is json-serialized.
     
 

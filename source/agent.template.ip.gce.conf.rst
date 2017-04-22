@@ -60,22 +60,70 @@ ip.gce resource template
 	#
 	# keyword:       ipname
 	# ----------------------------------------------------------------------------
-	#  required:     True
+	#  required:     False
 	#  provisioning: False
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
 	#  scopable:     True
 	#
-	#  desc:  The DNS name of the ip resource. Can be different from one node to
-	#         the other, in which case '@nodename' can be specified. This is most
-	#         useful to specify a different ip when the service starts in DRP
-	#         mode, where subnets are likely to be different than those of the
-	#         production datacenter. With the amazon driver, the special
-	#         <allocate> value tells the provisioner to assign a new private
-	#         address.
+	#  desc:  The DNS name or IP address of the ip resource. Can be different from
+	#         one node to the other, in which case '@nodename' can be specified.
+	#         This is most useful to specify a different ip when the service
+	#         starts in DRP mode, where subnets are likely to be different than
+	#         those of the production datacenter. With the amazon driver, the
+	#         special <allocate> value tells the provisioner to assign a new
+	#         private address.
 	#
 	;ipname = foo
+	
+	#
+	# keyword:       dns_update
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      False
+	#  candidates:   True | False
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Setting this parameter triggers a DNS update. The record created is
+	#         formatted as <svcname>.<app>.<managed zone>, unless dns_record_name
+	#         is specified.
+	#
+	;dns_update = False
+	
+	#
+	# keyword:       dns_name_suffix
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Add the value as a suffix to the DNS record name. The record created
+	#         is thus formatted as <svcname>-<dns_name_suffix>.<app>.<managed
+	#         zone>.
+	#
+	;dns_name_suffix = foo
+	
+	#
+	# keyword:       network
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The network, in dotted notation, from where the ip provisioner
+	#         allocates. Also used by the docker ip driver to delete the network
+	#         route if del_net_route is set to true.
+	#
+	;network = 10.0.0.0
 	
 	#
 	# keyword:       zone
@@ -802,7 +850,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;unprovision_requires = 
@@ -819,7 +867,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;provision_requires = 
@@ -836,7 +884,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;start_requires = 
@@ -853,7 +901,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;stop_requires = 
@@ -870,7 +918,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_nodes_requires = 
@@ -887,7 +935,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are ommited, 'up,stdby up' is used as the default expected
+	#         If states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;sync_drp_requires = 
@@ -904,7 +952,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_update_requires = 
@@ -921,7 +969,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_break_requires = 
@@ -938,7 +986,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_resync_requires = 
@@ -955,7 +1003,7 @@ ip.gce resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;run_requires = 

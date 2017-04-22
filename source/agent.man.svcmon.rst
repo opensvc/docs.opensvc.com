@@ -24,7 +24,7 @@ svcmon manpage
 	       -h, --help
 	              show this help message and exit
 	
-	       --service=PARM_SVCS
+	       -s PARM_SVCS, --service=PARM_SVCS
 	              comma-separated list of service to display status of
 	
 	       --refresh
@@ -33,8 +33,8 @@ svcmon manpage
 	       --updatedb
 	              update resource status in central database
 	
-	       --verbose
-	              display per-resource status for each selected service
+	       -v, --verbose
+	              display resource groups status for each selected service
 	
 	       --maxdelaydb=DELAY
 	              introduce a random delay before pushing to database to level the load  on
@@ -43,10 +43,17 @@ svcmon manpage
 	       --debug
 	              debug mode
 	
+	       -c, --cluster
+	              fetch and display cluster-wide service status from the collector.
+	
+	       --color=COLOR
+	              colorize  output. possible values are : auto=guess based on tty presence,
+	              always|yes=always colorize, never|no=never colorize
+	
 	SEE ALSO
 	       nodemgr(1) svcmgr(1) svcmon(1)
 	
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2016-08-09                             SVCMON(1)
+	                                       2017-01-03                             SVCMON(1)

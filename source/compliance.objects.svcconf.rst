@@ -49,7 +49,7 @@ Form definition
 
     
     Desc: |
-      A rule to set a parameter in OpenSVC <service>.env configuration file. Used by the 'svcconf' compliance object.
+      A rule to set a parameter in OpenSVC <service>.conf configuration file. Used by the 'svcconf' compliance object.
     Css: comp48
     Outputs:
       -
@@ -65,7 +65,7 @@ Form definition
         LabelCss: action16
         Mandatory: Yes
         Type: string
-        Help: The OpenSVC <service>.env parameter to check.
+        Help: The OpenSVC <service>.conf parameter to check.
       -
         Id: op
         Label: Comparison operator
@@ -88,6 +88,6 @@ Form definition
         LabelCss: action16
         Mandatory: Yes
         Type: string or integer
-        Help: The OpenSVC <service>.env parameter value to check.
+        Help: The OpenSVC <service>.conf parameter value to check.
     
     

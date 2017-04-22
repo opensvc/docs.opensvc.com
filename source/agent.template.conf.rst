@@ -25,6 +25,7 @@ Contents:
    agent.template.container.xen.conf
    agent.template.container.zone.conf
    agent.template.disk.amazon.conf
+   agent.template.disk.disk.conf
    agent.template.disk.drbd.conf
    agent.template.disk.gce.conf
    agent.template.disk.loop.conf

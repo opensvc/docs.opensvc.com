@@ -741,7 +741,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;unprovision_requires = 
@@ -758,7 +758,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;provision_requires = 
@@ -775,7 +775,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;start_requires = 
@@ -792,7 +792,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;stop_requires = 
@@ -809,7 +809,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_nodes_requires = 
@@ -826,7 +826,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are ommited, 'up,stdby up' is used as the default expected
+	#         If states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;sync_drp_requires = 
@@ -843,7 +843,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_update_requires = 
@@ -860,7 +860,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_break_requires = 
@@ -877,7 +877,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_resync_requires = 
@@ -894,7 +894,7 @@ disk.amazon resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;run_requires = 

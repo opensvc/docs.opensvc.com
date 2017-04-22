@@ -50,7 +50,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The mount point where to mount the filesystem.
 	#
@@ -64,7 +64,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The mount options.
 	#
@@ -78,7 +78,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   directory ...
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The filesystem type or 'directory'. Used to determine the fsck
 	#         command to use.
@@ -93,7 +93,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  If this filesystem is build on a snapable logical volume or is
 	#         natively snapable (jfs, vxfs, ...) this setting overrides the
@@ -795,7 +795,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;unprovision_requires = 
@@ -812,7 +812,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;provision_requires = 
@@ -829,7 +829,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;start_requires = 
@@ -846,7 +846,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;stop_requires = 
@@ -863,7 +863,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_nodes_requires = 
@@ -880,7 +880,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are ommited, 'up,stdby up' is used as the default expected
+	#         If states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;sync_drp_requires = 
@@ -897,7 +897,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_update_requires = 
@@ -914,7 +914,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_break_requires = 
@@ -931,7 +931,7 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_resync_requires = 
@@ -948,10 +948,24 @@ fs resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;run_requires = 
+	
+	#
+	# keyword:       mkfs_opt
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: True
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  Eventual mkfs additional options.
+	#
+	;mkfs_opt = foo
 	
 	#
 	# keyword:       vg
@@ -961,7 +975,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The name of the disk group the filesystem device should be
 	#         provisioned from.
@@ -976,7 +990,7 @@ fs resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The size in MB of the logical volume to provision for this
 	#         filesystem.

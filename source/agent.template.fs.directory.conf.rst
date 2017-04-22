@@ -111,7 +111,7 @@ fs.directory resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The mount point where to mount the filesystem.
 	#
@@ -125,7 +125,7 @@ fs.directory resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The mount options.
 	#
@@ -139,7 +139,7 @@ fs.directory resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  If this filesystem is build on a snapable logical volume or is
 	#         natively snapable (jfs, vxfs, ...) this setting overrides the
@@ -841,7 +841,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;unprovision_requires = 
@@ -858,7 +858,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;provision_requires = 
@@ -875,7 +875,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;start_requires = 
@@ -892,7 +892,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;stop_requires = 
@@ -909,7 +909,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_nodes_requires = 
@@ -926,7 +926,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are ommited, 'up,stdby up' is used as the default expected
+	#         If states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;sync_drp_requires = 
@@ -943,7 +943,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_update_requires = 
@@ -960,7 +960,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_break_requires = 
@@ -977,7 +977,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_resync_requires = 
@@ -994,7 +994,7 @@ fs.directory resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;run_requires = 

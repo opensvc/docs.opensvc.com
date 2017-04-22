@@ -40,7 +40,7 @@ DEFAULT resource template
 	#
 	#  desc:  The duration in seconds the agent wait for the action lock
 	#         acquisition before aborting the action. The svcmgr --waitlock
-	#         parameter overides this option.
+	#         parameter overrides this option.
 	#
 	;lock_timeout = 60
 	
@@ -52,7 +52,7 @@ DEFAULT resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      mode in ['vcs', 'sg', 'rhcs']
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The wrapped cluster package name, as known to the cluster manager in
 	#         charge.
@@ -135,6 +135,21 @@ DEFAULT resource template
 	#         usr/share/doc/template.node.conf for the schedule syntax.
 	#
 	;status_schedule = @10
+	
+	#
+	# keyword:       comp_schedule
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      00:00-06:00@361
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The service compliance run schedule. See
+	#         usr/share/doc/template.node.conf for the schedule syntax.
+	#
+	;comp_schedule = 00:00-06:00@361
 	
 	#
 	# keyword:       monitor_schedule
@@ -250,6 +265,24 @@ DEFAULT resource template
 	;docker_daemon_args = --ip 1.2.3.4
 	
 	#
+	# keyword:       docker_swarm_args
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  The arguments passed to docker swarm init on the flex primary, and
+	#         to docker swarm join on the the other nodes. The --token argument
+	#         must not be specified, as it is handled by the agent. Scoping this
+	#         parameter permits to set additional parameters on the flex_primary
+	#         for use with swarm init only, like --autolock.
+	#
+	;docker_swarm_args = --advertize-addr {ip#0.ipname} --listen-addr {ip#0.ipname}
+	
+	#
 	# keyword:       prkey
 	# ----------------------------------------------------------------------------
 	#  required:     False
@@ -358,7 +391,7 @@ DEFAULT resource template
 	#  required:     True
 	#  provisioning: False
 	#  default:      <same as node env>
-	#  candidates:   PRD | PPRD | REC | INT | DEV | TST | TMP | DRP | FOR | PRA | PRJ | STG
+	#  candidates:   DEV | DRP | FOR | INT | PRA | PRD | PRJ | PPRD | REC | STG | TMP | TST | UAT
 	#  depends:      None
 	#  scopable:     False
 	#
@@ -433,6 +466,21 @@ DEFAULT resource template
 	;flex_cpu_max_threshold = 70
 	
 	#
+	# keyword:       docker_swarm_managers
+	# ----------------------------------------------------------------------------
+	#  required:     False
+	#  provisioning: False
+	#  default:      None
+	#  candidates:   None
+	#  depends:      None
+	#  scopable:     True
+	#
+	#  desc:  List of nodes promoted as docker swarm managers.The flex primary
+	#         node is implicitely a manager. Whitespace separated.
+	#
+	;docker_swarm_managers = foo
+	
+	#
 	# keyword:       nodes
 	# ----------------------------------------------------------------------------
 	#  required:     True
@@ -440,7 +488,7 @@ DEFAULT resource template
 	#  default:      <hostname of the current node>
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  List of cluster local nodes able to start the service.  Whitespace
 	#         separated.
@@ -455,7 +503,7 @@ DEFAULT resource template
 	#  default:      <hostname of the current node>
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  A whitespace-separated list subset of 'nodes'. Defines the nodes
 	#         where the service will try to start on upon node reboot. On a
@@ -474,7 +522,7 @@ DEFAULT resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  The backup node where the service is activated in a DRP situation.
 	#         This node is also a data synchronization target for 'sync'
@@ -490,7 +538,7 @@ DEFAULT resource template
 	#  default:      None
 	#  candidates:   None
 	#  depends:      None
-	#  scopable:     False
+	#  scopable:     True
 	#
 	#  desc:  Alternate backup nodes, where the service could be activated in a
 	#         DRP situation if the 'drpnode' is not available. These nodes are
@@ -542,7 +590,7 @@ DEFAULT resource template
 	#
 	#  desc:  Helps users understand the role of the service, which is nice to on-
 	#         call support people having to operate on a service they are not
-	#         usualy responsible for.
+	#         usually responsible for.
 	#
 	;comment = foo
 	
@@ -593,7 +641,7 @@ DEFAULT resource template
 	#
 	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
 	#         triggered through crond or manually, it is skipped if last sync
-	#         occured less than 'sync_min_delay' ago. The mecanism is enforced by
+	#         occurred less than 'sync_min_delay' ago. The mecanism is enforced by
 	#         a timestamp created upon each sync completion in
 	#         <pathvar>/sync/[service]![dst]
 	#

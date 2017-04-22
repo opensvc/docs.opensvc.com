@@ -37,7 +37,7 @@ sync.dcsckpt resource template
 	#  depends:      None
 	#  scopable:     False
 	#
-	#  desc:  The DataCore manager name runing a ssh daemon, as set in the
+	#  desc:  The DataCore manager name running a ssh daemon, as set in the
 	#         auth.conf section title.
 	#
 	;manager = foo
@@ -750,7 +750,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;unprovision_requires = 
@@ -767,7 +767,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;provision_requires = 
@@ -784,7 +784,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;start_requires = 
@@ -801,7 +801,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;stop_requires = 
@@ -818,7 +818,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_nodes_requires = 
@@ -835,7 +835,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are ommited, 'up,stdby up' is used as the default expected
+	#         If states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;sync_drp_requires = 
@@ -852,7 +852,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_update_requires = 
@@ -869,7 +869,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_break_requires = 
@@ -886,7 +886,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are ommited, 'up,stdby up' is used as
+	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
 	#         the default expected states.
 	#
 	;sync_resync_requires = 
@@ -903,7 +903,7 @@ sync.dcsckpt resource template
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are ommited, 'up,stdby up' is used as the default expected
+	#         states are omitted, 'up,stdby up' is used as the default expected
 	#         states.
 	#
 	;run_requires = 
