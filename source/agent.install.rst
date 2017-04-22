@@ -19,8 +19,11 @@ Install
 
 ::
 
-	# Red Hat, CentOS, SuSE, Fedora Linux
+	# Red Hat, CentOS, Fedora Linux
 	yum install /tmp/opensvc.latest
+
+	# SuSE Linux
+	zypper install /tmp/opensvc.latest
 
 	# Debian, Ubuntu Linux
 	dpkg -i /tmp/opensvc.latest
@@ -415,6 +418,6 @@ As other OS flavors, agent upgrade can be triggered by
 
         sudo nodemgr updatepkg
 
-.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file ( ``sudo nodemgr set --param node.repopkg --value https://repo.opensvc.com/`` )
+.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file. Example: ``sudo nodemgr set`` ``--param node.repopkg`` ``--value https://repo.opensvc.com/``
 
 
