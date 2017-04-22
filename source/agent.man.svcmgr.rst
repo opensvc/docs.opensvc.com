@@ -157,7 +157,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -208,7 +208,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -259,7 +259,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -361,7 +361,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -421,7 +421,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -482,7 +482,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -533,7 +533,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --like=LIKE
 	                     a  sql  like  filtering expression. leading and trailing wildcards
@@ -703,7 +703,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -767,7 +767,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -818,7 +818,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -1125,10 +1125,10 @@ svcmgr manpage
 	                     flag action as triggered by a remote node. used  to  avoid  recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr compliance check
+	       svcmgr compliance auto
 	
-	              run  compliance checks. --ruleset <md5> instruct the collector to provide
-	              an historical ruleset.
+	              run  compliance  checks  or fixes depending on the autofixmodule property
+	              values.
 	
 	              --attach
 	                     attach the modulesets specified during a compliance check/fix/fix‐
@@ -1190,18 +1190,26 @@ svcmgr manpage
 	                     flag action as triggered by a remote node. used  to  avoid  recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr compliance detach
+	       svcmgr compliance check
 	
-	              detach  ruleset  specified  by  --ruleset  and/or  moduleset specified by
-	              --moduleset from this service
+	              run compliance checks.
+	
+	              --attach
+	                     attach the modulesets specified during a compliance check/fix/fix‐
+	                     able command
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --module=MODULE
+	                     compliance, set module list
 	
 	              --moduleset=MODULESET
 	                     compliance, set moduleset list. The 'all' value  can  be  used  in
 	                     conjonction with detach.
 	
-	              --ruleset=RULESET
-	                     compliance,  set ruleset list. The 'all' value can be used in con‐
-	                     jonction with detach.
+	              --ruleset-date=RULESET_DATE
+	                     compliance, use rulesets valid on specified date
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -1216,14 +1224,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1243,7 +1251,63 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
+	                     sively triggering actions amongst nodes
+	
+	       svcmgr compliance detach
+	
+	              detach ruleset specified  by  --ruleset  and/or  moduleset  specified  by
+	              --moduleset from this service
+	
+	              --moduleset=MODULESET
+	                     compliance,  set  moduleset  list.  The 'all' value can be used in
+	                     conjonction with detach.
+	
+	              --ruleset=RULESET
+	                     compliance, set ruleset list. The 'all' value can be used in  con‐
+	                     jonction with detach.
+	
+	              --onlyprimary
+	                     operate only on service flagged for autostart on this node
+	
+	              --onlysecondary
+	                     operate only on service not flagged for autostart on this node
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     comma-separated list of service to operate on
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     option  to  set when excuting from a clusterware to disable safety
+	                     net
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     comma-separated list of resource tags to limit action to
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	              --remote
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance detach moduleset
@@ -1251,7 +1315,7 @@ svcmgr manpage
 	              detach moduleset specified by --moduleset from this service
 	
 	              --moduleset=MODULESET
-	                     compliance,  set  moduleset  list.  The 'all' value can be used in
+	                     compliance, set moduleset list. The 'all' value  can  be  used  in
 	                     conjonction with detach.
 	
 	              --onlyprimary
@@ -1267,14 +1331,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1294,7 +1358,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance detach ruleset
@@ -1302,7 +1366,7 @@ svcmgr manpage
 	              detach ruleset specified by --ruleset from this service
 	
 	              --ruleset=RULESET
-	                     compliance,  set ruleset list. The 'all' value can be used in con‐
+	                     compliance, set ruleset list. The 'all' value can be used in  con‐
 	                     jonction with detach.
 	
 	              --onlyprimary
@@ -1318,14 +1382,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1345,7 +1409,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance env
@@ -1356,7 +1420,7 @@ svcmgr manpage
 	                     compliance, set module list
 	
 	              --moduleset=MODULESET
-	                     compliance,  set  moduleset  list.  The 'all' value can be used in
+	                     compliance, set moduleset list. The 'all' value  can  be  used  in
 	                     conjonction with detach.
 	
 	              --onlyprimary
@@ -1372,14 +1436,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1399,13 +1463,12 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance fix
 	
-	              run  compliance  fixes. --ruleset <md5> instruct the collector to provide
-	              an historical ruleset.
+	              run compliance fixes.
 	
 	              --attach
 	                     attach the modulesets specified during a compliance check/fix/fix‐
@@ -1469,8 +1532,7 @@ svcmgr manpage
 	
 	       svcmgr compliance fixable
 	
-	              verify  compliance fixes prerequisites. --ruleset <md5> instruct the col‐
-	              lector to provide an historical ruleset.
+	              verify compliance fixes prerequisites.
 	
 	              --attach
 	                     attach the modulesets specified during a compliance check/fix/fix‐
@@ -1483,7 +1545,7 @@ svcmgr manpage
 	                     compliance, set module list
 	
 	              --moduleset=MODULESET
-	                     compliance,  set  moduleset  list.  The 'all' value can be used in
+	                     compliance, set moduleset list. The 'all' value  can  be  used  in
 	                     conjonction with detach.
 	
 	              --ruleset-date=RULESET_DATE
@@ -1502,14 +1564,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1529,12 +1591,12 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance list moduleset
 	
-	              list  available  compliance modulesets. --moduleset f% limit the scope to
+	              list available compliance modulesets. --moduleset f% limit the  scope  to
 	              modulesets matching the f% pattern.
 	
 	              --onlyprimary
@@ -1550,14 +1612,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1577,7 +1639,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance list ruleset
@@ -1598,14 +1660,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -1625,7 +1687,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr compliance show moduleset
@@ -1645,6 +1707,53 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
+	                     option to set when excuting from a clusterware to  disable  safety
+	                     net
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     comma-separated list of resource tags to limit action to
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	              --remote
+	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     sively triggering actions amongst nodes
+	
+	       svcmgr compliance show ruleset
+	
+	              show compliance rules applying to this node
+	
+	              --onlyprimary
+	                     operate only on service flagged for autostart on this node
+	
+	              --onlysecondary
+	                     operate only on service not flagged for autostart on this node
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     comma-separated list of service to operate on
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
 	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
@@ -1675,9 +1784,9 @@ svcmgr manpage
 	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr compliance show ruleset
+	       svcmgr compliance show status
 	
-	              show compliance rules applying to this node
+	              show compliance modules status
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -1722,9 +1831,108 @@ svcmgr manpage
 	                     flag action as triggered by a remote node. used  to  avoid  recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr compliance show status
+	                     SERVICE ACTIONS
 	
-	              show compliance modules status
+	       svcmgr boot
+	
+	              start  a  service  if executed on the primary node (or one of the primary
+	              nodes in case of a flex service), startstandby if not
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
+	              --onlyprimary
+	                     operate only on service flagged for autostart on this node
+	
+	              --onlysecondary
+	                     operate only on service not flagged for autostart on this node
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     comma-separated list of service to operate on
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     option to set when excuting from a clusterware to  disable  safety
+	                     net
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     comma-separated list of resource tags to limit action to
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	              --remote
+	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     sively triggering actions amongst nodes
+	
+	       svcmgr disable
+	
+	              disable  resources passed through --rid in services passed through --ser‐
+	              vice. Specifying no resource disables the whole service.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -1769,12 +1977,9 @@ svcmgr manpage
 	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
-	                     SERVICE ACTIONS
+	       svcmgr dns update
 	
-	       svcmgr boot
-	
-	              start a service if executed on the primary node (or one  of  the  primary
-	              nodes in case of a flex service), startstandby if not
+	              update the collector dns records for the service
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -1783,27 +1988,27 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              --onlyprimary
@@ -1819,6 +2024,63 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
+	                     option to set when excuting from a clusterware to  disable  safety
+	                     net
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     comma-separated list of resource tags to limit action to
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	              --remote
+	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     sively triggering actions amongst nodes
+	
+	       svcmgr docker
+	
+	              wrap  the docker client command, setting automatically the socket parame‐
+	              ter to join the service-private docker daemon. The %as_service%, %images%
+	              and  %instances%  words  in  the wrapped command are replaced by, respec‐
+	              tively, the registry login username/password/email parameters to log as a
+	              service  using  <svcname>@<nodename> as the username and the node uuid as
+	              password (which is what is expected when the opensvc collector is used as
+	              the  JWT  manager for the registry), the set of docker instance names and
+	              images for container resources passing the --tags,  --rid  and  --subsets
+	              filters.  This  is  useful  to  remove  all instances of a service or all
+	              instances of resources with a tag like "frontend". Note the opensvc  fil‐
+	              ters must be positioned before the docker command in the arguments list.
+	
+	              --onlyprimary
+	                     operate only on service flagged for autostart on this node
+	
+	              --onlysecondary
+	                     operate only on service not flagged for autostart on this node
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     comma-separated list of service to operate on
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
 	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
@@ -1849,10 +2111,10 @@ svcmgr manpage
 	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr disable
+	       svcmgr enable
 	
-	              disable resources passed through --rid in services passed through  --ser‐
-	              vice. Specifying no resource disables the whole service.
+	              enable resources passed through --rid in services passed  through  --ser‐
+	              vice. Specifying no resource enables the whole service.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
@@ -1909,200 +2171,6 @@ svcmgr manpage
 	                     flag action as triggered by a remote node. used  to  avoid  recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr dns update
-	
-	              update the collector dns records for the service
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --onlyprimary
-	                     operate only on service flagged for autostart on this node
-	
-	              --onlysecondary
-	                     operate only on service not flagged for autostart on this node
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     comma-separated list of service to operate on
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     option  to  set when excuting from a clusterware to disable safety
-	                     net
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     comma-separated list of resource tags to limit action to
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	              --remote
-	                     flag  action  as  triggered by a remote node. used to avoid recur‐
-	                     sively triggering actions amongst nodes
-	
-	       svcmgr docker
-	
-	              wrap the docker client command, setting automatically the socket  parame‐
-	              ter to join the service-private docker daemon. The %as_service%, %images%
-	              and %instances% words in the wrapped command  are  replaced  by,  respec‐
-	              tively, the registry login username/password/email parameters to log as a
-	              service using <svcname>@<nodename> as the username and the node  uuid  as
-	              password (which is what is expected when the opensvc collector is used as
-	              the JWT manager for the registry), the set of docker instance  names  and
-	              images  for  container  resources passing the --tags, --rid and --subsets
-	              filters. This is useful to remove all  instances  of  a  service  or  all
-	              instances  of resources with a tag like "frontend". Note the opensvc fil‐
-	              ters must be positioned before the docker command in the arguments list.
-	
-	              --onlyprimary
-	                     operate only on service flagged for autostart on this node
-	
-	              --onlysecondary
-	                     operate only on service not flagged for autostart on this node
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     comma-separated list of service to operate on
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
-	                     net
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     comma-separated list of resource tags to limit action to
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
-	                     sively triggering actions amongst nodes
-	
-	       svcmgr enable
-	
-	              enable  resources  passed through --rid in services passed through --ser‐
-	              vice. Specifying no resource enables the whole service.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --onlyprimary
-	                     operate only on service flagged for autostart on this node
-	
-	              --onlysecondary
-	                     operate only on service not flagged for autostart on this node
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     comma-separated list of service to operate on
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     option  to  set when excuting from a clusterware to disable safety
-	                     net
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     comma-separated list of resource tags to limit action to
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	              --remote
-	                     flag  action  as  triggered by a remote node. used to avoid recur‐
-	                     sively triggering actions amongst nodes
-	
 	       svcmgr freeze
 	
 	              set up a flag to block actions on this service
@@ -2120,14 +2188,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -2147,7 +2215,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr frozen
@@ -2167,6 +2235,53 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
+	                     option to set when excuting from a clusterware to  disable  safety
+	                     net
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     comma-separated list of resource tags to limit action to
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	              --remote
+	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     sively triggering actions amongst nodes
+	
+	       svcmgr logs
+	
+	              display the service logs in the pager
+	
+	              --onlyprimary
+	                     operate only on service flagged for autostart on this node
+	
+	              --onlysecondary
+	                     operate only on service not flagged for autostart on this node
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     comma-separated list of service to operate on
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
 	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
@@ -2197,9 +2312,9 @@ svcmgr manpage
 	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
-	       svcmgr logs
+	       svcmgr ls
 	
-	              display the service logs in the pager
+	              display the installed service list
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -2278,6 +2393,12 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --to=PARM_DESTINATION_NODE
 	                     remote node to start or migrate the service to
@@ -2763,7 +2884,19 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -2778,14 +2911,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     option to set when excuting from a clusterware to  disable  safety
+	                     option  to  set when excuting from a clusterware to disable safety
 	                     net
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -2805,7 +2938,7 @@ svcmgr manpage
 	                     show this help message and exit
 	
 	              --remote
-	                     flag action as triggered by a remote node. used  to  avoid  recur‐
+	                     flag  action  as  triggered by a remote node. used to avoid recur‐
 	                     sively triggering actions amongst nodes
 	
 	       svcmgr print disklist
@@ -2813,8 +2946,20 @@ svcmgr manpage
 	              print service disk list
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -2865,7 +3010,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --refresh
 	                     drop last resource status cache and  re-evaluate  before  printing
@@ -2923,7 +3068,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --verbose
 	                     add  more  information  to  some  print  commands: +next in 'print
@@ -2978,7 +3123,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --hide-disabled
 	                     tell  print|json  status  action  to  not  include  the   disabled
@@ -3071,6 +3216,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -3147,6 +3298,12 @@ svcmgr manpage
 	                     separator  can be used to impose multiple tag conditions. Example:
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -3619,6 +3776,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -3695,6 +3858,12 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -3975,6 +4144,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -4052,6 +4227,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -4128,6 +4309,12 @@ svcmgr manpage
 	                     separator  can be used to impose multiple tag conditions. Example:
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -4207,6 +4394,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -4285,6 +4478,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -4361,6 +4560,12 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -4439,6 +4644,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
+	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
 	
@@ -4515,6 +4726,12 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -5264,6 +5481,12 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --ignore-affinity
+	                     ignore service anti-affinity with other services check
 	
 	              --to=PARM_DESTINATION_NODE
 	                     remote node to start or migrate the service to
@@ -6822,7 +7045,7 @@ svcmgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json or table.
+	                     commands. possible values are json, csv or table.
 	
 	              --onlyprimary
 	                     operate only on service flagged for autostart on this node
@@ -7115,4 +7338,4 @@ svcmgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-01-03                             SVCMGR(1)
+	                                       2017-04-22                             SVCMGR(1)
