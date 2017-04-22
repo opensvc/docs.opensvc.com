@@ -1,4 +1,5 @@
 .. _agent.install:
+.. index:: install, package
 
 Agent installation
 ******************
@@ -419,5 +420,4 @@ As other OS flavors, agent upgrade can be triggered by
         sudo nodemgr updatepkg
 
 .. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file. Example: ``sudo nodemgr set`` ``--param node.repopkg`` ``--value https://repo.opensvc.com/``
-
 

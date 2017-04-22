@@ -1,3 +1,5 @@
+.. index:: contrib, git, patch, translation
+
 Contribute
 **********
 

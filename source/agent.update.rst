@@ -1,4 +1,5 @@
 .. _agent.update:
+.. index:: update, repository, mirror
 
 Agent updates
 *************
