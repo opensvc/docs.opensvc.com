@@ -13,7 +13,8 @@ You can create your own objects and associated forms, and you are welcome to con
 .. toctree::
    :maxdepth: 1
 
-   compliance.objects.authkeys
+   compliance.objects.ansible_playbook
+   compliance.objects.authkey
    compliance.objects.bios
    compliance.objects.cron
    compliance.objects.crontabentry
@@ -22,33 +23,33 @@ You can create your own objects and associated forms, and you are welcome to con
    compliance.objects.fileinccom
    compliance.objects.fileprop
    compliance.objects.firmware
-   compliance.objects.files
+   compliance.objects.file
    compliance.objects.fs
-   compliance.objects.groups
-   compliance.objects.groups_membership
+   compliance.objects.group
+   compliance.objects.group_membership
    compliance.objects.hosts
    compliance.objects.ini
    compliance.objects.keyval
    compliance.objects.linux.mpath
    compliance.objects.nodeconf
-   compliance.objects.packages
+   compliance.objects.package
    compliance.objects.process
    compliance.objects.rc
    compliance.objects.remove_files
    compliance.objects.smfcfgs
    compliance.objects.sudoers
    compliance.objects.svcconf
+   compliance.objects.self.signed.cert
    compliance.objects.symlink
    compliance.objects.sysctl
    compliance.objects.timectl
    compliance.objects.timedatectl
-   compliance.objects.users
+   compliance.objects.user
    compliance.objects.vuln
    compliance.objects.xinetd
    compliance.objects.zfs
    compliance.objects.zpool
    compliance.objects.zprop
-
 
 Combining objects in modules
 ============================
