@@ -105,8 +105,8 @@ The valid ``env`` values are:
 
 ::
 
-	host_mode  behaves as  description
-        ---------  ----------  ------------------
+	env        behaves as  description
+        ---        ----------  ------------------
 	PRD        PRD         Production
 	PPRD       PRD         Pre Production
 	REC        not PRD     Prod-like testing
