@@ -45,8 +45,8 @@ Supported object types::
 	var:		compliance variable
 	vm:		virtual machine and container hostnames
 
-Navigating the resulset
------------------------
+Navigating the resultset
+------------------------
 
 After the candidates are displayed, the ``<tab>`` key moves focus to the first candidate.
 
@@ -54,13 +54,13 @@ The arrow keys move the focus between candidates.
 
 The ``<enter>`` key opens the candidate details tabs, if available.
 
-The ``<esc>`` key closes the resulset panel.
+The ``<esc>`` key closes the resultset panel.
 
 Drill down from the search resultset
 ------------------------------------
 
 Clicking a candidate opens the object details tabs in a layered panel. From there, clicking on a tag-like object opens its details tabs. The two opened tabs are shown in a barel allowing nagivation between recently opened details tabs.
 
-When the drill down session is over, the ``<esc>`` closes the layered panel, returning the search resulset visibility.
+When the drill down session is over, the ``<esc>`` closes the layered panel, returning the search resultset visibility.
 
 
