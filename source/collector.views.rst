@@ -1,5 +1,5 @@
-Collector
-=========
+Views
+=====
 
 Contents:
 
