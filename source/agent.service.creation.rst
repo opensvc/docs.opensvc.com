@@ -34,7 +34,7 @@ From scratch, interactive
 From an existing local configuration file
 -----------------------------------------
 
-Experienced users may find it easier to start from a copy of the env file of an existing similar service. The following information describes the steps needed to create a service manually.
+Experienced users may find it easier to start from a copy of the conf file of an existing similar service. The following information describes the steps needed to create a service manually.
 
 ::
 
@@ -55,7 +55,7 @@ Service configuration files are in ``<OSVCETC>``. They are created automatically
 ::
 
 	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
-	<OSVCETC>/<svcname>.env
+	<OSVCETC>/<svcname>.conf
 	<OSVCETC>/<svcname>.d -> /<svcname>/etc/init.d
 
 or:
@@ -63,7 +63,7 @@ or:
 ::
 
 	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
-	<OSVCETC>/<svcname>.env
+	<OSVCETC>/<svcname>.conf
 	<OSVCETC>/<svcname>.d -> <svcname>.dir
 	<OSVCETC>/<svcname>.dir
 
@@ -74,9 +74,9 @@ Configuration files role
 
     This symbolic link is meant to be used as a shortcut to pass commands to a specific service. Like /etc/opensvc/unxdevweb01.mydomain.com start for example
 
-.. function:: <OSVCETC>/<svcname>.env
+.. function:: <OSVCETC>/<svcname>.conf
 
-    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>`` and online :doc:`here <agent.template.env>`.
+    This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>`` and online :doc:`here <agent.template.conf>`.
 
 .. function:: <OSVCETC>/<svcname>.d -> <svcname>.dir
 
@@ -86,7 +86,7 @@ Configuration files role
 
     This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/<svcname>.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
 
-Customize the service env file
+Customize the service conf file
 ==============================
 
 At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
