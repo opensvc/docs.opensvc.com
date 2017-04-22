@@ -23,20 +23,20 @@ OpenSVC is composed of two software components:
 
 These two components together address a wide range of modern IT concerns, including:
 
-* service mobility
+* Service mobility
 
   * business continuity
   * high availability clustering
   * providing reliable and abstracted method to stop, start and move a service or a group of services
 
-* configuration management
+* Configuration management
 
   * scalable to thousands of servers, services and configuration rules
   * cluster aware
   * minimal dependencies
   * strict separation of configuration targets from audit and remediation methods
 
-* inventoring
+* Inventoring
 
   * services
   * assets
@@ -47,14 +47,14 @@ These two components together address a wide range of modern IT concerns, includ
   * software and hardware lifecycle management
   * infrastructure resources accounting and billing
 
-* orchestration and interoperability
+* Orchestration and interoperability
 
   * pervasive RestFul API
   * self-service portal
   * provisioning
   * fine-grained privileges and tasks delegation capabilities
 
-* continuous infrastructure, systems, and services auditing
+* Continuous infrastructure, systems, and services auditing
 
   * alarming
   * performance and quality analysis
@@ -62,7 +62,7 @@ These two components together address a wide range of modern IT concerns, includ
   * file changes recording
   * servers differential analysis
 
-* boost the IT productivity
+* Boost the IT productivity
 
   * low total cost of ownership
   * minimal infrastructure maintenance
@@ -73,6 +73,19 @@ These two components together address a wide range of modern IT concerns, includ
 
 OpenSVC is operating system, application and hardware agnostic.
 
+Subsystems requirements
+=======================
+
+========================================================== ====== =========
+Subsystem                                                  Agent  Collector
+========================================================== ====== =========
+Service mobility, clustering                               O
+Configuration management                                   O      O
+Inventoring                                                O      O
+Orchestration and interoperability                         O      O
+Continuous infrastructure, systems, and services auditing  O      O
+Boost the IT productivity                                  O      O
+========================================================== ====== =========
 
 History
 =======
