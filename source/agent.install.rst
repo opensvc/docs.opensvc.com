@@ -209,7 +209,7 @@ The following expressions are also supported:
 	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com
 	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
 
-The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcompliance`` can be set to overide the default, which is deduced from the ``node.dbopensvc`` value.
+The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcompliance`` can be set to override the default, which is deduced from the ``node.dbopensvc`` value.
 
 ::
 
