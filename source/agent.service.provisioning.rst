@@ -12,37 +12,35 @@ This section describes:
 * how to provision and template services
 * some useful examples
 
-Provisioning
+Provisioners
 ============
 
-Each resource driver can implement a provisioner, but not all resources actually do. The list of provisioner can be extracted using::
+Each resource driver can implement a provisioner, but not all resources actually do. The list of resources supporting provisioning::
 
-	$ ls -1 lib/prov*py
-	lib/provDiskDcs.py
-	lib/provDiskFreenas.py
-	lib/provFsBtrfs.py
-	lib/provFsExt2.py
-	lib/provFsExt3.py
-	lib/provFsExt4.py
-	lib/provFs.py
-	lib/provFsVxfs.py
-	lib/provFsZfs.py
-	lib/provIpAmazon.py
-	lib/provIp.py
-	lib/provisioning.py
-	lib/provKvm.py
-	lib/provLoopLinux.py
-	lib/provLxc.py
-	lib/provSrp.py
-	lib/provVgAmazon.py
-	lib/provVgHP-UX.py
-	lib/provVgLinux.py
-	lib/provVgRadosLinux.py
-	lib/provZone.py
+	$ grep -l "provisioning: True" <OSVCDOC>/template.*conf 
+	usr/share/doc/template.container.esx.conf
+	usr/share/doc/template.container.kvm.conf
+	usr/share/doc/template.container.lxc.conf
+	usr/share/doc/template.container.ovm.conf
+	usr/share/doc/template.container.srp.conf
+	usr/share/doc/template.container.vz.conf
+	usr/share/doc/template.container.xen.conf
+	usr/share/doc/template.container.zone.conf
+	usr/share/doc/template.disk.disk.conf
+	usr/share/doc/template.disk.gce.conf
+	usr/share/doc/template.disk.loop.conf
+	usr/share/doc/template.disk.lvm.conf
+	usr/share/doc/template.disk.md.conf
+	usr/share/doc/template.disk.rados.conf
+	usr/share/doc/template.disk.vg.conf
+	usr/share/doc/template.disk.zpool.conf
+	usr/share/doc/template.fs.conf
+	usr/share/doc/template.ip.amazon.conf
+	usr/share/doc/template.ip.conf
 
-The resource provisioner may need additional parameters. The resource configuration templates in ``usr/share/doc/`` highlight these particular parameters with ``provisioning = True``. The list of provisioning parameters can thus be extracted using::
+The resource provisioner may need additional parameters. The resource configuration templates in ``<OSVCDOC>`` highlight these particular parameters with ``provisioning = True``. The list of provisioning parameters can thus be extracted using::
 
-	$ grep -B 3 "provisioning: True" usr/share/doc/template.*conf | grep keyword
+	$ grep -B 3 "provisioning: True" <OSVCDOC>/template.*conf | grep keyword
 	usr/share/doc/template.container.esx.conf-# keyword:       snap
 	usr/share/doc/template.container.esx.conf-# keyword:       snapof
 	usr/share/doc/template.container.kvm.conf-# keyword:       virtinst
@@ -102,10 +100,10 @@ As a consequence, when all provisioners have run, the service ``availstatus`` is
 Provisioning usage
 ==================
 
-Commandline actions
-+++++++++++++++++++
-
 The provisioners are activated by setting the ``--provision`` with the following actions:
+
+create
+++++++
 
 * ``create --template <uri>|<template>``
 
@@ -119,18 +117,7 @@ The provisioners are activated by setting the ``--provision`` with the following
 
   Creates a service using definitions passed as ``--resource`` arguments.
 
-* ``update``
-
-  Add or change a resource definition to an existing service. Definitions are passed as ``--resource`` arguments.
-
-* ``pull``
-
-  Creates a service using the configuration file of the service fetched from the collector.
-
-Commandline arguments
-+++++++++++++++++++++
-
-A ``--resource`` argument takes a JSON formatted dictionary. The keys are the resource or DEFAULT section normal parameters, plus extra keys described in the following table.
+Each ``--resource`` argument takes a JSON formatted dictionary. The keys are the resource or DEFAULT section normal parameters, plus extra keys described in the following table.
 
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Key      | Description                                                                                                                                                 |
@@ -139,30 +126,51 @@ A ``--resource`` argument takes a JSON formatted dictionary. The keys are the re
 |          | the fs resource driver for a new resource with rid ``fs#0``                                                                                                 |
 +----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Configuration template
-++++++++++++++++++++++
+The ``create`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set.
+
+Example::
+
+  $ sudo svcmgr -s mysvc --config /etc/opensvc/mysvc.conf --provision create
+
+update
+++++++
+
+Add or change a resource definition to an existing service. Definitions are passed as ``--resource`` arguments.
+
+pull
+++++
+
+Creates a service using the configuration file of the service fetched from the collector.
+
+Service templates
+=================
 
 A template is a normal service configuration file with parts you can replace with references and/or arithmetic evaluations. Templates can be stored in the local fs, served through ftp, http, https, or served by the collector with publications ACL.
 
 A template is instanciated by copying its content as a service configuration file (``<OSVCETC>/<svcname>.conf``).
 
+Arithmetic expressions
+++++++++++++++++++++++
+
 The arithmetic evaluation format is ``$(<expr>)``. An evaluation can contain references.
+
+References
+++++++++++
 
 The reference format is ``{[<section>.]<option>}``, where section is a configuration file section name, and <option> is the option name in the pointed section. If section is ommited, the ``DEFAULT`` section is implicitely used. A reference can also contain arithmetic evaluations.
 
+Env section
++++++++++++
+
 References to the ``env`` section are special:
 
-* Options in the ``env`` are not submitted to synthaxic checks.
+* Options in the ``env`` are not submitted the synthaxic checks (``svcmgr validate config`` for example).
 
-* The ``--interactive`` create option asks for env keys values, and proposes the value set in the template as default
+* ``svcmgr create`` ``--interactive`` prompts for each env key value, suggesting the value set in the template as default.
 
-* ``--env <option>:<value>`` create options override the env options default values.
+* ``svcmgr create`` ``--env <option>=<value>`` overrides the env options default values.
 
 * System's uppercased environment variables override the env options default values and values specified with ``--env``.
-
-The ``create`` service action will take care of the ``etc/mysvc*`` directories and symlinks creation and the provisioning if ``--provision`` is set::
-
-  $ sudo svcmgr -s mysvc --config /etc/opensvc/mysvc.conf --provision create
 
 
 Provisioning examples
