@@ -22,6 +22,5 @@ Contents:
    agent.service.container
    agent.service.task
    storage
-   howto
    agent.template.conf
    manpages

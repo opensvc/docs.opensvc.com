@@ -19,5 +19,6 @@ Contents
    collector
    compliance
    knowledge.base
+   howto
 
 
