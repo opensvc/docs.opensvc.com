@@ -8,11 +8,13 @@ Contents:
 
    collector.evaluation
    collector.introduction
-   collector.search
-   collector.privileges
+   collector.header
+   collector.table
    collector.views
+   collector.tabs
    collector.forms
    collector.reports
-   collector.admin
    collector.safe
    collector.docker.registries
+   collector.admin
+   collector.privileges
