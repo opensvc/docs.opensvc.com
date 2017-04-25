@@ -1,7 +1,9 @@
-.. index:: header navigation menu flash search
+.. index:: header
 
 Header
 ******
+
+.. index:: navigation menu, widget
 
 Navigation menu
 ===============
@@ -38,6 +40,8 @@ Data Management           Tools to add, delete, refresh, import, export collecto
 Shortcuts                 Supported keyboard shortcuts and the rest API reference.
 ========================= ================================================================================
 
+.. index:: flash
+
 Flash zone
 ==========
 
@@ -58,6 +62,8 @@ The flash zone can be opened via:
 
 * click on the empty header space between the menu and the action queue widget.
 
+.. index:: session filter, widget
+
 Session filter
 ==============
 
@@ -75,6 +81,8 @@ The current view is reloaded upon filter selection.
 
 Filters can be designed from the :menuselection:`Admin --> Filters` and :menuselection:`Admin --> Filtersets` views, or using the filterset designer tabulation of a new filterset created though the ``Add filterset`` menu entry.
 
+.. index:: action queue, widget
+
 Action queue widget
 ===================
 
@@ -87,6 +95,8 @@ The collector maintains a list of actions to execute on the agents. The header w
 * orange: number of actions pending dispatch to a worker or currently running
 
 Clicking on this widget loads the action queue view, where users can drill down information, cancel or restart actions.
+
+.. index:: search, widget
 
 Searching the collector
 =======================

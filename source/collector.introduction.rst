@@ -108,7 +108,7 @@ Account registration the SaaS collector at https://collector.opensvc.com is open
 
 A newly created account has no privilege to see other users services. You have to ask admin@opensvc.com to add filters to your account so you can see your data. Filtering is based on domainnames patterns. You can declare as many domains as you need. The email address you setup during registration is important : it is used by the collector alarming subsystem as a mail sink for services you are responsible of.
 
-.. index:: conventions colors icons
+.. index:: conventions, colors, icons
 
 Conventions
 ===========

@@ -1,3 +1,5 @@
+.. index:: table
+
 Tables
 ******
 
@@ -11,12 +13,16 @@ A Table layout is split in 3 zones:
 
 .. image:: _static/table.png
 
+.. index:: table title
+
 Title
 =====
 
 The table title describes the table content.
 
 Clicking on the title zone toggles the table tools side panel. If another side panel was open, the tools panel replaces it.
+
+.. index:: table folding
 
 Folding
 =======
@@ -26,6 +32,8 @@ If a table has folding enabled, a top or bottom pointing icon is displayed right
 Clicking the top-pointing icon folds the table, leaving only the title zone and the unfold icon visible.
 
 Clicking the bottom-pointing icon unfold the table, displaying the table data zone and side-panel.
+
+.. index:: table pager
 
 Pager
 =====
@@ -38,6 +46,8 @@ If previous pages are available a ``<<`` link is prepended, allowing to switch t
 
 Clicking on the pager opens the toolbar, where a widget allows the user to set the number of lines per page for this table. This setting persists across logins and navigations.
 
+.. index:: table sort
+
 Dataset sorting
 ===============
 
@@ -49,8 +59,12 @@ A column used as a sort key is flagged with a top pointing icon (ascending) or a
 
 The ``<CTRL>`` key left-click modifier, permits to set secondary sort keys.
 
+.. index:: table tools
+
 Tools panel
 ===========
+
+.. index:: table commonality
 
 Commonality
 -----------
@@ -59,6 +73,8 @@ Commonality
 
 Display in the side panel the most frequent value for each table column, alongside its frequency percentile.
 
+.. index:: table column selector
+
 Column selector
 ---------------
 
@@ -66,10 +82,14 @@ Column selector
 
 Table columns can be toggled on and off from the column selector. Each view has a default set of column displayed. User column selection is persistent across logins and navigations.
 
+.. index:: table csv export
+
 CSV export
 ----------
 
 This tool can be used to extract the filtered dataset as a CSV-formatted file. Most browser will propose to load the dataset in a spreadsheet application or save it in a file.
+
+.. index:: table bookmarks
 
 Bookmarks
 ---------
@@ -77,6 +97,8 @@ Bookmarks
 .. image:: _static/collector.table.bookmarks.png
 
 Bookmarks are used to save column filters current values so users can switch rapidly between frequently used colum filters sets tailored to specific analysis.
+
+.. index:: table links
 
 Link
 ----
@@ -87,10 +109,14 @@ When clicked, this tool loads in the flash panel an url that the user can bookma
 
 The flash message also contain a js code snippet to use in a report definition to embed the table in the report.
 
+.. index:: table refresh
+
 Refresh
 -------
 
 Click to force a dataset reload. Only needed when the live table toggle is off.
+
+.. index:: table live mode
 
 Live table toggle
 -----------------
@@ -98,6 +124,8 @@ Live table toggle
 When set, the table listens to websocket events hinting changes in the dataset and triggers refresh when opportune.
 
 This toggle is usually disabled when the user starts a data selection with the intent of doing an action. In this case, the live mode could change the selection, which may cause unexpected consequences.
+
+.. index:: table volatile filters
 
 Volatile filters
 ----------------
@@ -107,10 +135,14 @@ A toggle controlling the column filters persistence. Filters can be set volatile
 | When volatile filters are set, the filtered column titles are underlined in gray.
 | When volatile filters are not set, the filtered column titles are underlined in red.
 
+.. index:: table pager
+
 Lines per page selector
 -----------------------
 
 The per-table lines per page setting. The live mode caps the per-page to 50 to limit the performance hit of the frequent dataset refreshs.
+
+.. index:: table column filters
 
 Column filters summary
 ----------------------
@@ -125,6 +157,8 @@ For each, the column name and filter value is displayed, alongside two clickable
 * delete filter: unfilter this specific column
 
 The trash icon above the list allows the user to delete all filters in a single click.
+
+.. index:: table action menu
 
 Action menu
 ===========
@@ -187,6 +221,8 @@ Filtering the action menu
 
 Upon action menu side panel display, the filtering input is focused. Only actions matching the filtering pattern are displayed. The ``<TAB>`` keypress focuses the first filtered action, then the arrow keys can be used to navigate the entries.
 
+.. index:: table column filters
+
 Column filters
 ==============
 
@@ -233,12 +269,16 @@ Operator   Description
 
 The column filters persist across logins and navigations, if the volatile filters toggle is not set nor locked off.
 
+.. index:: table scrolling
+
 Horizontal scrolling
 ====================
 
 The table data may horizontally overflow the table zone. In this case shadowed left-right borders are displayed to hint to presence of more data on their side.
 
 Clicking on the shadowed border trigger a horizontal page scroll.
+
+.. index:: table cell decorators
 
 Cell decorators
 ===============
