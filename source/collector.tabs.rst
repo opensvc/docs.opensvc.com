@@ -1,7 +1,7 @@
 .. index:: tabs
 
-Collector objects tabulations
-*****************************
+Objects tabulations
+*******************
 
 Service tabs
 ------------
