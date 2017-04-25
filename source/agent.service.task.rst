@@ -1,4 +1,4 @@
-Service Tasks
+Service tasks
 =============
 
 Each service embeds its own scheduling table.

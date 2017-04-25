@@ -89,8 +89,6 @@ Sketches service-nodes-storage-sites relationships
 Node tabs
 ---------
 
-|video-icon| `Watch the node demo video <http://www.youtube.com/watch?feature=player_embedded&v=tEqKPRZ4YeA>`_
-
 In all views, clicking on a node name will open the node tabs to display the most comprehensive data set the collector knows about this node.
 server, os, mem, cpu, location, power
 
