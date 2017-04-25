@@ -30,13 +30,13 @@ Clicking the bottom-pointing icon unfold the table, displaying the table data zo
 Pager
 =====
 
-This pager is displayed right of the title zone, when the table is unfolded. It shows the currently shown line numbers (<begin>-<end>) and the total number of lines in the dataset.
+The pager widget is displayed right of the title zone, when the table is unfolded. It shows the currently loaded line numbers (<begin>-<end>) and the total number of lines in the dataset.
 
 If next pages are available a ``>>`` link is appended, allowing to switch to the next page.
 
 If previous pages are available a ``<<`` link is prepended, allowing to switch to the previous page.
 
-Clicking on the pager opens the toolbar, where a widget allow the user to set the number of lines per page for this table. This setting persists across logins and navigations.
+Clicking on the pager opens the toolbar, where a widget allows the user to set the number of lines per page for this table. This setting persists across logins and navigations.
 
 Dataset sorting
 ===============
