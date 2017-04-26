@@ -33,6 +33,7 @@ Collections
 
    collector.tabs.app
    collector.tabs.fset
+   collector.tabs.modset
    collector.tabs.node
    collector.tabs.service
    collector.tabs.array
