@@ -56,6 +56,15 @@
 		.c-modset {color: transparent}
 		.c-app:before {color: deeppink; content: '\f069'; font-family: FontAwesome}
 		.c-app {color: transparent}
+
+		.c-close:before {color: black; content: '\f00d'; font-family: FontAwesome}
+		.c-close {color: transparent}
+		.c-fullscreen:before {color: black; content: '\f065'; font-family: FontAwesome}
+		.c-fullscreen {color: transparent}
+		.c-shrink:before {color: black; content: '\f066'; font-family: FontAwesome}
+		.c-shrink {color: transparent}
+		.c-link:before {color: black; content: '\f0c1'; font-family: FontAwesome}
+		.c-link {color: transparent}
 	</style>
 
 .. role:: c-action
@@ -84,6 +93,11 @@
 .. role:: c-rset
 .. role:: c-modset
 .. role:: c-app
+
+.. role:: c-close
+.. role:: c-fullscreen
+.. role:: c-shrink
+.. role:: c-link
 
 .. index:: introduction
 
@@ -157,3 +171,19 @@ Popups and panels
 By convention, every popups, side panels, header panels and table extralines can be closed with the ``<ESC>`` keypress.
 
 The collector maintains a stack of those elements. When one is opened, it gets pushed to the stack. And the ``<ESC>`` keypress pops from the stack, closing the last opened element.
+
+Widgets generic tools
+---------------------
+
+Most javascript widgets (tab collections, tabs, ...) embed generic tools displayed top-up on mouse-over.
+
+==================== =============================================================================================
+Tool                 Description
+==================== =============================================================================================
+:c-link:`...`        Display in the flash header panel an url to load this widget directly and in full page layout
+:c-fullscreen:`...`  Grow the widget to fill the full space after the header (the layout), replacing the current
+                     content.  The tool is replaced by the shrinker tool.
+:c-shrink:`...`      Shrink, after a fullscreen tool use. Return the widget to its original parent.  Restore the
+                     previous layout content. The tool is replaced by the fullscreen tool.
+:c-close:`...`       Close the widget.
+==================== =============================================================================================
