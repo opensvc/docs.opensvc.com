@@ -172,18 +172,16 @@ Submitting a mass-action is a 3-steps process:
 Do a line selection
 -------------------
 
-==================================== ===========================================
-Method                               Selection
-==================================== ===========================================
-Right click on a line's checkbox     The line right-clicked
+============================================================ ===========================================
+Method                                                       Selection
+============================================================ ===========================================
+Right click on a line's checkbox                             The line right-clicked
 
-Check lines and right-click a        The checked lines or right-clicked line
-checkbox
+Check lines and right-click a checkbox                       The checked lines or right-clicked line
 
-Click the triple horizontal bar icon All lines or checked lines
-top-left of the dataset
+Click the triple horizontal bar icon top-left of the dataset All lines or checked lines
 
-==================================== ===========================================
+============================================================ ===========================================
 
 Any of these methods trigger the display of the action menu as a side panel.
 
