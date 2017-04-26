@@ -34,5 +34,6 @@ Collections
    collector.tabs.app
    collector.tabs.node
    collector.tabs.service
+   collector.tabs.array
 
 
