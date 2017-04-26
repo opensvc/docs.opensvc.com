@@ -32,11 +32,11 @@ Collections
    :maxdepth: 1
 
    collector.tabs.app
-   collector.tabs.fset
    collector.tabs.modset
+   collector.tabs.rset
+   collector.tabs.fset
    collector.tabs.node
    collector.tabs.service
    collector.tabs.array
    collector.tabs.dg
-
 

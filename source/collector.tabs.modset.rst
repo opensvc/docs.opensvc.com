@@ -1,5 +1,5 @@
-Moduleset tabs
---------------
+Compliance moduleset tabs
+-------------------------
 
 Properties
 ++++++++++
@@ -26,6 +26,6 @@ Export
 
 Display a JSON dump of the moduleset definition, ready for import in another collector or for sharing with others.
 
-This export also contains all filtersets and rulesets necessary to satisfy dependencies.
+This export also contains all modulesets, filtersets and rulesets necessary to satisfy dependencies.
 
 
