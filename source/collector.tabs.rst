@@ -31,6 +31,7 @@ Collections
 .. toctree::
    :maxdepth: 2
 
+   collector.tabs.app
    collector.tabs.node
    collector.tabs.service
 
