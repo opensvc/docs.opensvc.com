@@ -1,5 +1,5 @@
-Storage array disk group
-------------------------
+Storage array disk group tabs
+-----------------------------
 
 Properties
 ++++++++++
