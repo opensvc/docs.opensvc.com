@@ -10,8 +10,8 @@ Contents:
    collector.introduction
    collector.header
    collector.table
-   collector.views
    collector.tabs
+   collector.views
    collector.forms
    collector.reports
    collector.safe

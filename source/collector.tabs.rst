@@ -3,15 +3,38 @@
 Objects tabulations
 *******************
 
+Introduction
+============
+
+Major object types have a dedicated tabulation collection representation. These collections present the most detailled level of information about the object.
+
+The first tab of the collection is always "properties", which presents the object properties and its relations to other object types represented as tag clouds.
+
+The other tabs are either:
+
+* Tables, normally accessed trough the navigation menu, but pre-filtered to display only the information relating to the object (ex: node logs, service actions).
+* Dedicated data analysis tools (ex: service topology diagram, node statistics)
+* Dedicated design tools (ex: filterset designer)
+* A wiki editor to comment on the object (ex: node, service)
+* A change tracker allowing object changes audit and rollback (ex: form, provisioning template)
+
+Conventions
+===========
+
+* The tabs are opened by clicking or double-clicking (for tag representation) the object name or id wherever it is displayed: search results, table cells, tab content, flash barel
+* The tabs are displayed in the flash header panel
+* Clicking the title of an already open tab reloads its content.
+
+Collections
+===========
+
 Service tabs
 ------------
 
-In all views, clicking on a service name will open the service tabs to display the most comprehensive data set the collector knows about this service.
-
-.. figure:: _static/doc_collector_svc_tabs.png
-
 properties
 ++++++++++
+
+.. figure:: _static/doc_collector_svc_tabs.png
 
 :command:`opensvc version`
 
@@ -82,19 +105,19 @@ Display the raw service configuration file pushed by the nodeware.
 topology
 ++++++++
 
-Sketches service-nodes-storage-sites relationships
+A diagram of apps, resources, service, nodes, storage, locations relations.
 
 .. figure:: _static/doc_collector_svc_tabs_topo.png
 
 Node tabs
 ---------
 
-In all views, clicking on a node name will open the node tabs to display the most comprehensive data set the collector knows about this node.
-server, os, mem, cpu, location, power
-
-Information displayed in these tabs are extracted from the asset table. Assets can be loaded from a tiers enterprise asset manager or filled-in manually.
+properties
+++++++++++
 
 .. figure:: _static/doc_collector_node_tabs.png
+
+Asset information can be loaded from a tiers enterprise asset manager or filled-in manually.
 
 stats
 +++++
@@ -120,12 +143,12 @@ compliance
 
 Displays:
 
-* The current node ruleset
+* The node rulesets and modulesets attachments
 * The current per-module compliance status of the node
-* The modulesets attached to the node
+* Compliance alerts details
 
 wiki
 ++++
 
-A per-node wiki page the team responsible member can use to share information relative to the node.
+A per-node wiki page team responsible members can use to share information related to the node.
 
