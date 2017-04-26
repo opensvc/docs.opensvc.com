@@ -29,11 +29,12 @@ Collections
 ===========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    collector.tabs.app
    collector.tabs.node
    collector.tabs.service
    collector.tabs.array
+   collector.tabs.dg
 
 
