@@ -113,6 +113,9 @@ A newly created account has no privilege to see other users services. You have t
 Conventions
 ===========
 
+Objects
+-------
+
 Object types are icon and color coded using the following convention.
 
 ================== ===================
@@ -148,4 +151,9 @@ moduleset          :c-modset:`...`
 rule               :c-rule:`...`
 ================== ===================
 
+Popups and panels
+-----------------
 
+By convention, every popups, side panels, header panels and table extralines can be closed with the ``<ESC>`` keypress.
+
+The collector maintains a stack of those elements. When one is opened, it gets pushed to the stack. And the ``<ESC>`` keypress pops from the stack, closing the last opened element.
