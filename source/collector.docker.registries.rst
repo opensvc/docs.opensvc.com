@@ -452,5 +452,5 @@ Identify all nodes and services using an image
 
 .. figure:: _static/collector.docker.imgusers.png
 
-In the "Resource info" table, filter on ``key=docker_image_id`` and ``value=<image_id>``.
+In the "Resources info" table, filter on ``key=docker_image_id`` and ``value=<image_id>``.
 
