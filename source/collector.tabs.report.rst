@@ -7,6 +7,8 @@ Properties
 .. figure:: _static/collector.tabs.report.properties.png
 
 * Base report properties
+* List of groups responsible for the report
+* List of groups allowed to see the report definition and rendering
 
 Rendering
 +++++++++
