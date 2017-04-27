@@ -35,6 +35,7 @@ Collections
    collector.tabs.modset
    collector.tabs.rset
    collector.tabs.comprun
+   collector.tabs.form
    collector.tabs.fset
    collector.tabs.node
    collector.tabs.service
