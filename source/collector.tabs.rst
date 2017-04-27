@@ -44,4 +44,5 @@ Collections
    collector.tabs.prov
    collector.tabs.array
    collector.tabs.dg
+   collector.tabs.report
 
