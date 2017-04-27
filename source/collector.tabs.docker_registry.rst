@@ -20,9 +20,9 @@ url             The value of the registry REGISTRY_HTTP_HOST env parameter
 insecure        * on: do not expect a valid ssl certificate for this registry
                 * off: verify the registry uses a valid ssl certificate
 --------------- ---------------------------------------------------------------------------------
-restricted      * on: Only responsibles can push
+restricted      * on: Only registry responsibles can push
                 * off: Allow users not responsible of the registry to push to their users/<id>/,
-                  the groups/<id>/ og groups they are member of, apps/<id>/ of apps they are
+                  the groups/<id>/ of groups they are member of, apps/<id>/ of apps they are
                   responsible of.
 =============== =================================================================================
 
