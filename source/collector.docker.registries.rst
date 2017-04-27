@@ -447,4 +447,10 @@ Pushing to the registry
 	363a10951ae2: Image successfully pushed 
 	latest: digest: sha256:d0c79b1dbb6b8433a1122f2e0346f14c1494b3ca43b3d972effd8520d7325e98 size: 2105
 
+Identify all nodes and services using an image
+**********************************************
+
+.. figure:: _static/collector.docker.imgusers.png
+
+In the "Resource info" table, filter on ``key=docker_image_id`` and ``value=<image_id>``.
 
