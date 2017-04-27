@@ -39,6 +39,7 @@ Collections
    collector.tabs.fset
    collector.tabs.node
    collector.tabs.service
+   collector.tabs.prov
    collector.tabs.array
    collector.tabs.dg
 
