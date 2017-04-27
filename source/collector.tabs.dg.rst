@@ -29,6 +29,6 @@ Stats
 
 .. figure:: _static/collector.tabs.dg.stats.png
 
-A chart representing the dayly evolution of the total quota usage and array backend space usage.
+A chart representing the daily evolution of the total quota usage and array backend space usage.
 
 
