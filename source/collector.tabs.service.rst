@@ -77,6 +77,9 @@ Config
 .. figure:: _static/collector.tabs.service.config.png
 
 Display the service configuration file pushed by the agent in an online editor.
+Any change made in the configuration file is not pushed to the node running the service.
+In order to propagate changes to the node, the service configuration file must be pulled from the node.
+Without pulling the service, the configuration change in the collector would be overwritten by the live configuration running on the node at next agent service configuration push.
 
 Topology
 ++++++++
