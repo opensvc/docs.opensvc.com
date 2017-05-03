@@ -16,6 +16,7 @@ Contents:
    agent.service.provisioning
    agent.service.management
    agent.service.scoping
+   agent.service.triggers
    agent.service.ip
    agent.service.app
    agent.service.sync
