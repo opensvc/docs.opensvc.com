@@ -12,6 +12,7 @@ Contents:
    agent.items
    agent.architecture
    agent.scheduler
+   agent.configfiles
    agent.service.creation
    agent.service.provisioning
    agent.service.management

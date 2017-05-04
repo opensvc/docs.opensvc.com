@@ -172,6 +172,8 @@ templates:
 	echo "$$base_t resource template\n----\n\n::\n\n" | tee source/agent.template.$$base_t.conf.rst ; \
 	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.conf.rst ; \
 	done
+	cp /opt/opensvc/usr/share/doc/node.conf source/_static/node.conf
+	cp /opt/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
 
 manpages:
 	@for t in nodemgr svcmgr svcmon ; do \
