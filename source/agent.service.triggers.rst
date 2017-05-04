@@ -60,10 +60,14 @@ Use cases
 
 * Inter-service dependencies
 
-  Using a trigger to implement a wait loop for a tiers service expected state. A blocking trigger can be combined with a wait loop timeout to abort the service startup if the required tiers service does not reach the expected state in time.
+  Using a ``pre_start`` trigger to implement a wait loop for a tiers service expected state. A ``blocking_pre_start`` trigger can be combined with a wait loop timeout to abort the service startup if the required tiers service does not reach the expected state in time.
 
 * Service provisioning
 
-  Using a post_provision trigger to create directories, files, run configuration management, deploy app, ... just after the filesystems are provisioned and started.
+  Using a ``post_provision`` trigger to create directories, files, run configuration management, deploy app, ... just after the filesystems are provisioned and started.
+
+* Extra start checks
+
+  Using a ``blocking_pre_start`` on the first started resource to verify extra conditions to allow service instance startup.
 
 
