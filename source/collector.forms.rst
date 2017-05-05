@@ -439,7 +439,7 @@ Keywords
 
   The expression is expressed in the form ``#some_input_id == some_value``.
 
-  * The supported operators are ``IN``, ``==`` and ``!=``.
+  * The supported operators are ``IN``, ``NOT IN``, ``<``, ``>``, ``==`` and ``!=``.
 
   * The supported values are either a free from string cast into the reference input type, or ``empty``. List values for the ``IN`` operator are comma-separated.
 
