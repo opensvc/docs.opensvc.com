@@ -1,0 +1,54 @@
+Use Cases
+*********
+
+This documentation shows how to collector makes it easy to extract useful information from the collector.
+
+Number of cluster nodes
+=======================
+
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.nb_cluster_nodes.png
+
+In the service instance view, right click on the nodename column header.
+
+A side panel opens, showing the column data distribution and distinct values count.
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /services_instances --stats yes --props node_id --fset-id 16
+        {
+            "meta": {
+                "distinct": {
+                    "node_id": 14
+                },
+                "total": 115
+            },
+            "data": {
+                "node_id": {
+                    "751d8bad-0dfb-11e6-a5a5-ce07d318718f": 3,
+                    "6a0b7270-71a7-4535-afbe-8151a1ad62d1": 1,
+                    "d041382a-e1cc-40fc-92f3-efdad9db1f66": 34,
+                    "751d8804-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d81ab-0dfb-11e6-a5a5-ce07d318718f": 2,
+                    "751d8f9b-0dfb-11e6-a5a5-ce07d318718f": 4,
+                    "751d884d-0dfb-11e6-a5a5-ce07d318718f": 3,
+                    "f3226e5a-0a30-4842-b32e-9140eef7020f": 13,
+                    "751d9153-0dfb-11e6-a5a5-ce07d318718f": 4,
+                    "751d8100-0dfb-11e6-a5a5-ce07d318718f": 6,
+                    "5edcb65c-b2ec-43e6-99ca-41d4901135f8": 35,
+                    "751d8896-0dfb-11e6-a5a5-ce07d318718f": 3,
+                    "751d8159-0dfb-11e6-a5a5-ce07d318718f": 3,
+                    "751d8f51-0dfb-11e6-a5a5-ce07d318718f": 3
+                }
+            }
+        }
+
+Here the fset_id 16 is the "opensvc servers" session filterset visible in the header in the screenshot above.
+
+The ``meta.distinct.node_id`` is the number of cluster nodes in the OpenSVC infrastructure known to this collector.
+

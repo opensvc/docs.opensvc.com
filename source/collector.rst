@@ -18,3 +18,4 @@ Contents:
    collector.docker.registries
    collector.admin
    collector.privileges
+   collector.usecases
