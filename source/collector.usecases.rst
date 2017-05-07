@@ -146,7 +146,7 @@ API
             }
         }
 
-The ``meta.distinct.node_id`` is the number of virtual cluster nodes in the OpenSVC infrastructure known to this collector.
+The ``meta.distinct.svc_id`` is the number of services in the OpenSVC infrastructure known to this collector.
 
 Number of HA failover services
 ==============================
@@ -191,4 +191,56 @@ API
                 }
             }
         }
+
+The ``meta.distinct.svc_id`` is the number of HA failover services in the OpenSVC infrastructure known to this collector.
+
+Cluster nodes operating system dispatch
+=======================================
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /services_instances \
+                --stats yes \
+                --props nodes.node_id,nodes.os_name \
+                --groupby nodes.node_id,nodes.os_name \
+                --fset-id 16
+
+        {
+            "meta": {
+                "distinct": {
+                    "node_id": 14,
+                    "os_name": 3
+                },
+                "total": 14
+            },
+            "data": {
+                "node_id": {
+                    "751d8bad-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "6a0b7270-71a7-4535-afbe-8151a1ad62d1": 1,
+                    "d041382a-e1cc-40fc-92f3-efdad9db1f66": 1,
+                    "751d8804-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d81ab-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d8f9b-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d884d-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "f3226e5a-0a30-4842-b32e-9140eef7020f": 1,
+                    "751d9153-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d8100-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "5edcb65c-b2ec-43e6-99ca-41d4901135f8": 1,
+                    "751d8896-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d8159-0dfb-11e6-a5a5-ce07d318718f": 1,
+                    "751d8f51-0dfb-11e6-a5a5-ce07d318718f": 1
+                },
+                "os_name": {
+                    "SunOS": 1,
+                    "FreeBSD": 2,
+                    "Linux": 11
+                }
+            }
+        }
+
+The ``data.os_name`` dictionary shows the cluster nodes operating system dispatch in the OpenSVC infrastructure known to this collector.
+
 
