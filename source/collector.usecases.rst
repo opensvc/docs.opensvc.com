@@ -11,7 +11,7 @@ Interactive
 
 .. figure:: _static/collector.usecases.nb_cluster_nodes.png
 
-In the service instance view, right click on the nodename column header.
+In the service instance view, right click on the ``Node`` column header.
 
 A side panel opens, showing the column data distribution and distinct values count.
 
@@ -66,7 +66,7 @@ Interactive
 In the service instance view, 
 
 * set the ``Hypervisor`` column filter to ``!empty``
-* right click on the nodename column header.
+* right click on the ``Node`` column header.
 
 A side panel opens, showing the column data distribution and distinct values count.
 
@@ -105,7 +105,90 @@ API
             }
         }
 
-Here the fset_id 16 is the "opensvc servers" session filterset visible in the header in the screenshot above.
+The ``meta.distinct.node_id`` is the number of virtual cluster nodes in the OpenSVC infrastructure known to this collector.
+
+Number of services
+==================
+
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.nb_services.png
+
+In the services view, right click on the ``Service`` column header.
+
+A side panel opens, showing the column data distribution and distinct values count.
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /services \
+                --stats yes \
+                --props svc_id \
+                --fset-id 16
+
+        {                                                     
+            "meta": {                                         
+                "distinct": {                                 
+                    "svc_id": 61                              
+                },                                            
+            "total": 61                                   
+            },                                                
+            "data": {                                         
+                "svc_id": {                                   
+                    "ff821cd1-0e09-11e6-a5a5-ce07d318718f": 1,
+                    "ff82290e-0e09-11e6-a5a5-ce07d318718f": 1,
+                    "ff821c94-0e09-11e6-a5a5-ce07d318718f": 1,
+                    ...
+                }
+            }
+        }
 
 The ``meta.distinct.node_id`` is the number of virtual cluster nodes in the OpenSVC infrastructure known to this collector.
+
+Number of HA failover services
+==============================
+
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.nb_ha_services.png
+
+In the services view, 
+
+* set the ``Cluster type`` column filter to ``failover``
+* set the ``HA`` column filter to ``1``
+* right click on the ``Service`` column header.
+
+A side panel opens, showing the column data distribution and distinct values count.
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /services \
+                --stats yes \
+                --props svc_id \
+                --filters "svc_cluster_type failover" \
+                --filters "svc_ha 1" \
+                --fset-id 16
+
+        {
+            "meta": {
+                "distinct": {
+                    "svc_id": 3
+                },
+                "total": 3
+            },
+            "data": {
+                "svc_id": {
+                    "ff824585-0e09-11e6-a5a5-ce07d318718f": 1,
+                    "ff8239aa-0e09-11e6-a5a5-ce07d318718f": 1,
+                    "ff8241c6-0e09-11e6-a5a5-ce07d318718f": 1
+                }
+            }
+        }
 
