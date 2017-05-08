@@ -197,6 +197,19 @@ The ``meta.distinct.svc_id`` is the number of HA failover services in the OpenSV
 Cluster nodes operating system dispatch
 =======================================
 
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.os_dispatch.png
+
+The session filterset is changed to ``opensvc cluster nodes``. This filterset design is: ``opensvc servers`` filterset AND "the node is in the services instances view.
+
+In the nodes view, 
+
+* right click on the ``OS Name`` column header.
+
+A side panel opens, showing the column data distribution and distinct values count.
+
 API
 ---
 
@@ -242,5 +255,76 @@ API
         }
 
 The ``data.os_name`` dictionary shows the cluster nodes operating system dispatch in the OpenSVC infrastructure known to this collector.
+
+Now that we have the ``opensvc cluster nodes`` filterset (id 63), we can also simply obtain the same dispatch using the ``GET /nodes`` handler:
+
+::
+
+        $ nodemgr collector cli --format json -- get /nodes \
+                 --stats yes \
+                 --props nodes.os_name \
+                 --fset-id 63
+
+        {
+            "meta": {
+                "distinct": {
+                    "os_name": 3
+                },
+                "total": 14
+            },
+            "data": {
+                "os_name": {
+                    "SunOS": 1,
+                    "FreeBSD": 2,
+                    "Linux": 11
+                }
+            }
+        }
+
+Cluster nodes operating system vendor dispatch
+==============================================
+
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.linux_os_vendor_dispatch.png
+
+In the nodes view, 
+
+* set the ``OS Name`` column filter to ``linux``
+* right click on the ``OS Vendor`` column header.
+
+A side panel opens, showing the column data distribution and distinct values count.
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /nodes \
+                --stats yes \
+                --props nodes.os_vendor \
+                --filters "os_name linux" \
+                --fset-id 63
+
+        {
+            "meta": {
+                "distinct": {
+                    "os_vendor": 5
+                },
+                "total": 11
+            },
+            "data": {
+                "os_vendor": {
+                    "Red Hat": 1,
+                    "SuSE": 2,
+                    "Debian": 2,
+                    "CentOS": 3,
+                    "Ubuntu": 3
+                }
+            }
+        }
+
+The ``data.os_vendor`` dictionary shows the cluster nodes Linux operating system vendor dispatch in the OpenSVC infrastructure known to this collector.
 
 
