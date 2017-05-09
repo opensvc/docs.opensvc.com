@@ -327,4 +327,43 @@ API
 
 The ``data.os_vendor`` dictionary shows the cluster nodes Linux operating system vendor dispatch in the OpenSVC infrastructure known to this collector.
 
+List nodes tagged 'a'
+=====================
+
+Interactive
+-----------
+
+.. figure:: _static/collector.usecases.list_nodes_tagged_a.png
+
+In the tag attachments view, 
+
+* set the ``Tag Name`` column filter to ``a``
+* set the ``Node`` column filter to ``!empty``
+
+The pager shows the total number of nodes tagged ``a``.
+
+API
+---
+
+::
+
+        $ nodemgr collector cli --format json -- get /tags/nodes \
+                --props nodes.nodename,nodes.node_id,tags.tag_name \
+                --filters "tags.tag_name a" \
+                --meta no
+
+        {
+            "data": [
+                {
+                    "nodes": {
+                        "node_id": "5c977246-0562-11e6-8c70-7e9e6cf13c8a",
+                        "nodename": "clementine"
+                    },
+                    "tags": {
+                        "tag_name": "a"
+                    }
+                }
+            ]
+        }
+
 
