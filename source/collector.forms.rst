@@ -517,9 +517,17 @@ Keywords
 
   * Rest API
 
-    A list of arguments passed to the Rest API handler pointed by **Function** Of note, the ``limit = 0`` is most important to fetch all candidates, and not be limited to the default 20 first entries. ``meta = 0`` can also be used to spare some bytes on the wire, as the resultset metadata are not used by the form inputs. The ``query`` smart query parameter can be used to filter the entries on pertinent criteria.
+    A list of ``<param> = <value>`` arguments passed to the Rest API handler pointed by **Function**. Please refer to the API documentation to find which parameters are supported by each handler.
 
-    References can be used in **Args**. For example, ``query = "loc_city = #loc_city"`` can filter the node list returned by the ``/nodes`` handler using the city selected in the input with ``Id: loc_city``.
+    Of note,
+
+    * ``limit = 0`` is most important to fetch all candidates, and not be limited to the default 20 first entries.
+     
+    * ``meta = 0`` can also be used to spare some bytes on the wire, as the resultset metadata are not used by the form inputs.
+     
+    * The ``query`` smart query parameter (pydal syntax), or the ``filters`` parameter (OpenSVC filter syntax) can be used to filter the entries on pertinent criteria. The ``filters`` parameter can be set multiple times, to add cumulative filters.
+
+  References can be used in **Args**. For example, ``query = "loc_city = #loc_city"`` can filter the node list returned by the ``/nodes`` handler using the city selected in the input with ``Id: loc_city`` or the input setting the ``loc_city`` key through its ``Keys`` list. ``"filters = loc_city #loc_city"`` has the same effect.
 
 
 * **DisplayModeTrim**
