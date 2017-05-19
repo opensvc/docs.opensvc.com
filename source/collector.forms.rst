@@ -222,6 +222,10 @@ Keywords
 
   A boolean value. Default is False. If set to ``True``, the output is skipped if a previous output returned an error.
 
+* **LogRequestData**
+
+  A boolean value. Default is True. In a ``rest`` output destination, the request data is logged for use by follow-on outputs, for audit and for workflow steps representation. Some forms containing sensitive data like password may prefer to disable this logging. To do so the ``LogRequestData`` can be set to ``False``.
+
 Examples
 ++++++++
 
@@ -330,6 +334,10 @@ Keywords
   * ``string``
 
     The submitted data for this input is stored in the object as a unicode string. The html element used for this type is INPUT or SELECT if **Candidates** is set.
+
+  * ``password``
+
+    Like ``string`` but the user input is obfuscated.
 
   * ``text``
 
