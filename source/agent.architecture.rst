@@ -91,7 +91,7 @@ Example configuration for the pull mode and systemd
   [Service]
   ExecStart=-/usr/bin/nodemgr dequeue actions
   
-``/etc/systemd/system/opensvc-actions@.socket``::
+``/etc/systemd/system/opensvc-actions.socket``::
 
   [Unit]
   Description=OpenSVC socket to receive collector notifications that actions are queued for the local agent
