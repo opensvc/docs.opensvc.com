@@ -89,7 +89,8 @@ Example configuration for the pull mode and systemd
   Description=OpenSVC collector-queued actions handler
   
   [Service]
-  ExecStart=-/usr/bin/nodemgr dequeue actions
+  ExecStart=/usr/bin/nodemgr dequeue actions
+  RemainAfterExit=yes
   
 ``/etc/systemd/system/opensvc-actions.socket``::
 

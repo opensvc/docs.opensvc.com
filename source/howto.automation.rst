@@ -354,7 +354,7 @@ ____________________________
                     {
                         "var_author": "Christophe Varoqui",
                         "var_class": "file",
-                        "var_value": "{\"path\": \"/etc/systemd/system/opensvc-actions@.service\", \"fmt\": \"[Unit]\\nDescription=OpenSVC collector-queued actions handler\\n\\n[Service]\\nExecStart=-/usr/bin/nodemgr dequeue actions\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
+                        "var_value": "{\"path\": \"/etc/systemd/system/opensvc-actions@.service\", \"fmt\": \"[Unit]\\nDescription=OpenSVC collector-queued actions handler\\n\\n[Service]\\nExecStart=/usr/bin/nodemgr dequeue actions\\nRemainAfterExit=yes\\n\", \"gid\": \"root\", \"mode\": 644, \"uid\": \"root\"}",
                         "var_updated": "2015-12-01 19:23:19",
                         "var_name": "opensvc_dequeue_actions_file_service",
                         "id": 212
