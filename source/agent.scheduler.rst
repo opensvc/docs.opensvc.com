@@ -10,7 +10,7 @@ The agent postinstall configures a system's scheduler job at a 1 minute period e
 
 For each task, the scheduler determines if the current time meets the task's schedule definition constraints. If all constraints are met, the task action is run in a subprocess and the last run timestamp is updated.
 
-The schedule definition constraints are expressed as allowed timeranges and minimum period. Example: In ``00:00-02:00@120``, the timerange is from midnight to 2am, the period is 120 minuntes. Multiple timerange@period can be defined with the syntax ``["00:00-02:00@120", "12:00-14:00@120"]``
+The schedule definition constraints are expressed as allowed timeranges and minimum period. Example: In ``00:00-02:00@120``, the timerange is from midnight to 2am, the period is 120 minuntes. Multiple ``<timerange>@<period>`` can be defined with the syntax ``["00:00-02:00@120", "12:00-14:00@120"]``
 
 If an allowed timerange is longer than the system's schedule period, multiple consecutive scheduler run will meet the schedule *timerange* constraint. If the *period* is also met (the task has not run in the last <period> minutes), the scheduler rolls a dice and decides if the task is run now, or delayed to a next scheduler run. The probability of deciding to run augments linearly with the current time position in the timerange. For example, with a ``00:00-02:00`` timerange, at midnight the probability is around 10%. At 01:50 the probabilty is 100%.
 
