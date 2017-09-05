@@ -91,17 +91,16 @@ On Unix systems, if the root account has no rsa key, a 2048 bits rsa key is gene
 Set the node environment
 ========================
 
+::
+
+	sudo nodemgr set --param node.env --value PRD
+
 The ``env`` setting is used to enforce the following policies:
 
 *   Only PRD services are allowed to start on a PRD node
 *   Only PRD nodes are allowed to push data to a PRD node
 
-::
-
-	sudo nodemgr set --param node.env --value PRD
-
-
-The valid ``env`` values are:
+Supported ``env`` values:
 
 ::
 
