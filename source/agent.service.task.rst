@@ -18,10 +18,13 @@ Tasks Features
 * tasks don't need to be added to the system's scheduler, thus can be provisioned along with the service
 * tasks follow the service relocations
 * tasks can can be disabled, scoped, unscheduled
-* tasks runs can be conditionned by a specific service state. Only run on the active instance of a failover for example.
+* tasks runs can be conditionned by a specific service state. Only run on the active instance of a failover for example
 * tasks can be run manually
 * tasks can run impersonated as a specified user
 * tasks can have cron-style schedule, anacron-style, networker-style schedule definition
+* dangerous tasks can ask for a confirmation
+* task commands support shell lexical (shlex) format
+* tasks support the requires keyword, to allow runs only when instance resources are in the specified states.
 
 Typical Use-Cases
 *****************
@@ -71,7 +74,47 @@ Task Configuration
 ::
 
 	[task#0]
-	command = id
+	command = id -u && /bin/true
 	user = admin
 
 The complete reference is available :doc:`here <agent.template.task.conf>`.
+
+Task confirmation
+*****************
+
+Task confirmation is activated by the ``confirmation`` keyword.
+
+::
+        [task#0]
+	command = /bin/true
+        confirmation = true
+
+A ``no`` response to the confirmation prompt aborts the run with a ``1`` returncode.
+
+::
+        $ sudo svcmgr -s testmd run --rid task#0
+        This task run requires confirmation.
+        Please make sure you fully understand its role and effects before confirming the run.
+        Do you really want to run task#0 (yes/no) > no
+        11:53:08,758             ERROR   'run' action stopped on execution error: run aborted
+
+If no responsse is provided in 30 seconds, the run is arborted with a ``1`` returncode.
+
+::
+        $ sudo testmd run
+        This task run requires confirmation.
+        Please make sure you fully understand its role and effects before confirming the run.
+        Do you really want to run task#0 (yes/no) >
+        11:30:36,059             ERROR   'run' action stopped on execution error: timeout waiting for confirmation
+
+
+A ``yes`` response to the confirmation prompt unblocks the run and the ``command`` returncode is propagated.
+
+::
+        $ sudo testmd run
+        This task run requires confirmation.
+        Please make sure you fully understand its role and effects before confirming the run.
+        Do you really want to run task#0 (yes/no) > yes
+        11:29:36,973 task#0      INFO    run confirmed
+        11:29:36,976 task#0      INFO    /bin/true
+
