@@ -85,6 +85,7 @@ Task confirmation
 Task confirmation is activated by the ``confirmation`` keyword.
 
 ::
+
         [task#0]
 	command = /bin/true
         confirmation = true
@@ -92,6 +93,7 @@ Task confirmation is activated by the ``confirmation`` keyword.
 A ``no`` response to the confirmation prompt aborts the run with a ``1`` returncode.
 
 ::
+
         $ sudo svcmgr -s testmd run --rid task#0
         This task run requires confirmation.
         Please make sure you fully understand its role and effects before confirming the run.
@@ -101,6 +103,7 @@ A ``no`` response to the confirmation prompt aborts the run with a ``1`` returnc
 If no responsse is provided in 30 seconds, the run is arborted with a ``1`` returncode.
 
 ::
+
         $ sudo testmd run
         This task run requires confirmation.
         Please make sure you fully understand its role and effects before confirming the run.
@@ -111,6 +114,7 @@ If no responsse is provided in 30 seconds, the run is arborted with a ``1`` retu
 A ``yes`` response to the confirmation prompt unblocks the run and the ``command`` returncode is propagated.
 
 ::
+
         $ sudo testmd run
         This task run requires confirmation.
         Please make sure you fully understand its role and effects before confirming the run.
