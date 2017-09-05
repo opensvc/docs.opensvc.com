@@ -70,24 +70,24 @@ or:
 Configuration files role
 ========================
 
-.. function:: <OSVCETC>/<svcname> -> /usr/bin/svcmgr
+``<OSVCETC>/<svcname> -> /usr/bin/svcmgr``
 
     This symbolic link is meant to be used as a shortcut to pass commands to a specific service. Like /etc/opensvc/unxdevweb01.mydomain.com start for example
 
-.. function:: <OSVCETC>/<svcname>.conf
+``<OSVCETC>/<svcname>.conf``
 
     This is the configuration file proper, including service description and resource definitions. Fully commented section templates are available on each node at ``<OSVCDOC>`` and online :doc:`here <agent.template.conf>`.
 
-.. function:: <OSVCETC>/<svcname>.d -> <svcname>.dir
+``<OSVCETC>/<svcname>.d -> <svcname>.dir``
 
     This symbolic link points to the directory hosting the service application launchers. The service is not considered active if this link is not present. The directory pointed is best hosted on a service-dedicated filesystem. The service application launchers are expected to be in SysV style: [SK][0-9]*appname. S for starters, K for stoppers, number for ordering. Starters and stoppers can be symlink to a single script. Starter are passed 'start' as first parameter, stoppers are passed 'stop' as first parameter.
 
-.. function:: <OSVCETC>/<svcname>.dir
+``<OSVCETC>/<svcname>.dir``
 
     This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/<svcname>.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
 
 Customize the service conf file
-==============================
+===============================
 
 At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
 
@@ -168,18 +168,19 @@ Create a filesystem skeleton for the service
 
 Give each service dedicated filesystems. Ideally one for data, one for tools (mysql, apache, ...) and one for launchers and eventually the virtual operating system instance. We recommand the following layout:
 
-.. function:: /gieprdweb01
+``/gieprdweb01``
 
-App launchers in etc/init.d/
+        App launchers in etc/init.d/
 
-.. function:: /gieprdweb01/tools
+``/gieprdweb01/tools``
 
-Private installation of tools. Tools must listen only on the private address to avoid conflicts with same tool of other services running on the same node.
+        Private installation of tools. Tools must listen only on the private address to avoid conflicts with same tool of other services running on the same node.
 
-.. function:: /gieprdweb01/data
+        If the applications are not containerized, prefer per-service private tools installations to distribution packages installations. This choice provides better system/service insulation, more reliable relocation and safer operating system upgrades. This also makes the service installation harder.
 
-Application data files
+``/gieprdweb01/data``
 
-If the applications are not containerized, prefer per-service private tools installations to distribution packages installations. This choice provides better system/service insulation, more reliable relocation and safer operating system upgrades. This also makes the service installation harder.
+        Application data files
+
 
 
