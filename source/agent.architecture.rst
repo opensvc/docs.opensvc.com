@@ -1,15 +1,10 @@
 Agent architecture
 ******************
 
-.. image:: _static/agent.architecture.png
-   :scale: 50 %
+The scheduler entry-point
+=========================
 
-The "entry-point" lane shows how the daemon-less OpenSVC agent gets to run.
-
-The system scheduler entry-point
-================================
-
-The system scheduler entry-point wakes the OpenSVC internal node scheduler, which in turn spawns the service schedulers in threads.
+The OpenSVC daemon runs the node scheduler every minute, which in turn runs each service schedulers in separate threads.
 
 Each task of the node scheduler can be executed directly through the nodemgr command, and each task of the service scheduler can be executed directly through the svcmgr command.
 
@@ -73,38 +68,10 @@ A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. 
 
 Here, the ``push_appinfo`` and ``syncall`` tasks are mapped over respectivelly app and sync resources. Hence their number vary depending on the service configuration.
 
-The inetd entry-point
-=====================
+The listener entry-point
+========================
 
-Optionally, users can plug OpenSVC into the system's inetd service. A listening port is allocated to the agent and when the node receives a packet for this port, inetd executes the ``nodemgr dequeue actions`` command. This command fetch from the collector the list of agent actions to execute, executes them, and send results to the collector. This is the ``pull`` mode.
+The listener port is defined in ``node.conf`` through the ``node.listener`` parameter. When the daemon listener receives an empty packet, it executes the ``nodemgr dequeue actions`` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
 
 Alternaltively, the node can be configured to allow direct actions from the collector through ``ssh`` and ``sudo``. This is the ``push`` mode.
 
-Example configuration for the pull mode and systemd
-+++++++++++++++++++++++++++++++++++++++++++++++++++
-
-``/etc/systemd/system/opensvc-actions@.service``::
-
-  [Unit]
-  Description=OpenSVC collector-queued actions handler
-  
-  [Service]
-  ExecStart=/usr/bin/nodemgr dequeue actions
-  RemainAfterExit=yes
-  
-``/etc/systemd/system/opensvc-actions.socket``::
-
-  [Unit]
-  Description=OpenSVC socket to receive collector notifications that actions are queued for the local agent
-  
-  [Socket]
-  ListenStream=1214
-  Accept=yes
-  Service=opensvc-actions
-  
-  [Install]
-  WantedBy=sockets.target
-
-Activation::
-
-  # sudo systemctl start opensvc-actions.socket

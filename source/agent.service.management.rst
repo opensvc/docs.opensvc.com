@@ -11,20 +11,13 @@ All services
 
 	sudo svcmgr <action>
 
-The command ``svcmgr shutdown --parallel`` is triggered upon node shutdown by the opensvc rc script.
-The command ``svcmgr boot --parallel`` is triggered upon node startup by the opensvc rc script.
-
 Single service
 ++++++++++++++
 
 ::
 
 	sudo svcmgr -s <svcname> <action>
-
-or
-
-::
-
+        # or
 	sudo <svcname> <action>
 
 List of services

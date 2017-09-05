@@ -36,15 +36,3 @@ Path                Description
                     collector via xmlrpc, and optionally multiplexed to syslog.
 =================== ===========================================================
 
-Cron job
-========
-
-``* * * * * /usr/bin/nodemgr schedulers >/dev/null 2>&1``
-
-Run the node and each service schedulers. See the output of ``sudo nodemgr print schedule`` and ``sudo svcmgr print schedule`` for the list of scheduled tasks.
-
-* push the service status and configuration to the collector
-* push the node configuration to the collector
-* collect performance metrics
-* trigger services' internal and user-configured inter-nodes synchronizations
-
