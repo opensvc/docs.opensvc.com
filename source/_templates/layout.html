@@ -1,8 +1,12 @@
 {% extends '!layout.html' %}
 
-{% block footer %}
+{% block extrahead %}
+<link href="{{ pathto("_static/css/extra.css", True) }}" rel="stylesheet" type="text/css">
+{% endblock %}
 
+{% block footer %}
 <div class="footer">
+<script type="text/javascript" src="{{ pathto("_static/js/extra.js", True) }}"></script>
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -21,5 +25,4 @@
 <noscript><p><img src="http://piwik.libra-linux.com/piwik.php?idsite=7" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 </div>
-
 {% endblock %}

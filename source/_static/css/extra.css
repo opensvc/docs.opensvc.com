@@ -1,0 +1,58 @@
+.wy-nav-top {
+	background-color: rgb(3, 135, 162);
+}
+.wy-nav-side {
+	background-color: rgb(3, 135, 162);
+}
+.wy-side-nav-search {
+	background-color: rgb(3, 135, 162);
+}
+.wy-menu-vertical a {
+	color: white;
+}
+.rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
+	color: teal;
+}
+.html-toggle-button
+{
+    position: relative;
+    cursor: pointer;
+}
+
+.html-toggle-button:hover:after,
+.section.emphasize-children > .section > h3.html-toggle-button:hover:after {# hack to override higher priority rule #}
+{
+}
+
+.html-toggle-button:after
+{
+    position: relative;
+    top: -0.15em;
+    margin: 0;
+    padding: 0.15em 0.3em;
+    text-shadow: none;
+    font-size: 65%;
+    font-style: italic;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.html-toggle.collapsed > .html-toggle-button:after {  content: "[+ show section]"; }
+.html-toggle.expanded > .html-toggle-button:after { content: "[- hide section]"; }
+
+.html-toggle-button:active:after,
+.section.emphasize-children > .section > h3.html-toggle-button:active:after
+{
+    position: relative;
+    top: calc(-0.15em + 1px);
+    left: 1px;
+}
+
+@media screen and (min-width: 1400px) {
+	.wy-nav-content-wrap {
+		background: #fcfcfc;
+	}
+	.wy-nav-content {
+		margin: 0 150px;
+	}
+}
