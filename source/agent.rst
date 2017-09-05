@@ -24,6 +24,5 @@ Contents:
    agent.service.encapsulation
    agent.service.container
    agent.service.task
-   storage
    agent.template.conf
    manpages

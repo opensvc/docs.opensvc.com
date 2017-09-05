@@ -1,5 +1,5 @@
-Service synchronization resources
-=================================
+Service sync drivers
+====================
 
 Contents:
 

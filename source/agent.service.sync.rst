@@ -1,14 +1,24 @@
 Service sync resources
 ======================
 
-Introduction
-************
-
 One of the OpenSVC infrastructure objective is to enable disaster recovery activation by non-expert persons at the service granularity. The sync resources are a critical component to meet this objective.
 
 OpenSVC offers many sync resource drivers, each with its own set of financial, performance, bandwidth, synchronicity costs characterics. Different drivers can be used for different kind of replicated data. For example binaries can often be replicated asynchronously, even when their data needs full synchronicity.
 
 This section presents different use-cases of replication and the possible sync resources configurations.
+
+Drivers
++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   storage.replication.soft
+   storage.replication.hard
+   storage.snapclone.hard
+
+Use-cases
++++++++++
 
 Failover with application installed as micro-containers
 *******************************************************
