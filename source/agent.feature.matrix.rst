@@ -14,45 +14,45 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+-------------------+
-| resources   | | ip              |
-|             | | loop            |
-|             | | fs              |
-|             | | bind mounts     |
-|             | | lvm2 vg         |
-|             | | veritas vg      |
-|             | | sync            |
-+-------------+-------------------+
-| containers  | | lxc             |
-|             | | openvz          |
-|             | | xen             |
-|             | | kvm             |
-|             | | vbox            |
-|             | | ovm             |
-|             | | esx             |
-|             | | docker instance |
-|             | | docker service  |
-+-------------+-------------------+
-| scsi        | yes [#f1]_        |
-| persistent  | (sg_persist)      |
-| reservation |                   |
-+-------------+-------------------+
-| rsync on    | lvm2 snaps        |
-| snap        |                   |
-+-------------+-------------------+
-| delta       | dds               |
-| replication |                   |
-+-------------+-------------------+
-| HA plugin   | | openha          |
-|             | | heartbeatd      |
-|             | | keepalived      |
-+-------------+-------------------+
-| IPv6        | yes               |
-+-------------+-------------------+
-| Per-service | yes (cgroup)      |
-| resource    |                   |
-| capping     |                   |
-+-------------+-------------------+
++-------------+------------------------------+
+| resources   | | ip                         |
+|             | | loop                       |
+|             | | fs                         |
+|             | | bind mounts                |
+|             | | lvm2 vg                    |
+|             | | veritas vg                 |
+|             | | sync                       |
++-------------+------------------------------+
+| containers  | | lxc                        |
+|             | | openvz                     |
+|             | | xen                        |
+|             | | kvm                        |
+|             | | vbox                       |
+|             | | ovm                        |
+|             | | esx                        |
+|             | | docker instance            |
+|             | | docker service             |
++-------------+------------------------------+
+| scsi        | | yes [#f1]_ (sg_persist)    |
+| persistent  |                              |
+| reservation |                              |
++-------------+------------------------------+
+| rsync on    | | lvm2 snaps                 |
+| snap        |                              |
++-------------+------------------------------+
+| delta       | | dds                        |
+| replication |                              |
++-------------+------------------------------+
+| HA plugin   | | openha                     |
+|             | | heartbeatd                 |
+|             | | keepalived                 |
++-------------+------------------------------+
+| IPv6        | | yes                        |
++-------------+------------------------------+
+| Per-service | | yes (cgroup)               |
+| resource    |                              |
+| capping     |                              |
++-------------+------------------------------+
 
 Inventories
 +++++++++++
@@ -91,36 +91,36 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+---------------+
-| resources   | | ip          |
-|             | | lofs        |
-|             | | zfs pool    |
-|             | | veritas vg  |
-|             | | sync        |
-+-------------+---------------+
-| containers  | | zone        |
-|             | | ldom        |
-|             | | xen         |
-|             | | vbox        |
-+-------------+---------------+
-| scsi        | yes           |
-| persistent  | (sg_persist)  |
-| reservation |               |
-+-------------+---------------+
-| rsync on    | zfs snaps     |
-| snap        |               |
-+-------------+---------------+
-| delta       | zfs           |
-| replication | send/recv     |
-+-------------+---------------+
-| HA plugin   | openha        |
-+-------------+---------------+
-| IPv6        | yes           |
-+-------------+---------------+
-| Per-service | no            |
-| resource    |               |
-| capping     |               |
-+-------------+---------------+
++-------------+------------------------+
+| resources   | | ip                   |
+|             | | lofs                 |
+|             | | zfs pool             |
+|             | | veritas vg           |
+|             | | sync                 |
++-------------+------------------------+
+| containers  | | zone                 |
+|             | | ldom                 |
+|             | | xen                  |
+|             | | vbox                 |
++-------------+------------------------+
+| scsi        | | yes (sg_persist)     |
+| persistent  |                        |
+| reservation |                        |
++-------------+------------------------+
+| rsync on    | | zfs snaps            |
+| snap        |                        |
++-------------+------------------------+
+| delta       | | zfs send/recv        |
+| replication |                        |
++-------------+------------------------+
+| HA plugin   | | openha               |
++-------------+------------------------+
+| IPv6        | | yes                  |
++-------------+------------------------+
+| Per-service | | no                   |
+| resource    |                        |
+| capping     |                        |
++-------------+------------------------+
 
 Inventories
 +++++++++++
@@ -158,33 +158,33 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+---------------+
-| resources   | | ip          |
-|             | | fs          |
-|             | | vg          |
-|             | | sync        |
-+-------------+---------------+
-| containers  | | hpvm        |
-|             | | srp         |
-+-------------+---------------+
-| scsi        | yes [#f2]_    |
-| persistent  | (scu)         |
-| reservation |               |
-+-------------+---------------+
-| rsync on    | vxfs snaps    |
-| snap        | on lv         |
-+-------------+---------------+
-| delta       | n/a           |
-| replication |               |
-+-------------+---------------+
-| HA plugin   | openha        |
-+-------------+---------------+
-| IPv6        | yes           |
-+-------------+---------------+
-| Per-service | no            |
-| resource    |               |
-| capping     |               |
-+-------------+---------------+
++-------------+--------------------+
+| resources   | | ip               |
+|             | | fs               |
+|             | | vg               |
+|             | | sync             |
++-------------+--------------------+
+| containers  | | hpvm             |
+|             | | srp              |
++-------------+--------------------+
+| scsi        | | yes [#f2]_ (scu) |
+| persistent  |                    |
+| reservation |                    |
++-------------+--------------------+
+| rsync on    | | vxfs snaps on lv |
+| snap        |                    |
++-------------+--------------------+
+| delta       | | n/a              |
+| replication |                    |
++-------------+--------------------+
+| HA plugin   | | openha           |
++-------------+--------------------+
+| IPv6        | | yes              |
++-------------+--------------------+
+| Per-service | | no               |
+| resource    |                    |
+| capping     |                    |
++-------------+--------------------+
 
 Inventories
 +++++++++++
@@ -222,33 +222,33 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+---------------+
-| resources   | | ip          |
-|             | | fs          |
-|             | | namefs      |
-|             | | sync        |
-|             | | vg          |
-+-------------+---------------+
-| containers  |               |
-+-------------+---------------+
-| scsi        | no            |
-| persistent  |               |
-| reservation |               |
-+-------------+---------------+
-| rsync on    | jfs2 snaps    |
-| snap        | on lv         |
-+-------------+---------------+
-| delta       | n/a           |
-| replication |               |
-+-------------+---------------+
-| HA plugin   | not tested    |
-+-------------+---------------+
-| IPv6        | yes           |
-+-------------+---------------+
-| Per-service | no            |
-| resource    |               |
-| capping     |               |
-+-------------+---------------+
++-------------+------------------------+
+| resources   | | ip                   |
+|             | | fs                   |
+|             | | namefs               |
+|             | | sync                 |
+|             | | vg                   |
++-------------+------------------------+
+| containers  |                        |
++-------------+------------------------+
+| scsi        | | no                   |
+| persistent  |                        |
+| reservation |                        |
++-------------+------------------------+
+| rsync on    | | jfs2 snaps on lv     |
+| snap        |                        |
++-------------+------------------------+
+| delta       | | n/a                  |
+| replication |                        |
++-------------+------------------------+
+| HA plugin   | | not tested           |
++-------------+------------------------+
+| IPv6        | | yes                  |
++-------------+------------------------+
+| Per-service | | no                   |
+| resource    |                        |
+| capping     |                        |
++-------------+------------------------+
 
 Inventories
 +++++++++++
@@ -286,34 +286,34 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+--------------+
-| resources   | | ip         |
-|             | | md         |
-|             | | fs         |
-|             | | nullfs     |
-|             | | zfs pool   |
-|             | | sync       |
-+-------------+--------------+
-| containers  | | jail       |
-+-------------+--------------+
-| scsi        | yes          |
-| persistent  | (sg_persist) |
-| reservation |              |
-+-------------+--------------+
-| rsync on    | zfs snaps    |
-| snap        |              |
-+-------------+--------------+
-| delta       | zfs          |
-| replication | send/recv    |
-+-------------+--------------+
-| HA plugin   | not tested   |
-+-------------+--------------+
-| IPv6        | yes          |
-+-------------+--------------+
-| Per-service | no           |
-| resource    |              |
-| capping     |              |
-+-------------+--------------+
++-------------+------------------------+
+| resources   | | ip                   |
+|             | | md                   |
+|             | | fs                   |
+|             | | nullfs               |
+|             | | zfs pool             |
+|             | | sync                 |
++-------------+------------------------+
+| containers  | | jail                 |
++-------------+------------------------+
+| scsi        | | yes (sg_persist)     |
+| persistent  |                        |
+| reservation |                        |
++-------------+------------------------+
+| rsync on    | | zfs snaps            |
+| snap        |                        |
++-------------+------------------------+
+| delta       | | zfs send/recv        |
+| replication |                        |
++-------------+------------------------+
+| HA plugin   | | not tested           |
++-------------+------------------------+
+| IPv6        | | yes                  |
++-------------+------------------------+
+| Per-service | | no                   |
+| resource    |                        |
+| capping     |                        |
++-------------+------------------------+
 
 Inventories
 +++++++++++
@@ -360,21 +360,21 @@ Service Management
 |             | | docker instance |
 |             | | docker service  |
 +-------------+-------------------+
-| scsi        | no                |
+| scsi        | | no              |
 | persistent  |                   |
 | reservation |                   |
 +-------------+-------------------+
-| rsync on    | n/a               |
+| rsync on    | | n/a             |
 | snap        |                   |
 +-------------+-------------------+
-| delta       | n/a               |
+| delta       | | n/a             |
 | replication |                   |
 +-------------+-------------------+
-| HA plugin   | not tested        |
+| HA plugin   | | not tested      |
 +-------------+-------------------+
-| IPv6        | yes               |
+| IPv6        | | yes             |
 +-------------+-------------------+
-| Per-service | no                |
+| Per-service | | no              |
 | resource    |                   |
 | capping     |                   |
 +-------------+-------------------+
@@ -415,31 +415,31 @@ Service Management
 
 .. rst-class:: fullwidth
 
-+-------------+------------+
-| resources   | | ip       |
-|             | | fs       |
-|             | | sync     |
-+-------------+------------+
-| containers  |            |
-+-------------+------------+
-| scsi        | yes        |
-| persistent  | (scu)      |
-| reservation |            |
-+-------------+------------+
-| rsync on    | advfs      |
-| snap        | clonefset  |
-+-------------+------------+
-| delta       | n/a        |
-| replication |            |
-+-------------+------------+
-| HA plugin   | not tested |
-+-------------+------------+
-| IPv6        | not tested |
-+-------------+------------+
-| Per-service | no         |
-| resource    |            |
-| capping     |            |
-+-------------+------------+
++-------------+----------------------+
+| resources   | | ip                 |
+|             | | fs                 |
+|             | | sync               |
++-------------+----------------------+
+| containers  |                      |
++-------------+----------------------+
+| scsi        | | yes (scu)          |
+| persistent  |                      |
+| reservation |                      |
++-------------+----------------------+
+| rsync on    | | advfs clonefset    |
+| snap        |                      |
++-------------+----------------------+
+| delta       | | n/a                |
+| replication |                      |
++-------------+----------------------+
+| HA plugin   | | not tested         |
++-------------+----------------------+
+| IPv6        | | not tested         |
++-------------+----------------------+
+| Per-service | | no                 |
+| resource    |                      |
+| capping     |                      |
++-------------+----------------------+
 
 Inventories
 +++++++++++
