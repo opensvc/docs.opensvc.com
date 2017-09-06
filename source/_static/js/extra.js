@@ -11,6 +11,7 @@
      *==========================================================================*/
 
     var $window = $(window);
+    var isUndef = _.isUndefined;
 
     // given "#hash-name-with.periods", escape so it's usable as CSS selector
     // (e.g. "#hash-name-with\\.periods")
@@ -37,7 +38,12 @@
                 expanded = !!expanded; // toggleClass et al need actual boolean
                 section.toggleClass("expanded", expanded);
                 section.toggleClass("collapsed", !expanded);
-                section.children().toggle(expanded);
+                section.children().each(function(){
+			$(this).toggle(expanded);
+			if (expanded) {
+				$("table.docutils:not(.field-list)").show();
+			}
+		})
                 if (!expanded) {
                     section.children("span:first-child:empty").show();
                     /* for :ref: span tag */

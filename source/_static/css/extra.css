@@ -13,6 +13,9 @@
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
 	color: teal;
 }
+.wy-table-responsive table td, .wy-table-responsive table th {
+	white-space: initial;
+}
 .html-toggle-button
 {
     position: relative;
