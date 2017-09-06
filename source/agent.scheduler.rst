@@ -1,9 +1,11 @@
-Agent scheduler
+.. _agent-scheduler:
+
+Agent Scheduler
 ***************
 
 The OpenSVC agent embeds a scheduler. The node and each service has a private schedule.
 
-Scheduler behaviour
+Scheduler Behaviour
 ===================
 
 The agent postinstall configures a system's scheduler job at a 1 minute period executing the ``nodemgr schedulers`` command. This ``schedulers`` action runs the OpenSVC agent scheduler for the node and each service.
@@ -18,10 +20,10 @@ This behaviour spreads the tasks execution on all nodes over the whole timerange
 
 Any task (except sync tasks) execution in its subprocess is delayed by a random few seconds to level collector load spikes caused by time-synchronized nodes actions being validated at the same time. For example, on a 1000 agent population with pushasset schedule set to ``00:00-02:00@120``, ~90 agents will execute the action at 00:00. The random delay ensures the collector won't receive all 90 data payloads at the same second.
 
-Display the schedules
+Display the Schedules
 =====================
 
-Node schedule
+Node Schedule
 +++++++++++++
 
 ::
@@ -62,7 +64,7 @@ The supported schedules are:
 * Backup servers saves index inventoring tasks : pushnsr
 
 
-Service schedule
+Service Schedule
 ++++++++++++++++
 
 ::
@@ -100,7 +102,7 @@ The supported schedules are:
 * Service sync resources actions : sync_all
 
 
-Schedule definition
+Schedule Definition
 ===================
 
 The complete and up-to-date schedule syntax reference is available in ``<OSVCDOC>/node.conf`` template file.
@@ -157,7 +159,7 @@ The complete and up-to-date schedule syntax reference is available in ``<OSVCDOC
 	      <shift>
 	        type: integer
 
-Schedule testing
+Schedule Testing
 ================
 
 Executing the scheduler code file triggers a test routine.
