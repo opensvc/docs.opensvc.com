@@ -1,7 +1,7 @@
 .. _agent-service-scoping:
 
-Service Parameters Scoping
-**************************
+Service Keywords Scoping
+************************
 
 Most keywords in a service configuration support a scoping syntax allowing each node agent to interpret the value differently.
 
