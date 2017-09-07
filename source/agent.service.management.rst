@@ -361,85 +361,68 @@ Print resource status of a service:
 
 ::
 
-	[root@node111 ~]# gieprdtransco print_status
-	fs /dev/mapper/gieprdtransco-moteurs@/gieprdtransco/moteurs            up
-	fs /dev/mapper/gieprdtransco-data01@/gieprdtransco/data01/oracle/XMETA up
-	fs /dev/mapper/gieprdtransco-bkp01@/gieprdtransco/bkp01/oracle/XMETA   up
-	fs /dev/mapper/gieprdtransco-scratch@/gieprdtransco/applis/scratch     up
-	fs /dev/mapper/gieprdtransco-datastage@/gieprdtransco/applis/datastage up
-	fs /dev/mapper/gieprdtransco-dataset@/gieprdtransco/applis/dataset     up
-	fs /dev/mapper/gieprdtransco-root@/gieprdtransco                       up
-	vg gieprdtransco                                                       up
-	vg gieprdtransco scsireserv                                            up
-	ip gieprdtransco@bond0                                                 up
-	overall                                                                up
+        $ sudo svcmgr -s osvprdcollector.opensvc.com print status
+        osvprdcollector.opensvc.com
+        overall                   up         
+        |- avail                  up         
+        |  |- ip#0           .... up         37.59.71.25@br0@container#0
+        |  |- fs#1           .... stdby up   zfs data/osvprdcollector.opensvc.com@/srv/osvprdcollector.opensvc.com
+        |  |- fs#3           .... stdby up   zfs data/osvprdcollector.opensvc.com/data@/srv/osvprdcollector.opensvc.com/data
+        |  |- fs#2           .... stdby up   zfs data/osvprdcollector.opensvc.com/docker@/srv/osvprdcollector.opensvc.com/docker
+        |  |- container#0    .... up         docker container osvprdcollector.opensvc.com.container.0@ubuntu:16.04
+        |  |- container#1    .... up         docker container osvprdcollector.opensvc.com.container.1@registry.opensvc.com/opensvc/collector_db:build10
+        |  |- container#2    .... up         docker container osvprdcollector.opensvc.com.container.2@registry.opensvc.com/opensvc/collector_redis:build1
+        |  |- container#3    .... up         docker container osvprdcollector.opensvc.com.container.3@registry.opensvc.com/opensvc/collector_nginx:build1
+        |  '- container#4    .... up         docker container osvprdcollector.opensvc.com.container.4@registry.opensvc.com/opensvc/collector_web2py:build10
+        '- accessory                         
+           |- sync#1         .... up         zfs of data/osvprdcollector.opensvc.com to nodes
+           |- sync#1sd       .... up         zfs 'daily' snapshot data/osvprdcollector.opensvc.com
+           '- sync#i0        .... up         rsync svc config to drpnodes, nodes
 
-Stop of a hosted Oracle service:
 
-::
-
-	[root@node111 ~]# aasprdora01 stop
-	* APP - INFO - spawn: /etc/opensvc/aasprdora01.d/K50oracle stop
-	* APP - INFO - stop done in 0:00:00.258900 - ret 0 - logs in /var/tmp/svc_aasprdora01_K50oracle.log
-	* FS - INFO - umount /aasprdora01/moteurs
-	* FS - INFO - umount /aasprdora01/data01/oracle/XMETA
-	* FS - INFO - umount /aasprdora01/bkp01/oracle/XMETA
-	* FS - INFO - umount /aasprdora01
-	* DISK.VG - INFO - vgchange -a n aasprdora01
-	* IP - INFO - ifconfig bond0:2 down
-
-Start of an HP-VM service:
+Starting a service:
 
 ::
 
-	2010-01-20 10:05:40,955 - DISK.VG - INFO - mksf -r -C disk -I 18 /dev/rdisk/vm089_system
-	* DISK.VG - INFO - mksf -r -C disk -I 15 /dev/rdisk/vm089_system2
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c2t0d6 preserve register skey 0x45603beb
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c5t0d6 preserve register skey 0x45603beb
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c2t0d7 preserve register skey 0x45603beb
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c5t0d7 preserve register skey 0x45603beb
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c2t0d6 preserve reserve key 0x45603beb type wero
-	* SCSIRESERV - INFO - scu -f /dev/rdsk/c2t0d7 preserve reserve key 0x45603beb type wero
-	* CONTAINER.HPVM - INFO - /opt/hpvm/bin/hpvmstart -P vm089
-	* CONTAINER.HPVM - WARNING - command succesful but stderr
-	HPVM guest vm089 configuration problems
-	    Warning 1 on item vs_PROD: Guest MAC address for switch vs_PROD is in use.
-	These problems may prevent HPVM guest vm089 from starting.
-	(C) Copyright 2000 - 2008 Hewlett-Packard Development Company, L.P.
-	/opt/hpvm/lbin/hpvmapp (/var/opt/hpvm/uuids/2adfad34-005b-11df-bc07-00226402aebe/vmm_config.current): Allocated 2147483648 bytes at 0x6000000100000000
-	/opt/hpvm/lbin/hpvmapp (/var/opt/hpvm/uuids/2adfad34-005b-11df-bc07-00226402aebe/vmm_config.current): Allocated 6442450944 bytes at 0x6000000200000000
-	/opt/hpvm/lbin/hpvmapp (/var/opt/hpvm/uuids/2adfad34-005b-11df-bc07-00226402aebe/vmm_config.current): Allocated 131072 bytes at 0x6000000500000000
-	/opt/hpvm/lbin/hpvmapp (/var/opt/hpvm/uuids/2adfad34-005b-11df-bc07-00226402aebe/vmm_config.current): Allocated 131072 bytes at 0x6000000500040000
-	Daemonizing....
-	hpvmstart: Successful start initiation of guest 'vm089'
+        $ sudo mysvc1.opensvc.com start --local
+        deb1.mysvc1.ip#1                  checking 128.0.1.124 availability
+        deb1.mysvc1.ip#1                  ifconfig lo:3 128.0.1.124 netmask 255.255.255.255 up
+        deb1.mysvc1.ip#1                  arping -U -c 1 -I lo -s 128.0.1.124 128.0.1.124
+        deb1.mysvc1.disk#1                loop /opt/disk1.dd is already up
+        deb1.mysvc1.disk#2                loop /opt/disk2.dd is already up
+        deb1.mysvc1.disk#3                vg vgtest is already up
+        deb1.mysvc1.fs#1                  e2fsck -p /dev/vgtest/lvtest1
+        deb1.mysvc1.fs#1                  output:
+        deb1.mysvc1.fs#1                  /dev/vgtest/lvtest1: clean, 18/3072 files, 1534/12288 blocks
+        deb1.mysvc1.fs#1                
+        deb1.mysvc1.fs#1                  mount -t ext4 -o rw /dev/vgtest/lvtest1 /opt/avn/lvtest1
+        deb1.mysvc1.fs#2                  e2fsck -p /dev/vgtest/lvtest2
+        deb1.mysvc1.fs#2                  output:
+        deb1.mysvc1.fs#2                  /dev/vgtest/lvtest2: clean, 13/3072 files, 12286/12288 blocks
+        deb1.mysvc1.fs#2                
+        deb1.mysvc1.fs#2                  mount -t ext4 -o rw /dev/vgtest/lvtest2 /opt/avn/lvtest2
+        deb1.mysvc1.fs#3                  e2fsck -p /dev/loop1
+        deb1.mysvc1.fs#3                  output:
+        deb1.mysvc1.fs#3                  testfs: clean, 13/12824 files, 27111/51200 blocks
+        deb1.mysvc1.fs#3                
+        deb1.mysvc1.fs#3                  mount -t ext4 -o rw /dev/loop1 /opt/avn/lvtest3
+        deb1.mysvc1.share#0               exportfs -o ro,fsid=0 p145.opensvc.com:/opt/avn/lvtest3
+        deb1.mysvc1.app#0                 exec /bin/true start as user root
+        deb1.mysvc1.app#0                 start done in 0:00:00.001864 - ret 0
 
-	* APP - INFO - /usr/bin/ssh vm089 chmod +x /svc/etc/init.d/S10foo
-	* APP - INFO - spawn: /usr/bin/ssh vm089 /svc/etc/init.d/S10foo start
-	* APP - INFO - start done in 0:00:00.481997 - ret 0 - logs in /var/tmp/svc_aastmphpux_S10foo.log
-	* APP - INFO - /usr/bin/ssh vm089 chmod +x /svc/etc/init.d/S20foo
-	* APP - INFO - spawn: /usr/bin/ssh vm089 /svc/etc/init.d/S20foo start
-	* APP - INFO - start done in 0:00:00.327710 - ret 0 - logs in /var/tmp/svc_aastmphpux_S20foo.log
-	* APP - INFO - /usr/bin/ssh vm089 chmod +x /svc/etc/init.d/S80foo
-	* APP - INFO - spawn: /usr/bin/ssh vm089 /svc/etc/init.d/S80foo start
-	* APP - INFO - start done in 0:00:00.304998 - ret 0 - logs in /var/tmp/svc_aastmphpux_S80foo.log
-
-Start of an Xen service:
+Stopping a service:
 
 ::
 
-	cgaliber@dell opensolaris:/$ pfexec xosolglo1.opensvc.com start
-	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --register-ignore --param-sark=0x114366380227 /dev/rdsk/xosolglo1-data
-	* XOSOLGLO1.OPENSVC.COM.POOL#1PR - INFO - sg_persist -n --out --reserve --param-rk=0x114366380227 --prout-type=5 /dev/rdsk/xosolglo1-data
-	* XOSOLGLO1.OPENSVC.COM.POOL#1 - INFO - zpool import xosolglo1-data
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - virsh define /var/lib/opensvc/xosolglo1.xml
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - output
-	Domain xosolglo1 defined from /var/lib/opensvc/xosolglo1.xml
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - virsh start xosolglo1
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - output
-	Domain xosolglo1 started
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - wait for container up status
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - wait for container ping
-	* XOSOLGLO1.OPENSVC.COM.XEN - INFO - wait for container operational
-	* XOSOLGLO1.OPENSVC.COM.APP - INFO - spawn: /usr/bin/ssh xosolglo1 /svc/etc/init.d/S10example start
-	* XOSOLGLO1.OPENSVC.COM.APP - INFO - start done in 0:00:00.508232 - ret 0 - logs in /var/tmp/svc_xosolglo1.opensvc.com_S10example.log
+        $ sudo mysvc1.opensvc.com stop --local
+        deb1.mysvc1.app#0                 exec /bin/true stop as user root
+        deb1.mysvc1.app#0                 stop done in 0:00:00.004243 ret 0
+        deb1.mysvc1.share#0               exportfs -u p145.opensvc.com:/opt/avn/lvtest3
+        deb1.mysvc1.fs#3                  umount /opt/avn/lvtest3
+        deb1.mysvc1.fs#2                  umount /opt/avn/lvtest2
+        deb1.mysvc1.fs#1                  umount /opt/avn/lvtest1
+        deb1.mysvc1.disk#3                skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.disk#2                skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.disk#1                skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.ip#1                  ifconfig lo:3 down
 
