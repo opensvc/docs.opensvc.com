@@ -76,10 +76,6 @@ Contents:
    agent.template.fs.xfs.conf
    agent.template.fs.xia.conf
    agent.template.fs.zfs.conf
-   agent.template.hb.LinuxHA.conf
-   agent.template.hb.OpenHA.conf
-   agent.template.hb.linuxha.conf
-   agent.template.hb.openha.conf
    agent.template.ip.amazon.conf
    agent.template.ip.conf
    agent.template.ip.crossbow.conf
