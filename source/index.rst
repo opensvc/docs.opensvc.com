@@ -1,6 +1,11 @@
 OpenSVC documentation
 =====================
 
+Previous Versions
+-----------------
+
+* ``1.8`` https://docs.opensvc.com/1.8/
+
 Translations
 ------------
 
