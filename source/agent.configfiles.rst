@@ -11,6 +11,7 @@ This configuration file contains:
 * The collector authentication token
 * The agent tasks schedules and options
 * Asset information pushed to the collector
+* The cluster and heartbeat configurations
 
 This file can be left empty or non-existant if no collector communications are required and the default agent tasks schedules and options are adequate.
 

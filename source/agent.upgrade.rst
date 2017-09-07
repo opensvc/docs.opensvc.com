@@ -1,13 +1,13 @@
-.. _agent.update:
-.. index:: update, repository, mirror
+.. _agent.upgrade:
+.. index:: upgrade, repository, mirror
 
-Agent Updates
+Agent Upgrade
 *************
 
 Introduction
 ============
 
-OpenSVC provides packages for all supported operating systems at https://repo.opensvc.com. Agents can be updated using one of the following methods, ordered by scalability:
+OpenSVC provides packages for all supported operating systems at https://repo.opensvc.com. Agents can be upgraded using one of the following methods, ordered by scalability:
 
 * Download the required opensvc package to your hosts and use operating system specific local package management commands.
 * Feed the opensvc packages into your existing per operating system package depots and use operating system specific network-aware package management commands.
@@ -66,10 +66,10 @@ Example:
 
 	nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
 
-Updating the Agent
-==================
+Upgrading the Agent
+===================
 
-The update command is:
+The upgrade command is:
 
 ::
 
