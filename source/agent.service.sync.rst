@@ -1,4 +1,6 @@
-Service sync resources
+.. _agent-service-sync:
+
+Service Sync Resources
 ======================
 
 One of the OpenSVC infrastructure objective is to enable disaster recovery activation by non-expert persons at the service granularity. The sync resources are a critical component to meet this objective.
@@ -20,7 +22,7 @@ Drivers
 Use-cases
 +++++++++
 
-Failover with application installed as micro-containers
+Failover with Application Installed as Micro-containers
 *******************************************************
 
 In this use-case, the middlewares are installed as docker micro-containers. The micro-containers see their data, configurations and logs through volume mappings from the host.
@@ -88,7 +90,7 @@ Example configuration::
   src = svc1:data
   dst = svc1:data
 
-Flex with application installed as micro-containers
+Flex with Application Installed as Micro-Containers
 ***************************************************
 
 In this use-case, the middlewares are installed as docker micro-containers. The micro-containers see their data, configurations and logs through volume mappings from the host. The mappings are hosted on local disks and the service handles no replication for these, as their content would be delivered through app deployment tools.
@@ -144,7 +146,7 @@ Example configuration::
   target = drpnodes
 
 
-Flex with application installed as micro-containers and failover site
+Flex with Application Installed as Micro-Containers and Failover Site
 *********************************************************************
 
 This use case is a variant of the previous case, with instances on the secondary site in standby. The nodes on the secondary site can be used to run non-production service to avoid wasting resources.
@@ -210,8 +212,8 @@ Example configuration::
   target = drpnodes
 
 
-A case of replicating middlewares
-*********************************
+Replicating Middlewares
+***********************
 
 Some middlewares can take care of their own data on-site and off-site replication. For example Oracle RAC, cassandra and most Big Data middlewares. In this case, users may ponder the choice of using those replication methods or OpenSVC sync resources.
 

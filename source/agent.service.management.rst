@@ -45,7 +45,7 @@ List all services in 'up' and 'warn' state.
 Service Selector Expressions
 ++++++++++++++++++++++++++++
 
-Selector syntax::
+::
 
         svcmgr ls -s <expr>[+<expr>...]
 
@@ -91,13 +91,17 @@ Services with at least one ip resource and one task resource::
 Services status
 ===============
 
-``sudo svcmon``
+::
 
-        Overview of the status of all services this configured on the node.
+        sudo svcmon
 
-``sudo svcmgr -s <svcname> print status``
+Overview of the status of all services this configured on the node.
 
-        Detailled service resources status.
+::
+
+        sudo svcmgr -s <svcname> print status``
+
+Detailled service resources status.
 
 Actions
 =======
@@ -105,101 +109,201 @@ Actions
 Base Actions
 ++++++++++++
 
-``sudo svcmgr -s <svcname> start``
+Start
+-----
 
-        Start resources of type ip, disk, fs, share, container, app.
+::
 
-``sudo svcmgr -s <svcname> stop``
+        sudo svcmgr -s <svcname> start --local
 
-        Stop resources of type app, container, share, fs, disk, ip.
+Start the local service instance, shortcutting the orchestrator.
+Resources start order is ip, disk, fs, share, container, app.
 
-``sudo svcmgr -s <svcname> sync all``
+::
 
-        Run the sync resources replication to all targets, either prd or drp.
+        sudo svcmgr -s <svcname> start [--wait] [--time <duration expr>]
 
-``sudo svcmgr -s <svcname> run``
+Tell the orchestrator to start the service on the nodes the placement policy and constraints choose.
 
-        Run tasks.
+By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With ``--wait``, svcmgr will wait for the action completion before returning. ``--time`` set a maximum wait time.
 
+Stop
+----
+
+::
+
+        sudo svcmgr -s <svcname> stop --local
+
+Stop the local service instance, shortcutting the orchestrator.
+Resources stop order is app, container, share, fs, disk, ip.
+
+::
+
+        sudo svcmgr -s <svcname> stop [--wait] [--time <duration expr>]
+
+Tell the orchestrator to stop the service wherever it runs and freeze it so it is not restarted.
+
+By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With ``--wait``, svcmgr will wait for the action completion before returning. ``--time`` set a maximum wait time.
+
+Relocation
+----------
+
+::
+
+        sudo svcmgr -s <svcname> switch --node <nodename>
+
+Tell the orchestrator to stop the service wherever it runs and start it on <nodename>.
+
+::
+
+        sudo svcmgr -s <svcname> takeover
+
+Tell the orchestrator to stop the service wherever it runs and start it on the local node.
+
+
+::
+
+        sudo svcmgr -s <svcname> giveback
+
+Tell the orchestrator to stop the service wherever it runs and start it on the node elected by the placement policy and constraints.
+
+
+Sync
+----
+
+::
+
+        sudo svcmgr -s <svcname> sync all
+
+Run the sync resources replication to all targets, either prd or drp.
+
+::
+
+        sudo svcmgr -s <svcname> sync nodes
+
+Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+
+::
+
+        sudo svcmgr -s <svcname> sync drp
+
+Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+
+.. seealso:: :ref:`agent-service-sync`
+
+Run
+---
+
+::
+
+        sudo svcmgr -s <svcname> run
+
+Run tasks.
+
+.. seealso:: :ref:`agent-service-tasks`
 
 Resource Filtering
 ++++++++++++++++++
 
-``sudo svcmgr -s <svcname> --rid <rid>[,<rid>,...] <action>``
+::
 
-        Execute ``<action>`` on ``<svcname>`` resources specified by ``--rid``.
+        sudo svcmgr -s <svcname> --rid <rid>[,<rid>,...] <action>
 
-``sudo svcmgr -s <svcname> --tags tag1,tag2 <action>``
+Execute ``<action>`` on ``<svcname>`` resources specified by ``--rid``.
 
-        Execute ``<action>`` on ``<svcname>`` resources tagged with either tag1 or tag2.
+::
 
-``sudo svcmgr -s <svcname> --tags tag1+tag2,tag3 <action>``
+        sudo svcmgr -s <svcname> --tags tag1,tag2 <action>
 
-        Execute ``<action>`` on ``<svcname>`` resources tagged with both tag1 or tag2 or with tag3.
+Execute ``<action>`` on ``<svcname>`` resources tagged with either tag1 or tag2.
 
-``sudo svcmgr -s <svcname> --subsets s1,s2 <action>``
+::
 
-        Execute ``<action>`` on ``<svcname>`` resources in subset s1 or s2
+        sudo svcmgr -s <svcname> --tags tag1+tag2,tag3 <action>
+
+Execute ``<action>`` on ``<svcname>`` resources tagged with both tag1 or tag2 or with tag3.
+
+::
+
+        sudo svcmgr -s <svcname> --subsets s1,s2 <action>
+
+Execute ``<action>`` on ``<svcname>`` resources in subset s1 or s2
 
 
 Group actions
 +++++++++++++
 
-``sudo svcmgr -s <svcname> startdisk``
+::
 
-        Start resources of type loop, disk group, zpool, fs
+        sudo svcmgr -s <svcname> startdisk
 
-``sudo svcmgr -s <svcname> stopdisk``
+Start resources of type loop, disk group, zpool, fs
 
-        Stop resources of type fs, zpool, disk group, loop
+::
 
-``sudo svcmgr -s <svcname> startip``
+        sudo svcmgr -s <svcname> stopdisk
 
-        Start resources of type ip
+Stop resources of type fs, zpool, disk group, loop
 
-``sudo svcmgr -s <svcname> stopip``
+::
 
-        Stop resources of type ip
+        sudo svcmgr -s <svcname> startip
 
-``sudo svcmgr -s <svcname> startloop``
+Start resources of type ip
 
-        Start resources of type loop
+::
 
-``sudo svcmgr -s <svcname> stoploop``
+        sudo svcmgr -s <svcname> stopip
 
-        Stop resources of type loop
+Stop resources of type ip
 
-``sudo svcmgr -s <svcname> startvg``
+::
 
-        Start resources of type disk group
+        sudo svcmgr -s <svcname> startloop
 
-``sudo svcmgr -s <svcname> stopvg``
+Start resources of type loop
 
-        Stop resources of type disk group
+::
 
-``sudo svcmgr -s <svcname> mount``
+        sudo svcmgr -s <svcname> stoploop
 
-        Start resources of type fs and the underlying resources
+Stop resources of type loop
 
-``sudo svcmgr -s <svcname> umount``
+::
 
-        Stop resources of type fs and the underlying resources
+        sudo svcmgr -s <svcname> startvg
 
-``sudo svcmgr -s <svcname> prstart``
+Start resources of type disk group
 
-        Acquire scsi persistent reservations on disks of the service (wrapped by startvg and startdisk)
+::
 
-``sudo svcmgr -s <svcname> prstop``
+        sudo svcmgr -s <svcname> stopvg
 
-        Release scsi persistent reservations on disks of the service (wrapped by stopvg and stopdisk)
+Stop resources of type disk group
 
-``sudo svcmgr -s <svcname> syncnodes``
+::
 
-        Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+        sudo svcmgr -s <svcname> startfs
 
-``sudo svcmgr -s <svcname> syncdrp``
+Start resources of type fs and the underlying resources
 
-        Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+::
+
+        sudo svcmgr -s <svcname> stopfs
+
+Stop resources of type fs and the underlying resources
+
+::
+
+        sudo svcmgr -s <svcname> prstart
+
+Acquire scsi persistent reservations on disks of the service (wrapped by startvg and startdisk)
+
+::
+
+        sudo svcmgr -s <svcname> prstop
+
+Release scsi persistent reservations on disks of the service (wrapped by stopvg and stopdisk)
 
 Logging
 =======

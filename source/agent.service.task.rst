@@ -1,4 +1,6 @@
-Service tasks
+.. _agent-service-tasks:
+
+Service Tasks
 =============
 
 Each service embeds its own scheduling table.
@@ -35,7 +37,7 @@ Typical Use-Cases
 Tasks Operations
 ****************
 
-Print a service tasks and their scheduling status
+Print a Service Tasks and their Scheduling Status
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 ::
@@ -47,7 +49,7 @@ Print a service tasks and their scheduling status
 	task#0                 -                      task#0.schedule           -
 	task#1                 2016-11-28 04:01:00    task#1.schedule           @10
 
-Manually run a task
+Manually Run a Task
 +++++++++++++++++++
 
 All service tasks
@@ -79,7 +81,7 @@ Task Configuration
 
 The complete reference is available :doc:`here <agent.template.task.conf>`.
 
-Task confirmation
+Task Confirmation
 *****************
 
 Task confirmation is activated by the ``confirmation`` keyword.
