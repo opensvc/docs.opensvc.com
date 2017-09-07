@@ -12,7 +12,7 @@ Download the lastest OpenSVC package available for your operating system of choi
 ::
 
 	# Red Hat, CentOS, Fedora, SuSe Linux
-	curl -o /tmp/opensvc.latest https://repo.opensvc.com/rpms/current
+	curl -o /tmp/opensvc.rpm https://repo.opensvc.com/rpms/current
 
 	# Debian, Ubuntu Linux
 	curl -o /tmp/opensvc.latest https://repo.opensvc.com/deb/current
@@ -31,10 +31,10 @@ Install
 ::
 
 	# Red Hat, CentOS, Fedora Linux
-	yum install /tmp/opensvc.latest
+	yum install /tmp/opensvc.rpm
 
 	# SuSE Linux
-	zypper install /tmp/opensvc.latest
+	zypper install /tmp/opensvc.rpm
 
 	# Debian, Ubuntu Linux
 	dpkg -i /tmp/opensvc.latest
