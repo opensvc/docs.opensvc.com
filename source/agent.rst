@@ -8,10 +8,11 @@ Contents:
 
    agent.feature.matrix
    agent.install
+   agent.items
    agent.upgrade
    agent.configure
    agent.configure.cluster
-   agent.items
+   agent.heartbeats
    agent.architecture
    agent.scheduler
    agent.configfiles
