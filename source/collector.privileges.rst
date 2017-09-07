@@ -23,7 +23,7 @@ Privilege groups
 ----------------
 
 AppManager
-+++++++++
+++++++++++
 
 Privilege to edit application codes, manage publications and responsibles.
 

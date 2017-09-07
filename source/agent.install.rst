@@ -1,5 +1,6 @@
-.. _agent.install:
 .. index:: install, package
+
+.. _agent.install:
 
 Agent Installation
 ******************
