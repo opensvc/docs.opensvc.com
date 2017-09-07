@@ -169,7 +169,7 @@ templates:
 	base_t=`basename $$t | sed -e "s/template.//" -e "s/.conf//"` ; \
 	echo $$base_t | egrep -q "comp_|svc.prov" && continue ; \
         echo "   agent.template.$$base_t.conf" | tee -a source/agent.template.conf.rst ; \
-	echo "$$base_t resource template\n----\n\n::\n\n" | tee source/agent.template.$$base_t.conf.rst ; \
+        echo "$$base_t resource template" | gawk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.template.$$base_t.conf.rst ; \
 	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.conf.rst ; \
 	done
 	cp /opt/opensvc/usr/share/doc/node.conf source/_static/node.conf
