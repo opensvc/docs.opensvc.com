@@ -14,29 +14,44 @@ container.jail resource template
 	;type = jail
 	
 	#
-	# keyword:       name
+	# keyword:          name
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         the service name
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  This need to be set if the virtual machine name is different from
 	#         the service name.
 	#
-	;name = foo
+	;name = the service name
 	
 	#
-	# keyword:       osvc_root_path
+	# keyword:          hostname
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#
+	#  desc:  This need to be set if the virtual machine hostname is different
+	#         from the machine name.
+	#
+	;hostname = foo
+	
+	#
+	# keyword:          osvc_root_path
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     head
+	#  scope order:     specific > generic
 	#
 	#  desc:  If the OpenSVC agent is installed via package in the container, this
 	#         parameter must not be set or set to 'None'. Else the value can be
@@ -45,70 +60,94 @@ container.jail resource template
 	;osvc_root_path = /opt/opensvc
 	
 	#
-	# keyword:       guestos
+	# keyword:          guestos
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   unix | windows
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      unix | windows
 	#
 	#  desc:  The operating system in the virtual machine.
 	#
 	;guestos = unix
 	
 	#
-	# keyword:       ips
+	# keyword:          ips
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         list
 	#
 	#  desc:  The ipv4 addresses of the jail.
 	#
 	;ips = foo
 	
 	#
-	# keyword:       ip6s
+	# keyword:          ip6s
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         list
 	#
 	#  desc:  The ipv6 addresses of the jail.
 	#
 	;ip6s = foo
 	
 	#
-	# keyword:       jailroot
+	# keyword:          jailroot
 	# ----------------------------------------------------------------------------
-	#  required:     True
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
+	#  scopable:        False
+	#  required:        True
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  Sets the root fs directory of the container
 	#
 	;jailroot = foo
 	
 	#
-	# keyword:       restart
+	# keyword:          no_preempt_abort
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      0
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
+	#
+	#  desc:  If set to 'true', OpenSVC will preempt scsi reservation with a
+	#         preempt command instead of a preempt and and abort. Some scsi target
+	#         implementations do not support this last mode (esx). If set to
+	#         'false' or not set, 'no_preempt_abort' can be activated on a per-
+	#         resource basis.
+	#
+	;no_preempt_abort = False
+	
+	#
+	# keyword:          restart
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         0
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         integer
 	#
 	#  desc:  The agent will try to restart a resource n times before falling back
 	#         to the monitor action.
@@ -116,14 +155,15 @@ container.jail resource template
 	;restart = 0
 	
 	#
-	# keyword:       tags
+	# keyword:          tags
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         set([])
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         set
 	#
 	#  desc:  A list of tags. Arbitrary tags can be used to limit action scope to
 	#         resources with a specific tag. Some tags can influence the driver
@@ -131,90 +171,66 @@ container.jail resource template
 	#         encapsulated service, 'noaction' avoids any state changing action
 	#         from the driver, 'nostatus' forces the status to n/a.
 	#
-	;tags = foo
+	;tags = set([])
 	
 	#
-	# keyword:       subset
+	# keyword:          subset
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf
+	#  scope order:     specific > generic
 	#
 	#  desc:  Assign the resource to a specific subset.
 	#
 	;subset = foo
 	
 	#
-	# keyword:       monitor
+	# keyword:          monitor
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
-	#  desc:  A monitored resource will trigger a node suicide if the service has
-	#         a heartbeat resource in up state
+	#  desc:  A down monitored resource will trigger a node suicide if the monitor
+	#         thinks it should be up and the resource can not be restarted.
 	#
 	;monitor = False
 	
 	#
-	# keyword:       disable
+	# keyword:          disable
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
 	#  desc:  A disabled resource will be ignored on service startup and shutdown.
 	#
 	;disable = False
 	
 	#
-	# keyword:       disable_on
+	# keyword:          optional
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      []
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  A whitelist-separated list of nodes to disable the resource on. A
-	#         disabled resource will be ignored on service startup and shutdown.
-	#
-	;disable_on = []
-	
-	#
-	# keyword:       enable_on
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      []
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  A whitelist-separated list of nodes to enable the resource on. Takes
-	#         precedence over disable and disable_on.
-	#
-	;enable_on = []
-	
-	#
-	# keyword:       optional
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
 	#  desc:  Possible values are 'true' or 'false'. Actions on resource will be
 	#         tried upon service startup and shutdown, but action failures will be
@@ -224,31 +240,33 @@ container.jail resource template
 	;optional = False
 	
 	#
-	# keyword:       always_on
+	# keyword:          always_on
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   nodes | drpnodes | nodes drpnodes
-	#  depends:      None
-	#  scopable:     False
+	#  scopable:        False
+	#  required:        False
+	#  provisioning:    False
+	#  default:         []
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      nodes | drpnodes ...
+	#  convert:         list
 	#
 	#  desc:  Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a
 	#         list of nodes. Sets the nodes on which the resource is always kept
 	#         up. Primary usage is file synchronization receiving on non-shared
 	#         disks. Don't set this on shared disk !! danger !!
 	#
-	;always_on = nodes
+	;always_on = []
 	
 	#
-	# keyword:       pre_unprovision
+	# keyword:          pre_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource unprovision
 	#         action. Errors do not interrupt the action.
@@ -256,14 +274,14 @@ container.jail resource template
 	;pre_unprovision = foo
 	
 	#
-	# keyword:       post_unprovision
+	# keyword:          post_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource unprovision
 	#         action. Errors do not interrupt the action.
@@ -271,14 +289,14 @@ container.jail resource template
 	;post_unprovision = foo
 	
 	#
-	# keyword:       pre_provision
+	# keyword:          pre_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource provision action.
 	#         Errors do not interrupt the action.
@@ -286,14 +304,14 @@ container.jail resource template
 	;pre_provision = foo
 	
 	#
-	# keyword:       post_provision
+	# keyword:          post_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource provision action.
 	#         Errors do not interrupt the action.
@@ -301,14 +319,14 @@ container.jail resource template
 	;post_provision = foo
 	
 	#
-	# keyword:       pre_start
+	# keyword:          pre_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource start action.
 	#         Errors do not interrupt the action.
@@ -316,14 +334,14 @@ container.jail resource template
 	;pre_start = foo
 	
 	#
-	# keyword:       post_start
+	# keyword:          post_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource start action.
 	#         Errors do not interrupt the action.
@@ -331,14 +349,14 @@ container.jail resource template
 	;post_start = foo
 	
 	#
-	# keyword:       pre_stop
+	# keyword:          pre_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource stop action.
 	#         Errors do not interrupt the action.
@@ -346,14 +364,14 @@ container.jail resource template
 	;pre_stop = foo
 	
 	#
-	# keyword:       post_stop
+	# keyword:          post_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource stop action.
 	#         Errors do not interrupt the action.
@@ -361,164 +379,14 @@ container.jail resource template
 	;post_stop = foo
 	
 	#
-	# keyword:       pre_sync_nodes
+	# keyword:          blocking_pre_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_nodes
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_nodes = foo
-	
-	#
-	# keyword:       post_sync_nodes
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_nodes action.
-	#         Errors do not interrupt the action.
-	#
-	;post_sync_nodes = foo
-	
-	#
-	# keyword:       pre_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_drp action.
-	#         Errors do not interrupt the action.
-	#
-	;pre_sync_drp = foo
-	
-	#
-	# keyword:       post_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_drp action.
-	#         Errors do not interrupt the action.
-	#
-	;post_sync_drp = foo
-	
-	#
-	# keyword:       pre_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_resync
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_resync = foo
-	
-	#
-	# keyword:       post_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_resync
-	#         action. Errors do not interrupt the action.
-	#
-	;post_sync_resync = foo
-	
-	#
-	# keyword:       pre_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_update
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_update = foo
-	
-	#
-	# keyword:       post_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_update
-	#         action. Errors do not interrupt the action.
-	#
-	;post_sync_update = foo
-	
-	#
-	# keyword:       pre_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource run action.
-	#         Errors do not interrupt the action.
-	#
-	;pre_run = foo
-	
-	#
-	# keyword:       post_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource run action. Errors
-	#         do not interrupt the action.
-	#
-	;post_run = foo
-	
-	#
-	# keyword:       blocking_pre_unprovision
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource unprovision
 	#         action. Errors interrupt the action.
@@ -526,14 +394,14 @@ container.jail resource template
 	;blocking_pre_unprovision = foo
 	
 	#
-	# keyword:       blocking_post_unprovision
+	# keyword:          blocking_post_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource unprovision
 	#         action. Errors interrupt the action.
@@ -541,14 +409,14 @@ container.jail resource template
 	;blocking_post_unprovision = foo
 	
 	#
-	# keyword:       blocking_pre_provision
+	# keyword:          blocking_pre_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource provision action.
 	#         Errors interrupt the action.
@@ -556,14 +424,14 @@ container.jail resource template
 	;blocking_pre_provision = foo
 	
 	#
-	# keyword:       blocking_post_provision
+	# keyword:          blocking_post_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource provision action.
 	#         Errors interrupt the action.
@@ -571,14 +439,14 @@ container.jail resource template
 	;blocking_post_provision = foo
 	
 	#
-	# keyword:       blocking_pre_start
+	# keyword:          blocking_pre_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource start action.
 	#         Errors interrupt the action.
@@ -586,14 +454,14 @@ container.jail resource template
 	;blocking_pre_start = foo
 	
 	#
-	# keyword:       blocking_post_start
+	# keyword:          blocking_post_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource start action.
 	#         Errors interrupt the action.
@@ -601,14 +469,14 @@ container.jail resource template
 	;blocking_post_start = foo
 	
 	#
-	# keyword:       blocking_pre_stop
+	# keyword:          blocking_pre_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource stop action.
 	#         Errors interrupt the action.
@@ -616,14 +484,14 @@ container.jail resource template
 	;blocking_pre_stop = foo
 	
 	#
-	# keyword:       blocking_post_stop
+	# keyword:          blocking_post_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource stop action.
 	#         Errors interrupt the action.
@@ -631,164 +499,14 @@ container.jail resource template
 	;blocking_post_stop = foo
 	
 	#
-	# keyword:       blocking_pre_sync_nodes
+	# keyword:          unprovision_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_nodes
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_nodes = foo
-	
-	#
-	# keyword:       blocking_post_sync_nodes
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_nodes action.
-	#         Errors interrupt the action.
-	#
-	;blocking_post_sync_nodes = foo
-	
-	#
-	# keyword:       blocking_pre_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_drp action.
-	#         Errors interrupt the action.
-	#
-	;blocking_pre_sync_drp = foo
-	
-	#
-	# keyword:       blocking_post_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_drp action.
-	#         Errors interrupt the action.
-	#
-	;blocking_post_sync_drp = foo
-	
-	#
-	# keyword:       blocking_pre_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_resync
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_resync = foo
-	
-	#
-	# keyword:       blocking_post_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_resync
-	#         action. Errors interrupt the action.
-	#
-	;blocking_post_sync_resync = foo
-	
-	#
-	# keyword:       blocking_pre_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_update
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_update = foo
-	
-	#
-	# keyword:       blocking_post_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_update
-	#         action. Errors interrupt the action.
-	#
-	;blocking_post_sync_update = foo
-	
-	#
-	# keyword:       blocking_pre_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource run action.
-	#         Errors interrupt the action.
-	#
-	;blocking_pre_run = foo
-	
-	#
-	# keyword:       blocking_post_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource run action. Errors
-	#         interrupt the action.
-	#
-	;blocking_post_run = foo
-	
-	#
-	# keyword:       unprovision_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
@@ -798,14 +516,14 @@ container.jail resource template
 	;unprovision_requires = 
 	
 	#
-	# keyword:       provision_requires
+	# keyword:          provision_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
@@ -815,14 +533,14 @@ container.jail resource template
 	;provision_requires = 
 	
 	#
-	# keyword:       start_requires
+	# keyword:          start_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
@@ -832,14 +550,14 @@ container.jail resource template
 	;start_requires = 
 	
 	#
-	# keyword:       stop_requires
+	# keyword:          stop_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
@@ -849,104 +567,24 @@ container.jail resource template
 	;stop_requires = 
 	
 	#
-	# keyword:       sync_nodes_requires
+	# keyword:          scsireserv
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        False
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
+	#  desc:  If set to 'true', OpenSVC will try to acquire a type-5 (write
+	#         exclusive, registrant only) scsi3 persistent reservation on every
+	#         path to every disks held by this resource. Existing reservations are
+	#         preempted to not block service start-up. If the start-up was not
+	#         legitimate the data are still protected from being written over from
+	#         both nodes. If set to 'false' or not set, 'scsireserv' can be
+	#         activated on a per-resource basis.
 	#
-	;sync_nodes_requires = 
-	
-	#
-	# keyword:       sync_drp_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are omitted, 'up,stdby up' is used as the default expected
-	#         states.
-	#
-	;sync_drp_requires = 
-	
-	#
-	# keyword:       sync_update_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_update_requires = 
-	
-	#
-	# keyword:       sync_break_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_break_requires = 
-	
-	#
-	# keyword:       sync_resync_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_resync_requires = 
-	
-	#
-	# keyword:       run_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are omitted, 'up,stdby up' is used as the default expected
-	#         states.
-	#
-	;run_requires = 
+	;scsireserv = False
 	

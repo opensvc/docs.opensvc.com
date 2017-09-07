@@ -14,43 +14,29 @@ stonith.callout resource template
 	;type = callout
 	
 	#
-	# keyword:       cmd
+	# keyword:          cmd
 	# ----------------------------------------------------------------------------
-	#  required:     True
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        True
+	#  provisioning:    False
+	#  default:         /bin/false
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  The command to execute on target to stonith.
 	#
-	;cmd = foo
+	;cmd = /bin/false
 	
 	#
-	# keyword:       target
+	# keyword:          restart
 	# ----------------------------------------------------------------------------
-	#  required:     True
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  The server management console to pass the stonith command to, as
-	#         defined in the corresponding auth.conf section title.
-	#
-	;target = foo
-	
-	#
-	# keyword:       restart
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      0
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         0
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         integer
 	#
 	#  desc:  The agent will try to restart a resource n times before falling back
 	#         to the monitor action.
@@ -58,14 +44,15 @@ stonith.callout resource template
 	;restart = 0
 	
 	#
-	# keyword:       tags
+	# keyword:          tags
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         set([])
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         set
 	#
 	#  desc:  A list of tags. Arbitrary tags can be used to limit action scope to
 	#         resources with a specific tag. Some tags can influence the driver
@@ -73,90 +60,66 @@ stonith.callout resource template
 	#         encapsulated service, 'noaction' avoids any state changing action
 	#         from the driver, 'nostatus' forces the status to n/a.
 	#
-	;tags = foo
+	;tags = set([])
 	
 	#
-	# keyword:       subset
+	# keyword:          subset
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf
+	#  scope order:     specific > generic
 	#
 	#  desc:  Assign the resource to a specific subset.
 	#
 	;subset = foo
 	
 	#
-	# keyword:       monitor
+	# keyword:          monitor
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
-	#  desc:  A monitored resource will trigger a node suicide if the service has
-	#         a heartbeat resource in up state
+	#  desc:  A down monitored resource will trigger a node suicide if the monitor
+	#         thinks it should be up and the resource can not be restarted.
 	#
 	;monitor = False
 	
 	#
-	# keyword:       disable
+	# keyword:          disable
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
 	#  desc:  A disabled resource will be ignored on service startup and shutdown.
 	#
 	;disable = False
 	
 	#
-	# keyword:       disable_on
+	# keyword:          optional
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      []
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  A whitelist-separated list of nodes to disable the resource on. A
-	#         disabled resource will be ignored on service startup and shutdown.
-	#
-	;disable_on = []
-	
-	#
-	# keyword:       enable_on
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      []
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     False
-	#
-	#  desc:  A whitelist-separated list of nodes to enable the resource on. Takes
-	#         precedence over disable and disable_on.
-	#
-	;enable_on = []
-	
-	#
-	# keyword:       optional
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      False
-	#  candidates:   True | False
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
 	#
 	#  desc:  Possible values are 'true' or 'false'. Actions on resource will be
 	#         tried upon service startup and shutdown, but action failures will be
@@ -166,31 +129,33 @@ stonith.callout resource template
 	;optional = False
 	
 	#
-	# keyword:       always_on
+	# keyword:          always_on
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   nodes | drpnodes | nodes drpnodes
-	#  depends:      None
-	#  scopable:     False
+	#  scopable:        False
+	#  required:        False
+	#  provisioning:    False
+	#  default:         []
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      nodes | drpnodes ...
+	#  convert:         list
 	#
 	#  desc:  Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a
 	#         list of nodes. Sets the nodes on which the resource is always kept
 	#         up. Primary usage is file synchronization receiving on non-shared
 	#         disks. Don't set this on shared disk !! danger !!
 	#
-	;always_on = nodes
+	;always_on = []
 	
 	#
-	# keyword:       pre_unprovision
+	# keyword:          pre_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource unprovision
 	#         action. Errors do not interrupt the action.
@@ -198,14 +163,14 @@ stonith.callout resource template
 	;pre_unprovision = foo
 	
 	#
-	# keyword:       post_unprovision
+	# keyword:          post_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource unprovision
 	#         action. Errors do not interrupt the action.
@@ -213,14 +178,14 @@ stonith.callout resource template
 	;post_unprovision = foo
 	
 	#
-	# keyword:       pre_provision
+	# keyword:          pre_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource provision action.
 	#         Errors do not interrupt the action.
@@ -228,14 +193,14 @@ stonith.callout resource template
 	;pre_provision = foo
 	
 	#
-	# keyword:       post_provision
+	# keyword:          post_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource provision action.
 	#         Errors do not interrupt the action.
@@ -243,14 +208,14 @@ stonith.callout resource template
 	;post_provision = foo
 	
 	#
-	# keyword:       pre_start
+	# keyword:          pre_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource start action.
 	#         Errors do not interrupt the action.
@@ -258,14 +223,14 @@ stonith.callout resource template
 	;pre_start = foo
 	
 	#
-	# keyword:       post_start
+	# keyword:          post_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource start action.
 	#         Errors do not interrupt the action.
@@ -273,14 +238,14 @@ stonith.callout resource template
 	;post_start = foo
 	
 	#
-	# keyword:       pre_stop
+	# keyword:          pre_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource stop action.
 	#         Errors do not interrupt the action.
@@ -288,14 +253,14 @@ stonith.callout resource template
 	;pre_stop = foo
 	
 	#
-	# keyword:       post_stop
+	# keyword:          post_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource stop action.
 	#         Errors do not interrupt the action.
@@ -303,164 +268,14 @@ stonith.callout resource template
 	;post_stop = foo
 	
 	#
-	# keyword:       pre_sync_nodes
+	# keyword:          blocking_pre_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_nodes
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_nodes = foo
-	
-	#
-	# keyword:       post_sync_nodes
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_nodes action.
-	#         Errors do not interrupt the action.
-	#
-	;post_sync_nodes = foo
-	
-	#
-	# keyword:       pre_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_drp action.
-	#         Errors do not interrupt the action.
-	#
-	;pre_sync_drp = foo
-	
-	#
-	# keyword:       post_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_drp action.
-	#         Errors do not interrupt the action.
-	#
-	;post_sync_drp = foo
-	
-	#
-	# keyword:       pre_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_resync
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_resync = foo
-	
-	#
-	# keyword:       post_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_resync
-	#         action. Errors do not interrupt the action.
-	#
-	;post_sync_resync = foo
-	
-	#
-	# keyword:       pre_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_update
-	#         action. Errors do not interrupt the action.
-	#
-	;pre_sync_update = foo
-	
-	#
-	# keyword:       post_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_update
-	#         action. Errors do not interrupt the action.
-	#
-	;post_sync_update = foo
-	
-	#
-	# keyword:       pre_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource run action.
-	#         Errors do not interrupt the action.
-	#
-	;pre_run = foo
-	
-	#
-	# keyword:       post_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource run action. Errors
-	#         do not interrupt the action.
-	#
-	;post_run = foo
-	
-	#
-	# keyword:       blocking_pre_unprovision
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource unprovision
 	#         action. Errors interrupt the action.
@@ -468,14 +283,14 @@ stonith.callout resource template
 	;blocking_pre_unprovision = foo
 	
 	#
-	# keyword:       blocking_post_unprovision
+	# keyword:          blocking_post_unprovision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource unprovision
 	#         action. Errors interrupt the action.
@@ -483,14 +298,14 @@ stonith.callout resource template
 	;blocking_post_unprovision = foo
 	
 	#
-	# keyword:       blocking_pre_provision
+	# keyword:          blocking_pre_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource provision action.
 	#         Errors interrupt the action.
@@ -498,14 +313,14 @@ stonith.callout resource template
 	;blocking_pre_provision = foo
 	
 	#
-	# keyword:       blocking_post_provision
+	# keyword:          blocking_post_provision
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource provision action.
 	#         Errors interrupt the action.
@@ -513,14 +328,14 @@ stonith.callout resource template
 	;blocking_post_provision = foo
 	
 	#
-	# keyword:       blocking_pre_start
+	# keyword:          blocking_pre_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource start action.
 	#         Errors interrupt the action.
@@ -528,14 +343,14 @@ stonith.callout resource template
 	;blocking_pre_start = foo
 	
 	#
-	# keyword:       blocking_post_start
+	# keyword:          blocking_post_start
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource start action.
 	#         Errors interrupt the action.
@@ -543,14 +358,14 @@ stonith.callout resource template
 	;blocking_post_start = foo
 	
 	#
-	# keyword:       blocking_pre_stop
+	# keyword:          blocking_pre_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute before the resource stop action.
 	#         Errors interrupt the action.
@@ -558,14 +373,14 @@ stonith.callout resource template
 	;blocking_pre_stop = foo
 	
 	#
-	# keyword:       blocking_post_stop
+	# keyword:          blocking_post_stop
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         None
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A command or script to execute after the resource stop action.
 	#         Errors interrupt the action.
@@ -573,164 +388,14 @@ stonith.callout resource template
 	;blocking_post_stop = foo
 	
 	#
-	# keyword:       blocking_pre_sync_nodes
+	# keyword:          unprovision_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_nodes
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_nodes = foo
-	
-	#
-	# keyword:       blocking_post_sync_nodes
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_nodes action.
-	#         Errors interrupt the action.
-	#
-	;blocking_post_sync_nodes = foo
-	
-	#
-	# keyword:       blocking_pre_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_drp action.
-	#         Errors interrupt the action.
-	#
-	;blocking_pre_sync_drp = foo
-	
-	#
-	# keyword:       blocking_post_sync_drp
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_drp action.
-	#         Errors interrupt the action.
-	#
-	;blocking_post_sync_drp = foo
-	
-	#
-	# keyword:       blocking_pre_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_resync
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_resync = foo
-	
-	#
-	# keyword:       blocking_post_sync_resync
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_resync
-	#         action. Errors interrupt the action.
-	#
-	;blocking_post_sync_resync = foo
-	
-	#
-	# keyword:       blocking_pre_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource sync_update
-	#         action. Errors interrupt the action.
-	#
-	;blocking_pre_sync_update = foo
-	
-	#
-	# keyword:       blocking_post_sync_update
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource sync_update
-	#         action. Errors interrupt the action.
-	#
-	;blocking_post_sync_update = foo
-	
-	#
-	# keyword:       blocking_pre_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute before the resource run action.
-	#         Errors interrupt the action.
-	#
-	;blocking_pre_run = foo
-	
-	#
-	# keyword:       blocking_post_run
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      None
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A command or script to execute after the resource run action. Errors
-	#         interrupt the action.
-	#
-	;blocking_post_run = foo
-	
-	#
-	# keyword:       unprovision_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'unprovision' action. A condition is expressed as
@@ -740,14 +405,14 @@ stonith.callout resource template
 	;unprovision_requires = 
 	
 	#
-	# keyword:       provision_requires
+	# keyword:          provision_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'provision' action. A condition is expressed as
@@ -757,14 +422,14 @@ stonith.callout resource template
 	;provision_requires = 
 	
 	#
-	# keyword:       start_requires
+	# keyword:          start_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'start' action. A condition is expressed as <rid>(<state>,...). If
@@ -774,14 +439,14 @@ stonith.callout resource template
 	;start_requires = 
 	
 	#
-	# keyword:       stop_requires
+	# keyword:          stop_requires
 	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
 	#
 	#  desc:  A whitespace-separated list of conditions to meet to accept running
 	#         a 'stop' action. A condition is expressed as <rid>(<state>,...). If
@@ -789,106 +454,4 @@ stonith.callout resource template
 	#         states.
 	#
 	;stop_requires = 
-	
-	#
-	# keyword:       sync_nodes_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_nodes' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_nodes_requires = 
-	
-	#
-	# keyword:       sync_drp_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_drp' action. A condition is expressed as <rid>(<state>,...).
-	#         If states are omitted, 'up,stdby up' is used as the default expected
-	#         states.
-	#
-	;sync_drp_requires = 
-	
-	#
-	# keyword:       sync_update_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_update' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_update_requires = 
-	
-	#
-	# keyword:       sync_break_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_break' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_break_requires = 
-	
-	#
-	# keyword:       sync_resync_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'sync_resync' action. A condition is expressed as
-	#         <rid>(<state>,...). If states are omitted, 'up,stdby up' is used as
-	#         the default expected states.
-	#
-	;sync_resync_requires = 
-	
-	#
-	# keyword:       run_requires
-	# ----------------------------------------------------------------------------
-	#  required:     False
-	#  provisioning: False
-	#  default:      
-	#  candidates:   None
-	#  depends:      None
-	#  scopable:     True
-	#
-	#  desc:  A whitespace-separated list of conditions to meet to accept running
-	#         a 'run' action. A condition is expressed as <rid>(<state>,...). If
-	#         states are omitted, 'up,stdby up' is used as the default expected
-	#         states.
-	#
-	;run_requires = 
 	

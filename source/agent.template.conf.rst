@@ -1,5 +1,5 @@
-Service configuration file template
-***********************************
+Service Configuration File Templates
+************************************
 
 Contents:
 
@@ -38,8 +38,44 @@ Contents:
    agent.template.disk.vg.conf
    agent.template.disk.vmdg.conf
    agent.template.disk.zpool.conf
+   agent.template.fs.bfs.conf
+   agent.template.fs.btrfs.conf
    agent.template.fs.conf
    agent.template.fs.directory.conf
+   agent.template.fs.ext.conf
+   agent.template.fs.ext2.conf
+   agent.template.fs.ext3.conf
+   agent.template.fs.ext4.conf
+   agent.template.fs.f2fs.conf
+   agent.template.fs.gfs.conf
+   agent.template.fs.gfs2.conf
+   agent.template.fs.gpfs.conf
+   agent.template.fs.hfs.conf
+   agent.template.fs.hfsplus.conf
+   agent.template.fs.hpfs.conf
+   agent.template.fs.jffs.conf
+   agent.template.fs.jffs2.conf
+   agent.template.fs.jfs.conf
+   agent.template.fs.jfs2.conf
+   agent.template.fs.logfs.conf
+   agent.template.fs.minix.conf
+   agent.template.fs.msdos.conf
+   agent.template.fs.nilfs.conf
+   agent.template.fs.ntfs.conf
+   agent.template.fs.ocfs.conf
+   agent.template.fs.ocfs2.conf
+   agent.template.fs.qnx4.conf
+   agent.template.fs.reiserfs.conf
+   agent.template.fs.reiserfs4.conf
+   agent.template.fs.tux3.conf
+   agent.template.fs.ufs.conf
+   agent.template.fs.ufs2.conf
+   agent.template.fs.umsdos.conf
+   agent.template.fs.vfat.conf
+   agent.template.fs.vxfs.conf
+   agent.template.fs.xfs.conf
+   agent.template.fs.xia.conf
+   agent.template.fs.zfs.conf
    agent.template.hb.LinuxHA.conf
    agent.template.hb.OpenHA.conf
    agent.template.hb.linuxha.conf
