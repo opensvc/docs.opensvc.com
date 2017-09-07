@@ -106,7 +106,7 @@ Service configuration file
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
 
 IBM DS flash copy configuration
-===========================
+===============================
 
 You have to create the persistent flash copy manually once. This requires two existing devices.
 
