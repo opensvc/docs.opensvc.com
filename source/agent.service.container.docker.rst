@@ -16,12 +16,12 @@ This tutorial is useful for all people who want to answer those questions :
 
 OpenSVC product will be used to encapsulate docker's containers like any other vm/container already supported (like kvm, xen, lxc, zones, jails, hpvm, ovm, ...)
 
-Installing Docker as an OpenSVC service
+Installing Docker as an OpenSVC Service
 =======================================
 
 Typical docker implementation is ensured by installing your favorite linux distribution packages. Basically they install Docker software, and some startup scripts to make all the stuff works. Let's setup Docker in an OpenSVC service. You may want to read `OpenSVC VM encapsulation introduction <howto.vmencap.html#introduction>`_ so as to understand why you have interest to do this way.
 
-Pre-requisites
+Pre-Requisites
 --------------
 
 * debian wheezy (or every linux distro known to work with Docker)
@@ -79,7 +79,7 @@ Quick links to OpenSVC software installation
 
         curl -o /tmp/opensvc.latest.rpm https://repo.opensvc.com/rpms/current && rpm -ivh /tmp/opensvc.latest.rpm
 
-Service configuration
+Service Configuration
 =====================
 
 Copy/Paste the service configuration file in folder ``<OSVCETC>`` and name it like ``servicename.env``. In the example below, we will name the service configuration file ``docker.opensvc.com.env``.
@@ -429,8 +429,8 @@ We stop the OpenSVC service with command ``service_name stop``.
 
 All services ressources are now stopped. If you want to play, you can re-issue command ``docker.opensvc.com start``. Just imagine how easy it could be if your OpenSVC service is made of 4 VG, 12 LV, 2 NFS mounts, 3 kvm virtual machines, 6 docker containers, still a single command to start or stop the overall ressources.
 
-About the promises
-==================
+See Also
+========
 
 .. toctree::
    :maxdepth: 1

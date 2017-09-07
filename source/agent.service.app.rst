@@ -1,4 +1,4 @@
-Service application launchers
+Service Application Launchers
 *****************************
 
 Introduction
@@ -27,10 +27,10 @@ For simple cases, the agent also supports a SysV-style launcher definitions.
 .. note::
 	SysV-style definitions can co-exist with non-conflicting app resources defined in the env file. In case of conflicting definitions, the env file definition takes precedence.
 
-Application resource definition
+Application Resource Definition
 ===============================
 
-Section syntax
+Section Syntax
 --------------
 
 Here is a complete application resource section:
@@ -90,8 +90,8 @@ All these parameters support scoping, using the ``@<nodename>``, ``@nodes``, ``@
 | limit_*    | string  | Refer to the OS ``man limits.conf``                                                         |
 +------------+---------+---------------------------------------------------------------------------------------------+
 
-About subsets
--------------
+App Subsets
+-----------
 
 * Actions on subsets are chained in alphanumeric subset name order on start, status and info.
 * Actions on subsets are chained in reverse alphanumeric subset name order on stop.
@@ -117,7 +117,7 @@ The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that 
 
 Environment variable named ``OPENSVC_IP<n>`` are also set to let app launchers bind the appropriate service ips, for services with instances on different subnets. For example, the service might have a different ip address when starting on the disaster recovery site.
 
-Launcher scripts development guidelines
+Launcher Scripts Development Guidelines
 =======================================
 
 A launcher script should support the following values for argument 1:

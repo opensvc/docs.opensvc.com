@@ -1,4 +1,6 @@
-Service parameters scoping
+.. _agent-service-scoping:
+
+Service Parameters Scoping
 **************************
 
 Most keywords in a service configuration support a scoping syntax allowing each node agent to interpret the value differently.
@@ -27,7 +29,7 @@ Supported scopes are:
 Examples
 --------
 
-Use a different fs type on DRP nodes
+Use a Different Fs Type on DRP Nodes
 ++++++++++++++++++++++++++++++++++++
 
 ::
@@ -41,7 +43,7 @@ Use a different fs type on DRP nodes
 	type@drpnodes = xfs
 	...
 
-Use a different nodes list at encapsulated level
+Use a Different Nodes List at Encapsulated Level
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 ::
@@ -52,7 +54,7 @@ Use a different nodes list at encapsulated level
 	nodes@encapnodes = vm1
 	...
 
-Disable a resource on a node
+Disable a Resource on a Node
 ++++++++++++++++++++++++++++
 
 ::

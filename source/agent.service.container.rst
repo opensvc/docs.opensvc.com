@@ -1,4 +1,4 @@
-Service container resources
+Service Container Resources
 ===========================
 
 Contents:

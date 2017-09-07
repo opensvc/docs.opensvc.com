@@ -1,4 +1,4 @@
-Service encapsulation
+Service Encapsulation
 *********************
 
 Introduction
@@ -19,14 +19,14 @@ Concepts
 * A service can drive different resources at the hypervisor level and at the encapsulated level
 * Encapsulated services need an OpenSVC agent on each hypervisor and each container
 
-Supported container resource types
+Supported Container Resource Types
 ==================================
 
 A service can drive simultaneously different container types.
 
 For example, a failover service can drive a LDOM on the production side and drive an OpenStack provisionned VM for disaster recovery.
 
-Hardware emulation
+Hardware Emulation
 ------------------
 
 * Esx
@@ -46,7 +46,7 @@ Containerization
 * FreeBSD Jails
 * OpenVZ
 
-Cloud-hosted
+Cloud-Hosted
 ------------
 
 * OpenStack
@@ -55,7 +55,7 @@ Cloud-hosted
 Topologies
 ==========
 
-Failover - Single node
+Failover - Single Node
 ----------------------
 
 The service at the hypervisor level drives a single container and its dependent resources. This service, in failover mode, will run the container on one of the cluster node. The service can be stopped and started on another cluster node to provide relocation, or live-migrated if the underlying technology permits.
@@ -99,6 +99,9 @@ And at the encapsulated level as::
 	[DEFAULT]
 	nodes = vm1
 
+.. seealso:: :ref:`agent-service-scoping`
+
+
 Resources
 ---------
 
@@ -117,14 +120,14 @@ Example::
 This filesystem is driven by the agent in vm1.
 
 
-Service configuration file replication
+Service Configuration File Replication
 ======================================
 
 The hypervisor running the container, or the flex_primary node, is the replication master. In encapsulated topologies, the replication master will not blindly copy the service env file to its peer nodes: it determines if the containers have a more recent version of the env file than itself. If so, it fetches the most recent env file from the containers before replication amongst cluster nodes and containers.
 
 This mecanism allows administrators to edit the env file from the containers without risking their change to be rolled back by the replication master.
 
-Service status
+Service Status
 ==============
 
 A simple encapsulated service, seen at the hypervisor level::
@@ -166,5 +169,5 @@ Commands
 
 Services with encapsulted resources can be started and stopped with the simple ``svcmgr -s <svcname> start`` and ``svcmgr -s <svcname> stop`` commands. Those commands chain the service action at the hypervisor level and at the encapsulated level.
 
-Actions limited to a subset of resources, like ``startfs`` or ``startip`` require the administrator to specify at which level they should occur using the ``--master``, ``slave <slave>`` or ``--slaves`` parameters.
+Actions limited to a subset of resources, like ``startfs`` or ``startip`` require the administrator to specify at which level they should occur using the ``--master``, ``--slave <slave>`` or ``--slaves`` parameters.
 

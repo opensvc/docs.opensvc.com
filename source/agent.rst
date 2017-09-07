@@ -18,10 +18,10 @@ Contents:
    agent.service.management
    agent.service.scoping
    agent.service.triggers
+   agent.service.encapsulation
    agent.service.ip
    agent.service.app
    agent.service.sync
-   agent.service.encapsulation
    agent.service.container
    agent.service.task
    agent.template.conf

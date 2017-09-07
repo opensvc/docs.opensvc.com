@@ -1,4 +1,4 @@
-Service ip resources
+Service Ip Resources
 ====================
 
 Introduction
@@ -32,7 +32,7 @@ Example non-containerized ip resource definition::
   ipname@drpnodes = ipname2
   ipdev = eth0
 
-Flex with instance ip
+Flex with Instance Ip
 *********************
 
 In this use-case, the middlewares are installed in the node either through operating system packages or as service-private binaries. They bind each service instance ip addresses.
@@ -48,7 +48,7 @@ Example non-containerized ip resource definition::
   ipname@node3 = ipname3
   ipdev = eth0
 
-Failover with application installed in a container
+Failover with Application Installed in a Container
 **************************************************
 
 In this use-case, the middlewares are installed in the container through operating system packages. They bind the container ip address.
@@ -61,7 +61,7 @@ Example configuration::
   [container#0]
   name = vm1
 
-Failover with application installed in a container with service encapsulation
+Failover with Application Installed in a Container with Service Encapsulation
 *****************************************************************************
 
 In this use-case, the middlewares are installed in the container through operating system packages or as service-private binaries. They bind the encapsulated service ip address. The service containers are set to start on each node just to highlight the fact that each container can have its own ip addresses. This can also be useful if you want sync resources at the encapsulated layer, as standby instance containers have to be running to receive the replication data.
@@ -80,7 +80,7 @@ Example configuration::
   ipdev = eth0
   tags = encap
 
-Failover with application installed as micro-containers
+Failover with Application Installed as Micro-Containers
 *******************************************************
 
 In this use-case, the middlewares are installed as docker micro-containers. The micro-containers share a common namespace through the ``--net`` run parameter. The service plumbs a public ip in this namespace. Exposed middlewares bind this to ip. Non exposed middlewares can still bind the loopback ip 127.0.0.1 to service the other middlewares.
