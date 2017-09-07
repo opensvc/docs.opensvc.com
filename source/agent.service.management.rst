@@ -385,44 +385,44 @@ Starting a service:
 ::
 
         $ sudo mysvc1.opensvc.com start --local
-        deb1.mysvc1.ip#1                  checking 128.0.1.124 availability
-        deb1.mysvc1.ip#1                  ifconfig lo:3 128.0.1.124 netmask 255.255.255.255 up
-        deb1.mysvc1.ip#1                  arping -U -c 1 -I lo -s 128.0.1.124 128.0.1.124
-        deb1.mysvc1.disk#1                loop /opt/disk1.dd is already up
-        deb1.mysvc1.disk#2                loop /opt/disk2.dd is already up
-        deb1.mysvc1.disk#3                vg vgtest is already up
-        deb1.mysvc1.fs#1                  e2fsck -p /dev/vgtest/lvtest1
-        deb1.mysvc1.fs#1                  output:
-        deb1.mysvc1.fs#1                  /dev/vgtest/lvtest1: clean, 18/3072 files, 1534/12288 blocks
-        deb1.mysvc1.fs#1                
-        deb1.mysvc1.fs#1                  mount -t ext4 -o rw /dev/vgtest/lvtest1 /opt/avn/lvtest1
-        deb1.mysvc1.fs#2                  e2fsck -p /dev/vgtest/lvtest2
-        deb1.mysvc1.fs#2                  output:
-        deb1.mysvc1.fs#2                  /dev/vgtest/lvtest2: clean, 13/3072 files, 12286/12288 blocks
-        deb1.mysvc1.fs#2                
-        deb1.mysvc1.fs#2                  mount -t ext4 -o rw /dev/vgtest/lvtest2 /opt/avn/lvtest2
-        deb1.mysvc1.fs#3                  e2fsck -p /dev/loop1
-        deb1.mysvc1.fs#3                  output:
-        deb1.mysvc1.fs#3                  testfs: clean, 13/12824 files, 27111/51200 blocks
-        deb1.mysvc1.fs#3                
-        deb1.mysvc1.fs#3                  mount -t ext4 -o rw /dev/loop1 /opt/avn/lvtest3
-        deb1.mysvc1.share#0               exportfs -o ro,fsid=0 p145.opensvc.com:/opt/avn/lvtest3
-        deb1.mysvc1.app#0                 exec /bin/true start as user root
-        deb1.mysvc1.app#0                 start done in 0:00:00.001864 - ret 0
+        deb1.mysvc1.ip#1        checking 128.0.1.124 availability
+        deb1.mysvc1.ip#1        ifconfig lo:3 128.0.1.124 netmask 255.255.255.255 up
+        deb1.mysvc1.ip#1        arping -U -c 1 -I lo -s 128.0.1.124 128.0.1.124
+        deb1.mysvc1.disk#1      loop /opt/disk1.dd is already up
+        deb1.mysvc1.disk#2      loop /opt/disk2.dd is already up
+        deb1.mysvc1.disk#3      vg vgtest is already up
+        deb1.mysvc1.fs#1        e2fsck -p /dev/vgtest/lvtest1
+        deb1.mysvc1.fs#1        output:
+        deb1.mysvc1.fs#1        /dev/vgtest/lvtest1: clean, 18/3072 files, 1534/12288 blocks
+        deb1.mysvc1.fs#1        
+        deb1.mysvc1.fs#1        mount -t ext4 -o rw /dev/vgtest/lvtest1 /opt/avn/lvtest1
+        deb1.mysvc1.fs#2        e2fsck -p /dev/vgtest/lvtest2
+        deb1.mysvc1.fs#2        output:
+        deb1.mysvc1.fs#2        /dev/vgtest/lvtest2: clean, 13/3072 files, 12286/12288 blocks
+        deb1.mysvc1.fs#2        
+        deb1.mysvc1.fs#2        mount -t ext4 -o rw /dev/vgtest/lvtest2 /opt/avn/lvtest2
+        deb1.mysvc1.fs#3        e2fsck -p /dev/loop1
+        deb1.mysvc1.fs#3        output:
+        deb1.mysvc1.fs#3        testfs: clean, 13/12824 files, 27111/51200 blocks
+        deb1.mysvc1.fs#3        
+        deb1.mysvc1.fs#3        mount -t ext4 -o rw /dev/loop1 /opt/avn/lvtest3
+        deb1.mysvc1.share#0     exportfs -o ro,fsid=0 p145.opensvc.com:/opt/avn/lvtest3
+        deb1.mysvc1.app#0       exec /bin/true start as user root
+        deb1.mysvc1.app#0       start done in 0:00:00.001864 - ret 0
 
 Stopping a service:
 
 ::
 
         $ sudo mysvc1.opensvc.com stop --local
-        deb1.mysvc1.app#0                 exec /bin/true stop as user root
-        deb1.mysvc1.app#0                 stop done in 0:00:00.004243 ret 0
-        deb1.mysvc1.share#0               exportfs -u p145.opensvc.com:/opt/avn/lvtest3
-        deb1.mysvc1.fs#3                  umount /opt/avn/lvtest3
-        deb1.mysvc1.fs#2                  umount /opt/avn/lvtest2
-        deb1.mysvc1.fs#1                  umount /opt/avn/lvtest1
-        deb1.mysvc1.disk#3                skip 'stop' on standby resource (--force to override)
-        deb1.mysvc1.disk#2                skip 'stop' on standby resource (--force to override)
-        deb1.mysvc1.disk#1                skip 'stop' on standby resource (--force to override)
-        deb1.mysvc1.ip#1                  ifconfig lo:3 down
+        deb1.mysvc1.app#0       exec /bin/true stop as user root
+        deb1.mysvc1.app#0       stop done in 0:00:00.004243 ret 0
+        deb1.mysvc1.share#0     exportfs -u p145.opensvc.com:/opt/avn/lvtest3
+        deb1.mysvc1.fs#3        umount /opt/avn/lvtest3
+        deb1.mysvc1.fs#2        umount /opt/avn/lvtest2
+        deb1.mysvc1.fs#1        umount /opt/avn/lvtest1
+        deb1.mysvc1.disk#3      skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.disk#2      skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.disk#1      skip 'stop' on standby resource (--force to override)
+        deb1.mysvc1.ip#1        ifconfig lo:3 down
 
