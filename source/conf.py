@@ -269,3 +269,8 @@ epub_copyright = u'2017, OpenSVC SARL'
 
 locale_dirs = ["translated/"]
 #language = "fr"
+
+rst_epilog = """
+.. |version| replace:: %(version)s
+""" % dict(version=version)
+

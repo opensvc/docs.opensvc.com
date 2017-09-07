@@ -10,19 +10,27 @@ Get
 
 Download the lastest OpenSVC package available for your operating system of choice from https://repo.opensvc.com.
 
-::
+.. raw:: html
 
-	# Red Hat, CentOS, Fedora, SuSe Linux
-	curl -o /tmp/opensvc.rpm https://repo.opensvc.com/rpms/current
+        <div class="highlight-none"><div class="highlight">
 
-	# Debian, Ubuntu Linux
-	curl -o /tmp/opensvc.latest https://repo.opensvc.com/deb/current
+.. parsed-literal::
 
-	# Solaris
-	curl -o /tmp/opensvc.latest https://repo.opensvc.com/sunos-pkg/current
+        # Red Hat, CentOS, Fedora, SuSe Linux
+        curl -o /tmp/opensvc.rpm https://repo.opensvc.com/rpms/|version|/current
 
-	# Mac OS X
-	curl -o /tmp/opensvc.latest https://repo.opensvc.com/macos-pkg/current
+        # Debian, Ubuntu Linux
+        curl -o /tmp/opensvc.latest https://repo.opensvc.com/deb/|version|/current
+
+        # Solaris
+        curl -o /tmp/opensvc.latest https://repo.opensvc.com/sunos-pkg/|version|/current
+
+        # Mac OS X
+        curl -o /tmp/opensvc.latest https://repo.opensvc.com/macos-pkg/|version|/current
+
+.. raw:: html
+
+        </div></div>
 
 .. note:: Depending on the operating system, and operating system version, you might need to download dependencies in the ``deps/`` subdirectory.
 
