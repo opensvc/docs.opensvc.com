@@ -10,6 +10,7 @@ Contents:
    agent.install
    agent.upgrade
    agent.configure
+   agent.configure.cluster
    agent.items
    agent.architecture
    agent.scheduler

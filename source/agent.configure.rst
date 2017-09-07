@@ -1,0 +1,336 @@
+.. index:: configuration
+
+.. _agent-configure:
+
+Agent Configuration
+*******************
+
+Set System Defaults
+===================
+
+On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/opensvc`` that supports defaults injection.
+
+Defaults file location:
+
+============= ============================
+System        Location
+============= ============================
+Debian-like   ``/etc/default/opensvc``
+Red Hat-like  ``/etc/sysconfig/opensvc``
+HP-UX         ``/etc/rc.config.d/opensvc``
+AIX           ``/etc/default/opensvc``
+SunOS         ``/etc/default/opensvc``
+Tru64         ``/etc/default/opensvc``
+FreeBSD       ``/etc/defaults/opensvc``
+Darwin        ``/etc/defaults/opensvc``
+============= ============================
+
+In this sourced file, you can export systems environment variables like ``LD_PRELOAD`` or ``LD_LIBRARY_PATH``, and set the following OpenSVC-specific variables.
+
+===================== ================= =======================================================================================
+Variable               Default           Role                                                                                  
+===================== ================= =======================================================================================
+``OSVC_BOOT_OPTS``                       Additional parameters passed to the 'svcmgr boot' command upon system startup         
+``OSVC_ROOT_PATH``                       Developpers can set this to their git repository to use the agent from there. If left 
+                                         unset, the agent file are expected in the Filesystem Hierarchy Standard locations.    
+``OSVC_PYTHON``        ``python``        Define which python executable to use. ex: /usr/local/python-2.7.3/bin/python         
+``OSVC_PYTHON_ARGS``                     Additional parameters passed to the python interpreter. ex: debug parameters          
+===================== ================= =======================================================================================
+
+
+Set Node Environment
+====================
+
+::
+
+	sudo nodemgr set --param node.env --value PRD
+
+The ``env`` setting is used to enforce the following policies:
+
+*   Only PRD services are allowed to start on a PRD node
+*   Only PRD nodes are allowed to push data to a PRD node
+
+Supported ``env`` values:
+
+========== =========== ====================
+Env        Behaves As  Description
+========== =========== ====================
+PRD        PRD         Production
+PPRD       PRD         Pre Production
+REC        not PRD     Prod-like testing
+INT        not PRD     Integration
+DEV        not PRD     Development
+TST        not PRD     Testing
+TMP        not PRD     Temporary
+DRP        not PRD     Disaster recovery
+FOR        not PRD     Training
+PRA        not PRD     Disaster recovery
+PRJ        not PRD     Project
+STG        not PRD     Staging
+========== =========== ====================
+
+.. note:: The setting is stored in ``<OSVCETC>/node.conf``.
+
+Set Schedules
+=============
+
+The agent executes periodic tasks. All tasks have a default schedule, which you may want to change.
+
+A schedule configuration can be applied using
+
+::
+
+	sudo nodemgr set --param brocade.schedule --value "02:00-04:00@120 sat,sun"
+
+Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command would produce this section:
+
+::
+
+	[brocade]
+        schedule = 02:00-04:00@120 sat,sun
+
+The live scheduler configuration and states can be extracted with
+
+::
+
+	# nodemgr print schedule
+	action                 last run               config parameter          schedule definition
+	------                 --------               ----------------          -------------------
+	auto_reboot            -                      reboot.schedule           -
+	auto_rotate_root_pw    -                      rotate_root_pw.schedule   -
+	checks                 -                      checks.schedule           00:00-06:00@361 mon-sun
+	collect_stats          -                      stats_collection.schedule  @10
+	compliance_auto        2016-08-05 11:57:01    compliance.schedule       @1440
+	dequeue_actions        -                      dequeue_actions.schedule  -
+	pushasset              -                      asset.schedule            00:00-06:00@361 mon-sun
+	pushbrocade            -                      brocade.schedule          -
+	pushcentera            -                      centera.schedule          -
+	pushdcs                -                      dcs.schedule              -
+	pushdisks              -                      disks.schedule            00:00-06:00@361 mon-sun
+	pushemcvnx             -                      emcvnx.schedule           -
+	pusheva                -                      eva.schedule              -
+	pushfreenas            -                      freenas.schedule          -
+	pushgcedisks           -                      gcedisks.schedule         -
+	pushhds                -                      hds.schedule              -
+	pushhp3par             -                      hp3par.schedule           -
+	pushibmds              -                      ibmds.schedule            -
+	pushibmsvc             -                      ibmsvc.schedule           -
+	pushnecism             -                      necism.schedule           -
+	pushnetapp             -                      netapp.schedule           -
+	pushnsr                -                      nsr.schedule              -
+	pushpatch              -                      patches.schedule          00:00-06:00@361 mon-sun
+	pushpkg                -                      packages.schedule         00:00-06:00@361 mon-sun
+	pushstats              2016-08-05 13:10:01    stats.schedule            @60
+	pushsym                -                      sym.schedule              -
+	pushvioserver          -                      vioserver.schedule        -
+	sysreport              -                      sysreport.schedule        00:00-06:00@361 mon-sun
+
+
+.. seealso:: :ref:`agent-scheduler`
+
+Register on a Collector
+=======================
+
+Set a Collector Url
+-------------------
+
+By default, the agent does not communicate with a collector.
+
+To enable communications with a collector, the ``node.dbopensvc`` node configuration parameter must be set. The simplest expression is:
+
+::
+
+	sudo nodemgr set --param node.dbopensvc --value collector.opensvc.com
+
+Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
+
+.. rst-class:: html-toggle
+
+Advanced Url Formats
+++++++++++++++++++++
+
+The following expressions are also supported:
+
+::
+
+	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com
+	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
+
+The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcompliance`` can be set to override the default, which is deduced from the ``node.dbopensvc`` value.
+
+::
+
+	sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
+
+Register the Node
+-----------------
+
+The collector requires the nodes to provide an authentication token (shared secret) with each request. The token is forged by the collector and stored on the node in ``<OSVCETC>/node.conf``. The token initialization is handled by the command:
+
+::
+
+	sudo nodemgr register
+
+Collectors in SaaS mode, like https://collector.opensvc.com, require that you prove your identity. The command is thus::
+
+	sudo nodemgr register --user my.self@my.com [--app MYAPP]
+
+If ``--app`` is not specified the collector automatically choose one the user is responsible of.
+
+A successful register is followed by a node discovery, so the collector has detailled information about the node and can serve contextualized compliance rulesets up front. The discovery is also scheduled daily, and can be manually replayed with:
+
+::
+
+	sudo nodemgr pushasset
+	sudo nodemgr pushpkg
+	sudo nodemgr pushpatch
+	sudo nodemgr pushstats
+	sudo nodemgr checks
+	sudo svcmgr push
+
+
+To disable collector communications, use:
+
+::
+
+	<OSVCROOT>/bin/nodemgr unset --param node.dbopensvc
+	<OSVCROOT>/bin/nodemgr unset --param node.dbcompliance
+
+Extra System Configurations
+===========================
+
+.. rst-class:: html-toggle
+
+HP-UX
+-----
+
+The python package provided by HP will output garbage on exec because it won't find terminfo at the expected places. To fix that, you have to export ``TERMINFO=/usr/share/lib/terminfo`` from ``/etc/profile``
+
+The HP-UX base system does not provide tools to handle scsi persistent reservations. You have to install the scu tool if you want to activate this feature.
+
+.. rst-class:: html-toggle
+
+Linux LVM2
+----------
+
+OpenSVC controls volume group activation and desactivation. Most Linux distributions activate all visible volume groups at boot, some even re-activate them upon de-activation events. These mecanisms can be disabled using the following setup. It also provides another protection against unwanted volume group activation from a secondary cluster node.
+
+This setup tells LVM2 commands to activate only the objects tagged with the hostname. Opensvc makes sure the tags are set on start and unset on stop. Opensvc also purges all tags before adding the one it needs to activate a volume group, so opensvc can satisfy a start request on a service uncleanly shut down.
+
+/etc/lvm/lvm.conf
++++++++++++++++++
+
+Add the following root-level configuration node:
+
+::
+
+	tags {
+	    hosttags = 1
+	    local {}
+	}
+
+And add the ``local`` tag to all local volume groups. For example:
+
+::
+
+	vgchange --addtag local rootvg
+
+Finally you need to rebuild the initrd/initramfs to prevent shared vg activation at boot.
+
+/etc/lvm/lvm_{node}.conf
+++++++++++++++++++++++++
+
+Create this file, {node} being the output of uname -n and add the following configuration:
+
+::
+
+	activation { volume_list = ["@local", "@{node}"] }
+
+.. rst-class:: html-toggle
+
+Windows
+-------
+
+Dependencies
+++++++++++++
+
+The OpenSVC agent on Windows depends on:
+
+- Python 2.6+
+
+- Python win32 library
+
+- Microsoft fcinfo for Fibre Channel SAN reporting (optional)
+
+
+The provided OpenSVC executable installer brings everything except fcinfo tool.
+
+
+Silent Install
+++++++++++++++
+
+It's possible to trigger a silent install by using the /S (uppercase) command line switch:
+
+::
+	
+	OpenSVC.X.Y.exe /S
+
+There's also a command line option to specify the target installation folder (no quotes in folder name even with spaces inside):
+
+::
+
+	OpenSVC.X.Y.exe /S  /D=C:\My Path with spaces
+
+Graphical Install
++++++++++++++++++
+	
+Double click on OpenSVC.X.Y.exe and follow install wizard
+
+Upgrade
++++++++
+
+Upgrading the OpenSVC package manually is the same as an installation from scratch:
+
+::
+
+	OpenSVC.X.Z.exe /S
+
+The installer deals with installation directory detection, and upgrade software in the accurate folder. It's still a best practice to have a system/data backup before upgrading OpenSVC software.
+
+.. rst-class:: html-toggle
+
+Mac OS X
+--------
+
+CLI Install
++++++++++++
+
+::
+
+        curl -o /tmp/opensvc.latest.pkg https://repo.opensvc.com/macos-pkg/current  
+        installer -pkg /tmp/opensvc.latest.pkg  -target /
+
+
+CLI Uninstall
++++++++++++++
+
+As Mac OS does not provide a clean way to remove packages, we do it by ourselves
+
+.. warning:: Backup any configuration file in <OSVCETC> before removing them from the hard disk drive
+
+::
+        
+        rm -f /Library/LaunchDaemons/com.opensvc.svcmgr.plist
+        pkgutil --forget com.opensvc.agent
+
+CLI Upgrade
++++++++++++
+
+As other OS flavors, agent upgrade can be triggered by
+
+::
+
+        sudo nodemgr updatepkg
+
+.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file. Example: ``sudo nodemgr set`` ``--param node.repopkg`` ``--value https://repo.opensvc.com/``
+
