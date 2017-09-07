@@ -1,4 +1,4 @@
-Man pages
+Man Pages
 =========
 
 Contents:

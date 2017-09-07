@@ -1038,9 +1038,41 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr logs
+	       nodemgr freeze
 	
-	              fancy display of the node logs
+	              freeze  services  node-wide,  preventing  the daemon to orchestrate them.
+	              this freeze method preserves the  frozen  state  at  service-level  (with
+	              svcmgr).
+	
+	              --local
+	                     Set to disable cluster-wide operations.
+	
+	              --time=TIME
+	                     Number  of  seconds to wait for an async action to finish. Default
+	                     is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr frozen
+	
+	              return 0 if all the services are frozen node-wide, preventing the  daemon
+	              to orchestrate them. return 1 otherwise
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -1058,9 +1090,38 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr print schedule
+	       nodemgr logs
 	
-	              print the node tasks schedule
+	              fancy display of the node logs
+	
+	              --no-pager
+	                     do not display the command result in a pager.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr print devs
+	
+	              print the node devices tree.
+	
+	              --dev=DEVICES
+	                     a device path to limit or apply the action to
+	
+	              --reverse
+	                     reverse the tree
 	
 	              --verbose
 	                     add  more  information  to  some  print  commands: +next in 'print
@@ -1082,12 +1143,16 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr reboot
+	       nodemgr print schedule
 	
-	              reboot the node
+	              print the node tasks schedule
+	
+	              --verbose
+	                     add more information to  some  print  commands:  +next  in  'print
+	                     schedule'
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1096,7 +1161,27 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr reboot
+	
+	              reboot the node
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1107,7 +1192,7 @@ nodemgr manpage
 	              set a new root password and store it in the collector
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1116,7 +1201,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1127,37 +1212,16 @@ nodemgr manpage
 	              scan the scsi hosts in search of new disks
 	
 	              --hba=HBA
-	                     specify  a  hba  to  scan  for   new   block   devices.   Example:
+	                     specify   a   hba   to   scan  for  new  block  devices.  Example:
 	                     5001438002432430 or iqn.1993-08.org.debian:01:659b4bbd68bd
 	
 	              --target=TARGET
-	                     specify   a  target  to  scan  for  new  block  devices.  Example:
+	                     specify  a  target  to  scan  for  new  block  devices.   Example:
 	                     5000097358185088 or iqn.clementine.tgt1
 	
 	              --lun=LUN
 	                     specify a logical unit number to scan for new block devices. Exam‐
 	                     ple: 1
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr schedule reboot
-	
-	              mark  the  node for reboot at the next allowed period. the allowed period
-	              is defined by a "reboot" section in node.conf.
 	
 	              --color=COLOR
 	                     colorize output. possible values are :  auto=guess  based  on  tty
@@ -1170,6 +1234,27 @@ nodemgr manpage
 	
 	              --format=FORMAT
 	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr schedule reboot
+	
+	              mark the node for reboot at the next allowed period. the  allowed  period
+	              is defined by a "reboot" section in node.conf.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1180,7 +1265,7 @@ nodemgr manpage
 	              tell if the node is scheduled for reboot
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1189,7 +1274,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1198,27 +1283,6 @@ nodemgr manpage
 	       nodemgr scheduler
 	
 	              run the node task scheduler
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr schedulers
-	
-	              execute a run of  the  node  and  services  schedulers.  this  action  is
-	              installed in the system scheduler
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -1236,9 +1300,61 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
+	       nodemgr schedulers
+	
+	              execute  a  run  of  the  node  and  services  schedulers. this action is
+	              installed in the system scheduler
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
 	       nodemgr shutdown
 	
 	              shutdown the node to powered off state
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr thaw
+	
+	              thaw services node-wide, allowing the daemon to  orchestrate  them.  this
+	              thaw method does not actually thaw services frozen at service-level (with
+	              svcmgr).
+	
+	              --local
+	                     Set to disable cluster-wide operations.
+	
+	              --time=TIME
+	                     Number of seconds to wait for an async action to  finish.  Default
+	                     is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -1502,6 +1618,19 @@ nodemgr manpage
 	                     set a node configuration parameter value  for  the  'set  --param'
 	                     action
 	
+	              --add=ADD
+	                     a  list  member  to add from the value pointed by --param in a set
+	                     action. If --index is set, add the new element at that position in
+	                     the list
+	
+	              --remove=REMOVE
+	                     a  list  member to drop from the value pointed by --param in a set
+	                     action
+	
+	              --index=INDEX
+	                     the position in the list pointed by --param where to add  the  new
+	                     element on a set action
+	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
@@ -1542,11 +1671,11 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	                     PUSH DATA TO THE COLLECTOR
+	                     NODE DAEMON MANAGEMENT
 	
-	       nodemgr checks
+	       nodemgr daemon blacklist clear
 	
-	              run node sanity checks, push results to collector
+	              empty the content of the daemon senders blacklist.
 	
 	              --color=COLOR
 	                     colorize output. possible values are :  auto=guess  based  on  tty
@@ -1564,12 +1693,146 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr pushasset
+	       nodemgr daemon blacklist status
 	
-	              push asset information to collector
+	              show the content of the daemon senders blacklist.
 	
-	              --sync use synchronous collector rpc. to use when chaining  a  compliance
-	                     run, to make sure the node ruleset is up-to-date.
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon join
+	
+	              join the node, specified by --node <node>, cluster.
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --secret=SECRET
+	                     the  cluster  secret used as the AES key in the cluster communica‐
+	                     tions.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon leave
+	
+	              inform peer nodes we leave the cluster. make sure the left nodes  are  no
+	              longer  in  the  services  nodes  list before leaving, so the other nodes
+	              won't takeover
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon restart
+	
+	              restart the daemon.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon running
+	
+	              return with code 0 if the daemon is running, else return with code 1
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon shutdown
+	
+	              stop all local services instances then stop the daemon.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon start
+	
+	              start the daemon or a daemon thread pointed by --thread-id.
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --thread-id=THR_ID
+	                     specify a daemon thread, as listed in the daemon status output
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -1582,6 +1845,102 @@ nodemgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon status
+	
+	              display the daemon status.
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr daemon stop
+	
+	              stop the daemon or a daemon thread pointed by --thread-id.
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --thread-id=THR_ID
+	                     specify a daemon thread, as listed in the daemon status output
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	                     PUSH DATA TO THE COLLECTOR
+	
+	       nodemgr checks
+	
+	              run node sanity checks, push results to collector
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr pushasset
+	
+	              push asset information to collector
+	
+	              --sync use  synchronous  collector rpc. to use when chaining a compliance
+	                     run, to make sure the node ruleset is up-to-date.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1592,11 +1951,11 @@ nodemgr manpage
 	              push Brocade switch configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1605,7 +1964,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1616,11 +1975,11 @@ nodemgr manpage
 	              push EMC Centera configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1629,7 +1988,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1640,11 +1999,11 @@ nodemgr manpage
 	              push Datacore configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1653,7 +2012,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1664,7 +2023,7 @@ nodemgr manpage
 	              push disks usage information to collector
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1673,7 +2032,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1684,11 +2043,11 @@ nodemgr manpage
 	              push EMC CX/VNX configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1697,7 +2056,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1708,11 +2067,11 @@ nodemgr manpage
 	              push HP EVA configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1721,7 +2080,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1732,11 +2091,11 @@ nodemgr manpage
 	              push FreeNAS configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1745,7 +2104,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1756,11 +2115,11 @@ nodemgr manpage
 	              push Google Compute Engine disks configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1769,7 +2128,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1780,11 +2139,11 @@ nodemgr manpage
 	              push HDS configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1793,7 +2152,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1804,11 +2163,11 @@ nodemgr manpage
 	              push HP 3par configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1817,7 +2176,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1828,11 +2187,11 @@ nodemgr manpage
 	              push IBM DS configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1841,7 +2200,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1852,11 +2211,11 @@ nodemgr manpage
 	              push IBM SVC configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1865,7 +2224,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1876,11 +2235,11 @@ nodemgr manpage
 	              push NEC ISM configuration to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1889,7 +2248,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1900,11 +2259,11 @@ nodemgr manpage
 	              push Netapp configuration to collector
 	
 	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
+	                     an object to limit a push* action to.  multiple  --object  <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1913,7 +2272,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1924,11 +2283,11 @@ nodemgr manpage
 	              push EMC Networker index to collector
 	
 	              --object=OBJECTS
-	                     an object to limit a push* action to.  multiple  --object  <object
+	                     an  object  to  limit a push* action to. multiple --object <object
 	                     id> parameters can be set on a single command line
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1937,7 +2296,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1948,7 +2307,7 @@ nodemgr manpage
 	              push patch/version list to collector
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1957,7 +2316,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1966,70 +2325,6 @@ nodemgr manpage
 	       nodemgr pushpkg
 	
 	              push package/version list to collector
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr pushstats
-	
-	              push  performance  metrics to collector. By default pushed stats interval
-	              begins yesterday at the beginning of the allowed interval and  ends  now.
-	              This interval can be changed using --begin/--end parameters. The location
-	              where stats files are looked up can be changed using --stats-dir.
-	
-	              --begin=BEGIN
-	                     a begin date expressed as 'YYYY-MM-DD hh:mm'. used with the  'col‐
-	                     lector ack action' and pushstats action
-	
-	              --end=END
-	                     a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collec‐
-	                     tor ack action' and pushstats action
-	
-	              --stats-dir=STATS_DIR
-	                     points the directory where the metrics files are stored for  push‐
-	                     stats
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr pushsym
-	
-	              push symmetrix configuration to collector
-	
-	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
-	                     id> parameters can be set on a single command line
-	
-	              --symcli-db-file=SYMCLI_DB_FILE
-	                     [pushsym option] use symcli offline mode with the specified  file.
-	                     aclx  files  are  expected  to  be found in the same directory and
-	                     named either <symid>.aclx or <same_prefix_as_bin_file>.aclx
 	
 	              --color=COLOR
 	                     colorize output. possible values are :  auto=guess  based  on  tty
@@ -2047,9 +2342,97 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
+	       nodemgr pushstats
+	
+	              push performance metrics to collector. By default pushed  stats  interval
+	              begins  yesterday  at the beginning of the allowed interval and ends now.
+	              This interval can be changed using --begin/--end parameters. The location
+	              where stats files are looked up can be changed using --stats-dir.
+	
+	              --begin=BEGIN
+	                     a  begin date expressed as 'YYYY-MM-DD hh:mm'. used with the 'col‐
+	                     lector ack action' and pushstats action
+	
+	              --end=END
+	                     a end date expressed as 'YYYY-MM-DD hh:mm'. used with the 'collec‐
+	                     tor ack action' and pushstats action
+	
+	              --stats-dir=STATS_DIR
+	                     points  the directory where the metrics files are stored for push‐
+	                     stats.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr pushsym
+	
+	              push symmetrix configuration to collector
+	
+	              --object=OBJECTS
+	                     an object to limit a push* action to.  multiple  --object  <object
+	                     id> parameters can be set on a single command line
+	
+	              --symcli-db-file=SYMCLI_DB_FILE
+	                     [pushsym  option] use symcli offline mode with the specified file.
+	                     aclx files are expected to be found  in  the  same  directory  and
+	                     named either <symid>.aclx or <same_prefix_as_bin_file>.aclx
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
 	       nodemgr pushvioserver
 	
 	              push IBM VIO server configuration to collector
+	
+	              --object=OBJECTS
+	                     an  object  to  limit a push* action to. multiple --object <object
+	                     id> parameters can be set on a single command line
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr pushxtremio
+	
+	              push XtremIO configuration to collector
 	
 	              --object=OBJECTS
 	                     an object to limit a push* action to.  multiple  --object  <object
@@ -2071,36 +2454,12 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr pushxtremio
-	
-	              push XtremIO configuration to collector
-	
-	              --object=OBJECTS
-	                     an  object  to  limit a push* action to. multiple --object <object
-	                     id> parameters can be set on a single command line
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
 	       nodemgr sysreport
 	
 	              push system report to the collector for archiving and diff analysis
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -2109,7 +2468,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -2122,7 +2481,7 @@ nodemgr manpage
 	              discover vservices accessible from this host, cloud nodes for example
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -2131,7 +2490,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -2144,4 +2503,4 @@ nodemgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-04-22                            NODEMGR(1)
+	                                       2017-08-02                            NODEMGR(1)

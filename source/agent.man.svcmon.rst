@@ -24,30 +24,8 @@ svcmon manpage
 	       -h, --help
 	              show this help message and exit
 	
-	       -s PARM_SVCS, --service=PARM_SVCS
-	              comma-separated list of service to display status of
-	
-	       --refresh
-	              do not use resource status cache
-	
-	       --updatedb
-	              update resource status in central database
-	
-	       -v, --verbose
-	              display resource groups status for each selected service
-	
-	       --maxdelaydb=DELAY
-	              introduce a random delay before pushing to database to level the load  on
-	              the collector
-	
-	       --debug
-	              debug mode
-	
-	       -c, --cluster
-	              fetch and display cluster-wide service status from the collector.
-	
 	       --color=COLOR
-	              colorize  output. possible values are : auto=guess based on tty presence,
+	              colorize output. possible values are : auto=guess based on tty  presence,
 	              always|yes=always colorize, never|no=never colorize
 	
 	SEE ALSO
@@ -56,4 +34,4 @@ svcmon manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-04-22                             SVCMON(1)
+	                                       2017-08-02                             SVCMON(1)
