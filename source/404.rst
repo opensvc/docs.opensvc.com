@@ -3,18 +3,6 @@ Page Not Found
 
 Sorry, the page you requested was not found.
 
-Contents
---------
-
-.. toctree::
-   :maxdepth: 2
-
-   introduction
-   contribute
-   agent
-   collector
-   compliance
-   knowledge.base
-   howto
-
-
+.. image:: _static/404.png
+   :scale: 100
+   :align: center
