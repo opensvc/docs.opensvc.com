@@ -19,6 +19,7 @@ Contents:
    agent.service.scoping
    agent.service.triggers
    agent.service.encapsulation
+   agent.service.orchestration
    agent.service.ip
    agent.service.app
    agent.service.sync
