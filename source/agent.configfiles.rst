@@ -1,4 +1,4 @@
-Agent configuration files
+Agent Configuration Files
 *************************
 
 The agent uses two configuration files, deployed in ``<OSVCETC>``.

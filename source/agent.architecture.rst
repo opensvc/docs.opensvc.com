@@ -1,7 +1,7 @@
-Agent architecture
+Agent Architecture
 ******************
 
-The scheduler entry-point
+The Scheduler Entry-Point
 =========================
 
 The OpenSVC daemon runs the node scheduler every minute, which in turn runs each service schedulers in separate threads.
@@ -10,7 +10,7 @@ Each task of the node scheduler can be executed directly through the nodemgr com
 
 Most tasks produce data sent to the collector for site-level aggregation.
 
-Node scheduler tasks
+Node Scheduler Tasks
 ++++++++++++++++++++
 
 The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the ``schedule`` parameter. The section name is visible in ``sudo nodemgr print schedule`` output in the ``config parameter`` column.
@@ -45,7 +45,7 @@ The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each 
   pushvioserver         2015-02-25 17:17:15    vioserver.schedule        -
   sysreport             2015-09-22 02:00:02    sysreport.schedule        00:00-06:00@361 mon-sun
 
-Service scheduler tasks
+Service Scheduler Tasks
 +++++++++++++++++++++++
 
 A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in ``sudo svcmgr -s <svcname> print schedule`` output in the ``config parameter`` column.
@@ -68,7 +68,7 @@ A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. 
 
 Here, the ``push_appinfo`` and ``syncall`` tasks are mapped over respectivelly app and sync resources. Hence their number vary depending on the service configuration.
 
-The listener entry-point
+The Listener Entry-Point
 ========================
 
 The listener port is defined in ``node.conf`` through the ``node.listener`` parameter. When the daemon listener receives an empty packet, it executes the ``nodemgr dequeue actions`` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.

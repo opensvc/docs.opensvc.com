@@ -1,7 +1,7 @@
 .. _agent.update:
 .. index:: update, repository, mirror
 
-Agent updates
+Agent Updates
 *************
 
 Introduction
@@ -15,7 +15,7 @@ OpenSVC provides packages for all supported operating systems at https://repo.op
 
 This chapter describes the last method.
 
-Initialize the mirror
+Initialize the Mirror
 =====================
 
 A mirror can be set up using:
@@ -40,14 +40,14 @@ The resulting file tree must organized as:
 	 +- opensvc-1.4-50.rpm
 	+- tbz/
 
-Set up the published versions
+Set Up the Published Versions
 =============================
 
 The OpenSVC agent downloads the file pointed by the link named ``current`` under the package category supported by the operating system running the agent. For example a Solaris host executing 'nodemgr updatepkg' would try to download pkg/current.
 
 After the mirror initialization, you have to update the current links according to your own policies. Beware, the mirroring step may have installed current links pointing to the lastest available agent packages.
 
-Set up the agents
+Set Up the Agents
 =================
 
 The repository must be known to the agent. This set up is done with either the node.repo or the node.repopkg ``node.conf`` parameters.
@@ -66,7 +66,7 @@ Example:
 
 	nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
 
-Updating the agent
+Updating the Agent
 ==================
 
 The update command is:

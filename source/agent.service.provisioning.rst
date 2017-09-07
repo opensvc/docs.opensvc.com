@@ -1,4 +1,6 @@
-Service provisioning
+.. _agent-service-provisioning:
+
+Service Provisioning
 ********************
 
 Introduction
@@ -15,80 +17,72 @@ This section describes:
 Provisioners
 ============
 
-Each resource driver can implement a provisioner, but not all resources actually do. The list of resources supporting provisioning::
+Each resource driver can implement a provisioner, but not all resources actually do. The list of resources supporting provisioning keywords::
 
-	$ grep -l "provisioning: True" <OSVCDOC>/template.*conf 
-	usr/share/doc/template.container.esx.conf
-	usr/share/doc/template.container.kvm.conf
-	usr/share/doc/template.container.lxc.conf
-	usr/share/doc/template.container.ovm.conf
-	usr/share/doc/template.container.srp.conf
-	usr/share/doc/template.container.vz.conf
-	usr/share/doc/template.container.xen.conf
-	usr/share/doc/template.container.zone.conf
-	usr/share/doc/template.disk.disk.conf
-	usr/share/doc/template.disk.gce.conf
-	usr/share/doc/template.disk.loop.conf
-	usr/share/doc/template.disk.lvm.conf
-	usr/share/doc/template.disk.md.conf
-	usr/share/doc/template.disk.rados.conf
-	usr/share/doc/template.disk.vg.conf
-	usr/share/doc/template.disk.zpool.conf
-	usr/share/doc/template.fs.conf
-	usr/share/doc/template.ip.amazon.conf
-	usr/share/doc/template.ip.conf
+        $ egrep -l "provisioning:\s*True" <OSVCDOC>/template.*conf \
+            | sed -e "s@<OSVCDOC>/template.@@" -e "s@.conf@@"
+        container.esx
+        container.kvm
+        container.lxc
+        container.ovm
+        container.srp
+        container.vz
+        container.xen
+        container.zone
+        disk.disk
+        disk.gce
+        disk.loop
+        disk.lvm
+        disk.md
+        disk.rados
+        disk.vg
+        disk.zpool
+        fs.bfs
+        fs.btrfs
+        fs
+        fs.ext2
+        fs.ext3
+        fs.ext4
+        fs.ext
+        fs.f2fs
+        fs.gfs2
+        fs.gfs
+        fs.gpfs
+        fs.hfs
+        fs.hfsplus
+        fs.hpfs
+        fs.jffs2
+        fs.jffs
+        fs.jfs2
+        fs.jfs
+        fs.logfs
+        fs.minix
+        fs.msdos
+        fs.nilfs
+        fs.ntfs
+        fs.ocfs2
+        fs.ocfs
+        fs.qnx4
+        fs.reiserfs4
+        fs.reiserfs
+        fs.tux3
+        fs.ufs2
+        fs.ufs
+        fs.umsdos
+        fs.vfat
+        fs.vxfs
+        fs.xfs
+        fs.xia
+        fs.zfs
+        ip.amazon
+        ip
 
-The resource provisioner may need additional parameters. The resource configuration templates in ``<OSVCDOC>`` highlight these particular parameters with ``provisioning = True``. The list of provisioning parameters can thus be extracted using::
+Each resource provisioner may require or support additional parameters. The resource configuration templates in ``<OSVCDOC>`` highlight these particular parameters with ``provisioning = True``. The list of provisioning keywords of the ``fs.xfs`` driver can thus be extracted using::
 
-	$ grep -B 3 "provisioning: True" <OSVCDOC>/template.*conf | grep keyword
-	usr/share/doc/template.container.esx.conf-# keyword:       snap
-	usr/share/doc/template.container.esx.conf-# keyword:       snapof
-	usr/share/doc/template.container.kvm.conf-# keyword:       virtinst
-	usr/share/doc/template.container.kvm.conf-# keyword:       snap
-	usr/share/doc/template.container.kvm.conf-# keyword:       snapof
-	usr/share/doc/template.container.lxc.conf-# keyword:       rootfs
-	usr/share/doc/template.container.lxc.conf-# keyword:       cf
-	usr/share/doc/template.container.lxc.conf-# keyword:       template
-	usr/share/doc/template.container.ovm.conf-# keyword:       virtinst
-	usr/share/doc/template.container.ovm.conf-# keyword:       snap
-	usr/share/doc/template.container.ovm.conf-# keyword:       snapof
-	usr/share/doc/template.container.srp.conf-# keyword:       ip
-	usr/share/doc/template.container.srp.conf-# keyword:       rootpath
-	usr/share/doc/template.container.srp.conf-# keyword:       prm_cores
-	usr/share/doc/template.container.vz.conf-# keyword:       rootfs
-	usr/share/doc/template.container.vz.conf-# keyword:       template
-	usr/share/doc/template.container.xen.conf-# keyword:       virtinst
-	usr/share/doc/template.container.xen.conf-# keyword:       snap
-	usr/share/doc/template.container.xen.conf-# keyword:       snapof
-	usr/share/doc/template.container.zone.conf-# keyword:       rootfs
-	usr/share/doc/template.container.zone.conf-# keyword:       template
-	usr/share/doc/template.container.zone.conf-# keyword:       snap
-	usr/share/doc/template.container.zone.conf-# keyword:       snapof
-	usr/share/doc/template.container.zone.conf-# keyword:       container_origin
-	usr/share/doc/template.disk.gce.conf-# keyword:       size
-	usr/share/doc/template.disk.gce.conf-# keyword:       description
-	usr/share/doc/template.disk.gce.conf-# keyword:       image
-	usr/share/doc/template.disk.gce.conf-# keyword:       image_project
-	usr/share/doc/template.disk.gce.conf-# keyword:       source_snapshot
-	usr/share/doc/template.disk.gce.conf-# keyword:       disk_type
-	usr/share/doc/template.disk.loop.conf-# keyword:       size
-	usr/share/doc/template.disk.lvm.conf-# keyword:       options
-	usr/share/doc/template.disk.lvm.conf-# keyword:       pvs
-	usr/share/doc/template.disk.md.conf-# keyword:       devs
-	usr/share/doc/template.disk.md.conf-# keyword:       level
-	usr/share/doc/template.disk.md.conf-# keyword:       chunk
-	usr/share/doc/template.disk.md.conf-# keyword:       layout
-	usr/share/doc/template.disk.md.conf-# keyword:       spares
-	usr/share/doc/template.disk.rados.conf-# keyword:       size
-	usr/share/doc/template.disk.rados.conf-# keyword:       image_format
-	usr/share/doc/template.disk.vg.conf-# keyword:       options
-	usr/share/doc/template.disk.vg.conf-# keyword:       pvs
-	usr/share/doc/template.disk.zpool.conf-# keyword:       vdev
-	usr/share/doc/template.fs.conf-# keyword:       vg
-	usr/share/doc/template.fs.conf-# keyword:       size
-	usr/share/doc/template.ip.amazon.conf-# keyword:       cascade_allocation
-	usr/share/doc/template.ip.amazon.conf-# keyword:       docker_daemon_ip
-	usr/share/doc/template.ip.conf-# keyword:       gateway
+        $ egrep -B 5 "provisioning:\s*True" <OSVCDOC>/template.fs.xfs.conf \
+            | grep keyword
+        # keyword:          vg
+        # keyword:          size
 
 
 A provisioner can update other service DEFAULT and resources configuration parameters. For example, the amazon ip provisioner can cascade the allocated ip address the ``docker_daemon_args`` as a ``--ip x.x.x.x`` argument, and cascade to a ip resource ``ipname`` parameter.
@@ -97,12 +91,12 @@ The provisioners are run in the service start natural order. Each resource is le
 
 As a consequence, when all provisioners have run, the service ``availstatus`` is ``up``.
 
-Provisioning usage
+Provisioning Usage
 ==================
 
 The provisioners are activated by setting the ``--provision`` with the following actions:
 
-create
+Create
 ++++++
 
 * ``create --template <uri>|<template>``
@@ -132,24 +126,24 @@ Example::
 
   $ sudo svcmgr -s mysvc --config /etc/opensvc/mysvc.conf --provision create
 
-update
+Update
 ++++++
 
 Add or change a resource definition to an existing service. Definitions are passed as ``--resource`` arguments.
 
-pull
+Pull
 ++++
 
 Creates a service using the configuration file of the service fetched from the collector.
 
-Service templates
+Service Templates
 =================
 
 A template is a normal service configuration file with parts you can replace with references and/or arithmetic evaluations. Templates can be stored in the local fs, served through ftp, http, https, or served by the collector with publications ACL.
 
 A template is instanciated by copying its content as a service configuration file (``<OSVCETC>/<svcname>.conf``).
 
-Arithmetic expressions
+Arithmetic Expressions
 ++++++++++++++++++++++
 
 The arithmetic evaluation format is ``$(<expr>)``. An evaluation can contain references.
@@ -173,10 +167,10 @@ References to the ``env`` section are special:
 * System's uppercased environment variables override the env options default values and values specified with ``--env``.
 
 
-Provisioning examples
+Provisioning Examples
 =====================
 
-Docker service on amazon
+Docker Service on Amazon
 ++++++++++++++++++++++++
 
 Template ``testec2docker.template``:
@@ -392,7 +386,7 @@ Provision:
   send /etc/opensvc/testec2docker4.nsx.lab.net.conf to collector ... OK
   update /var/lib/opensvc/testec2docker4.nsx.lab.net.push timestamp ... OK
 
-Docker service on amazon, btrfs on lvm
+Docker Service on Amazon, Btrfs on Lvm
 ++++++++++++++++++++++++++++++++++++++
 
 Template:
@@ -447,7 +441,7 @@ Template:
        --volume /srv/{svcname}/data:/data:rw
   run_command = /bin/bash
 
-Docker service on amazon, btrfs on md raid
+Docker Service on Amazon, Btrfs on Md Raid
 ++++++++++++++++++++++++++++++++++++++++++
 
 Template:
@@ -497,7 +491,7 @@ Template:
   run_command = /bin/bash
 
 
-Cluster-ready HAProxy service on amazon
+Cluster-Ready HAProxy Service on Amazon
 +++++++++++++++++++++++++++++++++++++++
 
 Single command provisioning:

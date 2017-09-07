@@ -1,153 +1,218 @@
-Service management
+Service Management
 ******************
 
-Selecting services
+Selecting Services
 ==================
 
-All services
+All Services
 ++++++++++++
 
 ::
 
-	sudo svcmgr <action>
+	sudo svcmgr ls
 
-Single service
+Single Service
 ++++++++++++++
 
 ::
 
-	sudo svcmgr -s <svcname> <action>
+	sudo svcmgr ls -s <svcname>
         # or
-	sudo <svcname> <action>
+	sudo <svcname> ls
 
-List of services
-++++++++++++++++
-
-::
-
-	sudo svcmgr -s svc1,svc2 <action>
-
-All services particular states
-++++++++++++++++++++++++++++++
+List All Services
++++++++++++++++++
 
 ::
 
-	sudo svcmgr --state down <action>
+	sudo svcmgr ls -s svc1,svc2
 
-Applies action to all services in 'down' state.
-
-::
-
-	sudo svcmgr --state up,warn <action>
-
-Applies action to all services in 'up' and 'warn' state.
-
-All services the node is primary or secondary for
-+++++++++++++++++++++++++++++++++++++++++++++++++
+Services by State
++++++++++++++++++
 
 ::
 
-	sudo svcmgr --onlyprimary <action>
+	sudo svcmgr ls --status down
 
-Apply action to all node services having the node as an 'autostart_node' in their env file.
+List all services in 'down' state.
 
 ::
 
-	sudo svcmgr --onlysecondary <action>
+	sudo svcmgr ls --status up,warn
 
-Apply action to all node services not having the node as an 'autostart_node' in their env file.
+List all services in 'up' and 'warn' state.
+
+Service Selector Expressions
+++++++++++++++++++++++++++++
+
+Selector syntax::
+
+        svcmgr ls -s <expr>[+<expr>...]
+
+Where ``<expr>`` is:
+
+* ``<svcname glob pattern>``
+* ``<param><op><value>``
+
+Where ``<param>`` is:
+
+* ``<rid>.<key>`` in a service config file
+* ``<group>.<key>`` in a service config file, where ``<group>`` is a driver group name like disk, fs, task, ...
+* ``<key>`` in the service config file header
+
+Where ``<op>`` is:
+
+* ``+`` as the AND expression separator
+* ``<`` ``>`` ``<=`` ``>=`` ``=`` operators
+* ``:`` as a existance test operator (empty value)
+* ``!`` as a negation operator
+* ``~`` as a regexp operator
+
+Examples:
+
+services with name ending with dns or starting with ha and with
+an app resource with a timeout set superior to 1::
+
+        $ sudo svcmgr -s '*dns,ha*+app.timeout>1' ls
+        ha1
+        ha2
+        ha3
+        pridns
+
+Services with at least one ip resource and one task resource::
+
+        $ sudo svcmgr -s 'ip:+task:' ls
+        ha1
+        ha2
+        ha3
+        registry
+
 
 Services status
 ===============
 
-::
+``sudo svcmon``
 
-	sudo svcmon
+        Overview of the status of all services this configured on the node.
 
-Overview of all local node services status.
+``sudo svcmgr -s <svcname> print status``
 
-::
-
-	sudo svcmgr -s <svcname> print status
-
-Detailled service resources status.
+        Detailled service resources status.
 
 Actions
 =======
 
-.. function:: <svcname> start
+Base Actions
+++++++++++++
 
-Start resources of type ip, loop, disk group, zpool, fs, container, app
+``sudo svcmgr -s <svcname> start``
 
-.. function:: <svcname> stop
+        Start resources of type ip, disk, fs, share, container, app.
 
-Stop resources of type app, container, fs, zpool, disk group, loop, ip
+``sudo svcmgr -s <svcname> stop``
 
-.. function:: <svcname> startdisk
+        Stop resources of type app, container, share, fs, disk, ip.
 
-Start resources of type loop, disk group, zpool, fs
+``sudo svcmgr -s <svcname> sync all``
 
-.. function:: <svcname> stopdisk
+        Run the sync resources replication to all targets, either prd or drp.
 
-Stop resources of type fs, zpool, disk group, loop
+``sudo svcmgr -s <svcname> run``
 
-.. function:: <svcname> startip
+        Run tasks.
 
-Start resources of type ip
 
-.. function:: <svcname> stopip
+Resource Filtering
+++++++++++++++++++
 
-Stop resources of type ip
+``sudo svcmgr -s <svcname> --rid <rid>[,<rid>,...] <action>``
 
-.. function:: <svcname> startloop
+        Execute ``<action>`` on ``<svcname>`` resources specified by ``--rid``.
 
-Start resources of type loop
+``sudo svcmgr -s <svcname> --tags tag1,tag2 <action>``
 
-.. function:: <svcname> stoploop
+        Execute ``<action>`` on ``<svcname>`` resources tagged with either tag1 or tag2.
 
-Stop resources of type loop
+``sudo svcmgr -s <svcname> --tags tag1+tag2,tag3 <action>``
 
-.. function:: <svcname> startvg
+        Execute ``<action>`` on ``<svcname>`` resources tagged with both tag1 or tag2 or with tag3.
 
-Start resources of type disk group
+``sudo svcmgr -s <svcname> --subsets s1,s2 <action>``
 
-.. function:: <svcname> stopvg
+        Execute ``<action>`` on ``<svcname>`` resources in subset s1 or s2
 
-Stop resources of type disk group
 
-.. function:: <svcname> mount
+Group actions
++++++++++++++
 
-Start resources of type fs and the underlying resources
+``sudo svcmgr -s <svcname> startdisk``
 
-.. function:: <svcname> umount
+        Start resources of type loop, disk group, zpool, fs
 
-Stop resources of type fs and the underlying resources
+``sudo svcmgr -s <svcname> stopdisk``
 
-.. function:: <svcname> prstart
+        Stop resources of type fs, zpool, disk group, loop
 
-Acquire scsi persistent reservations on disks of the service (wrapped by startvg and startdisk)
+``sudo svcmgr -s <svcname> startip``
 
-.. function:: <svcname> prstop
+        Start resources of type ip
 
-Release scsi persistent reservations on disks of the service (wrapped by stopvg and stopdisk)
+``sudo svcmgr -s <svcname> stopip``
 
-.. function:: <svcname> syncnodes
+        Stop resources of type ip
 
-Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+``sudo svcmgr -s <svcname> startloop``
 
-.. function:: <svcname> syncdrp
+        Start resources of type loop
 
-Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+``sudo svcmgr -s <svcname> stoploop``
+
+        Stop resources of type loop
+
+``sudo svcmgr -s <svcname> startvg``
+
+        Start resources of type disk group
+
+``sudo svcmgr -s <svcname> stopvg``
+
+        Stop resources of type disk group
+
+``sudo svcmgr -s <svcname> mount``
+
+        Start resources of type fs and the underlying resources
+
+``sudo svcmgr -s <svcname> umount``
+
+        Stop resources of type fs and the underlying resources
+
+``sudo svcmgr -s <svcname> prstart``
+
+        Acquire scsi persistent reservations on disks of the service (wrapped by startvg and startdisk)
+
+``sudo svcmgr -s <svcname> prstop``
+
+        Release scsi persistent reservations on disks of the service (wrapped by stopvg and stopdisk)
+
+``sudo svcmgr -s <svcname> syncnodes``
+
+        Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
+
+``sudo svcmgr -s <svcname> syncdrp``
+
+        Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
 Logging
 =======
 
 All action logs are multiplexed to:
 
-*   stdout
+*   stdout/stderr
 
 *   ``<OSVCLOG>/<svcname>.log``
     Daily rotation on these files, and size limit rotation
+
+*   ``<OSVCLOG>/<svcname>.debug.log``
+    Including debug logs
 
 *   collector database
     Optional, through asynchronous xmlrpc calls.
@@ -162,14 +227,31 @@ Print services status of a node:
 
 ::
 
-	[root@node111 ~]# svcmon
-	service     service  container container ip        disk      fs        overall  
-	name        type     type      status    status    status    status    status   
-	-------     -------  --------- --------- ------    ------    ------    -------  
-	aasprddst01 PRD      hosted    n/a       down      down      down      down     
-	aasprdmqs01 PRD      hosted    n/a       up        n/a       n/a       up       
-	aasprdora01 PRD      hosted    n/a       down      down      down      down     
-	aasprdosvc  PRD      hosted    n/a       up        up        up        up       
+	[root@aubergine ~]# svcmon
+        Threads                                   aubergine clementine nuc            
+         hb#1.rx    running   224.3.29.71:10001 | /         X          X              
+         hb#1.tx    running   224.3.29.71:10001 | /         O          O              
+         hb#2.rx    running   0.0.0.0:10004     | /         X          O              
+         hb#2.tx    running                     | /         X          O              
+         listener   running   0.0.0.0:1214     
+         monitor    running  
+         scheduler  running  
+
+        Cluster                                   aubergine clementine nuc            
+         1m                                     | 0.57                 0.1            
+         5m                                     | 0.56                 0.07           
+         15m                                    | 0.57                 0.07           
+         mon                                    | idle                 idle           
+
+        Services                                  aubergine clementine nuc            
+         collector  up        failover          | O                                   
+         ha1        warn      failover          | O                    O              
+         pridns     up        failover          | O                                   
+         registry   up        failover          | O                                   
+         testapplim n/a       flex              | /                                   
+         testbnp    n/a       failover          | /                                   
+         testdrbd   n/a       failover          | /         ?          /              
+         testmd     down warn flex              | !!                   !! start failed
 
 Print resource status of a service:
 

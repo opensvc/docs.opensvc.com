@@ -1,21 +1,21 @@
 .. _agent.service.creation:
 
-Service creation
+Service Creation
 ****************
 
-Choose a service name
+Choose a Service Name
 =====================
 
 A service name must be unique in its application code namespace.
 
 A best practice is to allocate unique service names in the corporate namespace, even if it is not mandatory.
 
-Create the service
+Create the Service
 ==================
 
 The following actions only modify files in ``<OSVCETC>``. No operating system configuration file is modified, so they are safe to experiment with.
 
-From scratch, non interactive
+From Scratch, non Interactive
 -----------------------------
 
 Create a service with minimal configuration. No resources are described.
@@ -24,14 +24,14 @@ Create a service with minimal configuration. No resources are described.
 
 	sudo svcmgr -s <svcname> create
 
-From scratch, interactive
+From Scratch, Interactive
 -------------------------
 
 ::
 
 	sudo svcmgr -s <svcname> create -i
 
-From an existing local configuration file
+From an Existing Local Configuration File
 -----------------------------------------
 
 Experienced users may find it easier to start from a copy of the conf file of an existing similar service. The following information describes the steps needed to create a service manually.
@@ -40,14 +40,25 @@ Experienced users may find it easier to start from a copy of the conf file of an
 
 	sudo svcmgr -s <svcname> create --config <path to config file>
 
-From a collector's service
+From a Collector's Service
 --------------------------
 
 ::
 
 	sudo svcmgr -s <svcname> pull
 
-Service configuration files
+From a Template
+---------------
+
+Templates can be served by the collector, by a webserver or ftpserver, or can be accessed on the local filesystem.
+
+::
+
+	sudo svcmgr -s <svcname> create --template <id|uri> [--interactive] [--provision]
+
+.. seealso:: :ref:`agent-service-provisioning`
+
+Service Configuration Files
 ===========================
 
 Service configuration files are in ``<OSVCETC>``. They are created automatically by the above ``svcmgr`` commands. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts:
@@ -67,7 +78,7 @@ or:
 	<OSVCETC>/<svcname>.d -> <svcname>.dir
 	<OSVCETC>/<svcname>.dir
 
-Configuration files role
+Configuration Files Role
 ========================
 
 ``<OSVCETC>/<svcname> -> /usr/bin/svcmgr``
@@ -86,7 +97,7 @@ Configuration files role
 
     This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/<svcname>.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
 
-Customize the service conf file
+Customize the Service Conf File
 ===============================
 
 At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
@@ -109,7 +120,7 @@ The configuration file syntax is checked upon editor exit. The new configuration
 	sudo svcmgr -s <svcname> edit config --recover
 
 
-Non-interactive resource addition
+Non-Interactive Resource Addition
 ---------------------------------
 
 ::
@@ -118,7 +129,7 @@ Non-interactive resource addition
 
 The resource identifier (rid) must not be specified. The resource type must be specified (rtype). A free rid will be allocated.
 
-Non-interactive resource modification
+Non-Interactive Resource Modification
 -------------------------------------
 
 ::
@@ -127,7 +138,7 @@ Non-interactive resource modification
 
 The resource identifier must be specified.
 
-Non-interactive resource deletion
+Non-Interactive Resource Deletion
 ---------------------------------
 
 ::
@@ -146,24 +157,24 @@ You should now be able to run succesfully:
 	sudo svcmgr -s <svcname> start
 	sudo svcmgr -s <svcname> stop
 
-Service deletion
+Service Deletion
 ================
 
 ::
 
 	sudo svcmgr -s <svcname> delete
 
-Best practice
+Best Practice
 =============
 
-Allocate generic account and ip addresses
+Allocate Generic Account and Ip Addresses
 -----------------------------------------
 
 We recommend to allocate service-dedicated ip addresses, to permit service failover to secondary nodes.
 
 We recommend to allocate service-dedicated generic accounts (one is ok most of the time) for better control on privileges. All service files should be owned by these accounts. The application launchers are executed by the agent using impersonnification as the launcher file owner. The generic account home directory should be a link redirecting to a subdirectory of one of the service-dedicated filesystems (the one hosting data is a good candidate).
 
-Create a filesystem skeleton for the service
+Create a Filesystem Skeleton for the Service
 --------------------------------------------
 
 Give each service dedicated filesystems. Ideally one for data, one for tools (mysql, apache, ...) and one for launchers and eventually the virtual operating system instance. We recommand the following layout:
