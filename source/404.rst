@@ -1,7 +1,7 @@
 Page Not Found
 ==============
 
-Sorry, the page you requested wad not found.
+Sorry, the page you requested was not found.
 
 Contents
 --------
