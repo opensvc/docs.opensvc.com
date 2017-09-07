@@ -1,6 +1,5 @@
 remove_files
-----
-
+------------
 
 Description
 ===========

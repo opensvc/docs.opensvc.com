@@ -1,7 +1,6 @@
 vuln
 ----
 
-
 Description
 ===========
 

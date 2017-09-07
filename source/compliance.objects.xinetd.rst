@@ -1,6 +1,5 @@
 xinetd
-----
-
+------
 
 Description
 ===========

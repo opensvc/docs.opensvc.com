@@ -250,3 +250,35 @@ A lot of minor differences between operating systems are candidate to be abstrac
    zfs
    zpool
    zprop
+   ansible_playbook
+   authkey
+   bios
+   cron
+   etcsystem
+   file
+   fileinc
+   fileprop
+   firmware
+   fs
+   group
+   group_membership
+   keyval
+   linux.mpath
+   nodeconf
+   package
+   process
+   rc
+   remove_files
+   self.signed.cert
+   smfcfgs
+   sudoers
+   svcconf
+   symlink
+   sysctl
+   timedatectl
+   user
+   vuln
+   xinetd
+   zfs
+   zpool
+   zprop

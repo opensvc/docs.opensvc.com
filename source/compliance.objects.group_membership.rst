@@ -1,6 +1,5 @@
 group_membership
-----
-
+----------------
 
 Description
 ===========

@@ -1,6 +1,5 @@
 zpool
-----
-
+-----
 
 Description
 ===========
