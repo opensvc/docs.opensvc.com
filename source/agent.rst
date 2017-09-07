@@ -9,6 +9,7 @@ Contents:
    agent.feature.matrix
    agent.install
    agent.upgrade
+   agent.configure
    agent.items
    agent.architecture
    agent.scheduler
