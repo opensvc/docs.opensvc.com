@@ -177,7 +177,7 @@ templates:
 
 manpages:
 	@for t in nodemgr svcmgr svcmon ; do \
-	echo "$$t manpage\n**************\n\n::\n" | tee source/agent.man.$$t.rst ; \
+        echo "$$t manpage" | gawk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.man.$$t.rst ; \
 	COLUMNS=90 man /opt/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
 	done
 
