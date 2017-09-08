@@ -19,6 +19,7 @@ Contents:
    agent.service.creation
    agent.service.provisioning
    agent.service.management
+   agent.service.resources
    agent.service.scoping
    agent.service.triggers
    agent.service.encapsulation
