@@ -123,5 +123,63 @@ A most precise definition would be
 Multicast
 =========
 
+This driver sends and receive using UDP multicast packets.
+
+::
+
+        [hb#2]
+        type = multicast
+
+With this simplest definition:
+
+* The rx thread listens on all interfaces on port 10000
+* The tx thread sends to 224.3.29.71:10000
+
+A most precise definition would be
+
+::
+
+        [hb#2]
+        type = multicast
+        intf@node1 = eth0
+        intf@node2 = eth2
+        addr = 224.3.29.71
+        port = 10001
+        timeout = 15
+
+Addr and port are not scopable.
+
 Disk
 ====
+
+This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC on a block device on Linux. Other operating systems must use raw char device.
+
+::
+
+        [hb#2]
+        type = disk
+        dev = /dev/mapper/3123412312412414214
+        timeout = 15
+
+When the tx and rx threads are started or reconfigured, they parse a metadata segment at the head of the device and prepare a <nodename>:<slot index> hash.
+
+The metadata zone maximum size is 4MB.
+
+A node metadata slot size is 4k, and contains the cluster node name.
+
+.. note::
+
+        Limits:
+
+        * 1000 nodes (metadata zone size/slot meta data size)
+        * nodenames are limited to 4k characters (slot meta data size)
+        * A <n>-nodes cluster requires a (<n>+1)*4MB device
+        * The heartbeat data (which is gziped) must not exceed 4MB (slot size). A 10 services cluster usually produces ~3k messages.
+
+
+If a the local nodename is not found in any slot, the thread allocates one.
+
+* The rx thread loop over peer nodes and for each reads its heartbeat data at its reserved slot device offset
+* The tx thread write to its reserved slot offset on the device
+
+
