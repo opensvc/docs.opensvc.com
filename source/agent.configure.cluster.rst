@@ -1,19 +1,48 @@
 Agent Cluster Configuration
 ***************************
 
-Add a Heartbeat
-===============
+Upon agent installation, the node is considered part of its own 1-node cluster.
+
+A ``cluster.secret`` is auto-generated. And the default "default" ``cluster.name`` is set.
+
+Bootstrap a new cluster
+=======================
+
+If the node joins an existing cluster, skip this section.
+
+Add Heartbeats
+--------------
+
+On a new cluster, the heartbeats configuration need to be applied only on the first node. The joining nodes will fetch this configuration from this joined node.
+
+For example, the simplest heartbeat configuration would be
 
 ::
 
         sudo nodemgr set --param hb#1.type --value unicast
 
-Join a Cluster
-==============
+Display the result
 
 ::
 
-        sudo nodemgr daemon join --secret <secret> --node <nodename>
+        sudo svcmon
+
+.. seealso:: :ref:`agent.daemon.heartbeats`
+
+Join a Cluster
+==============
+
+On the joined node ``node1``
+
+::
+
+        sudo nodemgr get --param cluster.secret
+
+On the joining node ``node2``
+
+::
+
+        sudo nodemgr daemon join --secret <secret> --node node2
 
 Leave a Cluster
 ===============

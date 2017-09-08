@@ -263,8 +263,8 @@ Resources tagged with ``always_on`` keyword are started on service ``boot`` and 
 .. warning:: Don't set shared disk always on. This would cause data corruption.
 
 
-Device Tree
-***********
+Resource Devices
+****************
 
 The agent reports to the collector the base disks list and and size. For each disk, it also reports the size used by each service.
 
