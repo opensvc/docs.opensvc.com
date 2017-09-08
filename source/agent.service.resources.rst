@@ -64,7 +64,7 @@ encap
 
 This tag assigns the resource to the encapsulated/slave service. The agent on the master-part of the service does not handle such a resource.
 
-``svcmgr print status`` highlight such resources with the ``E`` flag::
+``svcmgr print status`` highlights such resources with the ``E`` flag::
 
         $ sudo svcmgr -s mysvc.acme.com print status
         mysvc.acme.com
@@ -123,9 +123,9 @@ A resource can be marked as disabled using the ``disable`` keyword::
 
 This will make the agent ignore any action upon this resource.
 
-``svcmgr print status`` will highlight disabled resources with the ``D`` flag::
+``svcmgr print status`` will highlights disabled resources with the ``D`` flag::
 
-        user@node:~# svcmgr -s app1.dev print status --refresh
+        $ sudo svcmgr -s app1.dev print status --refresh
         app1.dev
         overall                   up                                                            
         `- avail                  up         
@@ -151,9 +151,9 @@ This parameter allow defining non critical resources in the service.
 
 Service actions won't stop on error reported by optional resources.
 
-``svcmgr print status`` will highlight optional resources with the ``O`` flag::
+``svcmgr print status`` will highlights optional resources with the ``O`` flag::
 
-        [user@node ~]# sudo svcmgr -s redis.acme.com print status
+        $ sudo svcmgr -s redis.acme.com print status
         redis.acme.com
         overall                   up                                             
         |- avail                  up         
@@ -179,9 +179,9 @@ It means that this resource is **critical** for the service availability.
 
 If the resource goes down, then the agent triggers the ``monitor_action``, which may cause a crash or reboot of the node, or stop of the service, to force a failover.
 
-``svcmgr print status`` will highlight monitored resources with the ``M`` flag::
+``svcmgr print status`` will highlights monitored resources with the ``M`` flag::
 
-        [user@node ~]# sudo svcmgr -s redis.acme.com print status
+        $ sudo svcmgr -s redis.acme.com print status
         redis.acme.com
         overall                   up                                             
         |- avail                  up         
@@ -236,7 +236,7 @@ Resources tagged with ``always_on`` keyword are started on service ``boot`` and 
 ``svcgr print status`` will display the ``stdby up`` status for up always_on resources, and ``stdby down`` status for down always_on resources::
 
         # Primary Node
-        user@node1:~$ sudo mysvc.acme.com print status
+        $ sudo svcmgr -s mysvc.acme.com print status
         mysvc.acme.com
         overall                   up         
         |- avail                  up         
@@ -248,7 +248,7 @@ Resources tagged with ``always_on`` keyword are started on service ``boot`` and 
            '- sync#i0        .... up         rsync svc config to drpnodes, nodes
 
         # Secondary Node
-        user@node2:~$ sudo mysvc.acme.com print status
+        $ sudo svcmgr -s mysvc.acme.com print status
         mysvc.acme.com
         overall                   down       
         |- avail                  down       
@@ -260,22 +260,167 @@ Resources tagged with ``always_on`` keyword are started on service ``boot`` and 
            '- sync#i0        .... up         rsync svc config to drpnodes, nodes
 
 
-.. warning:: Don't set this on shared disk !! danger !!
+.. warning:: Don't set shared disk always on. This would cause data corruption.
 
 
 Device Tree
 ***********
 
-to be completed
+The agent reports to the collector the base disks list and and size. For each disk, it also reports the size used by each service.
 
-svcmgr print_devs
-svcmgr print_base_devs
-svcmgr print_exposed_devs
-svcmgr print_sub_devs
+::
 
-nodemgr print_devs
-nodemgr print_devs --reverse
-nodemgr print_devs --reverse --verbose
+        $ sudo nodemgr pushdisks
+        aubergine                  Size.Used  Vendor  Model                       
+        `- disks                   
+           `- 002538b471bb6f3c     953g               SAMSUNG MZSLW1T0HMLH-000L1  
+              |- testdrbd          3g         
+              |- testmd            991m       
+              |- pridns            6g   
+              `- aubergine         943g       
+
+This feature depends on a device tree build by the agent. This tree can be display bottom-up or top-bottom::
+
+        $ sudo nodemgr print devs
+	aubergine                            Type    Size  Pct of Parent  
+	|- loop8                             linear  0     -              
+	`- nvme0n1                           linear  953g  -              
+	   |- nvme0n1p1                      linear  512m  0%             
+	   `- nvme0n1p2                      linear  953g  99%            
+	      |- ubuntu--vg-swap_1           linear  15g   1%             
+	      `- ubuntu--vg-root             linear  915g  96%            
+		 |- loop3                    linear  50m   0%             
+		 |  `- md125                 raid1   49m   98%            
+		 |     `- md126              raid0   97m   197%           
+		 |- loop2                    linear  50m   0%             
+		 |  `- md127                 raid1   49m   98%            
+		 |     `- md126              raid0   97m   197%           
+		 |- loop1                    linear  50m   0%             
+		 |  `- md127                 raid1   49m   98%            
+		 |     `- md126              raid0   97m   197%           
+		 |- loop0                    linear  3g    0%             
+		 |  `- drbd1                         0     0%             
+		 |- loop7                    linear  143m  0%             
+		 |- loop6                    linear  10m   0%             
+		 |- loop5                    linear  50m   0%             
+		 `- loop4                    linear  50m   0%             
+		    `- md125                 raid1   49m   98%            
+		       `- md126              raid0   97m   197%           
+
+        $ sudo nodemgr print devs --reverse
+	aubergine                            Type    Parent Use  Size  Ratio  
+	|- loop5                             linear  -           50m   -      
+	|  `- ubuntu--vg-root                linear  50m         915g  0%     
+	|     `- nvme0n1p2                   linear  915g        953g  96%    
+	|        `- nvme0n1                  linear  953g        953g  99%    
+	|- loop7                             linear  -           143m  -      
+	|  `- ubuntu--vg-root                linear  143m        915g  0%     
+	|     `- nvme0n1p2                   linear  915g        953g  96%    
+	|        `- nvme0n1                  linear  953g        953g  99%    
+	|- loop6                             linear  -           10m   -      
+	|  `- ubuntu--vg-root                linear  10m         915g  0%     
+	|     `- nvme0n1p2                   linear  915g        953g  96%    
+	|        `- nvme0n1                  linear  953g        953g  99%    
+	|- drbd1                                     -           0     -      
+	|  `- loop0                          linear  0           3g    -      
+	|     `- ubuntu--vg-root             linear  3g          915g  0%     
+	|        `- nvme0n1p2                linear  915g        953g  96%    
+	|           `- nvme0n1               linear  953g        953g  99%    
+	|- nvme0n1p1                         linear  -           512m  -      
+	|  `- nvme0n1                        linear  512m        953g  0%     
+	|- loop8                             linear  -           0     -      
+	|- md126                             raid0   -           97m   -      
+	|  |- md127                          raid1   48m         49m   97%    
+	|  |  |- loop1                       linear  49m         50m   98%    
+	|  |  |  `- ubuntu--vg-root          linear  50m         915g  0%     
+	|  |  |     `- nvme0n1p2             linear  915g        953g  96%    
+	|  |  |        `- nvme0n1            linear  953g        953g  99%    
+	|  |  `- loop2                       linear  49m         50m   98%    
+	|  |     `- ubuntu--vg-root          linear  50m         915g  0%     
+	|  |        `- nvme0n1p2             linear  915g        953g  96%    
+	|  |           `- nvme0n1            linear  953g        953g  99%    
+	|  `- md125                          raid1   48m         49m   97%    
+	|     |- loop4                       linear  49m         50m   98%    
+	|     |  `- ubuntu--vg-root          linear  50m         915g  0%     
+	|     |     `- nvme0n1p2             linear  915g        953g  96%    
+	|     |        `- nvme0n1            linear  953g        953g  99%    
+	|     `- loop3                       linear  49m         50m   98%    
+	|        `- ubuntu--vg-root          linear  50m         915g  0%     
+	|           `- nvme0n1p2             linear  915g        953g  96%    
+	|              `- nvme0n1            linear  953g        953g  99%    
+	`- ubuntu--vg-swap_1                 linear  -           15g   -      
+	   `- nvme0n1p2                      linear  15g         953g  1%     
+	      `- nvme0n1                     linear  953g        953g  99%    
+
+        $ sudo nodemgr print devs --reverse --verbose
+	aubergine                            Type    Parent Use  Size  Ratio  
+	|- loop5                             linear  -           50m   -      /dev/loop5                                                                                    
+	|  `- ubuntu--vg-root                linear  50m         915g  0%     /dev/disk/by-id/dm-name-ubuntu--vg-root                                                       
+	|     |                                                               /dev/disk/by-id/dm-uuid-LVM-vzI1exojgdAZhf3X1Vz8A0C1Ne2EN2srzZlazB8vy5ey8yftklunzMMMUxJwwCej  
+	|     |                                                               /dev/disk/by-uuid/3653539e-3299-448e-b80d-576fb6b71b84                                        
+	|     |                                                               /dev/mapper/ubuntu--vg-root                                                                   
+	|     |                                                               /dev/ubuntu-vg/root                                                                           
+	|     |                                                               /dev/dm-0                                                                                     
+	|     `- nvme0n1p2                   linear  915g        953g  96%    /dev/disk/by-id/lvm-pv-uuid-VilFt5-Ne8T-eVxf-QKnX-n0Zc-LIK2-7ct9Kr                            
+	|        |                                                            /dev/disk/by-id/nvme-SAMSUNG_MZSLW1T0HMLH-000L1_S308NX0J403249-part2                          
+	|        |                                                            /dev/disk/by-id/nvme-eui.002538b471bb6f3c-part2                                               
+	|        |                                                            /dev/disk/by-partuuid/c6c21095-4a8e-4461-af40-12e78fd758d6                                    
+	|        |                                                            /dev/disk/by-path/pci-0000:05:00.0-nvme-1-part2                                               
+	|        |                                                            /dev/nvme0n1p2                                                                                
+	|        `- nvme0n1                  linear  953g        953g  99%    /dev/disk/by-id/nvme-SAMSUNG_MZSLW1T0HMLH-000L1_S308NX0J403249                                
+	|                                                                     /dev/disk/by-id/nvme-eui.002538b471bb6f3c                                                     
+	|                                                                     /dev/disk/by-path/pci-0000:05:00.0-nvme-1                                                     
+	|                                                                     /dev/nvme0n1                                                                                  
+	...
+
+
+Each resource driver can implement a method to claim devices as "exposed" and "sub" (exposed layered over). The device tree is walked to determine the "base" devices::
+
+        $ sudo svcmgr -s pridns print devs
+	pridns                       
+	|- disk#0 (disk.loop)        
+	|  |- base                   
+	|  |  `- /dev/nvme0n1        
+	|  `- exposed                
+	|     `- /dev/loop0          
+	|- fs#1 (fs)                 
+	|  |- base                   
+	|  |  `- /dev/nvme0n1        
+	|  `- sub                    
+	|     `- /dev/loop0          
+	`- fs#2 (fs)                 
+	   |- base                   
+	   |  `- /dev/nvme0n1        
+	   `- sub                    
+	      `- /dev/loop0          
+
+        $ sudo svcmgr print base devs
+	pridns                       
+	|- disk#0 (disk.loop)        
+	|  `- base                   
+	|     `- /dev/nvme0n1        
+	|- fs#1 (fs)                 
+	|  `- base                   
+	|     `- /dev/nvme0n1        
+	`- fs#2 (fs)                 
+	   `- base                   
+	      `- /dev/nvme0n1        
+
+        $ sudo svcmgr print exposed devs
+	pridns                       
+	`- disk#0 (disk.loop)        
+	   `- exposed                
+	      `- /dev/loop0          
+
+        $ sudo svcmgr print sub devs
+	pridns               
+	|- fs#1 (fs)         
+	|  `- sub            
+	|     `- /dev/loop0  
+	`- fs#2 (fs)         
+	   `- sub            
+	      `- /dev/loop0  
+
 
 
 Triggers
