@@ -8,10 +8,12 @@ Each service resource can be completed with some specific parameters, they are d
 Action Requirements
 *******************
 
+to be completed
+
 Tagging
 *******
 
-A resource can be tagged using the keyword ``tag`` followed by tag names separated by space
+A resource can be tagged using the keyword ``tags`` followed by tag names separated by space
 
 Custom Tags
 +++++++++++
@@ -36,7 +38,7 @@ A svcmgr stop action upon tag ``websrv`` will stop resource ``app#nginx1`` and `
 Special Tags
 ++++++++++++
 
-  Special Tags (noaction, encap [reference vers page encapsulation] )
+Some tags are reserved keywords and have a particular meaning described below.
 
 noaction
 --------
@@ -51,7 +53,23 @@ encap
 
 The ``tags = encap`` statement will assign the resource to the encapsulated service. 
 
-.. seealso:: agent.service.encapsulation
+The ``svcmgr print status`` will display the string ``...E`` adjacent to the encapsulated resource as shown below ::
+
+        user@node:~# svcmgr -s mysvc.acme.com print status
+        mysvc.acme.com
+        overall                   up         
+        |- avail                  up         
+        |  |- fs#1           .... stdby up   zfs data/mysvc.acme.com@/srv/mysvc.acme.com
+        |  |- fs#2           .... stdby up   zfs data/mysvc.acme.com/rootfs@/srv/mysvc.acme.com/rootfs
+        |  '- container#1    .... up         mycontainer
+        |     '- ip#1        ...E up         mysvc.acme.com@eth0
+        '- accessory                         
+           |- sync#1         .... up         zfs of data/mysvc.acme.com to nodes
+           |- sync#1sd       .... up         zfs 'daily' snapshot data/mysvc.acme.com
+           '- sync#i0        .... up         rsync svc config to drpnodes, nodes
+
+
+.. seealso:: :ref:`agent.service.encapsulation`
 
 nostatus
 --------
@@ -66,11 +84,27 @@ The ``tags = dedicated`` statement is only used in the context of Docker network
 Tagged Actions
 ++++++++++++++
 
-sudo svcmgr -s mysvc.acme.com start --tag=appsrv
-tag expression
+When resources are tagged in a service, multiple tags combinations can be submitted ::
+
+        svcmgr --tags A,B start : start rids of resource with either tag A or B
+        svcmgr --tags A+B stop  : stop rids of resource with both tags A and B
+        svcmgr --tags A+B,B+C disable : disable rids of resource with either tags A and B or tags B and C
+
+
+Scoping
++++++++
+
+Like any other resource parameter, tags can be scoped ::
+
+        [ip#0]
+        tags = encap
+        tags@host1 = encap noaction
+
 
 Subsets
 *******
+
+to be completed
 
 Disable
 *******
@@ -225,6 +259,8 @@ As soon as this flag is enabled and the service is started, a ``svcgr print stat
 Device Tree
 ***********
 
+to be completed
+
 svcmgr print_devs
 svcmgr print_base_devs
 svcmgr print_exposed_devs
@@ -237,3 +273,5 @@ nodemgr print_devs --reverse --verbose
 
 Triggers
 ********
+
+to be completed
