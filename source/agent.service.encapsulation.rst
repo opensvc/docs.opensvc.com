@@ -1,3 +1,5 @@
+.. _agent.service.encapsulation:
+
 Service Encapsulation
 *********************
 
