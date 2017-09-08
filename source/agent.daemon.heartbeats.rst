@@ -1,4 +1,4 @@
-.. _agent.heartbeats:
+.. _agent.daemon.heartbeats:
 
 Agent Heartbeats
 ****************
@@ -28,6 +28,35 @@ The ``sudo nodemgr daemon status`` and ``sudo svcmon`` commands display the hear
          hb#1.tx    running   224.3.29.71:10001 | /         O          O              
          hb#2.rx    running   0.0.0.0:10004     | /         X          O              
          hb#2.tx    running                     | /         X          O     
+
+Maintenance
+-----------
+
+The heartbeat threads are restarted by the agent daemon if they exit uncleanly.
+
+::
+
+        sudo nodemgr daemon stop --thread-id hb#1.tx
+
+Stop the ``hb#1`` tx thread. The thread state transitions from ``running`` to ``stopped``.
+
+::
+
+        sudo nodemgr daemon start --thread-id hb#1.tx
+
+Start the ``hb#1`` tx thread. The thread state transitions from ``stopped`` to ``running``.
+
+::
+
+        sudo nodemgr set --param hb#1.timeout --value 20
+        sudo nodemgr unset --param hb#1
+        sudo nodemgr edit config
+
+Or any command causing a timestamp change on ``<OSVCETC>/node.conf``, trigger a heartbeats reconfiguration:
+
+* Modified parameters are applied
+* Heartbeats removed in the configuration are stopped
+* Heartbeats added in the configuration are started
 
 Threads
 -------

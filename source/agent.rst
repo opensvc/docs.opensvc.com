@@ -12,7 +12,7 @@ Contents:
    agent.upgrade
    agent.configure
    agent.configure.cluster
-   agent.heartbeats
+   agent.daemon
    agent.architecture
    agent.scheduler
    agent.configfiles
