@@ -42,7 +42,7 @@ On the joining node ``node2``
 
 ::
 
-        sudo nodemgr daemon join --secret <secret> --node node2
+        sudo nodemgr daemon join --secret <secret> --node node1
 
 Leave a Cluster
 ===============
