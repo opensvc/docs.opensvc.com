@@ -32,6 +32,8 @@ Display the result
 Join a Cluster
 ==============
 
+The joining node can choose to join any of the cluster node already joined.
+
 On the joined node ``node1``
 
 ::
@@ -43,6 +45,11 @@ On the joining node ``node2``
 ::
 
         sudo nodemgr daemon join --secret <secret> --node node1
+
+.. note::
+
+        * If the node was frozen before the join, it is left frozen after the join.
+        * If the node was not frozen before the join, the join process freezes it. If the join is successful, the node is thawed. If not, the node is left frozen.
 
 Leave a Cluster
 ===============
