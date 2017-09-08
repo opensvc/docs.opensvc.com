@@ -116,7 +116,7 @@ A most precise definition would be
         addr@node1 = 1.2.3.4
         addr@node2 = 1.2.3.5
         port@node1 = 10001
-        intf@node2 = 10002
+        port@node2 = 10002
         timeout = 15
 
 
