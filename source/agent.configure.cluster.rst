@@ -13,14 +13,14 @@ Join a Cluster
 
 ::
 
-        sudo nodemgr join --secret <secret> --node <nodename>
+        sudo nodemgr daemon join --secret <secret> --node <nodename>
 
 Leave a Cluster
 ===============
 
 ::
 
-        sudo nodemgr leave
+        sudo nodemgr daemon leave
 
 
 

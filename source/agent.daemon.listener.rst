@@ -100,25 +100,116 @@ Request format::
             }
         }
 
+Clear
+=====
+
+Clear the service monitor ``start failed`` and ``stop failed`` states.
+
+Clear the resource restart count, so the service monitor will retry ``<rid>.restart`` times again to start a resource evaluated down when the local_expect is ``started``.
+
+::
+
+        $ sudo svcmgr -s <svcname> clear
+
+
+Set Node Monitor
+================
+
+Set the node monitor attributes:
+
+* ``status``
+  The node monitor status. ``idle``, ``freezing``, ``thawing``
+
+* ``local_expect``
+  The target node status. The node monitor will try to take actions to make the node reach that status. ``thawed``, ``frozen``.
+
 Set Service Monitor
 ===================
+
+Set a service monitor attributes:
+
+* ``status``
+  The service monitor status. ``idle``, ``starting``, ``stopping``, ...
+
+* ``local_expect``
+  The target local service instance status. The service monitor will try to take actions to make the service instance reach that status.
+
+* ``global_expect``
+  The target service status. The service monitor will discuss with its peers how to make the service reach that status.
+
+* ``reset_retries``
+  Clear the resource restart count, so the service monitor will retry ``<rid>.restart`` times again to start a resource evaluated down when the local_expect is ``started``.
+
+Request format::
+
+        {
+            "action": "set_service_monitor",
+            "options": {
+                "svcname": "svc1",
+                "local_expect": "started",
+                "global_expect": "started",
+                "reset_retries": True
+            }
+        }
 
 Get Service Monitor
 ===================
 
+Return the service monitor attributes.
+
+Request format::
+
+        {
+            "action": "set_service_monitor",
+            "options": {
+                "svcname": "svc1",
+            }
+        }
+
 Join
 ====
+
+Merge the joining nodename in the ``cluster.nodes``.
+
+Return the cluster and heartbeats configuration sections the joiner must merge.
+
+::
+
+        $ sudo nodemgr daemon join --secret <secret> --node <nodename>
 
 Leave
 =====
 
+Remove the leaving nodename from ``cluster.nodes``.
+
 Service Action
 ==============
+
+Execute an arbitrary service instance action on the node.
+
+Support synchronous or asynchronous execution.
+
+Request format::
+
+        {
+            "action": "service_action",
+            "options": {
+                "svcname": "svc1",
+                "command": ["compliance", "fix", "--moduleset", "foo"],
+                "sync": True,
+            }
+        }
 
 Service Logs
 ============
 
+Return or stream the local service instance logs.
 
+::
+
+        $ sudo svcmgr -s <svcname> logs [--follow] [--backlog <n>]
+
+Request logs from all service nodes daemons and aggregate the results.
 
 Maintenance
 -----------
