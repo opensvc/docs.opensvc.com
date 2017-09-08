@@ -3,7 +3,7 @@
 Service Resources
 =================
 
-Each service resource can be completed with some specific parameters, they are described below.
+All service resources share common properties and behaviours.
 
 Action Requirements
 *******************
@@ -13,49 +13,60 @@ to be completed
 Tagging
 *******
 
-A resource can be tagged using the keyword ``tags`` followed by tag names separated by space
+A resource can be tagged using the keyword ``tags``. The value is a whitespace-separated list of tags. Tag names can be user-defined or hardcoded in the agent.
 
 Custom Tags
 +++++++++++
 
-Some custom tags can be added to make easier service management on complex configurations. As an example, let's imagine a service with multiple application launchers like
+Custom tags ease service management on complex configurations, as they can be used in services and resources selector expressions.
 
-============= ========
-Resource Name Tag Name
-============= ========
-app#db        database
-app#tomcat1   appsrv
+Examples:
+
+============= =============
+Resource      Tags
+============= =============
+app#db        database base
+app#tomcat1   appsrv base
 app#tomcat2   appsrv
 app#tomcat3   appsrv
-app#nginx1    websrv
+app#nginx1    websrv base
 app#nginx2    websrv
-============= ========
+============= =============
 
-Service management action can be triggered upon a tag, making the action applied to all the resources tagged by this tag.
-A svcmgr stop action upon tag ``websrv`` will stop resource ``app#nginx1`` and ``app#nginx2``
+::
+
+        # stop resources tagged 'websrv'
+        $ sudo svcmgr -s <svcname> --tag websrv stop
+
+        # stop resources tagged 'websrv' or 'appsrv'
+        $ sudo svcmgr -s <svcname> --tag websrv,appsrv stop
+
+        # stop resources tagged 'websrv' and 'base'
+        $ sudo svcmgr -s <svcname> --tag websrv+base stop
 
 
 Special Tags
 ++++++++++++
 
-Some tags are reserved keywords and have a particular meaning described below.
+Some tag names are reserved and have a particular meaning.
 
 noaction
 --------
 
-The ``tags = noaction`` statement will prevent the agent from changing any state about this resource.
+This tag keep the agent from executing state-changing actions on the resource.
 
-In the context of an encapsulated container hosting an operating system, we can tag an IP resource as ``noaction``.
-In such a setup, the encapsulated operating is in charge of IP management and the agent only checks whether the IP is dup or down.
+The agent is still running the resource status evaluations.
+
+For example, the resource mapping the ip address activated at vm boot by the operating system must be tagged ``noaction``.
 
 encap
 -----
 
-The ``tags = encap`` statement will assign the resource to the encapsulated service. 
+This tag assigns the resource to the encapsulated/slave service. The agent on the master-part of the service does not handle such a resource.
 
-The ``svcmgr print status`` will display the string ``...E`` adjacent to the encapsulated resource as shown below ::
+``svcmgr print status`` highlight such resources with the ``E`` flag::
 
-        user@node:~# svcmgr -s mysvc.acme.com print status
+        $ sudo svcmgr -s mysvc.acme.com print status
         mysvc.acme.com
         overall                   up         
         |- avail                  up         
@@ -74,21 +85,12 @@ The ``svcmgr print status`` will display the string ``...E`` adjacent to the enc
 nostatus
 --------
 
-The ``tags = nostatus`` statement will prevent status evaluation for a resource, and will always be displayed as status ``n/a`` in the ``svcmgr print status``
+This tag prevents the resource status evaluation. The resource status is set to ``n/a``.
 
 dedicated
 ---------
 
-The ``tags = dedicated`` statement is only used in the context of Docker network management. It tells the IP driver that a physical network interface card is reserved for Docker network namespace. At service startup, the physical nic will be assigned and configured into the Docker network namespace.
-
-Tagged Actions
-++++++++++++++
-
-When resources are tagged in a service, multiple tags combinations can be submitted ::
-
-        svcmgr --tags A,B start : start rids of resource with either tag A or B
-        svcmgr --tags A+B stop  : stop rids of resource with both tags A and B
-        svcmgr --tags A+B,B+C disable : disable rids of resource with either tags A and B or tags B and C
+This tag is by the ip.docker driver only. If set, the physical network interface card is moved to the container network namespace. This NIC is thus reserved, and should not be used by other resources and services.
 
 
 Scoping
@@ -100,16 +102,17 @@ Like any other resource parameter, tags can be scoped ::
         tags = encap
         tags@host1 = encap noaction
 
+.. seealso:: :ref:`agent-service-scoping`
 
 Subsets
 *******
 
 to be completed
 
-Disable
-*******
+Disabled
+********
 
-A resource can be marked as disabled using the ``disable`` parameter, like in the configlet below ::
+A resource can be marked as disabled using the ``disable`` keyword::
 
         [container#1]
         type = docker
@@ -120,7 +123,7 @@ A resource can be marked as disabled using the ``disable`` parameter, like in th
 
 This will make the agent ignore any action upon this resource.
 
-The ``svcmgr print status`` will display the string ``.D..`` adjacent to the optional resource as shown below ::
+``svcmgr print status`` will highlight disabled resources with the ``D`` flag::
 
         user@node:~# svcmgr -s app1.dev print status --refresh
         app1.dev
@@ -133,7 +136,7 @@ The ``svcmgr print status`` will display the string ``.D..`` adjacent to the opt
 Optional
 ********
 
-It is possible to explicitely mark a resource as ``optional``, like in the configlet below ::
+A resource can be marked as optional using the ``optional`` keyword::
 
         [app#1]
         script = redis_init_script
@@ -144,9 +147,11 @@ It is possible to explicitely mark a resource as ``optional``, like in the confi
         optional = true
 
 
-This parameter allow defining non critical resources in the service configuration file. The avail service status won't be degraded if this resource goes down.
+This parameter allow defining non critical resources in the service.
 
-The ``svcmgr print status`` will display the string ``..O.`` adjacent to the optional resource as shown below ::
+Service actions won't stop on error reported by optional resources.
+
+``svcmgr print status`` will highlight optional resources with the ``O`` flag::
 
         [user@node ~]# sudo svcmgr -s redis.acme.com print status
         redis.acme.com
@@ -157,10 +162,10 @@ The ``svcmgr print status`` will display the string ``..O.`` adjacent to the opt
            `- sync#i0        .... up         rsync svc config to drpnodes, nodes 
 
 
-Monitor
-*******
+Monitoring
+**********
 
-A resource can be configured with parameter ``monitor`` in order to enable HA monitoring features for this resource ::
+A resource can be marked as monitored using the ``monitor`` keyword::
 
         [app#1]
         script = redis_init_script
@@ -170,10 +175,11 @@ A resource can be configured with parameter ``monitor`` in order to enable HA mo
         info = 10
         monitor = true
 
-It means that this resource is ``critical`` for the service availability.
-If the resource goes down, then the agent will initiate a service failover to ensure service continuity.
+It means that this resource is **critical** for the service availability.
 
-The ``svcmgr print status`` will display the string ``M...`` adjacent to the optional resource as shown below ::
+If the resource goes down, then the agent triggers the ``monitor_action``, which may cause a crash or reboot of the node, or stop of the service, to force a failover.
+
+``svcmgr print status`` will highlight monitored resources with the ``M`` flag::
 
         [user@node ~]# sudo svcmgr -s redis.acme.com print status
         redis.acme.com
@@ -189,10 +195,10 @@ The ``svcmgr print status`` will display the string ``M...`` adjacent to the opt
     * ``restart`` parameter can be combined with ``monitor`` setting, as explained below
 
 
-Restart
-*******
+Automatic Restart
+*****************
 
-The ``restart`` parameter can be set to make agent restart a resource if it fails ::
+The ``restart`` parameter can be set to make the agent daemon monitor restart the resource if it fails::
 
         [app#1]
         script = redis_init_script
@@ -202,17 +208,18 @@ The ``restart`` parameter can be set to make agent restart a resource if it fail
         info = 10
         restart = 3
 
-The previous configlet will trigger the resource restart up to 3 times.
-If combined with ``monitor``, the agent will try to restart the failed resource before actively triggering service failover.
+The ``restart`` value is the number of times the daemon will attempt to restart the resource before giving up.
 
-Always_On
-*********
+If combined with ``monitor``, the agent will try to restart the failed resource before triggering the ``monitor_action``
 
-Some resources must remain up, even when the service is stopped.
+Standby resources
+*****************
 
-As an example, let's imagine a 2-nodes active/passive service with a filesystem resource, and also a rsync resource, configured to replicate this filesystem. Altough the service is stopped on the passive node, we have to keep the filesystem mounted, so as the rsync replication copy files into the filesystem (and not in the root filesystem !)
+Some resources must remain up, even when the service instance is stopped.
 
-The ``always_on`` keyword is made for this purpose, like in the configlet below ::
+For example, in a 2-nodes failover service with a fs resource and a sync.rsync resource replicating the fs, the fs resource must be up on the passive node receive the rsync'ed data. If not, the data gets written to the underlying filesystem.
+
+The ``always_on`` keyword can be set in these cases::
 
         [fs#1]
         mnt_opt = rw
@@ -224,9 +231,9 @@ The ``always_on`` keyword is made for this purpose, like in the configlet below 
 
 Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a list of nodes.
 
-Any resource tagged with ``always_on`` keyword will be started at service ``boot`` action, and stopped at service ``shutdown`` action.
+Resources tagged with ``always_on`` keyword are started on service ``boot`` and ``start`` actions, and stopped only on service ``shutdown`` action.
 
-As soon as this flag is enabled and the service is started, a ``svcgr print status`` will no more display ``up`` or ``down`` status, but only ``stdby up`` ::
+``svcgr print status`` will display the ``stdby up`` status for up always_on resources, and ``stdby down`` status for down always_on resources::
 
         # Primary Node
         user@node1:~$ sudo mysvc.acme.com print status
