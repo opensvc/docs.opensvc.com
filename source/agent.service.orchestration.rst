@@ -25,17 +25,25 @@ The node with the lowest load average gets the highest placement priority.
 Affinity
 --------
 
-``DEFAULT.affinity``
+``DEFAULT.hard_affinity``
 
         A whitespace-separated list of service names. The orchestrator won't propose to start a local instance of the service if all specified services don't have a local running instance.
 
-        .. note:: This mecanism causes a startup serialization.
-
-``DEFAULT.anti_affinity``
+``DEFAULT.hard_anti_affinity``
 
         A whitespace-separated list of service names. The orchestrator won't propose to start a local instance of the service if any of the specified services have a local running instance.
 
-All services in a affinity relationship must be in the same cluster.
+``DEFAULT.soft_affinity``
+
+        A whitespace-separated list of service names. If the local node is not the only candidate, the orchestrator won't propose to start a local instance of the service if all specified services don't have a local running instance.
+
+``DEFAULT.soft_anti_affinity``
+
+        A whitespace-separated list of service names. If the local node is not the only candidate, the orchestrator won't propose to start a local instance of the service if any of the specified services have a local running instance.
+
+.. note:: ``hard_affinity`` and ``soft_affinity`` cause a startup serialization.
+
+.. note:: All services in a affinity relationship must be in the same cluster.
 
 Maintenance
 -----------
