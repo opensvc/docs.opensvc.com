@@ -34,6 +34,10 @@ Value            Actions
 Service Orchestrators
 =====================
 
+If set, negociate with peers which instances to start to reach ``global_expect``.
+
+If ``global_expect`` is not set, the expected service state is ``started``.
+
 If set, try to reach the ``local_expect``.
 
 ================ ============================================================
