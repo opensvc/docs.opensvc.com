@@ -1,18 +1,4 @@
 (function (window, $, _) {
-
-    /*==========================================================================
-     * Toggleable Sections
-     *==========================================================================
-     * Added expand/collapse button to any collapsible RST sections.
-     * Looks for sections with CSS class "html-toggle",
-     * along with the optional classes "expanded" or "collapsed".
-     * Button toggles "html-toggle.expanded/collapsed" classes,
-     * and relies on CSS to do the rest of the job displaying them as appropriate.
-     *==========================================================================*/
-
-    var $window = $(window);
-    var isUndef = _.isUndefined;
-
     // given "#hash-name-with.periods", escape so it's usable as CSS selector
     // (e.g. "#hash-name-with\\.periods")
     function escapeHash(hash) {
@@ -20,57 +6,80 @@
     }
 
     $(function () {
-        function init() {
-            // get header & section, and add static classes
-            var header = $(this);
-            var section = header.parent();
-            header.addClass("html-toggle-button");
+        var hash = document.location.hash;
+	var body = $("body")
+	var levels = ["lvl1", "lvl2"]
 
-            // helper to test if url hash is within this section
-            function contains_hash() {
-                var hash = document.location.hash;
-                return hash && (section[0].id == hash.substr(1) ||
-                    section.find(escapeHash(hash)).length > 0);
-            }
-
-            // helper to control toggle state
-            function set_state(expanded) {
-                expanded = !!expanded; // toggleClass et al need actual boolean
-                section.toggleClass("expanded", expanded);
-                section.toggleClass("collapsed", !expanded);
-                section.children().each(function(){
-			$(this).toggle(expanded);
-			if (expanded) {
-				$("table.docutils:not(.field-list)").show();
+	function init() {
+		levels.forEach(function(lvl){
+			var re = new RegExp("ulvl=u"+lvl, 'g')
+			if (window.location.search.match(re)) {
+				body.addClass("u"+lvl)
 			}
+			if (hash) {
+				// make sure the section accessed by hash is visible, setting the ulvl accordingly
+				$("."+lvl).each(function(){
+					if ($(this).attr("id") == hash.substr(1) || $(this).find(escapeHash(hash)).length > 0) {
+						body.addClass("u"+lvl)
+					}
+				})
+			}
+			$("."+lvl).on("click", function(){
+				// don't need to show lvl1 if lvl2 is already shown
+				if (lvl=="lvl1" && body.hasClass("ulvl2")) {
+					return
+				}
+				// showing lvl2 also show lvl1
+				if (lvl=="lvl2") {
+					body.removeClass("ulvl1")
+				}
+				body.addClass("u"+lvl)
+			})
+			$("."+lvl).on("dblclick", function(){
+				// hiding lvl1 also hides lvl2
+				if (lvl=="lvl1" && body.hasClass("ulvl2")) {
+					body.removeClass("ulvl2")
+				}
+				body.removeClass("u"+lvl)
+			})
 		})
-                if (!expanded) {
-                    section.children("span:first-child:empty").show();
-                    /* for :ref: span tag */
-                    header.show();
-                }
-            }
-
-            // initialize state
-            set_state(section.hasClass("expanded") || contains_hash());
-
-            // bind toggle callback
-            header.click(function (evt) {
-                var state = section.hasClass("expanded")
-                if (state && $(evt.target).is(".headerlink")) {
-                    return;
-                }
-                set_state(!state);
-                $window.trigger('cloud-section-toggled', section[0]);
-            });
-
-            // open section if user jumps to it from w/in page
-            $window.on("hashchange", function () {
-                if (contains_hash()) set_state(true);
-            });
-        }
-
-        $(".html-toggle.section > h2, .html-toggle.section > h3, .html-toggle.section > h4, .html-toggle.section > h5, .html-toggle.section > h6").each(init);
+	}
+	var level_selector = $("<span class='level'><span></span><span></span></span>")
+	level_selector.on("click", function(){
+		if (body.hasClass("ulvl1")) {
+			body.addClass("ulvl2")
+			body.removeClass("ulvl1")
+		} else
+		if (body.hasClass("ulvl2")) {
+			body.removeClass("ulvl2")
+		} else {
+			body.addClass("ulvl1")
+		}
+	})
+	$(".version").append(level_selector)
+	$("a").on("click", function(){
+		var href = $(this).attr("href")
+		if (href[0] == "#") {
+			return
+		}
+		href = href.replace(/.ulvl=(lvl.|)/g, "")
+		var ulvl = ""
+		for (var i=0; i<levels.length; i++) {
+			var lvl = levels[i]
+			if (body.hasClass("u"+lvl)) {
+				ulvl = lvl
+			}
+		}
+		if (ulvl=="") {
+			return
+		}
+		$(this).attr("href", href+"?ulvl=u"+ulvl)
+		return true
+	})
+	$(window).on("hashchange", function () {
+		init()
+	});
+	init()
     });
 
 }(window, jQuery, $u));

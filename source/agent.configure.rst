@@ -144,7 +144,7 @@ To enable communications with a collector, the ``node.dbopensvc`` node configura
 
 Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
 
-.. rst-class:: html-toggle
+.. rst-class:: lvl1
 
 Advanced Url Formats
 ++++++++++++++++++++
@@ -196,10 +196,10 @@ To disable collector communications, use:
 	<OSVCROOT>/bin/nodemgr unset --param node.dbopensvc
 	<OSVCROOT>/bin/nodemgr unset --param node.dbcompliance
 
+.. rst-class:: lvl1
+
 Extra System Configurations
 ===========================
-
-.. rst-class:: html-toggle
 
 HP-UX
 -----
@@ -207,8 +207,6 @@ HP-UX
 The python package provided by HP will output garbage on exec because it won't find terminfo at the expected places. To fix that, you have to export ``TERMINFO=/usr/share/lib/terminfo`` from ``/etc/profile``
 
 The HP-UX base system does not provide tools to handle scsi persistent reservations. You have to install the scu tool if you want to activate this feature.
-
-.. rst-class:: html-toggle
 
 Linux LVM2
 ----------
@@ -245,8 +243,6 @@ Create this file, {node} being the output of uname -n and add the following conf
 ::
 
 	activation { volume_list = ["@local", "@{node}"] }
-
-.. rst-class:: html-toggle
 
 Windows
 -------
@@ -297,8 +293,6 @@ Upgrading the OpenSVC package manually is the same as an installation from scrat
 
 The installer deals with installation directory detection, and upgrade software in the accurate folder. It's still a best practice to have a system/data backup before upgrading OpenSVC software.
 
-.. rst-class:: html-toggle
-
 Mac OS X
 --------
 
@@ -307,8 +301,8 @@ CLI Install
 
 ::
 
-        curl -o /tmp/opensvc.latest.pkg https://repo.opensvc.com/macos-pkg/current  
-        installer -pkg /tmp/opensvc.latest.pkg  -target /
+	curl -o /tmp/opensvc.latest.pkg https://repo.opensvc.com/macos-pkg/current  
+	installer -pkg /tmp/opensvc.latest.pkg  -target /
 
 
 CLI Uninstall
@@ -319,9 +313,9 @@ As Mac OS does not provide a clean way to remove packages, we do it by ourselves
 .. warning:: Backup any configuration file in <OSVCETC> before removing them from the hard disk drive
 
 ::
-        
-        rm -f /Library/LaunchDaemons/com.opensvc.svcmgr.plist
-        pkgutil --forget com.opensvc.agent
+	
+	rm -f /Library/LaunchDaemons/com.opensvc.svcmgr.plist
+	pkgutil --forget com.opensvc.agent
 
 CLI Upgrade
 +++++++++++
@@ -330,7 +324,7 @@ As other OS flavors, agent upgrade can be triggered by
 
 ::
 
-        sudo nodemgr updatepkg
+	sudo nodemgr updatepkg
 
 .. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file. Example: ``sudo nodemgr set`` ``--param node.repopkg`` ``--value https://repo.opensvc.com/``
 

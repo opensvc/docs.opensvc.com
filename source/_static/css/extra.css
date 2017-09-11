@@ -1,3 +1,103 @@
+/*
+ * Level Selector
+ */
+.wy-side-nav-search>div.version {
+	color: white;
+}
+.level {
+	padding: 0 0.5em;
+	font-family: FontAwesome;
+	cursor: pointer;
+}
+.level > span:after {
+	content: '\f19d';
+	color: rgba(255,255,255,0.3);
+}
+.ulvl1 .level > span:first-child:after {
+	color: white;
+}
+.ulvl2 .level > span:after {
+	color: white;
+}
+
+/*
+ * Hidden Level Sections
+ */
+.lvl1 {
+	max-height: 2em;
+	visibility: hidden;
+	margin-right: -20px;
+	padding-right: 10px;
+	overflow: hidden;
+	transition: all 0.5s;
+	color: transparent !important;
+	border-right: 10px solid #6ab0de;
+}
+.lvl2 {
+	max-height: 2em;
+	visibility: hidden;
+	margin-right: -20px;
+	padding-right: 10px;
+	overflow: hidden;
+	transition: all 0.5s;
+	color: transparent !important;
+	border-right: 10px solid #2980b9;
+}
+
+/*
+ * Hidden Level Sections Placeholders
+ */
+.lvl1:before {
+	visibility: visible;
+	content: "\f19d";
+	color: #6ab0de;
+	float: right;
+	cursor: pointer;
+	font-family: FontAwesome;
+}
+.lvl2:before {
+	visibility: visible;
+	content: "\f19d  \f19d";
+	color: #2980b9;
+	float: right;
+	cursor: pointer;
+	font-family: FontAwesome;
+}
+
+.ulvl1 .lvl1 {
+	visibility: visible;
+	max-height: unset;
+	transition: all 0.5s;
+	color: inherit !important;
+}
+.ulvl2 .lvl1 {
+	visibility: visible;
+	max-height: unset;
+	transition: all 0.5s;
+	color: inherit !important;
+}
+.ulvl2 .lvl2 {
+	visibility: visible;
+	max-height: unset;
+	transition: all 0.5s;
+	color: inherit !important;
+}
+.ulvl1 .lvl1:before {
+	visibility: hidden;
+	color: transparent;
+}
+.ulvl2 .lvl1:before {
+	visibility: hidden;
+	color: transparent;
+}
+.ulvl2 .lvl2:before {
+	visibility: hidden;
+	color: transparent;
+}
+
+/*
+ * RTD theme customization
+ */
 .wy-nav-top {
 	background-color: rgb(3, 135, 162);
 }
@@ -15,44 +115,6 @@
 }
 .wy-table-responsive table td, .wy-table-responsive table th {
 	white-space: initial;
-}
-.html-toggle-button
-{
-	position: relative;
-	cursor: pointer;
-}
-.highlight > .literal-block {
-	padding: 1em !important;
-	margin: 0px !important;
-	border: none !important;
-}
-.html-toggle-button:hover:after,
-.section.emphasize-children > .section > h3.html-toggle-button:hover:after {# hack to override higher priority rule #}
-{
-}
-
-.html-toggle-button:after
-{
-	position: relative;
-	top: -0.15em;
-	margin: 0;
-	padding: 0.15em 0.3em;
-	text-shadow: none;
-	font-size: 65%;
-	font-style: italic;
-	font-weight: bold;
-	border: 1px solid transparent;
-}
-
-.html-toggle.collapsed > .html-toggle-button:after {  content: "[+ show section]"; }
-.html-toggle.expanded > .html-toggle-button:after { content: "[- hide section]"; }
-
-.html-toggle-button:active:after,
-.section.emphasize-children > .section > h3.html-toggle-button:active:after
-{
-	position: relative;
-	top: calc(-0.15em + 1px);
-	left: 1px;
 }
 
 @media screen and (min-width: 1400px) {

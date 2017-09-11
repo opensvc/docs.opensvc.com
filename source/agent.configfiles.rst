@@ -17,7 +17,7 @@ This file can be left empty or non-existant if no collector communications are r
 
 The agent ensures this file is not world-writable.
 
-.. rst-class:: html-toggle
+.. rst-class:: lvl1
 
 Template
 --------
@@ -38,9 +38,9 @@ auth.conf
 
 This configuration file contains authentication options and tokens for tiers infrastructure components. This information is used by the inventoring and provisioning drivers.
 
-The agent ensures this file is not world-writable nor world-writable.
+The agent ensures this file is not world-writable nor world-readable.
 
-.. rst-class:: html-toggle
+.. rst-class:: lvl1
 
 Template
 --------
