@@ -25,7 +25,9 @@ Start
 
 	$ nodemgr daemon start
 
-On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a ``nodemgr daemon start``.
+.. rst-class:: lvl1
+
+	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a ``nodemgr daemon start``.
 
 Stop
 ++++

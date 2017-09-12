@@ -7,6 +7,8 @@ Agent Daemon Listener
 * Executes ``nodemgr dequeue actions`` when receiving empty packets
 * Execute valid requests
 
+.. rst-class:: lvl2
+
 Requests Validation
 -------------------
 
@@ -91,14 +93,16 @@ Get Service Config
 
 Serve a service configuration file content.
 
-Request format::
+.. container:: lvl2
 
-        {
-            "action": "get_service_config",
-            "options": {
-                "svcname": "svc1",
-            }
-        }
+	Request format::
+
+		{
+		    "action": "get_service_config",
+		    "options": {
+			"svcname": "svc1",
+		    }
+		}
 
 Clear
 =====
@@ -115,56 +119,71 @@ Clear the resource restart count, so the service monitor will retry ``<rid>.rest
 Set Node Monitor
 ================
 
-Set the node monitor attributes:
+Set the node monitor attributes.
 
-* ``status``
-  The node monitor status. ``idle``, ``freezing``, ``thawing``
+.. container:: lvl2
 
-* ``local_expect``
-  The target node status. The node monitor will try to take actions to make the node reach that status. ``thawed``, ``frozen``.
+	* ``status``
+	  The node monitor status. ``idle``, ``freezing``, ``thawing``
+
+	* ``local_expect``
+	  The target node status. The node monitor will try to take actions to make the node reach that status. ``thawed``, ``frozen``.
+
+	Request format::
+
+		{
+		    "action": "set_node_monitor",
+		    "options": {
+			"local_expect": "thawed"
+		    }
+		}
 
 Set Service Monitor
 ===================
 
 Set a service monitor attributes:
 
-* ``status``
-  The service monitor status. ``idle``, ``starting``, ``stopping``, ...
+.. container:: lvl2
 
-* ``local_expect``
-  The target local service instance status. The service monitor will try to take actions to make the service instance reach that status.
+	* ``status``
+	  The service monitor status. ``idle``, ``starting``, ``stopping``, ...
 
-* ``global_expect``
-  The target service status. The service monitor will discuss with its peers how to make the service reach that status.
+	* ``local_expect``
+	  The target local service instance status. The service monitor will try to take actions to make the service instance reach that status.
 
-* ``reset_retries``
-  Clear the resource restart count, so the service monitor will retry ``<rid>.restart`` times again to start a resource evaluated down when the local_expect is ``started``.
+	* ``global_expect``
+	  The target service status. The service monitor will discuss with its peers how to make the service reach that status.
 
-Request format::
+	* ``reset_retries``
+	  Clear the resource restart count, so the service monitor will retry ``<rid>.restart`` times again to start a resource evaluated down when the local_expect is ``started``.
 
-        {
-            "action": "set_service_monitor",
-            "options": {
-                "svcname": "svc1",
-                "local_expect": "started",
-                "global_expect": "started",
-                "reset_retries": True
-            }
-        }
+	Request format::
+
+		{
+		    "action": "set_service_monitor",
+		    "options": {
+			"svcname": "svc1",
+			"local_expect": "started",
+			"global_expect": "started",
+			"reset_retries": True
+		    }
+		}
 
 Get Service Monitor
 ===================
 
 Return the service monitor attributes.
 
-Request format::
+.. container:: lvl2
 
-        {
-            "action": "set_service_monitor",
-            "options": {
-                "svcname": "svc1",
-            }
-        }
+	Request format::
+
+		{
+		    "action": "set_service_monitor",
+		    "options": {
+			"svcname": "svc1",
+		    }
+		}
 
 Join
 ====
@@ -189,16 +208,18 @@ Execute an arbitrary service instance action on the node.
 
 Support synchronous or asynchronous execution.
 
-Request format::
+.. container:: lvl2
 
-        {
-            "action": "service_action",
-            "options": {
-                "svcname": "svc1",
-                "command": ["compliance", "fix", "--moduleset", "foo"],
-                "sync": True,
-            }
-        }
+	Request format::
+
+		{
+		    "action": "service_action",
+		    "options": {
+			"svcname": "svc1",
+			"command": ["compliance", "fix", "--moduleset", "foo"],
+			"sync": True,
+		    }
+		}
 
 Service Logs
 ============
@@ -233,8 +254,10 @@ Start the listener tx thread. The thread state transitions from ``stopped`` to `
         sudo nodemgr set --param listener.port --value 1215
         sudo nodemgr edit config
 
-Or any command causing a timestamp change on ``<OSVCETC>/node.conf``, trigger a listener reconfiguration:
+.. container:: lvl1
 
-* Modified parameters are applied
+	Any command causing a timestamp change on ``<OSVCETC>/node.conf`` triggers a listener reconfiguration:
+
+	* Modified parameters are applied
 
 

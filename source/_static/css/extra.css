@@ -98,6 +98,11 @@
 /*
  * RTD theme customization
  */
+.highlight > pre.literal-block {
+	padding: 12px 12px !important;
+	margin: 0 ! important;
+	border: 0 !important;
+}
 .wy-nav-top {
 	background-color: rgb(3, 135, 162);
 }

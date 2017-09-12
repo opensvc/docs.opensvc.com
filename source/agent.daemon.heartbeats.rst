@@ -52,11 +52,15 @@ Start the ``hb#1`` tx thread. The thread state transitions from ``stopped`` to `
         sudo nodemgr unset --param hb#1
         sudo nodemgr edit config
 
-Or any command causing a timestamp change on ``<OSVCETC>/node.conf``, trigger a heartbeats reconfiguration:
+.. container:: lvl1
 
-* Modified parameters are applied
-* Heartbeats removed in the configuration are stopped
-* Heartbeats added in the configuration are started
+	Any command causing a timestamp change on ``<OSVCETC>/node.conf`` triggers heartbeats reconfiguration:
+
+	* Modified parameters are applied
+	* Heartbeats removed in the configuration are stopped
+	* Heartbeats added in the configuration are started
+
+.. rst-class:: lvl1
 
 Threads
 -------
@@ -154,6 +158,9 @@ Disk
 
 This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC on a block device on Linux. Other operating systems must use raw char device.
 
+* The rx thread loop over peer nodes and for each reads its heartbeat data at its reserved slot device offset
+* The tx thread write to its reserved slot offset on the device
+
 ::
 
         [hb#2]
@@ -161,13 +168,13 @@ This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC 
         dev = /dev/mapper/3123412312412414214
         timeout = 15
 
-When the tx and rx threads are started or reconfigured, they parse a metadata segment at the head of the device and prepare a <nodename>:<slot index> hash.
+.. container:: lvl2
 
-The metadata zone maximum size is 4MB.
+	When the tx and rx threads are started or reconfigured, they parse a metadata segment at the head of the device and prepare a <nodename>:<slot index> hash.
 
-A node metadata slot size is 4k, and contains the cluster node name.
+	The metadata zone maximum size is 4MB.
 
-.. note::
+	A node metadata slot size is 4k, and contains the cluster node name.
 
         Limits:
 
@@ -177,9 +184,5 @@ A node metadata slot size is 4k, and contains the cluster node name.
         * The heartbeat data (which is gziped) must not exceed 4MB (slot size). A 10 services cluster usually produces ~3k messages.
 
 
-If a the local nodename is not found in any slot, the thread allocates one.
-
-* The rx thread loop over peer nodes and for each reads its heartbeat data at its reserved slot device offset
-* The tx thread write to its reserved slot offset on the device
-
+	If a the local nodename is not found in any slot, the thread allocates one.
 

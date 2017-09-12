@@ -14,6 +14,8 @@ Agent Daemon Monitor
   * Restart service resources flagged for restart
 * Fetch and install the most recent service configuration from peers
 
+.. rst-class:: lvl1
+
 Node Orchestrator
 =================
 
@@ -30,6 +32,8 @@ Value            Actions
                  * execute ``nodemgr freeze``
                  * set ``status`` to ``idle``
 ================ ============================================================
+
+.. rst-class:: lvl1
 
 Service Orchestrators
 =====================

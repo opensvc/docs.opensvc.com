@@ -60,7 +60,7 @@ PPRD       PRD         Pre Production
 REC        not PRD     Prod-like testing
 INT        not PRD     Integration
 DEV        not PRD     Development
-TST        not PRD     Testing
+TST        not PRD     Testing (Default)
 TMP        not PRD     Temporary
 DRP        not PRD     Disaster recovery
 FOR        not PRD     Training
@@ -69,7 +69,7 @@ PRJ        not PRD     Project
 STG        not PRD     Staging
 ========== =========== ====================
 
-.. note:: The setting is stored in ``<OSVCETC>/node.conf``.
+The setting is stored in ``<OSVCETC>/node.conf``.
 
 Set Schedules
 =============
@@ -175,7 +175,7 @@ Collectors in SaaS mode, like https://collector.opensvc.com, require that you pr
 
 	sudo nodemgr register --user my.self@my.com [--app MYAPP]
 
-If ``--app`` is not specified the collector automatically choose one the user is responsible of.
+If ``--app`` is not specified the collector automatically chooses one the user is responsible of.
 
 A successful register is followed by a node discovery, so the collector has detailled information about the node and can serve contextualized compliance rulesets up front. The discovery is also scheduled daily, and can be manually replayed with:
 
@@ -235,14 +235,12 @@ And add the ``local`` tag to all local volume groups. For example:
 
 Finally you need to rebuild the initrd/initramfs to prevent shared vg activation at boot.
 
-/etc/lvm/lvm_{node}.conf
-++++++++++++++++++++++++
-
-Create this file, {node} being the output of uname -n and add the following configuration:
+/etc/lvm/lvm_$HOSTNAME.conf
++++++++++++++++++++++++++++
 
 ::
 
-	activation { volume_list = ["@local", "@{node}"] }
+	echo activation { volume_list = ["@local", "@$HOSTNAME"] } >/etc/lvm/lvm_$HOSTNAME.conf
 
 Windows
 -------
@@ -277,8 +275,8 @@ There's also a command line option to specify the target installation folder (no
 
 	OpenSVC.X.Y.exe /S  /D=C:\My Path with spaces
 
-Graphical Install
-+++++++++++++++++
+GUI Install
++++++++++++
 	
 Double click on OpenSVC.X.Y.exe and follow install wizard
 
@@ -296,8 +294,8 @@ The installer deals with installation directory detection, and upgrade software 
 Mac OS X
 --------
 
-CLI Install
-+++++++++++
+Install
++++++++
 
 ::
 
@@ -305,10 +303,10 @@ CLI Install
 	installer -pkg /tmp/opensvc.latest.pkg  -target /
 
 
-CLI Uninstall
-+++++++++++++
+Uninstall
++++++++++
 
-As Mac OS does not provide a clean way to remove packages, we do it by ourselves
+As MacOS X does not provide a clean way to remove packages, we do it by ourselves
 
 .. warning:: Backup any configuration file in <OSVCETC> before removing them from the hard disk drive
 
@@ -316,15 +314,4 @@ As Mac OS does not provide a clean way to remove packages, we do it by ourselves
 	
 	rm -f /Library/LaunchDaemons/com.opensvc.svcmgr.plist
 	pkgutil --forget com.opensvc.agent
-
-CLI Upgrade
-+++++++++++
-
-As other OS flavors, agent upgrade can be triggered by
-
-::
-
-	sudo nodemgr updatepkg
-
-.. note:: this works only if repopkg is defined in ``<OSVCETC>/node.conf`` file. Example: ``sudo nodemgr set`` ``--param node.repopkg`` ``--value https://repo.opensvc.com/``
 
