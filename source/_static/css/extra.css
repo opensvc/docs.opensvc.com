@@ -1,4 +1,17 @@
 /*
+ * Titles highlighting
+ */
+h3 {
+	color: rgb(3, 75, 102);
+}
+h2 {
+	color: rgb(3, 105, 132);
+}
+h1 {
+	color: rgb(3, 135, 162);
+}
+
+/*
  * ansi2html
  */
 pre.output {
