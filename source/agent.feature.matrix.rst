@@ -43,10 +43,6 @@ Service Management
 | delta       | | dds                        |
 | replication |                              |
 +-------------+------------------------------+
-| HA plugin   | | openha                     |
-|             | | heartbeatd                 |
-|             | | keepalived                 |
-+-------------+------------------------------+
 | IPv6        | | yes                        |
 +-------------+------------------------------+
 | Per-service | | yes (cgroup)               |
@@ -113,8 +109,6 @@ Service Management
 | delta       | | zfs send/recv        |
 | replication |                        |
 +-------------+------------------------+
-| HA plugin   | | openha               |
-+-------------+------------------------+
 | IPv6        | | yes                  |
 +-------------+------------------------+
 | Per-service | | no                   |
@@ -177,8 +171,6 @@ Service Management
 | delta       | | n/a              |
 | replication |                    |
 +-------------+--------------------+
-| HA plugin   | | openha           |
-+-------------+--------------------+
 | IPv6        | | yes              |
 +-------------+--------------------+
 | Per-service | | no               |
@@ -240,8 +232,6 @@ Service Management
 +-------------+------------------------+
 | delta       | | n/a                  |
 | replication |                        |
-+-------------+------------------------+
-| HA plugin   | | not tested           |
 +-------------+------------------------+
 | IPv6        | | yes                  |
 +-------------+------------------------+
@@ -306,8 +296,6 @@ Service Management
 | delta       | | zfs send/recv        |
 | replication |                        |
 +-------------+------------------------+
-| HA plugin   | | not tested           |
-+-------------+------------------------+
 | IPv6        | | yes                  |
 +-------------+------------------------+
 | Per-service | | no                   |
@@ -370,8 +358,6 @@ Service Management
 | delta       | | n/a             |
 | replication |                   |
 +-------------+-------------------+
-| HA plugin   | | not tested      |
-+-------------+-------------------+
 | IPv6        | | yes             |
 +-------------+-------------------+
 | Per-service | | no              |
@@ -432,8 +418,6 @@ Service Management
 | delta       | | n/a                |
 | replication |                      |
 +-------------+----------------------+
-| HA plugin   | | not tested         |
-+-------------+----------------------+
 | IPv6        | | not tested         |
 +-------------+----------------------+
 | Per-service | | no                 |
@@ -491,8 +475,6 @@ Service Management
 +-------------+------------+
 | delta       |            |
 | replication |            |
-+-------------+------------+
-| HA plugin   |            |
 +-------------+------------+
 | IPv6        |            |
 +-------------+------------+
