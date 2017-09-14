@@ -1,8 +1,8 @@
 Agent Daemon
 ============
 
-Threads
--------
+Roles
+-----
 
 The agent daemon spawns threads to handle its different roles:
 
@@ -60,8 +60,8 @@ Run the daemon in foreground::
 
 	$ sudo python <OSVCLIB>/osvcd.py -f
 
-Subsystems
-----------
+Threads
+-------
 
 .. toctree::
 	:maxdepth: 2
