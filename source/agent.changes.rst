@@ -21,6 +21,7 @@ New Features
 * Add a size formatter and use it in most command outputs.
 * Use a denser streamlog format.
 * ``svcmgr -s`` now accepts service selection expressions
+* Cap the parallel running subprocesses on svcmgr --parallel commands. ``node.max_parallel`` node configuration keyword can be used to change the default value (10).
 
 .. warning:: start, stop, freeze, thaw service commands operate cluster wide.
 
