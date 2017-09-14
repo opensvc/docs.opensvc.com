@@ -16,18 +16,22 @@ Each heartbeat runs two threads janitored by the agent daemon: **tx** and **rx**
 
 The ``sudo nodemgr daemon status`` and ``sudo svcmon`` commands display the heartbeats status, statistics and each peer state
 
-::
+.. raw:: html
 
-        # X: Stale
-        # O: Sent/Received
-        # /: Not Applicable
+	<pre class="output">
+	$ sudo svcmon
+	Threads                                 <span style="font-weight: bold">aubergine</span> <span style="font-weight: bold">clementine</span> <span style="font-weight: bold">nuc</span> 
+	 <span style="font-weight: bold">hb#1.rx</span>    <span style="color: #00aa00">running</span> 224.3.29.71:10001 | /         <span style="color: #aa0000">X</span>          <span style="color: #aa0000">X</span>   
+	 <span style="font-weight: bold">hb#1.tx</span>    <span style="color: #00aa00">running</span> 224.3.29.71:10001 | /         <span style="color: #00aa00">O</span>          <span style="color: #00aa00">O</span>   
+	 <span style="font-weight: bold">hb#2.rx</span>    <span style="color: #00aa00">running</span> 0.0.0.0:10004     | /         <span style="color: #aa0000">X</span>          <span style="color: #00aa00">O</span>   
+	 <span style="font-weight: bold">hb#2.tx</span>    <span style="color: #00aa00">running</span>                   | /         <span style="color: #aa0000">X</span>          <span style="color: #00aa00">O</span>   
+	...
 
-        $ sudo svcmon
-        Threads                                   aubergine clementine nuc            
-         hb#1.rx    running   224.3.29.71:10001 | /         X          X              
-         hb#1.tx    running   224.3.29.71:10001 | /         O          O              
-         hb#2.rx    running   0.0.0.0:10004     | /         X          O              
-         hb#2.tx    running                     | /         X          O     
+	# <span style="color: #aa0000">X</span>: Stale
+	# <span style="color: #00aa00">O</span>: Sent/Received
+	# /: Not Applicable
+	</pre>
+
 
 Maintenance
 -----------

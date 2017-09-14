@@ -32,6 +32,7 @@ New Commands
 * ``svcmgr takeover``
 * ``svcmgr set --param <param> --add <member>``
 * ``svcmgr set --param <param> --remove <member>``
+* ``svcmgr set --kw <expr> [--kw <expr> ...]``
 * ``svcmgr print devs``
 * ``nodemgr print devs``
 * ``nodemgr daemon status``
