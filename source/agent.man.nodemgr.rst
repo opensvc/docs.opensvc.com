@@ -1,8 +1,3 @@
-nodemgr manpage
----------------
-
-::
-
 	NODEMGR(1)                      General Commands Manual                      NODEMGR(1)
 	
 	NAME
@@ -2503,4 +2498,4 @@ nodemgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-08-02                            NODEMGR(1)
+	                                       2017-09-12                            NODEMGR(1)

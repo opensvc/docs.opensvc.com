@@ -1,8 +1,3 @@
-svcmon manpage
---------------
-
-::
-
 	SVCMON(1)                       General Commands Manual                       SVCMON(1)
 	
 	NAME
@@ -34,4 +29,4 @@ svcmon manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-08-02                             SVCMON(1)
+	                                       2017-09-12                             SVCMON(1)
