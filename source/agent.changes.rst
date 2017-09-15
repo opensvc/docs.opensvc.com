@@ -22,6 +22,7 @@ New Features
 * Use a denser streamlog format.
 * ``svcmgr -s`` now accepts service selection expressions
 * Cap the parallel running subprocesses on svcmgr --parallel commands. ``node.max_parallel`` node configuration keyword can be used to change the default value (10).
+* The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups.
 
 .. warning:: start, stop, freeze, thaw service commands operate cluster wide.
 
