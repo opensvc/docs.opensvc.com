@@ -1,8 +1,3 @@
-sync.ibmdssnap resource template
---------------------------------
-
-::
-
 	##############################################################################
 	#                                                                            #
 	# sync, type ibmdssnap                                                       #
@@ -164,7 +159,7 @@ sync.ibmdssnap resource template
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         False
+	#  default:         True for task, sync and stonith, else False
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  candidates:      True | False
@@ -175,7 +170,7 @@ sync.ibmdssnap resource template
 	#         logged and passed over. Useful for resources like dump filesystems
 	#         for example.
 	#
-	;optional = False
+	;optional = True for task, sync and stonith, else False
 	
 	#
 	# keyword:          always_on
@@ -951,8 +946,9 @@ sync.ibmdssnap resource template
 	#
 	#  desc:  Unit is minutes. This sets to delay above which the sync status of
 	#         the resource is to be considered down. Should be set according to
-	#         your application service level agreement. The cron job frequency
-	#         should be set between 'sync_min_delay' and 'sync_max_delay'.
+	#         your application service level agreement. The scheduler task
+	#         frequency should be set between 'sync_min_delay' and
+	#         'sync_max_delay'.
 	#
 	;sync_max_delay = 1440
 	

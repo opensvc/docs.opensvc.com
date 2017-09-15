@@ -1,8 +1,3 @@
-DEFAULT resource template
--------------------------
-
-::
-
 	##############################################################################
 	#                                                                            #
 	# DEFAULT                                                                    #
@@ -334,36 +329,70 @@ DEFAULT resource template
 	;prkey = foo
 	
 	#
-	# keyword:          affinity
+	# keyword:          hard_affinity
 	# ----------------------------------------------------------------------------
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         None
+	#  default:         set([])
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  convert:         set
 	#
-	#  desc:  A whitespace separated list of services that should be started on
-	#         the node to allow the monitor to start this service.
+	#  desc:  A whitespace separated list of services that must be started on the
+	#         node to allow the monitor to start this service.
 	#
-	;affinity = svc1 svc2
+	;hard_affinity = set([])
 	
 	#
-	# keyword:          anti_affinity
+	# keyword:          hard_anti_affinity
 	# ----------------------------------------------------------------------------
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         None
+	#  default:         set([])
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  convert:         set
 	#
-	#  desc:  A whitespace separated list of services that should not be started
-	#         on the node to allow the monitor to start this service.
+	#  desc:  A whitespace separated list of services that must not be started on
+	#         the node to allow the monitor to start this service.
 	#
-	;anti_affinity = svc1 svc2
+	;hard_anti_affinity = set([])
+	
+	#
+	# keyword:          soft_affinity
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         set([])
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         set
+	#
+	#  desc:  A whitespace separated list of services that must be started on the
+	#         node to allow the monitor to start this service. If the local node
+	#         is the only candidate ignore this constraint and allow start.
+	#
+	;soft_affinity = set([])
+	
+	#
+	# keyword:          soft_anti_affinity
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         set([])
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         set
+	#
+	#  desc:  A whitespace separated list of services that must not be started on
+	#         the node to allow the monitor to start this service. If the local
+	#         node is the only candidate ignore this constraint and allow start.
+	#
+	;soft_anti_affinity = set([])
 	
 	#
 	# keyword:          show_disabled
@@ -726,9 +755,9 @@ DEFAULT resource template
 	#  convert:         duration
 	#
 	#  desc:  Set the minimum delay between syncs in minutes. If a sync is
-	#         triggered through crond or manually, it is skipped if last sync
-	#         occurred less than 'sync_min_delay' ago. The mecanism is enforced by
-	#         a timestamp created upon each sync completion in
+	#         triggered through a scheduler or manually, it is skipped if last
+	#         sync occurred less than 'sync_min_delay' ago. The mecanism is
+	#         enforced by a timestamp created upon each sync completion in
 	#         <pathvar>/sync/[service]![dst]
 	#
 	;sync_interval = 121
@@ -746,8 +775,9 @@ DEFAULT resource template
 	#
 	#  desc:  Unit is minutes. This sets to delay above which the sync status of
 	#         the resource is to be considered down. Should be set according to
-	#         your application service level agreement. The cron job frequency
-	#         should be set between 'sync_min_delay' and 'sync_max_delay'
+	#         your application service level agreement. The scheduler task
+	#         frequency should be set between 'sync_min_delay' and
+	#         'sync_max_delay'
 	#
 	;sync_max_delay = 1440
 	
@@ -1100,7 +1130,7 @@ DEFAULT resource template
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         False
+	#  default:         True for task, sync and stonith, else False
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  candidates:      True | False
@@ -1111,7 +1141,7 @@ DEFAULT resource template
 	#         logged and passed over. Useful for resources like dump filesystems
 	#         for example.
 	#
-	;optional = False
+	;optional = True for task, sync and stonith, else False
 	
 	#
 	# keyword:          always_on

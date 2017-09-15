@@ -1,8 +1,3 @@
-disk.md resource template
--------------------------
-
-::
-
 	##############################################################################
 	#                                                                            #
 	# disk, type md                                                              #
@@ -241,7 +236,7 @@ disk.md resource template
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         False
+	#  default:         True for task, sync and stonith, else False
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  candidates:      True | False
@@ -252,7 +247,7 @@ disk.md resource template
 	#         logged and passed over. Useful for resources like dump filesystems
 	#         for example.
 	#
-	;optional = False
+	;optional = True for task, sync and stonith, else False
 	
 	#
 	# keyword:          always_on
