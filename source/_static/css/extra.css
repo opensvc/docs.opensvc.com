@@ -74,6 +74,13 @@ pre.output {
 	border-right: 10px solid #2980b9;
 }
 
+.lvl1 + .lvl1{
+	display: none;
+}
+.lvl2 + .lvl2 {
+	display: none;
+}
+
 /*
  * Hidden Level Sections Placeholders
  */
@@ -95,18 +102,21 @@ pre.output {
 }
 
 .ulvl1 .lvl1 {
+	display: inherit;
 	visibility: visible;
 	max-height: unset;
 	transition: all 0.5s;
 	color: inherit !important;
 }
 .ulvl2 .lvl1 {
+	display: inherit;
 	visibility: visible;
 	max-height: unset;
 	transition: all 0.5s;
 	color: inherit !important;
 }
 .ulvl2 .lvl2 {
+	display: inherit;
 	visibility: visible;
 	max-height: unset;
 	transition: all 0.5s;
