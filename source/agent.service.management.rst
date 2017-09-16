@@ -152,21 +152,25 @@ Relocation
 
         sudo svcmgr -s <svcname> switch --node <nodename>
 
-Tell the orchestrator to stop the service wherever it runs and start it on <nodename>.
+Stop the service on <nodename> peers and start it on <nodename>.
+
+All service instances are thawed at the end of this ended, whatever their initial frozen state.
 
 ::
 
         sudo svcmgr -s <svcname> takeover
 
-Tell the orchestrator to stop the service wherever it runs and start it on the local node.
+Stop the service instances on peers and start it on the local node.
 
+All service instances are thawed at the end of this ended, whatever their initial frozen state.
 
 ::
 
         sudo svcmgr -s <svcname> giveback
 
-Tell the orchestrator to stop the service wherever it runs and start it on the node elected by the placement policy and constraints.
+Thaw the nodes and service instances, stop the service instances running on non-leader nodes, and let the orchestrator start the instances on the leaders.
 
+All service instances are thawed at the end of this ended, whatever their initial frozen state.
 
 Sync
 ----
