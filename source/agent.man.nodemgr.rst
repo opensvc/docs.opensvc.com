@@ -1,3 +1,8 @@
+nodemgr manpage
+---------------
+
+::
+
 	NODEMGR(1)                      General Commands Manual                      NODEMGR(1)
 	
 	NAME

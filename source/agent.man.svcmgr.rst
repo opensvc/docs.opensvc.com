@@ -1,3 +1,8 @@
+svcmgr manpage
+--------------
+
+::
+
 	SVCMGR(1)                       General Commands Manual                       SVCMGR(1)
 	
 	NAME

@@ -1,3 +1,8 @@
+svcmon manpage
+--------------
+
+::
+
 	SVCMON(1)                       General Commands Manual                       SVCMON(1)
 	
 	NAME
