@@ -169,7 +169,7 @@ templates:
 	base_t=`basename $$t | sed -e "s/template.//" -e "s/.conf//"` ; \
 	echo $$base_t | egrep -q "comp_|svc.prov" && continue ; \
         echo "   agent.template.$$base_t.conf" | tee -a source/agent.template.conf.rst ; \
-        echo "$$base_t resource template" | gawk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.template.$$base_t.conf.rst ; \
+        echo "$$base_t resource template" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.template.$$base_t.conf.rst ; \
 	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.conf.rst ; \
 	done
 	cp /opt/opensvc/usr/share/doc/node.conf source/_static/node.conf
@@ -177,7 +177,7 @@ templates:
 
 manpages:
 	@for t in nodemgr svcmgr svcmon ; do \
-        echo "$$t manpage" | gawk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.man.$$t.rst ; \
+        echo "$$t manpage" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.man.$$t.rst ; \
 	COLUMNS=90 man /opt/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
 	done
 
@@ -186,7 +186,7 @@ compobjs:
 	base_t=`basename $$t | sed -e "s/\.py//"` ; \
 	echo $$base_t | egrep -q "comp|utilities|chkconfig|keyval_parser|sysvinit" && continue ; \
         echo "   $$base_t" | tee -a source/compliance.objects.rst ; \
-        echo "$$base_t" | gawk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n"}'| tee source/compliance.objects.$$base_t.rst ; \
+        echo "$$base_t" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n"}'| tee source/compliance.objects.$$base_t.rst ; \
 	buff=`$$t info` 2>/dev/null || continue ; \
 	echo "$$buff" | tee -a source/compliance.objects.$$base_t.rst ; \
 	done
