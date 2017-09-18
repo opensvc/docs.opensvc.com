@@ -228,3 +228,123 @@ Note you can see what string miss translating in the output of the mo target. Fo
 
 Verify your translation pointing a web browser to your local directory. When satisfied, ``git add`` and ``git commit`` your touched files (don't track the .mo and html files), and submit your commits using the procedures described in the previous chapters.
 
+Contribute documentations
+=========================
+
+Install the sphinx documentation generator and ansi2html software https://github.com/ralphbean/ansi2html
+
+For example, on a debian-based system:
+
+::
+
+    sudo apt-get install python-sphinx python-sphinx-rtd-theme
+
+Install ansi2html:
+
+::
+
+    sudo pip install ansi2html
+
+Clone the documentation project:
+
+::
+
+    git clone https://git.opensvc.com/docs.opensvc.com/.git
+
+Step into the cloned project directory:
+
+::
+
+    cd docs.opensvc.com
+
+Modify the documentation source files (.rst located in the ``sources`` directory), and then use the Makefile to build the html documentations:
+
+::
+
+    make clean ; make osvc
+
+Once the build is done, all html files can be found in the ``docs.opensvc.com/build/html`` folder.
+
+When producing command line output, it is expected to follow the steps below to preserve colors, so as to provide a better experience for futures readers:
+
+First generate raw html code from cli:
+
+::
+
+    $ sudo nodemgr print devs --color=yes | ansi2html -i
+    <span style="font-weight: bold">centos71.opensvc.com                        </span>  <span style="font-weight: bold">Type  </span>  <span style="font-weight: bold">Size</span>  <span style="font-weight: bold">Pct of Parent</span>  
+    `- <span style="color: #aa5500">vda                                      </span>  linear  15g   -              
+       |- <span style="color: #aa5500">vda1                                  </span>  linear  500m  3%             
+       `- <span style="color: #aa5500">vda2                                  </span>  linear  14g   96%            
+          |- <span style="color: #aa5500">centos_centos71-swap               </span>  linear  1g    10%            
+          `- <span style="color: #aa5500">centos_centos71-root               </span>  linear  13g   89%            
+             |- <span style="color: #aa5500">loop2                           </span>  linear  50m   0%             
+             |  |- <span style="color: #aa5500">testsvc1-lv1                 </span>  linear  20m   40%            
+             |  `- <span style="color: #aa5500">testsvc1-lv2                 </span>  linear  20m   40%            
+             |- <span style="color: #aa5500">loop1                           </span>  linear  100m  0%             
+             |  |- <span style="color: #aa5500">testsvc3-lv2                 </span>  linear  20m   20%            
+             |  |- <span style="color: #aa5500">testsvc3-lv1-real            </span>  linear  52m   52%            
+             |  |  |- <span style="color: #aa5500">testsvc3-lv1              </span>  linear  52m   100%           
+             |  |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   100%           
+             |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1-cow   </span>  linear  8m    8%             
+             |     `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   650%           
+             `- <span style="color: #aa5500">loop0                           </span>  linear  100m  0%             
+                |- <span style="color: #aa5500">testsvc2-lv1                 </span>  linear  52m   52%            
+                `- <span style="color: #aa5500">testsvc2-lv2                 </span>  linear  20m   20%            
+
+
+Edit the .rst document and format the html code as described below, so as to be tagged with ``.. raw:: html``, and enclosed between ``<pre class=output>`` and ``</pre>`` :
+
+::
+
+    .. raw:: html
+
+        <pre class=output>
+            <span style="font-weight: bold">centos71.opensvc.com                        </span>  <span style="font-weight: bold">Type  </span>  <span style="font-weight: bold">Size</span>  <span style="font-weight: bold">Pct of Parent</span>  
+            `- <span style="color: #aa5500">vda                                      </span>  linear  15g   -              
+               |- <span style="color: #aa5500">vda1                                  </span>  linear  500m  3%             
+               `- <span style="color: #aa5500">vda2                                  </span>  linear  14g   96%            
+                  |- <span style="color: #aa5500">centos_centos71-swap               </span>  linear  1g    10%            
+                  `- <span style="color: #aa5500">centos_centos71-root               </span>  linear  13g   89%            
+                     |- <span style="color: #aa5500">loop2                           </span>  linear  50m   0%             
+                     |  |- <span style="color: #aa5500">testsvc1-lv1                 </span>  linear  20m   40%            
+                     |  `- <span style="color: #aa5500">testsvc1-lv2                 </span>  linear  20m   40%            
+                     |- <span style="color: #aa5500">loop1                           </span>  linear  100m  0%             
+                     |  |- <span style="color: #aa5500">testsvc3-lv2                 </span>  linear  20m   20%            
+                     |  |- <span style="color: #aa5500">testsvc3-lv1-real            </span>  linear  52m   52%            
+                     |  |  |- <span style="color: #aa5500">testsvc3-lv1              </span>  linear  52m   100%           
+                     |  |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   100%           
+                     |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1-cow   </span>  linear  8m    8%             
+                     |     `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   650%           
+                     `- <span style="color: #aa5500">loop0                           </span>  linear  100m  0%             
+                        |- <span style="color: #aa5500">testsvc2-lv1                 </span>  linear  52m   52%            
+                        `- <span style="color: #aa5500">testsvc2-lv2                 </span>  linear  20m   20%            
+        </pre>
+
+After building html documentation, the result looks like the example below :
+
+.. raw:: html
+
+    <pre class=output>
+    <span style="font-weight: bold">centos71.opensvc.com                        </span>  <span style="font-weight: bold">Type  </span>  <span style="font-weight: bold">Size</span>  <span style="font-weight: bold">Pct of Parent</span>  
+    `- <span style="color: #aa5500">vda                                      </span>  linear  15g   -              
+       |- <span style="color: #aa5500">vda1                                  </span>  linear  500m  3%             
+       `- <span style="color: #aa5500">vda2                                  </span>  linear  14g   96%            
+          |- <span style="color: #aa5500">centos_centos71-swap               </span>  linear  1g    10%            
+          `- <span style="color: #aa5500">centos_centos71-root               </span>  linear  13g   89%            
+             |- <span style="color: #aa5500">loop2                           </span>  linear  50m   0%             
+             |  |- <span style="color: #aa5500">testsvc1-lv1                 </span>  linear  20m   40%            
+             |  `- <span style="color: #aa5500">testsvc1-lv2                 </span>  linear  20m   40%            
+             |- <span style="color: #aa5500">loop1                           </span>  linear  100m  0%             
+             |  |- <span style="color: #aa5500">testsvc3-lv2                 </span>  linear  20m   20%            
+             |  |- <span style="color: #aa5500">testsvc3-lv1-real            </span>  linear  52m   52%            
+             |  |  |- <span style="color: #aa5500">testsvc3-lv1              </span>  linear  52m   100%           
+             |  |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   100%           
+             |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1-cow   </span>  linear  8m    8%             
+             |     `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   650%           
+             `- <span style="color: #aa5500">loop0                           </span>  linear  100m  0%             
+                |- <span style="color: #aa5500">testsvc2-lv1                 </span>  linear  52m   52%            
+                `- <span style="color: #aa5500">testsvc2-lv2                 </span>  linear  20m   20%            
+    </pre>
+
+
