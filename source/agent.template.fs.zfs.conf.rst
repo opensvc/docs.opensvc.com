@@ -1,3 +1,8 @@
+fs.zfs resource template
+------------------------
+
+::
+
 	##############################################################################
 	#                                                                            #
 	# fs, type zfs                                                               #
@@ -18,7 +23,7 @@
 	#  scope order:     specific > generic
 	#  convert:         size
 	#
-	#  desc:  The quota in MB of the provisionned dataset.
+	#  desc:  The quota in MB of the provisioned dataset.
 	#
 	;size = foo
 	

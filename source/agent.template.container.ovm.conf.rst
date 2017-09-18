@@ -1,3 +1,8 @@
+container.ovm resource template
+-------------------------------
+
+::
+
 	##############################################################################
 	#                                                                            #
 	# container, type ovm                                                        #
@@ -44,7 +49,7 @@
 	#  required:        False
 	#  provisioning:    False
 	#  default:         None
-	#  inheritance:     head
+	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#
 	#  desc:  If the OpenSVC agent is installed via package in the container, this

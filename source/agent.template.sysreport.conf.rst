@@ -1,3 +1,8 @@
+sysreport resource template
+---------------------------
+
+::
+
 	#
 	# sysreport configlets go into /opt/opensvc/etc/sysreport.conf.d/
 	#

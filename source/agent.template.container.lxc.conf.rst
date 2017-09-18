@@ -1,3 +1,8 @@
+container.lxc resource template
+-------------------------------
+
+::
+
 	##############################################################################
 	#                                                                            #
 	# container, type lxc                                                        #
@@ -59,7 +64,7 @@
 	#  required:        False
 	#  provisioning:    False
 	#  default:         None
-	#  inheritance:     head
+	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#
 	#  desc:  If the OpenSVC agent is installed via package in the container, this

@@ -1,3 +1,8 @@
+disk.disk resource template
+---------------------------
+
+::
+
 	##############################################################################
 	#                                                                            #
 	# disk, type disk                                                            #
@@ -73,7 +78,7 @@
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#
-	#  desc:  The provisionned disk service level objective. This keyword is
+	#  desc:  The provisioned disk service level objective. This keyword is
 	#         honored on arrays supporting this (ex: EMC VMAX)
 	#
 	;slo = Optimized
