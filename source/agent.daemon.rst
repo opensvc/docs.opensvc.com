@@ -1,3 +1,5 @@
+.. _agent.daemon:
+
 Agent Daemon
 ============
 
