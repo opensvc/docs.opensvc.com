@@ -23,8 +23,9 @@ New Features
 * ``svcmgr -s`` now accepts service selection expressions
 * Cap the parallel running subprocesses on svcmgr --parallel commands. ``node.max_parallel`` node configuration keyword can be used to change the default value (10).
 * The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups.
+* The provision local action now leaves the instance in standby state, instead of started.
 
-.. warning:: start, stop, freeze, thaw service commands operate cluster wide.
+.. warning:: start, stop, freeze, thaw, provision and unprovision service commands operate cluster wide. ``svcmgr unprovision`` would thus delete all services and their data on all cluster nodes.
 
 New Commands
 ============
@@ -61,6 +62,8 @@ Services
 * ``DEFAULT.soft_anti_affinity``
 * ``DEFAULT.placement``
 * ``DEFAULT.constraints``
+* ``*.shared``
+* ``*.provision``
 
 Node
 ----
@@ -105,5 +108,6 @@ Migrating from 1.8
 * [mandatory] Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
 * [mandatory] Replace ``sync[rsync].exclude`` by their equivalent ``sync[rsync].options``
 * [mandatory] Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
-
+* [mandatory] Set ``<rid>.provision=false`` in your templates for resources you don't want to provision using the opensvc provisioner. And set your own as a ``pre_provision`` trigger.
+* [mandatory] Set ``<rid>.shared=true`` in your service configuration files and templates, on resources you want provisioned on one node only.
 
