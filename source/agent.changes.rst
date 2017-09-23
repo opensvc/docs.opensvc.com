@@ -93,6 +93,7 @@ Deprecated
 * ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` service configuration keywords.
 * ``sync[rsync].exclude``
 * ``DEFAULT.service_env``
+* ``DEFAULT.autostart_node``
 
 Migrating from 1.8
 ==================
@@ -102,6 +103,7 @@ Migrating from 1.8
 * [optional] Set ``DEFAULT.constraints``
 * [optional] Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 * [optional] Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
+* [optional] Remove ``DEFAULT.autostart_node``, make sure the placement policy produce the same behaviour
 * [optional] Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
 * [optional] Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
 * [optional] Set a sensible ``node.maintenance_grace_period``
