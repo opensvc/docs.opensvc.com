@@ -5,7 +5,6 @@ New Features
 ============
 
 * The agent now runs a daemon implementing heartbeats, scheduling, a remote OpenSVC actions listener and node/services/resources orchestration.
-* New reference ``{clusternodes}``, evaluated as ``cluster.nodes`` in node.conf.
 * Add monitor states to ``svcmgr print status`` human-friendly and JSON outputs.
 * The frozen service instance status is not longer honored by the CRM, only by the orchestrator.
 * The node is freezeable. A thawed service instance on a frozen node is not orchestrated.
@@ -24,6 +23,7 @@ New Features
 * Cap the parallel running subprocesses on svcmgr --parallel commands. ``node.max_parallel`` node configuration keyword can be used to change the default value (10).
 * The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups.
 * The provision local action now leaves the instance in standby state, instead of started.
+* Support different command for stop, start, check, info actions in a app resource.
 
 .. warning:: start, stop, freeze, thaw, provision and unprovision service commands operate cluster wide. ``svcmgr unprovision`` would thus delete all services and their data on all cluster nodes.
 
@@ -37,6 +37,9 @@ New Commands
 * ``svcmgr set --param <param> --remove <member>``
 * ``svcmgr set --kw <expr> [--kw <expr> ...]``
 * ``svcmgr print devs``
+* ``svcmgr print exposed devs``
+* ``svcmgr print sub devs``
+* ``svcmgr print base devs``
 * ``nodemgr print devs``
 * ``nodemgr daemon status``
 * ``nodemgr daemon blacklist``
@@ -49,6 +52,14 @@ New Commands
 * ``nodemgr daemon restart``
 * ``nodemgr set --param <param> --add <member>``
 * ``nodemgr set --param <param> --remove <member>``
+
+New References
+==============
+
+* ``{clusternodes}``
+* ``{exposed_devs}``, ``{exposed_devs}[<n>]``
+* ``{sub_devs}``, ``{sub_devs}[<n>]``
+* ``{base_devs}``, ``{base_devs}[<n>]``
 
 New Keywords
 ============
