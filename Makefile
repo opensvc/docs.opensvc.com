@@ -182,13 +182,11 @@ manpages:
 	done
 
 compobjs:
-	@for t in `echo /opt/opensvc/var/compliance/com.opensvc/*.py` ; do \
+	@for t in `egrep -l "^data = {" /opt/opensvc/var/compliance/com.opensvc/*.py` ; do \
 	base_t=`basename $$t | sed -e "s/\.py//"` ; \
-	echo $$base_t | egrep -q "comp|utilities|chkconfig|keyval_parser|sysvinit" && continue ; \
-        echo "   $$base_t" | tee -a source/compliance.objects.rst ; \
-        echo "$$base_t" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n"}'| tee source/compliance.objects.$$base_t.rst ; \
+	echo "$$base_t" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n"}'| tee source/compliance.objects/$$base_t.rst ; \
 	buff=`$$t info` 2>/dev/null || continue ; \
-	echo "$$buff" | tee -a source/compliance.objects.$$base_t.rst ; \
+	echo "$$buff" | tee -a source/compliance.objects/$$base_t.rst ; \
 	done
 
 
