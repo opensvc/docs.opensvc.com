@@ -20,12 +20,10 @@ An application launcher is a resource. As such, it supports the standard start, 
 | push appinfo   | info               |
 +----------------+--------------------+
 
-As a resource, an application launcher can be defined with a ``<svcname>.env`` section. This method permits complex application scheduling, mixing chaining and parallel execution, timeouts setting and scoping.
+As a resource, an application launcher can be defined with a ``<svcname>.conf`` section. This method permits complex application scheduling, mixing chaining and parallel execution, timeouts setting and scoping.
 
 For simple cases, the agent also supports a SysV-style launcher definitions.
 
-.. note::
-	SysV-style definitions can co-exist with non-conflicting app resources defined in the env file. In case of conflicting definitions, the env file definition takes precedence.
 
 Application Resource Definition
 ===============================
@@ -39,10 +37,10 @@ Here is a complete application resource section:
 
 	[app#1]
 	script = weblogic
-	start = 50
-	stop = 50
-	check = 50
-	info = 50
+	start = true
+	stop = true
+	check = true
+	info = weblogic.info arg1
 	disable = false
 	optional = true
 	tags = group1
@@ -68,21 +66,21 @@ All these parameters support scoping, using the ``@<nodename>``, ``@nodes``, ``@
 +============+=========+=============================================================================================+
 | script     | string  | Full path the the app launcher or basename of a launcher in ``etc/<svcname>.d/``.           |
 +------------+---------+---------------------------------------------------------------------------------------------+
-| start      | integer | Flag the app launcher for execution with the start parameter on service startup.            |
-|            |         | The given value is used as the ascending sort key in the resource subset.                   |
-|            |         | Omit the parameter to disable app launcher execution on resource start action.              |
+| start      | boolean | Flag the app launcher for execution with the start parameter on service startup.            |
+|            | or      | If set to a command, it is executed instead of the default ``<start> start``.               |
+|            | command | Omit the parameter to disable app launcher execution on resource start action.              |
 +------------+---------+---------------------------------------------------------------------------------------------+
-| stop       | integer | Flag the app launcher for execution with the stop parameter on service stop.                |
-|            |         | The given value is used as the ascending sort key in the resource subset.                   |
-|            |         | Omit the parameter to disable app launcher execution on resource stop action.               |
+| stop       | boolean | Flag the app launcher for execution with the stop parameter on service stop.                |
+|            | or      | If set to a command, it is executed instead of the default ``<start> stop``.                |
+|            | command | Omit the parameter to disable app launcher execution on resource stop action.               |
 +------------+---------+---------------------------------------------------------------------------------------------+
-| status     | integer | Flag the app launcher for execution with the status parameter on service status evaluation. |
-|            |         | The given value is used as the ascending sort key in the resource subset.                   |
-|            |         | Omit the parameter to disable app launcher execution on resource status action.             |
+| status     | boolean | Flag the app launcher for execution with the status parameter on service status evaluation. |
+|            | or      | If set to a command, it is executed instead of the default ``<start> status``.              |
+|            | command | Omit the parameter to disable app launcher execution on resource status action.             |
 +------------+---------+---------------------------------------------------------------------------------------------+
-| info       | integer | Flag the app launcher for execution with the info parameter on service push appinfo.        |
-|            |         | The given value is used as the ascending sort key in the resource subset.                   |
-|            |         | Omit the parameter to disable app launcher execution on resource appinfo action.            |
+| info       | boolean | Flag the app launcher for execution with the info parameter on service push appinfo.        |
+|            | or      | If set to a command, it is executed instead of the default ``<start> info``.                |
+|            | command | Omit the parameter to disable app launcher execution on resource appinfo action.            |
 +------------+---------+---------------------------------------------------------------------------------------------+
 | subset     | string  | Add the resource to the specified app subset. In the given example, the full subset name is |
 |            |         | subset#app:web                                                                              |
@@ -110,8 +108,8 @@ Application can be started and stopped without touching the other service resour
 
 ::
 
-	sudo svcmgr -s myservice stopapp
-	sudo svcmgr -s myservice startapp
+	sudo svcmgr -s myservice stop --rid app
+	sudo svcmgr -s myservice start --rid app
 
 The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that integrators can write reusable launcher scripts. Examples of this variable usage below.
 
@@ -120,7 +118,7 @@ Environment variable named ``OPENSVC_IP<n>`` are also set to let app launchers b
 Launcher Scripts Development Guidelines
 =======================================
 
-A launcher script should support the following values for argument 1:
+A single-launcher script should support the following values for argument 1:
 
 +------------+-------------------------------------------------------------------------------------------------------------+
 | Arg1       | Description                                                                                                 |
