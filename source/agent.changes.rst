@@ -24,6 +24,7 @@ New Features
 * The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups.
 * The provision local action now leaves the instance in standby state, instead of started.
 * Support different command for stop, start, check, info actions in a app resource.
+* The ``<svcname>.stonith`` and ``<svcname>.cluster`` symlinks are no longer necessary, and automatically deleted.
 
 .. warning:: start, stop, freeze, thaw, provision and unprovision service commands operate cluster wide. ``svcmgr unprovision`` would thus delete all services and their data on all cluster nodes.
 
