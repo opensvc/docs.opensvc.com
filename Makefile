@@ -136,7 +136,7 @@ doctest:
 html_fr:
 	$(SPHINXBUILD) -b html -Dlanguage=fr $(ALLSPHINXOPTS) $(BUILDDIR)/html/fr
 
-osvc: html html_fr
+osvc: templates manpages compobjs html html_fr
 
 pot:
 	$(SPHINXBUILD) -b gettext source $(POT_D)
