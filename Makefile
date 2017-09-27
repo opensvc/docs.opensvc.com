@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
+DOCDIR        = $(HOME)/docs
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -163,26 +164,35 @@ mo: mo_fr
 
 trans: pot po mo
 
-templates:
+gitclone:
+	@test -d $(DOCDIR) || mkdir $(DOCDIR)
+	@cd $(DOCDIR) && git clone https://git.opensvc.com/opensvc/.git
+
+gitrepo:
+	@echo "Updating git repo"
+	@test -d $(DOCDIR)/opensvc/.git || $(MAKE) gitclone
+	@cd $(DOCDIR)/opensvc && git pull --all && git reset --hard
+
+templates: gitrepo
 	@echo "Service Configuration File Templates\n************************************\n\nContents:\n\n.. toctree::\n   :maxdepth: 2\n" | tee source/agent.template.conf.rst
-	@for t in `echo /opt/opensvc/usr/share/doc/template.*` ; do \
+	@for t in `echo $(DOCDIR)/opensvc/usr/share/doc/template.*` ; do \
 	base_t=`basename $$t | sed -e "s/template.//" -e "s/.conf//"` ; \
 	echo $$base_t | egrep -q "comp_|svc.prov" && continue ; \
         echo "   agent.template.$$base_t.conf" | tee -a source/agent.template.conf.rst ; \
         echo "$$base_t resource template" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.template.$$base_t.conf.rst ; \
 	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.conf.rst ; \
 	done
-	cp /opt/opensvc/usr/share/doc/node.conf source/_static/node.conf
-	cp /opt/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
+	cp $(DOCDIR)/opensvc/usr/share/doc/node.conf source/_static/node.conf
+	cp $(DOCDIR)/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
 
-manpages:
+manpages: gitrepo
 	@for t in nodemgr svcmgr svcmon ; do \
         echo "$$t manpage" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.man.$$t.rst ; \
-	COLUMNS=90 man /opt/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
+	COLUMNS=90 man $(DOCDIR)/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
 	done
 
-compobjs:
-	@for t in `egrep -l "^data = {" /opt/opensvc/var/compliance/com.opensvc/*.py` ; do \
+compobjs: gitrepo
+	@for t in `egrep -l "^data = {" $(DOCDIR)/opensvc/var/compliance/com.opensvc/*.py` ; do \
 	base_t=`basename $$t | sed -e "s/\.py//"` ; \
 	echo "$$base_t" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n"}'| tee source/compliance.objects/$$base_t.rst ; \
 	buff=`$$t info` 2>/dev/null || continue ; \
