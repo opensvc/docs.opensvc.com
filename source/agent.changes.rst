@@ -25,6 +25,7 @@ New Features
 * The provision local action now leaves the instance in standby state, instead of started.
 * Support different command for stop, start, check, info actions in a app resource.
 * The ``<svcname>.stonith`` and ``<svcname>.cluster`` symlinks are no longer necessary, and automatically deleted.
+* The ``DEFAULT.env`` parameter is now only used to check for service placement : a PRD node can only run PRD/PPRD services
 
 .. warning:: start, stop, freeze, thaw, provision and unprovision service commands operate cluster wide. ``svcmgr unprovision`` would thus delete all services and their data on all cluster nodes.
 
@@ -110,12 +111,13 @@ Deprecated
 Migrating from 1.8
 ==================
 
+* [informational] Any service without ``DEFAULT.autostart_node`` will be left in ``frozen`` state after migration. If thawed, the service will be orchestrated according to the placement policy.
 * [optional] Remove hb sections from service configurations
 * [optional] Set ``DEFAULT.placement``
 * [optional] Set ``DEFAULT.constraints``
 * [optional] Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 * [optional] Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
-* [optional] Remove ``DEFAULT.autostart_node``, make sure the placement policy produce the same behaviour
+* [optional] Remove ``DEFAULT.autostart_node``, make sure the placement policy produce the same behaviour [:ref:`deprecated_default_autostart_node`]
 * [optional] Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
 * [optional] Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
 * [optional] Set a sensible ``node.maintenance_grace_period``
@@ -124,4 +126,4 @@ Migrating from 1.8
 * [mandatory] Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
 * [mandatory] Set ``<rid>.provision=false`` in your templates for resources you don't want to provision using the opensvc provisioner. And set your own as a ``pre_provision`` trigger.
 * [mandatory] Set ``<rid>.shared=true`` in your service configuration files and templates, on resources you want provisioned on one node only.
-
+* [mandatory] Set ``DEFAULT.orchestrate=false`` in your service without hb resource to ensure manual service failover. Also ensure that the placement policy meet your expectations. Default placement policy rely on nodes declaration order. [:ref:`new_default_orchestrate`]

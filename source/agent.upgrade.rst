@@ -10,7 +10,10 @@ OpenSVC provides packages for all supported operating systems at https://repo.op
 * Feed the opensvc packages into your existing per operating system package depots and use operating system specific network-aware package management commands.
 * Mirror https://repo.opensvc.com on a corporate server and set up the opensvc agent to use this mirror as a package source.
 
-This chapter describes the last method.
+In the first part, this chapter describes the last method. The second part describes all informations the user need to know before starting an upgrade campain.
+
+OS Package upgrade
+##################
 
 Initialize a Mirror
 ===================
@@ -75,3 +78,61 @@ The upgrade command is:
 	nodemgr updatepkg
 
 This command is operating system agnostic.
+
+Upgrade Informations & Prerequisites
+####################################
+
+The upgrade path can involve some steps before or after migration, depending on the service configuration.
+
+.. _deprecated_default_autostart_node:
+
+DEPRECATED ``DEFAULT.autostart_node``
+=====================================
+
+Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy. The placement policy algorithm is responsible of primary node identification.
+
+When using ``nodes_order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
+
+Example::
+
+	nodes=n1 n2 n3  => n1 is the primary node, n2 and n3 are secondary nodes
+	nodes=n3 n2 n1  => n3 is the primary node, n2 and n1 are secondary nodes
+
+
+.. note::
+
+    A 1.8 service without ``DEFAULT.autostart_node`` (meaning no automatic start at boot), would be left in ``frozen`` state after 1.9 migration
+
+.. _new_default_orchestrate:
+
+NEW ``DEFAULT.orchestrate`` parameter
+=====================================
+
+Among all changes in the 1.9 version, one of the most important is that services are now orchestrated **by default**, as soon as a cluster is formed (2 nodes and upper), and the service nodes list is made of at least 2 nodes.
+
+It means the following:
+
+* Any 1.8 service that operate **without** hearbeat resource (manual failover from one node to another) would behave like a HA service as soon as the agent stack is upgraded to 1.9
+
+* In order to avoid a different behaviour after agent migration, it is mandatory to deploy new parameter ``DEFAULT.orchestrate=false`` before starting migration.
+
+Examples :
+
++---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
+|  Service Type |    V1.8                |   V1.9               |   Comments                                                                              |
++===============+========================+======================+=========================================================================================+
+|               | | [DEFAULT]            | | [DEFAULT]          | | we have to disable orchestration because no hb resource in 1.8                        |
+| | failover    | | nodes=n1 n2          | | nodes=n2 n1        | | we also have to order nodes accurately to allow service default startup on n2         |
+| |   no hb     | | autostart_node=n2    | | orchestrate=false  |                                                                                         |
++---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]            | | [DEFAULT]          | | as openha is leading the primary node (n2), no autostart_node is present in 1.8       |
+| | failover    | | nodes=n1 n2          | | nodes=n2 n1        | | we just have to order nodes accurately to allow service default startup on n2         |
+| | with hb     | |                      | |                    |                                                                                         |
++---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]            | | [DEFAULT]          | | we have to disable orchestration to have a kind of static service                     |
+| |  flex       | | nodes=n1 n2 n3       | | nodes=n2 n3 n1     | | we also have to order nodes accurately to allow service default startup on n2 and n3  |
+|               | | autostart_node=n2 n3 | | flex_min_nodes=2   | | flex_min_nodes ensure that 2 service instances are spawned at service startup         |
+|               |                        | | orchestrate=false  |                                                                                         |
++---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
+
+
