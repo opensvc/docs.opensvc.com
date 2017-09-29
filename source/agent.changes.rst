@@ -66,38 +66,12 @@ New References
 New Keywords
 ============
 
-Services
---------
+The sections below describes new parameters:
 
-* ``DEFAULT.hard_affinity``
-* ``DEFAULT.soft_affinity``
-* ``DEFAULT.hard_anti_affinity``
-* ``DEFAULT.soft_anti_affinity``
-* ``DEFAULT.orchestrate``
-* ``DEFAULT.placement``
-* ``DEFAULT.constraints``
-* ``*.shared``
-* ``*.provision``
+.. toctree::
+   :maxdepth: 3
 
-Node
-----
-
-* ``node.maintenance_grace_period``
-* ``node.rejoin_grace_period``
-* ``cluster.secret``
-* ``cluster.nodes``
-* ``cluster.name``
-* ``hb.type``
-* ``hb[type=unicast].addr``
-* ``hb[type=unicast].intf``
-* ``hb[type=unicast].port``
-* ``hb[type=unicast].timeout``
-* ``hb[type=multicast].addr``
-* ``hb[type=multicast].intf``
-* ``hb[type=multicast].port``
-* ``hb[type=multicast].timeout``
-* ``hb[type=disk].dev``
-* ``hb[type=disk].timeout``
+   agent.keywords.19
 
 Deprecated
 ==========

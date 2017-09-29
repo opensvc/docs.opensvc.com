@@ -95,6 +95,16 @@ Examples:
 Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 ========================================================
 
+Use in context of affinity between services., where a service svc1 should be run on same node 
+
+Assuming svc1 and svc2 are tied to each other, we expect that those 2 services run on the same node
+
+Example for ``svc2``::
+
+    [DEFAULT]
+    hard_affinity = svc1
+
+
 Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
 ==================================================================
 
