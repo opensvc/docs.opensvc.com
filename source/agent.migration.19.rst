@@ -27,29 +27,18 @@ Once no more services are configured with hb resources, OpenHA can be stopped an
 Set ``DEFAULT.orchestrate``
 ===========================
 
-This parameter is used to
+Depending on your 1.8 service behavior, you have to check that they are correctly setup so as to keep working as previously
 
 Possible values:
 
 * ``no``
-    * no instance is started automatically
-    * giveback is disabled, takeover can be used to relocate the service
-    * placement warnings are inhibited
     * use this setting for all 1.8 services **without** ``DEFAULT.autostart_node``
 * ``start``
-    * only the instance on the natural leader is started
-    * takeover can be used to relocate the service
-    * giveback is useful to relocate the service to the natural leader
     * use this setting for all 1.8 services **with** ``DEFAULT.autostart_node``
 * ``ha``
-    * an instance is started on the best available node
-    * takeover can be used to relocate the service
-    * giveback is useful to relocate the service to the best available node
     * use this setting for all 1.8 services under OpenHA control
 
-.. note::
-
-    ``DEFAULT.orchestrate`` default value is ``no``
+.. seealso:: :ref:`default_orchestrate`
 
 
 Set ``DEFAULT.placement``

@@ -133,8 +133,38 @@ To set up this soft anti affinity::
 +------------+--------------+--------------+-----------------+--------------------------------------+
 
 
+.. _default_orchestrate:
+
 ``DEFAULT.orchestrate``
 =======================
+
+This parameter is used to specify the daemon behaviour regarding service orchestration
+
+To set up this parameter::
+
+    $ sudo svcmgr -s svc2 set --kw orchestrate=<no|start|ha>
+
+Possible values:
+
+* ``no``
+    * no instance is started automatically
+    * giveback is disabled, takeover can be used to relocate the service
+    * placement warnings are inhibited
+    * use this setting for all 1.8 services **without** ``DEFAULT.autostart_node``
+* ``start``
+    * only the instance on the natural leader is started
+    * takeover can be used to relocate the service
+    * giveback is useful to relocate the service to the natural leader
+    * use this setting for all 1.8 services **with** ``DEFAULT.autostart_node``
+* ``ha``
+    * an instance is started on the best available node
+    * takeover can be used to relocate the service
+    * giveback is useful to relocate the service to the best available node
+    * use this setting for all 1.8 services under OpenHA control
+
+.. note::
+
+    ``DEFAULT.orchestrate`` default value is ``no``
 
 ``DEFAULT.placement``
 =====================
