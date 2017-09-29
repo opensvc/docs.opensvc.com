@@ -82,6 +82,7 @@ Node
 ----
 
 * ``node.maintenance_grace_period``
+* ``node.rejoin_grace_period``
 * ``cluster.secret``
 * ``cluster.nodes``
 * ``cluster.name``
@@ -121,6 +122,7 @@ Migrating from 1.8
 * [optional] Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
 * [optional] Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
 * [optional] Set a sensible ``node.maintenance_grace_period``
+* [optional] Set a sensible ``node.rejoin_grace_period``
 * [mandatory] Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
 * [mandatory] Replace ``sync[rsync].exclude`` by their equivalent ``sync[rsync].options``
 * [mandatory] Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
