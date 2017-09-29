@@ -10,7 +10,7 @@ OpenSVC provides packages for all supported operating systems at https://repo.op
 * Feed the opensvc packages into your existing per operating system package depots and use operating system specific network-aware package management commands.
 * Mirror https://repo.opensvc.com on a corporate server and set up the opensvc agent to use this mirror as a package source.
 
-In the first part, this chapter describes the last method. The second part describes all informations the user need to know before starting an upgrade campain.
+In the first part, this chapter describes the last method. The second part provides all information the user need to know before starting an upgrade campain.
 
 OS Package upgrade
 ##################
@@ -79,31 +79,10 @@ The upgrade command is:
 
 This command is operating system agnostic.
 
-Upgrade Informations & Prerequisites
-####################################
+Upgrade Information & Prerequisites
+###################################
 
 The upgrade path can involve some steps before or after migration, depending on the service configuration.
-
-.. _deprecated_default_autostart_node:
-
-DEPRECATED ``DEFAULT.autostart_node``
-=====================================
-
-Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy. The placement policy algorithm is responsible of primary node identification.
-
-When using ``nodes_order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
-
-Example::
-
-	nodes=n1 n2 n3  => n1 is the primary node, n2 and n3 are secondary nodes
-	nodes=n3 n2 n1  => n3 is the primary node, n2 and n1 are secondary nodes
-
-
-.. note::
-
-    A 1.8 service without ``DEFAULT.autostart_node`` (meaning no automatic start at boot), would be left in ``frozen`` state after 1.9 migration
-
-.. _new_default_orchestrate:
 
 NEW ``DEFAULT.orchestrate`` parameter
 =====================================

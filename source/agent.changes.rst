@@ -73,6 +73,7 @@ Services
 * ``DEFAULT.soft_affinity``
 * ``DEFAULT.hard_anti_affinity``
 * ``DEFAULT.soft_anti_affinity``
+* ``DEFAULT.orchestrate``
 * ``DEFAULT.placement``
 * ``DEFAULT.constraints``
 * ``*.shared``
@@ -109,23 +110,13 @@ Deprecated
 * ``DEFAULT.service_env``
 * ``DEFAULT.autostart_node``
 
-Migrating from 1.8
-==================
 
-* [informational] Any service without ``DEFAULT.autostart_node`` will be left in ``frozen`` state after migration. If thawed, the service will be orchestrated according to the placement policy.
-* [optional] Remove hb sections from service configurations
-* [optional] Set ``DEFAULT.placement``
-* [optional] Set ``DEFAULT.constraints``
-* [optional] Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
-* [optional] Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
-* [optional] Remove ``DEFAULT.autostart_node``, make sure the placement policy produce the same behaviour [:ref:`deprecated_default_autostart_node`]
-* [optional] Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
-* [optional] Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
-* [optional] Set a sensible ``node.maintenance_grace_period``
-* [optional] Set a sensible ``node.rejoin_grace_period``
-* [mandatory] Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
-* [mandatory] Replace ``sync[rsync].exclude`` by their equivalent ``sync[rsync].options``
-* [mandatory] Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
-* [mandatory] Set ``<rid>.provision=false`` in your templates for resources you don't want to provision using the opensvc provisioner. And set your own as a ``pre_provision`` trigger.
-* [mandatory] Set ``<rid>.shared=true`` in your service configuration files and templates, on resources you want provisioned on one node only.
-* [mandatory] Set ``DEFAULT.orchestrate=false`` in your service without hb resource to ensure manual service failover. Also ensure that the placement policy meet your expectations. Default placement policy rely on nodes declaration order. [:ref:`new_default_orchestrate`]
+Agent Migration
+===============
+
+The sections below provides detailed informations on migration prerequisites and caveats:
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.migration.19
