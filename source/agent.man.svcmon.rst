@@ -34,4 +34,4 @@ svcmon manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-09-12                             SVCMON(1)
+	                                       2017-09-29                             SVCMON(1)

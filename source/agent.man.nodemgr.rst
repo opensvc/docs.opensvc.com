@@ -1053,6 +1053,31 @@ nodemgr manpage
 	
 	              --wait Wait for asynchronous action termination
 	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr frozen
+	
+	              return  0 if all the services are frozen node-wide, preventing the daemon
+	              to orchestrate them. return 1 otherwise
+	
 	              --color=COLOR
 	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
@@ -1069,27 +1094,6 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr frozen
-	
-	              return 0 if all the services are frozen node-wide, preventing the  daemon
-	              to orchestrate them. return 1 otherwise
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
 	       nodemgr logs
 	
 	              fancy display of the node logs
@@ -1098,7 +1102,7 @@ nodemgr manpage
 	                     do not display the command result in a pager.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1107,7 +1111,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1122,30 +1126,6 @@ nodemgr manpage
 	
 	              --reverse
 	                     reverse the tree
-	
-	              --verbose
-	                     add  more  information  to  some  print  commands: +next in 'print
-	                     schedule'
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr print schedule
-	
-	              print the node tasks schedule
 	
 	              --verbose
 	                     add more information to  some  print  commands:  +next  in  'print
@@ -1167,12 +1147,16 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr reboot
+	       nodemgr print schedule
 	
-	              reboot the node
+	              print the node tasks schedule
+	
+	              --verbose
+	                     add  more  information  to  some  print  commands: +next in 'print
+	                     schedule'
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1181,7 +1165,27 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr reboot
+	
+	              reboot the node
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1192,7 +1196,7 @@ nodemgr manpage
 	              set a new root password and store it in the collector
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1201,7 +1205,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1212,37 +1216,16 @@ nodemgr manpage
 	              scan the scsi hosts in search of new disks
 	
 	              --hba=HBA
-	                     specify   a   hba   to   scan  for  new  block  devices.  Example:
+	                     specify  a  hba  to  scan  for   new   block   devices.   Example:
 	                     5001438002432430 or iqn.1993-08.org.debian:01:659b4bbd68bd
 	
 	              --target=TARGET
-	                     specify  a  target  to  scan  for  new  block  devices.   Example:
+	                     specify   a  target  to  scan  for  new  block  devices.  Example:
 	                     5000097358185088 or iqn.clementine.tgt1
 	
 	              --lun=LUN
 	                     specify a logical unit number to scan for new block devices. Exam‐
 	                     ple: 1
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       nodemgr schedule reboot
-	
-	              mark the node for reboot at the next allowed period. the  allowed  period
-	              is defined by a "reboot" section in node.conf.
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -1255,6 +1238,27 @@ nodemgr manpage
 	
 	              --format=FORMAT
 	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr schedule reboot
+	
+	              mark  the  node for reboot at the next allowed period. the allowed period
+	              is defined by a "reboot" section in node.conf.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1265,7 +1269,7 @@ nodemgr manpage
 	              tell if the node is scheduled for reboot
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1274,7 +1278,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify a data formatter for output of the print*  and  collector*
+	                     specify  a  data formatter for output of the print* and collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1285,6 +1289,27 @@ nodemgr manpage
 	              run the node task scheduler
 	
 	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify  a  data formatter for output of the print* and collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       nodemgr schedulers
+	
+	              execute a run of  the  node  and  services  schedulers.  this  action  is
+	              installed in the system scheduler
+	
+	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
@@ -1300,33 +1325,12 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       nodemgr schedulers
-	
-	              execute  a  run  of  the  node  and  services  schedulers. this action is
-	              installed in the system scheduler
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron cron mode
-	
-	              --debug
-	                     debug mode
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -h, --help
-	                     show this help message and exit
-	
 	       nodemgr shutdown
 	
 	              shutdown the node to powered off state
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
 	              --cron cron mode
@@ -1335,7 +1339,7 @@ nodemgr manpage
 	                     debug mode
 	
 	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
+	                     specify a data formatter for output of the print*  and  collector*
 	                     commands. possible values are json, csv or table.
 	
 	              -h, --help
@@ -1343,7 +1347,7 @@ nodemgr manpage
 	
 	       nodemgr thaw
 	
-	              thaw services node-wide, allowing the daemon to  orchestrate  them.  this
+	              thaw  services  node-wide,  allowing the daemon to orchestrate them. this
 	              thaw method does not actually thaw services frozen at service-level (with
 	              svcmgr).
 	
@@ -1351,10 +1355,14 @@ nodemgr manpage
 	                     Set to disable cluster-wide operations.
 	
 	              --time=TIME
-	                     Number of seconds to wait for an async action to  finish.  Default
+	                     Number  of  seconds to wait for an async action to finish. Default
 	                     is 300 seconds.
 	
 	              --wait Wait for asynchronous action termination
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
 	
 	              --color=COLOR
 	                     colorize  output.  possible  values  are : auto=guess based on tty
@@ -2503,4 +2511,4 @@ nodemgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-09-12                            NODEMGR(1)
+	                                       2017-09-29                            NODEMGR(1)

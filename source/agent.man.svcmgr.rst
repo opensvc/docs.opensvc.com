@@ -4601,6 +4601,118 @@ svcmgr manpage
 	
 	              provision and start the service
 	
+	              --time=TIME
+	                     A  duration  expression  like '1m5s'. The maximum wait time for an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr prstart
+	
+	              reserve scsi disks held by this service
+	
 	              --dry-run
 	                     Show the action execution plan
 	
@@ -4703,50 +4815,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr prstart
+	       svcmgr prstatus
 	
-	              reserve scsi disks held by this service
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
+	              report status of reservations on scsi disks held by this service
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
@@ -4809,9 +4880,47 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr prstatus
+	       svcmgr prstop
 	
-	              report status of reservations on scsi disks held by this service
+	              release scsi disks held by this service
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
@@ -4874,115 +4983,12 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr prstop
-	
-	              release scsi disks held by this service
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
 	       svcmgr pull
 	
 	              pull a service configuration from the collector
 	
 	              --provision
-	                     with   the  install  or  create  actions,  provision  the  service
+	                     with  the  install  or  create  actions,  provision  the   service
 	                     resources after config file creation. defaults to False.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -5013,14 +5019,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -5031,16 +5037,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5078,14 +5084,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -5096,16 +5102,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5144,14 +5150,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -5162,16 +5168,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5209,14 +5215,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -5227,16 +5233,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5246,6 +5252,109 @@ svcmgr manpage
 	
 	              refresh only monitored resource status. This action is scheduleable, usu‐
 	              ally every minute.
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr restart
+	
+	              combo action, chaining stop-start
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -5284,6 +5393,9 @@ svcmgr manpage
 	                     separator can be used to impose multiple tag conditions.  Example:
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
@@ -5346,9 +5458,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr restart
+	       svcmgr resync
 	
-	              combo action, chaining stop-start
+	              combo action, chaining stop-sync_resync-start
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -5452,115 +5564,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr resync
-	
-	              combo action, chaining stop-sync_resync-start
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
 	       svcmgr run
 	
-	              run  all  tasks,  or tasks specified by --rid --tags and --subset, disre‐
+	              run all tasks, or tasks specified by --rid --tags  and  --subset,  disre‐
 	              garding their schedule
 	
 	              --dry-run
@@ -5570,35 +5576,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -5629,14 +5635,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -5647,16 +5653,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5694,14 +5700,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -5712,16 +5718,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5738,35 +5744,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -5797,14 +5803,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -5815,16 +5821,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -5833,1766 +5839,6 @@ svcmgr manpage
 	       svcmgr start
 	
 	              start all service resources
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              --time=TIME
-	                     A  duration  expression  like '1m5s'. The maximum wait time for an
-	                     async action to finish. Default is 300 seconds.
-	
-	              --wait Wait for asynchronous action termination
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startapp
-	
-	              execute service application startup script
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startcontainer
-	
-	              start the container resource
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startdisk
-	
-	              combo  action,  activating  standby  disks, taking reservations, starting
-	              loopback devices and volume groups
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startfs
-	
-	              prepare  devices,  logical  volumes, mount service filesystems, bootstrap
-	              containers
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startip
-	
-	              configure service ip addresses
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startshare
-	
-	              start network shares
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr startstandby
-	
-	              start service resources flagged always on
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr status
-	
-	              return service overall status code
-	
-	              --refresh
-	                     drop last resource status cache and  re-evaluate  before  printing
-	                     with the 'print [json] status' commands
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stonith
-	
-	              command provided to the heartbeat daemon to fence peer node  in  case  of
-	              split brain
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stop
-	
-	              stop all service resources not flagged always on. With --force, stop  all
-	              service resources, even those flagged always on.
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              --time=TIME
-	                     A  duration  expression  like '1m5s'. The maximum wait time for an
-	                     async action to finish. Default is 300 seconds.
-	
-	              --wait Wait for asynchronous action termination
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopapp
-	
-	              execute service application stop script
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopcontainer
-	
-	              stop the container resource
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopdisk
-	
-	              combo action, stopping volume groups and loopback devices, droping reser‐
-	              vations, disabling standby disks
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopfs
-	
-	              shutdown  container,  umount service filesystems, deactivate logical vol‐
-	              umes
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopip
-	
-	              unconfigure service ip addresses
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute  the  service  action via the daemon, on the local service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option to set to limit the action  scope  to  the  master  service
-	                     resources
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr stopshare
-	
-	              stop network shares
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr switch
-	
-	              stop  the  service  on  the local node and start on the remote node. --to
-	              <node> specify the remote node to switch the service to.
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -7637,6 +5883,1766 @@ svcmgr manpage
 	
 	              --time=TIME
 	                     A duration expression like '1m5s'. The maximum wait  time  for  an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startapp
+	
+	              execute service application startup script
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startcontainer
+	
+	              start the container resource
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startdisk
+	
+	              combo action, activating standby  disks,  taking  reservations,  starting
+	              loopback devices and volume groups
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startfs
+	
+	              prepare devices, logical volumes, mount  service  filesystems,  bootstrap
+	              containers
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startip
+	
+	              configure service ip addresses
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startshare
+	
+	              start network shares
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr startstandby
+	
+	              start service resources flagged always on
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr status
+	
+	              return service overall status code
+	
+	              --refresh
+	                     drop  last  resource  status cache and re-evaluate before printing
+	                     with the 'print [json] status' commands
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stonith
+	
+	              command  provided  to  the heartbeat daemon to fence peer node in case of
+	              split brain
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stop
+	
+	              stop  all service resources not flagged always on. With --force, stop all
+	              service resources, even those flagged always on.
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --time=TIME
+	                     A duration expression like '1m5s'. The maximum wait  time  for  an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopapp
+	
+	              execute service application stop script
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopcontainer
+	
+	              stop the container resource
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopdisk
+	
+	              combo action, stopping volume groups and loopback devices, droping reser‐
+	              vations, disabling standby disks
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopfs
+	
+	              shutdown container, umount service filesystems, deactivate  logical  vol‐
+	              umes
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopip
+	
+	              unconfigure service ip addresses
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr stopshare
+	
+	              stop network shares
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr switch
+	
+	              stop the service on the local node and start on  the  remote  node.  --to
+	              <node> specify the remote node to switch the service to.
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option to set to limit the action  scope  to  the  master  service
+	                     resources
+	
+	              --node=NODE
+	                     the  node to send a request to. if not specified the local node is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option to set to limit the action scope to the  service  resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option  to  set  to  limit  the  action scope to all slave service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     tag2, or tag3.
+	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --time=TIME
+	                     A  duration  expression  like '1m5s'. The maximum wait time for an
 	                     async action to finish. Default is 300 seconds.
 	
 	              --wait Wait for asynchronous action termination
@@ -7672,109 +7678,6 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr sync all
-	
-	              combo action, chaining sync_nodes-sync_drp-sync_update.
-	
-	              --dry-run
-	                     Show the action execution plan
-	
-	              -f, --force
-	                     force action, ignore sanity check warnings
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              --master
-	                     option  to  set  to  limit  the action scope to the master service
-	                     resources
-	
-	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
-	                     targeted.
-	
-	              --rid=PARM_RID
-	                     comma-separated list of resource to limit action to
-	
-	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
-	                     in the specified, comma-separated, slaves
-	
-	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
-	                     resources
-	
-	              --subsets=PARM_SUBSETS
-	                     comma-separated list of resource subsets to limit action to
-	
-	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
-	                     tag2, or tag3.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
 	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
@@ -7808,9 +7711,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr sync break
+	       svcmgr sync all
 	
-	              split a storage hardware-assisted disk synchronization
+	              combo action, chaining sync_nodes-sync_drp-sync_update.
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -7906,6 +7809,109 @@ svcmgr manpage
 	
 	              --waitlock=PARM_WAITLOCK
 	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr sync break
+	
+	              split a storage hardware-assisted disk synchronization
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -7923,35 +7929,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -7982,14 +7988,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -8000,16 +8006,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8026,35 +8032,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8085,14 +8091,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -8103,16 +8109,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8129,35 +8135,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8188,14 +8194,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -8206,16 +8212,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8223,7 +8229,7 @@ svcmgr manpage
 	
 	       svcmgr sync nodes
 	
-	              send to  peer  nodes  the  service  config  files  and  additional  files
+	              send  to  peer  nodes  the  service  config  files  and  additional files
 	              described in the config file.
 	
 	              --dry-run
@@ -8233,35 +8239,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8292,14 +8298,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -8310,16 +8316,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8336,35 +8342,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8395,14 +8401,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -8413,16 +8419,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8430,7 +8436,7 @@ svcmgr manpage
 	
 	       svcmgr sync restore
 	
-	              trigger  a  restore of the sync resources data to their target path (DAN‐
+	              trigger a restore of the sync resources data to their target  path  (DAN‐
 	              GEROUS: make sure you understand before running this action).
 	
 	              --dry-run
@@ -8440,35 +8446,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8499,14 +8505,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -8517,16 +8523,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8543,35 +8549,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8602,14 +8608,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -8620,16 +8626,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8637,7 +8643,7 @@ svcmgr manpage
 	
 	       svcmgr sync resync
 	
-	              like sync_update, but not triggered by the scheduler  (thus  adapted  for
+	              like  sync_update,  but  not triggered by the scheduler (thus adapted for
 	              clone/snap operations)
 	
 	              --dry-run
@@ -8647,35 +8653,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8706,14 +8712,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -8724,16 +8730,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8750,35 +8756,35 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute the service action via the daemon, on  the  local  service
+	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option  to  set  to  limit  the action scope to the master service
+	                     option to set to limit the action  scope  to  the  master  service
 	                     resources
 	
 	              --node=NODE
-	                     the node to send a request to. if not specified the local node  is
+	                     the  node to send a request to. if not specified the local node is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option  to  set to limit the action scope to the service resources
+	                     option to set to limit the action scope to the  service  resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option to set to limit the  action  scope  to  all  slave  service
+	                     option  to  set  to  limit  the  action scope to all slave service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated  list  of  resource tags to limit action to. The +
-	                     separator can be used to impose multiple tag conditions.  Example:
-	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     comma-separated list of resource tags to limit action  to.  The  +
+	                     separator  can be used to impose multiple tag conditions. Example:
+	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -8809,14 +8815,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -8827,16 +8833,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -8853,6 +8859,109 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr sync update
+	
+	              trigger a one-time resync of the volume to its target
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
 	                     execute  the  service  action via the daemon, on the local service
 	                     instances only, ignoring cluster-wide considerations.
 	
@@ -8945,9 +9054,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr sync update
+	       svcmgr sync verify
 	
-	              trigger a one-time resync of the volume to its target
+	              trigger a one-time checksum-based verify of the volume and its target
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -9048,9 +9157,9 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr sync verify
+	       svcmgr takeover
 	
-	              trigger a one-time checksum-based verify of the volume and its target
+	              stop the service on its current node and start on the local node.
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -9090,6 +9199,15 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
+	              --disable-rollback
+	                     Exit without resource activation rollback on start action error
+	
+	              --time=TIME
+	                     A  duration  expression  like '1m5s'. The maximum wait time for an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
 	                      '!' is the expression negation operator
@@ -9118,14 +9236,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -9136,24 +9254,104 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
 	                     show this help message and exit
 	
-	       svcmgr takeover
+	       svcmgr thaw
 	
-	              stop the service on its current node and start on the local node.
+	              remove the flag to unblock actions on this service
+	
+	              --time=TIME
+	                     A  duration  expression  like '1m5s'. The maximum wait time for an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --local
+	                     execute  the  service  action via the daemon, on the local service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr toc
+	
+	              Trigger  the service pre_monitor_action script and monitor_action method.
+	              Beware, this might crash or reboot the node.
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -9193,15 +9391,6 @@ svcmgr manpage
 	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
-	              --disable-rollback
-	                     Exit without resource activation rollback on start action error
-	
-	              --time=TIME
-	                     A duration expression like '1m5s'. The maximum wait  time  for  an
-	                     async action to finish. Default is 300 seconds.
-	
-	              --wait Wait for asynchronous action termination
-	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
 	                      '!' is the expression negation operator
@@ -9230,14 +9419,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     colorize output. possible values are :  auto=guess  based  on  tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
 	                     entries as such
 	
 	              --daemon
@@ -9248,161 +9437,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr thaw
-	
-	              remove the flag to unblock actions on this service
-	
-	              --time=TIME
-	                     A duration expression like '1m5s'. The maximum wait  time  for  an
-	                     async action to finish. Default is 300 seconds.
-	
-	              --wait Wait for asynchronous action termination
-	
-	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
-	                     targeted.
-	
-	              --local
-	                     execute the service action via the daemon, on  the  local  service
-	                     instances only, ignoring cluster-wide considerations.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr toc
-	
-	              Trigger the service pre_monitor_action script and monitor_action  method.
-	              Beware, this might crash or reboot the node.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize  output.  possible  values  are : auto=guess based on tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export the uppercased variable in the  os  environment.  with  the
-	                     create  action  only,  set  a env section parameter in the service
-	                     configuration file. multiple --env <key>=<val> can  be  specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -9410,8 +9454,14 @@ svcmgr manpage
 	
 	       svcmgr unprovision
 	
-	              stop and unprovision the service. beware: data will be lost upon  fs  and
+	              stop  and  unprovision the service. beware: data will be lost upon fs and
 	              disk unprovisioning.
+	
+	              --time=TIME
+	                     A duration expression like '1m5s'. The maximum wait  time  for  an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -9646,6 +9696,12 @@ svcmgr manpage
 	              or delete the resources pointed  by  --rid  in  services  passed  through
 	              --service
 	
+	              --time=TIME
+	                     A  duration  expression  like '1m5s'. The maximum wait time for an
+	                     async action to finish. Default is 300 seconds.
+	
+	              --wait Wait for asynchronous action termination
+	
 	              --dry-run
 	                     Show the action execution plan
 	
@@ -9653,39 +9709,39 @@ svcmgr manpage
 	                     force action, ignore sanity check warnings
 	
 	              --local
-	                     execute  the  service  action via the daemon, on the local service
+	                     execute the service action via the daemon, on  the  local  service
 	                     instances only, ignoring cluster-wide considerations.
 	
 	              --master
-	                     option to set to limit the action  scope  to  the  master  service
+	                     option  to  set  to  limit  the action scope to the master service
 	                     resources
 	
 	              --node=NODE
-	                     the  node to send a request to. if not specified the local node is
+	                     the node to send a request to. if not specified the local node  is
 	                     targeted.
 	
 	              --rid=PARM_RID
 	                     comma-separated list of resource to limit action to
 	
 	              --slave=SLAVE
-	                     option to set to limit the action scope to the  service  resources
+	                     option  to  set to limit the action scope to the service resources
 	                     in the specified, comma-separated, slaves
 	
 	              --slaves
-	                     option  to  set  to  limit  the  action scope to all slave service
+	                     option to set to limit the  action  scope  to  all  slave  service
 	                     resources
 	
 	              --subsets=PARM_SUBSETS
 	                     comma-separated list of resource subsets to limit action to
 	
 	              --tags=PARM_TAGS
-	                     comma-separated list of resource tags to limit action  to.  The  +
-	                     separator  can be used to impose multiple tag conditions. Example:
-	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
 	                     tag2, or tag3.
 	
 	              --unprovision
-	                     with  the  delete action, unprovision the service resources before
+	                     with the delete action, unprovision the service  resources  before
 	                     config files file deletion. defaults to False.
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
@@ -9716,79 +9772,6 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr edit config
-	
-	              edit service configuration
-	
-	              --discard
-	                     Discard  the  stashed erroneous configuration file in a 'edit con‐
-	                     fig' command
-	
-	              --recover
-	                     Recover the stashed erroneous configuration file in a  'edit  con‐
-	                     fig' command
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
 	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
@@ -9822,311 +9805,82 @@ svcmgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
+	       svcmgr edit config
+	
+	              edit service configuration
+	
+	              --discard
+	                     Discard the stashed erroneous configuration file in a  'edit  con‐
+	                     fig' command
+	
+	              --recover
+	                     Recover  the  stashed erroneous configuration file in a 'edit con‐
+	                     fig' command
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
 	       svcmgr get
 	
 	              get the raw or dereferenced value of a service configuration parameter
-	
-	              --eval If set with the 'get' action, the  printed  value  of  --param  is
-	                     scoped and dereferenced.
-	
-	              --param=PARAM
-	                     point  a  service  configuration parameter for the 'get' and 'set'
-	                     actions
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr print config
-	
-	              display service current configuration
-	
-	              --format=FORMAT
-	                     specify  a  data formatter for output of the print* and collector*
-	                     commands. possible values are json, csv or table.
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr set
-	
-	              set a service configuration parameter
-	
-	              --kw=KW
-	                     combined   with   the   set   action,  an  expression  like  <key‐
-	                     word>[@<scope>][[<index>]]<op><value>,  where  <op>  can  be  '=',
-	                     '+=',  '-='. Multiple --kw can be set to apply multiple configura‐
-	                     tion change in a file with a single write.
-	
-	              --add=ADD
-	                     a list member to add from the value pointed by --param  in  a  set
-	                     action. If --index is set, add the new element at that position in
-	                     the list
-	
-	              --index=INDEX
-	                     the position in the list pointed by --param where to add  the  new
-	                     element on a set action
-	
-	              --param=PARAM
-	                     point  a  service  configuration parameter for the 'get' and 'set'
-	                     actions
-	
-	              --remove=REMOVE
-	                     a list member to drop from the value pointed by --param in  a  set
-	                     action
-	
-	              --value=VALUE
-	                     set  a service configuration parameter value for the 'set --param'
-	                     action
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr unset
-	
-	              unset a node configuration parameter pointed by --param
-	
-	              --param=PARAM
-	                     point  a  service  configuration parameter for the 'get' and 'set'
-	                     actions
-	
-	              -s PARM_SVCS, --service=PARM_SVCS
-	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
-	                      '!' is the expression negation operator
-	                      <sep> can be
-	                       ',' OR expressions
-	                       '+' AND expressions
-	                      <expr> can be
-	                        a glob on service names
-	                        <param><op><value>
-	                         Where
-	                          <param> can be
-	                            <rid>:
-	                            <group>:
-	                            <rid>.<key>
-	                            <group>.<key>
-	                          <op> can be
-	                            <  >  <=  >=  =
-	                            ~ with regexp value Examples:
-	                      '*dns,ha*+app.timeout>1'
-	                      'ip:+task:'
-	                      '!*excluded' Note:
-	                      '!' usage mandates single quoting the expression to prevent shell
-	                     history expansion
-	
-	              --status=PARM_STATUS
-	                     operate only on service in the specified status (up/down/warn)
-	
-	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
-	                     puts.
-	
-	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
-	                     presence, always|yes=always colorize, never|no=never colorize
-	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
-	                     entries as such
-	
-	              --daemon
-	                     a flag inhibiting the daemonization. set by the daemonization rou‐
-	                     tine.
-	
-	              --debug
-	                     debug mode
-	
-	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
-	                     For all other actions.
-	
-	              -p, --parallel
-	                     start actions on specified services in parallel
-	
-	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
-	                     action lock acquire.
-	
-	              -h, --help
-	                     show this help message and exit
-	
-	       svcmgr update
-	
-	              update definitions in an existing service configuration file
 	
 	              --dry-run
 	                     Show the action execution plan
@@ -10166,16 +9920,12 @@ svcmgr manpage
 	                     tag1+tag2,tag3 limits the action to resources with both  tag1  and
 	                     tag2, or tag3.
 	
-	              -i, --interactive
-	                     prompt user for a choice instead of going for defaults or failing
+	              --eval If  set  with  the  'get'  action, the printed value of --param is
+	                     scoped and dereferenced.
 	
-	              --provision
-	                     with   the  install  or  create  actions,  provision  the  service
-	                     resources after config file creation. defaults to False.
-	
-	              --resource=RESOURCE
-	                     a resource definition in json dictionary format fed to  create  or
-	                     update
+	              --param=PARAM
+	                     point a service configuration parameter for the  'get'  and  'set'
+	                     actions
 	
 	              -s PARM_SVCS, --service=PARM_SVCS
 	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
@@ -10233,6 +9983,426 @@ svcmgr manpage
 	
 	              --waitlock=PARM_WAITLOCK
 	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr print config
+	
+	              display service current configuration
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr set
+	
+	              set a service configuration parameter
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --kw=KW
+	                     combined  with  the  set  action,   an   expression   like   <key‐
+	                     word>[@<scope>][[<index>]]<op><value>,  where  <op>  can  be  '=',
+	                     '+=', '-='. Multiple --kw can be set to apply multiple  configura‐
+	                     tion change in a file with a single write.
+	
+	              --add=ADD
+	                     a  list  member  to add from the value pointed by --param in a set
+	                     action. If --index is set, add the new element at that position in
+	                     the list
+	
+	              --index=INDEX
+	                     the  position  in the list pointed by --param where to add the new
+	                     element on a set action
+	
+	              --param=PARAM
+	                     point a service configuration parameter for the  'get'  and  'set'
+	                     actions
+	
+	              --remove=REMOVE
+	                     a  list  member to drop from the value pointed by --param in a set
+	                     action
+	
+	              --value=VALUE
+	                     set a service configuration parameter value for the 'set  --param'
+	                     action
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr unset
+	
+	              unset a node configuration parameter pointed by --param
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              --param=PARAM
+	                     point a service configuration parameter for the  'get'  and  'set'
+	                     actions
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
+	                     action lock acquire.
+	
+	              -h, --help
+	                     show this help message and exit
+	
+	       svcmgr update
+	
+	              update definitions in an existing service configuration file
+	
+	              --dry-run
+	                     Show the action execution plan
+	
+	              -f, --force
+	                     force action, ignore sanity check warnings
+	
+	              --local
+	                     execute the service action via the daemon, on  the  local  service
+	                     instances only, ignoring cluster-wide considerations.
+	
+	              --master
+	                     option  to  set  to  limit  the action scope to the master service
+	                     resources
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --rid=PARM_RID
+	                     comma-separated list of resource to limit action to
+	
+	              --slave=SLAVE
+	                     option  to  set to limit the action scope to the service resources
+	                     in the specified, comma-separated, slaves
+	
+	              --slaves
+	                     option to set to limit the  action  scope  to  all  slave  service
+	                     resources
+	
+	              --subsets=PARM_SUBSETS
+	                     comma-separated list of resource subsets to limit action to
+	
+	              --tags=PARM_TAGS
+	                     comma-separated  list  of  resource tags to limit action to. The +
+	                     separator can be used to impose multiple tag conditions.  Example:
+	                     tag1+tag2,tag3  limits  the action to resources with both tag1 and
+	                     tag2, or tag3.
+	
+	              -i, --interactive
+	                     prompt user for a choice instead of going for defaults or failing
+	
+	              --provision
+	                     with  the  install  or  create  actions,  provision  the   service
+	                     resources after config file creation. defaults to False.
+	
+	              --resource=RESOURCE
+	                     a  resource  definition in json dictionary format fed to create or
+	                     update
+	
+	              -s PARM_SVCS, --service=PARM_SVCS
+	                     A service selector expression [!]<expr>[<sep>[!]<expr>].  Where
+	                      '!' is the expression negation operator
+	                      <sep> can be
+	                       ',' OR expressions
+	                       '+' AND expressions
+	                      <expr> can be
+	                        a glob on service names
+	                        <param><op><value>
+	                         Where
+	                          <param> can be
+	                            <rid>:
+	                            <group>:
+	                            <rid>.<key>
+	                            <group>.<key>
+	                          <op> can be
+	                            <  >  <=  >=  =
+	                            ~ with regexp value Examples:
+	                      '*dns,ha*+app.timeout>1'
+	                      'ip:+task:'
+	                      '!*excluded' Note:
+	                      '!' usage mandates single quoting the expression to prevent shell
+	                     history expansion
+	
+	              --status=PARM_STATUS
+	                     operate only on service in the specified status (up/down/warn)
+	
+	              -c, --cluster
+	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     puts.
+	
+	              --color=COLOR
+	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	                     entries as such
+	
+	              --daemon
+	                     a flag inhibiting the daemonization. set by the daemonization rou‐
+	                     tine.
+	
+	              --debug
+	                     debug mode
+	
+	              --env=ENV
+	                     export  the  uppercased  variable  in the os environment. with the
+	                     create action only, set a env section  parameter  in  the  service
+	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     For all other actions.
+	
+	              -p, --parallel
+	                     start actions on specified services in parallel
+	
+	              --waitlock=PARM_WAITLOCK
+	                     A duration expression like '5s'. The maximum  wait  time  for  the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -10270,14 +10440,14 @@ svcmgr manpage
 	                     operate only on service in the specified status (up/down/warn)
 	
 	              -c, --cluster
-	                     Execute  an  action  on all cluster nodes, aggregate the json out‐
+	                     Execute an action on all cluster nodes, aggregate  the  json  out‐
 	                     puts.
 	
 	              --color=COLOR
-	                     colorize output. possible values are :  auto=guess  based  on  tty
+	                     colorize  output.  possible  values  are : auto=guess based on tty
 	                     presence, always|yes=always colorize, never|no=never colorize
 	
-	              --cron used  by  cron'ed  action  to  tell the collector to treat the log
+	              --cron used by cron'ed action to tell the  collector  to  treat  the  log
 	                     entries as such
 	
 	              --daemon
@@ -10288,16 +10458,16 @@ svcmgr manpage
 	                     debug mode
 	
 	              --env=ENV
-	                     export  the  uppercased  variable  in the os environment. with the
-	                     create action only, set a env section  parameter  in  the  service
-	                     configuration  file.  multiple --env <key>=<val> can be specified.
+	                     export the uppercased variable in the  os  environment.  with  the
+	                     create  action  only,  set  a env section parameter in the service
+	                     configuration file. multiple --env <key>=<val> can  be  specified.
 	                     For all other actions.
 	
 	              -p, --parallel
 	                     start actions on specified services in parallel
 	
 	              --waitlock=PARM_WAITLOCK
-	                     A duration expression like '5s'. The maximum  wait  time  for  the
+	                     A  duration  expression  like  '5s'. The maximum wait time for the
 	                     action lock acquire.
 	
 	              -h, --help
@@ -10310,4 +10480,4 @@ svcmgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-09-12                             SVCMGR(1)
+	                                       2017-09-29                             SVCMGR(1)
