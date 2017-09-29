@@ -487,6 +487,30 @@ DEFAULT resource template
 	;no_preempt_abort = False
 	
 	#
+	# keyword:          orchestrate
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         ha
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      ha | start | no
+	#  convert:         string
+	#
+	#  desc:  If set to 'no', disable service orchestration by the OpenSVC daemon
+	#         monitor, including service start on boot. If set to 'start' failover
+	#         services won't failover automatically, though the service instance
+	#         on the natural placement leader is started if another instance is
+	#         not already up. Flex services won't start missing instances to meet
+	#         the flex_min_nodes target, though the <flex_min_nodes>th instances
+	#         on best placement leaders are started if the instances minimum quota
+	#         is not already reached. Resource restart is still active whatever
+	#         the orchestrate value.
+	#
+	;orchestrate = ha
+	
+	#
 	# keyword:          placement
 	# ----------------------------------------------------------------------------
 	#  scopable:        False
@@ -512,6 +536,7 @@ DEFAULT resource template
 	#  default:         None
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
+	#  depends:         orchestrate in ha
 	#
 	#  desc:  An expression evaluating as a boolean, constraining the service
 	#         instance placement by the daemon monitor to nodes with the
@@ -1166,6 +1191,42 @@ DEFAULT resource template
 	#         disks. Don't set this on shared disk !! danger !!
 	#
 	;always_on = []
+	
+	#
+	# keyword:          provision
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         True
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
+	#
+	#  desc:  Set to false to skip the resource on provision and unprovision
+	#         actions. Warning: provisioning implies destructive operations like
+	#         formating.
+	#
+	;provision = True
+	
+	#
+	# keyword:          shared
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
+	#
+	#  desc:  Set to True to skip the resource on provision and unprovision
+	#         actions if the action has already been done by a peer. Shared
+	#         resources, like vg built on SAN disks must be provisioned once.
+	#
+	;shared = False
 	
 	#
 	# keyword:          pre_unprovision

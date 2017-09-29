@@ -97,7 +97,7 @@ container.zone resource template
 	# keyword:          container_origin
 	# ----------------------------------------------------------------------------
 	#  scopable:        False
-	#  required:        True
+	#  required:        False
 	#  provisioning:    True
 	#  default:         None
 	#  inheritance:     leaf > head
@@ -304,6 +304,42 @@ container.zone resource template
 	#         disks. Don't set this on shared disk !! danger !!
 	#
 	;always_on = []
+	
+	#
+	# keyword:          provision
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         True
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
+	#
+	#  desc:  Set to false to skip the resource on provision and unprovision
+	#         actions. Warning: provisioning implies destructive operations like
+	#         formating.
+	#
+	;provision = True
+	
+	#
+	# keyword:          shared
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         False
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  candidates:      True | False
+	#  convert:         boolean
+	#
+	#  desc:  Set to True to skip the resource on provision and unprovision
+	#         actions if the action has already been done by a peer. Shared
+	#         resources, like vg built on SAN disks must be provisioned once.
+	#
+	;shared = False
 	
 	#
 	# keyword:          pre_unprovision
