@@ -492,7 +492,7 @@ DEFAULT resource template
 	#  scopable:        True
 	#  required:        False
 	#  provisioning:    False
-	#  default:         ha
+	#  default:         no
 	#  inheritance:     leaf > head
 	#  scope order:     specific > generic
 	#  candidates:      ha | start | no
@@ -508,7 +508,7 @@ DEFAULT resource template
 	#         is not already reached. Resource restart is still active whatever
 	#         the orchestrate value.
 	#
-	;orchestrate = ha
+	;orchestrate = no
 	
 	#
 	# keyword:          placement
