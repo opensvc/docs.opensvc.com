@@ -172,6 +172,15 @@ Possible values:
 ``DEFAULT.constraints``
 =======================
 
+``DEFAULT.parents``
+===================
+
+This parameter is used to store a list of services that must be avail up for the agent daemon to proceed on starting the service.
+
+To set up this tunable::
+
+    $ sudo svcmgr -s svc2 set --kw parents=svc1
+
 Resources
 =========
 
