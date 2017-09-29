@@ -4,7 +4,6 @@
 ``DEFAULT.autostart_node``
 ==========================
 
-Any service **without** ``DEFAULT.autostart_node`` will be left in ``frozen`` state after migration. If thawed, the service will be orchestrated according to the placement policy.
 
 **OPTIONAL**
 ************
@@ -12,7 +11,7 @@ Any service **without** ``DEFAULT.autostart_node`` will be left in ``frozen`` st
 Remove hb sections from service configurations
 ==============================================
 
-heartbeats resources are now deprecated, and must be removed from the service configuration file
+heartbeats resources are now deprecated, and should be removed from the service configuration file.
 
 To remove rid ``hb#1`` resource from service ``svc1``:
 
@@ -100,9 +99,9 @@ Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
 Remove ``DEFAULT.autostart_node``
 =================================
 
-Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy. The placement policy algorithm is responsible of primary node identification, so make sure the placement policy produce the same behaviour.
+Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy and ``orchestrate``. The placement policy algorithm is responsible of primary node identification, so make sure the placement policy produce the same behaviour.
 
-When using ``nodes_order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
+When using ``nodes order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
 
 Example::
 
@@ -119,22 +118,22 @@ Example::
 Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
 ===================================================
 
-As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.cluster`` can be removed
+As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.cluster`` is automatically removed.
 
 Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
 ===================================================
 
-As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.stonith`` can be removed
+As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.stonith`` is automatically removed.
 
 Set ``node.maintenance_grace_period``
 =====================================
 
-A node now announces its entering 'maintenance' upon clean daemon stop and restart.
-Peer nodes won't try to take over the services which were running on this node until node.maintenance_grace_period is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
+A node now announces its entering 'maintenance' upon clean daemon stop and restart. A node reboot is a clean stop too.
+Peer nodes won't try to take over the services which were running on this node until ``node.maintenance_grace_period`` is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
 
 .. note::
 
-    ``node.maintenance_grace_period`` default value is ``90`` seconds
+    ``node.maintenance_grace_period`` default value is ``60`` seconds
 
 Set ``node.rejoin_grace_period``
 ================================
@@ -161,43 +160,55 @@ Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
 Set ``<rid>.provision=false`` in your **templates**
 ===================================================
 
-for resources you don't want to provision using the opensvc provisioner.
+For resources you don't want to provision using the opensvc provisioner.
 And set your own as a ``pre_provision`` trigger.
 
 
 Set ``<rid>.shared=true`` in your service configuration files and templates
 ===========================================================================
 
-on resources you want provisioned on one node only.
+On resources you want provisioned on one node only.
 
 Set ``DEFAULT.orchestrate=false`` in your service without hb resource
 =====================================================================
 
-to ensure manual service failover. Also ensure that the placement policy meet your expectations. Default placement policy rely on nodes declaration order.
-Among all changes in the 1.9 version, one of the most important is that services are now orchestrated **by default**, as soon as a cluster is formed (2 nodes and upper), and the service nodes list is made of at least 2 nodes.
+This parameter is used to restrict or allow the daemon orchestration capabilities for the service.
 
-It means the following:
+If not set explicitely, the ``orchestrate`` value defaults to ``no``, disabling all start orchestration.
 
-* Any 1.8 service that operate **without** hearbeat resource (manual failover from one node to another) would behave like a HA service as soon as the agent stack is upgraded to 1.9
+The other valid values, ``start`` and ``ha``, require that you also set and configure the service placement policy. The default ``placement``, ``nodes order``, ranks the nodes respecting the user-defined order of the ``nodes`` and ``drpnodes`` keyword.
 
-* In order to avoid a different behaviour after agent migration, it is mandatory to deploy new parameter ``DEFAULT.orchestrate=false`` before starting migration.
+Users can change the ``orchestrate`` value online at any moment. For example activating ha on a service can be done with::
 
-Examples :
+	$ sudo svcmgr -s svc1 set --kw orchestrate=ha
 
-+---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
-|  Service Type |    V1.8                |   V1.9               |   Comments                                                                              |
-+===============+========================+======================+=========================================================================================+
-|               | | [DEFAULT]            | | [DEFAULT]          | | we have to disable orchestration because no hb resource in 1.8                        |
-| | failover    | | nodes=n1 n2          | | nodes=n2 n1        | | we also have to order nodes accurately to allow service default startup on n2         |
-| |   no hb     | | autostart_node=n2    | | orchestrate=false  |                                                                                         |
-+---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
-|               | | [DEFAULT]            | | [DEFAULT]          | | as openha is leading the primary node (n2), no autostart_node is present in 1.8       |
-| | failover    | | nodes=n1 n2          | | nodes=n2 n1        | | we just have to order nodes accurately to allow service default startup on n2         |
-| | with hb     | |                      | |                    |                                                                                         |
-+---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
-|               | | [DEFAULT]            | | [DEFAULT]          | | we have to disable orchestration to have a kind of static service                     |
-| |  flex       | | nodes=n1 n2 n3       | | nodes=n2 n3 n1     | | we also have to order nodes accurately to allow service default startup on n2 and n3  |
-|               | | autostart_node=n2 n3 | | flex_min_nodes=2   | | flex_min_nodes ensure that 2 service instances are spawned at service startup         |
-|               |                        | | orchestrate=false  |                                                                                         |
-+---------------+------------------------+----------------------+-----------------------------------------------------------------------------------------+
+Any 1.8 service with **no** hearbeat resource (manual failover) can behave like a HA service as soon as the agent stack is upgraded to 1.9
+
+Conversion table:
+
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+|  Service Type |    V1.8                  |   V1.9                |   Comments                                                                              |
++===============+==========================+=======================+=========================================================================================+
+|               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=no keeps the daemon from starting the instance on any node,                 |
+| | failover    | | nodes = n1 n2          | | nodes = n1 n2       | and inhibits failover. The nodes order is only important to determine the node where    |
+| | no hb       | | autostart_node =       | | orchestrate = no    | the shared resources are provisioned.                                                   |
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=start let the daemon start the instance on the placement leader only,       |
+| | failover    | | nodes = n1 n2          | | nodes = n2 n1       | but inhibits failover. n2 is defined as first node, so the placement policy selects     |
+| | no hb       | | autostart_node = n2    | | orchestrate = start | it as the leader                                                                        |
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=ha let the daemon start the instance and handle failover.                   |
+| | failover    | | nodes = n1 n2          | | nodes = n2 n1       | The nodes order must be set in the same order defined in the openha 'services'          |
+| | with hb     | | autostart_node =       | | orchestrate = ha    | configuration file.                                                                     |
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=start let the daemon start instances on the  2 (flex_min_nodes) first       |
+| | flex        | | nodes = n1 n2 n3       | | nodes=n2 n3 n1      | placement leaders. n2 and n3 are defined first, so the placement policy selects them    |
+|               | | autostart_node = n2 n3 | | flex_min_nodes=2    | as the leaders.                                                                         |
+|               |                          | | orchestrate = start |                                                                                         |
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+|               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=no keeps the daemon from starting instances on any nodes, and inhibits      |
+| | flex        | | nodes = n1 n2 n3       | | nodes=n1 n2 n3      | restart of dead instances to satisfy flex_min_nodes. The nodes order is only important  |
+|               | | autostart_node =       | | orchestrate = no    | to determine the node where the shared resources are provisioned.                       |
+|               |                          |                       |                                                                                         |
++---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
 
