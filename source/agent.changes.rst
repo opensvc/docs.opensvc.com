@@ -95,9 +95,6 @@ The sections below provides detailed informations on migration prerequisites and
 
    agent.migration.19
 
-Agent Changelog
-===============
-
 .. toctree::
 
     agent.changelog.rst

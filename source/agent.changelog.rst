@@ -1,5 +1,5 @@
-Changelog
-*********
+Agent Changelog
+===============
 
 
 | `1.9-564 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=31f83d0c443f6c016ebbfd0ed07c5b0cb8e0bf24>`_ ``Fix the parents handling in the orchestration algo``

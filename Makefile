@@ -200,7 +200,7 @@ compobjs: gitrepo
 	done
 
 changelog: gitrepo
-	@echo "Changelog\n*********\n\n" | tee source/agent.changelog.rst
+	@echo "Agent Changelog\n===============\n\n" | tee source/agent.changelog.rst
 	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -v ^BRANCH=HEAD | awk '{printf("| `"$$1 " <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=" $$2 ">`_ ``") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("``\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
 	@cat $(DOCDIR)/opensvc/opensvc.changelog.rst | tee -a source/agent.changelog.rst
 	@rm -f $(DOCDIR)/opensvc/opensvc.changelog.rst
