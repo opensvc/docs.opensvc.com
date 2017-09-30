@@ -1,8 +1,8 @@
 Services
 ********
 
-Affinity
-========
+Default Section
+===============
 
 ``DEFAULT.hard_affinity``
 -------------------------
@@ -66,9 +66,6 @@ To set up this soft affinity::
 |            | | frozen     |              |                 | be started on ``n2``                 |
 +------------+--------------+--------------+-----------------+--------------------------------------+
 
-Anti-Affinity
-=============
-
 ``DEFAULT.hard_anti_affinity``
 ------------------------------
 
@@ -99,7 +96,6 @@ To set up this hard anti affinity::
 |            |              | | leader     |                 | the service won't be started.        |
 |            |              | | frozen     |                 |                                      |
 +------------+--------------+--------------+-----------------+--------------------------------------+
-
 
 ``DEFAULT.soft_anti_affinity``
 ------------------------------
@@ -136,7 +132,7 @@ To set up this soft anti affinity::
 .. _default_orchestrate:
 
 ``DEFAULT.orchestrate``
-=======================
+-----------------------
 
 This parameter is used to specify the daemon behaviour regarding service orchestration
 
@@ -167,13 +163,13 @@ Possible values:
     ``DEFAULT.orchestrate`` default value is ``no``
 
 ``DEFAULT.placement``
-=====================
+---------------------
 
 ``DEFAULT.constraints``
-=======================
+-----------------------
 
 ``DEFAULT.parents``
-===================
+-------------------
 
 This parameter is used to store a list of services that must be avail up for the agent daemon to proceed on starting the service.
 
@@ -181,8 +177,8 @@ To set up this tunable::
 
     $ sudo svcmgr -s svc2 set --kw parents=svc1
 
-Resources
-=========
+Resource Sections
+=================
 
 ``*.shared``
 ------------
@@ -193,26 +189,40 @@ Resources
 Node
 ****
 
+Node Section
+============
+
 ``node.maintenance_grace_period``
-=================================
+---------------------------------
 
 ``node.rejoin_grace_period``
-============================
+----------------------------
 
-Cluster
-=======
+Cluster Section
+===============
 
 ``cluster.secret``
 ------------------
 
+Auto-generated.
+
 ``cluster.nodes``
 -----------------
+
+Janitored by the join and leave nodemgr daemon actions.
 
 ``cluster.name``
 ----------------
 
-Heartbeat
-=========
+Defaults to ``default``. Users can set it to a more meaningful value.
+
+.. note::
+
+	Changing that parameter on a joined cluster will break communications until the nodes share the same ``cluster.name``, thus cause a massive split-brain situation. So take care of freezing the cluster nodes before.
+
+
+Heartbeat Sections
+==================
 
 ``hb.type``
 -----------

@@ -66,8 +66,6 @@ New References
 New Keywords
 ============
 
-The sections below describes new parameters:
-
 .. toctree::
    :maxdepth: 3
 
