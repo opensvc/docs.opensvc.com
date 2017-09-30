@@ -88,20 +88,121 @@ Services with at least one ip resource and one task resource::
         registry
 
 
-Services status
+Services Status
 ===============
+
+Cluster Overview
+++++++++++++++++
+
+Human Readable
+--------------
 
 ::
 
         sudo svcmon
 
-Overview of the status of all services this configured on the node.
+This command fetches the information from the daemon listener. Hence,
+
+* The daemon must be up and running
+* The displayed information is near synchronous
+
+.. raw:: html
+
+	<pre class="output">
+	Threads                                  <span style="font-weight: bold">aubergine</span> <span style="font-weight: bold">nuc</span>
+	 <span style="font-weight: bold">hb#1.rx</span>     <span style="color: #00aa00">running</span> 224.3.29.71:10001 | <span style="color: #767676">/</span>         <span style="color: #aa0000">X</span>  
+	 <span style="font-weight: bold">hb#1.tx</span>     <span style="color: #00aa00">running</span> 224.3.29.71:10001 | <span style="color: #767676">/</span>         <span style="color: #00aa00">O</span>  
+	 <span style="font-weight: bold">hb#2.rx</span>     <span style="color: #00aa00">running</span> 0.0.0.0:10004     | <span style="color: #767676">/</span>         <span style="color: #00aa00">O</span>  
+	 <span style="font-weight: bold">hb#2.tx</span>     <span style="color: #00aa00">running</span>                   | <span style="color: #767676">/</span>         <span style="color: #00aa00">O</span>  
+	 <span style="font-weight: bold">listener</span>    <span style="color: #00aa00">running</span> 0.0.0.0:1214     
+	 <span style="font-weight: bold">monitor</span>     <span style="color: #00aa00">running</span>
+	 <span style="font-weight: bold">scheduler</span>   <span style="color: #00aa00">running</span>
+
+	Nodes                                    <span style="font-weight: bold">aubergine</span> <span style="font-weight: bold">nuc</span>
+	<span style="font-weight: bold"> 15m</span>                                   | 0.6       0.0
+	<span style="font-weight: bold"> state</span>                                 |              
+
+	Services                                 <span style="font-weight: bold">aubergine</span> <span style="font-weight: bold">nuc</span>
+	 <span style="font-weight: bold">collector</span>   <span style="color: #00aa00">up</span>      failover          | <span style="color: #00aa00">O</span><span style="color: #767676">^</span>           
+	 <span style="font-weight: bold">ha1</span>         <span style="color: #aa5500">warn</span><span style="color: #aa5500">!</span><span style="color: #aa0000">^</span>  failover          | <span style="color: #aa5500">!</span><span style="color: #aa5500">!</span>        <span style="color: #aa5500">!</span><span style="color: #aa5500">!</span><span style="color: #767676">^</span>
+	 <span style="font-weight: bold">pridns</span>      <span style="color: #00aa00">up</span>      failover          | <span style="color: #00aa00">O</span><span style="color: #767676">^</span>           
+	 <span style="font-weight: bold">registry</span>    <span style="color: #00aa00">up</span>      failover          | <span style="color: #00aa00">O</span><span style="color: #767676">^</span>           
+	 <span style="font-weight: bold">testapplim</span>  <span style="color: #767676">n/a</span>     flex              | <span style="color: #767676">/</span><span style="color: #767676">^</span>           
+	 <span style="font-weight: bold">testapplim2</span> <span style="color: #767676">n/a</span>     flex              | <span style="color: #767676">/</span><span style="color: #0000aa">*</span>        <span style="color: #767676">/</span><span style="color: #0000aa">*</span> 
+	 <span style="font-weight: bold">testbnp</span>     <span style="color: #767676">n/a</span>     failover          | <span style="color: #767676">/</span><span style="color: #aa0000">P</span>           
+	 <span style="font-weight: bold">testdrbd</span>    <span style="color: #767676">n/a</span>     failover          | <span style="color: #767676">/</span><span style="color: #aa0000">P</span>        <span style="color: #767676">/</span><span style="color: #aa0000">P</span> 
+	 <span style="font-weight: bold">testmd</span>      <span style="color: #00aa00">up</span><span style="color: #aa5500">!</span>     flex              | <span style="color: #aa0000">X</span><span style="color: #aa5500">!</span>        <span style="color: #00aa00">O</span><span style="color: #aa5500">!</span><span style="color: #767676">^</span>
+	 <span style="font-weight: bold">testmd2</span>     <span style="color: #00aa00">up</span><span style="color: #aa5500">!</span><span style="color: #aa0000">^</span>    failover          | <span style="color: #00aa00">O</span><span style="color: #aa5500">!</span>        <span style="color: #aa0000">X</span><span style="color: #aa5500">!</span><span style="color: #767676">^</span>
+	</pre>
+
+To optimize information density, attributes, status and alerts are represented as markers.
+
+Heartbeats markers:
+
+======== =================================== ===================================
+Marker   On hb.tx target                     On hb.rx source
+======== =================================== ===================================
+``O``    data has been sent in time          data has been received in time
+``X``    data has not been sent in time      data has not been received in time
+``/``    not applicable                      not applicable
+======== =================================== ===================================
+
+Nodes, services and instances markers:
+
+======== ================================== ================================== ===============
+Marker   On service instance                On Service                         On node status
+======== ================================== ================================== ===============
+``O``    up                                                             
+``o``    standby up instance
+``X``    down instance or heartbeat
+``x``    standby down instance
+``/``    not applicable, undefined
+``^``    placement leader                   placement alert
+``!``    warning                            warning raise by any instance
+``!!``   not fully available instance
+``*``    frozen instance                                                       frozen node
+``P``    not fully provisioned instance
+======== ================================== ================================== ===============
+
+JSON
+----
 
 ::
 
-        sudo svcmgr -s <svcname> print status``
+        sudo svcmon --format json
 
-Detailled service resources status.
+Watch
+-----
+
+::
+
+	watch -c sudo svcmon --color yes
+
+
+Detailled Instance Status
++++++++++++++++++++++++++
+
+Human Readable
+--------------
+
+::
+
+        sudo svcmgr -s <svcname> print status
+
+JSON
+----
+
+::
+
+        sudo svcmgr -s <svcname> print status --format json
+
+Forced evaluation of status
+---------------------------
+
+::
+
+        sudo svcmgr -s <svcname> print status --refresh
+
 
 Actions
 =======
@@ -330,36 +431,6 @@ All action logs are multiplexed to:
 
 Examples
 ========
-
-Print services status of a node:
-
-::
-
-	[root@aubergine ~]# svcmon
-        Threads                                   aubergine clementine nuc            
-         hb#1.rx    running   224.3.29.71:10001 | /         X          X              
-         hb#1.tx    running   224.3.29.71:10001 | /         O          O              
-         hb#2.rx    running   0.0.0.0:10004     | /         X          O              
-         hb#2.tx    running                     | /         X          O              
-         listener   running   0.0.0.0:1214     
-         monitor    running  
-         scheduler  running  
-
-        Cluster                                   aubergine clementine nuc            
-         1m                                     | 0.57                 0.1            
-         5m                                     | 0.56                 0.07           
-         15m                                    | 0.57                 0.07           
-         mon                                    | idle                 idle           
-
-        Services                                  aubergine clementine nuc            
-         collector  up        failover          | O                                   
-         ha1        warn      failover          | O                    O              
-         pridns     up        failover          | O                                   
-         registry   up        failover          | O                                   
-         testapplim n/a       flex              | /                                   
-         testbnp    n/a       failover          | /                                   
-         testdrbd   n/a       failover          | /         ?          /              
-         testmd     down warn flex              | !!                   !! start failed
 
 Print resource status of a service:
 
