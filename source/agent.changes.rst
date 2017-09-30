@@ -1,5 +1,5 @@
-Agent 1.9 Changes
-*****************
+Agent Release Notes
+*******************
 
 New Features
 ============
@@ -95,6 +95,3 @@ The sections below provides detailed informations on migration prerequisites and
 
    agent.migration.19
 
-.. toctree::
-
-    agent.changelog.rst

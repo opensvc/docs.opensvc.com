@@ -8,6 +8,7 @@ Contents:
 
    agent.feature.matrix
    agent.changes
+   agent.changelog
    agent.install
    agent.items
    agent.upgrade
