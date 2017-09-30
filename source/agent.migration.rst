@@ -1,12 +1,40 @@
-**NOTICE**
-**********
+Before Upgrade
+**************
 
-``DEFAULT.autostart_node``
-==========================
+Freeze all services
+===================
+
+::
+
+	sudo svcmgr freeze
+
+Unconfigure OpenHA
+==================
+
+::
+
+	sudo /etc/init.d/openha kill
+
+Then, backup configuration files and disable the launcher or remove the package.
+
+Set ``node.maintenance_grace_period``
+=====================================
+
+A node now announces its entering 'maintenance' upon clean daemon stop and restart. A node reboot is a clean stop too.
+Peer nodes won't try to take over the services which were running on this node until ``node.maintenance_grace_period`` is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
+
+.. note::
+
+    ``node.maintenance_grace_period`` default value is ``60`` seconds
+
+Set ``node.rejoin_grace_period``
+================================
 
 
-**OPTIONAL**
-************
+
+.. note::
+
+    ``node.rejoin_grace_period`` default value is ``90`` seconds
 
 Remove hb sections from service configurations
 ==============================================
@@ -83,18 +111,23 @@ Examples:
 Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 ========================================================
 
-Use in context of affinity between services., where a service svc1 should be run on same node 
+::
 
-Assuming svc1 and svc2 are tied to each other, we expect that those 2 services run on the same node
-
-Example for ``svc2``::
-
-    [DEFAULT]
-    hard_affinity = svc1
+	for SVCNAME in $(sudo svcmgr ls)
+	do
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param affinity) && (sudo svcmgr -s $SVCNAME set --param hard_affinity --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param affinity)
+	done
 
 
 Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
 ==================================================================
+
+::
+
+	for SVCNAME in $(sudo svcmgr ls)
+	do
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param anti_affinity) && (sudo svcmgr -s $SVCNAME set --param hard_anti_affinity --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param anti_affinity)
+	done
 
 Remove ``DEFAULT.autostart_node``
 =================================
@@ -108,61 +141,41 @@ Example::
         nodes=n1 n2 n3  => n1 is the primary node, n2 and n3 are secondary nodes
         nodes=n3 n2 n1  => n3 is the primary node, n2 and n1 are secondary nodes
 
-
-.. note::
-
-    A 1.8 service without ``DEFAULT.autostart_node`` (meaning no automatic start at boot), would be left in ``frozen`` state after 1.9 migration
-
-
-
-Remove the ``<OSVCETC>/{svcname}.cluster`` symlinks
-===================================================
-
-As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.cluster`` is automatically removed.
-
-Remove the ``<OSVCETC>/{svcname}.stonith`` symlinks
-===================================================
-
-As soon as OpenHA does not drive service anymore (no more hb resource), symlink ``<OSVCETC>/{svcname}.stonith`` is automatically removed.
-
-Set ``node.maintenance_grace_period``
-=====================================
-
-A node now announces its entering 'maintenance' upon clean daemon stop and restart. A node reboot is a clean stop too.
-Peer nodes won't try to take over the services which were running on this node until ``node.maintenance_grace_period`` is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
-
-.. note::
-
-    ``node.maintenance_grace_period`` default value is ``60`` seconds
-
-Set ``node.rejoin_grace_period``
-================================
-
-
-
-.. note::
-
-    ``node.rejoin_grace_period`` default value is ``90`` seconds
-
-**MANDATORY**
-*************
-
 Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
 ==========================================================================================================================================================
 
+============================= =================================
+v1.8                          v1.9
+============================= =================================
+<kw>_on = nodes               <kw>@nodes = true
+<kw>_on = drpnodes            <kw>@drpnodes = true
+<kw>_on = nodes drpnodes      <kw> = true
+============================= =================================
 
 Replace ``sync[rsync].exclude`` by their equivalent ``sync[rsync].options``
 ===========================================================================
 
+============================= =================================
+v1.8                          v1.9
+============================= =================================
+exclude = foo                 options = --exclude=foo
+============================= =================================
+
 Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
 ===================================================================
 
-Set ``<rid>.provision=false`` in your **templates**
-===================================================
+::
+
+	for SVCNAME in $(sudo svcmgr ls)
+	do
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param svc_env) && (sudo svcmgr -s $SVCNAME set --param env --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param svc_env)
+	done
+
+Set ``<rid>.provision=false`` in your templates
+===============================================
 
 For resources you don't want to provision using the opensvc provisioner.
-And set your own as a ``pre_provision`` trigger.
-
+You can also set your own provisioner as a ``pre_provision`` trigger.
 
 Set ``<rid>.shared=true`` in your service configuration files and templates
 ===========================================================================
@@ -211,4 +224,29 @@ Conversion table:
 |               | | autostart_node =       | | orchestrate = no    | to determine the node where the shared resources are provisioned.                       |
 |               |                          |                       |                                                                                         |
 +---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
+
+
+After Upgrade
+*************
+
+Configure the Clusters
+======================
+
+.. seealso::
+
+	:ref:`agent.configure.cluster`
+
+verify the heartbeats and service status are up
+===============================================
+
+::
+
+	sudo svcmon
+
+Thaw services
+=============
+
+::
+
+	sudo svcmgr thaw
 

@@ -88,10 +88,10 @@ Deprecated
 Agent Migration
 ===============
 
-The sections below provides detailed informations on migration prerequisites and caveats:
+Live migration from 1.8 to 1.9 requires some precaution. This section describes the recommended preliminary actions and services reconfigurations.
 
 .. toctree::
    :maxdepth: 2
 
-   agent.migration.19
+   agent.migration
 

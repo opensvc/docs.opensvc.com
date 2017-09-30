@@ -1,3 +1,5 @@
+.. _agent.configure.cluster:
+
 Agent Cluster Configuration
 ***************************
 

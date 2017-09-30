@@ -298,5 +298,5 @@ Limitations
 ARG_MAX / envp
 ^^^^^^^^^^^^^^
 
-As OpenSVC is executed on operating systems, it is dependent on their limits. Among them, ARG_MAX and envp maximum values can be exceded by the compliance data. On Unix systems with low limit values, huge ruleset list presented to system can hit the envp limit (environment related), while complex ruleset with many informations inside can hit the ARG_MAX limit (argument related).
-You can get detailed informations on `Sven Mascheck's page <http://www.in-ulm.de/~mascheck/various/argmax/>`_ (mirror available `here <_static/argmax.html>`_)
+As OpenSVC is executed on operating systems, it is dependent on their limits. Among them, ARG_MAX and envp maximum values can be exceded by the compliance data. On Unix systems with low limit values, huge ruleset list presented to system can hit the envp limit (environment related), while rulesets with many rules inside can hit the ARG_MAX limit (argument related).
+You can get detailed information on `Sven Mascheck's page <http://www.in-ulm.de/~mascheck/various/argmax/>`_ (mirror available `here <_static/argmax.html>`_)
