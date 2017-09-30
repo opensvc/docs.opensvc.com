@@ -136,7 +136,7 @@ doctest:
 html_fr:
 	$(SPHINXBUILD) -b html -Dlanguage=fr $(ALLSPHINXOPTS) $(BUILDDIR)/html/fr
 
-osvc: templates manpages compobjs html html_fr
+osvc: changelog templates manpages compobjs html html_fr
 
 pot:
 	$(SPHINXBUILD) -b gettext source $(POT_D)
@@ -199,4 +199,8 @@ compobjs: gitrepo
 	echo "$$buff" | tee -a source/compliance.objects/$$base_t.rst ; \
 	done
 
-
+changelog: gitrepo
+	@echo "Changelog\n*********\n\n" | tee source/agent.changelog.rst
+	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -v ^BRANCH=HEAD | awk '{printf("| `"$$1 " <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=" $$2 ">`_ ``") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("``\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
+	@cat $(DOCDIR)/opensvc/opensvc.changelog.rst | tee -a source/agent.changelog.rst
+	@rm -f $(DOCDIR)/opensvc/opensvc.changelog.rst
