@@ -26,6 +26,7 @@ New Features
 * Support different command for stop, start, check, info actions in a app resource.
 * The ``<svcname>.stonith`` and ``<svcname>.cluster`` symlinks are no longer necessary, and automatically deleted.
 * The ``DEFAULT.env`` parameter is now only used to check for service placement : a PRD node can only run PRD/PPRD services
+* Inter-services dependencies, intra-cluster, using the ``DEFAULT.parents`` keyword.
 
 .. warning:: start, stop, freeze, thaw, provision and unprovision service commands operate cluster wide. ``svcmgr unprovision`` would thus delete all services and their data on all cluster nodes.
 
