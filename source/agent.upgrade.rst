@@ -10,10 +10,7 @@ OpenSVC provides packages for all supported operating systems at https://repo.op
 * Feed the opensvc packages into your existing per operating system package depots and use operating system specific network-aware package management commands.
 * Mirror https://repo.opensvc.com on a corporate server and set up the opensvc agent to use this mirror as a package source.
 
-In the first part, this chapter describes the last method. The second part provides all information the user need to know before starting an upgrade campain.
-
-OS Package upgrade
-##################
+This chapter describes the last method.
 
 Initialize a Mirror
 ===================
