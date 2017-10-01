@@ -34,6 +34,7 @@ Object types are icon and color coded using the following convention.
 | :c-app:`Application Code`
 | :c-node:`Node`
 | :c-svc:`Service`
+| :c-res:`Resource`
 | :c-action:`Action`
 | :c-tag:`Tag`
 | :c-docker-repo:`Docker Repository`

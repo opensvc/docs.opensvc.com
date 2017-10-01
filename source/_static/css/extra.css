@@ -180,6 +180,7 @@ pre.output {
 .c-docker-registry:before {padding-right:0.4em; color: #27b8e8; content: '\f009'; font-family: FontAwesome}
 .c-node:before {padding-right:0.4em; color: cornflowerblue; content: '\f233'; font-family: FontAwesome}
 .c-svc:before {padding-right:0.4em; color: seagreen; content: '\f111'; font-family: FontAwesome}
+.c-res:before {padding-right:0.4em; color: seagreen; content: '\f292'; font-family: FontAwesome}
 .c-tag:before {padding-right:0.4em; color: darkcyan; content: '\f02b'; font-family: FontAwesome}
 .c-pkg:before {padding-right:0.4em; color: #cc9966; content: '\f1b3'; font-family: FontAwesome}
 .c-net:before {padding-right:0.4em; color: cadetblue; content: '\f0ec'; font-family: FontAwesome}
@@ -207,6 +208,7 @@ pre.output {
 .c-docker-registry {font-weight: bold}
 .c-node {font-weight: bold}
 .c-svc {font-weight: bold}
+.c-res {font-weight: bold}
 .c-tag {font-weight: bold}
 .c-pkg {font-weight: bold}
 .c-net {font-weight: bold}

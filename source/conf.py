@@ -283,6 +283,7 @@ rst_prolog = """
 .. role:: c-docker-registry
 .. role:: c-node
 .. role:: c-svc
+.. role:: c-res
 .. role:: c-tag
 .. role:: c-pkg
 .. role:: c-net

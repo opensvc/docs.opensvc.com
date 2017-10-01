@@ -54,7 +54,7 @@ Any 1.8 service with **no** hearbeat resource (manual failover) can behave like 
 Conversion table:
 
 +---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
-|  Service Type |    V1.8                  |   V1.9                |   Comments                                                                              |
+|  Service Type |    v1.8                  |   v1.9                |   Comments                                                                              |
 +===============+==========================+=======================+=========================================================================================+
 |               | | [DEFAULT]              | | [DEFAULT]           | orchestrate=no keeps the daemon from starting the instance on any node,                 |
 | | failover    | | nodes = n1 n2          | | nodes = n1 n2       | and inhibits failover. The nodes order is only important to determine the node where    |
@@ -103,11 +103,11 @@ An expression evaluating as a boolean, constraining the service instance placeme
 
 Supported syntax:
 
-* comparison operators are '==', '!=', '>', '>=', '<=', 'in (e1, e2)', 'in [e1, e2]'
-* arithmetic operators are '*', '+', '-', '/', '**', '//', '%'
-* binary operators are '&', '|', '^'
-* negation operator is 'not'
-* boolean operators are 'and', 'or'
+* comparison operators are ``==`` ``!=`` ``>`` ``>=`` ``<=`` ``in (e1 e2)`` ``in [e1 e2]``
+* arithmetic operators are ``*`` ``+`` ``-`` ``/`` ``**`` ``//`` ``%``
+* binary operators are ``&`` ``|`` ``^``
+* negation operator is ``not``
+* boolean operators are ``and`` ``or``
 * references are allowed
 * Strings, and references evaluating as strings, containing dots must be quoted
 
@@ -128,7 +128,10 @@ Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 
 	for SVCNAME in $(sudo svcmgr ls)
 	do
-		BUFF=$(sudo svcmgr -s $SVCNAME get --param affinity) && (sudo svcmgr -s $SVCNAME set --param hard_affinity --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param affinity)
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param affinity) && ( \
+			sudo svcmgr -s $SVCNAME set --param hard_affinity --value "$BUFF" ; \
+			sudo svcmgr -s $SVCNAME unset --param affinity \
+		)
 	done
 
 
@@ -139,7 +142,10 @@ Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
 
 	for SVCNAME in $(sudo svcmgr ls)
 	do
-		BUFF=$(sudo svcmgr -s $SVCNAME get --param anti_affinity) && (sudo svcmgr -s $SVCNAME set --param hard_anti_affinity --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param anti_affinity)
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param anti_affinity) && ( \
+			sudo svcmgr -s $SVCNAME set --param hard_anti_affinity --value "$BUFF" ; \
+			sudo svcmgr -s $SVCNAME unset --param anti_affinity \
+		)
 	done
 
 Remove ``DEFAULT.autostart_node``
@@ -149,25 +155,27 @@ Previously used for primary node definition at service startup, this parameter i
 
 When using ``nodes order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
 
-Example::
+Examples::
 
-        nodes=n1 n2 n3  => n1 is the primary node, n2 and n3 are secondary nodes
-        nodes=n3 n2 n1  => n3 is the primary node, n2 and n1 are secondary nodes
+        nodes = n1 n2 n3
+
+:c-node:`n1` is the primary node, :c-node:`n2` and :c-node:`n3` are secondary nodes.
+
+::
+
+        nodes = n3 n2 n1
+
+:c-node:`n3` is the primary node, :c-node:`n2` and :c-node:`n1` are secondary nodes.
 
 Remove hb sections from service configurations
 ==============================================
 
 heartbeats resources are now deprecated, and should be removed from the service configuration file.
 
-To remove rid ``hb#1`` resource from service ``svc1``:
+To remove rid :c-res:`hb#1` resource from service :c-svc:`svc1`:
 
 * ``svcmgr -s svc1 delete --rid hb#1`` removes the rid from the service configuration file
-* ``svcmgr -s svc1 sync nodes --rid sync#i0`` propagates the updated service configuration file to other node
-
-Once no more services are configured with hb resources, OpenHA can be stopped and uninstalled from system :
-
-* chkconfig/update-rc.d based systems : ``/etc/init.d/{ezha,openha} stop`` and remove package
-* systemd based systems : ``systemctl stop opensvc-openha.service`` and remove package
+* ``svcmgr -s svc1 sync drp --rid sync#i0`` propagates the updated service configuration file to drp node, if any
 
 Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
 ==========================================================================================================================================================
@@ -196,7 +204,10 @@ Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
 
 	for SVCNAME in $(sudo svcmgr ls)
 	do
-		BUFF=$(sudo svcmgr -s $SVCNAME get --param svc_env) && (sudo svcmgr -s $SVCNAME set --param env --value "$BUFF" ; sudo svcmgr -s $SVCNAME unset --param svc_env)
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param svc_env) && ( \
+			sudo svcmgr -s $SVCNAME set --param env --value "$BUFF" ; \
+			sudo svcmgr -s $SVCNAME unset --param svc_env \
+		)
 	done
 
 Set ``<rid>.provision=false`` in your templates
