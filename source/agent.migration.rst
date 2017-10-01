@@ -99,8 +99,7 @@ Possible values:
 Set ``DEFAULT.constraints``
 ===========================
 
-An expression evaluating as a boolean, constraining the service instance placement by the daemon monitor to nodes with the constraints evaluated as True.
-The osvcd monitor now filter the list of service nodes to discard the nodes in constraints violation, and applies the placement policy to the resulting list.
+An expression evaluating as a boolean, constraining the service instance placement to nodes where ``constraints`` evaluates as True.
 
 Supported syntax:
 
@@ -114,8 +113,8 @@ Supported syntax:
 
 Examples:
 
-* constraints = $("{nodename}"=="node2.acme.com")
-* constraints = $("{nodename}"=="node1" or "{node.env}" in (DEV, TST))
+* ``constraints = $("{nodename}"=="node2.acme.com")``
+* ``constraints = $("{nodename}"=="node1" or "{node.env}" in (DEV, TST))``
 
 .. note::
 
