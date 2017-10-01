@@ -285,6 +285,8 @@ rst_prolog = """
 .. role:: c-svc
 .. role:: c-res
 .. role:: c-tag
+.. role:: c-svc-env
+.. role:: c-env
 .. role:: c-pkg
 .. role:: c-net
 .. role:: c-check

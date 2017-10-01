@@ -10,6 +10,8 @@ Set System Defaults
 
 On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/opensvc`` that supports defaults injection.
 
+In most situations, this configuration file does not need modification.
+
 Defaults file location:
 
 ============= ============================
@@ -49,8 +51,8 @@ Set Node Environment
 
 The ``env`` setting is used to enforce the following policies:
 
-*   Only PRD services are allowed to start on a PRD node
-*   Only PRD nodes are allowed to push data to a PRD node
+*   Only :c-svc-env:`PRD` services are allowed to start on a :c-env:`PRD` node
+*   Only :c-env:`PRD` nodes are allowed to push data to a :c-env:`PRD` node
 
 Supported ``env`` values:
 

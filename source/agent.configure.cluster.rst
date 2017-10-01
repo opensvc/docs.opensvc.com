@@ -36,13 +36,13 @@ Join a Cluster
 
 The joining node can choose to join any of the cluster node already joined.
 
-On the joined node ``node1``
+On the joined node :c-node:`node1`
 
 ::
 
         sudo nodemgr get --param cluster.secret
 
-On the joining node ``node2``
+On the joining node :c-node:`node2`
 
 ::
 
