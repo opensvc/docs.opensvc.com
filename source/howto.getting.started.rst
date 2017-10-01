@@ -109,7 +109,7 @@ For other purposes than testing, we would have defined on both nodes the relevan
 Cluster Build
 =============
 
-As our first setup consist in a dual node cluster, we have to follow the steps described here :ref:`agent-cluster-configuration`
+As our first setup consist in a dual node cluster, we have to follow the steps described here :ref:`agent.configure.cluster`
 
 **On node1**::
 
