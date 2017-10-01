@@ -250,7 +250,7 @@ If the resource goes down, then the agent triggers the ``monitor_action``, which
 Automatic Restart
 *****************
 
-The ``restart`` parameter can be set to make the agent daemon monitor restart the resource if it fails::
+The ``restart`` parameter can be set to make the agent daemon monitor restart the resource if it fails:
 
 .. raw:: html
 
@@ -275,7 +275,7 @@ Some resources must remain up, even when the service instance is stopped.
 
 For example, in a 2-nodes failover service with a fs resource and a sync.rsync resource replicating the fs, the fs resource must be up on the passive node receive the rsync'ed data. If not, the data gets written to the underlying filesystem.
 
-The ``always_on`` keyword can be set in these cases::
+The ``always_on`` keyword can be set in these cases:
 
 .. raw:: html
 
