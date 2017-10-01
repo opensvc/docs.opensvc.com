@@ -1,3 +1,13 @@
+.menuselection:before {
+	padding-right: 0.4em;
+	color: rgb(3, 135, 162);
+	content: '\f00a';
+	font-family: FontAwesome;
+}
+.menuselection {
+	color: rgb(3, 135, 162);
+	padding: 0 0.4em;
+}
 .line {
 	line-height: 24px;
 }
@@ -203,6 +213,7 @@ pre.output {
 .c-rule:before {padding-right:0.4em; color: #ee5464; content: '\f140'; font-family: FontAwesome}
 .c-rset:before {padding-right:0.4em; color: #ee5464; content: '\f1b2'; font-family: FontAwesome}
 .c-modset:before {padding-right:0.4em; color: #ee5464; content: '\f085'; font-family: FontAwesome}
+.c-mod:before {padding-right:0.4em; color: #ee5464; content: '\f013'; font-family: FontAwesome}
 .c-app:before {padding-right:0.4em; color: deeppink; content: '\f069'; font-family: FontAwesome}
 
 .c-action {font-weight: bold}
@@ -233,6 +244,7 @@ pre.output {
 .c-rule {font-weight: bold}
 .c-rset {font-weight: bold}
 .c-modset {font-weight: bold}
+.c-mod {font-weight: bold}
 .c-app {font-weight: bold}
 
 .c-close:before {color: black; content: '\f00d'; font-family: FontAwesome}

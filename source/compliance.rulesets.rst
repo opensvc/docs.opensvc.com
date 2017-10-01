@@ -7,7 +7,7 @@ Base facts about rulesets :
 
     * Rules are designed, stored and served by the collector
     * Rules are variable/value pairs exported by the OpenSVC agent in the execution environment of the modules.
-    * Only members of the 'CompManager' group are allowed to create or edit rulesets
+    * Only members of the :c-priv:`CompManager` group are allowed to create or edit rulesets
     * A rule value can be complex, for example a json-serialized dictionnary. OpenSVC ships with a library of compliance objects and corresponding rule edition wizard. Using the objects in modules code abstracts the complex rule parsing, and using the wizards hides the json structures from the designer.
     * Rules are grouped into rulesets.
     * Rulesets can be explicitely attached to nodes or services, or contextually presented to nodes and services through a filterset.

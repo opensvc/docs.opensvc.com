@@ -109,11 +109,7 @@ Tools
 =====
 
 * Node actions
-
-  |video-icon| `Watch a video <http://www.youtube.com/watch?feature=player_embedded&v=Yh7P7F61DB0>`_
-
 * Service actions
-
 * Topology
 
 Dashboard notifications

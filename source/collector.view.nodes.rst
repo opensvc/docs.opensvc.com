@@ -17,15 +17,9 @@ Tools
 =====
 
 * Group performance
-
-  |video-icon| `Watch a video <http://www.youtube.com/watch?feature=player_embedded&v=9L4xfn9ylmI>`_
-
 * Installed packages comparison
-
 * Node actions
-
 * Add node
-
 * Delete node
 
 Dashboard notifications

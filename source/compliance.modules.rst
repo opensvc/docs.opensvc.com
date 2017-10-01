@@ -18,34 +18,27 @@ Parameters
 
 A module must support only one mandatory argument. Its' values can be either
 
-.. function:: check parameter
-
-   Verify the rules are applied on the node or service.
-
-.. function:: fixable parameter
-
-   Verify the module can apply the rules on the service or node.
-
-.. function:: fix parameter
-
-   Apply the rules on the node or service
+======================= ===============================================================
+Argument                Description
+======================= ===============================================================
+:c-action:`check`       Verify the rules are applied on the node or service.
+:c-action:`fixable`     Verify the module can apply the rules on the service or node.
+:c-action:`fix`         Apply the rules on the node or service
+======================= ===============================================================
 
 Return code
 -----------
 
 A module must return one of those three possible values
 
-.. function:: return code 0
-
-   Compliance checks or fixes passed.
-
-.. function:: return code 1
-
-   Compliance checks or fixes failed.
-
-.. function:: return code 2
-
-   Compliance checks or fixes are not applicable. For example when no rules are made available to the module.
+======================= ===============================================================
+Argument                Description
+======================= ===============================================================
+``0``                   Compliance checks or fixes passed.
+``1``                   Compliance checks or fixes failed.
+``2``                   Compliance checks or fixes are not applicable. For example
+                        when no rules are made available to the module.
+======================= ===============================================================
 
 Location
 --------
@@ -83,8 +76,15 @@ Objects take complex serialized rules as input, and the collector implements for
 
 The calling modules have to specify to the object 2 informations:
 
-* The called action : fix, fixable or check
+* The called action : :c-action:`fix`, :c-action:`fixable` or :c-action:`check`
 * The variable name prefix the object must care about. The object will search the environment for variables matching this prefix.
+
+Auto-modules
+============
+
+A module embedded in a moduleset, with no deployed script by that name, is an auto-module.
+
+The agent loops over each variable provided with the moduleset. If the variable class matches a deployed compliance object, it executes this compliance object with the variable name as the scope argument.
 
 Module skeleton
 ===============
@@ -92,7 +92,7 @@ Module skeleton
 Shell script
 ------------
 
-::
+.. code-block:: sh
 
 	#!/bin/bash
 
@@ -124,7 +124,7 @@ Shell script
 Python script
 -------------
 
-::
+.. code-block:: python
 
 	#!/usr/bin/env python
 
