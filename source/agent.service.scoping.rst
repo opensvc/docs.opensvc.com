@@ -88,7 +88,7 @@ Examples
 	disable@drpnodes = false
 	...
 
-This resource is enabled on n3 because the generic disable is overriden by the more specific ``disable@drpnodes`` scoped definition.
+This resource is enabled on :c-node:`n3` because the generic disable is overriden by the more specific ``disable@drpnodes`` scoped definition.
 
 ::
 
@@ -102,7 +102,7 @@ This resource is enabled on n3 because the generic disable is overriden by the m
 	disable@n3 = true
 	...
 
-This resource is disabled on n3 because the generic disable and ``disable@drpnodes`` are overriden by the more specific ``disable@n3`` scoped definition.
+This resource is disabled on :c-node:`n3` because the generic disable and ``disable@drpnodes`` are overriden by the more specific ``disable@n3`` scoped definition.
 
 ::
 
@@ -115,7 +115,7 @@ This resource is disabled on n3 because the generic disable and ``disable@drpnod
 	disable@n3 = false
 	...
 
-This resource is disabled on n3 because the last of the 2 same ranked scoped definition takes precedence.
+This resource is disabled on :c-node:`n3` because the last of the 2 same ranked scoped definition takes precedence.
 
 
 

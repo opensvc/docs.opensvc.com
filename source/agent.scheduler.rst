@@ -26,14 +26,41 @@ Display the Schedules
 Node Schedule
 +++++++++++++
 
-::
+.. raw:: html
 
+	<pre class='output'>
 	$ sudo nodemgr print schedule
-	action                last run               config parameter          schedule definition
-	------                --------               ----------------          -------------------
-	auto_reboot           2016-02-23 16:50:01    reboot.schedule           16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr
-	auto_rotate_root_pw   2015-02-25 17:17:17    rotate_root_pw.schedule   -
-	...
+	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter         </span>  <span style="font-weight: bold">Schedule Definition                               </span>  
+	|- <span style="color: #767676">auto_reboot        </span>  2017-09-30 16:59:19  reboot.schedule            16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr  
+	|- <span style="color: #767676">auto_rotate_root_pw</span>  -                    rotate_root_pw.schedule    -                                                   
+	|- <span style="color: #767676">checks             </span>  2017-10-01 17:43:29  checks.schedule            ["16:00-21:00@30 *:last", "! * wed", "*@1"]         
+	|- <span style="color: #767676">collect_stats      </span>  2017-10-01 17:42:29  stats_collection.schedule  @10                                                 
+	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:01:22  compliance.schedule        00:00-01:00@61                                      
+	|- <span style="color: #767676">dequeue_actions    </span>  2017-01-30 10:02:01  dequeue_actions.schedule   -                                                   
+	|- <span style="color: #767676">pushasset          </span>  2017-10-01 00:06:22  asset.schedule             00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushbrocade        </span>  -                    brocade.schedule           -                                                   
+	|- <span style="color: #767676">pushcentera        </span>  -                    centera.schedule           -                                                   
+	|- <span style="color: #767676">pushdcs            </span>  -                    dcs.schedule               -                                                   
+	|- <span style="color: #767676">pushdisks          </span>  2017-10-01 00:03:22  disks.schedule             00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushemcvnx         </span>  -                    emcvnx.schedule            -                                                   
+	|- <span style="color: #767676">pusheva            </span>  -                    eva.schedule               -                                                   
+	|- <span style="color: #767676">pushfreenas        </span>  -                    freenas.schedule           -                                                   
+	|- <span style="color: #767676">pushgcedisks       </span>  -                    gcedisks.schedule          -                                                   
+	|- <span style="color: #767676">pushhds            </span>  -                    hds.schedule               -                                                   
+	|- <span style="color: #767676">pushhp3par         </span>  -                    hp3par.schedule            -                                                   
+	|- <span style="color: #767676">pushibmds          </span>  -                    ibmds.schedule             -                                                   
+	|- <span style="color: #767676">pushibmsvc         </span>  -                    ibmsvc.schedule            -                                                   
+	|- <span style="color: #767676">pushnecism         </span>  -                    necism.schedule            -                                                   
+	|- <span style="color: #767676">pushnetapp         </span>  -                    netapp.schedule            -                                                   
+	|- <span style="color: #767676">pushnsr            </span>  -                    nsr.schedule               -                                                   
+	|- <span style="color: #767676">pushpatch          </span>  2017-10-01 00:16:01  patches.schedule           00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushpkg            </span>  2017-10-01 00:12:01  packages.schedule          00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushstats          </span>  2017-10-01 17:41:29  stats.schedule             ["00:00-23:59@10"]                                  
+	|- <span style="color: #767676">pushsym            </span>  -                    sym.schedule               -                                                   
+	|- <span style="color: #767676">pushvioserver      </span>  -                    vioserver.schedule         -                                                   
+	|- <span style="color: #767676">pushxtremio        </span>  -                    xtremio.schedule           -                                                   
+	`- <span style="color: #767676">sysreport          </span>  2017-10-01 00:25:02  sysreport.schedule         00:00-06:00@361 mon-sun                             
+	</pre>
 
 The scheduled tasks can be configured in ``<OSVCETC>/node.conf`` with a configlet like::
 
@@ -50,36 +77,36 @@ The ``nodemgr`` command executed when the schedule constraints are met is displa
 
 The supported schedules are:
 
-* Node inventoring tasks : pushasset, pushpatch, pushpkg, pushdisks
-* Node performance metrics inventoring : pushstats
-* Node performance metrics collection : collect_stats
-* Node file content tracking task : sysreport
-* Node configuration audit and/or remediation task : compliance_auto
-* Health checking task : checks
-* Scheduled node reboot task : auto_reboot
-* Scheduled root password rotation task : auto_rotate_root_pw
-* Execution of nodemgr actions queued by the collector : dequeue_actions
-* SAN switches inventoring tasks : pushbrocade
-* Storage arrays inventoring tasks : pushcentera, pushdcs, pushemcvnx, pusheva, pushfreenas, pushhds, pushhp3par, pushibmds, pushibmsvc, pushnecism, pushnetapp, pushsym, pushvioserver
-* Backup servers saves index inventoring tasks : pushnsr
+* Node inventoring tasks : ``pushasset`` ``pushpatch`` ``pushpkg`` ``pushdisks``
+* Node performance metrics inventoring : ``pushstats``
+* Node performance metrics collection : ``collect_stats``
+* Node file content tracking task : ``sysreport``
+* Node configuration audit and/or remediation task : ``compliance_auto``
+* Health checking task : ``checks``
+* Scheduled node reboot task : ``auto_reboot``
+* Scheduled root password rotation task : ``auto_rotate_root_pw``
+* Execution of nodemgr actions queued by the collector : ``dequeue_actions``
+* SAN switches inventoring tasks : ``pushbrocade``
+* Storage arrays inventoring tasks : ``pushcentera`` ``pushdcs`` ``pushemcvnx`` ``pusheva`` ``pushfreenas`` ``pushhds`` ``pushhp3par`` ``pushibmds`` ``pushibmsvc`` ``pushnecism`` ``pushnetapp`` ``pushsym`` ``pushvioserver``
+* Backup servers saves index inventoring tasks : ``pushnsr``
 
 
 Service Schedule
 ++++++++++++++++
 
-::
+.. raw:: html
 
-	$ sudo svcmgr -s deb1.opensvc.com print schedule
-	action                last run               config parameter          schedule definition
-	------                --------               ----------------          -------------------
-	compliance_auto       2016-02-24 03:00:08    DEFAULT.comp_schedule     00:00-06:00@361
-	push_env              2016-02-24 01:50:04    DEFAULT.push_schedule     00:00-06:00@361
-	push_service_status   2016-02-24 08:00:07    DEFAULT.mon_schedule      @9
-	sync_all              2016-02-24 04:01:08    sync#2.schedule           00:01-02:00@120
-	sync_all              2016-02-24 04:01:08    sync#1.schedule           04:00-06:00@121
-	sync_all              2016-02-24 04:01:08    sync#i0.schedule          04:00-06:00@121
-	...
-
+	<pre class='output'>
+	$ sudo svcmgr -s testmd print schedule
+	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter        </span>  <span style="font-weight: bold">Schedule Definition</span>  
+	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:09:01  DEFAULT.comp_schedule     00:00-06:00@361      
+	|- <span style="color: #767676">push_config        </span>  2017-10-01 00:01:02  DEFAULT.push_schedule     00:00-06:00@361      
+	|- <span style="color: #767676">push_resinfo       </span>  2017-10-01 16:42:29  DEFAULT.resinfo_schedule  @60                  
+	|- <span style="color: #767676">push_service_status</span>  2017-10-01 17:39:30  DEFAULT.status_schedule   @8                   
+	|- <span style="color: #767676">resource_monitor   </span>  2017-10-01 17:38:02  DEFAULT.monitor_schedule  @2                   
+	|- <span style="color: #767676">sync_all           </span>  2017-10-01 04:00:04  sync#1.schedule           04:00-06:00@121      
+	`- <span style="color: #767676">sync_all           </span>  2017-10-01 04:00:04  sync#i0.schedule          04:00-06:00@121      
+	</pre>
 
 The scheduled tasks can be configured in ``<OSVCETC>/<svcname>.env`` with a configlet like::
 
@@ -96,10 +123,10 @@ The ``svcmgr -s <svcname>`` command executed when the schedule constraints are m
 
 The supported schedules are:
 
-* Service configuration audit and/or remediation task : compliance_auto
-* Service configuration inventoring task : push_env
-* Service status inventoring task : push_service_status
-* Service sync resources actions : sync_all
+* Service configuration audit and/or remediation task : ``compliance_auto``
+* Service configuration inventoring task : ``push_env``
+* Service status inventoring task : ``push_service_status``
+* Service sync resources actions : ``sync_all``
 
 
 Schedule Definition
@@ -179,25 +206,25 @@ You can add your own test in the ``tests`` structure at the end of this file.
 ::
 
 	tests = [
-	 ("", "2015-02-27 10:00", False),
-	 ("@0", "2015-02-27 10:00", False),
-	 ("*@0", "2015-02-27 10:00", False),
-	 ("*", "2015-02-27 10:00", True),
-         ...
+	  ("", "2015-02-27 10:00", False),
+	  ("@0", "2015-02-27 10:00", False),
+	  ("*@0", "2015-02-27 10:00", False),
+	  ("*", "2015-02-27 10:00", True),
+          ...
         ]
 
 List entries fields:
 
-* 0: A schedule definition to test
-* 1: The simulated current time
-* 2: The expected result
+* ``0``: A schedule definition to test
+* ``1``: The simulated current time
+* ``2``: The expected result
 
 Examples
 ========
 
 * Never schedule
 
-  Either "", or ``@0``
+  Either `` ``, or ``@0``
 
 * Always schedule
 

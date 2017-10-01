@@ -88,47 +88,50 @@ A schedule configuration can be applied using
 
 Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command would produce this section:
 
-::
+.. raw:: html
 
-	[brocade]
-        schedule = 02:00-04:00@120 sat,sun
+	<pre class='output'>
+	<span style="color: #aa5500">[compliance]</span>
+	<span style="color: #767676">schedule </span>= 00:00-01:00@61
+	</pre>
 
 The live scheduler configuration and states can be extracted with
 
-::
+.. raw:: html
 
-	# nodemgr print schedule
-	action                 last run               config parameter          schedule definition
-	------                 --------               ----------------          -------------------
-	auto_reboot            -                      reboot.schedule           -
-	auto_rotate_root_pw    -                      rotate_root_pw.schedule   -
-	checks                 -                      checks.schedule           00:00-06:00@361 mon-sun
-	collect_stats          -                      stats_collection.schedule  @10
-	compliance_auto        2016-08-05 11:57:01    compliance.schedule       @1440
-	dequeue_actions        -                      dequeue_actions.schedule  -
-	pushasset              -                      asset.schedule            00:00-06:00@361 mon-sun
-	pushbrocade            -                      brocade.schedule          -
-	pushcentera            -                      centera.schedule          -
-	pushdcs                -                      dcs.schedule              -
-	pushdisks              -                      disks.schedule            00:00-06:00@361 mon-sun
-	pushemcvnx             -                      emcvnx.schedule           -
-	pusheva                -                      eva.schedule              -
-	pushfreenas            -                      freenas.schedule          -
-	pushgcedisks           -                      gcedisks.schedule         -
-	pushhds                -                      hds.schedule              -
-	pushhp3par             -                      hp3par.schedule           -
-	pushibmds              -                      ibmds.schedule            -
-	pushibmsvc             -                      ibmsvc.schedule           -
-	pushnecism             -                      necism.schedule           -
-	pushnetapp             -                      netapp.schedule           -
-	pushnsr                -                      nsr.schedule              -
-	pushpatch              -                      patches.schedule          00:00-06:00@361 mon-sun
-	pushpkg                -                      packages.schedule         00:00-06:00@361 mon-sun
-	pushstats              2016-08-05 13:10:01    stats.schedule            @60
-	pushsym                -                      sym.schedule              -
-	pushvioserver          -                      vioserver.schedule        -
-	sysreport              -                      sysreport.schedule        00:00-06:00@361 mon-sun
-
+	<pre class='output'>
+	$ sudo nodemgr print schedule
+	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter         </span>  <span style="font-weight: bold">Schedule Definition                               </span>  
+	|- <span style="color: #767676">auto_reboot        </span>  2017-09-30 16:59:19  reboot.schedule            16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr  
+	|- <span style="color: #767676">auto_rotate_root_pw</span>  -                    rotate_root_pw.schedule    -                                                   
+	|- <span style="color: #767676">checks             </span>  2017-10-01 17:43:29  checks.schedule            ["16:00-21:00@30 *:last", "! * wed", "*@1"]         
+	|- <span style="color: #767676">collect_stats      </span>  2017-10-01 17:42:29  stats_collection.schedule  @10                                                 
+	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:01:22  compliance.schedule        00:00-01:00@61                                      
+	|- <span style="color: #767676">dequeue_actions    </span>  2017-01-30 10:02:01  dequeue_actions.schedule   -                                                   
+	|- <span style="color: #767676">pushasset          </span>  2017-10-01 00:06:22  asset.schedule             00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushbrocade        </span>  -                    brocade.schedule           -                                                   
+	|- <span style="color: #767676">pushcentera        </span>  -                    centera.schedule           -                                                   
+	|- <span style="color: #767676">pushdcs            </span>  -                    dcs.schedule               -                                                   
+	|- <span style="color: #767676">pushdisks          </span>  2017-10-01 00:03:22  disks.schedule             00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushemcvnx         </span>  -                    emcvnx.schedule            -                                                   
+	|- <span style="color: #767676">pusheva            </span>  -                    eva.schedule               -                                                   
+	|- <span style="color: #767676">pushfreenas        </span>  -                    freenas.schedule           -                                                   
+	|- <span style="color: #767676">pushgcedisks       </span>  -                    gcedisks.schedule          -                                                   
+	|- <span style="color: #767676">pushhds            </span>  -                    hds.schedule               -                                                   
+	|- <span style="color: #767676">pushhp3par         </span>  -                    hp3par.schedule            -                                                   
+	|- <span style="color: #767676">pushibmds          </span>  -                    ibmds.schedule             -                                                   
+	|- <span style="color: #767676">pushibmsvc         </span>  -                    ibmsvc.schedule            -                                                   
+	|- <span style="color: #767676">pushnecism         </span>  -                    necism.schedule            -                                                   
+	|- <span style="color: #767676">pushnetapp         </span>  -                    netapp.schedule            -                                                   
+	|- <span style="color: #767676">pushnsr            </span>  -                    nsr.schedule               -                                                   
+	|- <span style="color: #767676">pushpatch          </span>  2017-10-01 00:16:01  patches.schedule           00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushpkg            </span>  2017-10-01 00:12:01  packages.schedule          00:00-06:00@361 mon-sun                             
+	|- <span style="color: #767676">pushstats          </span>  2017-10-01 17:41:29  stats.schedule             ["00:00-23:59@10"]                                  
+	|- <span style="color: #767676">pushsym            </span>  -                    sym.schedule               -                                                   
+	|- <span style="color: #767676">pushvioserver      </span>  -                    vioserver.schedule         -                                                   
+	|- <span style="color: #767676">pushxtremio        </span>  -                    xtremio.schedule           -                                                   
+	`- <span style="color: #767676">sysreport          </span>  2017-10-01 00:25:02  sysreport.schedule         00:00-06:00@361 mon-sun                             
+	</pre>
 
 .. seealso:: :ref:`agent-scheduler`
 
