@@ -1,9 +1,6 @@
 Concept
 *******
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 Introduction
 ============
 

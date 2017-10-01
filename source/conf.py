@@ -274,3 +274,40 @@ rst_epilog = """
 .. |version| replace:: %(version)s
 """ % dict(version=version)
 
+rst_prolog = """
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
+.. role:: c-action
+.. role:: c-docker-repo
+.. role:: c-docker-registry
+.. role:: c-node
+.. role:: c-svc
+.. role:: c-tag
+.. role:: c-pkg
+.. role:: c-net
+.. role:: c-check
+.. role:: c-form
+.. role:: c-report
+.. role:: c-metric
+.. role:: c-chart
+.. role:: c-group
+.. role:: c-priv
+.. role:: c-user
+.. role:: c-dns-domain
+.. role:: c-dns-record
+.. role:: c-fset
+.. role:: c-disk
+.. role:: c-array
+.. role:: c-diskgroup
+.. role:: c-rule
+.. role:: c-rset
+.. role:: c-modset
+.. role:: c-app
+
+.. role:: c-close
+.. role:: c-fullscreen
+.. role:: c-shrink
+.. role:: c-link
+"""
+

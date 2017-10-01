@@ -1,3 +1,7 @@
+.line {
+	line-height: 24px;
+}
+
 /*
  * Titles highlighting
  */
@@ -170,3 +174,67 @@ pre.output {
 		margin: 0 150px;
 	}
 }
+
+.c-action:before {padding-right:0.4em; color: seagreen; content: '\f013'; font-family: FontAwesome}
+.c-docker-repo:before {padding-right:0.4em; color: #27b8e8; content: '\f04d'; font-family: FontAwesome}
+.c-docker-registry:before {padding-right:0.4em; color: #27b8e8; content: '\f009'; font-family: FontAwesome}
+.c-node:before {padding-right:0.4em; color: cornflowerblue; content: '\f233'; font-family: FontAwesome}
+.c-svc:before {padding-right:0.4em; color: seagreen; content: '\f111'; font-family: FontAwesome}
+.c-tag:before {padding-right:0.4em; color: darkcyan; content: '\f02b'; font-family: FontAwesome}
+.c-pkg:before {padding-right:0.4em; color: #cc9966; content: '\f1b3'; font-family: FontAwesome}
+.c-net:before {padding-right:0.4em; color: cadetblue; content: '\f0ec'; font-family: FontAwesome}
+.c-check:before {padding-right:0.4em; color: green; content: '\f00c'; font-family: FontAwesome}
+.c-form:before {padding-right:0.4em; color: palevioletred; content: '\f12e'; font-family: FontAwesome}
+.c-report:before {padding-right:0.4em; color: sandybrown; content: '\f200'; font-family: FontAwesome}
+.c-metric:before {padding-right:0.4em; color: sandybrown; content: '\f121'; font-family: FontAwesome}
+.c-chart:before {padding-right:0.4em; color: sandybrown; content: '\f201'; font-family: FontAwesome}
+.c-group:before {padding-right:0.4em; color: salmon; content: '\f0c0'; font-family: FontAwesome}
+.c-priv:before {padding-right:0.4em; color: goldenrod; content: '\f0c0'; font-family: FontAwesome}
+.c-user:before {padding-right:0.4em; color: #FAA272; content: '\f007'; font-family: FontAwesome}
+.c-dns-domain:before {padding-right:0.4em; color: turquoise; content: '\f0e1'; font-family: FontAwesome}
+.c-dns-record:before {padding-right:0.4em; color: turquoise; content: '\f0e1'; font-family: FontAwesome}
+.c-fset:before {padding-right:0.4em; color: slategray; content: '\f0b0'; font-family: FontAwesome}
+.c-disk:before {padding-right:0.4em; color: #949413; content: '\f1c0'; font-family: FontAwesome}
+.c-array:before {padding-right:0.4em; color: #949413; content: '\f00a'; font-family: FontAwesome}
+.c-diskgroup:before {padding-right:0.4em; color: #949413; content: '\f009'; font-family: FontAwesome}
+.c-rule:before {padding-right:0.4em; color: #ee5464; content: '\f140'; font-family: FontAwesome}
+.c-rset:before {padding-right:0.4em; color: #ee5464; content: '\f1b2'; font-family: FontAwesome}
+.c-modset:before {padding-right:0.4em; color: #ee5464; content: '\f085'; font-family: FontAwesome}
+.c-app:before {padding-right:0.4em; color: deeppink; content: '\f069'; font-family: FontAwesome}
+
+.c-action {font-weight: bold}
+.c-docker-repo {font-weight: bold}
+.c-docker-registry {font-weight: bold}
+.c-node {font-weight: bold}
+.c-svc {font-weight: bold}
+.c-tag {font-weight: bold}
+.c-pkg {font-weight: bold}
+.c-net {font-weight: bold}
+.c-check {font-weight: bold}
+.c-form {font-weight: bold}
+.c-report {font-weight: bold}
+.c-metric {font-weight: bold}
+.c-chart {font-weight: bold}
+.c-group {font-weight: bold}
+.c-priv {font-weight: bold}
+.c-user {font-weight: bold}
+.c-dns-domain {font-weight: bold}
+.c-dns-record {font-weight: bold}
+.c-fset {font-weight: bold}
+.c-disk {font-weight: bold}
+.c-array {font-weight: bold}
+.c-diskgroup {font-weight: bold}
+.c-rule {font-weight: bold}
+.c-rset {font-weight: bold}
+.c-modset {font-weight: bold}
+.c-app {font-weight: bold}
+
+.c-close:before {color: black; content: '\f00d'; font-family: FontAwesome}
+.c-close {color: transparent}
+.c-fullscreen:before {color: black; content: '\f065'; font-family: FontAwesome}
+.c-fullscreen {color: transparent}
+.c-shrink:before {color: black; content: '\f066'; font-family: FontAwesome}
+.c-shrink {color: transparent}
+.c-link:before {color: black; content: '\f0c1'; font-family: FontAwesome}
+.c-link {color: transparent}
+

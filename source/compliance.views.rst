@@ -1,9 +1,6 @@
 Collector compliance views
 **************************
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 .. figure:: _static/compliance.menu.png
    :align: right
 
