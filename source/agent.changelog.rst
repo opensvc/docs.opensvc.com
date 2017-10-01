@@ -257,7 +257,7 @@ Agent Changelog
 | `1.9-312 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c955d8257ae080a1365bf4ccbaf898b06d4b78d>`_ Fix line continuation prefix in the forest renderer
 | `1.9-311 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6adaa216b1d3cb0661dce8e259e5e22afd210afe>`_ Fix scope of the forest data
 | `1.9-310 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=25dca4350ee759211ee32944fc4af8f45abb92ed>`_ Fix a stack in the forest renderer
-| `1.9-309 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=848b9a4074471ab7e7097d43a8513f30c0546a82>`_ Use the forest pythonic interface in the "print *devs" codepath
+| `1.9-309 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=848b9a4074471ab7e7097d43a8513f30c0546a82>`_ Use the forest pythonic interface in the "print devs" codepath
 | `1.9-308 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf0f90efe557ff7d3bba07571201b641a62a240b>`_ Add a pythonic interface to the forest module
 | `1.9-307 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b60c529cdde9bb94b6f9144953357cd1199735d>`_ Add an assert on the fs status eval after start in the svc fs nose tests
 | `1.9-306 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1e3a68b83079995478aaf3505eb6c2a76e44dedc>`_ Degrade a log info to debug in the linux disk.vg status() codepath
