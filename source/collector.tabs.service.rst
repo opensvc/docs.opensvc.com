@@ -9,35 +9,35 @@ Properties
 ================================ ========================================================================================
 Property                         Description
 ================================ ========================================================================================
-:command:`opensvc version`       Pushed to database daily by the opensvc nodeware cronjob.
+:cmd:`opensvc version`           Pushed to database daily by the opensvc nodeware cronjob.
 
-:command:`unackowledged errors`  A count of the unacknowledged errors on this service found in the actions table.
+:cmd:`unackowledged errors`      A count of the unacknowledged errors on this service found in the actions table.
 
-:command:`type`                  Service type can be PRD, DEV, ...
+:cmd:`type`                      Service type can be PRD, DEV, ...
 
-:command:`comment`               Pushed to database daily by the opensvc nodeware cronjob.
+:cmd:`comment`                   Pushed to database daily by the opensvc nodeware cronjob.
                                  This information resides in the service env file on the nodes.
 
-:command:`last update`           Timestamp updated upon service information receive from the nodeware cronjob.
+:cmd:`last update`               Timestamp updated upon service information receive from the nodeware cronjob.
 
-:command:`container name`        Host Name of the virtual machine encapsulated in the service, if any.
+:cmd:`container name`            Host Name of the virtual machine encapsulated in the service, if any.
 
-:command:`container type`        Virtualisation driver to handle the encapsulated virtual machine, if any.
+:cmd:`container type`            Virtualisation driver to handle the encapsulated virtual machine, if any.
 
-:command:`responsibles`          List of administrators contact names for this service.
+:cmd:`responsibles`              List of administrators contact names for this service.
 
-:command:`responsibles mail`     List of administrators contact emails for this service.
+:cmd:`responsibles mail`         List of administrators contact emails for this service.
 
-:command:`primary node`          Host name of the node where the service should be running in optimal situation.
+:cmd:`primary node`              Host name of the node where the service should be running in optimal situation.
 
-:command:`nodes`                 All nodes where the service may be running in degraded situation
+:cmd:`nodes`                     All nodes where the service may be running in degraded situation
                                  (not in disaster recovery situation).
 
-:command:`drp node`              Host name of the node the service should be running in a disaster recovery situation.
+:cmd:`drp node`                  Host name of the node the service should be running in a disaster recovery situation.
 
-:command:`drp nodes`             All nodes where the service may be running in disaster recovery situation.
+:cmd:`drp nodes`                 All nodes where the service may be running in disaster recovery situation.
 
-:command:`status`                Display the per-node synthetic service status.
+:cmd:`status`                    Display the per-node synthetic service status.
 
 ================================ ========================================================================================
 

@@ -4,7 +4,7 @@ Best practice
 Present to modules only the rules they use
 ==========================================
 
-So that the :command:`nodemgr compliance env --module <my module>` action displays useful information.
+So that the :cmd:`nodemgr compliance env --module <my module>` action displays useful information.
 To do so,
 
 *  make use of ruleset in moduleset encapsulation.

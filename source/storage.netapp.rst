@@ -4,28 +4,28 @@ Netapp snapmirror replication
 Command set
 ===========
 
-:command:`start`
+:cmd:`start`
     Acquire read/write access to the snapmirrored resources. Either swapping the syncs direction (in geocluster mode), or breaking-off the syncs (default disaster recovery mode).
 
-:command:`stop`
+:cmd:`stop`
     noop
 
-:command:`syncupdate`
+:cmd:`syncupdate`
     Trigger a snapmirror sync.
 
-:command:`syncquiesce`
+:cmd:`syncquiesce`
     Trigger an ultimate snapmirror sync then suspend the resync scheduling.
 
-:command:`syncresume`
+:cmd:`syncresume`
     Resume snapmirror sync schedule (rollbacks the effect of quiesce).
 
-:command:`syncbreak`
+:cmd:`syncbreak`
     Break-off the snapmirror resource.
 
-:command:`syncresync`
+:cmd:`syncresync`
     Re-establish the snapmirror synchronization.
 
-:command:`syncswap`
+:cmd:`syncswap`
     Re-establish the snapmirror synchronization using current destination as new source.
 
 Force flag
@@ -36,18 +36,18 @@ The --force flag is honored by the 'start' command only. It disables the exit on
 Status
 ======
 
-:command:`up`
+:cmd:`up`
     The snapmirror are operational and the lag in under sync_max_delay
 
-:command:`warn`
+:cmd:`warn`
     The snapmirror are in one of the following state:
     *   transfer is in progress
     *   lag is beyond sync_max_delay
 
-:command:`undef`
+:cmd:`undef`
     slave filer is unreachable
 
-:command:`down`
+:cmd:`down`
     resource is not in snapmirrored state
 
 Service configuration for Netapp
@@ -59,10 +59,10 @@ Pre-requisites
 Key-based ssh access to the filers. The root account's key-pair is used by OpenSVC. The filer account used is settable in the service configuration file. The filer account must have snapmirror handling capabilities granted.
 Cluster mode
 
-:command:`split`
+:cmd:`split`
     This is the default disaster recovery mode. Upon service startup on a DRP node, the snapmirrored resources are quiesced if the master filer is still joinable, then broken-off. The DRP node data cursor on the broken-off resources is considered volatile (still can be manually synchronized to the primary filer before failback to production node).
 
-:command:`swap`
+:cmd:`swap`
     This mode is dedicated to multi-site clusters. Upon service startup on a secondary node, the snapmirrored are quiesced and sync directions are swapped to set the 'source' to the filer local to the secondary node taking over the service.
 
 The mode is deduced from the node's host mode : a PRD host mode implies the swap sync mode, otherwise the split sync mode is selected.

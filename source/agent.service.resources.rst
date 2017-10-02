@@ -64,7 +64,7 @@ encap
 
 This tag assigns the resource to the encapsulated/slave service. The agent on the master-part of the service does not handle such a resource.
 
-``svcmgr print status`` highlights such resources with the ``E`` flag.
+:cmd:`svcmgr print status` highlights such resources with the ``E`` flag.
 
 .. raw:: html
 
@@ -146,7 +146,7 @@ A resource can be marked as disabled using the ``disable`` keyword.
 
 This will make the agent ignore any action upon this resource.
 
-``svcmgr print status`` will highlights disabled resources with the ``D`` flag.
+:cmd:`svcmgr print status` will highlights disabled resources with the ``D`` flag.
 
 .. raw:: html
 
@@ -178,7 +178,7 @@ This parameter allow defining non critical resources in the service.
 
 Service actions won't stop on error reported by optional resources.
 
-``svcmgr print status`` will highlights optional resources with the ``O`` flag.
+:cmd:`svcmgr print status` will highlights optional resources with the ``O`` flag.
 
 .. raw:: html
 
@@ -220,7 +220,7 @@ It means that this resource is **critical** for the service availability.
 
 If the resource goes down, then the agent triggers the ``monitor_action``, which may cause a crash or reboot of the node, or stop of the service, to force a failover.
 
-``svcmgr print status`` will highlights monitored resources with the ``M`` flag.
+:cmd:`svcmgr print status` will highlights monitored resources with the ``M`` flag.
 
 .. raw:: html
 

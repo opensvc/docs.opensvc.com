@@ -10,11 +10,11 @@ Hearbeats serve two purposes:
 
 OpenSVC supports multiple parallel running heartbeats. Exercizing different code paths and infrastructure data paths (network and storage switchs and site interconnects) helps limiting split-brain situation occurences.
 
-Heartbeats are declared in ``<OSVCETC>/node.conf``, each in a dedicated section named ``[hb#<n>]``. A heartbeat definition should work on all nodes, using scoped keywords if necessary, as the definition are served by the joined node to the joining nodes.
+Heartbeats are declared in ``<OSVCETC>/node.conf``, each in a dedicated section named :kw:`[hb#<n>]`. A heartbeat definition should work on all nodes, using scoped keywords if necessary, as the definition are served by the joined node to the joining nodes.
 
 Each heartbeat runs two threads janitored by the agent daemon: **tx** and **rx**.
 
-The ``sudo nodemgr daemon status`` and ``sudo svcmon`` commands display the heartbeats status, statistics and each peer state
+The :cmd:`sudo nodemgr daemon status` and :cmd:`sudo svcmon` commands display the heartbeats status, statistics and each peer state
 
 .. raw:: html
 
@@ -87,11 +87,11 @@ Rx
   * Run each service orchestrator: handle service instance start/stop/freeze/thaw transitions, and monitored resources restart
   * Fetch service configuration files from node node with the most recent version
 
-* If no heartbeat is received from a peer during ``<hb#n>.timeout``, the peer is marked stale in this rx thread. The default timeout is 15 seconds.
+* If no heartbeat is received from a peer during :kw:`<hb#n>.timeout`, the peer is marked stale in this rx thread. The default timeout is 15 seconds.
 * If all rx threads have a peer marked stale, the peer data is purged from the cluster data
 
   * immediately if the stale peer has not advertized a maintenance
-  * after ``node.maintenance grace_period`` if the stale peer has advertized a maintenance
+  * after :kw:`node.maintenance grace_period` if the stale peer has advertized a maintenance
 
 .. seealso:: :ref:`agent.cluster.data`
 

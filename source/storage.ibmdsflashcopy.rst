@@ -14,19 +14,19 @@ A service with only flash copy sync resources can be defined to drive the clone 
 Command set
 ===========
 
-:command:`syncresync`
+:cmd:`syncresync`
 	* Resyncflash (or rmflash/mkflash) action to pair source/target. This command verifies the service is down before proceeding.
 
-:command:`syncresync --force`
+:cmd:`syncresync --force`
 	* Bypass the sync_min_delay protection.
 
 Status
 ======
 
-:command:`up`
+:cmd:`up`
 	* The last resync occured less than 'sync_max_delay' minutes ago.
 
-:command:`warn`
+:cmd:`warn`
 	* The last replication occured more than ‘sync_max_delay’ minutes ago.
 	* Device are in a unexpected state or not present in the flash copy persistent pair list.
 

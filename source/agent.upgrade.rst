@@ -53,11 +53,11 @@ Set Up Agents
 
 The repository must be known to the agent. This set up is done with either the node.repo or the node.repopkg ``node.conf`` parameters.
 
-``node.repo``
+:kw:`node.repo`
 
 	This parameter allows to set up a URI pointing to a repository hosting both compliance gzipped tarballs in the compliance/ subdirectory and OpenSVC agent packages in the packages/ subdirectory.
 
-``node.repopkg``
+:kw:`node.repopkg`
 
 	This parameter allows to set up a URI pointing to a pure OpenSVC agent packages repository. If specified node.repopkg overrides node.repo.
 

@@ -184,11 +184,11 @@ Daemons
 
 Starting the ezha init script will spawn the following daemons:
 
-    :command:`nmond`
+    :cmd:`nmond`
        state transition and trigger initiator daemon
-    :command:`heartc`
+    :cmd:`heartc`
        multicast listener daemons, one per local heartbeat receiving end-point
-    :command:`heartd`
+    :cmd:`heartd`
        multicast sender daemons, one per local heartbeat sending end-point
 
 Use

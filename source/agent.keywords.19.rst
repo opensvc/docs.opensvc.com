@@ -4,8 +4,8 @@ Services
 Default Section
 ===============
 
-``DEFAULT.hard_affinity``
--------------------------
+:kw:`DEFAULT.hard_affinity`
+---------------------------
 
 This parameter can be used to force a service to run on the same node running other services.
 
@@ -36,8 +36,8 @@ To set up this hard affinity::
 |                  | | frozen         |                  |                 |                                      |
 +------------------+------------------+------------------+-----------------+--------------------------------------+
 
-``DEFAULT.soft_affinity``
--------------------------
+:kw:`DEFAULT.soft_affinity`
+---------------------------
 
 This parameter can be used to help a service to run on the same node running other services.
 
@@ -67,8 +67,8 @@ To set up this soft affinity::
 |                 | | frozen     |              |                 | be started on :c-node:`n2`                   |
 +-----------------+--------------+--------------+-----------------+----------------------------------------------+
 
-``DEFAULT.hard_anti_affinity``
-------------------------------
+:kw:`DEFAULT.hard_anti_affinity`
+--------------------------------
 
 This parameter can be used to force a service to avoid execution on the same node running other services.
 
@@ -99,8 +99,8 @@ To set up this hard anti affinity::
 |                |              | | frozen     |                 |                                      |
 +----------------+--------------+--------------+-----------------+--------------------------------------+
 
-``DEFAULT.soft_anti_affinity``
-------------------------------
+:kw:`DEFAULT.soft_anti_affinity`
+--------------------------------
 
 This parameter can be used to help a service try to avoid execution on the same node running other services.
 
@@ -134,8 +134,8 @@ To set up this soft anti affinity::
 
 .. _default_orchestrate:
 
-``DEFAULT.orchestrate``
------------------------
+:kw:`DEFAULT.orchestrate`
+-------------------------
 
 This parameter is used to specify the daemon behaviour regarding service orchestration
 
@@ -149,12 +149,12 @@ Possible values:
     * no instance is started automatically
     * giveback is disabled, takeover can be used to relocate the service
     * placement warnings are inhibited
-    * use this setting for all 1.8 services **without** ``DEFAULT.autostart_node``
+    * use this setting for all 1.8 services **without** :kw:`DEFAULT.autostart_node`
 * ``start``
     * only the instance on the natural leader is started
     * takeover can be used to relocate the service
     * giveback is useful to relocate the service to the natural leader
-    * use this setting for all 1.8 services **with** ``DEFAULT.autostart_node``
+    * use this setting for all 1.8 services **with** :kw:`DEFAULT.autostart_node`
 * ``ha``
     * an instance is started on the best available node
     * takeover can be used to relocate the service
@@ -163,16 +163,16 @@ Possible values:
 
 .. note::
 
-    ``DEFAULT.orchestrate`` default value is ``no``
+    :kw:`DEFAULT.orchestrate`` default value is ``no``
 
-``DEFAULT.placement``
----------------------
-
-``DEFAULT.constraints``
+:kw:`DEFAULT.placement`
 -----------------------
 
-``DEFAULT.parents``
--------------------
+:kw:`DEFAULT.constraints`
+-------------------------
+
+:kw:`DEFAULT.parents`
+---------------------
 
 This parameter is used to store a list of services that must be avail up for the agent daemon to proceed on starting the service.
 
@@ -185,10 +185,10 @@ To set up this tunable::
 Resource Sections
 =================
 
-``*.shared``
+:kw:`shared`
 ------------
 
-``*.provision``
+:kw:`provision`
 ---------------
 
 Node
@@ -197,67 +197,67 @@ Node
 Node Section
 ============
 
-``node.maintenance_grace_period``
----------------------------------
+:kw:`node.maintenance_grace_period`
+-----------------------------------
 
-``node.rejoin_grace_period``
-----------------------------
+:kw:`node.rejoin_grace_period`
+------------------------------
 
 Cluster Section
 ===============
 
-``cluster.secret``
-------------------
+:kw:`cluster.secret`
+--------------------
 
 Auto-generated.
 
-``cluster.nodes``
------------------
+:kw:`cluster.nodes`
+-------------------
 
 Janitored by the join and leave nodemgr daemon actions.
 
-``cluster.name``
-----------------
+:kw:`cluster.name`
+------------------
 
 Defaults to ``default``. Users can set it to a more meaningful value.
 
 .. note::
 
-	Changing that parameter on a joined cluster will break communications until the nodes share the same ``cluster.name``, thus cause a massive split-brain situation. So take care of freezing the cluster nodes before.
+	Changing that parameter on a joined cluster will break communications until the nodes share the same :kw:`cluster.name`, thus cause a massive split-brain situation. So take care of freezing the cluster nodes before.
 
 
 Heartbeat Sections
 ==================
 
-``hb.type``
------------
+:kw:`hb.type`
+-------------
 
-``hb[type=unicast].addr``
--------------------------
-
-``hb[type=unicast].intf``
--------------------------
-
-``hb[type=unicast].port``
--------------------------
-
-``hb[type=unicast].timeout``
-----------------------------
-
-``hb[type=multicast].addr``
+:kw:`hb[type=unicast].addr`
 ---------------------------
 
-``hb[type=multicast].intf``
+:kw:`hb[type=unicast].intf`
 ---------------------------
 
-``hb[type=multicast].port``
+:kw:`hb[type=unicast].port`
 ---------------------------
 
-``hb[type=multicast].timeout``
+:kw:`hb[type=unicast].timeout`
 ------------------------------
 
-``hb[type=disk].dev``
----------------------
+:kw:`hb[type=multicast].addr`
+-----------------------------
 
-``hb[type=disk].timeout``
--------------------------
+:kw:`hb[type=multicast].intf`
+-----------------------------
+
+:kw:`hb[type=multicast].port`
+-----------------------------
+
+:kw:`hb[type=multicast].timeout`
+--------------------------------
+
+:kw:`hb[type=disk].dev`
+-----------------------
+
+:kw:`hb[type=disk].timeout`
+---------------------------

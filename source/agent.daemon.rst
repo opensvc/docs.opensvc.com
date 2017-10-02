@@ -29,7 +29,7 @@ Start
 
 .. rst-class:: lvl1
 
-	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a ``nodemgr daemon start``.
+	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`nodemgr daemon start`.
 
 Stop
 ++++
@@ -38,7 +38,7 @@ Stop
 
 	$ nodemgr daemon stop
 
-The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the ``maintenance_grace_period`` expires.
+The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`node.maintenance_grace_period` expires.
 
 Restart
 +++++++
@@ -49,9 +49,9 @@ Restart
 
 .. rst-class:: lvl1
 
-	The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the ``maintenance_grace_period`` expires.
+	The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`maintenance_grace_period` expires.
 
-	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a ``nodemgr daemon stop`` followed by a ``nodemgr daemon start``
+	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`nodemgr daemon stop` followed by a :cmd:`nodemgr daemon start`.
 
 .. rst-class:: lvl2
 

@@ -4,50 +4,44 @@ Before Upgrade
 Freeze all services
 ===================
 
-::
-
-	sudo svcmgr freeze
+:cmd:`sudo svcmgr freeze`
 
 Unconfigure OpenHA
 ==================
 
-::
-
-	sudo /etc/init.d/openha kill
+:cmd:`sudo /etc/init.d/openha kill`
 
 Then, backup configuration files and disable the launcher or remove the package.
 
-Set ``node.maintenance_grace_period``
-=====================================
+Set :kw:`node.maintenance_grace_period`
+=======================================
 
 A node now announces its entering 'maintenance' upon clean daemon stop and restart. A node reboot is a clean stop too.
-Peer nodes won't try to take over the services which were running on this node until ``node.maintenance_grace_period`` is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
+Peer nodes won't try to take over the services which were running on this node until :kw:`node.maintenance_grace_period` is expired, so the services have a chance to be restarted on the same node after the maintenance is over.
 
 .. note::
 
-    ``node.maintenance_grace_period`` default value is ``60`` seconds
+    :kw:`node.maintenance_grace_period` default value is ``60`` seconds
 
-Set ``node.rejoin_grace_period``
-================================
+Set :kw:`node.rejoin_grace_period`
+==================================
 
 
 
 .. note::
 
-    ``node.rejoin_grace_period`` default value is ``90`` seconds
+    :kw:`node.rejoin_grace_period` default value is ``90`` seconds
 
-Set ``DEFAULT.orchestrate``
-===========================
+Set :kw:`DEFAULT.orchestrate`
+=============================
 
 This parameter is used to restrict or allow the daemon orchestration capabilities for the service.
 
-If not set explicitely, the ``orchestrate`` value defaults to ``no``, disabling all start orchestration.
+If not set explicitely, the :kw:`orchestrate` value defaults to ``no``, disabling all start orchestration.
 
-The other valid values, ``start`` and ``ha``, require that you also set and configure the service placement policy. The default ``placement``, ``nodes order``, ranks the nodes respecting the user-defined order of the ``nodes`` and ``drpnodes`` keyword.
+The other valid values, ``start`` and ``ha``, require that you also set and configure the service placement policy. The default ``placement``, ``nodes order``, ranks the nodes respecting the user-defined order of the :kw:`nodes` and `:kw:drpnodes` keywords.
 
-Users can change the ``orchestrate`` value online at any moment. For example activating ha on a service can be done with::
-
-	$ sudo svcmgr -s svc1 set --kw orchestrate=ha
+Users can change the :kw:`orchestrate` value online at any moment. For example activating ha on a service can be done with :cmd:`sudo svcmgr -s svc1 set --kw orchestrate=ha`
 
 Any 1.8 service with **no** hearbeat resource (manual failover) can behave like a HA service as soon as the agent stack is upgraded to 1.9
 
@@ -82,8 +76,8 @@ Conversion table:
 .. seealso:: :ref:`default_orchestrate`
 
 
-Set ``DEFAULT.placement``
-=========================
+Set :kw:`DEFAULT.placement`
+===========================
 
 This parameter is used to set a service instances placement policy. It is used to identify which node is the most appropriate to start the service.
 
@@ -94,12 +88,12 @@ Possible values:
 
 .. note::
 
-    ``DEFAULT.placement`` default value is ``nodes order``
+    :kw:`DEFAULT.placement` default value is ``nodes order``
 
-Set ``DEFAULT.constraints``
-===========================
+Set :kw:`DEFAULT.constraints`
+=============================
 
-An expression evaluating as a boolean, constraining the service instance placement to nodes where ``constraints`` evaluates as True.
+An expression evaluating as a boolean, constraining the service instance placement to nodes where :kw:`constraints` evaluates as True.
 
 Supported syntax:
 
@@ -121,8 +115,8 @@ Examples:
     * The constraints are not honored by manual start operations.
     * The constraints violation notification is added to "print status" and "json status" outputs
 
-Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
-========================================================
+Rename :kw:`DEFAULT.affinity` to :kw:`DEFAULT.hard_affinity`
+============================================================
 
 ::
 
@@ -135,8 +129,8 @@ Rename ``DEFAULT.affinity`` to ``DEFAULT.hard_affinity``
 	done
 
 
-Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
-==================================================================
+Rename :kw:`DEFAULT.anti_affinity`` to :kw:`DEFAULT.hard_anti_affinity`
+=======================================================================
 
 ::
 
@@ -148,12 +142,12 @@ Rename ``DEFAULT.anti_affinity`` to ``DEFAULT.hard_anti_affinity``
 		)
 	done
 
-Remove ``DEFAULT.autostart_node``
-=================================
+Remove :kw:`DEFAULT.autostart_node`
+===================================
 
-Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy and ``orchestrate``. The placement policy algorithm is responsible of primary node identification, so make sure the placement policy produce the same behaviour.
+Previously used for primary node definition at service startup, this parameter is now obsolete. This feature is now managed by the service placement policy and :kw:`orchestrate`. The placement policy algorithm is responsible of primary node identification, so make sure the placement policy produce the same behaviour.
 
-When using ``nodes order`` (default) placement policy, the service will start on the first node declared in the ``DEFAULT.nodes`` parameter.
+When using ``nodes order`` (default) placement policy, the service will start on the first node declared in the :kw:`DEFAULT.nodes` parameter.
 
 Examples::
 
@@ -174,11 +168,17 @@ heartbeats resources are now deprecated, and should be removed from the service 
 
 To remove rid :c-res:`hb#1` resource from service :c-svc:`svc1`:
 
-* ``svcmgr -s svc1 delete --rid hb#1`` removes the rid from the service configuration file
-* ``svcmgr -s svc1 sync drp --rid sync#i0`` propagates the updated service configuration file to drp node, if any
+:cmd:`svcmgr -s svc1 delete --rid hb#1`
 
-Replace ``optional_on``, ``monitor_on``, ``enable_on`` and ``disable_on`` by their equivalent scoped ``optional``, ``monitor``, ``enable`` and ``disable``
-==========================================================================================================================================================
+	Remove the rid from the service configuration file.
+  
+
+:cmd:`svcmgr -s svc1 sync drp --rid sync#i0`
+
+	Propagate the updated service configuration file to drp node, if any.
+
+Replace :kw:`optional_on`, :kw:`monitor_on`, :kw:`enable_on` and :kw:`disable_on` by their equivalent scoped :kw:`optional`, :kw:`monitor`, :kw:`enable` and :kw:`disable`
+==========================================================================================================================================================================
 
 ============================= =================================
 v1.8                          v1.9
@@ -188,8 +188,8 @@ v1.8                          v1.9
 <kw>_on = nodes drpnodes      <kw> = true
 ============================= =================================
 
-Replace ``sync[rsync].exclude`` by their equivalent ``sync[rsync].options``
-===========================================================================
+Replace :kw:`sync[rsync].exclude` by their equivalent :kw:`sync[rsync].options`
+===============================================================================
 
 ============================= =================================
 v1.8                          v1.9
@@ -197,8 +197,8 @@ v1.8                          v1.9
 exclude = foo                 options = --exclude=foo
 ============================= =================================
 
-Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
-===================================================================
+Replace :kw:`DEFAULT.service_env` by their equivalent :kw:`DEFAULT.env`
+=======================================================================
 
 ::
 
@@ -210,14 +210,14 @@ Replace ``DEFAULT.service_env`` by their equivalent ``DEFAULT.env``
 		)
 	done
 
-Set ``<rid>.provision=false`` in your templates
-===============================================
+Set :kw:`<rid>.provision=false` in your templates
+=================================================
 
 For resources you don't want to provision using the opensvc provisioner.
-You can also set your own provisioner as a ``pre_provision`` trigger.
+You can also set your own provisioner as a :kw:`pre_provision` trigger.
 
-Set ``<rid>.shared=true`` in your service configuration files and templates
-===========================================================================
+Set :kw:`<rid>.shared=true` in your service configuration files and templates
+=============================================================================
 
 On resources you want provisioned on one node only.
 

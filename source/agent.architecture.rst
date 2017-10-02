@@ -13,7 +13,7 @@ Most tasks produce data sent to the collector for site-level aggregation.
 Node Scheduler Tasks
 ++++++++++++++++++++
 
-The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the ``schedule`` parameter. The section name is visible in ``sudo nodemgr print schedule`` output in the ``config parameter`` column.
+The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the :kw:`schedule` parameter. The section name is visible in :cmd:`sudo nodemgr print schedule` output in the ``config parameter`` column.
 
 .. raw:: html
 
@@ -54,7 +54,7 @@ The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each 
 Service Scheduler Tasks
 +++++++++++++++++++++++
 
-A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in ``sudo svcmgr -s <svcname> print schedule`` output in the ``config parameter`` column.
+A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in :cmd:`sudo svcmgr -s <svcname> print schedule` output in the ``config parameter`` column.
 
 .. raw:: html
 
@@ -75,7 +75,7 @@ Here, the ``push_appinfo`` and ``syncall`` tasks are mapped over respectivelly a
 The Listener Entry-Point
 ========================
 
-The listener port is defined in ``node.conf`` through the ``node.listener`` parameter. When the daemon listener receives an empty packet, it executes the ``nodemgr dequeue actions`` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
+The listener port is defined in ``<OSVCETC>/node.conf`` through the :kw:`node.listener` parameter. When the daemon listener receives an empty packet, it executes the :cmd:`nodemgr dequeue actions` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
 
-Alternaltively, the node can be configured to allow direct actions from the collector through ``ssh`` and ``sudo``. This is the ``push`` mode.
+Alternaltively, the node can be configured to allow direct actions from the collector through :cmd:`ssh` and :cmd:`sudo`. This is the ``push`` mode.
 

@@ -8,7 +8,7 @@ The OpenSVC agent embeds a scheduler. The node and each service has a private sc
 Scheduler Behaviour
 ===================
 
-The agent postinstall configures a system's scheduler job at a 1 minute period executing the ``nodemgr schedulers`` command. This ``schedulers`` action runs the OpenSVC agent scheduler for the node and each service.
+The agent postinstall configures a system's scheduler job at a 1 minute period executing the :cmd:`nodemgr schedulers` command. This action runs the OpenSVC agent scheduler for the node and each service.
 
 For each task, the scheduler determines if the current time meets the task's schedule definition constraints. If all constraints are met, the task action is run in a subprocess and the last run timestamp is updated.
 
@@ -67,13 +67,13 @@ The scheduled tasks can be configured in ``<OSVCETC>/node.conf`` with a configle
 	[<section>]
 	<parameter> = <definition>
 
-The 'config parameter' column in the ``print schedule``  output is formatted as::
+The ``config parameter`` column in the :cmd:`nodemgr print schedule`  output is formatted as::
 
 	<section>.<parameter>
 
-And the current definition, explicit or implicit is visible in the 'schedule definition' column. A dash character means never scheduled.
+And the current definition, explicit or implicit is visible in the ``schedule definition`` column. A dash character means never scheduled.
 
-The ``nodemgr`` command executed when the schedule constraints are met is displayed in the 'action' column.
+The :cmd:`nodemgr` command executed when the schedule constraints are met is displayed in the ``action`` column.
 
 The supported schedules are:
 
@@ -108,18 +108,18 @@ Service Schedule
 	`- <span style="color: #767676">sync_all           </span>  2017-10-01 04:00:04  sync#i0.schedule          04:00-06:00@121      
 	</pre>
 
-The scheduled tasks can be configured in ``<OSVCETC>/<svcname>.env`` with a configlet like::
+The scheduled tasks can be configured in ``<OSVCETC>/<svcname>.conf`` with a configlet like::
 
 	[<section>]
 	<parameter> = <definition>
 
-The 'config parameter' column in the ``print schedule``  output is formatted as::
+The ``config parameter`` column in the :cmd:`svcmgr -s <svcname> print schedule`  output is formatted as::
 
 	<section>.<parameter>
 
-And the current definition, explicit or implicit is visible in the 'schedule definition' column. A dash character means never scheduled.
+And the current definition, explicit or implicit is visible in the ``schedule definition`` column. A dash character means never scheduled.
 
-The ``svcmgr -s <svcname>`` command executed when the schedule constraints are met is displayed in the 'action' column.
+The :cmd:`svcmgr -s <svcname>` command executed when the schedule constraints are met is displayed in the ``action`` column.
 
 The supported schedules are:
 

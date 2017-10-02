@@ -34,22 +34,22 @@ Command set
 
 The drbd driver is a member of the 'disk group' class.
 
-:command:`start`
+:cmd:`start`
 
     Promote to 'primary' state
 
-:command:`stop`
+:cmd:`stop`
 
     Demote to 'secondary' state
 
 Tags
 ====
 
-:command:`prevg`
+:cmd:`prevg`
 
     Upon service 'start', drbd 'start' is scheduled before volume group 'start'. To use when the volume group is layered over the drbd.
 
-:command:`postvg`
+:cmd:`postvg`
 
     Upon service 'start', drbd 'start' is scheduled after volume group 'start'. To use when the the drbd is layered over the volume group.
 

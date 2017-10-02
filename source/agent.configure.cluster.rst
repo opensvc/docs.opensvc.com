@@ -4,8 +4,11 @@ Agent Cluster Configuration
 ***************************
 
 Upon agent installation, the node is considered part of its own 1-node cluster.
+The following configuration is merged in ``<OSVCETC>/node.conf``:
 
-A ``cluster.secret`` is auto-generated. And the default "default" ``cluster.name`` is set.
+	:kw:`cluster.secret` is auto-generated, if not already defined.
+
+	:kw:`cluster.name` is set to ``default``, if not already defined.
 
 Bootstrap a new cluster
 =======================

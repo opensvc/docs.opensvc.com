@@ -23,19 +23,19 @@ After succesful delta application on targets, snap1 is removed and snap2 is rena
 Command set
 ===========
 
-:command:`syncfullsync`
+:cmd:`syncfullsync`
     Initial synchronization. dd-based. Make the whole dataset transit on the wire. Also needed when source and target get out-of-sync. This operation, though a storage bandwidth drain, works on a snapshot, so the service need not be down.
 
-:command:`syncupdate`
+:cmd:`syncupdate`
     Incremental synchronization. dds-based. Extract the binary delta as a file, send to file to the target systems and replay the changes there.
 
 Status
 ======
 
-:command:`up`
+:cmd:`up`
     Last synchronization occured less than sync_max_delay minutes ago.
 
-:command:`warn`
+:cmd:`warn`
     Last synchronization occured more than sync_max_delay minutes ago.
 
 Service configuration
@@ -44,7 +44,7 @@ Service configuration
 Cluster mode
 ------------
 
-:command:`split`
+:cmd:`split`
     This is the default disaster recovery mode. Upon service startup on a DRP node, the dds replication is blocked from the DRP node. The return to production mode usually involves a full resynchronization.
 
 Service configuration file

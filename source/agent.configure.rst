@@ -49,12 +49,12 @@ Set Node Environment
 
 	sudo nodemgr set --param node.env --value PRD
 
-The ``env`` setting is used to enforce the following policies:
+The :kw:`node.env` setting is used to enforce the following policies:
 
 *   Only :c-svc-env:`PRD` services are allowed to start on a :c-env:`PRD` node
 *   Only :c-env:`PRD` nodes are allowed to push data to a :c-env:`PRD` node
 
-Supported ``env`` values:
+Supported :kw:`node.env` values:
 
 ========== =========== ====================
 Env        Behaves As  Description
@@ -143,7 +143,7 @@ Set a Collector Url
 
 By default, the agent does not communicate with a collector.
 
-To enable communications with a collector, the ``node.dbopensvc`` node configuration parameter must be set. The simplest expression is:
+To enable communications with a collector, the :kw:`node.dbopensvc` node configuration parameter must be set. The simplest expression is:
 
 ::
 
@@ -163,7 +163,7 @@ The following expressions are also supported:
 	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com
 	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
 
-The compliance framework uses a separate xmlrpc entrypoint. The ``node.dbcompliance`` can be set to override the default, which is deduced from the ``node.dbopensvc`` value.
+The compliance framework uses a separate xmlrpc entrypoint. The :kw:`node.dbcompliance` can be set to override the default, which is deduced from the :kw:`node.dbopensvc` value.
 
 ::
 

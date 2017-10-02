@@ -42,7 +42,7 @@ Send patch with:
 Configured local MTA, with git send-email
 -----------------------------------------
 
-Install :command:`git-send-email`:
+Install :cmd:`git-send-email`:
 
 ::
 
@@ -57,14 +57,14 @@ Send patches with:
 With msmtp, with git send-email
 -------------------------------
 
-Install :command:`git-send-email`, and :command:`msmtp` if you have to use Gmail SMTP (no local MTA configured):
+Install :cmd:`git-send-email`, and :cmd:`msmtp` if you have to use Gmail SMTP (no local MTA configured):
 
 ::
 
     sudo apt-get install git-email
     sudo apt-get install msmtp
 
-Set up :command:`msmtp`:
+Set up :cmd:`msmtp`:
 
 ::
 
@@ -87,7 +87,7 @@ Set up :command:`msmtp`:
 
     chmod 600 $HOME/.msmtprc
 
-Set up :command:`git-send-email` to use :command:`msmtp`:
+Set up :cmd:`git-send-email` to use :cmd:`msmtp`:
 
 ::
 
@@ -102,13 +102,13 @@ Send patches with:
 With msmtp, without git send-email
 ----------------------------------
 
-Install :command:`msmtp` if you have to use Gmail SMTP (no local MTA configured):
+Install :cmd:`msmtp` if you have to use Gmail SMTP (no local MTA configured):
 
 ::
 
     sudo apt-get install msmtp
 
-Set up :command:`msmtp`:
+Set up :cmd:`msmtp`:
 
 ::
 
@@ -209,8 +209,8 @@ You can now add your translation in the .po files in ``source/translated/<your l
 	# 21aa40c7358948d9a69b6813104fd253
 	# 27fda7e570224a56b6e2631b1c302fd7
 	#: ../../contribute.rst:57 ../../contribute.rst:91
-	msgid "Set up :command:`msmtp`::"
-	msgstr "Configuration de :command:`msmtp` ::"
+	msgid "Set up :cmd:`msmtp`::"
+	msgstr "Configuration de :cmd:`msmtp` ::"
 
 Don't forget to create the directory ``source/translated/<your language code>/LC_MESSAGES/``.
 Finally, create the .mo (binary translation) and html files with:

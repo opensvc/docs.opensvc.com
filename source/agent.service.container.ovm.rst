@@ -53,7 +53,7 @@ For reference, Oracle Linux public repositories are available at http://public-y
 ovmcli configuration
 --------------------
 
-You have to run the :command:`ovm config` command one time. You will then be prompted for the manager's access information
+You have to run the :cmd:`ovm config` command one time. You will then be prompted for the manager's access information
 
 ::
 

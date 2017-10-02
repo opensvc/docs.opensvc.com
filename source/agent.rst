@@ -7,7 +7,7 @@ Contents:
    :maxdepth: 2
 
    agent.feature.matrix
-   agent.changes
+   agent.releasenotes
    agent.changelog
    agent.install
    agent.items

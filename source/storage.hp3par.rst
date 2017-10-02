@@ -460,30 +460,30 @@ After authorizing a request from an agent, the proxy run the command on the arra
 Command set
 ===========
 
-:command:`start`
+:cmd:`start`
     Checks if local array is primary or secondary.
     * If primary, just activate the replication state monitoring.
     * If secondary, break and reverse the data-replication. Equivalent to ``stoprcopygroup -f RCG.local`` and ``setrcopygroup reverse -f -waittask RCG.remote``. The devices are promoted to read-write access. Replication is not restarted, you need to use the `syncresume` for that purpose (We want to be able to test data at the secondary site without impacting data on the primary site)
 
-:command:`syncupdate`
+:cmd:`syncupdate`
     While in asynchronous replication mode, trigger an immediate incremental data replication to the remote array. Equivalent to ``syncrcopy -w RCG`` in the array. As an example, it can be useful to ensure data consistency on the remote array, before trigerring snapshots. Useless in synchronous mode.
 
-:command:`syncbreak`
+:cmd:`syncbreak`
     This command stop the RCG. Equivalent to ``stoprcopygroup -f RCG.local``.
 
-:command:`syncresume`
+:cmd:`syncresume`
     This command start the RCG. Equivalent to ``startrcopygroup RCG.local``.
 
-:command:`syncswap`
+:cmd:`syncswap`
     This command is only allowed on the secondary array. It stops, then reverse, then start the RCG. You are strongly advised to use this command only when application is stopped.
 
 Status
 ======
 
-:command:`up`
+:cmd:`up`
     The last replication occured less than 'sync_max_delay' minutes ago. The replication is in the expected mode (async or sync).
 
-:command:`warn`
+:cmd:`warn`
     The last replication occured more than 'sync_max_delay' minutes ago.
     The RCG is not in "Started" state
     The RCG is "async" and not defined as "Periodic"
@@ -491,7 +491,7 @@ Status
     The RCG option "auto_recover" is not set
     One or more volume is not in the "Synced" state
 
-:command:`down`
+:cmd:`down`
     RCG is in an unexpected state or not present in the array.
 
 

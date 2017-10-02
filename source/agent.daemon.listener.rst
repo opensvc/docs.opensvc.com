@@ -3,8 +3,8 @@
 Agent Daemon Listener
 *********************
 
-* Listen on the address specified by ``listener.addr`` and port specified by ``listener.port``.
-* Executes ``nodemgr dequeue actions`` when receiving empty packets
+* Listen on the address specified by :kw:`listener.addr` and port specified by :kw:`listener.port`.
+* Executes :cmd:`nodemgr dequeue actions` when receiving empty packets
 * Execute valid requests
 
 .. rst-class:: lvl2
@@ -12,10 +12,10 @@ Agent Daemon Listener
 Requests Validation
 -------------------
 
-A request message must be AES256-encrypted using the ``cluster.secret``. The sender nodename and encryption salt are sent unencrypted.
+A request message must be AES256-encrypted using the :kw:`cluster.secret`. The sender nodename and encryption salt are sent unencrypted.
 
-* The sender nodename is verified to be in the ``cluster.nodes`` (expect for join requests)
-* The encrypted data must pass decryption using the received salt and ``cluster.secret``
+* The sender nodename is verified to be in the :kw:`cluster.nodes` (expect for join requests)
+* The encrypted data must pass decryption using the received salt and :kw:`cluster.secret`
 
 A node sending 5 consecutive invalid messages is blacklisted, and its future messages will be dropped before decryption.
 
@@ -109,7 +109,7 @@ Clear
 
 Clear the service monitor ``start failed`` and ``stop failed`` states.
 
-Clear the resource restart count, so the service monitor will retry ``<rid>.restart`` times again to start a resource evaluated down when the local_expect is ``started``.
+Clear the resource restart count, so the service monitor will retry :kw:`<rid>.restart` times again to start a resource evaluated down when the local_expect is ``started``.
 
 ::
 
@@ -188,7 +188,7 @@ Return the service monitor attributes.
 Join
 ====
 
-Merge the joining nodename in the ``cluster.nodes``.
+Merge the joining nodename in the :kw:`cluster.nodes`.
 
 Return the cluster and heartbeats configuration sections the joiner must merge.
 
@@ -199,7 +199,7 @@ Return the cluster and heartbeats configuration sections the joiner must merge.
 Leave
 =====
 
-Remove the leaving nodename from ``cluster.nodes``.
+Remove the leaving nodename from :kw:`cluster.nodes`.
 
 Service Action
 ==============

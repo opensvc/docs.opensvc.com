@@ -11,19 +11,19 @@ Source and targets maintain a zfs snapshot @sent to identify the last incrementa
 Command set
 ===========
 
-:command:`syncnodes`
+:cmd:`syncnodes`
     Initial synchronization or incremental synchronisation. First one will be a Initial synchronisation, next will be incremental
 
-:command:`syncupdate`
+:cmd:`syncupdate`
     Same
 
 Status
 ======
 
-:command:`up`
+:cmd:`up`
     Last synchronization occured less than sync_max_delay minutes ago.
 
-:command:`warn`
+:cmd:`warn`
     Last synchronization occured more than sync_max_delay minutes ago.
 
 Service configuration

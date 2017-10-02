@@ -9,9 +9,11 @@ Agent Daemon Monitor
 * Prepare the encrypted message sent by heartbeats
 * Signal tx heartbeats that a new message is ready for sending
 * Run the orchestrators
-  * Node orchestrator
-  * Service orchestrators
-  * Restart service resources flagged for restart
+
+	* Node orchestrator
+	* Service orchestrators
+	* Restart service resources flagged for restart
+
 * Fetch and install the most recent service configuration from peers
 
 .. rst-class:: lvl1

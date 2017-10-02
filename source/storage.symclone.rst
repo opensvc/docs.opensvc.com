@@ -14,25 +14,25 @@ A service with only symclone sync resource can be defined to drive the clone of 
 Command set
 ===========
 
-:command:`sync break`
+:cmd:`sync break`
     Activate the resource devices, breaking the data-replication. The source starts to log differences. The devices are promoted to read-write access.
 
-:command:`sync resync`
+:cmd:`sync resync`
     Re-establish the resource devices replication. This command verifies the service is down before proceeding.
 
-:command:`sync update`
+:cmd:`sync update`
     Re-establish the resource devices replication. This command verifies the service is down before proceeding.
 
 Status
 ======
 
-:command:`up`
+:cmd:`up`
     The last replication occured less than 'sync_max_delay' minutes ago.
 
-:command:`warn`
+:cmd:`warn`
     The last replication occured more than 'sync_max_delay' minutes ago.
 
-:command:`down`
+:cmd:`down`
     Device are in a unexpected state or not present in the resource symmetrix disk group.
 
 Service configuration

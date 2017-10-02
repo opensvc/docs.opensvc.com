@@ -1,8 +1,33 @@
+p {
+	font-size: initial;
+}
+.kw:before {
+	padding-right: 0.4em;
+	color: teal;
+	content: '\f0f6';
+}
+.kw {
+	color: teal;
+	font-family: monospace;
+	border-bottom: 1px dotted lightgray;
+}
+
+
+.cmd:before {
+	padding-right: 0.4em;
+	color: teal;
+	content: '\f292';
+}
+.cmd {
+	color: teal;
+	font-family: monospace;
+	border-bottom: 1px dotted lightgray;
+}
+
 .menuselection:before {
 	padding-right: 0.4em;
 	color: rgb(3, 135, 162);
 	content: '\f00a';
-	font-family: FontAwesome;
 }
 .menuselection {
 	color: rgb(3, 135, 162);
