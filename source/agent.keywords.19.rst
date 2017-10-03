@@ -182,6 +182,17 @@ To set up this tunable::
 
     $ sudo svcmgr -s svc2 set --kw parents+=svc1
 
+:kw:`DEFAULT.children`
+----------------------
+
+This parameter is used to store a list of services that must be avail down for the agent daemon to proceed on stopping the service.
+
+The children must be in the same cluster.
+
+To set up this tunable::
+
+    $ sudo svcmgr -s svc2 set --kw children+=svc1
+
 Resource Sections
 =================
 

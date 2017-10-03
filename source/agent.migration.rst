@@ -221,6 +221,10 @@ Set :kw:`<rid>.shared=true` in your service configuration files and templates
 
 On resources you want provisioned on one node only.
 
+Set :kw:`DEFAULT.parents` and :kw:`DEFAULT.children`
+====================================================
+
+If you implemented inter-services start or stop dependencies using triggers, you might now consider removing the triggers and use those keywords instead. Be aware the inter-dependent services must be hosted in the same cluster.
 
 After Upgrade
 *************
