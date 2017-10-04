@@ -31,6 +31,11 @@ New Features
 
 .. warning:: :cmd:`nodemgr thaw`, :cmd:`nodemgr freeze`, :cmd:`svcmgr start`, :cmd:`svcmgr stop`, :cmd:`svcmgr freeze`, :cmd:`svcmgr thaw`, :cmd:`svcmgr provision` and :cmd:`svcmgr unprovision` commands operate cluster wide. :cmd:`svcmgr unprovision` would thus delete all services and their data on all cluster nodes.
 
+New Drivers
+===========
+
+* disk.lv (Linux)
+
 New Commands
 ============
 
