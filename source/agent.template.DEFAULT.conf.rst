@@ -273,9 +273,9 @@ DEFAULT resource template
 	#  desc:  If the service has docker-type container resources and
 	#         docker_daemon_private is set to True, the service handles the
 	#         startup of a private docker daemon. Its socket is
-	#         <pathvar>/<svcname>/docker.sock, and its data directory must be
-	#         specified using this parameter. This organization is necessary to
-	#         enable service relocalization.
+	#         <pathvar>/services/<svcname>/docker.sock, and its data directory
+	#         must be specified using this parameter. This organization is
+	#         necessary to enable service relocalization.
 	#
 	;docker_data_dir = /srv/svc1/data/docker
 	
@@ -638,6 +638,38 @@ DEFAULT resource template
 	;docker_swarm_managers = foo
 	
 	#
+	# keyword:          parents
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         []
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         list_lower
+	#
+	#  desc:  List of services that must be 'avail up' before allowing this
+	#         service to be started by the daemon monitor. Whitespace separated.
+	#
+	;parents = []
+	
+	#
+	# keyword:          children
+	# ----------------------------------------------------------------------------
+	#  scopable:        True
+	#  required:        False
+	#  provisioning:    False
+	#  default:         []
+	#  inheritance:     leaf > head
+	#  scope order:     specific > generic
+	#  convert:         list_lower
+	#
+	#  desc:  List of services that must be 'avail down' before allowing this
+	#         service to be stopped by the daemon monitor. Whitespace separated.
+	#
+	;children = []
+	
+	#
 	# keyword:          nodes
 	# ----------------------------------------------------------------------------
 	#  scopable:        True
@@ -788,7 +820,7 @@ DEFAULT resource template
 	#         triggered through a scheduler or manually, it is skipped if last
 	#         sync occurred less than 'sync_min_delay' ago. The mecanism is
 	#         enforced by a timestamp created upon each sync completion in
-	#         <pathvar>/sync/[service]![dst]
+	#         <pathvar>/services/<svcname>/<rid>/last_sync_<node>
 	#
 	;sync_interval = 121
 	
