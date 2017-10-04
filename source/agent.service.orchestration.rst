@@ -29,17 +29,112 @@ Affinity
 
         A whitespace-separated list of service names. The orchestrator won't propose to start a local instance of the service if all specified services don't have a local running instance.
 
+        For example, if :c-svc:`svc1` can listens on a unix socket used by :c-svc:`svc2`, those services must run on the same node.
+
+
++------------------+------------------+------------------+-----------------+--------------------------------------+
+| Service          | Nodes                               | Orchestrator    | Comments                             |
+|                  +------------------+------------------+ Action          |                                      |
+|                  | :c-node:`n1`     | :c-node:`n2`     |                 |                                      |
++==================+==================+==================+=================+======================================+
+| :c-svc:`svc1`    | | up             | | down           |                 |                                      |
++------------------+------------------+------------------+-----------------+--------------------------------------+
+| :c-svc:`svc2`    | | down           | | down           | start on        |                                      |
+|                  | | leader         |                  | :c-node:`n1`    |                                      |
+|                  |                  |                  |                 |                                      |
+|                  +------------------+------------------+-----------------+--------------------------------------+
+|                  | | down           | | down           | start on        | Although placement policy is set to  |
+|                  |                  | | leader         | :c-node:`n1`    | ``nodes order`` with :c-node:`n2` as |
+|                  |                  |                  |                 | first node, :c-node:`n1` will be     |
+|                  |                  |                  |                 | prefered.                            |
+|                  +------------------+------------------+-----------------+--------------------------------------+
+|                  | | down           | | down           | none            | hard affinity can't be satisfied,    |
+|                  | | leader         |                  |                 | the service won't be started.        |
+|                  | | frozen         |                  |                 |                                      |
++------------------+------------------+------------------+-----------------+--------------------------------------+
+
+
 ``DEFAULT.hard_anti_affinity``
 
         A whitespace-separated list of service names. The orchestrator won't propose to start a local instance of the service if any of the specified services have a local running instance.
+
+For example, if :c-svc:`svc2` must never be executed on same node than :c-svc:`svc1`, those services must run on different nodes.
+
++----------------+--------------+--------------+-----------------+--------------------------------------+
+| Service        | Nodes                       | Orchestrator    | Comments                             |
+|                +--------------+--------------+ Action          |                                      |
+|                | :c-node:`n1` | :c-node:`n2` |                 |                                      |
++================+==============+==============+=================+======================================+
+| :c-svc:`svc1`  | | up         | | down       |                 |                                      |
++----------------+--------------+--------------+-----------------+--------------------------------------+
+| :c-svc:`svc2`  | | down       | | down       | start on        |                                      |
+|                |              | | leader     | :c-node:`n2`    |                                      |
+|                |              |              |                 |                                      |
+|                +--------------+--------------+-----------------+--------------------------------------+
+|                | | down       | | down       | start on        | Although placement policy is set to  |
+|                | | leader     |              | :c-node:`n2`    | ``nodes order`` with :c-node:`n1` as |
+|                |              |              |                 | first node, :c-node:`n2` will be     |
+|                |              |              |                 | preferred                            |
+|                +--------------+--------------+-----------------+--------------------------------------+
+|                | | down       | | down       | none            | hard affinity can't be satisfied,    |
+|                |              | | leader     |                 | the service won't be started.        |
+|                |              | | frozen     |                 |                                      |
++----------------+--------------+--------------+-----------------+--------------------------------------+
+
 
 ``DEFAULT.soft_affinity``
 
         A whitespace-separated list of service names. If the local node is not the only candidate, the orchestrator won't propose to start a local instance of the service if all specified services don't have a local running instance.
 
+For example, if :c-svc:`svc1` and :c-svc:`svc2` are known to have better performance when executed on the same node, those services should run on the same node.
+
++-----------------+--------------+--------------+-----------------+----------------------------------------------+
+| Service         | Nodes                       | Orchestrator    | Comments                                     |
+|                 +--------------+--------------+ Action          |                                              |
+|                 | :c-node:`n1` | :c-node:`n2` |                 |                                              |
++=================+==============+==============+=================+==============================================+
+| :c-svc:`svc1`   | | up         | | down       |                 |                                              |
++-----------------+--------------+--------------+-----------------+----------------------------------------------+
+| :c-svc:`svc2`   | | down       | | down       | start on        |                                              |
+|                 | | leader     |              | :c-node:`n1`    |                                              |
+|                 |              |              |                 |                                              |
+|                 +--------------+--------------+-----------------+----------------------------------------------+
+|                 | | down       | | down       | start on        | Although placement policy is set to          |
+|                 |              | | leader     | :c-node:`n1`    | ``nodes order`` with :c-node:`n2` as first   |
+|                 |              |              |                 | node, :c-node:`n1` will be preferred         |
+|                 +--------------+--------------+-----------------+----------------------------------------------+
+|                 | | down       | | down       | start on        | soft affinity can't be satisfied,            |
+|                 | | leader     |              | :c-node:`n2`    | as a best effort, the service will           |
+|                 | | frozen     |              |                 | be started on :c-node:`n2`                   |
++-----------------+--------------+--------------+-----------------+----------------------------------------------+
+
+
 ``DEFAULT.soft_anti_affinity``
 
         A whitespace-separated list of service names. If the local node is not the only candidate, the orchestrator won't propose to start a local instance of the service if any of the specified services have a local running instance.
+
+For example, if :c-svc:`svc2` should never be executed on same node than :c-svc:`svc1`, those services should run on different nodes.
+
+i+----------------+--------------+--------------+-----------------+--------------------------------------+
+| Service        | Nodes                       | Orchestrator    | Comments                             |
+|                +--------------+--------------+ Action          |                                      |
+|                | :c-node:`n1` | :c-node:`n2` |                 |                                      |
++================+==============+==============+=================+======================================+
+| :c-svc:`svc1`  | | up         | | down       |                 |                                      |
++----------------+--------------+--------------+-----------------+--------------------------------------+
+| :c-svc:`svc2`  | | down       | | down       | start on        |                                      |
+|                |              | | leader     | :c-node:`n2`    |                                      |
+|                |              |              |                 |                                      |
+|                +--------------+--------------+-----------------+--------------------------------------+
+|                | | down       | | down       | start on        | Although placement policy is set to  |
+|                | | leader     |              | :c-node:`n2`    | ``nodes order`` with :c-node:`n1` as |
+|                |              |              |                 | first node, :c-node:`n2` will be     |
+|                |              |              |                 | preferred                            |
+|                +--------------+--------------+-----------------+--------------------------------------+
+|                | | down       | | down       | start on        | hard affinity can't be satisfied,    |
+|                |              | | leader     | :c-node:`n1`    | as a best effort, the service will   |
+|                |              | | frozen     |                 | be started on :c-node:`n1`           |
++----------------+--------------+--------------+-----------------+--------------------------------------+
 
 .. note:: ``hard_affinity`` and ``soft_affinity`` cause a startup serialization.
 
