@@ -1345,6 +1345,31 @@ nodemgr manpage
 	              -h, --help
 	                     show this help message and exit
 	
+	       nodemgr stonith
+	
+	              command  executed  by the daemon monitor to fence peer node upon failover
+	              when the node previously running the service is stale.
+	
+	              --node=NODE
+	                     the node to send a request to. if not specified the local node  is
+	                     targeted.
+	
+	              --color=COLOR
+	                     colorize  output.  possible  values  are : auto=guess based on tty
+	                     presence, always|yes=always colorize, never|no=never colorize
+	
+	              --cron cron mode
+	
+	              --debug
+	                     debug mode
+	
+	              --format=FORMAT
+	                     specify a data formatter for output of the print*  and  collector*
+	                     commands. possible values are json, csv or table.
+	
+	              -h, --help
+	                     show this help message and exit
+	
 	       nodemgr thaw
 	
 	              thaw  services  node-wide,  allowing the daemon to orchestrate them. this
@@ -2511,4 +2536,4 @@ nodemgr manpage
 	AUTHORS
 	       OpenSVC is developped and maintained by the OpenSVC company.
 	
-	                                       2017-09-29                            NODEMGR(1)
+	                                       2017-10-04                            NODEMGR(1)
