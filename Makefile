@@ -176,7 +176,7 @@ gitrepo:
 templates: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
 	@$(DOCDIR)/opensvc/bin/pkg/make_rst
-	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst source/agent.templates
+	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst/* source/agent.templates/
 	cp $(DOCDIR)/opensvc/usr/share/doc/node.conf source/_static/node.conf
 	cp $(DOCDIR)/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
 
