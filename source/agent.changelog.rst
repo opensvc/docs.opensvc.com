@@ -2,6 +2,27 @@ Agent Changelog
 ===============
 
 
+| `1.9-585 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=22c7787afc24ad3ba5e69c4c10ef2bac9acccd07>`_ Fix tab/whitespace mix issue reported by python -tt
+| `1.9-584 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1b7412825c2c8ed797ce59e8b44fc5492171964>`_ Add .pyo the gitignore
+| `1.9-583 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cae62d95c7dceca1a8dee2053a84e7811372ab0a>`_ Fix raw resource using devlist references non starting
+| `1.9-582 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7863fc15aa2c4d87c19a8c883dfdae88dae5bad6>`_ Fix warnings reported by python -3
+| `1.9-581 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b4cfb53d25fc7121d4affcd4eb6d39a0fb7aa00e>`_ Fix the stop request monitor code path
+| `1.9-580 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=afaf35b4e3fa6e2141bd0aa607ff21ca4ce9d5b3>`_ Use all duplog msg kwargs to produce a signature
+| `1.9-579 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fea2b38ef31cc0e1c99a617f7feb15646b8743b6>`_ Set the "wait parents" and "wait children" smon status
+| `1.9-578 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f988bf77b20359392f58d2f929b60fa67e7ffeb>`_ Fix stack when attaching/detaching modset/rset if no collector uri is set
+| `1.9-577 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f00566e538cfa7419d37496c331a0f5d46aee62c>`_ fix regressions noticed by nosetests
+| `1.9-576 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9689203f1044af5bde4906ae46c5e41c5c8e1fa3>`_ Add stats and frozen flags migration in postinstall
+| `1.9-575 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4da2e03b806a5da52082af258f10bd950133ff9d>`_ Finish the var/ unclutering
+| `1.9-574 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f4a910b550c447a90effcff5f0ce1eb7f1dc57d>`_ Add DEFAULT.children
+| `1.9-573 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=792e8d8ee284cc481244120669950ff5b4be062a>`_ stdby+monitor resource fixes
+| `1.9-572 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a93e24b69df6dba596d82ed7870860273dda41e7>`_ More var/ uncluterring
+| `1.9-571 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=55a6b3aebe93ee53edb5d7057e4116dd4cf18e06>`_ Fix the root to app resource script owner demotion
+| `1.9-570 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=76c58b583afe9225165b0466a96f73126abe475c>`_ Update keyval doc to fix the 'reset' key usage
+| `1.9-569 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d2eaf245b5d4f5260e33e3aaece37ccec2e6c06>`_ Don't raise on linux.lvm vgs pvs and lvs commands error
+| `1.9-568 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d472ec7d689e644088252bfc0ef7f171874638a7>`_ Move the fs_u stats under var/stats/
+| `1.9-567 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9b96a2d17d81da16a40432ab3cb80bb0159cc7ca>`_ linux.vg provisioner fixes
+| `1.9-566 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a25e3dc85f9be8cd43c02527adfe1e9f11cbbb14>`_ Fix a stack in the linux.vg provisioner
+| `1.9-565 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bacb7f91ac9845077ff79314808c4df9cea52aa0>`_ Fix colorization of scope in print config <kw>@<scope>
 | `1.9-564 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=31f83d0c443f6c016ebbfd0ed07c5b0cb8e0bf24>`_ Fix the parents handling in the orchestration algo
 | `1.9-563 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=19c5f6395f9a34144fbf988be2d7eeedb9d5bcc9>`_ Typo in the daemon code
 | `1.9-562 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9a20bf6c20375c76590efba8c664fb981dca808e>`_ Add the DEFAULT.parents keyword
