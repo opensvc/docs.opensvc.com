@@ -174,14 +174,9 @@ gitrepo:
 	@cd $(DOCDIR)/opensvc && git pull --all && git reset --hard
 
 templates: gitrepo
-	@echo "Service Configuration File Templates\n************************************\n\nContents:\n\n.. toctree::\n   :maxdepth: 2\n" | tee source/agent.template.conf.rst
-	@for t in `echo $(DOCDIR)/opensvc/usr/share/doc/template.*` ; do \
-	base_t=`basename $$t | sed -e "s/template.//" -e "s/.conf//"` ; \
-	echo $$base_t | egrep -q "comp_|svc.prov" && continue ; \
-        echo "   agent.template.$$base_t.conf" | tee -a source/agent.template.conf.rst ; \
-        echo "$$base_t resource template" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.template.$$base_t.conf.rst ; \
-	cat $$t | sed -e "s/^/	/" | tee -a source/agent.template.$$base_t.conf.rst ; \
-	done
+	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
+	@$(DOCDIR)/opensvc/bin/pkg/make_rst
+	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst source/agent.templates
 	cp $(DOCDIR)/opensvc/usr/share/doc/node.conf source/_static/node.conf
 	cp $(DOCDIR)/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
 
