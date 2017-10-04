@@ -32,6 +32,11 @@ Set :kw:`node.rejoin_grace_period`
 
     :kw:`node.rejoin_grace_period` default value is ``90`` seconds
 
+Unset :kw:`DEFAULT.mode`
+========================
+
+This service keyword is unused since 1.8.
+
 Set :kw:`DEFAULT.orchestrate`
 =============================
 
