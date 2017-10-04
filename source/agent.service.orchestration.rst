@@ -140,6 +140,32 @@ i+----------------+--------------+--------------+-----------------+-------------
 
 .. note:: All services in a affinity relationship must be in the same cluster.
 
+Constraints
+-----------
+
+        An expression evaluating as a boolean, constraining the service instance placement to nodes where :kw:`constraints` evaluates as True.
+
+Supported syntax:
+
+* comparison operators are ``==`` ``!=`` ``>`` ``>=`` ``<=`` ``in (e1 e2)`` ``in [e1 e2]``
+* arithmetic operators are ``*`` ``+`` ``-`` ``/`` ``**`` ``//`` ``%``
+* binary operators are ``&`` ``|`` ``^``
+* negation operator is ``not``
+* boolean operators are ``and`` ``or``
+* references are allowed
+* Strings, and references evaluating as strings, containing dots must be quoted
+
+Examples:
+
+* ``constraints = $("{nodename}"=="node2.acme.com")``
+* ``constraints = $("{nodename}"=="node1" or "{node.env}" in (DEV, TST))``
+
+.. note::
+
+    * The constraints are not honored by manual start operations.
+    * The constraints violation notification is added to "print status" and "json status" outputs
+
+
 Maintenance
 -----------
 
