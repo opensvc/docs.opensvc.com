@@ -193,6 +193,13 @@ To set up this tunable::
 
     $ sudo svcmgr -s svc2 set --kw children+=svc1
 
+:kw:`DEFAULT.stonith`
+---------------------
+
+A boolean mandating the stale node previously running the service to be shot by the daemon monitor upon failover.
+
+Defaults to false.
+
 Resource Sections
 =================
 

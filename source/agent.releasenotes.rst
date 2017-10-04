@@ -93,6 +93,7 @@ Deprecated
 * :kw:`sync[rsync].exclude`
 * :kw:`DEFAULT.service_env`
 * :kw:`DEFAULT.autostart_node`
+* The stonith resource drivers are dropped
 
 
 Agent Migration
