@@ -348,3 +348,6 @@ After building html documentation, the result looks like the example below :
     </pre>
 
 
+
+.. seealso:: http://www.sphinx-doc.org/en/stable/contents.html
+   `Sphinx Documentation <http://www.sphinx-doc.org/en/stable/contents.html>`_
