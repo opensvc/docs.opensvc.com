@@ -4,7 +4,7 @@ Service Configuration File Templates
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    agent.templates/*
