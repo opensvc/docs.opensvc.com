@@ -200,4 +200,5 @@ changelog: gitrepo
 	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -v ^BRANCH=HEAD | sed -e 's/*//g' | awk '{printf("| `"$$1 " <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=" $$2 ">`_ ") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
 	@cat $(DOCDIR)/opensvc/opensvc.changelog.rst | tee -a source/agent.changelog.rst
 	@rm -f $(DOCDIR)/opensvc/opensvc.changelog.rst
-	@git status -s source/agent.changelog.rst | grep --quiet ' M source/agent.changelog.rst' && git commit -m 'Autocommit agent changelog' source/agent.changelog.rst
+	@is_modified=`git status -s source/agent.changelog.rst | grep ' M source/agent.changelog.rst'` ; \
+	if ! test -z "$$is_modified"; then git commit -m 'Autocommit agent changelog' source/agent.changelog.rst; fi;
