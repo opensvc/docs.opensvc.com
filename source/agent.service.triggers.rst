@@ -1,13 +1,10 @@
-Service Resources Triggers
-**************************
-
-Introduction
-============
+Triggers
+********
 
 Triggers are scripts or commands executed before or after a resource action.
 
 Syntax
-======
+++++++
 
 In a service resource configuration section, triggers can be defined using a keyword formatted as
 
@@ -56,7 +53,7 @@ The command value supports shell expressions, like ``&&``, ``||``, ...
 .. warning:: ``;`` is interpreted as a comment begin marker if preceded by a whitespace. To use this character as a separator between commands, be sure to not insert a whitespace before. Example: ``post_start = echo hey; echo ya`` is valid but ``post_start = echo hey ; echo ya`` is not.
 
 Use Cases
-=========
++++++++++
 
 * Inter-service dependencies
 

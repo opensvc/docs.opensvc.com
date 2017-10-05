@@ -21,7 +21,6 @@ Agent
    agent.service.management
    agent.service.resources
    agent.service.scoping
-   agent.service.triggers
    agent.service.encapsulation
    agent.service.orchestration
    agent.service.ip

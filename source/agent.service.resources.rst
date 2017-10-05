@@ -552,7 +552,4 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 	</pre>
 
 
-Triggers
-********
-
-to be completed
+.. include:: agent.service.triggers.rst
