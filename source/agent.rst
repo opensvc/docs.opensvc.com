@@ -1,8 +1,6 @@
 Agent
 =====
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
@@ -31,5 +29,7 @@ Contents:
    agent.service.sync
    agent.service.container
    agent.service.task
+   agent.commands
+   agent.commands.svcmgr
+   agent.commands.nodemgr
    agent.template.conf
-   manpages

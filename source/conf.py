@@ -316,6 +316,7 @@ rst_prolog = """
 
 .. role:: kw
 .. role:: cmd
+.. role:: opt
 
 """
 
