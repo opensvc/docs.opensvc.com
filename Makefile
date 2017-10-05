@@ -136,7 +136,7 @@ doctest:
 html_fr:
 	$(SPHINXBUILD) -b html -Dlanguage=fr $(ALLSPHINXOPTS) $(BUILDDIR)/html/fr
 
-osvc: changelog templates manpages compobjs html html_fr
+osvc: changelog templates commands compobjs html html_fr
 
 pot:
 	$(SPHINXBUILD) -b gettext source $(POT_D)
@@ -173,6 +173,12 @@ gitrepo:
 	@test -d $(DOCDIR)/opensvc/.git || $(MAKE) gitclone
 	@cd $(DOCDIR)/opensvc && git pull --all && git reset --hard
 
+commands: gitrepo
+	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
+	@$(DOCDIR)/opensvc/bin/pkg/make_man_rst
+	cp $(DOCDIR)/opensvc/tmp/nodemgr.rst source/agent.commands.nodemgr.rst
+	cp $(DOCDIR)/opensvc/tmp/svcmgr.rst source/agent.commands.svcmgr.rst
+
 templates: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
 	@test -d source/agent.templates || mkdir source/agent.templates
@@ -180,12 +186,6 @@ templates: gitrepo
 	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst/* source/agent.templates/
 	cp $(DOCDIR)/opensvc/usr/share/doc/node.conf source/_static/node.conf
 	cp $(DOCDIR)/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
-
-manpages: gitrepo
-	@for t in nodemgr svcmgr svcmon ; do \
-        echo "$$t manpage" | awk '{l=length($$0) ;printf $$0 "\n"; while (l>0) {printf "-";l--} ; printf "\n\n::\n\n"}' | tee source/agent.man.$$t.rst ; \
-	COLUMNS=90 man $(DOCDIR)/opensvc/usr/share/man/man1/$$t.1 | sed -e "s/^/	/" | tee -a source/agent.man.$$t.rst ; \
-	done
 
 compobjs: gitrepo
 	@for t in `egrep -l "^data = {" $(DOCDIR)/opensvc/var/compliance/com.opensvc/*.py` ; do \

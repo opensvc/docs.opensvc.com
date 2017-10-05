@@ -1,6 +1,11 @@
 p {
 	font-size: initial;
 }
+.opt {
+	color: teal;
+	font-family: monospace;
+	border-bottom: 1px dotted lightgray;
+}
 .kw:before {
 	padding-right: 0.4em;
 	color: teal;
@@ -11,8 +16,6 @@ p {
 	font-family: monospace;
 	border-bottom: 1px dotted lightgray;
 }
-
-
 .cmd:before {
 	padding-right: 0.4em;
 	color: teal;
@@ -195,7 +198,7 @@ pre.output {
 	color: white;
 }
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
-	color: teal;
+	color: #226666;
 }
 .wy-table-responsive table td, .wy-table-responsive table th {
 	white-space: initial;
