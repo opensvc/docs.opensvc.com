@@ -30,6 +30,4 @@ Agent
    agent.service.container
    agent.service.task
    agent.commands
-   agent.commands.svcmgr
-   agent.commands.nodemgr
    agent.template.conf
