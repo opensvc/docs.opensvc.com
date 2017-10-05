@@ -203,6 +203,9 @@ Defaults to false.
 Resource Sections
 =================
 
+:kw:`standby`
+------------
+
 :kw:`shared`
 ------------
 

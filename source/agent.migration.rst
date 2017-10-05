@@ -193,6 +193,17 @@ v1.8                          v1.9
 <kw>_on = nodes drpnodes      <kw> = true
 ============================= =================================
 
+Replace :kw:`always_on` by :kw:`standby`
+========================================
+
+============================= =================================
+v1.8                          v1.9
+============================= =================================
+always_on = nodes             standby@nodes = true
+always_on = drpnodes          standby@drpnodes = true
+always_on = nodes drpnodes    standby = true
+============================= =================================
+
 Replace :kw:`sync[rsync].exclude` by their equivalent :kw:`sync[rsync].options`
 ===============================================================================
 
