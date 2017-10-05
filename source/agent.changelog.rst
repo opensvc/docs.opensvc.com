@@ -2,6 +2,34 @@ Agent Changelog
 ===============
 
 
+| `1.9-613 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=71b56cb85da6b25df73e82be8a0ce957604c63c9>`_ Update the svcmon manpage description
+| `1.9-612 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f37586ca96eb0448faf9a19cd082836be1bfb2e1>`_ Remove the DEFAULT.cluster svc cfg kw and node.clusters node cfg kw
+| `1.9-611 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63acc39c54a2f2c14539bb5c8be305fcbd68e2c3>`_ Fetch the stonith configuration on nodemgr daemon join
+| `1.9-610 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d4edb6a712706bb1bded0cf97c43cec890fc699>`_ node compat check fixes
+| `1.9-609 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b70d6a956360b745a855b6771d1a1e2e8afab478>`_ Add daemon compat check
+| `1.9-608 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05174eab04cae411f77d8f3c17fb1cc0b3aae107>`_ Fix disk.md.shared keyword appearing twice
+| `1.9-607 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f54b8dd96adade4403c1e8e9efc1a6ce053ef77>`_ Fix the disable kw being included twice in DEFAULT
+| `1.9-606 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11e90d01fd90b358e3f63da9ac3ee57b9edbc1e5>`_ Fix the "wait parents" state not being reset when parents comes up
+| `1.9-605 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1c011ca3bce16c155df68ddc25993810d150458>`_ Fix app resource timeout with python3, and use the duration converter
+| `1.9-604 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e411fe16edd72a9b72ef4680502477fb178de4a5>`_ Deprecate the always_on keyword, add the standby keyword
+| `1.9-603 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dfe4c8f435cca96e0885e154dcf22cdf94cef88a>`_ Add warn to the resources status causing a restart and TOC
+| `1.9-602 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ace6215800a396999ebb9b77a134d0c43a42f141>`_ Fix run_requires keyword unduly autorized in sync resources
+| `1.9-601 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=38607df86a0d9c41557950c33f74053d87032cfa>`_ Add a detailled, multiline constraint keyword desc
+| `1.9-600 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=03a889be93f468e717f22d5f63de513c8bd1bc9a>`_ Replace set([]) with set()
+| `1.9-599 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=614b5d0a68d02000ce31f69cf12f4cbd5c2b3c51>`_ Deprecate DEFAULT.mode
+| `1.9-598 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=136ab2653964a57a7b536f0f0a6c3463d0b68762>`_ Remove the sudo execution of svcdict in make_rst
+| `1.9-597 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f3e0f6384bdfbf078f67603d72ae98738b9a131f>`_ Add bin/pkg/make_rst
+| `1.9-596 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=af7c533616f6ad757aac321c5881ef4f27bfe550>`_ Implement the TOC decision in the daemon monitor thread
+| `1.9-595 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=429249b8e5ada0175f7015831a323f03ee4fa2c1>`_ Fix another syntax error in the print status codepath
+| `1.9-594 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e76390b4d79d711e5d9bb18ed7dd05ae236cf249>`_ Fix syntax error in the print status code path
+| `1.9-593 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eba5ccf14e960d97d84ddb56b871d1096a04a4e7>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-592 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f49fc9ea23a98a0ca6e65cbcae6c9d2f646663d0>`_ Add "nodemgr stonith --node <nodename>"
+| `1.9-591 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db6d98ccd8743aab8d43d46fc022a3b593a4051b>`_ Improve build environment cleanup
+| `1.9-590 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5d85313840e3070a0321c0571bfc55c419d2e998>`_ Do not try to freeze/stop the node when daemon is stopped
+| `1.9-589 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=858af39bf11d2f5147d661b2bac0af66cf6dcc6b>`_ Restore monitored ip resource TOC on unresolvable ip name
+| `1.9-588 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=55f7f8f3ce98288c42441b19027e0fa46f8ddaf3>`_ Drop the stonith drivers and "svcmgr stonith" action
+| `1.9-587 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d157a3802021d143d10476dcdf3aacbd6ae71830>`_ Create the var/stats/ dir if it does not exist yet in the postinstall
+| `1.9-586 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c8ee739187d4aea747094375ee144437565619b9>`_ Add the Linux disk.lv resource driver
 | `1.9-585 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=22c7787afc24ad3ba5e69c4c10ef2bac9acccd07>`_ Fix tab/whitespace mix issue reported by python -tt
 | `1.9-584 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1b7412825c2c8ed797ce59e8b44fc5492171964>`_ Add .pyo the gitignore
 | `1.9-583 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cae62d95c7dceca1a8dee2053a84e7811372ab0a>`_ Fix raw resource using devlist references non starting
