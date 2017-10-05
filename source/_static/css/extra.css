@@ -10,6 +10,7 @@ p {
 	padding-right: 0.4em;
 	color: teal;
 	content: '\f0f6';
+	font-family: FontAwesome;
 }
 .kw {
 	color: teal;
@@ -20,6 +21,7 @@ p {
 	padding-right: 0.4em;
 	color: teal;
 	content: '\f292';
+	font-family: FontAwesome;
 }
 .cmd {
 	color: teal;
@@ -31,6 +33,7 @@ p {
 	padding-right: 0.4em;
 	color: rgb(3, 135, 162);
 	content: '\f00a';
+	font-family: FontAwesome;
 }
 .menuselection {
 	color: rgb(3, 135, 162);
