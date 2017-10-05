@@ -9,167 +9,79 @@ Default Section
 
 This parameter can be used to force a service to run on the same node running other services.
 
-For example, if :c-svc:`svc1` can listens on a unix socket used by :c-svc:`svc2`, those services must run on the same node.
+.. seealso::
 
-To set up this hard affinity::
+    Keyword Definition :ref:`DEFAULT.hard_affinity`
 
-    $ sudo svcmgr -s svc2 set --kw hard_affinity+=svc1
-
-+------------------+------------------+------------------+-----------------+--------------------------------------+
-| Service          | Nodes                               | Orchestrator    | Comments                             |
-|                  +------------------+------------------+ Action          |                                      |
-|                  | :c-node:`n1`     | :c-node:`n2`     |                 |                                      |
-+==================+==================+==================+=================+======================================+
-| :c-svc:`svc1`    | | up             | | down           |                 |                                      |
-+------------------+------------------+------------------+-----------------+--------------------------------------+
-| :c-svc:`svc2`    | | down           | | down           | start on        |                                      |
-|                  | | leader         |                  | :c-node:`n1`    |                                      |
-|                  |                  |                  |                 |                                      |
-|                  +------------------+------------------+-----------------+--------------------------------------+
-|                  | | down           | | down           | start on        | Although placement policy is set to  |
-|                  |                  | | leader         | :c-node:`n1`    | ``nodes order`` with :c-node:`n2` as |
-|                  |                  |                  |                 | first node, :c-node:`n1` will be     |
-|                  |                  |                  |                 | prefered.                            |
-|                  +------------------+------------------+-----------------+--------------------------------------+
-|                  | | down           | | down           | none            | hard affinity can't be satisfied,    |
-|                  | | leader         |                  |                 | the service won't be started.        |
-|                  | | frozen         |                  |                 |                                      |
-+------------------+------------------+------------------+-----------------+--------------------------------------+
+    :ref:`Documentation <agent.service.orchestration.hard.affinity>`
 
 :kw:`DEFAULT.soft_affinity`
 ---------------------------
 
 This parameter can be used to help a service to run on the same node running other services.
 
-For example, if :c-svc:`svc1` and :c-svc:`svc2` are known to have better performance when executed on the same node, those services should run on the same node.
+.. seealso::
 
-To set up this soft affinity::
+    Keyword Definition :ref:`DEFAULT.soft_affinity`
 
-    $ sudo svcmgr -s svc2 set --kw soft_affinity+=svc1
-
-+-----------------+--------------+--------------+-----------------+----------------------------------------------+
-| Service         | Nodes                       | Orchestrator    | Comments                                     |
-|                 +--------------+--------------+ Action          |                                              |
-|                 | :c-node:`n1` | :c-node:`n2` |                 |                                              |
-+=================+==============+==============+=================+==============================================+
-| :c-svc:`svc1`   | | up         | | down       |                 |                                              |
-+-----------------+--------------+--------------+-----------------+----------------------------------------------+
-| :c-svc:`svc2`   | | down       | | down       | start on        |                                              |
-|                 | | leader     |              | :c-node:`n1`    |                                              |
-|                 |              |              |                 |                                              |
-|                 +--------------+--------------+-----------------+----------------------------------------------+
-|                 | | down       | | down       | start on        | Although placement policy is set to          |
-|                 |              | | leader     | :c-node:`n1`    | ``nodes order`` with :c-node:`n2` as first   |
-|                 |              |              |                 | node, :c-node:`n1` will be preferred         |
-|                 +--------------+--------------+-----------------+----------------------------------------------+
-|                 | | down       | | down       | start on        | soft affinity can't be satisfied,            |
-|                 | | leader     |              | :c-node:`n2`    | as a best effort, the service will           |
-|                 | | frozen     |              |                 | be started on :c-node:`n2`                   |
-+-----------------+--------------+--------------+-----------------+----------------------------------------------+
+    :ref:`Documentation <agent.service.orchestration.soft.affinity>`
+    
 
 :kw:`DEFAULT.hard_anti_affinity`
 --------------------------------
 
 This parameter can be used to force a service to avoid execution on the same node running other services.
 
-For example, if :c-svc:`svc2` must never be executed on same node than :c-svc:`svc1`, those services must run on different nodes.
+.. seealso::
 
-To set up this hard anti affinity::
+    Keyword Definition :ref:`DEFAULT.hard_anti_affinity`
 
-    $ sudo svcmgr -s svc2 set --kw hard_anti_affinity+=svc1
-
-+----------------+--------------+--------------+-----------------+--------------------------------------+
-| Service        | Nodes                       | Orchestrator    | Comments                             |
-|                +--------------+--------------+ Action          |                                      |
-|                | :c-node:`n1` | :c-node:`n2` |                 |                                      |
-+================+==============+==============+=================+======================================+
-| :c-svc:`svc1`  | | up         | | down       |                 |                                      |
-+----------------+--------------+--------------+-----------------+--------------------------------------+
-| :c-svc:`svc2`  | | down       | | down       | start on        |                                      |
-|                |              | | leader     | :c-node:`n2`    |                                      |
-|                |              |              |                 |                                      |
-|                +--------------+--------------+-----------------+--------------------------------------+
-|                | | down       | | down       | start on        | Although placement policy is set to  |
-|                | | leader     |              | :c-node:`n2`    | ``nodes order`` with :c-node:`n1` as |
-|                |              |              |                 | first node, :c-node:`n2` will be     |
-|                |              |              |                 | preferred                            |
-|                +--------------+--------------+-----------------+--------------------------------------+
-|                | | down       | | down       | none            | hard affinity can't be satisfied,    |
-|                |              | | leader     |                 | the service won't be started.        |
-|                |              | | frozen     |                 |                                      |
-+----------------+--------------+--------------+-----------------+--------------------------------------+
+    :ref:`Documentation <agent.service.orchestration.hard.anti.affinity>`
 
 :kw:`DEFAULT.soft_anti_affinity`
 --------------------------------
 
 This parameter can be used to help a service try to avoid execution on the same node running other services.
 
-For example, if :c-svc:`svc2` should never be executed on same node than :c-svc:`svc1`, those services should run on different nodes.
+.. seealso::
 
-To set up this soft anti affinity::
+    Keyword Definition :ref:`DEFAULT.soft_anti_affinity`
 
-    $ sudo svcmgr -s svc2 set --kw soft_anti_affinity+=svc1
+    :ref:`Documentation <agent.service.orchestration.soft.anti.affinity>`
 
-+----------------+--------------+--------------+-----------------+--------------------------------------+
-| Service        | Nodes                       | Orchestrator    | Comments                             |
-|                +--------------+--------------+ Action          |                                      |
-|                | :c-node:`n1` | :c-node:`n2` |                 |                                      |
-+================+==============+==============+=================+======================================+
-| :c-svc:`svc1`  | | up         | | down       |                 |                                      |
-+----------------+--------------+--------------+-----------------+--------------------------------------+
-| :c-svc:`svc2`  | | down       | | down       | start on        |                                      |
-|                |              | | leader     | :c-node:`n2`    |                                      |
-|                |              |              |                 |                                      |
-|                +--------------+--------------+-----------------+--------------------------------------+
-|                | | down       | | down       | start on        | Although placement policy is set to  |
-|                | | leader     |              | :c-node:`n2`    | ``nodes order`` with :c-node:`n1` as |
-|                |              |              |                 | first node, :c-node:`n2` will be     |
-|                |              |              |                 | preferred                            |
-|                +--------------+--------------+-----------------+--------------------------------------+
-|                | | down       | | down       | start on        | hard affinity can't be satisfied,    |
-|                |              | | leader     | :c-node:`n1`    | as a best effort, the service will   |
-|                |              | | frozen     |                 | be started on :c-node:`n1`           |
-+----------------+--------------+--------------+-----------------+--------------------------------------+
-
-
-.. _default_orchestrate:
 
 :kw:`DEFAULT.orchestrate`
 -------------------------
 
 This parameter is used to specify the daemon behaviour regarding service orchestration
 
-To set up this parameter::
+.. seealso::
 
-    $ sudo svcmgr -s svc2 set --kw orchestrate=<no|start|ha>
+    Keyword Definition :ref:`DEFAULT.orchestrate`
 
-Possible values:
-
-* ``no``
-    * no instance is started automatically
-    * giveback is disabled, takeover can be used to relocate the service
-    * placement warnings are inhibited
-    * use this setting for all 1.8 services **without** :kw:`DEFAULT.autostart_node`
-* ``start``
-    * only the instance on the natural leader is started
-    * takeover can be used to relocate the service
-    * giveback is useful to relocate the service to the natural leader
-    * use this setting for all 1.8 services **with** :kw:`DEFAULT.autostart_node`
-* ``ha``
-    * an instance is started on the best available node
-    * takeover can be used to relocate the service
-    * giveback is useful to relocate the service to the best available node
-    * use this setting for all 1.8 services under OpenHA control
-
-.. note::
-
-    :kw:`DEFAULT.orchestrate`` default value is ``no``
+    :ref:`Documentation <agent.service.orchestration>`
 
 :kw:`DEFAULT.placement`
 -----------------------
 
+This setting is used to identify the best node to start the service on.
+
+.. seealso::
+
+    Keyword Definition :ref:`DEFAULT.placement`
+
+    :ref:`Documentation <agent.service.orchestration.placement.policies>`
+
 :kw:`DEFAULT.constraints`
 -------------------------
+
+A boolean expression evaluated in order to constrain the service instance placement to nodes where expression is True.
+
+.. seealso::
+
+    Keyword Definition :ref:`DEFAULT.constraints`
+
+    :ref:`Documentation <agent.service.orchestration.constraints>`
 
 :kw:`DEFAULT.parents`
 ---------------------
@@ -178,20 +90,22 @@ This parameter is used to store a list of services that must be avail up for the
 
 The parents must be in the same cluster.
 
-To set up this tunable::
+.. seealso::
 
-    $ sudo svcmgr -s svc2 set --kw parents+=svc1
+    Keyword Definition :ref:`DEFAULT.parents`
+
+    :ref:`Documentation <agent.service.orchestration.parents>`
 
 :kw:`DEFAULT.children`
 ----------------------
 
 This parameter is used to store a list of services that must be avail down for the agent daemon to proceed on stopping the service.
 
-The children must be in the same cluster.
+.. seealso::
 
-To set up this tunable::
+    Keyword Definition :ref:`DEFAULT.children`
 
-    $ sudo svcmgr -s svc2 set --kw children+=svc1
+    :ref:`Documentation <agent.service.orchestration.children>`
 
 :kw:`DEFAULT.stonith`
 ---------------------
@@ -204,7 +118,7 @@ Resource Sections
 =================
 
 :kw:`standby`
-------------
+-------------
 
 :kw:`shared`
 ------------
@@ -247,8 +161,8 @@ Defaults to ``default``. Users can set it to a more meaningful value.
 	Changing that parameter on a joined cluster will break communications until the nodes share the same :kw:`cluster.name`, thus cause a massive split-brain situation. So take care of freezing the cluster nodes before.
 
 
-Heartbeat Sections
-==================
+Heartbeat Section
+=================
 
 :kw:`hb.type`
 -------------
