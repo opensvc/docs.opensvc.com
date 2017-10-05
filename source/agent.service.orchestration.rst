@@ -6,7 +6,7 @@ Service Orchestration
 Orchestration
 -------------
 
-This parameter is used to specify the daemon behaviour regarding service orchestration, which by default, does not orchestrate service.
+The parameter :kw:`DEFAULT.orchestrate` is used to specify the daemon behaviour regarding service orchestration, which by default, does not orchestrate service.
 
 Possible values:
 
@@ -25,6 +25,8 @@ Possible values:
     * takeover can be used to relocate the service
     * giveback is useful to relocate the service to the best available node
     * use this setting for all 1.8 services under OpenHA control
+
+.. _agent.service.orchestration.placement.policies:
 
 Placement Policies
 ------------------
@@ -45,8 +47,12 @@ load avg
 
 The node with the lowest load average gets the highest placement priority.
 
+.. _agent.service.orchestration.affinity:
+
 Affinity
 --------
+
+.. _agent.service.orchestration.hard.affinity:
 
 ``DEFAULT.hard_affinity``
 
@@ -76,6 +82,7 @@ Affinity
 |                  | | frozen         |                  |                 |                                      |
 +------------------+------------------+------------------+-----------------+--------------------------------------+
 
+.. _agent.service.orchestration.hard.anti.affinity:
 
 ``DEFAULT.hard_anti_affinity``
 
@@ -104,6 +111,7 @@ For example, if :c-svc:`svc2` must never be executed on same node than :c-svc:`s
 |                |              | | frozen     |                 |                                      |
 +----------------+--------------+--------------+-----------------+--------------------------------------+
 
+.. _agent.service.orchestration.soft.affinity:
 
 ``DEFAULT.soft_affinity``
 
@@ -131,6 +139,7 @@ For example, if :c-svc:`svc1` and :c-svc:`svc2` are known to have better perform
 |                 | | frozen     |              |                 | be started on :c-node:`n2`                   |
 +-----------------+--------------+--------------+-----------------+----------------------------------------------+
 
+.. _agent.service.orchestration.soft.anti.affinity:
 
 ``DEFAULT.soft_anti_affinity``
 
@@ -138,7 +147,7 @@ For example, if :c-svc:`svc1` and :c-svc:`svc2` are known to have better perform
 
 For example, if :c-svc:`svc2` should never be executed on same node than :c-svc:`svc1`, those services should run on different nodes.
 
-i+----------------+--------------+--------------+-----------------+--------------------------------------+
++----------------+--------------+--------------+-----------------+--------------------------------------+
 | Service        | Nodes                       | Orchestrator    | Comments                             |
 |                +--------------+--------------+ Action          |                                      |
 |                | :c-node:`n1` | :c-node:`n2` |                 |                                      |
@@ -162,6 +171,8 @@ i+----------------+--------------+--------------+-----------------+-------------
 .. note:: ``hard_affinity`` and ``soft_affinity`` cause a startup serialization.
 
 .. note:: All services in a affinity relationship must be in the same cluster.
+
+.. _agent.service.orchestration.constraints:
 
 Constraints
 -----------
@@ -188,6 +199,88 @@ Examples:
     * The constraints are not honored by manual start operations.
     * The constraints violation notification is added to "print status" and "json status" outputs
 
+.. _agent.service.orchestration.compatibility:
+
+Compatibility
+-------------
+
+The daemon now announce their "compat version" in the heartbeats.
+
+If a daemon notices the cluster members have different compat versions, it
+disables ha orchestration.
+
+This is what happens during a rollback agent upgrade.
+
+In this case, the logs contain this warning:
+``cluster members run incompatible versions. disable ha orchestration``
+
+A orchestrate=ha service instance print status shows:
+
+::
+
+    $ sudo ha1 print status
+    ha1                         warn       incompatible versions
+    `- aubergine                up         idle, started
+       |- ip#0           ...... up         128.0.0.2@lo
+       |- ip#1           M....S stdby up   128.0.0.3@lo
+    ...
+    
+    And svcmon shows:
+    
+    Nodes                                  aubergine nuc
+     15m                                 | 0.4       0.1
+     compat    warn                      | 2         1
+     state                               |
+    ...
+
+When the compat is restored, the logs contain this info:
+``cluster members run compatible versions. enable ha orchestration``
+
+
+
+.. _agent.service.orchestration.parents:
+
+Parents
+-------
+
+The keyword :kw:`DEFAULT.parents` store a list of services that must be avail up for the agent daemon to proceed on starting the service.
+
+A typical use case is to modelize services dependency:
+
+* :c-svc:`svc1` and :c-svc:`svc2` are mutually dependent
+* :c-svc:`svc1` must be started first, and then :c-svc:`svc2` is able to start once :c-svc:`svc1` is up.
+
+To set up this setting::
+
+    $ sudo svcmgr -s svc2 set --kw parents+=svc1
+
+.. note::
+
+    :c-svc:`svc1` and :c-svc:`svc2` must be in the same cluster
+
+.. _agent.service.orchestration.children:
+
+Children
+--------
+
+A service with :kw:`DEFAULT.children` set to a list of tiers services hosted in the same
+cluster, waits for children to all reach the down aggregate avail status
+before processing a stop order.
+
+A typical use case is to modelize services dependency:
+
+* :c-svc:`svc1` and :c-svc:`svc2` are mutually dependent
+* :c-svc:`svc1` can't be stopped before :c-svc:`svc2` is down.
+
+To set up this setting::
+
+    $ sudo svcmgr -s svc1 set --kw children+=svc2
+
+.. note::
+
+    :c-svc:`svc1` and :c-svc:`svc2` must be in the same cluster
+
+.. _agent.service.orchestration.maintenance:
 
 Maintenance
 -----------
@@ -200,6 +293,8 @@ When the stopped daemon comes back alive, the normal orchestration is resumed, a
 
 * If the service instances were stopped, like in a reboot scenario, they are restarted honoring placement policies, affinity and constraints. Thus, if the instances were placed optimally, the final situation is also optimal.
 * If the service instances were not stopped, like in a ``nodemgr daemon restart`` scenario, no orchestration actions are triggered.
+
+.. _agent.service.orchestration.monitor.states:
 
 Service Monitor states
 ----------------------
@@ -234,6 +329,8 @@ State             Description
 ``thawing``       The instance is thawing. Orchestration is about to be
                   resumed.
 ================= ===========================================================
+
+.. _agent.service.orchestration.monitor.states.transitions:
 
 State transitions
 -----------------
