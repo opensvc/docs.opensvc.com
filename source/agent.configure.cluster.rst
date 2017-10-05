@@ -34,6 +34,23 @@ Display the result
 
 .. seealso:: :ref:`agent.daemon.heartbeats`
 
+Add Stonith methods
+-------------------
+
+Stonith is optional. Skip to the next section if not concerned.
+
+On a new cluster, the stonith configuration can be applied on the first node. The joining nodes will fetch this configuration from this joined node.
+
+For example, a dummy stonith configuration would be
+
+::
+
+        sudo nodemgr set --param stonith#node2.cmd --value /bin/true
+
+This configuration will execute :cmd:`/bin/true` on the node taking over a service which was previously running on the now stalled :c-node:`node2`.
+
+Good, isolated fencing packages are freely available. For one, https://github.com/ClusterLabs/fence-agents
+
 Join a Cluster
 ==============
 
