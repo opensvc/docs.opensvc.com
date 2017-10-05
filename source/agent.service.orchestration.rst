@@ -204,7 +204,7 @@ Examples:
 Compatibility
 -------------
 
-The daemon now announce their "compat version" in the heartbeats.
+The daemons now announce their "compat version" through the heartbeats.
 
 If a daemon notices the cluster members have different compat versions, it
 disables ha orchestration.
@@ -218,15 +218,16 @@ A orchestrate=ha service instance print status shows:
 
 ::
 
-    $ sudo ha1 print status
     ha1                         warn       incompatible versions
     `- aubergine                up         idle, started
        |- ip#0           ...... up         128.0.0.2@lo
        |- ip#1           M....S stdby up   128.0.0.3@lo
     ...
     
-    And svcmon shows:
+And svcmon shows:
     
+::
+
     Nodes                                  aubergine nuc
      15m                                 | 0.4       0.1
      compat    warn                      | 2         1

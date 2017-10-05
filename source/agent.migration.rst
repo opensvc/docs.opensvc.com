@@ -37,6 +37,8 @@ Unset :kw:`DEFAULT.mode`
 
 This service keyword is unused since 1.8.
 
+.. _agent.migration.orchestrate:
+
 Set :kw:`DEFAULT.orchestrate`
 =============================
 
@@ -78,8 +80,10 @@ Conversion table:
 |               |                          |                       |                                                                                         |
 +---------------+--------------------------+-----------------------+-----------------------------------------------------------------------------------------+
 
-.. seealso:: :ref:`default_orchestrate`
+.. seealso::
 
+    | :ref:`Keyword Reference <DEFAULT.orchestrate>`
+    | :ref:`Service Orchestration <agent.service.orchestration>`
 
 Set :kw:`DEFAULT.placement`
 ===========================

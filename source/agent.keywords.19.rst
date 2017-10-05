@@ -11,9 +11,8 @@ This parameter can be used to force a service to run on the same node running ot
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.hard_affinity`
-
-    :ref:`Documentation <agent.service.orchestration.hard.affinity>`
+    | :ref:`Keyword Reference <DEFAULT.hard_affinity>`
+    | :ref:`Service Orchestration <agent.service.orchestration.hard.affinity>`
 
 :kw:`DEFAULT.soft_affinity`
 ---------------------------
@@ -22,9 +21,8 @@ This parameter can be used to help a service to run on the same node running oth
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.soft_affinity`
-
-    :ref:`Documentation <agent.service.orchestration.soft.affinity>`
+    | :ref:`Keyword Reference <DEFAULT.soft_affinity>`
+    | :ref:`Service Orchestration <agent.service.orchestration.soft.affinity>`
     
 
 :kw:`DEFAULT.hard_anti_affinity`
@@ -34,9 +32,8 @@ This parameter can be used to force a service to avoid execution on the same nod
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.hard_anti_affinity`
-
-    :ref:`Documentation <agent.service.orchestration.hard.anti.affinity>`
+    | :ref:`Keyword Reference <DEFAULT.hard_anti_affinity>`
+    | :ref:`Service Orchestration <agent.service.orchestration.hard.anti.affinity>`
 
 :kw:`DEFAULT.soft_anti_affinity`
 --------------------------------
@@ -45,10 +42,8 @@ This parameter can be used to help a service try to avoid execution on the same 
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.soft_anti_affinity`
-
-    :ref:`Documentation <agent.service.orchestration.soft.anti.affinity>`
-
+    | :ref:`Keyword Reference <DEFAULT.soft_anti_affinity>`
+    | :ref:`Service Orchestration <agent.service.orchestration.soft.anti.affinity>`
 
 :kw:`DEFAULT.orchestrate`
 -------------------------
@@ -57,9 +52,9 @@ This parameter is used to specify the daemon behaviour regarding service orchest
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.orchestrate`
-
-    :ref:`Documentation <agent.service.orchestration>`
+    | :ref:`Keyword Reference <DEFAULT.orchestrate>`
+    | :ref:`Service Orchestration <agent.service.orchestration>`
+    | :ref:`Agent Migration <agent.migration.orchestrate>`
 
 :kw:`DEFAULT.placement`
 -----------------------
@@ -68,9 +63,8 @@ This setting is used to identify the best node to start the service on.
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.placement`
-
-    :ref:`Documentation <agent.service.orchestration.placement.policies>`
+    | :ref:`Keyword Reference <DEFAULT.placement>`
+    | :ref:`Service Orchestration <agent.service.orchestration.placement.policies>`
 
 :kw:`DEFAULT.constraints`
 -------------------------
@@ -79,9 +73,8 @@ A boolean expression evaluated in order to constrain the service instance placem
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.constraints`
-
-    :ref:`Documentation <agent.service.orchestration.constraints>`
+    | :ref:`Keyword Reference <DEFAULT.constraints>`
+    | :ref:`Service Orchestration <agent.service.orchestration.constraints>`
 
 :kw:`DEFAULT.parents`
 ---------------------
@@ -92,9 +85,8 @@ The parents must be in the same cluster.
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.parents`
-
-    :ref:`Documentation <agent.service.orchestration.parents>`
+    | :ref:`Keyword Reference <DEFAULT.parents>`
+    | :ref:`Service Orchestration <agent.service.orchestration.parents>`
 
 :kw:`DEFAULT.children`
 ----------------------
@@ -103,9 +95,8 @@ This parameter is used to store a list of services that must be avail down for t
 
 .. seealso::
 
-    Keyword Definition :ref:`DEFAULT.children`
-
-    :ref:`Documentation <agent.service.orchestration.children>`
+    | :ref:`Keyword Reference <DEFAULT.children>`
+    | :ref:`Service Orchestration <agent.service.orchestration.children>`
 
 :kw:`DEFAULT.stonith`
 ---------------------
