@@ -5,6 +5,7 @@ New Features
 ============
 
 * The agent now runs a daemon implementing heartbeats, scheduling, a remote OpenSVC actions listener and node/services/resources orchestration.
+* The agent now announce its "compat version" in the heartbeats, so as ensure proper communication with other cluster nodes. A lack of "compat version" alignment temporarily disable automated orchestration, until issue is fixed.
 * Add monitor states to :cmd:`svcmgr print status` human-friendly and JSON outputs.
 * The frozen service instance status is not longer honored by the CRM, only by the orchestrator.
 * The node is freezeable. A thawed service instance on a frozen node is not orchestrated.
