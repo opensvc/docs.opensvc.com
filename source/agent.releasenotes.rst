@@ -86,15 +86,19 @@ New Keywords
 Deprecated
 ==========
 
-* The 1.9 agent no longer support the hb resource class. All external heartbeat drivers have been dropped. hb resource sections in service configurations are ignored.
-* The 1.9 agent no longer need a crontrab entry. The package postinstall removes it if present.
-* sync#i1 internal sync to drp nodes is dropped.
-* :kw:`optional_on`, :kw:`monitor_on`, :kw:`enable_on` and :kw:`disable_on` service configuration keywords.
+* The agent no longer needs a crontrab entry. The package postinstall removes it if present.
+* The ``hb`` resource drivers are dropped. The heartbeats are now handled by the daemon and configured in ``node.conf``.
+* The ``stonith`` resource drivers are dropped. The stonith configurations are moved to ``node.conf``.
+* :c-res:`sync#i1` internal sync to drp nodes is dropped.
+* :kw:`*.optional_on`
+* :kw:`*.monitor_on`
+* :kw:`*.enable_on`
+* :kw:`*.disable_on`
+* :kw:`*.always_on` (maintained for backward compatibility)
 * :kw:`sync[rsync].exclude`
 * :kw:`DEFAULT.service_env`
 * :kw:`DEFAULT.autostart_node`
 * :kw:`DEFAULT.mode`
-* The stonith resource drivers are dropped
 
 
 Agent Migration

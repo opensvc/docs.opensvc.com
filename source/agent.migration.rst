@@ -255,3 +255,15 @@ Thaw services
 
 	sudo svcmgr thaw
 
+Replace :kw:`always_on` by :kw:`standby`
+========================================
+
+============================= =================================
+v1.8                          v1.9
+============================= =================================
+always_on = nodes             standby@nodes = true
+always_on = drpnodes          standby@drpnodes = true
+always_on = nodes drpnodes    standby = true
+============================= =================================
+
+
