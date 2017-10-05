@@ -2,6 +2,8 @@ Agent Changelog
 ===============
 
 
+| `1.9-615 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=02be57abc9deed8bfaa766c76aeed6bf8b54d951>`_ Remove the command rst help references on sections
+| `1.9-614 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b62ab05f6bdc7b2d563f7934f01207699ba796f8>`_ Add a rst commands help formatter
 | `1.9-613 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=71b56cb85da6b25df73e82be8a0ce957604c63c9>`_ Update the svcmon manpage description
 | `1.9-612 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f37586ca96eb0448faf9a19cd082836be1bfb2e1>`_ Remove the DEFAULT.cluster svc cfg kw and node.clusters node cfg kw
 | `1.9-611 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63acc39c54a2f2c14539bb5c8be305fcbd68e2c3>`_ Fetch the stonith configuration on nodemgr daemon join
