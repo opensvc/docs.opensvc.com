@@ -1,5 +1,5 @@
-Service Configuration File Templates
-************************************
+Service Keywords
+****************
 
 Contents:
 
