@@ -64,6 +64,12 @@ New Commands
 | :cmd:`nodemgr set --param <param> --remove <member>`
 |
 
+Removed Commands
+================
+
+| :cmd:`svcmgr boot`
+|
+
 New References
 ==============
 
