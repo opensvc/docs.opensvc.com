@@ -176,8 +176,7 @@ gitrepo:
 commands: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
 	@$(DOCDIR)/opensvc/bin/pkg/make_man_rst
-	cp $(DOCDIR)/opensvc/tmp/nodemgr.rst source/agent.commands.nodemgr.rst
-	cp $(DOCDIR)/opensvc/tmp/svcmgr.rst source/agent.commands.svcmgr.rst
+	@rm -rf source/agent.commands && mv $(DOCDIR)/opensvc/tmp/agent.commands source/
 
 templates: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
