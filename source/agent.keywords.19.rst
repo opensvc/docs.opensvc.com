@@ -117,6 +117,18 @@ Resource Sections
 :kw:`provision`
 ---------------
 
+:kw:`app.start_timeout`
+-----------------------
+
+:kw:`app.stop_timeout`
+----------------------
+
+:kw:`app.check_timeout`
+-----------------------
+
+:kw:`app.info_timeout`
+----------------------
+
 Node
 ****
 
