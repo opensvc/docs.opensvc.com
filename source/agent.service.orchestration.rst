@@ -47,6 +47,11 @@ load avg
 
 The node with the lowest load average gets the highest placement priority.
 
+spread
+++++++
+
+A static random ranking. The more services, the better leveling.
+
 .. _agent.service.orchestration.affinity:
 
 Affinity
