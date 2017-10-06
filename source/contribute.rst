@@ -295,6 +295,8 @@ First generate raw html code from cli:
              |  `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1-cow   </span>  linear  8m    8%             
              |     `- <span style="color: #aa5500">testsvc3-osvc_sync_lv1    </span>  linear  52m   650%           
              `- <span style="color: #aa5500">loop0                           </span>  linear  100m  0%             
+                |- <span style="color: #aa5500">testsvc2-lv1                 </span>  linear  52m   52%
+                `- <span style="color: #aa5500">testsvc2-lv2                 </span>  linear  20m   20%
 
 
 Edit the .rst document and format the html code as described below, so as to be tagged with ``.. raw:: html``, and enclosed between ``<pre class=output>`` and ``</pre>`` :
