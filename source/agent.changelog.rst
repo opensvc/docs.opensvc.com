@@ -2,6 +2,22 @@ Agent Changelog
 ===============
 
 
+| `1.9-631 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e54d885a15a6d74c0ce0d04926e9c74e285618a0>`_ Refactor the rst commands docs generator
+| `1.9-630 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cb5327e1122c0789172b7843edf712c33c31f672>`_ Fix a monitor stack on provision
+| `1.9-629 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e98fe64c3b29a2e9239f4076fbbbe74f52e04e57>`_ Add the fs.create_options keyword
+| `1.9-628 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=83874237f11eab899dcfecedfabc4f3c2f6716fd>`_ Fix a syntax error introduced by the last patch
+| `1.9-627 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2d204aeee407397d9928b15161a515ab6d845463>`_ Fix instance json status being loaded from file too often
+| `1.9-626 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d58a339b8009f37481b5cc10abb3fb385b950d7e>`_ Fix reversed logic in 099c94c1270322916d8457dce1bd607f67e9a72f
+| `1.9-625 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98dacb50ee6f68d0e7f69f6366aeeb0f0770decc>`_ Disable osvcd.py oom killer through systemd unit file
+| `1.9-624 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9d2063ab7c951d91229ced76e5a752a7adb18302>`_ Add dependency on systemd time-sync target
+| `1.9-623 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ba361027805fdce73b98980195dcb87ea1b2355>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-622 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=128e7d7c5e2fba4e20943102d804cd1ab0179501>`_ Enable systemd restart on failure
+| `1.9-621 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=099c94c1270322916d8457dce1bd607f67e9a72f>`_ Don't orchestrate start if the instance is local_expect=="started"
+| `1.9-620 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9a76dcadb4daa72fc370327f0e91ea059c40b7b2>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-619 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ee3d1c9961bfc1493b5644dc1d01e5e1a9a575ee>`_ Discard "start failed" instances from the placement ranking
+| `1.9-618 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1e7822b6837296594803e9a638efff6e88f77b54>`_ Fix make.lib to ensure git commands are executed inside the git repository
+| `1.9-617 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=50783a93fe2e0a636ac6207e35f4e0384d28d4b5>`_ Add app.<action>_timeout keywords
+| `1.9-616 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1c2e7a01e35b7af3c0b4028d679c346bafc273e4>`_ Remove the boot action
 | `1.9-615 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=02be57abc9deed8bfaa766c76aeed6bf8b54d951>`_ Remove the command rst help references on sections
 | `1.9-614 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b62ab05f6bdc7b2d563f7934f01207699ba796f8>`_ Add a rst commands help formatter
 | `1.9-613 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=71b56cb85da6b25df73e82be8a0ce957604c63c9>`_ Update the svcmon manpage description
