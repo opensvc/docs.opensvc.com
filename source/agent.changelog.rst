@@ -2,6 +2,13 @@ Agent Changelog
 ===============
 
 
+| `1.9-638 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f54541b8af6aec83c5509b666313a221f477c5e>`_ Change maxdepth of the rst section docs to 1
+| `1.9-637 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3a772de1d70f4695ad63abc4678356efe024bf68>`_ Fix the spread placement policy algo
+| `1.9-636 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c16024d78cee947c86bc60f8af960edc76ce9848>`_ Add the "spread" placement policy
+| `1.9-635 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d71282fa34019e631be35fc07e29a8805957454a>`_ Fix the method used to determine a service is globally shutdown
+| `1.9-634 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09542ef51736743f91166b485324002614d7ff73>`_ Ensure the monitor method get_last_svc_status_mtime() can not return None
+| `1.9-633 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ad9803c4b11f5d70efe95ef6d0e3e51f20ebb634>`_ Allow --wait and --node with svcmgr shutdown
+| `1.9-632 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d1663855a453c96b6a223f2b39ef811510cbe7b7>`_ Make svcmgr shutdown async
 | `1.9-631 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e54d885a15a6d74c0ce0d04926e9c74e285618a0>`_ Refactor the rst commands docs generator
 | `1.9-630 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cb5327e1122c0789172b7843edf712c33c31f672>`_ Fix a monitor stack on provision
 | `1.9-629 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e98fe64c3b29a2e9239f4076fbbbe74f52e04e57>`_ Add the fs.create_options keyword
