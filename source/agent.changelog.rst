@@ -2,6 +2,8 @@ Agent Changelog
 ===============
 
 
+| `1.9-647 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45c17c974d15d538f783d3ad56ae7fd5ccc3b78d>`_ Some more tweaks to svcmgr options help text
+| `1.9-646 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74f0d808b10784353ce141bcb8150e0a7692a39e>`_ Complete update of svcmgr options help text
 | `1.9-645 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dabb7dbd0bbb22245d6742572eccf5dc49d7e445>`_ Remove redundant actions
 | `1.9-644 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b15bf53cdf28cb387e900487ac90f334a9fd487e>`_ Fix the svcmgr create action unduly freezing the node
 | `1.9-643 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85d83d211bb028786cc0fc18685f6a927892b265>`_ Update some svcmgr options help texts
