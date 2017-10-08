@@ -68,6 +68,14 @@ Removed Commands
 ================
 
 | :cmd:`svcmgr boot`
+| :cmd:`svcmgr compliance attach moduleset`
+| :cmd:`svcmgr compliance detach moduleset`
+| :cmd:`svcmgr compliance attach ruleset`
+| :cmd:`svcmgr compliance detach ruleset`
+| :cmd:`nodemgr compliance attach moduleset`
+| :cmd:`nodemgr compliance detach moduleset`
+| :cmd:`nodemgr compliance attach ruleset`
+| :cmd:`nodemgr compliance detach ruleset`
 |
 
 New References
