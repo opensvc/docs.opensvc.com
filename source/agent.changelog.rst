@@ -1,7 +1,17 @@
-Agent Changelog
-===============
+Changelog
+=========
 
 
+| `1.9-648 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40fe4f94be0ecf883e2a98daf3c4b61a4ea941ff>`_ Update svcmgr actions help text
+| `1.9-647 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45c17c974d15d538f783d3ad56ae7fd5ccc3b78d>`_ Some more tweaks to svcmgr options help text
+| `1.9-646 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74f0d808b10784353ce141bcb8150e0a7692a39e>`_ Complete update of svcmgr options help text
+| `1.9-645 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dabb7dbd0bbb22245d6742572eccf5dc49d7e445>`_ Remove redundant actions
+| `1.9-644 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b15bf53cdf28cb387e900487ac90f334a9fd487e>`_ Fix the svcmgr create action unduly freezing the node
+| `1.9-643 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85d83d211bb028786cc0fc18685f6a927892b265>`_ Update some svcmgr options help texts
+| `1.9-642 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b74292f2f9ae927f44acf69ddc9fbce9f945661a>`_ Support set/unset on all resources of a group
+| `1.9-641 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f80babe88384ab2f386c28c02b9bad490ffdf26>`_ Sort options and action alphabetically in make_man_rst
+| `1.9-640 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2356ba7d7ef4ec6ff99421db178cf9507916c585>`_ Propage the --force option to encap commands
+| `1.9-639 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=650fb80070925be5f0052660bbda5c92a16ce78d>`_ Edit config and daemon monitor instance status reload enhancements
 | `1.9-638 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f54541b8af6aec83c5509b666313a221f477c5e>`_ Change maxdepth of the rst section docs to 1
 | `1.9-637 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3a772de1d70f4695ad63abc4678356efe024bf68>`_ Fix the spread placement policy algo
 | `1.9-636 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c16024d78cee947c86bc60f8af960edc76ce9848>`_ Add the "spread" placement policy
