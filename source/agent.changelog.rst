@@ -2,6 +2,7 @@ Agent Changelog
 ===============
 
 
+| `1.9-648 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40fe4f94be0ecf883e2a98daf3c4b61a4ea941ff>`_ Update svcmgr actions help text
 | `1.9-647 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45c17c974d15d538f783d3ad56ae7fd5ccc3b78d>`_ Some more tweaks to svcmgr options help text
 | `1.9-646 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74f0d808b10784353ce141bcb8150e0a7692a39e>`_ Complete update of svcmgr options help text
 | `1.9-645 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dabb7dbd0bbb22245d6742572eccf5dc49d7e445>`_ Remove redundant actions
