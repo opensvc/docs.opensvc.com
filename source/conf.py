@@ -308,6 +308,7 @@ rst_prolog = """
 .. role:: c-modset
 .. role:: c-mod
 .. role:: c-app
+.. role:: c-clu
 
 .. role:: c-close
 .. role:: c-fullscreen

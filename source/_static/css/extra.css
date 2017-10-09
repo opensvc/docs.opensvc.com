@@ -220,6 +220,7 @@ pre.output {
 .c-docker-repo:before {padding-right:0.4em; color: #27b8e8; content: '\f04d'; font-family: FontAwesome}
 .c-docker-registry:before {padding-right:0.4em; color: #27b8e8; content: '\f009'; font-family: FontAwesome}
 .c-node:before {padding-right:0.4em; color: cornflowerblue; content: '\f233'; font-family: FontAwesome}
+.c-clu:before {padding-right:0.4em; color: cornflowerblue; content: '\f1ce'; font-family: FontAwesome}
 .c-svc:before {padding-right:0.4em; color: seagreen; content: '\f111'; font-family: FontAwesome}
 .c-res:before {padding-right:0.4em; color: seagreen; content: '\f292'; font-family: FontAwesome}
 .c-svc-env:before {padding-right:0.4em; color: seagreen; content: '\f24d'; font-family: FontAwesome}
@@ -251,6 +252,7 @@ pre.output {
 .c-docker-repo {font-weight: bold}
 .c-docker-registry {font-weight: bold}
 .c-node {font-weight: bold}
+.c-clu {font-weight: bold}
 .c-svc {font-weight: bold}
 .c-res {font-weight: bold}
 .c-svc-env {font-weight: bold}
