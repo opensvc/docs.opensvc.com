@@ -15,7 +15,6 @@ New Features
 * Support JSON output in :cmd:`nodemgr pushdisks`, :cmd:`nodemgr checks`, :cmd:`nodemgr pushasset`.
 * :cmd:`nodemgr unset --param <section>`
 * :cmd:`svcmgr enable` and :cmd:`svcmgr disable` no longer reorder the service configuration file.
-* :cmd:`svcmgr start --upto <drvgrp>` and :cmd:`svcmgr stop --downto <drvgrp>`
 * Near-synchronous service configuration file swapping amongst cluster nodes.
 * Cluster-wide service logs, and follow mode
 * Pervasive support for converters in keyword values and command line argument values: period (ex: 1h10s), size (10mib), speed (10mib/s), shlex, integer, boolean, list, set.
@@ -44,6 +43,8 @@ New Commands
 | :cmd:`svcmgr ls`
 | :cmd:`svcmgr giveback`
 | :cmd:`svcmgr takeover`
+| :cmd:`svcmgr start --upto <drvgrp>`
+| :cmd:`svcmgr stop --downto <drvgrp>`
 | :cmd:`svcmgr set --param <param> --add <member>`
 | :cmd:`svcmgr set --param <param> --remove <member>`
 | :cmd:`svcmgr set --kw <expr> [--kw <expr> ...]`
