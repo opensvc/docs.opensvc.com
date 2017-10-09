@@ -16,3 +16,4 @@ Agent
    agent.architecture
    agent.scheduler
    agent.service
+   agent.commands
