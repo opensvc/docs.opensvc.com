@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-651 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c3484ad5c3a314feabb13877a9be72d80123e14>`_ Update the nodemgr commands and options help text
+| `1.9-650 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81d53fa404f878a874c6e0249f53a5bc2f08461f>`_ Fix tab/ws mix in rcAssetLinux
+| `1.9-649 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8a0b48eedb8a8a32246da7ae82c4da115f6a3987>`_ Fix an svcmgr action help text
 | `1.9-648 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40fe4f94be0ecf883e2a98daf3c4b61a4ea941ff>`_ Update svcmgr actions help text
 | `1.9-647 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45c17c974d15d538f783d3ad56ae7fd5ccc3b78d>`_ Some more tweaks to svcmgr options help text
 | `1.9-646 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74f0d808b10784353ce141bcb8150e0a7692a39e>`_ Complete update of svcmgr options help text
