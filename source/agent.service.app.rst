@@ -1,8 +1,5 @@
-App resources
-*************
-
-Introduction
-============
+App
+***
 
 An application launcher is a resource. As such, it supports the standard start, stop and status actions. Application resources are also involved in the ``push appinfo`` action. Application launchers can support the following parameters:
 
@@ -25,8 +22,8 @@ As a resource, an application launcher can be defined with a ``<svcname>.conf`` 
 For simple cases, the agent also supports a SysV-style launcher definitions.
 
 
-Application Resource Definition
-===============================
+Definition
+==========
 
 Section Syntax
 --------------
@@ -88,8 +85,8 @@ All these parameters support scoping, using the ``@<nodename>``, ``@nodes``, ``@
 | limit_*    | string  | Refer to the OS ``man limits.conf``                                                         |
 +------------+---------+---------------------------------------------------------------------------------------------+
 
-App Subsets
------------
+Subsets
+-------
 
 * Actions on subsets are chained in alphanumeric subset name order on start, status and info.
 * Actions on subsets are chained in reverse alphanumeric subset name order on stop.

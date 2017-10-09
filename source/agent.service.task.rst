@@ -1,7 +1,7 @@
 .. _agent-service-tasks:
 
-Task resources
-==============
+Task
+====
 
 Each service embeds its own scheduling table.
 Some scheduled tasks are automatically configured:
@@ -14,8 +14,8 @@ Some scheduled tasks are automatically configured:
 
 Other tasks can be defined by the users.
 
-Tasks Features
-**************
+Features
+********
 
 * tasks don't need to be added to the system's scheduler, thus can be provisioned along with the service
 * tasks follow the service relocations
@@ -34,8 +34,8 @@ Typical Use-Cases
 * embed scheduled tasks in a failover service to not have to swith-over the cronjobs
 * embed complex commands as scheduled or unschedule tasks to ease and secure their use (ex: backups of dockerized databases, run a dockerized mysql client with predefinited args)
 
-Tasks Operations
-****************
+Operations
+**********
 
 Print a Service Tasks and their Scheduling Status
 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -70,8 +70,8 @@ All tasks with the backup tag
 
 	$ sudo svcmgr -s testmd run --rid task --tags backup
 
-Task Configuration
-******************
+Configuration
+*************
 
 ::
 
@@ -81,8 +81,8 @@ Task Configuration
 
 The complete reference is available :doc:`here <agent.templates/template.task>`.
 
-Task Confirmation
-*****************
+Confirmation
+************
 
 Task confirmation is activated by the ``confirmation`` keyword.
 

@@ -1,8 +1,5 @@
-Ip Resources
-============
-
-Introduction
-************
+Ip
+==
 
 A service must expose its middleware to other services and to end users through ip address. It is possible to expose through the service instance's node ip addresses, or through one or more ip addresses handled by the service.
 

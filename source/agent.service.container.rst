@@ -1,7 +1,5 @@
-Container Resources
-===================
-
-Contents:
+Container
+=========
 
 .. toctree::
    :maxdepth: 2

@@ -1,7 +1,7 @@
 .. _agent-service-scoping:
 
-Keywords Scoping
-****************
+Scoping
+*******
 
 Most keywords in a service configuration support a scoping syntax allowing each node agent to interpret the value differently.
 
