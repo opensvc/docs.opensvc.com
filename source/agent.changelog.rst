@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-654 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=413f00da0b6d48492555a78565ae41c0a231e307>`_ Add 'svcmgr start --upto <drvgrp>' and 'svcmgr stop --downto <drvgrp>' action
+| `1.9-653 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1cee6dae46189a30dad03747becbdc18c0f6a829>`_ Fix stack on svcmon when the daemon is down
+| `1.9-652 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7c93b910eeb32f48c0cf056ba11e6f260b2d29ad>`_ Propagate the --time option to daemon_send() in the remote service action helper
 | `1.9-651 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c3484ad5c3a314feabb13877a9be72d80123e14>`_ Update the nodemgr commands and options help text
 | `1.9-650 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81d53fa404f878a874c6e0249f53a5bc2f08461f>`_ Fix tab/ws mix in rcAssetLinux
 | `1.9-649 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8a0b48eedb8a8a32246da7ae82c4da115f6a3987>`_ Fix an svcmgr action help text
