@@ -1,5 +1,5 @@
-Agent Architecture
-******************
+Architecture
+************
 
 The Scheduler Entry-Point
 =========================

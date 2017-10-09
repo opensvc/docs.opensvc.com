@@ -2,8 +2,8 @@
 
 .. _agent.install:
 
-Agent Installation
-******************
+Installation
+************
 
 Get
 ===

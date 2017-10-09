@@ -1,7 +1,7 @@
 .. _agent-service-tasks:
 
-Service Tasks
-=============
+Task resources
+==============
 
 Each service embeds its own scheduling table.
 Some scheduled tasks are automatically configured:

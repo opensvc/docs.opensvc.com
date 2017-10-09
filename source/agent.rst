@@ -15,18 +15,4 @@ Agent
    agent.daemon
    agent.architecture
    agent.scheduler
-   agent.configfiles
-   agent.service.creation
-   agent.service.provisioning
-   agent.service.management
-   agent.service.resources
-   agent.service.scoping
-   agent.service.encapsulation
-   agent.service.orchestration
-   agent.service.ip
-   agent.service.app
-   agent.service.sync
-   agent.service.container
-   agent.service.task
-   agent.commands
-   agent.template.conf
+   agent.service

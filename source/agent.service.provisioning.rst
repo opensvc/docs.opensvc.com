@@ -1,7 +1,7 @@
 .. _agent-service-provisioning:
 
-Service Provisioning
-********************
+Provisioning
+************
 
 Introduction
 ============

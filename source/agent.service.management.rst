@@ -1,5 +1,5 @@
-Service Management
-******************
+Management
+**********
 
 Selecting Services
 ==================

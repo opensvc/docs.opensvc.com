@@ -1,7 +1,7 @@
 .. _agent.service.encapsulation:
 
-Service Encapsulation
-*********************
+Encapsulation
+*************
 
 Introduction
 ============

@@ -1,7 +1,7 @@
 .. _agent.daemon:
 
-Agent Daemon
-============
+Daemon
+======
 
 Roles
 -----

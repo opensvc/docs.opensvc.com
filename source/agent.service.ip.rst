@@ -1,5 +1,5 @@
-Service Ip Resources
-====================
+Ip Resources
+============
 
 Introduction
 ************

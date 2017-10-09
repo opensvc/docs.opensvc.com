@@ -1,7 +1,7 @@
 .. _agent.service.orchestration:
 
-Service Orchestration
-=====================
+Orchestration
+=============
 
 Orchestration
 -------------

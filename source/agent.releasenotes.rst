@@ -1,5 +1,5 @@
-Agent Release Notes
-*******************
+Release Notes
+*************
 
 New Features
 ============

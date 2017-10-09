@@ -1,5 +1,5 @@
-Agent Commands Reference
-========================
+Commands Reference
+==================
 
 .. toctree::
    :maxdepth: 2

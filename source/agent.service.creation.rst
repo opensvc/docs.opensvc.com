@@ -1,7 +1,7 @@
 .. _agent.service.creation:
 
-Service Creation
-****************
+Creation
+********
 
 Choose a Service Name
 =====================

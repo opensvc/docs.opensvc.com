@@ -1,5 +1,5 @@
-Service Container Resources
-===========================
+Container Resources
+===================
 
 Contents:
 

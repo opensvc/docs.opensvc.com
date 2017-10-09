@@ -1,5 +1,5 @@
-Service Application Launchers
-*****************************
+App resources
+*************
 
 Introduction
 ============

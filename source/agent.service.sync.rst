@@ -1,7 +1,7 @@
 .. _agent-service-sync:
 
-Service Sync Resources
-======================
+Sync Resources
+==============
 
 One of the OpenSVC infrastructure objective is to enable disaster recovery activation by non-expert persons at the service granularity. The sync resources are a critical component to meet this objective.
 

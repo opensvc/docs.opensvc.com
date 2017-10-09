@@ -1,8 +1,8 @@
 .. _agent.upgrade:
 .. index:: upgrade, repository, mirror
 
-Agent Upgrade
-*************
+Upgrade
+*******
 
 OpenSVC provides packages for all supported operating systems at https://repo.opensvc.com. Agents can be upgraded using one of the following methods, ordered by scalability:
 

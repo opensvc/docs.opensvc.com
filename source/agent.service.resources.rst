@@ -1,7 +1,7 @@
 .. _agent.service.resources:
 
-Service Resources
-=================
+Resources
+=========
 
 All service resources share common properties and behaviours.
 

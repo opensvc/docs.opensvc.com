@@ -1,7 +1,7 @@
 .. _agent-scheduler:
 
-Agent Scheduler
-***************
+Scheduler
+*********
 
 The OpenSVC agent embeds a scheduler. The node and each service has a private schedule.
 
