@@ -2,6 +2,66 @@ Changelog
 =========
 
 
+| `1.9-714 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a37b65280d9ce2367add155bc020cf7774b5c6e2>`_ Fix a reversed logic status check in sync.symclone
+| `1.9-713 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac07d3e470f83f44a873d8f7ffc0cde2da619ed2>`_ Fix the Resource::status() refresh through self.svc.options.refresh
+| `1.9-712 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=536938df27e78da7846ca5fa32152856535d28de>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-711 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a63805dc70a23ed59655bd35dc94c7aa69a91af0>`_ Normalize the quote/double quote usage in the nodemgr parser
+| `1.9-710 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98ccfeb387bd1c6575709691616e606bbc038aaf>`_ Honor --node <nodename> and support --local in the "svcmgr logs" action
+| `1.9-709 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=91f77cd6494b2d79564fa2aaa398375c896bd3d2>`_ Display parents too in the "print status" output
+| `1.9-708 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e5fa724a2479894a78356fb3f6836b36d4c1843>`_ Fix the "print status" not displaying anything when a peer is not joignable
+| `1.9-707 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bbc1666962caefe7a17d054c67e1bfa0197124db>`_ Aggregate enslaved children avail status with their master's
+| `1.9-706 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bd7e9194ae4bea924a3fff342735e4e66571c1fd>`_ Allow the giveback action on orchestrate=no services
+| `1.9-705 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5775b41cc7ab049eed175d3fde7cb4d76b06c643>`_ Fix and simplify the shared resource prov/unprov
+| `1.9-704 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=55d56af85ad90ea8dbd3a725298a5b1034240ae3>`_ Fix typo in docs
+| `1.9-703 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0de2f7c638e2e29e3004df28a2aa7bbbe6a19611>`_ Move the peer instances up the leafs in the print status output
+| `1.9-702 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d07c379a5b7d6ce7b531fe6827c7d414a4c28a9b>`_ Enhancements to svcmgr print status
+| `1.9-701 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30caad478487e9fcb1c09ecea78d7bf1ee68aa43>`_ Add the DEFAULT.enslave_children keyword
+| `1.9-700 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3c4b3938651033055ec44678b6e3411a7563a957>`_ Shared container.lxd unprovision fix
+| `1.9-699 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98a3277d4c801149847024e3d6088cb55b37d3f5>`_ Cluster-wide provisioning fix
+| `1.9-698 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f0fa84c1431e44ac8584b462b2b9a8af03b3230>`_ Cluster-wide provisioning fix
+| `1.9-697 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=52b8340b7740250d27beb346b771845eb2944e30>`_ Don't merge resource provisioned flag from ourselves
+| `1.9-696 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7bc3f010129e3886ba51be7df5e53d1adf9e0c3a>`_ Honor --disable-rollback in the "provision" codepath
+| `1.9-695 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40d74c185c537dcddb188b0b1825f06581b37e17>`_ Don't run "lxc import" in the provision codepath
+| `1.9-694 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9168bd018c1f82f6c4f2e59bd0fa18a42874ccd1>`_ Don't rollback on provision for placement leaders
+| `1.9-693 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e254ed4a40b72061ee655bf41e4fd2b39e5ad61>`_ sync.zfs fixes
+| `1.9-692 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=46bf1524e254e6be0be95fe211f9cec02e4209a8>`_ Fix "push config" being called on every command
+| `1.9-691 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d41288830d6d0c9246b89691a0d38329d98bd1bf>`_ Avoid looping over remote resource provisioned flag merge
+| `1.9-690 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8dc628518ddae7dab8698664649709cc573c96c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-689 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5160e7929417ab222b8caef3735403186ca8ab61>`_ Add flush and fsync after writes
+| `1.9-688 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=44110802db17c30617d1e3a0007a0a018ab2a497>`_ Aggregate placement computation enhancement
+| `1.9-687 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=feb961ceb54e563447cb670989349ee15f896663>`_ Import the container in container.lxd postsync
+| `1.9-686 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c2a93908e7879fd2cd412def95adb78d6883c033>`_ Fix a stack in the monitor thread
+| `1.9-685 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d02cde7004c6e2fa35b650c45a8499cbd8f8755>`_ Rename the auto_rotate_root_pw scheduler task to rotate_root_pw
+| `1.9-684 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d389946cbfaaa33312b015416c575501be810b4>`_ Fix the sysreport scheduler task
+| `1.9-683 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1713152a53043f233739f1cf57b865e829982e58>`_ Rewire the schedulers
+| `1.9-682 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b3f851dd1ab7ddfcb0d1322f6bd0bd524b032aa8>`_ Remove undue existing remote snap on initial zfs send/recv
+| `1.9-681 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=64d67ec1b3d24a658869820217d7fa68edb9ec50>`_ Copy the attributes with sync.zfs "sync full" action
+| `1.9-680 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=25b2742c48077d1e9338454b35db7aec7ebcb480>`_ Fix to methods flags as static, though they now use "self"
+| `1.9-679 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5fa04751546fa91774d355c66145252f68cb2382>`_ Stop playing tricks with the lxd handled zpool
+| `1.9-678 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eda8947cc5fae72ce76af20326622266a77c2ec8>`_ Add preemptive remove of the remote @tosend snap in the sync.zfs drv
+| `1.9-677 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3ec73667f64d1930b2ff2d664909d447793f0cea>`_ Fix a possible daemon monitor stack
+| `1.9-676 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d3e630840b142b19f4b5367601352cd96ef4ea81>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-675 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=34b5d4b50c2b1b383713b6855f08db62fd0baa25>`_ container.lxd enhancements
+| `1.9-674 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b86e396a1a7520a1740120f97ed869e7611bf068>`_ Don't trust the provisioned flag if --force is set
+| `1.9-673 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fd857336fb941185c94a02036d97fdfa5710d9b3>`_ Allow custom stdin kwarg in call() utility functions
+| `1.9-672 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bc1d56ff3e733c49239e120a71c7cec0c6f2ba9e>`_ Remove the "a stack has been saved to the rpc log" message print
+| `1.9-671 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2dcf1d306e38079cd37913ec6cf620367fc16e87>`_ Add a 'lxd import' on start if the container has never been imported
+| `1.9-670 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dc02d5bd60b791192fb534ecd5f2c64754807696>`_ container.lxc enhancements
+| `1.9-669 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45f516018fdb05eea51578951bcff68d0cc12f44>`_ Fix rcMounts::get_src_dir_dev() on Linux
+| `1.9-668 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a041b67aef202d5019903e22ef63951f604645dc>`_ Support all document bv os types in sync.necismsnap
+| `1.9-667 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=80dc3eece11c5a16fc36c5527315292f061b63c9>`_ Accept SV information entries with no type in the sync.necism driver
+| `1.9-666 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3c6967a90ce89782bc959d1bee7e0c482eafa195>`_ Fix the sync.necismsnap check on the data returned by sc_query_ld
+| `1.9-665 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d35229f8ee3a4a3703f85b08f9dde5849d75f930>`_ Track the new disk.lv resource template
+| `1.9-664 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3af24d2b1c18b660c029ac48fb4f79db9419cd00>`_ Add the lxd provisioner and unprovisioner
+| `1.9-663 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f89642acdea79f1bc6750ec8441ed7a090f8723>`_ Plug the container.lxd driver in the service builder
+| `1.9-662 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e4bdbde21e2e01fa0bfb93e3d3b99ce3885cad78>`_ Add the container.lxd driver module
+| `1.9-661 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7fd6b2703ab4c612e954abac407c884887698e07>`_ Add the container.lxd driver
+| `1.9-660 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d3a00d45fd555536c1ff449bd46d2d2b387e3591>`_ Fix a typo in container parent class
+| `1.9-659 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9289bb00bf53c0ee71c92ce5f7fa8dc7b2cde6b1>`_ Catch a stack in sync.necismsnap when a sv in devs does not exist
+| `1.9-658 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74247500b392d07bda06c266d23f9bed17ea3287>`_ Start the daemon on first package installation
+| `1.9-657 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=86f16e0f265e1aa53001a06a0ee67b03520c17cc>`_ systemd integration fixes
+| `1.9-656 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6b44fa6990cbb0acca5a003480fd7381373ad962>`_ python3 compatibility fix for the 'spread' placement policy
+| `1.9-655 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=86c854c4a6d6c7c32d3b38023cf758de97be6e6f>`_ Fix the provision action resource ordering
 | `1.9-654 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=413f00da0b6d48492555a78565ae41c0a231e307>`_ Add 'svcmgr start --upto <drvgrp>' and 'svcmgr stop --downto <drvgrp>' action
 | `1.9-653 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1cee6dae46189a30dad03747becbdc18c0f6a829>`_ Fix stack on svcmon when the daemon is down
 | `1.9-652 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7c93b910eeb32f48c0cf056ba11e6f260b2d29ad>`_ Propagate the --time option to daemon_send() in the remote service action helper
