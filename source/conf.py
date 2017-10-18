@@ -315,6 +315,7 @@ rst_prolog = """
 .. role:: c-shrink
 .. role:: c-link
 
+.. role:: state
 .. role:: kw
 .. role:: cmd
 .. role:: opt

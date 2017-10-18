@@ -23,10 +23,10 @@ Command set
 Status
 ======
 
-:cmd:`up`
+:state:`up`
     The last resync occured less than 'sync_max_delay' minutes ago.
 
-:cmd:`warn`
+:state:`warn`
 
     *   The last resync occured more than 'sync_max_delay' minutes ago.
     *   A snapshot does not exist.

@@ -23,10 +23,10 @@ Command set
 Status
 ======
 
-:cmd:`up`
+:state:`up`
 	* The last resync occured less than 'sync_max_delay' minutes ago.
 
-:cmd:`warn`
+:state:`warn`
 	* The last replication occured more than ‘sync_max_delay’ minutes ago.
 	* Device are in a unexpected state or not present in the flash copy persistent pair list.
 
@@ -119,7 +119,7 @@ Resync a started service snapshots
 ::
 
 	# svcmgr -s iiststibmds stop && \
-          svcmgr -s iiststibmds syncresync && \
+          svcmgr -s iiststibmds sync resync && \
           svcmgr -s iiststibmds start
 
 Resync a stopped service snapshots

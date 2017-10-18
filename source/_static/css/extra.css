@@ -6,6 +6,15 @@ p {
 	font-family: monospace;
 	border-bottom: 1px dotted lightgray;
 }
+.state:before {
+	padding-right: 0.4em;
+	content: '\f011';
+	font-family: FontAwesome;
+}
+.state {
+	font-family: monospace;
+	border-bottom: 1px dotted lightgray;
+}
 .kw:before {
 	padding-right: 0.4em;
 	color: teal;

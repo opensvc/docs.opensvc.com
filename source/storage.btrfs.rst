@@ -17,10 +17,10 @@ Command set
 Status
 ======
 
-:cmd:`up`
+:state:`up`
     Last synchronization occured less than sync_max_delay minutes ago.
 
-:cmd:`warn`
+:state:`warn`
     Last synchronization occured more than sync_max_delay minutes ago.
 
 Internals

@@ -45,11 +45,11 @@ The drbd driver is a member of the 'disk group' class.
 Tags
 ====
 
-:cmd:`prevg`
+:c-tag:`prevg`
 
     Upon service 'start', drbd 'start' is scheduled before volume group 'start'. To use when the volume group is layered over the drbd.
 
-:cmd:`postvg`
+:c-tag:`postvg`
 
     Upon service 'start', drbd 'start' is scheduled after volume group 'start'. To use when the the drbd is layered over the volume group.
 

@@ -26,13 +26,13 @@ Command set
 Status
 ======
 
-:cmd:`up`
+:state:`up`
     The last replication occured less than 'sync_max_delay' minutes ago.
 
-:cmd:`warn`
+:state:`warn`
     The last replication occured more than 'sync_max_delay' minutes ago.
 
-:cmd:`down`
+:state:`down`
     Device are in a unexpected state or not present in the resource symmetrix disk group.
 
 Service configuration

@@ -14,19 +14,19 @@ A service with only necismsnap sync resources can be defined to drive the snapsh
 Command set
 ===========
 
-:cmd:`syncresync`
+:cmd:`sync resync`
     Unlink Link Volumes, resync Snapshot Volumes and relink Link Volumes.
 
-:cmd:`syncresync --force`
+:cmd:`sync resync --force`
     Bypass the sync_min_delay protection.
 
 Status
 ======
 
-:cmd:`up`
+:state:`up`
     The last resync occured less than 'sync_max_delay' minutes ago.
 
-:cmd:`warn`
+:state:`warn`
     *  The last resync occured more than 'sync_max_delay' minutes ago.
     *  Snapshot Volumes or Link Volumes are in a unexpected state or not present in NEC array.
 
