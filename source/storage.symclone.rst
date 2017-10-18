@@ -932,7 +932,7 @@ Resync service clones
 
 ::
 
-	# svcmgr -s aastmphpux syncresync                                                                                           
+	# svcmgr -s aastmphpux sync resync                                                                                           
 	* IISTMPHPUX.SYNC#2 - INFO - /usr/symcli/bin/symclone -g DGCVI -noprompt recreate -precopy -i 20 -c 30 DEV001 sym ld CLONE001
 	* IISTMPHPUX.SYNC#2 - WARNING - command succesful but stderr
 

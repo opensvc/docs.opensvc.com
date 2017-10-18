@@ -7,7 +7,7 @@ Introduction
 .. figure:: _static/necsnap.png
    :align:  center
 
-The NEC arrays snapshots driver allow multi-target block device replication and support the 'syncresync' action which automates the Snapshot Volume and relink Link Volume. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
+The NEC arrays snapshots driver allow multi-target block device replication and support the :cmd:`sync resync` action which automates the Snapshot Volume and relink Link Volume. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
 
 A service with only necismsnap sync resources can be defined to drive the snapshots of other servers, just for the benefit of centralized logging and scheduling.
 
@@ -72,14 +72,14 @@ Resync a started service snapshots
 
 ::
 
-	# svcmgr -s iiststnec02 stop && svcmgr -s iiststnec02 syncresync && svcmgr -s iiststnec02 start
+	# svcmgr -s iiststnec02 stop && svcmgr -s iiststnec02 sync resync && svcmgr -s iiststnec02 start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# svcmgr -s iiststnec02 syncresync
+	# svcmgr -s iiststnec02 sync resync
 
 	2014-09-18 05:14:25,547 - iiststnec02.SYNC#1 - INFO - iSMsc_unlink -lv SOURCE_0001_LV00A6 -lvflg ld
 	2014-09-18 05:14:26,020 - iiststnec02.SYNC#1 - INFO - iSMsc_unlink:Info: iSM20030: iSMsc_unlink has normally terminated.

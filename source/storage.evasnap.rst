@@ -7,17 +7,17 @@ Introduction
 .. figure:: _static/evasnap.png
    :align:  center
 
-The EVA arrays snapshots driver allow multi-target block device replication and support the 'syncresync' action which automates the snapshot recreation and presentation to hosts. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
+The EVA arrays snapshots driver allow multi-target block device replication and support the :cmd:`sync resync` action which automates the snapshot recreation and presentation to hosts. An opensvc service can thus easily use a snapshoted set of devices. This kind of services are often used for maintenance, pre-production, performance testing environments, where the source device set is used for production. The following documentation presents the configuration of such a service.
 
 A service with only evasnap sync resources can be defined to drive the snapshots of other servers, just for the benefit of centralized logging and scheduling.
 
 Command set
 ===========
 
-:cmd:`syncresync`
+:cmd:`sync resync`
     Delete Logical Units and snapshots, then create new snapshots and present them.
 
-:cmd:`syncresync --force`
+:cmd:`sync resync --force`
     Bypass the sync_min_delay protection.
 
 Status
@@ -106,14 +106,14 @@ Resync a started service snapshots
 
 ::
 
-	# svcmgr -s iiststeva02 stop && svcmgr -s iiststeva02 syncresync && svcmgr -s iiststeva02 start
+	# svcmgr -s iiststeva02 stop && svcmgr -s iiststeva02 sync resync && svcmgr -s iiststeva02 start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# svcmgr -s iiststeva02 syncresync
+	# svcmgr -s iiststeva02 sync resync
 	IISTSTEVA02.SYNC#1 - INFO - sssu "select manager manager.opensvc.com username=hpadmin password=xxxxx" "select system EVA11" "delete lun \"\Hosts\n1\101\"" "delete lun \"\Hosts\n2\106\"" "delete vdisk \"\Virtual Disks\n1\n1-01\n1-01_iiststeva02\" wait_for_completion" "delete lun \"\Hosts\n1\102\"" "delete vdisk \"\Virtual Disks\n1\n1-02\n1-02_iiststeva02\" wait_for_completion"
 	IISTSTEVA02.SYNC#1 - INFO - 
 
