@@ -10,22 +10,22 @@ Command set
 :cmd:`stop`
     noop
 
-:cmd:`syncupdate`
+:cmd:`sync update`
     Trigger a snapmirror sync.
 
-:cmd:`syncquiesce`
+:cmd:`sync quiesce`
     Trigger an ultimate snapmirror sync then suspend the resync scheduling.
 
-:cmd:`syncresume`
+:cmd:`sync resume`
     Resume snapmirror sync schedule (rollbacks the effect of quiesce).
 
-:cmd:`syncbreak`
+:cmd:`sync break`
     Break-off the snapmirror resource.
 
-:cmd:`syncresync`
+:cmd:`sync resync`
     Re-establish the snapmirror synchronization.
 
-:cmd:`syncswap`
+:cmd:`sync swap`
     Re-establish the snapmirror synchronization using current destination as new source.
 
 Force flag
@@ -36,18 +36,18 @@ The --force flag is honored by the 'start' command only. It disables the exit on
 Status
 ======
 
-:cmd:`up`
-    The snapmirror are operational and the lag in under sync_max_delay
+:state:`up`
+    The snapmirror are operational and the lag in under :kw:`sync_max_delay`
 
-:cmd:`warn`
+:state:`warn`
     The snapmirror are in one of the following state:
     *   transfer is in progress
-    *   lag is beyond sync_max_delay
+    *   lag is beyond :kw:`sync_max_delay`
 
-:cmd:`undef`
+:state:`undef`
     slave filer is unreachable
 
-:cmd:`down`
+:state:`down`
     resource is not in snapmirrored state
 
 Service configuration for Netapp
@@ -59,10 +59,10 @@ Pre-requisites
 Key-based ssh access to the filers. The root account's key-pair is used by OpenSVC. The filer account used is settable in the service configuration file. The filer account must have snapmirror handling capabilities granted.
 Cluster mode
 
-:cmd:`split`
+:state:`split`
     This is the default disaster recovery mode. Upon service startup on a DRP node, the snapmirrored resources are quiesced if the master filer is still joinable, then broken-off. The DRP node data cursor on the broken-off resources is considered volatile (still can be manually synchronized to the primary filer before failback to production node).
 
-:cmd:`swap`
+:state:`swap`
     This mode is dedicated to multi-site clusters. Upon service startup on a secondary node, the snapmirrored are quiesced and sync directions are swapped to set the 'source' to the filer local to the secondary node taking over the service.
 
 The mode is deduced from the node's host mode : a PRD host mode implies the swap sync mode, otherwise the split sync mode is selected.
@@ -243,7 +243,7 @@ Quiesce a replication
 
 ::
 
-	# svcmgr -s unxprdencap syncquiesce
+	# svcmgr -s unxprdencap sync quiesce
 	2010-02-09 16:51:22,419 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 
 Resume a replication
@@ -251,7 +251,7 @@ Resume a replication
 
 ::
 
-	# svcmgr -s unxprdencap syncresume
+	# svcmgr -s unxprdencap sync resume
 	2010-02-09 16:49:29,059 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resume nasdrp:vol1
 
 Split a replication
@@ -259,7 +259,7 @@ Split a replication
 
 ::
 
-	# svcmgr -s unxprdencap syncbreak
+	# svcmgr -s unxprdencap sync break
 	2010-02-09 16:41:15,359 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1
 
 Resync a replication
@@ -267,7 +267,7 @@ Resync a replication
 
 ::
 
-	# svcmgr -s unxprdencap syncresync
+	# svcmgr -s unxprdencap sync resync
 	2010-02-09 16:54:59,290 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resync -f nasdrp:vol1
 
 Diskstart in disaster recovery (split) mode
@@ -275,7 +275,7 @@ Diskstart in disaster recovery (split) mode
 
 ::
 
-	# svcmgr -s unxprdencap startdisk
+	# svcmgr -s unxprdencap start --rid disk
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 	* SYNC.NETAPP - INFO - start waiting quiesce to finish (max 300 seconds)
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1

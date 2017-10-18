@@ -310,7 +310,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
 
 We trigger an initial full data synchronization::
 
-        root@deb1:/# busybox.opensvc.com syncfullsync
+        root@deb1:/# busybox.opensvc.com sync full
         18:11:10 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap1 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:11:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -362,7 +362,7 @@ We trigger an initial full data synchronization::
 
 We trigger OpenSVC service configuration sync to drpnodes, which also initiate an incremental update of data synchronization::
 
-        root@deb1:/# busybox.opensvc.com syncdrp --force
+        root@deb1:/# busybox.opensvc.com sync drp --force
         18:13:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:13:25 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -437,7 +437,7 @@ We trigger OpenSVC service configuration sync to drpnodes, which also initiate a
         |  '- sync#i1        .... up       rsync system files to drpnodes
         '- hb                     n/a
 
-.. note::  The service is now up, and replicated. ``--force`` flag was used because we are outside of the authorized sync period. By default, OpenSVC will trigger an syncdrp action once a day, during the night.
+.. note::  The service is now up, and replicated. ``--force`` flag was used because we are outside of the authorized sync period. By default, OpenSVC will trigger an :cmd:`sync drp` action once a day, during the night.
 
 Testing DRP
 ^^^^^^^^^^^
@@ -445,7 +445,7 @@ Testing DRP
 Before testing DRP, you have to be aware of your data consistency between Production and DRP side:
 
 * Real disaster (0 < RPO < 24H) : you do not have other choice than starting on data located on the DRP side, which can be 24 hours (maximum, it may also be 1 minute if you are "lucky" ) in the past with default OpenSVC settings and DDS replication driver.
-* Test disaster (RPO = 0): you will trigger a syncupdate, to be sure that same datas are located on both sides.
+* Test disaster (RPO = 0): you will trigger a :cmd:`sync update`, to be sure that same datas are located on both sides.
 
 ::
 
@@ -469,7 +469,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
 
 Trigerring incremental data replication::
         
-        root@deb1:/# busybox.opensvc.com syncupdate --force
+        root@deb1:/# busybox.opensvc.com sync update --force
         19:08:41 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         19:08:48 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB

@@ -11,20 +11,20 @@ Source and targets maintain a zfs snapshot @sent to identify the last incrementa
 Command set
 ===========
 
-:cmd:`syncnodes`
+:cmd:`sync nodes`
     Initial synchronization or incremental synchronisation. First one will be a Initial synchronisation, next will be incremental
 
-:cmd:`syncupdate`
+:cmd:`sync update`
     Same
 
 Status
 ======
 
-:cmd:`up`
-    Last synchronization occured less than sync_max_delay minutes ago.
+:state:`up`
+    Last synchronization occured less than :kw:`sync_max_delay` minutes ago.
 
-:cmd:`warn`
-    Last synchronization occured more than sync_max_delay minutes ago.
+:state:`warn`
+    Last synchronization occured more than :kw:`sync_max_delay` minutes ago.
 
 Service configuration
 =====================
@@ -63,7 +63,7 @@ Full synchronization
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com syncupdate
+	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com sync full
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R osol1_z3_root@tosend | /usr/bin/ssh osol2.opensvc.com \
 					   /usr/sbin/zfs receive -dF osol2_z3_root
@@ -78,7 +78,7 @@ Incremental synchronization
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com syncupdate
+	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com sync update
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3_root/data@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R -i osol1_z3_root/data@sent osol1_z3_root/data@tosend | \
 					   /usr/bin/ssh osol2.opensvc.com /usr/sbin/zfs receive -dF osol2_z3_root

@@ -289,7 +289,7 @@ As replication is asynchronous, we will ensure that same data image is present o
 
 ::
 
-	root@node1:~ # svc1.opensvc.com syncupdate
+	root@node1:~ # svc1.opensvc.com sync update
 	13:30:26 INFO    SVC1.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
 	13:30:27 INFO    SVC1.OPENSVC.COM.SYNC#1  skip sync: not in allowed period (['03:59', '05:59'])
 
@@ -297,7 +297,7 @@ As replication is asynchronous, we will ensure that same data image is present o
 	
 ::
 
-	root@node1:~ # svc1.opensvc.com syncupdate --force
+	root@node1:~ # svc1.opensvc.com sync update --force
 	13:30:35 INFO    SVC1.OPENSVC.COM.SYNC#I0 won't sync this resource for a service not up
 	13:30:35 INFO    SVC1.OPENSVC.COM.SYNC#1  syncrcopy -w MYRCG
 	13:30:37 INFO    SVC1.OPENSVC.COM.SYNC#1  Completed synchronization for group MYRCG
@@ -344,10 +344,10 @@ As replication is asynchronous, we will ensure that same data image is present o
 
 ::
 
-	root@node2:~ # svc1.opensvc.com syncresume
+	root@node2:~ # svc1.opensvc.com sync resume
 	13:33:43 INFO    SVC1.OPENSVC.COM.SYNC#1  startrcopygroup MYRCG.r12345
 
-.. note:: Although service is now running fine on node2@site2, the data replication is not restarted (the HP 3Par RCG is still stopped). That's why need to restart the RCG. The OpenSVC ``syncresume`` option is made for that, and will trigger a ``startrcopygroup`` in the HP 3Par array.
+.. note:: Although service is now running fine on node2@site2, the data replication is not restarted (the HP 3Par RCG is still stopped). That's why need to restart the RCG. The OpenSVC :cmd:`sync resume` action is made for that, and will trigger a ``startrcopygroup`` in the HP 3Par array.
 
 
 Let's check the service state after relocation at site2:
@@ -463,35 +463,35 @@ Command set
 :cmd:`start`
     Checks if local array is primary or secondary.
     * If primary, just activate the replication state monitoring.
-    * If secondary, break and reverse the data-replication. Equivalent to ``stoprcopygroup -f RCG.local`` and ``setrcopygroup reverse -f -waittask RCG.remote``. The devices are promoted to read-write access. Replication is not restarted, you need to use the `syncresume` for that purpose (We want to be able to test data at the secondary site without impacting data on the primary site)
+    * If secondary, break and reverse the data-replication. Equivalent to ``stoprcopygroup -f RCG.local`` and ``setrcopygroup reverse -f -waittask RCG.remote``. The devices are promoted to read-write access. Replication is not restarted, you need to use the :cmd:`sync resume` for that purpose (We want to be able to test data at the secondary site without impacting data on the primary site)
 
-:cmd:`syncupdate`
+:cmd:`sync update`
     While in asynchronous replication mode, trigger an immediate incremental data replication to the remote array. Equivalent to ``syncrcopy -w RCG`` in the array. As an example, it can be useful to ensure data consistency on the remote array, before trigerring snapshots. Useless in synchronous mode.
 
-:cmd:`syncbreak`
+:cmd:`sync break`
     This command stop the RCG. Equivalent to ``stoprcopygroup -f RCG.local``.
 
-:cmd:`syncresume`
+:cmd:`sync resume`
     This command start the RCG. Equivalent to ``startrcopygroup RCG.local``.
 
-:cmd:`syncswap`
+:cmd:`sync swap`
     This command is only allowed on the secondary array. It stops, then reverse, then start the RCG. You are strongly advised to use this command only when application is stopped.
 
 Status
 ======
 
-:cmd:`up`
-    The last replication occured less than 'sync_max_delay' minutes ago. The replication is in the expected mode (async or sync).
+:state:`up`
+    The last replication occured less than :kw:`sync_max_delay` minutes ago. The replication is in the expected mode (async or sync).
 
-:cmd:`warn`
-    The last replication occured more than 'sync_max_delay' minutes ago.
+:state:`warn`
+    The last replication occured more than :kw:`sync_max_delay` minutes ago.
     The RCG is not in "Started" state
     The RCG is "async" and not defined as "Periodic"
     The RCG is "async", defined as "Periodic", without any "Period" set in the array
     The RCG option "auto_recover" is not set
     One or more volume is not in the "Synced" state
 
-:cmd:`down`
+:state:`down`
     RCG is in an unexpected state or not present in the array.
 
 

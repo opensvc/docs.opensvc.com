@@ -23,20 +23,20 @@ After succesful delta application on targets, snap1 is removed and snap2 is rena
 Command set
 ===========
 
-:cmd:`syncfullsync`
+:cmd:`sync full`
     Initial synchronization. dd-based. Make the whole dataset transit on the wire. Also needed when source and target get out-of-sync. This operation, though a storage bandwidth drain, works on a snapshot, so the service need not be down.
 
-:cmd:`syncupdate`
+:cmd:`sync update`
     Incremental synchronization. dds-based. Extract the binary delta as a file, send to file to the target systems and replay the changes there.
 
 Status
 ======
 
-:cmd:`up`
-    Last synchronization occured less than sync_max_delay minutes ago.
+:state:`up`
+    Last synchronization occured less than :kw:`sync_max_delay` minutes ago.
 
-:cmd:`warn`
-    Last synchronization occured more than sync_max_delay minutes ago.
+:state:`warn`
+    Last synchronization occured more than :kw:`sync_max_delay` minutes ago.
 
 Service configuration
 =====================
@@ -44,7 +44,7 @@ Service configuration
 Cluster mode
 ------------
 
-:cmd:`split`
+:state:`split`
     This is the default disaster recovery mode. Upon service startup on a DRP node, the dds replication is blocked from the DRP node. The return to production mode usually involves a full resynchronization.
 
 Service configuration file
@@ -115,7 +115,7 @@ Full synchronization
 
 ::
 
-	# svcmgr -s unxtstsvc01 syncfullsync
+	# svcmgr -s unxtstsvc01 sync full
 	* UNXTSTSVC01.SYNC#3 - INFO - lvcreate -s -n data_osvc_snap1 -L 4M /dev/unxtstsvc02/data
 	* UNXTSTSVC01.SYNC#3 - INFO - update state file with snap uuid HcJj5t-lPHf-2Jw6-6iLt-MUdf-UKby-LkVYJm
 	* UNXTSTSVC01.SYNC#3 - INFO - dd if=/dev/unxtstsvc02/data_osvc_snap1 bs=1M | /usr/bin/ssh vm5 dd bs=1M of=/tmp/dds.img
@@ -132,7 +132,7 @@ Incremental synchronization
 
 ::
 
-	# etc/unxtstsvc01 syncupdate
+	# etc/unxtstsvc01 sync update
 	* UNXTSTSVC01.SYNC#3 - INFO - lvcreate -s -n data_osvc_snap2 -L 4M /dev/unxtstsvc02/data
 	* UNXTSTSVC01.SYNC#3 - INFO - dds --extract --cow /dev/mapper/unxtstsvc02-data_osvc_snap1-cow
 					    --source /dev/unxtstsvc02/data_osvc_snap2 -v --dest /var/lib/opensvc/unxtstsvc02-data.delta
