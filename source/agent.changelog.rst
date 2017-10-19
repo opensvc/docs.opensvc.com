@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-718 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e83b6b4f4fbdfc40e5e47ab6b04a2a898604e2fb>`_ Use daemon listeners for --cluster instead of ssh
+| `1.9-717 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b6af7eaa0afbd63bab8cdfeadec4f0d12dac4b2a>`_ Fix service print actions
+| `1.9-716 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=33ec7e26fb7c9b2cb8ab9872d707ddff45059f4e>`_ Avoid unwanted takeover on long-dead node rejoin
 | `1.9-715 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1579afeb771af340537160eacbc9ba5eb44cd0a>`_ Fix the deprecated action translation algo
 | `1.9-714 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a37b65280d9ce2367add155bc020cf7774b5c6e2>`_ Fix a reversed logic status check in sync.symclone
 | `1.9-713 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac07d3e470f83f44a873d8f7ffc0cde2da619ed2>`_ Fix the Resource::status() refresh through self.svc.options.refresh
