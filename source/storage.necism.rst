@@ -36,28 +36,17 @@ Service configuration
 Pre-requisites
 --------------
 
-The iSMccs commands (iSMccs.rpm) must be installed in the standard location on the node. The service iSMHostRegisterService must be started and iSMvollist reset (# iSMvollist -r)
-
-Service configuration file
---------------------------
-
-::
-
-	#
-	# NEC iSM snap
-	#
-	;[sync#1]
-	;type = necismsnap
-	;sync_max_delay = 10512000
-
-	#
-	# 'devs'
-	#   mandatory. whitespace-separated list of devices to drive with this resource.
-	#   devices are specified as 'array Snapshot Volume identifier:array Link Volume identifier' 
-	#
-	;devs = SOURCE_0001_SV006D:SOURCE_0001_LV00A6 SOURCE_0002_SV0055:SOURCE_0002_LV009E
+The iSMccs commands (iSMccs.rpm) must be installed in the standard location on the node. The service iSMHostRegisterService must be started and iSMvollist reset (# iSMvollist -r).
 
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
+
+Keywords
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.sync.necismsnap
 
 NEC iSM snapshots configuration
 ===============================

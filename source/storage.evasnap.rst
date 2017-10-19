@@ -54,44 +54,15 @@ Example sssu.conf:
 	username = hpadmin
 	password = xxxxxxxx
 
-Service configuration file
---------------------------
-
-::
-
-	;[sync#1]
-	type = evasnap
-	sync_interval = 241
-	sync_max_delay = 481
-
-	#
-	# 'eva_name'
-	#   mandatory. The name of the EVA storage array, as seen by the manager.
-	#   Also used as a section name in etc/sssu.conf
-	#
-	eva_name = EVA11
-
-	#
-	# 'pairs'
-	#   mandatory. A JSON-serialized list descibing the origin-snap relationships.
-	#   Also used as a section name in etc/sssu.conf
-	#
-	pairs = [
-		 {
-		  "src": "6001438005ffffff0000800003ee0000",
-		  "dst": "6001438005ffffff00008000040f0000",
-		  "vraid": "vraid5",
-		  "mask": ["\\Hosts\\n1\\101",
-			   "\\Hosts\\n2\\106"]
-		 },
-		 {
-		  "src": "6001438005ffffff0000800003f80000",
-		  "dst": "6001438005ffffff0000800004130000",
-		  "mask": ["\\Hosts\\n1\\102"]
-		 }
-		]
-
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
+
+Keywords
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.sync.evasnap
 
 EVA snapshots configuration
 ===========================

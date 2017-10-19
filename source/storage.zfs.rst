@@ -29,17 +29,13 @@ Status
 Service configuration
 =====================
 
-Service configuration file
---------------------------
+Keywords
+--------
 
-::
+.. toctree::
+   :maxdepth: 2
 
-	[sync#1]
-	type = zfs
-	src = localpool/data
-	;dst is optional since it default value is src value (here dst = localpool/data)
-	;dst = anotherpool/data
-	target = nodes
+   agent.templates/template.sync.zfs
 
 Examples
 ========

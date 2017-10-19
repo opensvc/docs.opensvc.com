@@ -94,46 +94,13 @@ If you are in a hurry, the config section to append to the ``service.env`` file 
 	sync_max_delay = 5
 
 
-Below is explained each configuration option:
+Keywords
+++++++++
 
-::
+.. toctree::
+   :maxdepth: 2
 
-	#
-	# HP 3Par Remote Copy
-	#
-	;[sync#0]
-	;type = hp3par
-
-	#
-	# 'mode'
-	#   mandatory. type of replication used. either sync or async
-	#
-	;mode = async
-
-	#
-	# 'array@node'
-	#   mandatory. defines the array names. those parameters are used 
-	#   by each node to know which array is considered as local.
-	#   array names hp3par1, hp3par2 must be :
-	#     1/ referenced in auth.conf
-	#     2/ appear with those same names in the Target col of showrcopy groups MYRCG*
-	#
-	;array@node1 = hp3par1
-	;array@node2 = hp3par2
-
-	#
-	# 'rcg@node'
-	#   mandatory. defines RCG names on each array.
-	#
-	;rcg@hp3par1 = MYRCG
-	;rcg@hp3par2 = MYRCG.r12345
-
-	#
-	# 'sync_max_delay'
-	#   mandatory. specify the expected replication period. 
-	#   usually 5 minutes with HP 3Par.
-
-
+   agent.templates/template.sync.hp3par
 
 OpenSVC Operations
 ==================

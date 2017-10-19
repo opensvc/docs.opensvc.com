@@ -47,65 +47,13 @@ Cluster mode
 :state:`split`
     This is the default disaster recovery mode. Upon service startup on a DRP node, the dds replication is blocked from the DRP node. The return to production mode usually involves a full resynchronization.
 
-Service configuration file
---------------------------
+Keywords
+--------
 
-::
+.. toctree::
+   :maxdepth: 2
 
-	[sync#3]
-	#
-	# Binary deltas based replication for Linux LVM.
-	#
-	;type = dds
-
-	#
-	# 'src'
-	#   source logical volume. Mandatory. Points the origin of the snapshots to
-	#   replicate from.
-	#
-	;src = /dev/mapper/unxtstsvc02-data
-
-	#
-	# 'dst'
-	#   target file or block device. Optional. Defaults to src. Points the media
-	#   to replay the binary-delta received from source node to. This media must have
-	#   a size superior or equal to source.
-	#
-	;dst = /tmp/dds.img
-
-	#
-	# 'target'
-	#   Mandatory. Accepted values are 'drpnodes', 'nodes' or both, whitespace-separated.
-	#   Points the target nodes to replay the binary-deltas on. Be warned that starting
-	#   the service on a target node without a 'stop-syncupdate-start cycle, will break
-	#   the synchronization, so this mode is usually restricted to drpnodes sync, and
-	#   should not be used to replicate data between nodes with automated services failover.
-	#
-	;target = drpnodes
-
-	#
-	# 'snap_size'
-	#   Optional. Default to 10% of origin. In MB, rounded to physical extent boundaries
-	#   by lvm tools.
-	#   Size of the snapshots created by OpenSVC to extract binary deltas from. Opensvc
-	#   creates at most 2 snapshots : one short-lived to gather changed data from, and one
-	#   long-lived to gather changed chunks list from. Volume groups should have the
-	#   necessary space always available.
-	#
-	;snap_size = 4
-
-	#
-	# 'delta_store'
-	#   Optional. Defaults to /var/lib/opensvc
-	#   Points the directory where deltas are generated and pushed to. There should be
-	#   enough space there to host one delta on the source and the targets. It is a
-	#   good practice to use a service-dedicated logical volume as a delta store to
-	#   avoid breaking other services replications when a store gets full.
-	#
-	;delta_store = /var/tmp
-
-	;sync_min_delay = 1450
-	;sync_max_delay = 1
+   agent.templates/template.sync.dds
 
 Examples
 ========

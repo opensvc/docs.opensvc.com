@@ -53,48 +53,13 @@ Tags
 
     Upon service 'start', drbd 'start' is scheduled after volume group 'start'. To use when the the drbd is layered over the volume group.
 
-Syntax
-======
+Keywords
+--------
 
-::
+.. toctree::
+   :maxdepth: 2
 
-        ##############################################################################
-        #
-        # 'drbd' resource
-        #   Linux only. Set up the attachment, connection and role of a defined drbd
-        #   resource. Depending on weather this resource is stacked over or under
-        #   other disk group resources we need to start it respectively late or early.
-        #   This is controlled by a set of tags: 'prevg', 'postvg'.
-        #
-        [drbd#0]
-        
-        #
-        # 'res'
-        #   mandatory. String. The name of the drbd resource associated with this
-        #   service resource. OpenSVC expect the resource configuration file to
-        #   reside in '/etc/drbd.d/resname.res'. The 'sync#i0' resource will take
-        #   care of replicating this file to remote nodes.
-        #
-        res = data
-        
-        #
-        # 'always_on'
-        #   state the expected status on nodes specified as value is 'up'. With drbd
-        #   the 'up' status is granted when the drbd driver reports UpToDate/UpToDate,
-        #   so always_on should point to all nodes participating in the drbd resource.
-        #
-        always_on = drpnodes nodes
-        
-        #
-        # 'tags'
-        #    prevg:  upon service 'start', drbd 'start' is scheduled before volume
-        #            group 'start'. To use when the volume group is layered over the
-        #            drbd.
-        #    postvg: upon service 'start', drbd 'start' is scheduled after volume
-        #            group 'start'. To use when the the drbd is layered over the
-        #            volume group.
-        #
-        tags = prevg
+   agent.templates/template.disk.drbd
 
 Examples
 ========

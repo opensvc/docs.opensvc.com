@@ -55,17 +55,13 @@ There are some shortcomings in the current btrfs send/receive implementation tha
 Service configuration
 =====================
 
-Service configuration file
---------------------------
+Keywords
+--------
 
-::
+.. toctree::
+   :maxdepth: 2
 
-	[sync#1]
-	type = btrfs
-	src = some_label:some/subvol
-	;dst is optional since it default value is src value (here dst = some_label:some/subvol)
-	;dst = some_other_label/some_other_subvol
-	target = nodes
+   agent.templates/template.sync.btrfs
 
 Examples
 ========

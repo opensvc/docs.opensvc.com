@@ -67,50 +67,13 @@ Cluster mode
 
 The mode is deduced from the node's host mode : a PRD host mode implies the swap sync mode, otherwise the split sync mode is selected.
 
-Service configuration file
---------------------------
+Keywords
+--------
 
-::
+.. toctree::
+   :maxdepth: 2
 
-	;type = netapp
-	#
-	# 'filer'
-	#   mandatory. 'filer' points the nas head to pass commands to. In most case
-	#   you need to specify localized filers using the 'filer@node' syntax.
-	#
-	;filer@vm4 = nasprd
-	;filer@vm5 = nasdrp
-
-	#
-	# 'path'
-	#   mandatory. Specifies the volume or qtree to drive snapmirror on.
-	#
-	;path = /vol/vol1
-
-	#
-	# 'user'
-	#   mandatory. Specifies the user used to ssh connect the filers. Nodes should
-	#   be trusted by keys to access the filer with this user.
-	#
-	;user = nasadm
-
-	#
-	# 'sync_min_delay'
-	#   optional. Set the minimum delay between syncs in minutes. If a sync is
-	#   triggered through crond or manually, it is skipped if last sync occured
-	#   less than 'sync_min_delay' ago. 
-	#
-	;sync_min_delay = 30
-
-	#
-	# 'sync_max_delay'
-	#   optional. Default value is 1440 minutes (1 day). Unit is minutes.
-	#   This sets to delay above which the sync status of the resource is to be
-	#   considered down. Should be set according to your application service
-	#   level agreement. The cron job frequency should be set between
-	#   'sync_min_delay' and 'sync_max_delay'.
-	#
-	;sync_max_delay = 1440
+   agent.templates/template.sync.netapp
 
 Netapp user account setup
 =========================

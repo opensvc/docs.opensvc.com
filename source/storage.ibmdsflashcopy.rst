@@ -60,50 +60,15 @@ Example:
 	                   -pwfile /var/lib/opensvc/IBM.2107-00AAA00.pwfile
 	                   -name opensvc -pw xxx
 
-
-Service configuration file
---------------------------
-
-::
-
-	#
-	# IBM flash copy
-	#
-	;[sync#1]
-	;type = ibmdssnap
-	;sync_max_delay = 10512000
-	
-	#
-	# 'array'
-	# mandatory. The name of the IBM storage array, as seen by the manager.
-	# Also used in etc/auth.conf
-	#
-	;array = IBM.XXXX-XXXXXXX
-	
-	#
-	# ‘pairs’
-	# mandatory. whitespace-separated list of device pairs (source/target) to drive with this ressource.
-	# 
-	;pairs = 0001:0002 0101:0102 0003:0004
-	
-	#
-	# ‘bgcopy’
-	# optional. Default True. 
-	# After background copy, all track are available to the target.
-	# If False, array wait write on source track to copy delta on the target. In this case, read a no copied track on the target is read on the source. 
-	;bgcopy = true
-	
-	#
-	# ‘recording’
-	# optional. Default True. The recording target allow resyncs delta-based and restore delta only. One recording target is possible.
-	#
-	;recording = true
-	
-	# flash copy with recording and bgcopy options looks like delta-based clone feature
-	# flash copy without recording and bgcopy options looks like snapshot feature
-	# flash copy without recording option but with bgcopy option looks like full copy feature
-	
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
+
+Keywords
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.sync.ibmdssnap
 
 IBM DS flash copy configuration
 ===============================
