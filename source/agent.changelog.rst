@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-715 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1579afeb771af340537160eacbc9ba5eb44cd0a>`_ Fix the deprecated action translation algo
 | `1.9-714 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a37b65280d9ce2367add155bc020cf7774b5c6e2>`_ Fix a reversed logic status check in sync.symclone
 | `1.9-713 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac07d3e470f83f44a873d8f7ffc0cde2da619ed2>`_ Fix the Resource::status() refresh through self.svc.options.refresh
 | `1.9-712 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=536938df27e78da7846ca5fa32152856535d28de>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
