@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-721 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db7fdc581335212fe41ce9f3292a3ee898cb4e6b>`_ Support the osvc_root_path kw in lxd
+| `1.9-720 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=58222546c24472a86065ea1f8b51593ec6f7bad9>`_ Fix the lxc files push/pull commands
+| `1.9-719 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bd3c5b461bd7a8ce0d3a32bffc18c3820a253267>`_ Fix status evaluation caching
 | `1.9-718 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e83b6b4f4fbdfc40e5e47ab6b04a2a898604e2fb>`_ Use daemon listeners for --cluster instead of ssh
 | `1.9-717 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b6af7eaa0afbd63bab8cdfeadec4f0d12dac4b2a>`_ Fix service print actions
 | `1.9-716 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=33ec7e26fb7c9b2cb8ab9872d707ddff45059f4e>`_ Avoid unwanted takeover on long-dead node rejoin
