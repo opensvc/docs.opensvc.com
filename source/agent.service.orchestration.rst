@@ -12,8 +12,8 @@ Possible values:
 
 * ``no``
     * no instance is started automatically
-    * giveback is disabled, takeover can be used to relocate the service
-    * placement warnings are inhibited
+    * takeover can be used to relocate the service
+    * giveback is useful to relocate the service to the natural leader
     * use this setting for all 1.8 services **without** :kw:`DEFAULT.autostart_node`
 * ``start``
     * only the instance on the natural leader is started
