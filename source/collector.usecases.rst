@@ -158,7 +158,7 @@ Interactive
 
 In the services view, 
 
-* set the ``Cluster type`` column filter to ``failover``
+* set the ``Topology`` column filter to ``failover``
 * set the ``HA`` column filter to ``1``
 * right click on the ``Service`` column header.
 
@@ -172,7 +172,7 @@ API
         $ nodemgr collector cli --format json -- get /services \
                 --stats yes \
                 --props svc_id \
-                --filters "svc_cluster_type failover" \
+                --filters "svc_topology failover" \
                 --filters "svc_ha 1" \
                 --fset-id 16
 

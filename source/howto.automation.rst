@@ -974,7 +974,7 @@ Form configuration
             autostart_node = __NODES__
             docker_data_dir = /__SVCNAME__/docker
             flex_primary = __PRINODE__
-            cluster_type = flex
+            topology = flex
             show_disabled = false
             rollback = false
     
