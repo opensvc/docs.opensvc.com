@@ -21,8 +21,6 @@ Clone the appropriate git repository
 
     git clone https://git.opensvc.com/docs.opensvc.com/.git
     git clone https://git.opensvc.com/opensvc/.git
-    git clone https://git.opensvc.com/openha/.git
-    git clone https://git.opensvc.com/dds/.git
 
 Send patches
 ============
@@ -149,7 +147,7 @@ For example, on a debian-based system:
 
 ::
 
-    sudo apt-get install python-sphinx
+    sudo apt-get install python-sphinx python-sphinx-rtd-theme
 
 Clone the documentation project:
 
