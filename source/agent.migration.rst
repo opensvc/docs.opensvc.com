@@ -271,4 +271,17 @@ always_on = drpnodes          standby@drpnodes = true
 always_on = nodes drpnodes    standby = true
 ============================= =================================
 
+Rename :kw:`DEFAULT.cluster_type` to :kw:`DEFAULT.topology`
+===========================================================
+
+::
+
+	for SVCNAME in $(sudo svcmgr ls)
+	do
+		BUFF=$(sudo svcmgr -s $SVCNAME get --param cluster_type) && ( \
+			sudo svcmgr -s $SVCNAME set --param topology --value "$BUFF" ; \
+			sudo svcmgr -s $SVCNAME unset --param cluster_type \
+		)
+	done
+
 

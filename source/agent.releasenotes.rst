@@ -102,6 +102,7 @@ Deprecated
 * :kw:`DEFAULT.service_env`
 * :kw:`DEFAULT.autostart_node`
 * :kw:`DEFAULT.mode`
+* :kw:`DEFAULT.cluster_type` (renamed to :kw:`DEFAULT.topology`, maintained for backward compatibility)
 * :cmd:`svcmgr boot`
 * :cmd:`svcmgr startip`
 * :cmd:`svcmgr startdisk`
