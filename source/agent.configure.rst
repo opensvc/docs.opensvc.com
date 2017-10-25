@@ -91,8 +91,8 @@ Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command w
 .. raw:: html
 
 	<pre class='output'>
-	<span style="color: #aa5500">[compliance]</span>
-	<span style="color: #767676">schedule </span>= 00:00-01:00@61
+	<span style="color: #aa5500">[brocade]</span>
+	<span style="color: #767676">schedule </span>= 02:00-04:00@120 sat,sun
 	</pre>
 
 The live scheduler configuration and states can be extracted with
