@@ -2,6 +2,23 @@ Changelog
 =========
 
 
+| `1.9-738 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eaad1666b4f22719cb53763b7174bd7c4628bfd9>`_ svcmgr abort fixes
+| `1.9-737 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=15d13673ac35636755cae3eefdc4bebae6dfd349>`_ Fix the branch support
+| `1.9-736 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96bc1cccd5905189735bd16febf55928578426bf>`_ Add node.conf node.branch keyword
+| `1.9-735 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fc2bada0f426a3b341fd353699d304135a5c7362>`_ Avoid submitting async actions that the daemons can not honor
+| `1.9-734 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2dc8430b5057a060da151a007d20948a050875a1>`_ Add the "svcmgr abort" action
+| `1.9-733 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dfacb53871d41918999b91fdb87679ed94321137>`_ Fix a monitor thread stack on delete service
+| `1.9-732 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=766f1f58b6e56687f89c77c5ca73c7853a54c8c9>`_ Set a low wait lock timeout to svcmgr commands executed by the scheduler
+| `1.9-731 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a1518cb581a4db7014e057e4c922120f6c90bd99>`_ More pg fixes
+| `1.9-730 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6b4e7352a9d358f91056ae0926ea6b72ecf38497>`_ Declare the pg_ keywords valid in all resources
+| `1.9-729 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8a48660791273183eb16bc91a4637a97c25481e3>`_ Fix typo in debug messages
+| `1.9-728 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2c4d7b7c1ef127da0c0cbb7f50966293a00e7f01>`_ Deprecate the DEFAULT.cluster_type keyword in favor of DEFAULT.topology
+| `1.9-727 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=517dc9f315414233286e61664cc999910e783a47>`_ Add the "encap" global keyword
+| `1.9-726 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6af8afbdedc57f80ab7f6ba85c4b2250fbfe9d36>`_ Restore the push encap config streamlog suppression
+| `1.9-725 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5cb6c0101eb4baaaf6b86b5f05b3d4f659402e61>`_ Add the collector daemon thread code
+| `1.9-724 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=338f035e3a4ef76a64deec16eaf4ad412405d4e8>`_ Move status and config push to collector into a new daemon thread
+| `1.9-723 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5d7d13134f7304f4f563721c969e4b2cd8a5dc6>`_ Catch a stack in fs.zfs unprovisioner
+| `1.9-722 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7bf93aee88f1dbfa7a2b6c5901ab4beb3fea221e>`_ Fix a log message in the scheduler
 | `1.9-721 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db7fdc581335212fe41ce9f3292a3ee898cb4e6b>`_ Support the osvc_root_path kw in lxd
 | `1.9-720 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=58222546c24472a86065ea1f8b51593ec6f7bad9>`_ Fix the lxc files push/pull commands
 | `1.9-719 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bd3c5b461bd7a8ce0d3a32bffc18c3820a253267>`_ Fix status evaluation caching
