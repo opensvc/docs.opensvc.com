@@ -41,6 +41,8 @@ New Commands
 ============
 
 | :cmd:`svcmgr ls`
+| :cmd:`svcmgr abort`
+| :cmd:`svcmgr clear`
 | :cmd:`svcmgr giveback`
 | :cmd:`svcmgr takeover`
 | :cmd:`svcmgr start --upto <drvgrp>`

@@ -226,7 +226,7 @@ Resources start order is ip, disk, fs, share, container, app.
 
 Tell the orchestrator to start the service on the nodes the placement policy and constraints choose.
 
-By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With ``--wait``, svcmgr will wait for the action completion before returning. ``--time`` set a maximum wait time.
+By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, svcmgr will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
 
 Stop
 ----
@@ -244,7 +244,7 @@ Resources stop order is app, container, share, fs, disk, ip.
 
 Tell the orchestrator to stop the service wherever it runs and freeze it so it is not restarted.
 
-By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With ``--wait``, svcmgr will wait for the action completion before returning. ``--time`` set a maximum wait time.
+By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, svcmgr will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
 
 Relocation
 ----------
@@ -272,6 +272,21 @@ All service instances are thawed at the end of this ended, whatever their initia
 Thaw the nodes and service instances, stop the service instances running on non-leader nodes, and let the orchestrator start the instances on the leaders.
 
 All service instances are thawed at the end of this ended, whatever their initial frozen state.
+
+Handling Failures
+-----------------
+
+When an action is submitted to the agent daemons, they orchestrate the execution plan to make the service reach the desired state. If a step of this plan fails, the orchestrator is blocked, the failure reported in :cmd:`svcmon` and :cmd:`svcmgr print status`, and the target state is still set.
+
+For example, the :c-svc:`svc1` failover service is requested to start. The :c-node:`n1` node is the leader and its instance started, but the action fails. This instance service monitor status transitioned to ``start failed``, and the orchestration is blocked.
+
+To let the daemon retry the execution plan, the failure can be **cleared**, using::
+
+	sudo svcmgr -s <svcname> clear
+
+To abort the action, use::
+
+	sudo svcmgr -s <svcname> abort
 
 Sync
 ----
@@ -314,101 +329,44 @@ Resource Filtering
 
         sudo svcmgr -s <svcname> --rid <rid>[,<rid>,...] <action>
 
-Execute ``<action>`` on ``<svcname>`` resources specified by ``--rid``.
+Execute ``<action>`` on :c-svc:`<svcname>` resources specified by :opt:`--rid`.
+
+::
+
+        sudo svcmgr -s <svcname> --rid <drvgrp>[,<drvgrp>,...] <action>
+
+Execute ``<action>`` on :c-svc:`<svcname>` resources of driver groups specified by by :opt:`--rid`.
+The supported driver groups are:
+
+* ip
+* disk
+* fs
+* share
+* container
+* app
+* sync
+* task
+
+Resource identifiers and driver groups can be mixed in a :opt:`--rid` expression.
 
 ::
 
         sudo svcmgr -s <svcname> --tags tag1,tag2 <action>
 
-Execute ``<action>`` on ``<svcname>`` resources tagged with either tag1 or tag2.
+Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with either tag1 or tag2.
 
 ::
 
         sudo svcmgr -s <svcname> --tags tag1+tag2,tag3 <action>
 
-Execute ``<action>`` on ``<svcname>`` resources tagged with both tag1 or tag2 or with tag3.
+Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with both tag1 or tag2 or with tag3.
 
 ::
 
         sudo svcmgr -s <svcname> --subsets s1,s2 <action>
 
-Execute ``<action>`` on ``<svcname>`` resources in subset s1 or s2
+Execute ``<action>`` on :c-svc:`<svcname>` resources in subset s1 or s2
 
-
-Group actions
-+++++++++++++
-
-::
-
-        sudo svcmgr -s <svcname> startdisk
-
-Start resources of type loop, disk group, zpool, fs
-
-::
-
-        sudo svcmgr -s <svcname> stopdisk
-
-Stop resources of type fs, zpool, disk group, loop
-
-::
-
-        sudo svcmgr -s <svcname> startip
-
-Start resources of type ip
-
-::
-
-        sudo svcmgr -s <svcname> stopip
-
-Stop resources of type ip
-
-::
-
-        sudo svcmgr -s <svcname> startloop
-
-Start resources of type loop
-
-::
-
-        sudo svcmgr -s <svcname> stoploop
-
-Stop resources of type loop
-
-::
-
-        sudo svcmgr -s <svcname> startvg
-
-Start resources of type disk group
-
-::
-
-        sudo svcmgr -s <svcname> stopvg
-
-Stop resources of type disk group
-
-::
-
-        sudo svcmgr -s <svcname> startfs
-
-Start resources of type fs and the underlying resources
-
-::
-
-        sudo svcmgr -s <svcname> stopfs
-
-Stop resources of type fs and the underlying resources
-
-::
-
-        sudo svcmgr -s <svcname> prstart
-
-Acquire scsi persistent reservations on disks of the service (wrapped by startvg and startdisk)
-
-::
-
-        sudo svcmgr -s <svcname> prstop
-
-Release scsi persistent reservations on disks of the service (wrapped by stopvg and stopdisk)
 
 Logging
 =======
