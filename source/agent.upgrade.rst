@@ -65,7 +65,7 @@ Example:
 
 ::
 
-	nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
+	sudo nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
 
 Upgrade Agents
 ==============
@@ -74,7 +74,7 @@ The upgrade command is:
 
 ::
 
-	nodemgr updatepkg
+	sudo nodemgr updatepkg
 
 This command is operating system agnostic.
 

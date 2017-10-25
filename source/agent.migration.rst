@@ -178,12 +178,12 @@ heartbeats resources are now deprecated, and should be removed from the service 
 
 To remove rid :c-res:`hb#1` resource from service :c-svc:`svc1`:
 
-:cmd:`svcmgr -s svc1 delete --rid hb#1`
+:cmd:`sudo svcmgr -s svc1 delete --rid hb#1`
 
 	Remove the rid from the service configuration file.
   
 
-:cmd:`svcmgr -s svc1 sync drp --rid sync#i0`
+:cmd:`sudo svcmgr -s svc1 sync drp --rid sync#i0`
 
 	Propagate the updated service configuration file to drp node, if any.
 

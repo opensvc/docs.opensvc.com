@@ -199,8 +199,8 @@ To disable collector communications, use:
 
 ::
 
-	<OSVCROOT>/bin/nodemgr unset --param node.dbopensvc
-	<OSVCROOT>/bin/nodemgr unset --param node.dbcompliance
+	sudo nodemgr unset --param node.dbopensvc
+	sudo nodemgr unset --param node.dbcompliance
 
 .. rst-class:: lvl1
 
@@ -237,7 +237,7 @@ And add the ``local`` tag to all local volume groups. For example:
 
 ::
 
-	vgchange --addtag local rootvg
+	sudo vgchange --addtag local rootvg
 
 Finally you need to rebuild the initrd/initramfs to prevent shared vg activation at boot.
 

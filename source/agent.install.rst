@@ -42,16 +42,16 @@ Install
 ::
 
 	# Red Hat, CentOS, Fedora Linux
-	yum install /tmp/opensvc.rpm
+	sudo yum install /tmp/opensvc.rpm
 
 	# SuSE Linux
-	zypper install /tmp/opensvc.rpm
+	sudo zypper install /tmp/opensvc.rpm
 
 	# Debian, Ubuntu Linux
-	dpkg -i /tmp/opensvc.latest
+	sudo dpkg -i /tmp/opensvc.latest
 
 	# Solaris
-	pkgadd -d . /tmp/opensvc.latest
+	sudo pkgadd -d . /tmp/opensvc.latest
 
 	# Mac OS X
         installer -pkg /tmp/opensvc.latest  -target /

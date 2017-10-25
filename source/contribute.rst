@@ -10,7 +10,7 @@ Install git
 
 ::
 
-    apt-get install git
+    sudo apt-get install git
     git config --global user.name "First Last Name"
     git config --global user.email "first.lastname@domain.com"
 
