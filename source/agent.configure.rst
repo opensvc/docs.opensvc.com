@@ -193,7 +193,6 @@ A successful register is followed by a node discovery, so the collector has deta
 	sudo nodemgr pushpatch
 	sudo nodemgr pushstats
 	sudo nodemgr checks
-	sudo svcmgr push
 
 
 To disable collector communications, use:
