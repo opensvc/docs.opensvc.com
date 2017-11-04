@@ -1,6 +1,25 @@
 Before Upgrade
 **************
 
+Install python-crypto
+=====================
+
+This python module is not strictly necessary, as the agent ships a pure-python AES implementation, but the cpu usage is noticeably lower with this module installed.
+
+If python-crypto is available as a system package, use the system's command. For example::
+
+	$ sudo apt install python-crypto
+
+Else::
+
+	$ sudo pip install python-crypto
+
+Stop docker services
+====================
+
+The private docker daemon socket changes location. So the daemon needs stopping before upgrade and starting after upgrade.
+Only services with :kw:`docker_daemon_private = true` (the default) need this precaution.
+
 Freeze all services
 ===================
 
