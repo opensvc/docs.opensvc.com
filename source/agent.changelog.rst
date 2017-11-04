@@ -2,6 +2,45 @@ Changelog
 =========
 
 
+| `1.9-777 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae743e9e11a86309bfaea5d242dea6f198f086d0>`_ Fix the schedule examples in node.conf
+| `1.9-776 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69a5c5899292b48acc704f8d9423d27ec87ed864>`_ Add missing sync.zfssnap resources in the print status output
+| `1.9-775 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e29b793a30161d7bf5a6bc3d03054dc58fd12af>`_ Fix the deb preinst not running
+| `1.9-774 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b68745015415f743b4659572c6c8614124ededf9>`_ More verbose preinstall and micro-optimization
+| `1.9-773 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fcb48c148ca2683144f056a45a3c105443d5ca2e>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-772 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6149515b7b50231b1bee715c2b1af24b16a082fe>`_ Update bash completions
+| `1.9-771 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e7fdb4ea28a08aba72341d907a350c3fa6a5cc5>`_ Add a per-task run lock to avoid double runs
+| `1.9-770 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6ff8508e6546e2000d2c879e37fd33035c6fba6b>`_ Python3 daemon fix
+| `1.9-769 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8dfbfda08c41553dedeff4eb12c4e4b11fb4fba5>`_ Verify the monitor thread is alive in the collector thread loop
+| `1.9-768 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2dd3a1323ecee67e6cd3cf96af451f9aa35e5ba5>`_ osvcd optimizations
+| `1.9-767 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8d260ad9672cfd9f997b08191ddb57e126a08450>`_ Fix "nodemgr daemon stop --thread-id <thread-id>"
+| `1.9-766 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a9c2f07048988962a781a76ebc20bfcf44ba5c29>`_ Fix the delete/stop/shutdown not being treated asynchronously
+| `1.9-765 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac0c8917d1df6bc9131f18e6eb42375bb237e35a>`_ Fix a daemon deadlock
+| `1.9-764 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c8fbc5fc60d50a6effc8bd18327450028828c5d4>`_ Fix a stack in the collector daemon thread
+| `1.9-763 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f3a7b76c36e6405e9b1267bd9614598f9a976ad3>`_ Missing part of the previous commit
+| `1.9-762 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dbea108943dc24ddc3d8abddabfcde57ece6577e>`_ Fix the sync status codepath
+| `1.9-761 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=64efcd7beb740bff7974a0e401d45c967da50e24>`_ Evaluate a sync status to n/a if the service is not avail-up cluster-wide
+| `1.9-760 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d10935bb90eb65b219ee97aead27070b96a24e7a>`_ Remove the nodemgr schedulers cron job in postinstall
+| `1.9-759 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2aab45d476b6551be6736b3576a5ae6b16a7c5fb>`_ Don't display encap instance notices if the container is down
+| `1.9-758 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2a5698e9a88cf3a7b3ae79334d1773739f45715f>`_ Remove the svcmgr push nose test
+| `1.9-757 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5c9f6a177b997c662a6efdc2bf08725a0bfda5c1>`_ Create the directory hosting the 'last' status cache file upon update
+| `1.9-756 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=251490409d6af3896ca41af320626766ae1c397a>`_ Remove the nosetest scheduler fork test
+| `1.9-755 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e562bcfed2edc0714bc1b624e1584a50cc276066>`_ Task run scheduler tasks fixes
+| `1.9-754 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=93c35a8389d29b99005f42c6935a4c71c43e17bd>`_ Fix collector speaker election
+| `1.9-753 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b41232edf85d281e24d6a63b5d82af16f74ed8e3>`_ Fix print status keyerror with containers
+| `1.9-752 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e6314fbfab215b68e795a46fc1843541525707bd>`_ don't print encap service notices in print status if the container is down
+| `1.9-751 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3cba42f629ea2e5de17c0e67b010925d534cd7de>`_ Allow the --slave --slaves and --master with freeze and thaw actions
+| `1.9-750 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42fc9782674c0eb3c94fe591d17d0ef4e44da1ac>`_ Encap enhancements
+| `1.9-749 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab94d7ae8c22fdb9e9b2e37f28cb84e7bf06cbb5>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-748 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4c3e40e9f05f3a81c01d25114d2ada6bfa7f5ee6>`_ Fix the cgroup capability test
+| `1.9-747 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8044589b88f8b1ff32f9524a27628fc9f0979a6>`_ Restore the frozen per-container notice in print status output
+| `1.9-746 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=067ed695790a588aee6abe7999faf92bc94b3963>`_ Fix encap resource group status merging with its master's
+| `1.9-745 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=255b9da14e504bc43f5a4a5182b276bf539002f4>`_ Fix encap service refresh through the status task on master
+| `1.9-744 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4404bb9add2338ab07fd44fb33c7cb42ed1e1842>`_ Fix the encap services purge in the collector thread
+| `1.9-743 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ca294d728122d1f74dba05563e868cc21d03f68>`_ Don't include encap services in the data send to the collector
+| `1.9-742 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f7dd61cac34443c9a3c37b820f64cf970ab3d70e>`_ Don't add resource monitor and status tasks for encap services
+| `1.9-741 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=faf83c895b23f87c618e4f3677d092c8941e34f3>`_ Fix encap status refresh through the status task
+| `1.9-740 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7eab34406733d448a78add0422ce96c2a1931c44>`_ Fix "svcmgr set --kw <rid>.<key>=<val>"
+| `1.9-739 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bea48e82732d7d718b6df0c0be8ab418921fab18>`_ Fix encap=True resource keyword
 | `1.9-738 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eaad1666b4f22719cb53763b7174bd7c4628bfd9>`_ svcmgr abort fixes
 | `1.9-737 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=15d13673ac35636755cae3eefdc4bebae6dfd349>`_ Fix the branch support
 | `1.9-736 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96bc1cccd5905189735bd16febf55928578426bf>`_ Add node.conf node.branch keyword
