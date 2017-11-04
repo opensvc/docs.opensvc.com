@@ -12,13 +12,13 @@ The agent postinstall configures a system's scheduler job at a 1 minute period e
 
 For each task, the scheduler determines if the current time meets the task's schedule definition constraints. If all constraints are met, the task action is run in a subprocess and the last run timestamp is updated.
 
-The schedule definition constraints are expressed as allowed timeranges and minimum period. Example: In ``00:00-02:00@120``, the timerange is from midnight to 2am, the period is 120 minuntes. Multiple ``<timerange>@<period>`` can be defined with the syntax ``["00:00-02:00@120", "12:00-14:00@120"]``
+The schedule definition constraints are expressed as allowed timeranges and minimum period. Example: In ``00:00-02:00@121``, the timerange is from midnight to 2am, the period is 121 minutes. Multiple ``<timerange>@<period>`` can be defined with the syntax ``["00:00-02:00@121", "12:00-14:00@121"]``
 
 If an allowed timerange is longer than the system's schedule period, multiple consecutive scheduler run will meet the schedule *timerange* constraint. If the *period* is also met (the task has not run in the last <period> minutes), the scheduler rolls a dice and decides if the task is run now, or delayed to a next scheduler run. The probability of deciding to run augments linearly with the current time position in the timerange. For example, with a ``00:00-02:00`` timerange, at midnight the probability is around 10%. At 01:50 the probabilty is 100%.
 
 This behaviour spreads the tasks execution on all nodes over the whole timerange length. As most tasks, induce communications with the collector, the collector load is leveled. 
 
-Any task (except sync tasks) execution in its subprocess is delayed by a random few seconds to level collector load spikes caused by time-synchronized nodes actions being validated at the same time. For example, on a 1000 agent population with pushasset schedule set to ``00:00-02:00@120``, ~90 agents will execute the action at 00:00. The random delay ensures the collector won't receive all 90 data payloads at the same second.
+Any task (except sync tasks) execution in its subprocess is delayed by a random few seconds to level collector load spikes caused by time-synchronized nodes actions being validated at the same time. For example, on a 1000 agent population with pushasset schedule set to ``00:00-02:00@121``, ~90 agents will execute the action at 00:00. The random delay ensures the collector won't receive all 90 data payloads at the same second.
 
 Display the Schedules
 =====================
@@ -232,7 +232,7 @@ Examples
 
 * Schedule every 60 minutes
 
-  ``@59``
+  ``@60``
 
 * Schedule at first occasion after 9am
 
@@ -240,33 +240,33 @@ Examples
 
 * Schedule every hour between midnight and 6am
 
-  ``00:00-06:00@59``
+  ``00:00-06:00@60``
 
 * Schedule once between midnight and 2am
 
-  ``00:00-02:00@120``
+  ``00:00-02:00@121``
 
 * Schedule once between midnight and 2am every last day of month
 
-  ``00:00-02:00@120 *:last`` or ``00:00-02:00@120 *:-1``
+  ``00:00-02:00@121 *:last`` or ``00:00-02:00@121 *:-1``
 
 * Schedule once between midnight and 2am every last friday of month
 
-  ``00:00-02:00@120 fri:last`` or ``00:00-02:00@120 fri:-1``
+  ``00:00-02:00@121 fri:last`` or ``00:00-02:00@121 fri:-1``
 
 * Schedule once between midnight and 2am every week day
 
-  ``00:00-02:00@120 mon-fri``
+  ``00:00-02:00@121 mon-fri``
 
 * Schedule once between midnight and 2am every week day from january to february
 
-  ``00:00-02:00@120 mon-fri * jan-feb``
+  ``00:00-02:00@121 mon-fri * jan-feb``
 
 * Schedule once between midnight and 2am every odd day (1, 3, 5)
 
-  ``00:00-02:00@120 *:%2+1``
+  ``00:00-02:00@121 *:%2+1``
 
 * Schedule once between midnight and 2am every monday of even weeks
 
-  ``00:00-02:00@120 mon %2``
+  ``00:00-02:00@121 mon %2``
 
