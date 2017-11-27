@@ -6,7 +6,7 @@ Orchestration
 Orchestration
 -------------
 
-The parameter :kw:`DEFAULT.orchestrate` is used to specify the daemon behaviour regarding service orchestration, which by default, does not orchestrate service.
+The :kw:`DEFAULT.orchestrate` keyword specifies the daemon behaviour regarding service start orchestration, which is not enabled by default.
 
 Possible values:
 
@@ -50,7 +50,7 @@ The node with the lowest load average gets the highest placement priority.
 spread
 ++++++
 
-A static random ranking. The more services, the better leveling.
+A static random ranking. The more services, the better the leveling.
 
 .. _agent.service.orchestration.affinity:
 
@@ -214,10 +214,13 @@ The daemons now announce their "compat version" through the heartbeats.
 If a daemon notices the cluster members have different compat versions, it
 disables ha orchestration.
 
-This is what happens during a rollback agent upgrade.
+This is what happens during a rolling agent upgrade.
 
-In this case, the logs contain this warning:
-``cluster members run incompatible versions. disable ha orchestration``
+In this case, the logs contain this warning
+
+::
+
+	cluster members run incompatible versions. disable ha orchestration
 
 A orchestrate=ha service instance print status shows:
 
@@ -239,8 +242,11 @@ And svcmon shows:
      state                               |
     ...
 
-When the compat is restored, the logs contain this info:
-``cluster members run compatible versions. enable ha orchestration``
+When the compat is restored, the logs contain this info
+
+::
+
+	cluster members run compatible versions. enable ha orchestration
 
 
 
@@ -249,7 +255,7 @@ When the compat is restored, the logs contain this info:
 Parents
 -------
 
-The keyword :kw:`DEFAULT.parents` store a list of services that must be avail up for the agent daemon to proceed on starting the service.
+The :kw:`DEFAULT.parents` keyword stores a list of services that must be avail up for the agent daemon to proceed on starting the service.
 
 A typical use case is to modelize services dependency:
 
