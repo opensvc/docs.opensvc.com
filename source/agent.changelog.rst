@@ -2,6 +2,49 @@ Changelog
 =========
 
 
+| `1.9-820 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=87da6be58e8a5dde14d03dcaaf4e298df5d17238>`_ Don't try to unprovision lv from the fs unprovisioner when not opportune
+| `1.9-819 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=29606c241292151bdb66b9c1030bf9889ce299cc>`_ Refresh the doc, man and completions
+| `1.9-818 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fee5a7f2e8a1ea1e3eb0d2de1f7a4456e3a304b4>`_ Set a shlex converter to the mkfs_opt keyword
+| `1.9-817 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b4402ee9370723acdf16f6852b4e75e1ab92d982>`_ pylint fixes for the zfs provisioner
+| `1.9-816 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f23995ecd70f610f75e82adb7786b5921c3b1d1>`_ Honor the mkfs_opt in the fs.zfs provisioner
+| `1.9-815 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=64eb06a02bea48e9ee3073f3bbaf5ca45e9c8776>`_ Move the sync.zfssnap purge from postsync to status eval
+| `1.9-814 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=73a86fd4648b5b9c55eac4ee0b5f2b0aeb27aa28>`_ Fix a rare monitor thread stack in the delete situation
+| `1.9-813 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0bf062d6721f7e7d91312cb83b1d1cbe0f4d4324>`_ Remove all UNDEF from the resource drivers
+| `1.9-812 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11c53a80ee86e017e8005e2ad5cfbc1767762340>`_ Merge the encap service avail status with its parent
+| `1.9-811 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d156a6b0ca42eaab8a62d209d113fef0742979f6>`_ Fix rare deleted service instances lingering in the daemon status
+| `1.9-810 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16b3afa7c26ec30df50e5a255737fe0ccdd9b3c0>`_ Fix the undef resource status after cache purge
+| `1.9-809 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=18394c751566bd992cdc0ef5de07050babea470c>`_ Service instance delete fixes
+| `1.9-808 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ceea1aa9b29996c140408ed462a3b10f6c2f0ab>`_ Fix the table formatter on python3
+| `1.9-807 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2d1823d89e4877abf7288b47a53a84024d0c6e9>`_ python 2.6- fix for the osvcd monitor thread
+| `1.9-806 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=af59fd652309d567913cbf44e88599b9224644f7>`_ Fallback to a full zfs send/recv when the remote pivot snap is not present
+| `1.9-805 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0aba12994df9bb105c57d41a258907f3c3363c69>`_ Fix the resource transition logging
+| `1.9-804 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=af0ce74f0693423a675cd9fa035f059ca61efaf7>`_ Remove empty keys in the deb manifest
+| `1.9-803 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5a70717fa9800535bc0452062a572dbec7ab5142>`_ Don't eval sync.zfssnap on not up services
+| `1.9-802 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b8bd26a78c86a859f0e49faba96c48470b1296df>`_ Fix sync.zfssnap/sync.zfs coexistance issues
+| `1.9-801 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9e065c2a160807674f4cac0050437cfb0eac6602>`_ Preserve lines not in <key><sep><val> format in the keyval_parser
+| `1.9-800 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fc0037e849f707385f862761ddc189c550c1aacc>`_ Don't skip zfs snapshot purge on passive nodes
+| `1.9-799 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7fc303dff3da505b12c59141b6588d5937e305b2>`_ Make sync.zfs and sync.zfssnap coexist peacefully
+| `1.9-798 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=302e3f7eeeede45a1ed8dcdff5dcace852f48b10>`_ Fix sync.docker driver
+| `1.9-797 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4b3bff6e93f36e07c151e212f28c4429488b9245>`_ Fix the print status not displaying the encap resource
+| `1.9-796 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f9212e81ba656e0bd727319e9fae329c61b4cab4>`_ Forge a better version string on agents installed through git
+| `1.9-795 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4bf20998b62a977664405b83fddbda4a11eff982>`_ Add duration convertion of --time in daemon_service_action()
+| `1.9-794 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6b0440a95f867259e1448cc9e94fa19e017315a9>`_ Refresh the daemon status before deciding to abort an async action
+| `1.9-793 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bebffc692dbfce2a11de445d82c57842f2eb1ad7>`_ Fix "lxc exec" hangs when executed by the daemon
+| `1.9-792 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=44b394d8fcfc6c3c0f72015166f286a8dac06447>`_ Support "svcmon -s <selector>"
+| `1.9-791 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ff0abecc6b217ca6799f1261e6fc824e02ee297>`_ Honor timeout=0 as a no timeout condition in daemon_send()
+| `1.9-790 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=457398c5c8e717c1d709b2ed3c90e962cfe17b40>`_ Add missing janitor_procs() in the listener thread loop
+| `1.9-789 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ac46784e98961615dd6db2612325d3a20885b97>`_ Fix another case of PIPE in Popen() pushed to the janitored queue
+| `1.9-788 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cc73d210f2c348927e1169c9703d915e8ad6c36e>`_ Don't pipe stdout/stderr in Popen() from the svc actions via lsnr
+| `1.9-787 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=486f230cdfea026fdad22945992e816a87b8a25e>`_ Fix container.lxd container_info() stack
+| `1.9-786 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e9e6a19e42ad2a2341f0e7527fc91651e138dc08>`_ Fix the duration computation in the end_action xmlrpc
+| `1.9-785 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=86b63af5598fa6873db07567a7633d139b913ff1>`_ Do async xmlrpc via the collector thread
+| `1.9-784 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e31ab52829389a53043174c723194901639b69a0>`_ Fix a time variable conflicting with the time module in comm.py
+| `1.9-783 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d858fbb7506ad73829917410d9bef5c641d292cb>`_ Add a refresh kwarg to Node::_daemon_status()
+| `1.9-782 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c684fdb9ff90234d1bbb9dd3979e36ac5940539>`_ Force synchronous end action log shipping if --cron is set
+| `1.9-781 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e18a5c3042fe240b3a426f3de9bef8da2f89713>`_ Reinitialize the Node::collector::proxy if its uri is 127.0.0.1
+| `1.9-780 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=76c67be11e8fa94d87f14ac82558c18f5eda1872>`_ python 3.2- fix
+| `1.9-779 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e1fedbeff4b26fca54e1b26f9ed3dd51cccb8cf>`_ Initialize Monitor::compat
+| `1.9-778 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f813d6c2f504f91ffc9c5521f33c5377a00fdf10>`_ Fix "nodemgr pushasset" hba section data preparation
 | `1.9-777 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae743e9e11a86309bfaea5d242dea6f198f086d0>`_ Fix the schedule examples in node.conf
 | `1.9-776 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69a5c5899292b48acc704f8d9423d27ec87ed864>`_ Add missing sync.zfssnap resources in the print status output
 | `1.9-775 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e29b793a30161d7bf5a6bc3d03054dc58fd12af>`_ Fix the deb preinst not running
