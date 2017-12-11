@@ -114,6 +114,6 @@ Example download
 Safe support in compliance
 **************************
 
-The ``files`` compliance object is able to fetch file content from the safe. To that end, just use the ``safe://<file id>`` format in the files rule ``path`` key.
+The ``files`` compliance object is able to fetch file content from the safe. To that end, just use the ``safe://<file id>`` format in the files rule ``ref`` key. The ``path`` key specifies where the file should be installed.
 
 
