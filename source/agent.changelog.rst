@@ -2,6 +2,41 @@ Changelog
 =========
 
 
+| `1.9-855 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4ee591c54fb4889c78affbb3d713f6053696cf1>`_ Enhance rule merging error message
+| `1.9-854 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4926d9bc22cdcf1e91b94fc87518b622361e5a06>`_ Fix a potential xmlrpc stack if key or val is None in push resinfo
+| `1.9-853 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5e7d19bae41f5f17dc8673f27a5cb681f13cf3b2>`_ Fix the pushasset xmlrpc, not treating hardware data as expected
+| `1.9-852 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43180ec57c9bf53e7453e45369937e4125dcb4ed>`_ Add pci and mem inventories to pushasset
+| `1.9-851 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=abebbc2dfe63e66304dcb75d8a43a39b895733aa>`_ Fix the sudo auto-prefixing for commands passed through the service link
+| `1.9-850 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=373bf4c7dfa64c684853cc256be982ac1e7fc7b3>`_ Add the manufacturer field to pushasset
+| `1.9-849 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cdcf7e15c4fed5bda5ac9d299bcd6aed8e73f740>`_ Fix the model parsing on pushasset, on Linux
+| `1.9-848 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7b58332a26c73f1eaf60365a3bf0b169bac4d911>`_ Add a ip.cni driver
+| `1.9-847 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=56dbf82f9fa86d7c5d815f4b4bc3f70551cba9c2>`_ Fix python3 compat of the os.umask call in lxc cmds preexec_fn
+| `1.9-846 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1ed90640bd7bc8cb335b094a5c51005a5ecde398>`_ Fix tasks run
+| `1.9-845 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b87794a633aea7c9a6e1399484626b8adfe5605d>`_ Fix 'collector cli' stack when no TERM is set
+| `1.9-844 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ac1aa8be953aedfd93eb7286ca3b4b583bd578d>`_ Auto-replace the process using execvpe() if euid!=0 and sudo or pfexec is found
+| `1.9-843 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=104d34b93121fd8c800218a3097f8a92b6742e4e>`_ Align 'print resinfo' tree columns
+| `1.9-842 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d9c3fb5901cc9563b7af8a68e45bd288a1810f2>`_ Add env section keys to the resinfo keys
+| `1.9-841 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4fe71ea807961029859592744568335037ca9ac0>`_ Streamline the 'push resinfo' action
+| `1.9-840 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e85299f742da62277fe488f63afb59a04a92a78c>`_ Workaround for python issue19884
+| `1.9-839 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=353c673d252bc6dd6f45aba71c755416261ac22e>`_ Fix sync.rsync option parsing when type is not specified
+| `1.9-838 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=139a64e04657c4c6be8557bb6207626d1c9b09da>`_ Fix "<svcname> <action>" syntax
+| `1.9-837 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c28d1bf97d9f61f2241840348223a505852138a6>`_ Fix a potential stack on fs unprovision
+| `1.9-836 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5cf1bb6c92ef1a7cddd9ab08f96ed6c0f5121b79>`_ Workaround the /dev wrong perms in container with some lxc versions
+| `1.9-835 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=60712f0285881960bedcab0b417d45b2d524d719>`_ Disallow implicit selection of all services through svcmgr
+| `1.9-834 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=79524fa4870e2518a3c95614c46a9546567a9fdf>`_ Fix env leak between services in "svcmgr compliance <act>" actions
+| `1.9-833 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bfd9bfbabb04d0e672fdeaacc404fd6100e2624c>`_ Add a info method to the container drivers parent class
+| `1.9-832 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=41f3bc340e988720bb724ced4f8437d2795277d0>`_ Allow automodule to use rules in contextual ruleset at 1st depth level
+| `1.9-831 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5d5a241812e4494094228860d18bdb3d82b456d>`_ Add GET/POST/DELETE/PUT handler support for api paths reported by nodemgr cli
+| `1.9-830 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bb4efffb15ca9ca5b8fe6a02844ee7c1acf9a14e>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-829 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f71a124e6d6f9f13fa95e68dac42ce00e41d0d78>`_ Add disk.md check and fix for disabling auto-assembling
+| `1.9-828 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b9a10a93cb2daecfa0b9368f5a73baf980d7213>`_ Fix incomplete line reported by "svcmgr logs"
+| `1.9-827 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cbae22768202dd3226909582875b730c43c6a0b0>`_ Allow the switch action without --to on 2-nodes clusters
+| `1.9-826 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85171b6ccff37a7b12011f5ddba32a55fd749382>`_ Reinstate the smon status handling in the daemon
+| `1.9-825 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3e716e7574e9afd6d356a99c49153c0499a85e72>`_ Move the instance monitor status handling to the CRM
+| `1.9-824 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45bcf70a815c6649075a9d2f91fce12f2ef33cc7>`_ Notify the daemon of the sync actions begin and end
+| `1.9-823 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a817d643161e7ee76e1787334c1c78815facbf11>`_ Notify the daemon of local actions begin and end
+| `1.9-822 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=58ac71c4bb5cfe6bd852123fd44704578f548a2b>`_ Enhance the "svcmgr get" response when the --param is not set
+| `1.9-821 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=15907216f55d3c4ae2da66c68b759ee604c662a4>`_ Fix a wrong indentation in the keyval_parser comp obj lib
 | `1.9-820 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=87da6be58e8a5dde14d03dcaaf4e298df5d17238>`_ Don't try to unprovision lv from the fs unprovisioner when not opportune
 | `1.9-819 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=29606c241292151bdb66b9c1030bf9889ce299cc>`_ Refresh the doc, man and completions
 | `1.9-818 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fee5a7f2e8a1ea1e3eb0d2de1f7a4456e3a304b4>`_ Set a shlex converter to the mkfs_opt keyword
