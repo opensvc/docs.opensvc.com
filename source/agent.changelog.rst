@@ -2,6 +2,32 @@ Changelog
 =========
 
 
+| `1.9-881 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1694229b7fb54ccb698761a70572356573fd51e>`_ python[23] compat fix for the relay heartbeat driver
+| `1.9-880 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=100ee1a42cf545b39e58268823fcf85714463501>`_ Fix mixed indent in osvcd_mon
+| `1.9-879 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=339c03ad462d82c4b63ad5bcc402301d567626ac>`_ Care for arbitrator sections in "daemon join/leave" actions
+| `1.9-878 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=de090e8df2198c19880597103e33b330687d8621>`_ Add the relay hb driver
+| `1.9-877 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=18b284e95e97e2acdd97295a833427d0653f48b0>`_ Freeze the node at the end of the rejoin_grace_period if the cluster is incomplete
+| `1.9-876 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=019f837f08fc83c46b76332022ab2ef09858219c>`_ Fix svcmon without --watch
+| `1.9-875 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4915c25fe432a21b9bf8d1eac647b1eeb4f05d11>`_ Add --watch and --interval to svcmon
+| `1.9-874 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bfe048b7c6849563390eaa2df5e4283f0271ba17>`_ Add the ip.cni doc
+| `1.9-873 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=845cf238fb8fd37bbbcc3f3bf84abd0c38c3c549>`_ Add docker container support to the ip.cni driver
+| `1.9-872 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b2fb615c6007242ffb8d347283e5d65d29af1b48>`_ Implement an arbitrators-based quorum
+| `1.9-871 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=75747e22dd6a7fdc4e9dc23a04f50ecf46ff7fa5>`_ Stop recursing at multipath level in devtree get_top_devs_chain()
+| `1.9-870 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d276ff0cd51ebfbf60977b3c8768745e73e468f2>`_ Refresh the zpool sub_dev cache on disklist if the instance is up
+| `1.9-869 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=70e4a25e1bba9476f95918d9efc3686f37032909>`_ Switch the ip.docker from using 'ip netns exec' to using 'nsenter'
+| `1.9-868 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8e4b2e424ce4461220505a63d5fa15aca21661fe>`_ Execute the resourcesets pre/post action at their expected step
+| `1.9-867 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27f715fafccbbd293a6b0d92f3805d25fb4619b9>`_ Stop dockerd after the last container is stopped on rollback too
+| `1.9-866 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c8554a55065fbb66396dc9c1b3bdbc0532ac8d5a>`_ Fix a rare lxc start issue
+| `1.9-865 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dd8f9286e94dd916c142ab70e0fde7ed0df68265>`_ Make the dockerd start lock file service-private
+| `1.9-864 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1a1262783124262b058d9e6f4f8bf4c110facd3d>`_ Do the 'nodemgr pushasset' after starting the deamon
+| `1.9-863 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5cb134869382c3540c7f4e86e5496af66615a85>`_ Fix the hole in linux stats at midnight
+| `1.9-862 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f86d3c37ad808d1906ebe114a3dbf2926be26057>`_ Restore the probabilistic schedule feature in collaboration with osvcd
+| `1.9-861 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=71978c0a815a39676593a4701a5b98f6f16d36bc>`_ Fix a KeyError regression in the scheduler
+| `1.9-860 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=20d39d591fc2dc62b505ac99bfe1bd73938aa18c>`_ Remove a debug trace left-over in rcScheduler
+| `1.9-859 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f480dc200887307e0fcd0bbb55fc407888225653>`_ Create a last_<action>.success in var/ to track last sched task succesful run
+| `1.9-858 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=172b25d16d3fc385c732cf792edeb20cfcf29814>`_ Also bar [/var]/run/user/<uid> from the fs_u stats collection
+| `1.9-857 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4725c57858cba2de5bef2cf405d7e53db6685259>`_ Add a fs_u collect blacklist on Linux
+| `1.9-856 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ee0f6f560c1701a299113ea6baee9feea59128a>`_ Compliance comp lib fixes
 | `1.9-855 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4ee591c54fb4889c78affbb3d713f6053696cf1>`_ Enhance rule merging error message
 | `1.9-854 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4926d9bc22cdcf1e91b94fc87518b622361e5a06>`_ Fix a potential xmlrpc stack if key or val is None in push resinfo
 | `1.9-853 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5e7d19bae41f5f17dc8673f27a5cb681f13cf3b2>`_ Fix the pushasset xmlrpc, not treating hardware data as expected
