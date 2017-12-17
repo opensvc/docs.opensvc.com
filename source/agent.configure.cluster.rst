@@ -51,6 +51,24 @@ This configuration will execute :cmd:`/bin/true` on the node taking over a servi
 
 Good, isolated fencing packages are freely available. For one, https://github.com/ClusterLabs/fence-agents
 
+Add Arbitrators
+---------------
+
+Arbitrators are optional. Skip to the next section if not concerned.
+
+On a new cluster, the arbitrator configurations can be applied on the first node. The joining nodes will fetch this configuration from this joined node.
+
+::
+
+        sudo nodemgr set --param arbitrator#1.name --value relay1
+        sudo nodemgr set --param arbitrator#1.secret --value 1023102310230123123
+
+This configuration will ask for the agent on node :c-node:`relay1` for its vote in a quorum race, if needed to get a majority.
+
+.. seealso::
+
+        | :ref:`agent.daemon.quorum`
+
 Join a Cluster
 ==============
 
@@ -88,5 +106,6 @@ Leave a Cluster
         | :ref:`agent.daemon.monitor`
         | :ref:`agent.daemon.scheduler`
         | :ref:`agent.daemon.heartbeats`
+        | :ref:`agent.daemon.quorum`
         | :ref:`agent.service.orchestration`
 

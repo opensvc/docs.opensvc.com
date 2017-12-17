@@ -3,10 +3,11 @@
 Agent Heartbeats
 ****************
 
-Hearbeats serve two purposes:
+Hearbeats serve the following purposes:
 
 * Exchange data between cluster nodes
 * Detect stale nodes
+* Execute the quorum race when a peer becomes stale for its last heartbeat
 
 OpenSVC supports multiple parallel running heartbeats. Exercizing different code paths and infrastructure data paths (network and storage switchs and site interconnects) helps limiting split-brain situation occurences.
 
@@ -101,7 +102,7 @@ Heartbeat Drivers
 Unicast
 =======
 
-This driver sends and receive using TCP unicast packets.
+This driver sends and receives using TCP unicast packets.
 
 ::
 
@@ -162,8 +163,8 @@ Disk
 
 This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC on a block device on Linux. Other operating systems must use raw char device.
 
-* The rx thread loop over peer nodes and for each reads its heartbeat data at its reserved slot device offset
-* The tx thread write to its reserved slot offset on the device
+* The rx thread loops over peer nodes and for each reads its heartbeat data at its reserved slot device offset
+* The tx thread writes to its reserved slot offset on the device
 
 ::
 
@@ -189,4 +190,25 @@ This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC 
 
 
 	If a the local nodename is not found in any slot, the thread allocates one.
+
+Relay
+=====
+
+This driver reads and writes on a remote opensvc agent memory.
+
+The relay listener <address>:<port> must be reachable from all cluster nodes in normal operations. A relay should be located in a site hosting no other node of the cluster, so this heartbeat can avoid a split when the sites hosting cluster nodes are isolated, but can still reach the relay's site.
+
+The same relay can be used as heartbeat in different clusters.
+The relay host can also be used as an arbitrator.
+
+* The rx thread loops over peer nodes and for each requests its heartbeat data from the relay
+* The tx thread sends to the relay
+
+::
+
+        [hb#2]
+        type = relay
+        relay = relay1
+        timeout = 15
+
 

@@ -15,7 +15,14 @@ The agent daemon spawns threads to handle its different roles:
 * Scheduler
   Periodically run node and services schedulers.
 * Heartbeat threads
-  Check if peers are alive and exchange node and service information.
+  Check if peers are alive and exchange node and service information. Run the quorum race on split-brain.
+* Collector
+  Send cluster information to the collector. Only one node in the
+  cluster sends. This role fails over transparently.
+
+.. seealso::
+
+        | :ref:`agent.daemon.quorum`
 
 Daemon management
 -----------------
