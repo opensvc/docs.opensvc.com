@@ -4,7 +4,7 @@ Release Notes
 New Features
 ============
 
-* The agent now runs a daemon implementing heartbeats, scheduling, a remote OpenSVC actions listener and node/services/resources orchestration.
+* The agent now runs a daemon implementing heartbeats, quorum, scheduling, a remote OpenSVC actions listener and node/services/resources orchestration.
 * The agent now announce its "compat version" in the heartbeats, so as ensure proper communication with other cluster nodes. A lack of "compat version" alignment temporarily disable automated orchestration, until issue is fixed.
 * Add monitor states to :cmd:`svcmgr print status` human-friendly and JSON outputs.
 * The frozen service instance status is not longer honored by the CRM, only by the orchestrator.
@@ -36,6 +36,7 @@ New Drivers
 ===========
 
 * disk.lv (Linux)
+* ip.cni (Linux)
 
 New Commands
 ============
@@ -66,6 +67,7 @@ New Commands
 | :cmd:`nodemgr daemon restart`
 | :cmd:`nodemgr set --param <param> --add <member>`
 | :cmd:`nodemgr set --param <param> --remove <member>`
+| :cmd:`nodemgr ping --node <nodename>`
 |
 
 New References
