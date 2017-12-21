@@ -113,7 +113,7 @@ Possible values:
 
 * ``nodes order`` : the left-most available node is allowed to start a service instance
 * ``load avg``    : the least loaded node, taken from system load averages in the past 15 minutes
-* ``spread``      : a static random spead
+* ``spread``      : a static random spread
 
 .. note::
 
