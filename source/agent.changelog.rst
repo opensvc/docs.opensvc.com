@@ -2,6 +2,50 @@ Changelog
 =========
 
 
+| `1.9-925 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85569506a6ee6ec24acab819e416fb3a6560c6eb>`_ Add the {etc} and {var} references
+| `1.9-924 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ef4ee820bf17708dc43a40c7a15e1b26c4c45c4>`_ Add "nodemgr network ls [--format=<fmt>]
+| `1.9-923 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac1f20bd8f1d0d0db003723290def31cb9b096ed>`_ Do not require the portmap cni plugin to be declared in the network config
+| `1.9-922 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=408faaaa2e9a27dc4b49f64cc37de877811034d2>`_ Fix the auto scaling down of ha flex services
+| `1.9-921 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6f69633bab0a5f33f427816f1491d54ee457c65e>`_ Allow to set node.ready_period instead of hardcoding 16s
+| `1.9-920 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e7ef88abf1272da163c6683f53da302465ef4d2b>`_ Auto stop ha flex instances when n_up > flex_max_nodes
+| `1.9-919 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d1d0490904721f3cf0979f7e4d07972aee326cd>`_ ip.cni fixes
+| `1.9-918 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1aa1d058d3d8f770592945cb503fe818927c7f4>`_ Allow setting the min log level for the syslog logger
+| `1.9-917 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=44ba49e2b3d9141047fcedf1a9b40f382ee700e0>`_ Test the existence of a zfs dataset before destroy
+| `1.9-916 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=07220fb183bfcdbb3bf4e7b25e752c8f7db2a4a5>`_ Fix a python 2.5 compat bug in postinstall
+| `1.9-915 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b234a65e3ad94bf5663bd35d31ecd3b6eb4e3d7>`_ Fix mixed ws/tab indentation in the xtremio array driver
+| `1.9-914 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1f86271753e0cd22ed31241e40cdec5f352c4a8d>`_ Add support for multiple clusters handled by a xms in the xtremio array driver
+| `1.9-913 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05fa93c1237c13588b4bf9b822d65cfddc6e12d8>`_ Fix a syntax error in the example section (ansible_playbook.py info)
+| `1.9-912 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40c3f7303c569020e28ef5dc3396fead0aee07ae>`_ Don't report the encap daemon down for containers
+| `1.9-911 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=752bac54cd136716047c424a5f8c1bc274850848>`_ python3 compat fix for he scsireserv sg driver
+| `1.9-910 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=af5ee823f3172469185d707d184fef9316e03bb6>`_ Support the portmap plugin runtimeConfig injection
+| `1.9-909 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b78886ff09f146a0d23b75269b2c64dde34c74e3>`_ Fixes bad variable assignment during modules parsing
+| `1.9-908 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6cbac600385ec9e4c15a72ee01682bead69196d6>`_ Support plugins chaining in the ip.cni driver
+| `1.9-907 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=df28d284dc78fcf47fe26e21112da6fb3a558b4c>`_ No need to detach a subprocess when the action is run by the daemon
+| `1.9-906 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e07b3e0b605794c1001fce8366a682413b51db5>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-905 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96a3335ce1670e67f1b66db588d0f878949274d2>`_ Fix python2.5 to 3+ modes in the postinstall script
+| `1.9-904 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab9f9642d6ef55d819a6ca10998f643be73dcc9d>`_ Disable sanity check in scsi reserv when run by the daemon
+| `1.9-903 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0989c8f81174aaf666c3ea3c93841f3ae3bdeaea>`_ Remove the joiner quorum keyword if quorum=false or unset on the joined node
+| `1.9-902 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab5138ca3c9c6cae29d403ae3e9ba16d9d06b7e6>`_ Fix the quorum value merging in the joiner code path
+| `1.9-901 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98ecefb4146e45a4b688ab90dc0c2a50922a89a9>`_ Fix the quorum key name in the daemon join response from the listener
+| `1.9-900 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bc1d35522f6f75fac8a6083b55176d68adadc478>`_ freeze on stop --local only if orchestrate == "ha"
+| `1.9-899 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e4cdf056fb3b61b1c0aaee73bb9cf48f44502a50>`_ Add the quorum info to the cluster data returned by the listener on join
+| `1.9-898 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3fda622961b65e703e4fc1f788b6fb42d16031e4>`_ Change the 'crash' linux toc method to echo 'c' in sysrq-triggger
+| `1.9-897 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f7117457d74e208504ce3f19b914720955e9042d>`_ Add client-side part of the arbitrator and quorum config merge on join
+| `1.9-896 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf1fd4ece7faac75e8b666f3318a567f1962072f>`_ Fix a stack in the quorum suicide logging
+| `1.9-895 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b3a7af8de60c149978c379ced8dfc18f5e74c79d>`_ Expose "push encap config" as a service instance action
+| `1.9-894 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=684763895acbef134f00d75175172b7434f01b98>`_ Reinstate the "push config" service action
+| `1.9-893 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b56bcb15ee6c650c4522be707d85050eecd41329>`_ Fix a dev_to_paths() bug on Linux
+| `1.9-892 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5121ff25b0781b11321141815e7a0635a651f1b8>`_ Merge branch 'master' of git+ssh://git.opensvc.com/home/opensvc/opensvc
+| `1.9-891 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5a2e5eadd8f3acb5ca6ba4ac17eb5bd0dccf9c94>`_ Fix "set --kw drpnodes-=node10" when drpnodes is not set
+| `1.9-890 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30a118474dded0066a98de9724dda25fc9aa27e0>`_ Fix disk.md disklist on sles11 when md members are multipaths
+| `1.9-889 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f967002f1fa33b46eb0ab603ab0a8d951bc53161>`_ Fix a stack in the provision action codepath
+| `1.9-888 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=345877e1f5eb267187314a54249de808422eb02e>`_ Add --node autocompletion to bash completion
+| `1.9-887 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=664817aabf0c665888a75bf01360721aa97394e6>`_ Merge branch 'master' of git+ssh://git.opensvc.com/home/opensvc/opensvc
+| `1.9-886 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=031ca2b921425246f034f468e6c38fce6c92d3e0>`_ Fix a provision stack in the lv driver
+| `1.9-885 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=39d0e536ed9760b49e39a926a7ab377a93d65f8b>`_ Don't include netmask in ip resources resinfo if not configured
+| `1.9-884 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=240432b169dd1e1d91cc659b8a4e75ea8b02a822>`_ Fix the "down idle,started" instance state after a stop --local
+| `1.9-883 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8dcdba835289767e155b7804ff758acf43c43380>`_ Behave better when the node.conf configuration file is corrupted
+| `1.9-882 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2066ef4aba73fd46e5b5754369d31c51d2b3a7f7>`_ Exit from the split handler on frozen nodes
 | `1.9-881 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1694229b7fb54ccb698761a70572356573fd51e>`_ python[23] compat fix for the relay heartbeat driver
 | `1.9-880 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=100ee1a42cf545b39e58268823fcf85714463501>`_ Fix mixed indent in osvcd_mon
 | `1.9-879 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=339c03ad462d82c4b63ad5bcc402301d567626ac>`_ Care for arbitrator sections in "daemon join/leave" actions
