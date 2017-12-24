@@ -79,4 +79,5 @@ Threads
 	agent.daemon.monitor
 	agent.daemon.scheduler
 	agent.daemon.heartbeats
+	agent.daemon.quorum
 

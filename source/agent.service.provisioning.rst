@@ -153,6 +153,8 @@ References
 
 The reference format is ``{[<section>.]<option>}``, where section is a configuration file section name, and <option> is the option name in the pointed section. If section is ommited, the ``DEFAULT`` section is implicitely used. A reference can also contain arithmetic evaluations.
 
+.. seealso:: :ref:`agent-service-references`
+
 Env section
 +++++++++++
 
