@@ -33,6 +33,10 @@ Reference         Description
 {var}             The agent var/ directory path /var/lib/opensvc/ for agents
                   installed through the packages, /opt/opensvc/var/ for an agent
                   installed via git pull in /opt
+{initd}           The service init directory path, /etc/opensvc/etc/<svcname>.d/
+                  for agents installed through the packages,
+                  /opt/opensvc/etc/<svcname>.d/ for an agent installed via git
+                  pull in /opt
 ================= =============================================================
 
 
