@@ -2,6 +2,10 @@ Changelog
 =========
 
 
+| `1.9-929 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf5a653ad63fadb3d0e8af8ef378174e11d1b2ac>`_ Avoid pushing garbage in the resinfo table
+| `1.9-928 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e1fdb26e504e77d70595b94b9584d8cce4e77ff>`_ Service json status format changes
+| `1.9-927 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0999dbb050b4b8d126ee9f5e613fd8f688b19555>`_ service json status enhancements
+| `1.9-926 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f52f37d716b0d51ef3af31f11e4a3e47fa94277>`_ Keep the scheduler thread from running the same command twice
 | `1.9-925 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85569506a6ee6ec24acab819e416fb3a6560c6eb>`_ Add the {etc} and {var} references
 | `1.9-924 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ef4ee820bf17708dc43a40c7a15e1b26c4c45c4>`_ Add "nodemgr network ls [--format=<fmt>]
 | `1.9-923 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac1f20bd8f1d0d0db003723290def31cb9b096ed>`_ Do not require the portmap cni plugin to be declared in the network config
