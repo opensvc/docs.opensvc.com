@@ -46,7 +46,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.necismsnap
+   agent.templates/template.service.sync.necismsnap
 
 NEC iSM snapshots configuration
 ===============================

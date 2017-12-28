@@ -68,7 +68,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.ibmdssnap
+   agent.templates/template.service.sync.ibmdssnap
 
 IBM DS flash copy configuration
 ===============================

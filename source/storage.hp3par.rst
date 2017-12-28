@@ -100,7 +100,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.hp3par
+   agent.templates/template.service.sync.hp3par
 
 OpenSVC Operations
 ==================

@@ -62,7 +62,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.evasnap
+   agent.templates/template.service.sync.evasnap
 
 EVA snapshots configuration
 ===========================

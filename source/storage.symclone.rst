@@ -51,7 +51,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.symclone
+   agent.templates/template.service.sync.symclone
 
 Symmetrix clone configuration
 =============================

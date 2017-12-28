@@ -79,7 +79,7 @@ Configuration
 	command = id -u && /bin/true
 	user = admin
 
-The complete reference is available :doc:`here <agent.templates/template.task>`.
+The complete reference is available :doc:`here <agent.templates/template.service.task>`.
 
 Confirmation
 ************

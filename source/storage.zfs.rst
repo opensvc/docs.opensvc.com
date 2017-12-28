@@ -35,7 +35,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.zfs
+   agent.templates/template.service.sync.zfs
 
 Examples
 ========

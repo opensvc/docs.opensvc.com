@@ -73,7 +73,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.sync.netapp
+   agent.templates/template.service.sync.netapp
 
 Netapp user account setup
 =========================

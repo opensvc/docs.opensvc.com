@@ -59,7 +59,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
-   agent.templates/template.disk.drbd
+   agent.templates/template.service.disk.drbd
 
 Examples
 ========
