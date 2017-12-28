@@ -12,4 +12,3 @@ Services
    agent.service.orchestration
    agent.service.scoping
    agent.service.resources
-   agent.template.conf

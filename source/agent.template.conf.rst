@@ -1,5 +1,8 @@
-Service Keywords
-****************
+Keywords Reference
+******************
+
+Node
+====
 
 Contents:
 
@@ -7,4 +10,16 @@ Contents:
    :maxdepth: 1
    :glob:
 
-   agent.templates/*
+   agent.templates/template.node.*
+
+Service
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   agent.templates/template.service.*
+

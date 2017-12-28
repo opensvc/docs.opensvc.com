@@ -17,3 +17,4 @@ Agent
    agent.scheduler
    agent.service
    agent.commands
+   agent.template.conf
