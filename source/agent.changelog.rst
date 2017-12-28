@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+| `1.9-937 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=77220a66a8c780147824291de1426eee1726b49f>`_ Use "template.service." as the service templates prefix
+| `1.9-936 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4a0b5c5e0f759f1ef990dcb00ef5bfe8001dbfa>`_ Add a node keywords dictionnary and split the node.conf annotated template
+| `1.9-935 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b2f496387f64ed8aecf0022cafcef725868ba1a>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-934 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f5e578d2a618388a49afe20141bc541abd888ce>`_ docker fixes
+| `1.9-933 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c8511578fc89475a649c8c5f785ae96c9bfcf8cf>`_ Fix a forest structure glitch after load
+| `1.9-932 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=31b8139a098e4f5ec0c23d954276c8888b605052>`_ Add the "nodemgr network show --id <cni net id>" command
+| `1.9-931 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=20563c467a79ccf34691d40aa35600c80de5929f>`_ Add a forest and forest node .load(data) method
+| `1.9-930 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4bba04d542a548309f0756f0705bcaf1fe7580e5>`_ Add a reboot.once boolean keyword to node.conf
 | `1.9-929 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf5a653ad63fadb3d0e8af8ef378174e11d1b2ac>`_ Avoid pushing garbage in the resinfo table
 | `1.9-928 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e1fdb26e504e77d70595b94b9584d8cce4e77ff>`_ Service json status format changes
 | `1.9-927 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0999dbb050b4b8d126ee9f5e613fd8f688b19555>`_ service json status enhancements
