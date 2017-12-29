@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+| `1.9-947 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e69b54695653814a66ada1c319065b3dd7c8097>`_ Fix the default node cni. value fallback in the ip.cni driver
+| `1.9-946 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a6f8fcbb899d2a2b95c04d44ad7a2539ccf200ac>`_ Add cni.plugins and cni.config node.conf options
+| `1.9-945 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05d3ad5a233d2e84a3c96818641ea44cc6b4261d>`_ Return 1%FREE and friends unchanged in the size converter
+| `1.9-944 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8d309743b22e92e154246e53ebf28c24ee0257d6>`_ python3 fixes for the hb.disk driver
+| `1.9-943 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=554f96e8187ee0376743548840c967e4e9ed1105>`_ Create missing <OSVCVAR>/services/<svcname>/scheduler/ dir from rsync driver
+| `1.9-942 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bc64e863e595b4f67c7b17e4df0c84af7dbe926e>`_ Fix keyword candidates printing in the validate_config error codepath
+| `1.9-941 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d6e24740828b9f3979800bc8f6fa5f79624b02f0>`_ Fix devtree region hash function on python3
+| `1.9-940 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=821de618899434bbfb013545dc14abdd3dd0f2eb>`_ Fix a wrong variable name
+| `1.9-939 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c7fe7ab80f2d812dee94bd3ca9e42b608ce9710>`_ Align node and svc capabilities wrt config file
+| `1.9-938 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=226bb06bb582360888ea19f967f7413324436e60>`_ Fix the reboot pre and blocking_pre triggers
 | `1.9-937 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=77220a66a8c780147824291de1426eee1726b49f>`_ Use "template.service." as the service templates prefix
 | `1.9-936 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4a0b5c5e0f759f1ef990dcb00ef5bfe8001dbfa>`_ Add a node keywords dictionnary and split the node.conf annotated template
 | `1.9-935 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b2f496387f64ed8aecf0022cafcef725868ba1a>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
