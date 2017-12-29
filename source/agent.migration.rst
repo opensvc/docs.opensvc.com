@@ -8,7 +8,11 @@ This python module is not strictly necessary, as the agent ships a pure-python A
 
 If python-crypto is available as a system package, use the system's command. For example::
 
+	# debian, ubuntu
 	$ sudo apt install python-crypto
+
+	# SuSE
+	$ sudo zypper in python-pycrypto
 
 Else::
 
@@ -245,18 +249,24 @@ Set :kw:`<rid>.provision=false` in your templates
 For resources you don't want to provision using the opensvc provisioner.
 You can also set your own provisioner as a :kw:`pre_provision` trigger.
 
-Set :kw:`<rid>.shared=true` in your service configuration files and templates
-=============================================================================
-
-On resources you want provisioned on one node only.
-
 Set :kw:`DEFAULT.parents` and :kw:`DEFAULT.children`
 ====================================================
 
 If you implemented inter-services start or stop dependencies using triggers, you might now consider removing the triggers and use those keywords instead. Be aware the inter-dependent services must be hosted in the same cluster.
 
+Set type=docker on docker ip resources
+======================================
+
+tags=docker is not longer sufficient to determine the resource should use the ip.docker driver. Set type=docker explicitely.
+
+
 After Upgrade
 *************
+
+Set :kw:`<rid>.shared=true` in your service configuration files and templates
+=============================================================================
+
+On resources you want provisioned on one node only.
 
 Configure the Clusters
 ======================
@@ -277,7 +287,7 @@ Thaw services
 
 ::
 
-	sudo svcmgr thaw
+	sudo svcmgr -s '*' thaw
 
 Replace :kw:`always_on` by :kw:`standby`
 ========================================
