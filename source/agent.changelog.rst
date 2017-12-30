@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-948 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=72766b541b869c64a29a8b82f38debe6a5af7947>`_ Factorize the config methods in the new extconfig module
 | `1.9-947 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e69b54695653814a66ada1c319065b3dd7c8097>`_ Fix the default node cni. value fallback in the ip.cni driver
 | `1.9-946 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a6f8fcbb899d2a2b95c04d44ad7a2539ccf200ac>`_ Add cni.plugins and cni.config node.conf options
 | `1.9-945 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05d3ad5a233d2e84a3c96818641ea44cc6b4261d>`_ Return 1%FREE and friends unchanged in the size converter
