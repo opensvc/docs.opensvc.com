@@ -26,6 +26,12 @@ Supported scopes are:
 * ``encapnodes``
   The keyword value is interpreted as ``<value>`` on all service encapsulated nodes
 
+* ``flex_primary``
+  The keyword value is interpreted as ``<value>`` on the flex service primary node
+
+* ``drp_flex_primary``
+  The keyword value is interpreted as ``<value>`` on the flex service disaster recovery primary node
+
 Examples
 --------
 
