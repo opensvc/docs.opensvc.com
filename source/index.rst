@@ -23,7 +23,6 @@ Contents
    agent
    collector
    compliance
-   knowledge.base
    howto
 
 
