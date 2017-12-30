@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+| `1.9-955 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63763f6a9c940cf20e53f093236b484c6123f931>`_ Factorize print_config_data() between Node and Svc, in extconfig
+| `1.9-954 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85e7c1fad4e7a10cf2f3a4073703bece1f90e748>`_ Remove the windows listener implementation, prepare for a full-featured osvcd svc
+| `1.9-953 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=06897de9e59adcafe3c5ee0a2938593ee79b4ff2>`_ Stricter use of the svcdict accessors for DEFAULT.docker keywords
+| `1.9-952 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf4f849a668ae4753487b6b30bf9594303fdc433>`_ Avoid "can not stat LABEL=pridns.fs.1" errors in final action stage
+| `1.9-951 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d27c1ee24d84746740ea60d610773d280832f29a>`_ Fix the ready_period default value
+| `1.9-950 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a89403b7ff8fb0e10db0fdf70699bcc8e4d4c272>`_ Track missing node doc template
 | `1.9-949 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9e4928a9f6b7cab33a93942f2b425f3cef20f19a>`_ Don't display the provisioning keyword property for node keywords
 | `1.9-948 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=72766b541b869c64a29a8b82f38debe6a5af7947>`_ Factorize the config methods in the new extconfig module
 | `1.9-947 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e69b54695653814a66ada1c319065b3dd7c8097>`_ Fix the default node cni. value fallback in the ip.cni driver
