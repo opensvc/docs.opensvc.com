@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+| `1.9-962 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0a2fdfc3781bcd2823314e74be685c286e61f602>`_ Fix a python2 bug in the size converter
+| `1.9-961 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7bb646a9c9d195c2887678f1b64380a1aa6ee31>`_ Factorize the matching resourcesets in sub_set_action()
+| `1.9-960 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f5c39e34ad7f49ed679d055e4981e298baf52eb>`_ Add a ip.provisioner provisioning keyword
+| `1.9-959 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=705a8a595bfc8f7febb2665b58f36e5f45da6a2e>`_ Fix unprovision bug on bind mount fs resources
+| `1.9-958 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae12b29603043fdfcbac76650ce0773832da2f72>`_ Fix a size converter bug
+| `1.9-957 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1256f76d4e7129649aa1b76e9159f21ec5df2a7>`_ No need to stop resoure from the disk.loop provisioner
+| `1.9-956 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=70d7e8c7a4bee1339fb8646df1b2eea480c40960>`_ Allow freeze and stop local action when mon status is not idle
 | `1.9-955 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63763f6a9c940cf20e53f093236b484c6123f931>`_ Factorize print_config_data() between Node and Svc, in extconfig
 | `1.9-954 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85e7c1fad4e7a10cf2f3a4073703bece1f90e748>`_ Remove the windows listener implementation, prepare for a full-featured osvcd svc
 | `1.9-953 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=06897de9e59adcafe3c5ee0a2938593ee79b4ff2>`_ Stricter use of the svcdict accessors for DEFAULT.docker keywords
