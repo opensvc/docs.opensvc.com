@@ -547,6 +547,7 @@ The overall status is now reported as being down ::
               |- app#web        ..../. down       weblauncher
               `- sync#i0        ..O./. warn       rsync svc config to drpnodes, nodes
                                                                                             warn: passive node needs update
+
 Let's restart the service to continue this tutorial::
 
         node1:/ # svc1 start --local
@@ -595,6 +596,7 @@ On node2::
 
 OpenSVC will synchronize configuration files for your service since this one should be able to run on node1 or node2.
 In order to force it now, run on ``node1`` ::
+
         # svc1 sync nodes
 
 The configuration replication will be possible if the following conditions are met:
@@ -605,7 +607,7 @@ The configuration replication will be possible if the following conditions are m
 - the previous synchronisation is older than the configured minimum delay, or the --force option is set to bypass the delay check.
 
 
-**On node1**::
+**On node1**
 
 We can now try to start the service on ``node2``, after stopping it on ``node1``::
 
@@ -632,7 +634,7 @@ Fortunately, OpenSVC IP address check prevent the service from starting on ``nod
 
 
 High Availability
-++++++++++++++
++++++++++++++++++
 
 Now, we have to configure your service to be able to failover without any intervention.
 You only have to change the orchestration mode to ``ha``. For more information about orchestration : `Orchestration <agent.service.orchestration.html>`_
