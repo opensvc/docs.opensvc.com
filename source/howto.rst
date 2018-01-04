@@ -12,3 +12,4 @@ Contents:
    howto.nfsha
    howto.vmencap
    howto.automation
+   howto.cheatsheet
