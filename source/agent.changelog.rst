@@ -2,6 +2,19 @@ Changelog
 =========
 
 
+| `1.9-962 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0a2fdfc3781bcd2823314e74be685c286e61f602>`_ Fix a python2 bug in the size converter
+| `1.9-961 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7bb646a9c9d195c2887678f1b64380a1aa6ee31>`_ Factorize the matching resourcesets in sub_set_action()
+| `1.9-960 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f5c39e34ad7f49ed679d055e4981e298baf52eb>`_ Add a ip.provisioner provisioning keyword
+| `1.9-959 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=705a8a595bfc8f7febb2665b58f36e5f45da6a2e>`_ Fix unprovision bug on bind mount fs resources
+| `1.9-958 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae12b29603043fdfcbac76650ce0773832da2f72>`_ Fix a size converter bug
+| `1.9-957 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1256f76d4e7129649aa1b76e9159f21ec5df2a7>`_ No need to stop resoure from the disk.loop provisioner
+| `1.9-956 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=70d7e8c7a4bee1339fb8646df1b2eea480c40960>`_ Allow freeze and stop local action when mon status is not idle
+| `1.9-955 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63763f6a9c940cf20e53f093236b484c6123f931>`_ Factorize print_config_data() between Node and Svc, in extconfig
+| `1.9-954 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85e7c1fad4e7a10cf2f3a4073703bece1f90e748>`_ Remove the windows listener implementation, prepare for a full-featured osvcd svc
+| `1.9-953 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=06897de9e59adcafe3c5ee0a2938593ee79b4ff2>`_ Stricter use of the svcdict accessors for DEFAULT.docker keywords
+| `1.9-952 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf4f849a668ae4753487b6b30bf9594303fdc433>`_ Avoid "can not stat LABEL=pridns.fs.1" errors in final action stage
+| `1.9-951 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d27c1ee24d84746740ea60d610773d280832f29a>`_ Fix the ready_period default value
+| `1.9-950 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a89403b7ff8fb0e10db0fdf70699bcc8e4d4c272>`_ Track missing node doc template
 | `1.9-949 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9e4928a9f6b7cab33a93942f2b425f3cef20f19a>`_ Don't display the provisioning keyword property for node keywords
 | `1.9-948 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=72766b541b869c64a29a8b82f38debe6a5af7947>`_ Factorize the config methods in the new extconfig module
 | `1.9-947 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e69b54695653814a66ada1c319065b3dd7c8097>`_ Fix the default node cni. value fallback in the ip.cni driver
