@@ -51,6 +51,8 @@ New Commands
 | :cmd:`svcmgr set --param <param> --add <member>`
 | :cmd:`svcmgr set --param <param> --remove <member>`
 | :cmd:`svcmgr set --kw <expr> [--kw <expr> ...]`
+| :cmd:`svcmgr set provisioned`
+| :cmd:`svcmgr unset provisioned`
 | :cmd:`svcmgr print devs`
 | :cmd:`svcmgr print exposed devs`
 | :cmd:`svcmgr print sub devs`
@@ -139,4 +141,3 @@ Live migration from 1.8 to 1.9 requires some precaution. This section describes 
    :maxdepth: 2
 
    agent.migration
-
