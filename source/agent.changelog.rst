@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+| `1.9-1253 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3efd3325459eac8ac168bb8d1052efa4cd0bc5c7>`_ Don't set docker run --cgroup-parent option when using the system's dockerd
+| `1.9-1252 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f6eab3d8f59c987dc2c40cfd0f0c7be66dc7dd3>`_ Implement status_info for ip.cni
+| `1.9-1251 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8af75c68734fc16feae7958c714fdb120e5b0d11>`_ Implement a wait_global_expect_unset() monitor thread method
+| `1.9-1250 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=be752cc36fae6b2bb8861174f42c70633c1c1572>`_ Fix a stack in the listener thread service action method
+| `1.9-1249 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c87f16c95fa1046285602e805a6ecc3762d9cfee>`_ Fix a case of the rejoin grace period never expiring
+| `1.9-1248 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ddea3f22890be4f5952533d68726b63958376e2d>`_ Set the remote svc config mtime on the fetched copy
+| `1.9-1247 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c40242c4514506de81ccf09a136981a8080b455a>`_ Better handling of temporary files purge in tmp/
+| `1.9-1246 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=17bb3429bfba93b9be3781bab08d5a00c74c79d9>`_ Add the shift placement policy
+| `1.9-1245 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=502aaabeea5d50499a9bb793cf83df5d2924bde3>`_ Display "scaler" in the svcmon output instead of <topology>/<orchestrate>
+| `1.9-1244 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2508d0aef49b658b25a6ddbc57f27e4f2aa1aa61>`_ Interpret scale=0 as a scaler without slaves yet
+| `1.9-1243 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=89d1182536435b9c08c647cc0cb610e1191e1c53>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1242 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4124e498be3f6a738504198db013372e352052a3>`_ Change the scale action from manual to auto orchestration
 | `1.9-1241 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2dd828a0f9dabae8ede899975761fb330c645dfc>`_ Fix text output in make_rst_examples
 | `1.9-1240 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c70d3936b3405b6616979438f85ae093ebbd2a91>`_ Add missing newlines
 | `1.9-1239 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8e4a12ce98acac235d5d5681d214febb970c5489>`_ Add the missing checkSync checker module
