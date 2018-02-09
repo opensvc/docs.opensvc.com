@@ -210,5 +210,6 @@ The relay host can also be used as an arbitrator.
         type = relay
         relay = relay1
         timeout = 15
+        secret = 1023102310230123123
 
 
