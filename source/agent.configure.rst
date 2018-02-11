@@ -246,7 +246,7 @@ Finally you need to rebuild the initrd/initramfs to prevent shared vg activation
 
 ::
 
-	echo activation { volume_list = ["@local", "@$HOSTNAME"] } >/etc/lvm/lvm_$HOSTNAME.conf
+	echo activation { volume_list = [\"@local\", \"@$HOSTNAME\"] } >/etc/lvm/lvm_$HOSTNAME.conf
 
 Windows
 -------
