@@ -243,6 +243,8 @@ Edit variables
 * Edit the input or content
 * Press 'Enter' to save the change
 
+Note the rules of a contextual ruleset can not be edited from this view. This is to help the administrator realize the scope of the change is broader than the line in the ruleset table. To edit such a rule, you have to use the compliance designer tool.
+
 Attach filterset
 ++++++++++++++++
 
