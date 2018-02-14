@@ -76,12 +76,18 @@ New References
 ==============
 
 | :kw:`{clusternodes}`
+| :kw:`{clusterdrpnodes}`
+| :kw:`{clustername}`
 | :kw:`{exposed_devs}`
 | :kw:`{exposed_devs}[<n>]`
 | :kw:`{sub_devs}`
 | :kw:`{sub_devs}[<n>]`
 | :kw:`{base_devs}`
 | :kw:`{base_devs}[<n>]`
+| :kw:`{dns}`
+| :kw:`{dnsnodes}`
+| :kw:`{dnsuxsock}`
+| :kw:`{dnsuxsockd}`
 |
 
 New Keywords
