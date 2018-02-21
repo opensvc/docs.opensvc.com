@@ -2,6 +2,53 @@ Changelog
 =========
 
 
+| `1.9-1327 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=325d9eca6181a0d4494c852771f6ee61a5db7819>`_ Add the scale target to the svcmon output
+| `1.9-1326 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f576f7de564d74655d6b5b3e5edbe7a0551a9b6>`_ Add the "score" placement policy
+| `1.9-1325 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1d2334270ef174480a047324cc06e668c94980c>`_ Fix the reverse deprecated keywords handling
+| `1.9-1324 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5a5d0275d6d388a80355b25634e99cb94c6aff03>`_ Refresh the services object cache on node.conf change
+| `1.9-1323 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4a04dcf98d32d479ff018e1ea58ecf1cb8bdb7cb>`_ Enhancements for "nodemgr logs" and "svcmgr logs"
+| `1.9-1322 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11946a1e4b6c3cf7b0c6ddb3248084165a6243c8>`_ Use the node score as weight in the SRV records
+| `1.9-1321 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c425552306e03bb0f80d8f471af6cb0eb0871e27>`_ Round up the sizes less than 5% under their next order of magnitude
+| `1.9-1320 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba9807a0a96115dbed66d10249bc25e7a125599c>`_ Use the system's docker daemon if no data dir is set nor docker_daemon_private
+| `1.9-1319 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1c9df2ad08d7c97ef98ee05fd3c76e56cd381546>`_ Fix the scoring algo for the score to stay between 0-100
+| `1.9-1318 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a466ca89529471ddb6cf2ec31dd0f7b05c09ce0b>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1317 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5586734247b0adcb3f88e54f9578f186fa9f2fb7>`_ Add a node scoring algorithm
+| `1.9-1316 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7cc5e4ecf9d6237778e78e971890e0a2f8ea521>`_ Implement switch to specify which python version nosetests should run on
+| `1.9-1315 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4a97ad9e58db310476c1a2b7712648471b07d795>`_ python 2.6 compat fixes for the json_delta module
+| `1.9-1314 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=be70d477b3fce16dd06651ef5ebb86907bbf7759>`_ Add mem stats to SunOS
+| `1.9-1313 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2d379c9701788a7db210fff598bfbff281327145>`_ Add the mem and swap info to the node dataset on Linux
+| `1.9-1312 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=92ec953c21de111ae4e3855564bc585c3fed9cb1>`_ Add a compact mode to print_size()
+| `1.9-1311 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aab4ed8a023d9dfb2ddbdff0a0cab0ae1c180707>`_ Fix postinstall stack
+| `1.9-1310 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ec7de3e2ef108c9b586137b17f95ca512ff699ee>`_ Fix postinstall actions for crontab
+| `1.9-1309 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f220c5337d8cb7c42af48fb5bfbc6ebd1ba251f>`_ Fix the StringIO import errors in the nosetests3 runs
+| `1.9-1308 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05f0e8a3e197fe1445b917e3bc0d797c87a7ffbf>`_ Honor the "insecure" from config in nodemgr collector cli
+| `1.9-1307 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5b4f4fc238add37589b0101393b2e6b58251aa0b>`_ Fix all libs import errors reported by nose with python3
+| `1.9-1306 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=680f7c1be07265de19e36116591d8370e38b7edb>`_ Fix the ready-state period expiration precision
+| `1.9-1305 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f0e782dc9f3c1294a06a75d0249a6a5316000164>`_ Buffer non-immediate monitor wake-ups for 0.5 seconds
+| `1.9-1304 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7794b643e7a563ed2edfadf93131a1846da96598>`_ Fix ip.cni resources restart
+| `1.9-1303 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=384c68d7a01c48a0133ea97d6e2331321d03ac13>`_ python3 compat fixes for the dns daemon thread
+| `1.9-1302 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7b428346da1172966156d4e846f1483cd0e0eeda>`_ Don't set --dns and --dns-search in docker run when --net=container: is set
+| `1.9-1301 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0d102a5c4315da4934c2596700b89129a8a61937>`_ Don't rm private docker instances on unprovision
+| `1.9-1300 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2019cdfddc4c0330632435aa2f3b3070e87db964>`_ Implement a delta-replication log for node-to-node datasets exchanges
+| `1.9-1299 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b05d4abacdcf8e148b42c92e3319a29bce063d2>`_ Fix a potential key error in the svcmon and collector thread codepaths
+| `1.9-1298 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba7f6350118653eda990d8bb7001375905b33622>`_ python3 compat fix for ip.cni
+| `1.9-1297 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea9636c5d4dce71fd30e208e67b44e844e474d20>`_ Optimize fs resource status on Linux
+| `1.9-1296 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1b151f4aa75b5c3dcb9455587827f986ecaf8989>`_ Don't set -i 15 -c 4 options on symrdf query
+| `1.9-1295 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5e0b24e6c092efa390cd132e53016156be634caa>`_ python3 compat fix for the wait_for_devs_ready() utility function
+| `1.9-1294 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a623307881288571096b4e57b68923207a679e7b>`_ Use the realpath of the pv parsed from Linux pvs command
+| `1.9-1293 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=38c1809f567348f200cbe6002a4970b26d1a2fab>`_ One more python3 compat fix to sync.symsrdf
+| `1.9-1292 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b7ffe555dc305cda1c5fb590e6e6b15edf9c2a64>`_ Fix python 3 compat of the sync.symrdf driver
+| `1.9-1291 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d6e51752ead08c55c390aca837558a0b66cd719b>`_ Reinstate the prstatus svcmgr action
+| `1.9-1290 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=512a5539d722b806c82e146657fc0c2b1b18d2b8>`_ Add the "init" node mon state
+| `1.9-1289 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8eaaa8c0d537f16f9927e320d6996d3303c8fb24>`_ Fix more case of svcmon not behaving when the cluster data is incomplete
+| `1.9-1288 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ff9008f5e67f80cc287ad23528868452e9bb4da6>`_ Enhancements to the dns thread management
+| `1.9-1287 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=848450efb9038d65a365c65c5696bd108bec2663>`_ Fix the scaler avail status aggregation
+| `1.9-1286 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6237939fce630d1be2e6cd3169bdbb611f7b9951>`_ Don't add sync#i0 in more cases
+| `1.9-1285 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=00a460b96a474a3129cbd576a5288817d382f470>`_ Catch i/o errors on disk tx heartbeat fsync() and dedup this error log
+| `1.9-1284 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c57406ceb6dbcb27f7222ae8edfe9a2346b954c0>`_ Don't use ip addresses in the SRV record target field
+| `1.9-1283 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f1d67ad9867b8351c55c5e9bd334a72fc68264b>`_ Fix the ip.cni portmappings
+| `1.9-1282 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=95b74dba2e7c11f0ebcafc30c6ec00b1807b7e38>`_ Support the expose keyword in all ip resources and use it to map SRV records
+| `1.9-1281 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=29530348ed745b4b7cd31390282d3278f991f833>`_ Add the "svc" subdomain between <app> and <clustername>
 | `1.9-1280 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6ab9dd3ca768a3a7b81226996932aba83de0dd54>`_ Embed the lowercase app code in the dns names
 | `1.9-1279 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09cd71ef5c44f47e05a877a9707f920364945962>`_ Fix a potential stack in svcmon renderer with corrupt daemon data
 | `1.9-1278 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c633880979040ec353f0d78c3f69d983272fb27>`_ Fix svcmon factorization of not-scaler slaves
