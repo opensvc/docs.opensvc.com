@@ -105,7 +105,8 @@ Leave a Cluster
         | :ref:`agent.daemon.listener`
         | :ref:`agent.daemon.monitor`
         | :ref:`agent.daemon.scheduler`
-        | :ref:`agent.daemon.heartbeats`
         | :ref:`agent.daemon.quorum`
+        | :ref:`agent.daemon.heartbeats`
         | :ref:`agent.service.orchestration`
+        | :ref:`agent.dns`
 

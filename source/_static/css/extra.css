@@ -192,6 +192,9 @@ pre.output {
 /*
  * RTD theme customization
  */
+.highlight-none {
+	overflow-x: hidden !important;
+}
 .highlight > pre.literal-block {
 	padding: 12px 12px !important;
 	margin: 0 ! important;

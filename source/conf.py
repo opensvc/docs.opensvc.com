@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenSVC'
-copyright = u'2017, OpenSVC SARL'
+copyright = u'2018, OpenSVC SARL'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -234,7 +234,7 @@ man_pages = [
 epub_title = u'OpenSVC reference book'
 epub_author = u'Christophe Varoqui'
 epub_publisher = u'Christophe Varoqui'
-epub_copyright = u'2017, OpenSVC SARL'
+epub_copyright = u'2018, OpenSVC SARL'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
