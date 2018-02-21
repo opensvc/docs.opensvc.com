@@ -57,6 +57,8 @@ New Commands
 | :cmd:`svcmgr print exposed devs`
 | :cmd:`svcmgr print sub devs`
 | :cmd:`svcmgr print base devs`
+| :cmd:`nodemgr freeze`
+| :cmd:`nodemgr thaw`
 | :cmd:`nodemgr print devs`
 | :cmd:`nodemgr daemon status`
 | :cmd:`nodemgr daemon blacklist`
