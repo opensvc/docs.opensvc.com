@@ -52,6 +52,17 @@ spread
 
 A static random ranking. The more services, the better the leveling.
 
+shift
++++++
+
+If the service name starts with an index, like scaler slaves, use that index as a shift on the nodes list and apply the nodes order ranking from there. This placement policy thus makes each slave of a scaler start behave as if the placement policy was "nodes order" and the nodes list shifted by one compared to the preceding slave.
+
+score
++++++
+
+Rank by descending node score. The highest scoring node is the leader. The score is a composite metric obtained by a weighted average of 100/load, %avail memory and %avail swap. The weights favor 1/ avail swap 2/ avail mem 3/ lower load average.
+
+
 .. _agent.service.orchestration.affinity:
 
 Affinity
