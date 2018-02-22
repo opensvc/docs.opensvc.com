@@ -105,6 +105,13 @@ A boolean mandating the stale node previously running the service to be shot by 
 
 Defaults to false.
 
+:kw:`DEFAULT.scale`
+-------------------
+
+Activates the scaler mode. An integer setting the target number of running instances of this service. To meet this target, the scaler clones itself as slave services. If the scaler topology is a flex, the flex_min_nodes and flex_max_nodes of each slave is automatically adjusted by the daemon.
+
+Defaults to None.
+
 Resource Sections
 =================
 
@@ -163,6 +170,11 @@ Defaults to ``default``. Users can set it to a more meaningful value.
 
 	Changing that parameter on a joined cluster will break communications until the nodes share the same :kw:`cluster.name`, thus cause a massive split-brain situation. So take care of freezing the cluster nodes before.
 
+:kw:`cluster.dns`
+-----------------
+
+:kw:`cluster.id`
+----------------
 
 Heartbeat Section
 =================

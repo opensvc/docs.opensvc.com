@@ -29,6 +29,8 @@ New Features
 * The :kw:`DEFAULT.env` parameter is now only used to check for service placement : a PRD node can only run PRD/PPRD services
 * Inter-services start dependencies, intra-cluster, using the :kw:`DEFAULT.parents` keyword.
 * Inter-services stop dependencies, intra-cluster, using the :kw:`DEFAULT.children` keyword.
+* Scaler services
+* PowerDNS remote backend
 
 .. warning:: :cmd:`nodemgr thaw`, :cmd:`nodemgr freeze`, :cmd:`svcmgr start`, :cmd:`svcmgr stop`, :cmd:`svcmgr freeze`, :cmd:`svcmgr thaw`, :cmd:`svcmgr provision` and :cmd:`svcmgr unprovision` commands operate cluster wide. :cmd:`svcmgr unprovision` would thus delete all services and their data on all cluster nodes.
 
