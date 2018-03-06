@@ -2,6 +2,91 @@ Changelog
 =========
 
 
+| `1.9-1412 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d041402950575408d553cbfdcb1bcd18616fd7c>`_ Fix reported gen on peers
+| `1.9-1411 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b008282999e6b2e8d78b4af65e29c06e58401499>`_ Fix the generation resync code when the peer gen resets
+| `1.9-1410 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=49381927d3a705b56bacbc13e7d2ad01bf8918ef>`_ python3 fix for the listener unix socket codepath
+| `1.9-1409 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=99ee53abe99ab391abdb29bd8c8b93306fdd2abf>`_ Fix two stack in the xmlrpc codepaths
+| `1.9-1408 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4eb527bc10d97e53257d60189c2d336313c6a289>`_ Support svcmon --node <peer>
+| `1.9-1407 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=93acf2d95ccb6f156910cc1779c35d3ce223ac2a>`_ Use the lsnr ux socket for local communications
+| `1.9-1406 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=67bc49b2a84a096114d7818ce3fb1df30c226f0a>`_ Make the listener thread listen on a unix domain socket too
+| `1.9-1405 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aa30c9cfe339bc49cb0d8f0a565045bc85aefa65>`_ Set the executable permission on bin/preuninstall
+| `1.9-1404 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e8524a7cd28f13c09a56d8e8febd835e2c87f037>`_ Add the "unprovision" keyword for all resources
+| `1.9-1403 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2614bf010d86cf24fe25af513864c7beb1e6bb51>`_ Fix the wrong provisioner picking for fs.docker
+| `1.9-1402 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=92782f66a66ff3563f14b4ab514fb89e92d2e977>`_ Switch the disk.docker driver to the fs driver group
+| `1.9-1401 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1d26c295333b659ec2fffa118b0a2530fa65755>`_ Fix "thaw node now the cluster is complete" happening more than once
+| `1.9-1400 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5a07e18e7b6ecdb76a542e57f5a81d3f7a8c759e>`_ Reduce the container.docker wait for up timeout from 30 to 2 secs
+| `1.9-1399 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=933c1d4a356bd9b103f588c68deda9f937fe328f>`_ Cache the comp_get_data() result
+| `1.9-1398 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a422455ccf0a9d02e52ec975b74134f1a986ce91>`_ Add the "volume_file" compliance object
+| `1.9-1397 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f9e8d63ce34c05f5cb0ee5c15f26ac4b75465938>`_ Don't log safe file diff on check and honor non-verbose in the fix codepath
+| `1.9-1396 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=37cc7669b7b7e90fda4bbfbdaeaa6a3e2c161ad4>`_ Fix a stack in the monitor thread during large scale purge
+| `1.9-1395 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ed2b6707cebd0011f8961d9ecbf1330ef7025cc>`_ Add the disk.docker resource unprovisioner
+| `1.9-1394 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d7dedb2e7830bb36950fa2a5ec7c868ef56bfeaf>`_ Add a disk.docker resource driver
+| `1.9-1393 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b9ef3d55b9544962605fac008792f3ada6171c93>`_ Remove the docker run --rm from run_args if not supported by the docker version
+| `1.9-1392 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=278ab6d0392a5b23019ce8f5a758e0e0b2b5a0ee>`_ Tweak the events format
+| `1.9-1391 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0ec154cf080041902dba0d169ff0ef8069ac05ce>`_ Add the "nodemgr events" action
+| `1.9-1390 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f094b35a3f42da7cd431e13cc9e26347d3b40b6>`_ Add a event queue and listener action to follow events
+| `1.9-1389 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=925da1774d18e05bd592d3f3c8777690fbc57bfd>`_ Fix random decrypt() errors in logs
+| `1.9-1388 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b1d2ab704209e4cc2810cd39b23613dc5002dfb>`_ Don't set --dns docker run args if --net=host
+| `1.9-1387 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ebbe3c0136eae16a7fedf1d095e24cc1821ed76f>`_ Fix the {clustername} reference
+| `1.9-1386 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a6b15f0884a9a0914504d3725e23a2c52f8e552c>`_ Implement indexing and counting of hardcoded references
+| `1.9-1385 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b1b7b1bb43ccb08260212d910a40263bed7bdfa3>`_ Limit the scaling expension to batchs of 3 slaves max
+| `1.9-1384 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=48e830167668f47f7d31bce8dba58eafb5efb33d>`_ Wait for all peers "idle" state before ending the grace period
+| `1.9-1383 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae089c195f14120eb51ecea35ecb95d14a44139f>`_ Don't wait for a result from "nodemgr updatepkg --node <peer>"
+| `1.9-1382 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3e5d48a43729ac0026174b7f8d2aba2c862ba6c0>`_ Fix a potential stack in the scaler orchestrator
+| `1.9-1381 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=34bcb4edf4775a83dbe91325818ed862205b36b0>`_ Udate doc, man and completions
+| `1.9-1380 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=72c102b4b6a91c655b89e3d4a5e1e3a357fa129c>`_ Fix the disk.veritas driver initialization
+| `1.9-1379 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ec52fbda390bd1c27b1f5360a2ad2bc1a59f51d2>`_ nodemgr command enhancements
+| `1.9-1378 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2222ca92fe6682e88de3b15285c90cc3b2570f65>`_ Fix the opensvc-services systemd service not being run at reboot/shutdown
+| `1.9-1377 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=48d6d92cbff609e612bacb146657331456a71c0f>`_ Add missing bin/init/systemd.opensvc-services.service file
+| `1.9-1376 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2487c8458b49706afbd7fb471bb91e67107bad5>`_ Split the systemd opensvc-agent unit
+| `1.9-1375 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba0749d9c240fb3349a35551f4342f30d0715cbd>`_ Fix regression with "svcmgr create" without stdin, config or template set
+| `1.9-1374 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3a918ce4d1f06626614c25e281be1a2ac95b003d>`_ Fix "svcmgr create --provision" when the config is fed through stdin
+| `1.9-1373 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f4d6f10c2e90becf87ccb8149aa363c99475acd>`_ Remove extra "status" case in the debian init script
+| `1.9-1372 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3ec4a9a0147ff1f5f1821b6d54f6815889fe0e5f>`_ Scaler response enhancements when a node dies
+| `1.9-1371 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c6cec2ab4c4c4e33ffa522646f3876fe41a88f79>`_ Fix concurrent json "print config" when scaling up
+| `1.9-1370 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5137b402ba26451874ed5ec4e86729393a4a5639>`_ Fix the flex scale-down removing one too many slave
+| `1.9-1369 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=99cd9a4ba4bbf656ea645eecc92a69960d37a833>`_ Remove most of the gratuitous fsync() calls and file writes
+| `1.9-1368 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5d1b84eab26be1fdbaf8dbad7944b8563f3c1e8>`_ End the rejoin grace period when all nodes are reachable (or expiration)
+| `1.9-1367 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3fd7d5d57ecf39e421c8cb2267d7e6eb06fd1822>`_ scaler enhancements
+| `1.9-1366 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=62a1da18f31e733214cfb9446c82271fa1c39a1a>`_ svcmon output enhancements
+| `1.9-1365 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=685819881624951341f47e3843c2e098bf9cbcd1>`_ Use "svcmgr create" json injection to create scaler slaves from the daemon
+| `1.9-1364 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9960372e2ea4466ba441448697d85a4ee6a626b5>`_ Allow json injection through "svcmgr create" stdin
+| `1.9-1363 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=735c9f9affb07d886779a18946af61e8624d2608>`_ Fix svcmgr delete --wait hanging for one minute if triggered before svc discovery
+| `1.9-1362 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9b46f89edab4df8ed8302b41b47b2478fb5a5528>`_ Fix the load avg placement policy
+| `1.9-1361 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ceb3db804646eb0b522bdbee7e961d8155618b5>`_ Make sure we freeze new service instance before the daemon can orchestrate
+| `1.9-1360 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aa81306a8f59366e9ff9dba631af9306f59d0f89>`_ Avoid scalers going under-target during rescale
+| `1.9-1359 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=501a6e66c76f8c1ed9766dff3e725780e8c18fc3>`_ Stop flex instances on overloaded nodes in priority
+| `1.9-1358 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dba16b9e025a50ee1df2711008f095ccc2b35dec>`_ Orchestrator enhancements
+| `1.9-1357 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=429b6df44e29548f1833c93868eb369086709497>`_ Convert max_parallel to a Node lazy prop
+| `1.9-1356 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d5d798451abcc40ae093bd87020053067668f628>`_ Lower the damon_send() socket timeout and fix the timeout evaluation precision
+| `1.9-1355 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=66748bf6b72b324aceddf047f6632d482d960aa7>`_ Fix the parallelism limiting in the scheduler thread
+| `1.9-1354 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3510290550863ad413342c8b24e4810932e2669b>`_ Add the scalers current number of instances up in the svcmon output
+| `1.9-1353 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b58c98950d900872049e839e66d1996a2ed8bf37>`_ Impose a max transitions limit to the monitor thread
+| `1.9-1352 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9eeb3f2a089e042fafaeb8444799cd3a4ff5e459>`_ Tweak the log message when posting a remote service action
+| `1.9-1351 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c5be1afb4f6e2daee88dc7a0dd29e4980808be58>`_ Scheduler enhancements
+| `1.9-1350 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2a2783b1e2b3e78226240eb8821eb7ea990f5860>`_ Reinstate the meta_write_slot() fix
+| `1.9-1349 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=901175de7fe8ed0c47ea37f4cc51cd41d069462e>`_ Fix the "svcmgr dns update" codepath
+| `1.9-1348 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a126171ddcc86da5eb39754b6ec940b8c9766a67>`_ Drop --name from a container.docker resource run_args
+| `1.9-1347 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ffd1afebcadce965e16539339018db19e35b5724>`_ Honor --debug in "svcmgr logs" action
+| `1.9-1346 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6cb97e9e8f4e305948fe9e0f56ef58390b26fe40>`_ Add the node.min_avail_mem and node.min_avail_swap node keywords
+| `1.9-1345 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e53652a16c16b377e5c09bc44ad854a14b0514e>`_ Show the global expect in svcmon if no transition in progress
+| `1.9-1344 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dcabb1c86b67771c86a9a524d6fbe8eeab9ff984>`_ Wake up the monitor thread after nodemgr freeze/thaw --local
+| `1.9-1343 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f1c0267f0a6439b355d3104eb6d6ebed36d3f0e>`_ Fix undue "misformatted encrypted message" log upon empty message
+| `1.9-1342 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=090d010763280609005049e8a544eee5af1ab62d>`_ Switch get_message() to produce unencoded data
+| `1.9-1341 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=af033608124a43b211ce25f187bee93f987e99ae>`_ Add a Rlock protection on relay hash
+| `1.9-1340 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ce55c2319ded0a844613390842ccd794bd43e8d>`_ comm module enhancements
+| `1.9-1339 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1f25c24cb5b8583d6fc18ba2897f725c88f2c2f>`_ Fix disk hb oscillations
+| `1.9-1338 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b69bc5eaf585dcf2c9f50293fc5ce73b4dd8a917>`_ Fix relay hb oscillations
+| `1.9-1337 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8319a9c2e834104418cb11f44cd6bace575fe8ac>`_ Fix the Resource::unset_lazy() prototype
+| `1.9-1336 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea040f8cc06383556ae87ca904da91e8591509a5>`_ Fix the lower-casing of the references
+| `1.9-1335 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0d0e8b005dce586c3c2a86ead859894bac17fb59>`_ Fix "svcmgr print conf"
+| `1.9-1334 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30eb6492e5feb4e7e896a5e795b939f461ae2ae3>`_ Support uppercase intra-service references
+| `1.9-1333 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=507572ef09031a7f594f93f656c944ccfc5abe87>`_ Return the string as-is from the size converter if it ends with "%"
+| `1.9-1332 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=927557c0d12269232ede057c790a45311150b618>`_ Support "svcmgr delete --rid <rid>" where rid is a no longer supported resource
+| `1.9-1331 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=67193cf7aa62a6da25556f9caffb6d130abcc09e>`_ Don't stack formatting fs label when a unresolved reference causes a None device
+| `1.9-1330 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d6f076395baafeca2b1f90a0a28188745614fdd1>`_ Support action abreviations when unambiguous
+| `1.9-1329 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=209c1a628c69bcd280e85957721915a21cfc6ca5>`_ Add "json" as a default format for collector cli commands
+| `1.9-1328 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=58d3cf58c3aa7aacb0523a03a38af619efad92d1>`_ Add a unset_lazy method to Svc and Resource classes
 | `1.9-1327 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=325d9eca6181a0d4494c852771f6ee61a5db7819>`_ Add the scale target to the svcmon output
 | `1.9-1326 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f576f7de564d74655d6b5b3e5edbe7a0551a9b6>`_ Add the "score" placement policy
 | `1.9-1325 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1d2334270ef174480a047324cc06e668c94980c>`_ Fix the reverse deprecated keywords handling
