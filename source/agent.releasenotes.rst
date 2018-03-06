@@ -39,6 +39,7 @@ New Drivers
 
 * disk.lv (Linux)
 * ip.cni (Linux)
+* fs.docker
 
 New Commands
 ============
