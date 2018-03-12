@@ -14,3 +14,4 @@ Agent
    agent.internals
    agent.commands
    agent.template.conf
+   agent.rosettastone
