@@ -2,6 +2,42 @@ Changelog
 =========
 
 
+| `1.9-1448 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3676a6a63ceb56ec36acb377be2526c15b80cffd>`_ Change the scheduler log entry from "dequeue action" to "run"
+| `1.9-1447 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d8ec6df861994ae1e2b2252b355b40052a0e493>`_ Support duration expressions in the interval part of schedule expressions
+| `1.9-1446 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6c5dead974a3bb59b146be6cbfd7de38a42a47dc>`_ Make sure the files downloaded from the safe are written with mode 0600
+| `1.9-1445 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cb42c0cff08be0aaf73c2e8cfd75d632b771f65d>`_ Better handling of the api http errors in nodemgr collector cli
+| `1.9-1444 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=14fcc4dc1485bfd68208b815442ea4c352279514>`_ Use Node::conf_get() for all cf-only pushasset entries
+| `1.9-1443 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8de9effb9df6aef36e3d8a07f5030dc1981500bd>`_ Install the osvcd daemon as a winservince from the postinstall
+| `1.9-1442 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ec4445a91fa169f8a555e4f84c59e6c0c8510ab9>`_ Change the CWD to <pathsvc> in the winservice
+| `1.9-1441 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0b42c5914583a6b84439f46f9156ecbcb5608d9f>`_ Don't log a decrypt error for "dequeue_actions" messages from the colletor
+| `1.9-1440 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f672bc882da688009a452b52abc593482ca1450>`_ Fix osvcd running as a winservice
+| `1.9-1439 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a379874de52b33a9d270f4353e33c61b2669c81c>`_ Fix the double run execution of tasks not exiting
+| `1.9-1438 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=108317caee56bbfebf5da4267779dce213b578bc>`_ Fix the cmd files on windows
+| `1.9-1437 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=690895c6196d27d736fbeebd7260c811e3c29f78>`_ Rollback debug statements introduced in the postinstall scripts
+| `1.9-1436 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16f3dfff592ab96692924463b12ba1c4101a37bc>`_ Add fs and ip drivers for Windows
+| `1.9-1435 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=49af404e45604a8b4d327429ff19b53b1bf7a2d3>`_ Fix windows mpath checker
+| `1.9-1434 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aa5e2394ddb81c6a3a87cac141b1f5e8afb71482>`_ Fix last boot reporting on Windows
+| `1.9-1433 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d60712752ade21d0e27cd9c4d96622f4c1cdd3f4>`_ Windows fixes
+| `1.9-1432 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d68ad4045d4a9a1d25ff3a45448b7f4be1c7d202>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1431 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8400c1833d7f841f612e50fd4db52dcd0c05011a>`_ Acquire per-sync-resource locks for sync all --rid <rids>
+| `1.9-1430 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=00b6b13d7e44f67b11e422a50cae7a79af52ae7c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1429 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b827e44e1d5b3615d19e7f2efefb423378443a84>`_ Fix build readme file
+| `1.9-1428 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d58bc341242014e31f981fcce36170d092c8ecd4>`_ Embed intent, pid and progress info in LockAcquire and LockTimeout exceptions
+| `1.9-1427 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0ea71a63af875649ca33d6c23ffe52f84029bf53>`_ Allow lxc containers to report their cpu information
+| `1.9-1426 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ea5cd5285f905f665bf740e4b2829f76744838d>`_ Support references to the safe content
+| `1.9-1425 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43b4d75352a6b317e26f9586a86a770fdd500b8b>`_ Don't stack in heartbeats when a message is None
+| `1.9-1424 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=03bd06fd7f6a7dfb3f1dd4f42b2dfe1708e3c22c>`_ Fortify the hb.disk driver in face of garbage data in the slots
+| `1.9-1423 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e67773c5619ace575d71df03984d25ff5968ea10>`_ Add alpine asset os release and vendor detection
+| `1.9-1422 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09d99c89d836e052bbb97ab731f602c458ddd6ee>`_ Fix a nosetest undue error
+| `1.9-1421 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c1068fb6c5f6d4c0993c7637214b79fc266426b>`_ Fix ast parser for python 3.4+
+| `1.9-1420 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7af6c866cc389e3e27f52edf07b34018cac07112>`_ Fix uninitialized _dm_h in the linux devtree
+| `1.9-1419 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=22dd989ef152c77d198045c9016a3a535fe94f2e>`_ Remove a debug statement from the sync checker
+| `1.9-1418 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4dbbf7bb2b5a7dd137e7b4236f879766210407ec>`_ Don't alert on incompatible versions until we have the real compat version of peer
+| `1.9-1417 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d2275faf97c5b7f826b5243917e22f08da2357cc>`_ Preserve the evaluated reference type when possible
+| `1.9-1416 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5dc9b7fe62b46e83e744d57c74247412445e4f5f>`_ Support "--eval" and "--impersonate <node>" with svcmgr "print config" and "get"
+| `1.9-1415 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=de4795ce4a415fafac1113cc68707454da1715b8>`_ Support options.format=json in the get_service_config listener action
+| `1.9-1414 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f91b602f3216c0f81d9592fd7eaf060f425a88db>`_ Force the generation of a cluster secret right from the postinstall
+| `1.9-1413 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bc71b72c6b344a616cc2a707993fa852e3205ccf>`_ Fix the container.docker restart action when --rm is set
 | `1.9-1412 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d041402950575408d553cbfdcb1bcd18616fd7c>`_ Fix reported gen on peers
 | `1.9-1411 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b008282999e6b2e8d78b4af65e29c06e58401499>`_ Fix the generation resync code when the peer gen resets
 | `1.9-1410 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=49381927d3a705b56bacbc13e7d2ad01bf8918ef>`_ python3 fix for the listener unix socket codepath
