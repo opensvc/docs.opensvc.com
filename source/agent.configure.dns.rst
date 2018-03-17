@@ -48,7 +48,7 @@ Preliminary steps
 Declare DNS backends
 ++++++++++++++++++++
 
-::
+On every cluster node::
 
 	nodemgr set --kw cluster.dns+=192.168.100.11 --kw cluster.dns+=192.168.100.14
 
