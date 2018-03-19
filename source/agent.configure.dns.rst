@@ -12,9 +12,9 @@ This feature is not enabled by default.
 Records
 -------
 
-* One A record for each resource with an expose keyword (80/tcp)
-* One round-robin A record for <svcname>.<app>.svc.<clustername>. Each resource with an expose keyword (80/tcp) gets a slot in the RR.
-* One SRV record for _<service>._<protocol>.<svcname>.<app>.svc.<clustername>. Each resource with an expose keyword matching <service> and <port> gets a slot in the RR.
+* One A record ``<hostname>.<svcname>.<app>.svc.<clustername>`` for each resource embedding an ip address and a hostname in its "info".
+* One round-robin A record for ``<svcname>.<app>.svc.<clustername>``. Each resource embedding an ip address in its "info" gets a slot in the RR.
+* One SRV record for ``_<service>._<protocol>.<svcname>.<app>.svc.<clustername>``. Each resource with an expose keyword matching ``<service>`` and ``<port>`` gets a slot in the RR.
 
 Implementation
 --------------
