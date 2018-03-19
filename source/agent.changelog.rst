@@ -2,6 +2,35 @@ Changelog
 =========
 
 
+| `1.9-1477 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1033ed357c100c7accd770b2265f5d3e1ef68ef3>`_ Fix the log line coalescing upon sending to the collector
+| `1.9-1476 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7944a06bfdb00d4a95a323da7b7aa06f396a79f4>`_ Remove the svcmgr startstanby from the opensvc-services unit start
+| `1.9-1475 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9043c611d1727d9f43e39cdf0eec650c5d558efa>`_ Raise excEncapUnjoignable from encap cmd when ssh exits with 255
+| `1.9-1474 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0deabc10d012064a72a230dc50be3e4af4a6b35a>`_ Fix misformatted slave startstandby action
+| `1.9-1473 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b12465ee3a4afe5d8809a7f54ff940750c56625>`_ Add a schedule interval test to the test suite
+| `1.9-1472 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=45591f871b7a8f9024632eab344d22c7459acf30>`_ Simplify the default schedules, omitting the interval part when possible
+| `1.9-1471 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e9a6df8cbc59f4a47b74ac126a2fdb6f5dd2c444>`_ Change the default min_mem_avail from 10% to 2%
+| `1.9-1470 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cd264c79ae46854184735a744b68336eb797a167>`_ Add the @10 schedule syntax the test suite
+| `1.9-1469 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=59c8ecba3c1e370bfb5652f5511d1bbabb96ae29>`_ Use max_parallel in the scheduler instead of hardcoding a 6-parallelism
+| `1.9-1468 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e818ffde951c7f8bbd8086456e490bf8bc3ad9d>`_ Fix the schedule interval converted to sec instead of minutes
+| `1.9-1467 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac1a0d64c2dcdf88da10cd83c0af21d2e4ec8eab>`_ Don't log requirement not met as an error
+| `1.9-1466 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ff8bf3116bafd73c19e1bb0d68ccf257fbb29f6f>`_ Execute remote postsync without collecting logs and async
+| `1.9-1465 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09612e3b9a503a34a0029d676e926bcc4a33bc96>`_ Fix the 23:00-01:00 type schedules
+| `1.9-1464 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2e97d5bb6e1bd9530a2068b64f9ec3008df6d9d7>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1463 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c926d4cea200ab78202b01f1b692ea0ef4f7488a>`_ Fix a syntax error in the Linux mem avail computation on el6
+| `1.9-1462 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f1c022a1c529a5eee769c3c2bd5d0165a95d2534>`_ Add MS Windows devices and mem inventory to pushasset
+| `1.9-1461 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9eea0f8866a33154c106634f677e7dc6ab83e53f>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1460 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7372d6fa3bd202ba57039c65e506018c8ee428c8>`_ Fix a stack in the rid selector and encap services
+| `1.9-1459 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1ffd9b80b180ed1ca3852aa9cd9bc50bf5ca4f8>`_ Micro-optimization in one rpc caller
+| `1.9-1458 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=74ea2b3205cece270d62a94ff84eb590184b658c>`_ Fix stack during mpath checks on Windows 2003
+| `1.9-1457 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ccee1fa9c18e95f68d04e39e0b348b61bfb92ad5>`_ Update postinstall
+| `1.9-1456 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1c5d7ecf738a55dd7e9c4071cbc63489bb0e5749>`_ Update path used for MS Windows service object
+| `1.9-1455 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d1ae8b05d035e50eeef5307bdf7c8f608eed37e3>`_ Add nosetests file to MS Windows packaging exclude list
+| `1.9-1454 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f0f78ea3f0ae5f5b77b0ca767b7e41addf41f0e5>`_ Remove deprecated MS Windows versioning scheme
+| `1.9-1453 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1960095d9892f8b1a26322706bb6b03f18791a97>`_ Update MS Windows package build makefile
+| `1.9-1452 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e441fc29162e36f1df22d5fbddb8fadc44ad4cfb>`_ Update known to work tools version
+| `1.9-1451 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f0b2e3bb7b170133f5cb16267a8e1db5fd66943a>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1450 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d74b04dac64e4373d017fe70eac2c949a9be1414>`_ Update MS Windows ico file
+| `1.9-1449 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f6f2d006185ebb9ef611c6c4dd6a6b39df312504>`_ Update the schedule documentation to reference the interval as duration expression
 | `1.9-1448 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3676a6a63ceb56ec36acb377be2526c15b80cffd>`_ Change the scheduler log entry from "dequeue action" to "run"
 | `1.9-1447 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d8ec6df861994ae1e2b2252b355b40052a0e493>`_ Support duration expressions in the interval part of schedule expressions
 | `1.9-1446 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6c5dead974a3bb59b146be6cbfd7de38a42a47dc>`_ Make sure the files downloaded from the safe are written with mode 0600
