@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-1489 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2c273832794e0816332817f454f65eaabee5076>`_ Add p5p archive format for Solaris IPS packaging
 | `1.9-1488 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11eb0b50df420ad2898970309fc14f4cb03c5034>`_ Silent error messages when Solaris fmri is not installed
 | `1.9-1487 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7ea70bb2319c9b789e2b93ad39b49f338611e74>`_ Ensure Solaris postinstall is executed only once after package install
 | `1.9-1486 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=701540481b066f625f94739ea89e974a634d2e36>`_ Update initial fmri firstboot property value
