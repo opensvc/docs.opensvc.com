@@ -2,6 +2,17 @@ Changelog
 =========
 
 
+| `1.9-1488 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11eb0b50df420ad2898970309fc14f4cb03c5034>`_ Silent error messages when Solaris fmri is not installed
+| `1.9-1487 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7ea70bb2319c9b789e2b93ad39b49f338611e74>`_ Ensure Solaris postinstall is executed only once after package install
+| `1.9-1486 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=701540481b066f625f94739ea89e974a634d2e36>`_ Update initial fmri firstboot property value
+| `1.9-1485 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85c3768816dab276a6918ee30dafe18ce489a52b>`_ Add preremove script to Solaris packages
+| `1.9-1484 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5649d7d0593c49d42ba39fc6e450072ce3c85c4>`_ Fix regression in Solaris postinstall
+| `1.9-1483 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cde13ad47c94926547618811321e445f31630c22>`_ Suppress the optparse options consumed by nodemgr before routing to collector cli
+| `1.9-1482 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=316f9080d75c7a6d18eb1cc7eef5f4b63fc0e64d>`_ Move the zfssnap actions to pre_action()
+| `1.9-1481 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d789f0c18c2486972b33ad2fc5be9763de9bc13c>`_ Fix nodemgr call to ensure compat between OS
+| `1.9-1480 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=304c315d122f825b4213c30942f4450ce21fb284>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1479 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3bf976db5cc316a48dca66a5d3cf84f00bfb2c6f>`_ Fix memory overflow on sync when the sync pipe endpoints fails
+| `1.9-1478 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=079ed387c1850598cf1b513eb8f2aa4cfc60e3b8>`_ Fix nodemgr command not found during postinstall
 | `1.9-1477 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1033ed357c100c7accd770b2265f5d3e1ef68ef3>`_ Fix the log line coalescing upon sending to the collector
 | `1.9-1476 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7944a06bfdb00d4a95a323da7b7aa06f396a79f4>`_ Remove the svcmgr startstanby from the opensvc-services unit start
 | `1.9-1475 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9043c611d1727d9f43e39cdf0eec650c5d558efa>`_ Raise excEncapUnjoignable from encap cmd when ssh exits with 255
