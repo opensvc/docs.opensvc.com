@@ -265,6 +265,33 @@ Operator   Description
 ``<=``     Select only cells with value inforior or equal to specified value or date (<=2012-04-01)
 =========  ==========================================================================================================================
 
+If the column contains JSON data, additional filtering syntax can be used::
+
+	<json path><op><value>
+
+Where ``json_path`` is a mariadb json path expression like:
+
+* $.timeout
+* $.pollers[0]
+* $.pollers[*]
+
+Where ``op`` is:
+
+===========  ==========================================================================================================================
+Operator     Description
+===========  ==========================================================================================================================
+``=``        Select only cells with value at json path equals to ``<val>``
+``>``        Select only cells with value at json path superior to specified value or date (>2012-04-01)
+``<``        Select only cells with value at json path inforior to specified value or date (<2012-04-01)
+``>=``       Select only cells with value at json path superior or equal to specified value or date (>=2012-04-01)
+``<=``       Select only cells with value at json path inforior or equal to specified value or date (<=2012-04-01)
+``:has:``    Select only cells with list at json path containing ``<val>``
+``:sub:``    Select only cells with value at json path containing the substring ``<val>``
+``:end:``    Select only cells with value at json path ending with the substring ``<val>``
+``:start:``  Select only cells with value at json path ending with the substring ``<val>``
+===========  ==========================================================================================================================
+
+
 The column filters persist across logins and navigations, if the volatile filters toggle is not set nor locked off.
 
 .. index:: table scrolling
