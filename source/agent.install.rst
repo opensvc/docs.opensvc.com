@@ -22,8 +22,11 @@ Download the lastest OpenSVC package available for your operating system of choi
         # Debian, Ubuntu Linux
         curl -o /tmp/opensvc.latest https://repo.opensvc.com/deb/|version|/current
 
-        # Solaris
+        # Solaris pkg
         curl -o /tmp/opensvc.latest https://repo.opensvc.com/sunos-pkg/|version|/current
+
+        # Solaris ips
+        curl -o /tmp/opensvc.p5p https://repo.opensvc.com/sunos-ips/|version|/current
 
         # Mac OS X
         curl -o /tmp/opensvc.latest https://repo.opensvc.com/macos-pkg/|version|/current
@@ -50,8 +53,11 @@ Install
 	# Debian, Ubuntu Linux
 	sudo dpkg -i /tmp/opensvc.latest
 
-	# Solaris
-	sudo pkgadd -d . /tmp/opensvc.latest
+	# Solaris pkg
+	sudo pkgadd -d /tmp/opensvc.latest opensvc
+
+	# Solaris ips
+	sudo pkg install –g /tmp/opensvc.p5p opensvc
 
 	# Mac OS X
         installer -pkg /tmp/opensvc.latest  -target /
