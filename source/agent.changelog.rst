@@ -2,6 +2,32 @@ Changelog
 =========
 
 
+| `1.9-1515 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98e3b0f3601ca79159e53d579d767951650f0d5a>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1514 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5cc8ad91be9e7892b17ce74e485b7dc202969bd9>`_ Explain restart conditions in the restart keyword doc
+| `1.9-1513 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=172bbde62bd97a501da7bb6d686a579e9ad544e4>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1512 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bbc83438678a1df51b5cd5ace7a1f4898eba3963>`_ Add MS Windows metrics for scoring
+| `1.9-1511 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e32f99691c86474245a8adfe40cad84890bc98c>`_ Fix the sync#i0 default schedule honoring
+| `1.9-1510 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1af7c23add9bbe975c922f33d27c35593ab6af05>`_ Fix the syslog logger on Solaris & python 3.6
+| `1.9-1509 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3490ded75270ea09edb3106b87e3296515edfc0d>`_ make bdecode() utility function ignore decoding errors
+| `1.9-1508 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c5a29fc49069d417a15d99f4277652f14d7df20f>`_ Disallow --local with "daemon join" and "daemon status" nodemgr actions
+| `1.9-1507 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf0bcfa1da88fde36ccdbe2ee1590d566403a154>`_ Don't check snapd snaps in fs_u and fs_i checkers
+| `1.9-1506 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8345049f28fec75f8e4c4e2f99e0b868341cb60>`_ Fix an occasional "1 too many snap" warning on sync.zfssnap
+| `1.9-1505 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09ccc8dbe9c2649965133de6729039ec1e60d146>`_ Fix a potential checkers stack
+| `1.9-1504 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=25e2ff6fbb7ff3f37fb915ea916b6559564346fe>`_ Fix the documented syslog level default
+| `1.9-1503 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=49164d027ad345916abe56d547a052546676bb7f>`_ Add snooze/unsnooze nodemgr and svcmgr actions
+| `1.9-1502 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d7261ca4d3923e5bbaaf2527bd6c221f86254ee>`_ Fix python3 compat of pushpkg on Solaris
+| `1.9-1501 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3ea85bf4bed57a70db3bf6c64faec866f8240867>`_ python3 fixes for the devtree on Solaris
+| `1.9-1500 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27aefb0e14672304fee87ace970217ac668ea515>`_ Add adminfile for Solaris package removal
+| `1.9-1499 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=87dc16dd7ffc6979949d64741e51143a278d9ee6>`_ Fix encap resources not displayed in print status when tags=nostatus
+| `1.9-1498 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40987871251a309ba25b00e3331452c9680a88c0>`_ Fix the encap service getting frozen on config push
+| `1.9-1497 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b281cd44f4b00d4cd22da8629a2251ee0117f72>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1496 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42705c8bec5da9c92b137a091c43ba2816f32db5>`_ Support zfs dataset in legacy mountpoint mode
+| `1.9-1495 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=97852a6605226167c8ff3f1aabc1c72c1f0bb122>`_ Fix MS Windows hardware inventory
+| `1.9-1494 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=da5868053fefdae039df9fdf87cafddda0126553>`_ Service avail status aggregation tweaks
+| `1.9-1493 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=736afc99c8c96f81797c06c753641322c2132b0e>`_ Catch listener response send errors
+| `1.9-1492 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=573ec3db67384abaa76dc784a41b25ccce113591>`_ Fix python3 compat of the get_solaris_version() utility function
+| `1.9-1491 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=407ce097fba6ff7163bb58ec49b7da5319d80bb8>`_ Improve MS Windows hardware inventory
+| `1.9-1490 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1d5ed3b9c02686986acb88a7c627072de17cb00>`_ Fix python3 compat for the ip inventory on Solaris
 | `1.9-1489 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2c273832794e0816332817f454f65eaabee5076>`_ Add p5p archive format for Solaris IPS packaging
 | `1.9-1488 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11eb0b50df420ad2898970309fc14f4cb03c5034>`_ Silent error messages when Solaris fmri is not installed
 | `1.9-1487 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c7ea70bb2319c9b789e2b93ad39b49f338611e74>`_ Ensure Solaris postinstall is executed only once after package install
