@@ -93,6 +93,7 @@ New References
 | :kw:`{dnsnodes}`
 | :kw:`{dnsuxsock}`
 | :kw:`{dnsuxsockd}`
+| :kw:`{collector_api}`
 |
 
 New Keywords
