@@ -343,6 +343,10 @@ Keywords
 
     The submitted data for this input is stored in the object as a unicode string. The html element used for this type is TEXTAREA.
 
+  * ``boolean``
+
+    The submitted data for this input is stored in the object as a boolean. The html element used for this type is a checkbox-type INPUT.
+
   * ``integer``
 
     The submitted data for this input is stored in the object as an integer. The html element used for this type is INPUT or SELECT if **Candidates** is set.
