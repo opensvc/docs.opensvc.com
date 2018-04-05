@@ -2,6 +2,61 @@ Changelog
 =========
 
 
+| `1.9-1570 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=800d71344e46b0c444a232db8d1cef22a420c455>`_ Always account arbitrators votes in the split handler
+| `1.9-1569 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f660b113ad90f1d536ac18c335d58b50d93b955f>`_ Fix a variable name error in the quorum race codepath
+| `1.9-1568 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f569c190b93eecfd663cb5ce0a196438d876987c>`_ Quorum enhancements
+| `1.9-1567 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cca11f58900a8dfcb4f2e6ba8300e4721892fe89>`_ Display the collector speaker node in svcmon
+| `1.9-1566 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85034b393a610d5ced121dad596298618f06856e>`_ Start counting generations at 1
+| `1.9-1565 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27ab5dcb82104605b9855410c31ebd326e075855>`_ Fix a possible stack in the get_service_config() monitor method
+| `1.9-1564 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=93385729fe525f4a7bccaf9a5bec8ce9388d3815>`_ Report errors in the zpool provisioner
+| `1.9-1563 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=03fdd1a04e6a2e7f2f3fc6344dc2c23271b8d863>`_ Better error reporting when the fs dev and mnt keywords are not set
+| `1.9-1562 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ec1d75d718ab3e6eeafedbbd1128364af8940fd>`_ Fix the colorization of errors in resource logs
+| `1.9-1561 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6b23086f57097b7cce3c08490ac7575b510b3f2d>`_ Fortify the fs.directory driver in face of undefined path
+| `1.9-1560 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=28ecc3f7553c3bc896ac1b1ac5ac53d83f0b5ee2>`_ Fix a stack in the zfs codepath of the SunOS devtree
+| `1.9-1559 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f44a11520e6b7dc690079a4362e9435994e6471b>`_ Send dequeue action intermediate result when an action ran for more than 2s
+| `1.9-1558 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30086c3e0ed1786fc1060aa5cd62bae9ebde01d7>`_ Fix ignored collector notifications
+| `1.9-1557 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3978f771ffb2b6a83a4b11542b44b94c269f0e46>`_ Add agent version check
+| `1.9-1556 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f7d6f2eda0d6f3d688cbc3a38c964dc03c0d92d1>`_ Fix a stack on daemon join when no node section is set in the config file
+| `1.9-1555 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=61981997f167b570a9f582e789efc55345d08974>`_ Avoid fast looping resource restart when the starter reports success but actually failed
+| `1.9-1554 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bdfc3b7ade3bb3df6f156bf3e0d0214866eeb353>`_ Honor the encap frozen flag in the resource restart codepath
+| `1.9-1553 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=135ee74518f098853f26f83d9f2b91330104d7ee>`_ Don't log "already started/stopped" as errors
+| `1.9-1552 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f4ed163891868188427577cc23618c124d983f7b>`_ Fix the reference from safe on python2
+| `1.9-1551 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3a54653bfd743686d503cc53c5a12d26d4cc02b2>`_ Fix wrong reference to the peer attribute in the provision codepath
+| `1.9-1550 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d52e49800179a93c8742c754eb1d83a233641c2>`_ Add the missing docker tag exclusion to the provision action
+| `1.9-1549 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ef60cf6ce830212fd59feef46ec9d8805c2b4b15>`_ Flag the clear action as a master-by-default action
+| `1.9-1548 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1287612b0e397cde226b98dc0b19e329c8ad64f7>`_ Don't rollback after provision if mono-instance
+| `1.9-1547 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=034d06bc3d9b38e07fda17c5c7e53bf2dda5d3c3>`_ Restore docker tag excludes in sub_set_action() calls
+| `1.9-1546 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5f37298797dcb73135866aa420d2192c4309688>`_ Handle encap resource restart from the global
+| `1.9-1545 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=22b7fd839a3a3802bd13effbf3383be7a895f268>`_ Fix encap commands in docker containers initiated by the daemon
+| `1.9-1544 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8a866f4c7228a5abe21ee2c91e0247d2d1d25bfb>`_ Better handling of disabled or unset collector in rest calls and safe references
+| `1.9-1543 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6dbf4e8c3d3aa5870fdee4927d0ec333d7ea95bf>`_ Allow deploying an encap service in docker containers
+| `1.9-1542 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=649cd661ce3dbeebad440c5922cdf6488d98841d>`_ Allow Container class children to define ::name as a lazy property
+| `1.9-1541 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=48b3d6a472838f2c4eacf7bc6410b25d451d49f1>`_ Better handling of the fs unprovisionner
+| `1.9-1540 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=727b40baf5222b6f08b6329a922e3ac84477ba63>`_ Fix a spurious errlog on Linux bind mount fs resource status eval
+| `1.9-1539 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cebdd04c48be4326a87eb26231bc1a329314dd04>`_ Don't transition a failover instance to ready when a peer is transitioning
+| `1.9-1538 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cfc331bcd8495c885db23aeb18107377f53fc1a6>`_ docker provisionner enhancements
+| `1.9-1537 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d08017ab635efecdc3f47466413e70bc2a859794>`_ Better reporting of ini parsing errors on service build
+| `1.9-1536 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3d6341af291da233b1c8dd18f71aaa1c0b5ef8ef>`_ Catch all service build errors from the monitor thread
+| `1.9-1535 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d760d69be3cedc51820ee35a153eb7931091e286>`_ Fix the populate keyword description
+| `1.9-1534 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0912a83f8b01a3e3c2ba7669aa95b1f543a1003f>`_ Fix doubled log entries in the nodemgr and svcmgr logs backlog
+| `1.9-1533 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=24377254d5d1ae2bb695b6ec7bd05136470bc6a2>`_ track missing fs.docker template in docs
+| `1.9-1532 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b3cac320d6afbd96107e62df86acbc7fddd02181>`_ Add more information in the daemon_send() error logs
+| `1.9-1531 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=90165830a3c9ef2ecfcb9f81ac8b4327932f2b68>`_ Python3 compat fix for the the collector cli
+| `1.9-1530 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6072bf285a69b7f96e07277f2d7e6b5eac6c47a1>`_ Obfuscate all secrets used as references from services logs
+| `1.9-1529 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=715da41511d88225e77e6cd9b40b51328d1c2eca>`_ Use the monitor_schedule to define the status eval freq of resources with a restart
+| `1.9-1528 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=10b9333a0918f468a41f798a283c118bee663bb5>`_ Read from the sockets using a 4k buffer instead of byte-by-byte
+| `1.9-1527 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e507481bb6aaad9d67dfddfa12d6e85d0f4adf4>`_ Don't execute the toc action when max retries is reached on non-monintored resources
+| `1.9-1526 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16fd7e94a5884908c3f1e57ba90f8a852f1bc8c2>`_ Switch the "send %s log to %s" message from info to debug
+| `1.9-1525 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ece97df792828ca9251229642657804655fb418c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1524 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9f7c5238bfeb32fbf9be4ec2d86de1fd1c62ad8e>`_ Handle gracefully servers with no swap
+| `1.9-1523 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3c5f961905115778dcdf505ad621e36fd008ee47>`_ Fix stack due to local variable referenced before assignment
+| `1.9-1522 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=01bbd2b65cc08f4d74d3769246f07ad7505ea7e0>`_ Fix nodemgr daemon join
+| `1.9-1521 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9d0738d47a8495e346818e70bdcf5742f37ce6d4>`_ Merge the remote cluster.dns value on nodemgr daemon join
+| `1.9-1520 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4dca5050640884dd6dae220547cc8914835fb34e>`_ Eval {dns[0]} as "" if no cluster.dns is set
+| `1.9-1519 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fc48b0d626da104fadc9885f76bbb47d8914ffb4>`_ Fix a possible stack in the keyword dereference codepath
+| `1.9-1518 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=12f340ac3a9311e521e573719b77b3ef8255a864>`_ Allow resource restart when monitor=false
+| `1.9-1517 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b7d2f7d05d5bee838f2b9ddd982e15deda9067d4>`_ Honor the cni.config keyword value in nodemgr network ls
+| `1.9-1516 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c127e8be0a6d5c008d5f3487560f8253ba6b6f1>`_ Fix error with DEFAULT.show_disabled=false
 | `1.9-1515 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=98e3b0f3601ca79159e53d579d767951650f0d5a>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
 | `1.9-1514 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5cc8ad91be9e7892b17ce74e485b7dc202969bd9>`_ Explain restart conditions in the restart keyword doc
 | `1.9-1513 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=172bbde62bd97a501da7bb6d686a579e9ad544e4>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
