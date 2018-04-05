@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-1573 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf047f0d159d0d6c3355de402db95728055d5678>`_ Add the task.snooze keyword
+| `1.9-1572 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ec2858971d0f88059dc6597fa20050761c2793a>`_ Test the mount point value before using it in the fs provisioner
+| `1.9-1571 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9efea7f4897aa678c9aec8a572ea5f508b5c3f57>`_ Catch is_provisioned errors
 | `1.9-1570 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=800d71344e46b0c444a232db8d1cef22a420c455>`_ Always account arbitrators votes in the split handler
 | `1.9-1569 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f660b113ad90f1d536ac18c335d58b50d93b955f>`_ Fix a variable name error in the quorum race codepath
 | `1.9-1568 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f569c190b93eecfd663cb5ce0a196438d876987c>`_ Quorum enhancements
