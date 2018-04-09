@@ -73,6 +73,7 @@ Unfreeze the service::
 
 	svcmgr unfreeze -s odns
 
+.. note:: Set ``--allow-from=<cidr>,<cidr>`` to the recursor run_args to allow subnets not trusted by default (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
 
 Verify
 ------
