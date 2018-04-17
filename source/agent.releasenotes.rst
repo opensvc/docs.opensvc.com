@@ -22,7 +22,7 @@ New Features
 * Use a denser streamlog format.
 * :cmd:`svcmgr -s` now accepts service selection expressions
 * Cap the parallel running subprocesses on :cmd:`svcmgr --parallel` commands. :kw:`node.max_parallel` node configuration keyword can be used to change the default value (10).
-* The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups.
+* The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups. Service designers can thus choose what resources contribute to the availabilty state, letting other, optional, resources contribute to the overall status. Note the asynchronous, target-state driven, daemon actions only consider the service instances availstatus. For example, a "start" action tells the daemon to take actions for the service to reach the "up availability state", so a service with optional resources down is already considered on-target and no action will be taken.
 * The provision local action now leaves the instance in standby state, instead of started.
 * Support different command for stop, start, check, info actions in a app resource.
 * The :cmd:`<svcname>.stonith` and :cmd:`<svcname>.cluster` symlinks are no longer necessary, and automatically deleted.
