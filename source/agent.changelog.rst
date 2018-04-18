@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+| `1.9-1619 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5e8ac8c53db08d490af38e3920c63b60f3e3a58>`_ Make the fs.docker start method a noop
+| `1.9-1618 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a35c16af7f332647064b4d7838483ad40cb9bcb1>`_ Allow safe://<id> references in compliance rules
+| `1.9-1617 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=00474eacc105cd23fbedddc0d82575dba4320990>`_ Add safe file update to the collector cli
+| `1.9-1616 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3659b2d3e79628991ead86a2b90c5be0c87a1cc3>`_ Fix a stack in the docker login call
+| `1.9-1615 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ee479fd9aec21ef0f1b9c08fc8e7b329934b4c62>`_ Handle automatically the registry login as service
 | `1.9-1614 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=80dea0b17d466e5b04a76820f4f7c2d27bfa5438>`_ Fix the disk.zfs unprovision on stopped instance case
 | `1.9-1613 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=126b9bada928cbb8c7997206661016d1fe3698e4>`_ Fix tar compliance object
 | `1.9-1612 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a82c01461caa6624d50c885e308493aa0bd14e9c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
