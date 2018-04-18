@@ -66,6 +66,18 @@ Using nodemgr collector search
 	 safe.uuid.9fe62906afaf8498.7265736f6c762e636f6e66.conf: /etc/resolv.conf ref5
 	 safe.uuid.a494ab792666883c.7265736f6c762e636f6e66.conf: /etc/resolv.conf ref5
 
+Creating a safe file using the collector web interface
+******************************************************
+
+A "add safe file" tool is accessible directly from the navigation menu.
+
+A file created using this tool has no initial content. An upload should follow.
+
+Upload/Download using the collector web interface
+*************************************************
+
+Upload and download buttons are located in the safe file properties tab.
+
 Upload/Download using nodemgr
 *****************************
 
@@ -95,16 +107,37 @@ The safe cli command Syntax
 Example upload
 ++++++++++++++
 
+Create a new file
+
 ::
 
 	$ sudo nodemgr collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf
 
+Upload a new version of an existing file
+
+::
+
+	$ sudo nodemgr collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf --id 59
+
 Example download
 ++++++++++++++++
+
+By content uuid
 
 ::
 
 	$ sudo nodemgr collector cli -- safe --download --file safe.uuid.a44b45aa173dfe3c.7265736f6c762e636f6e66.conf --to /tmp/foo                      
+	.
+	downloaded
+
+	$ cat /tmp/foo
+	nameserver 8.8.8.8
+
+By id (last content version)
+
+::
+
+	$ sudo nodemgr collector cli -- safe --download --file 59 --to /tmp/foo                      
 	.
 	downloaded
 
@@ -116,4 +149,10 @@ Safe support in compliance
 
 The ``files`` compliance object is able to fetch file content from the safe. To that end, just use the ``safe://<file id>`` format in the files rule ``ref`` key. The ``path`` key specifies where the file should be installed.
 
+Safe support in service configurations
+**************************************
+
+The ``{safe://<id>}`` and ``{safe://<uuid>}`` service configuration references are automatically resolved if the service app code responsibles are allowed to read the corresponding secrets.
+
+Those secrets are obfuscated in the service action logs.
 
