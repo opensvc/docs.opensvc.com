@@ -2,6 +2,47 @@ Changelog
 =========
 
 
+| `1.9-1614 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=80dea0b17d466e5b04a76820f4f7c2d27bfa5438>`_ Fix the disk.zfs unprovision on stopped instance case
+| `1.9-1613 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=126b9bada928cbb8c7997206661016d1fe3698e4>`_ Fix tar compliance object
+| `1.9-1612 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a82c01461caa6624d50c885e308493aa0bd14e9c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1611 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d83ff51e966d10c35230b05cfa99b9fd93417840>`_ Don't try (and fail) to import a zpool that does not exist on unprovision
+| `1.9-1610 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=90d2c5938809df49ce0e7c5a1f96b29fa86e225d>`_ Add the "volume_tar" compliance object
+| `1.9-1609 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9767fed5fa98647be3620560415999d10c3634f7>`_ Fix tar compliance object
+| `1.9-1608 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5e021c2a3bf149a342de489abe38a96af1a070e4>`_ Use https to use the rest api if not specified in node.dbopensvc
+| `1.9-1607 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=daadcfa8500d1ff6ad4fd7160cd6d70e778e88a4>`_ Fix daemon stop blocking on the collector thread stop
+| `1.9-1606 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=907a4bfb91e2bfb30c13f7d44c8f42e096396caf>`_ Fix disk.scsireserv resource ordering on "provision" action
+| `1.9-1605 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0d25b88d632e6a68dd48129fbccd542d34c3ce48>`_ Fix the tags default in docs and set a better example
+| `1.9-1604 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab008fa79590e2c9425fd603cb99cca4ff904113>`_ Automatically set optional=true for "noaction" resources
+| `1.9-1603 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0aaaaad649ed5a8b09785be617a576372ff8ecb7>`_ Make sure the daemon daemon is started before fs.docker provision
+| `1.9-1602 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=72e3740a9b3218f6fda29728434440ab4f18d457>`_ Report n/a instead of undef for fs.docker status
+| `1.9-1601 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63b4440633f6a0355ca0191fcb5651d2868d357d>`_ Give fs.docker resources a mount_point property
+| `1.9-1600 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=713b4fa142337e608320f8fffb22ac9b52fbb60f>`_ Remove the docker instances on unprovision, even with shared docker data dir
+| `1.9-1599 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=115a76e4d969e2c6f7e41000c6ce18fe4883e75c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1598 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d82982413cb22e28cf17e65497613d8ab0eaa7c>`_ Send the cluster_id in the push and pushasset payload
+| `1.9-1597 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6a7dfe0a93030a59a695bb6fdcfb6e96544a3f8b>`_ Use different intervals for ping and daemon_status in the collector thread
+| `1.9-1596 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=65dc23b9139fd3c5693113a3460a41366ffb2f93>`_ Rename tar compliance object. Add immutable flag.
+| `1.9-1595 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=11183ff52d98379de6ccea106612f92671460381>`_ Replace the addr hash by a labelizing of addr
+| `1.9-1594 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=34a21ccfafab12519e4f8b80fb88e36d9f6106cf>`_ Add "list" method support in the dns remote backend
+| `1.9-1593 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e6955656eaffa69fe9bb392736fb63d4e8d96f37>`_ Fix ansible compliance module
+| `1.9-1592 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4547741652d8c57b8cf28817671627d457b14ee3>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1591 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1b871525fd869de138d6fb9e0327ab12df8d4269>`_ Add a tar file compliance object
+| `1.9-1590 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d95f8df56f0eba75c82c4c75d14914be2293675>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1589 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ca1b1b47507e353ada8303b07832ce1dab5ee0de>`_ Don't skip all scheduler actions on not-provisioned services
+| `1.9-1588 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a342449df392dd8bf9d5076c16618d71bdcde487>`_ Update zfs sync template
+| `1.9-1587 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2ccb3ee49b79a68762cf885deba0a6712bbb150c>`_ Add 'local' target in zfs sync ressource
+| `1.9-1586 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5dd0182bbed6ae50ef0ad7afe8ff7f4231ee2c5>`_ Add the "get_node_config" listener action
+| `1.9-1585 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9b430739cc486c6cc68b806a9b97849e805a0895>`_ Fix the daemon start codepath when a fs.docker resource is defined
+| `1.9-1584 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7472519700391e79f376694335a93394bef30ce2>`_ Fix the pdns remote backend undue case-sensitivity
+| `1.9-1583 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=efc71e908637b918273d2da27b5eb84035b2480b>`_ Fix deeper mounts umount on fs.zfs resources on Linux
+| `1.9-1582 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3926c54f1afb79eada949e97bb5da4fc6f797041>`_ Support the container.name keyword with docker containers
+| `1.9-1581 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6c51a78f51d27ab91b9bdc9c1021448d216522ff>`_ Yet another fix for the cni portmapping runtime config formatter
+| `1.9-1580 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c4256c6f875fabaf20e895ac2752b3eb305f1ded>`_ Fix cni portmapping "invalid container port" errors
+| `1.9-1579 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0bc03f4b7be8be5bafb8d004b857cdaf3289d169>`_ Add --nolock to svcmgr
+| `1.9-1578 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0ca9a3bd84a45acaca163d45a6e10447c1cafc0f>`_ Fix a wrong zfs dataset status evaluation case
+| `1.9-1577 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f9d7c9147afb63fd7ff5ccc74e40e658aaa60cd>`_ Tweak the resource sort so that zfssnap are done before zfs send/recv
+| `1.9-1576 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9464bed4962b6ca4aca21647332d57ce8be3169b>`_ Fix sync.zfssnap resources not synced
+| `1.9-1575 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6b91fba343d6dc1d1ecc5b3ebf419fb08edd66b7>`_ Fix a stack in the ip.docker dedicated interface codepath
+| `1.9-1574 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c059481848466176d1a9e528c98743eaffb05f3b>`_ Allow the expose keyword on all ip resources, not only on ip.cni
 | `1.9-1573 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf047f0d159d0d6c3355de402db95728055d5678>`_ Add the task.snooze keyword
 | `1.9-1572 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ec2858971d0f88059dc6597fa20050761c2793a>`_ Test the mount point value before using it in the fs provisioner
 | `1.9-1571 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9efea7f4897aa678c9aec8a572ea5f508b5c3f57>`_ Catch is_provisioned errors
