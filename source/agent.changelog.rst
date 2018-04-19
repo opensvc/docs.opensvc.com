@@ -2,6 +2,8 @@ Changelog
 =========
 
 
+| `1.9-1621 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c2a245367b17dfbe277a0f0ca18e6b73e917ec35>`_ Fix the zfs vdev cache format
+| `1.9-1620 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1829d29554c0edb21041df39e024b98e63fa0f11>`_ Stop pull docker images from the status eval codepath
 | `1.9-1619 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5e8ac8c53db08d490af38e3920c63b60f3e3a58>`_ Make the fs.docker start method a noop
 | `1.9-1618 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a35c16af7f332647064b4d7838483ad40cb9bcb1>`_ Allow safe://<id> references in compliance rules
 | `1.9-1617 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=00474eacc105cd23fbedddc0d82575dba4320990>`_ Add safe file update to the collector cli
