@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-1622 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81bd9476a2bf1d5f3a41d3dcfecea825fd821c18>`_ Automatically reset the monitored and stdby resources restart counter when up
 | `1.9-1621 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c2a245367b17dfbe277a0f0ca18e6b73e917ec35>`_ Fix the zfs vdev cache format
 | `1.9-1620 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1829d29554c0edb21041df39e024b98e63fa0f11>`_ Stop pull docker images from the status eval codepath
 | `1.9-1619 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5e8ac8c53db08d490af38e3920c63b60f3e3a58>`_ Make the fs.docker start method a noop
