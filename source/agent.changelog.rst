@@ -2,6 +2,15 @@ Changelog
 =========
 
 
+| `1.9-1631 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5708a56f1ad8e96c337de38b8c5982415a1c55aa>`_ Fix the maintenance_grace_period keyword doc
+| `1.9-1630 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf7d93f9083818c83cb28bf8bbf2fa9909d21201>`_ Don't TOC if no node is candidate to takeover
+| `1.9-1629 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=91d310f150f0c737e36b0e99100851c293960553>`_ Do the node removal on peers upon "delete --local" synchronously
+| `1.9-1628 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3c9bcd7cd1831fe5e2b5673926bbf5ce185a87ea>`_ Revert "Fix another case of serving a svc config file after a delete --local on a peer"
+| `1.9-1627 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9cc8f8c349ab21abdbe45c559a0b047f53d10150>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1626 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1e77ea3e8e2b5e81e26527a807506d521c8d1c2>`_ Fix the ready_period node keyword default value in docs
+| `1.9-1625 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=59d1c5f32e0a45ef0b5c9a91948547a63a660571>`_ Support the "set --kw ... --eval" action
+| `1.9-1624 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=179c642caf34f196371fc208fc1b5e5b65f689f4>`_ Fix another case of serving a svc config file after a delete --local on a peer
+| `1.9-1623 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=25053e020d0ebfbfbcb3779e174941f6629721c8>`_ Fix test expressions in preuninstall script
 | `1.9-1622 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81bd9476a2bf1d5f3a41d3dcfecea825fd821c18>`_ Automatically reset the monitored and stdby resources restart counter when up
 | `1.9-1621 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c2a245367b17dfbe277a0f0ca18e6b73e917ec35>`_ Fix the zfs vdev cache format
 | `1.9-1620 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1829d29554c0edb21041df39e024b98e63fa0f11>`_ Stop pull docker images from the status eval codepath
