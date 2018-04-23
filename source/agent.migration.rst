@@ -259,6 +259,10 @@ Set type=docker on docker ip resources
 
 tags=docker is not longer sufficient to determine the resource should use the ip.docker driver. Set type=docker explicitely.
 
+Verify disk.scsireserv monitor and optional values
+==================================================
+
+The disk.scsireserv resources in 1.9 inherit their peer resource monitor and optional values. It was not the case in 1.8, so you might want want to force a value the :kw:`disk#<n>pr.monitor` and :kw:`disk#<n>pr.optional` to maintain the same behaviour after migration.
 
 After Upgrade
 *************

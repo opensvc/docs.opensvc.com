@@ -6,6 +6,7 @@ Policy changes
 
 * The optional resource flag is now used to dispatch resources into the "avail" and "optional" lists, instead of using hardcoded driver groups. Service designers can thus choose what resources contribute to the availabilty state, letting other, optional, resources contribute to the overall status. Note the asynchronous, target-state driven, daemon actions only consider the service instances availstatus. For example, a "start" action tells the daemon to take actions for the service to reach the "up availability state", so a service with optional resources down is already considered on-target and no action will be taken.
 * Resources tagged "noaction" are now automatically set optional. Beware, an encap service should have at least one non-optional resource for an availstatus to be evaluated.
+* The disk.scsireserv resources now inherit their peer resource optional and monitor values.
 
 New Features
 ============
