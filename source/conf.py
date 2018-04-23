@@ -315,6 +315,11 @@ rst_prolog = """
 .. role:: c-shrink
 .. role:: c-link
 
+.. role:: c-green
+.. role:: c-orange
+.. role:: c-red
+.. role:: c-blue
+
 .. role:: state
 .. role:: kw
 .. role:: cmd

@@ -301,3 +301,8 @@ pre.output {
 .c-link:before {color: black; content: '\f0c1'; font-family: FontAwesome}
 .c-link {color: transparent}
 
+.c-green {color: seagreen}
+.c-orange {color: orange}
+.c-red {color: #990000}
+.c-blue {color: cornflowerblue}
+
