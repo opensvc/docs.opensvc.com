@@ -60,6 +60,8 @@ New Commands
 | :cmd:`svcmgr print exposed devs`
 | :cmd:`svcmgr print sub devs`
 | :cmd:`svcmgr print base devs`
+| :cmd:`svcmgr snooze`
+| :cmd:`svcmgr unsnooze`
 | :cmd:`nodemgr freeze`
 | :cmd:`nodemgr thaw`
 | :cmd:`nodemgr print devs`
@@ -75,6 +77,8 @@ New Commands
 | :cmd:`nodemgr set --param <param> --add <member>`
 | :cmd:`nodemgr set --param <param> --remove <member>`
 | :cmd:`nodemgr ping --node <nodename>`
+| :cmd:`nodemgr snooze`
+| :cmd:`nodemgr unsnooze`
 |
 
 New References
