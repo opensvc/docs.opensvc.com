@@ -3,8 +3,8 @@
 Behaviour
 *********
 
-Failover Service
-================
+Failover Service, HA orchestration
+==================================
 
 .. toctree::
    :maxdepth: 2
