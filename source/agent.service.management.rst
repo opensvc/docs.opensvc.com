@@ -57,7 +57,7 @@ Where ``<expr>`` is:
 Where ``<param>`` is:
 
 * ``<rid>.<key>`` in a service config file
-* ``<group>.<key>`` in a service config file, where ``<group>`` is a driver group name like disk, fs, task, ...
+* ``<group>.<key>`` in a service config file, where ``<group>`` is a driver group name like disk, fs, task, ... or an empty string, meaning "all resources"
 * ``<key>`` in the service config file header
 
 Where ``<op>`` is:
@@ -68,25 +68,32 @@ Where ``<op>`` is:
 * ``!`` as a negation operator
 * ``~`` as a regexp operator
 
+The matching is case-sensitive except for booleans.
+
 Examples:
 
 services with name ending with dns or starting with ha and with
 an app resource with a timeout set superior to 1::
 
-        $ sudo svcmgr -s '*dns,ha*+app.timeout>1' ls
-        ha1
-        ha2
-        ha3
-        pridns
+	$ sudo svcmgr -s '*dns,ha*+app.timeout>1' ls
+	ha1
+	ha2
+	ha3
+	pridns
 
 Services with at least one ip resource and one task resource::
 
-        $ sudo svcmgr -s 'ip:+task:' ls
-        ha1
-        ha2
-        ha3
-        registry
+	$ sudo svcmgr -s 'ip:+task:' ls
+	ha1
+	ha2
+	ha3
+	registry
 
+Services with at least one monitored resource and monitor_schedule not set::
+
+	$ svcmgr ls -s '!monitor_schedule+.monitor=true'
+	ha1
+	ha4
 
 Services Status
 ===============
