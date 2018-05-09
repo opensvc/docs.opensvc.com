@@ -3,41 +3,34 @@
 Cluster Ingress Gateway, GoBetween L4 Load Balancer
 ===================================================
 
-
 This feature is not enabled by default.
 
 Role
 ----
 
-OpenSVC users can configure an integrated load balancing service to meet their application needs. 
-Indeed, OpenSVC supports L4 load balancing by adding listening ports and linking target services.
-Several ingress gateways can be running and GoBetween will create load balancer service for every OpenSVC ingress.
+Services with ip addresses allocated on cluster backend networks are exposable either through portmapping or through an ingress gateway.
+
+The GoBetween ingress gateway is a L4 load-balancer configured by a OpenSVC-specific daemon to expose services through a public ip address.
+
+Several ingress gateways can be running on the same cluster, and services can choose which gateway they want to be exposed through.
 
 Implementation
 --------------
 
-GoBetween is rolled out in a Docker container with an inital configuration enabling API Rest demand.
-A controller (The ``janitoring daemon``) is also rolled out in a Docker container, listening to server events producing load balancer configuration to be implemented by API Rest. 
-OpenSVC events listened by the controller are either ingress create/update or remove (In a OpenSVC cluster, ingress is a bunch of routing rules that determine how users access services running).
-And the controller generates load balancer configuration based on OpenSVC ingress information
-In a nutshell:
-
-* A failover service.
-* The active instance runs a GoBetween load balancer process and a janitoring daemon.
-* Each component runs as a privileged docker instance to have r/w access to the opensvc daemon unix socket. 
-* The janitoring daemon is tied down with a Cluster DNS to be functional. (See ``Preliminary steps``)
-* GoBetween build his backends list by querying the DNS servers and get those backends from SRV records.
-
+* A failover service. The active instance runs a GoBetween load balancer process and a janitoring daemon.
+* The GoBetween daemon is run as a docker container with an inital configuration enabling the Rest API.
+* The janitoring daemon, also run as a docker container, listens to cluster events on the opensvc daemon unix socket (bind-mounted in the container) and configures the load balancer servers through the GoBetween Rest API.
+* The janitorinf daemon docker instance runs "privileged" to have r/w access to the opensvc daemon unix socket. 
+* The janitoring daemon depends on the Cluster DNS, as the servers backends are deduced from SRV records.
 
 Docker images
 +++++++++++++
 
 * yyyar/gobetween
-* igw_gobetween
+* opensvc/igw_gobetween
 
 Configure
 ---------
-
 
 Preliminary steps
 +++++++++++++++++
