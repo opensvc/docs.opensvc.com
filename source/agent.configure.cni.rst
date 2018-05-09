@@ -94,9 +94,15 @@ On each node ::
 	{
 	    "cniVersion": "0.2.0",
 	    "name": "weave",
-	    "type": "weavenet"
+	    "type": "weave-net"
 	}
 	EOF
+
+If CNI was installed from package, the weave plugin needs to be referenced in the package plugin dir::
+
+	cd /usr/libexec/cni/
+	ln -s /opt/cni/bin/weave-plugin-2.3.0 weave-ipam
+	ln -s /opt/cni/bin/weave-plugin-2.3.0 weave-net
 
 
 Use in service configurations
