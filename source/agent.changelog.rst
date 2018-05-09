@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-1717 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c15de677b567958d7a8350e697387242800c207>`_ Fix a stack in the docker registry autologin logging codepath
 | `1.9-1716 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=941ab5258909045c753adc54eaa8e58bc47b07ca>`_ Add the "none" placement policy
 | `1.9-1715 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96e655ba3ec34d336c328c4fe12632eaee8331e4>`_ Fix the scheduler lazy configured tasks not initialized in the scheduler thread
 | `1.9-1714 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f7ebee135fc91635a4fd876e72694d54244428e>`_ Restore the silent app check behaviour
