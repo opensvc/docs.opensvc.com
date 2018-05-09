@@ -54,7 +54,7 @@ Create the service using the following command. Change the ``--env`` options as 
 
 Unfreeze the service::
 
-	svcmgr unfreeze -s svc-gobtw
+	svcmgr unfreeze -s ogwl4
 
 
 Expose services
@@ -210,7 +210,7 @@ Verify the logs
 
 ::
 
-	docker logs svc-gobtw.container.1 -f
+	docker logs ogwl4.container.1 -f
 
 
 Verify GoBetween configuration
