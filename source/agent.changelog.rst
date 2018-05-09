@@ -2,6 +2,91 @@ Changelog
 =========
 
 
+| `1.9-1716 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=941ab5258909045c753adc54eaa8e58bc47b07ca>`_ Add the "none" placement policy
+| `1.9-1715 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96e655ba3ec34d336c328c4fe12632eaee8331e4>`_ Fix the scheduler lazy configured tasks not initialized in the scheduler thread
+| `1.9-1714 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f7ebee135fc91635a4fd876e72694d54244428e>`_ Restore the silent app check behaviour
+| `1.9-1713 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=628b6fc9e2d3e3808634eb31de4710508b7f5037>`_ Fix the master-slaves async action propagation
+| `1.9-1712 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ff0a9f618b587b17dfb93fad19b70f2459dda977>`_ app resource driver enhancements
+| `1.9-1711 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d359934cc787a5cb79600c2959d9ccc97c50f6e1>`_ lcall() enhancements
+| `1.9-1710 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e52d2197d0570b97dcbf2ef1dfbc78fa33bc296>`_ Display the stack in the service log
+| `1.9-1709 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c3a59747b5e251b6e2d371ef485d6c8cb9ac5084>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1708 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9bbe8e021885d02bb2bf2cb9adae86dc031a8df3>`_ Remove the 'minimal' build parameter
+| `1.9-1707 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=24952da8547cae36b65caf745c31816a3f32b9fb>`_ Fix stack with ansible_playbook compliance object
+| `1.9-1706 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf1493217e002b591243a079b2e6a7c9af4a748c>`_ Sort the devs lists logged in the disk.raw resources status
+| `1.9-1705 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1417949ed5eecaa39a7252e7289ed923d6a586c4>`_ Make the "nodemgr events" command work on mono-node clusters
+| `1.9-1704 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=05c5652adcfc1fce0effb3d680f5f0415c0f142a>`_ Fix the service svcmgr exe link unduly recreated on async delete action
+| `1.9-1703 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6a46c51873c38fea6979071e4a4b589d01a86dd0>`_ Service selector enhancements
+| `1.9-1702 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2db3f762a6d732ed1186ba27a7b169f74d847ed5>`_ Fix a stack in nodemgr events caused by integer fragments in the key path
+| `1.9-1701 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a0e9bf789a4793017375bfd822f9e1a46bbca04e>`_ Switch the status.last format to json and store the resource label in there
+| `1.9-1700 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=341bec57173c46091048a7cddd3987ab736c1b88>`_ Sort the disk.scsireserv devs in the label
+| `1.9-1699 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eb4a1c0e7cec28b33f6f67d94077421f3b9514d4>`_ Revert "Run set_label() on status load from status.last"
+| `1.9-1698 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16bb4e6dc08c82b01c198727fa5594a24bb08315>`_ Fix a stack in "nodemgr events" when formatting changes on integers
+| `1.9-1697 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b39b02e104eb021e935b0e840f54c389f3d2220>`_ Run set_label() on status load from status.last
+| `1.9-1696 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6f432afca2aadcafba803c2838c8840e1e58c745>`_ Fix a stack in "nodemgr events" caused by key deletion events format
+| `1.9-1695 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4cc375bc1429e3e8cbb23c8e62a011751cbe0334>`_ Discard csum keys from the csum computation
+| `1.9-1694 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f6a5820cee4ea9a810c8b43408005e908f952b75>`_ Add more stdout flush
+| `1.9-1693 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b0d81cc47192c8e7db7d59b2d46589d3a4a6f980>`_ Switch to a human-friendly output for "nodemgr events"
+| `1.9-1692 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=471ef80c7bacc5128c64d0f73d9725293e0bc299>`_ Fix the encap forest disappearing from "print status" after resource monitor
+| `1.9-1691 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bbf54567408900427b14c1797c05d751a3b9b2e8>`_ Fix send daemon status aggregate changes usage
+| `1.9-1690 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7361120f6055ed904bf667709fd9732e4c590746>`_ Improve postinstall logging
+| `1.9-1689 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e9ecb0dad39f984f2b76896a284906b97eba8f7>`_ Store status log text lines splited
+| `1.9-1688 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9d3e926ee9fbec542385a9b0de28dc1e564ce04c>`_ Avoid double write of status.json in the update_status_data() codepath
+| `1.9-1687 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=59d8eb0ff81d6ef5891f9b9f66177763c76f2c9a>`_ Sort status data keys during csum computation
+| `1.9-1686 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69fed28a6aa242cf61d44567fa4b77a8a0821235>`_ Fix missing imports reported by pylint
+| `1.9-1685 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bca0029ee159d3e3707ccd3dfa3052288f1a81c9>`_ Fix a log statement in the scheduler
+| `1.9-1684 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=da261f6e05244c897cd73e79c512af8a1c2897f8>`_ Fix wrong svcmgr option set in the commands formatted by the scheduler
+| `1.9-1683 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3323b1e6ae6216e99ad37d9bce53baffa9993455>`_ Refactor the scheduler command merging
+| `1.9-1682 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c738ecd5f83967fae3729f409054b50ed697584f>`_ Fix the node env discovery
+| `1.9-1681 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1ccc0e809dede2b19f76706319b7270a3559678c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1680 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4ef50f61a773ce2129b3bc19803e5bc80d566e6c>`_ Fix sync resources reporting "max retries (0)"
+| `1.9-1679 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aed865da8c6eb2c2ba64528c918256e1bdb21cfc>`_ Fix the daemon status data send buffering
+| `1.9-1678 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5d7a6fde893e88c8403b09b10bd6802f4bce1461>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1677 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=18dc47a040ddb3387927f6d92efa167cc43f30e6>`_ Fix the lcall() select() timeout
+| `1.9-1676 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69afc6e5f1fa6ffae0b3d44e5231c35604143bdb>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1675 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ecf2a3cc7bbbc1d297133daabe7a2c8586cc2b31>`_ Set close_fds in lcall()
+| `1.9-1674 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c15a57c9bce8f8f6a4665ebe636fd2061f3e28de>`_ Add logging messages during package install
+| `1.9-1673 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0afaf7e14fd46b6b42f3e3de81b749b3cc0fb9c7>`_ Improve test reliability by using type instead of which
+| `1.9-1672 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7f42c91a923712896ce1e6e0736999608406ddf0>`_ Catch locking errors from the scheduler in the service action codepath
+| `1.9-1671 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9670260848a60deb7e70f208fe398a0669f61484>`_ Add resourceset nose test
+| `1.9-1670 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db9ae51fddf50025d77eb2c4435b465168a7ac20>`_ Don't aggregate children availstatus into the service availstatus
+| `1.9-1669 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ed1445df1c2dd849e3214b2a00471e4639c178ed>`_ Fix "svcmgr -s foo create" returning 2 instead of 0
+| `1.9-1668 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=198afacf8b7817fa07ed4eabdbb310c4d2fc27b8>`_ Update PYTHONPATH in nose tests
+| `1.9-1667 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b2c0ff979dd24ff51fadc3b54f448c2ff0cc1ac>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1666 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=be406c72f4905f45ef84fb1f9a9fd09e0fb7b868>`_ Allow "set [un]provioned" actions on resources tagged "noaction"
+| `1.9-1665 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8e5ba7b4e8e15848be8e27f0cd2c824b3afe6898>`_ Remove --no-pager option from nodemgr logs test
+| `1.9-1664 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1af1c4e7a16360d27f844ae850f05610b4747d61>`_ Build in minimal mode for "print status" without --refresh
+| `1.9-1663 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=273232b077c7227c82a1c0f9e137617ef59970a6>`_ Fix an error in "print config --format json --eval"
+| `1.9-1662 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e10d4c1c9092a05cee2f85fefb3589d547e22afc>`_ Add the global expect information to svcmon
+| `1.9-1661 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=733f76d1c4a1324869a2116bf0da51bef0b21c75>`_ Catch a KeyError on daemon_status() in early daemon init stage
+| `1.9-1660 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b2ac9afc1e05249c0a744bcabc540755fe310f8a>`_ Fix "print config --eval --format json" errors with keyword inheritance
+| `1.9-1659 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ed29b21b81e13254eb652071e4eda32641059b5>`_ Remove the build_services() from svcmon
+| `1.9-1658 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5ca5ec7133000ba7c87b6a21d1e92d6d2a7ed00>`_ Fix svcmon empty output regression
+| `1.9-1657 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=83dd868fd9d5b7d338d12332f3b83ee8828b4ce8>`_ Fix the node env caching in rcEnv
+| `1.9-1656 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=19e0cdbf22c06455dcad7bef564e011a49539411>`_ Move list_services() from svcBuilder to rcUtilities
+| `1.9-1655 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4edd21b8c3246d1ed177f1dcd0a7160e0c2f7b11>`_ Avoid stack in xmlrpc calls when the socket to collector times out
+| `1.9-1654 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1159b0240f5e354703b0fcebd75e666f499d183e>`_ Fix fs ordering method
+| `1.9-1653 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=15cde163117867e4d21af5216385fed320181c78>`_ Fix fs ordering method
+| `1.9-1652 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=051edfa9a1660179e548e06da8d8b979d053f7e7>`_ Fix "set/unset provisioned" not working for zoned/dockerized resources
+| `1.9-1651 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=456a78033b42af092e447d298b2f9ef2103e70a7>`_ Optimize the service selector for the "-s <svcname>" case
+| `1.9-1650 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7f4a30f6fd460dde81e471e2f1540eae06f193be>`_ Use --parallel on merged commands in the scheduler thread
+| `1.9-1649 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=abeb368c34d31605603c4b705d75ca9ab598fa25>`_ Remove the .debug.log handling
+| `1.9-1648 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d7f8dff3132335f4b6f8d35f314079789a60c110>`_ Factorize the scheduler queued tasks
+| `1.9-1647 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7f36167b6476b831c7953c5143163c5bffebbe97>`_ Fix docker registry autologin as service stack when the node is not registered
+| `1.9-1646 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a0985216c78f8a972896e5ab882d5c56e2606766>`_ Never consider swap-overloaded a node without swap configured
+| `1.9-1645 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eeb29083916dd6189f6999d8aaea2d2a5f7e3040>`_ Treat the "status" action as a print action
+| `1.9-1644 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=53d7025e4a64339283c08b5d5dc164f927222c1c>`_ Save a daemon_status() in the async action validation codepath most of the time
+| `1.9-1643 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=002a64d8b822369173ce1f48d42b9e85ac57d27c>`_ Fix a syslog handler stack
+| `1.9-1642 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7ecbfc752a5c4cfc499593699919415b19942324>`_ Switch the listener backlog from 5 to 128
+| `1.9-1641 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6db028005c3f18d30e764dad79ccd2d671978995>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1640 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d9df9a2e027f91f621bc56becfe47dc37215479b>`_ Remove a debug statement from the listener send() codepath
+| `1.9-1639 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fbc5995bc0d208954cdab65a2e29efdb9b89e386>`_ Solaris 11 fixes for the mcast heartbeat
+| `1.9-1638 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f097ce0905b3bb0aac390b9ff1913fea0727fef1>`_ Fix unix socket overflow on send on solaris
+| `1.9-1637 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d5faef8b7b721315374402280899bf70e7f79749>`_ Set nofile earlier in the nodemgr codepath
+| `1.9-1636 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3f75b7ec986cde3d91250e8174392bc9183b94e7>`_ Fix error message string
+| `1.9-1635 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=748c468fb2508e0feb92dc250bf3c7facd50dc41>`_ Set nofile at daemon startup
+| `1.9-1634 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=06395521aba251ea9c23503d311f208584ad3c7e>`_ Fix a stack in solaris python3.6 os.urandom(n) with n>1024
+| `1.9-1633 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dd57e4603c86dbf5d1e8a96823bf2d50f5e68c89>`_ Coherence fix between the disk.md provisioner and starter
+| `1.9-1632 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2c162de66c27c7fc4191a3b722e1d6b8d04e6ae9>`_ Fix the disk.md driver for el 7.4
 | `1.9-1631 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5708a56f1ad8e96c337de38b8c5982415a1c55aa>`_ Fix the maintenance_grace_period keyword doc
 | `1.9-1630 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf7d93f9083818c83cb28bf8bbf2fa9909d21201>`_ Don't TOC if no node is candidate to takeover
 | `1.9-1629 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=91d310f150f0c737e36b0e99100851c293960553>`_ Do the node removal on peers upon "delete --local" synchronously
