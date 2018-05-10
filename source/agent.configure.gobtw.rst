@@ -186,11 +186,15 @@ If there are no healthcheck server section defined - backend nodes marked as "ok
 Verify
 ------
 
-Test with this service::
+Test with this simple scaler service::
 
 	svcmgr create -s svcweb \
-                --config http://www.opensvc.com/init/static/templates/svcweb.conf \
-                --provision
+		--config http://www.opensvc.com/init/static/templates/svcweb.conf \
+		--provision
+
+	svcmgr thaw
+
+	wget -O- http://192.168.100.32:1024/
 
 Verify the barrel of backends
 +++++++++++++++++++++++++++++
@@ -200,7 +204,7 @@ Verify the barrel of backends
 	dig _http._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
 	dig _https._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
 	
-	(with the correct DNS)
+Adapt the DNS ip address for your context.
 
 
 Verify the logs
@@ -221,5 +225,5 @@ Verify GoBetween configuration
 	>>> import requests
 	>>> requests.get("http://192.168.100.32:8888/servers").json()
 	
-	(with the correct GoBetween addr/port)
+Adapt the GoBetween ip address and port for your context.
 

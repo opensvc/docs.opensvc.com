@@ -13,9 +13,12 @@ From package
 
 Some distributions already ship CNI packages.
 
-On Red Hat or CentOS 7, for example ::
+On Red Hat or CentOS 7, for example, CNI is served by the EPEL repositories ::
 
-	yum install containernetworking-cni
+	# to activate epel repositories:
+	# yum install -y epel-release
+
+	yum install -y containernetworking-cni
 
 Then tell OpenSVC where to find the CNI plugins and network configurations ::
 
