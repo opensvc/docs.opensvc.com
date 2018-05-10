@@ -48,9 +48,7 @@ Create the service using the following command. Change the ``--env`` options as 
 		--provision \
 		--env public_interface=br-prd \
 		--env public_ipaddr=192.168.100.32 \
-		--env public_netmask=24 \
-		--env public_gateway=192.168.100.1 \
-		--env cni_network=weave
+		--env public_netmask=24
 
 Unfreeze the service::
 
