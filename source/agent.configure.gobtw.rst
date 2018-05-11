@@ -195,6 +195,9 @@ If there are no healthcheck server section defined - backend nodes marked as "ok
 Verify
 ------
 
+Create a load-balanced service
+++++++++++++++++++++++++++++++
+
 Test with this simple scaler service::
 
 	$ svcmgr create -s svcweb \
@@ -205,7 +208,26 @@ Test with this simple scaler service::
 
 	$ svcmgr scale -s ogwl4 --to 4
 
-This service is exposed through ogwl4 port 1024::
+Verify the SRV record
++++++++++++++++++++++
+
+This service exposes 80/tcp to DNS through the following directive
+
+::
+
+	$ svcmgr -s svcweb print config
+	...
+	[ip#1]
+	expose = 80/tcp
+
+	$ dig _http._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
+	
+Adapt the DNS ip address for your context.
+
+Verify the load-balanced server
++++++++++++++++++++++++++++++++
+
+This service is exposed through the ogwl4 load-balancer port 1024::
 
 	$ svcmgr -s svcweb print config
 	...
@@ -215,23 +237,14 @@ This service is exposed through ogwl4 port 1024::
 
 	$ wget -O- http://192.168.100.32:1024/
 
-Verify the barrel of backends
-+++++++++++++++++++++++++++++
-
-::
-
-	$ dig _http._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
-	$ dig _https._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
-	
-Adapt the DNS ip address for your context.
-
 
 Verify the logs
 +++++++++++++++
 
 ::
 
-	$ docker logs ogwl4.container.1 -f
+	$ docker logs ogwl4.container.0
+	$ docker logs ogwl4.container.1
 
 
 Verify GoBetween configuration
