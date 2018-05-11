@@ -43,7 +43,7 @@ Deploy the GoBetween service
 
 Create the service using the following command. Change the ``--env`` options as appropriate::
 
-	svcmgr create -s ogwl4 \
+	$ svcmgr create -s ogwl4 \
 		--config http://www.opensvc.com/init/static/templates/ogwl4.conf \
 		--provision \
 		--env public_interface=br-prd \
@@ -52,19 +52,28 @@ Create the service using the following command. Change the ``--env`` options as 
 
 Unfreeze the service::
 
-	svcmgr unfreeze -s ogwl4
+	$ svcmgr unfreeze -s ogwl4
 
 
 Expose services
 +++++++++++++++
+
+The :kw:`expose` ip resources keyword must be set for the cluster DNS to serve the necessary SRV records.
 
 Service exposition through this ingress gateway is controlled through ``env`` section keywords. Most keywords are optional.
 
 General
 *******
 
+* igw_gobtw_target_lb::
+
+	yes|no|<hostname>
+	default=no
+	If set to yes or the gobetween container hostname, lb servers are configured.
+
 * igw_gobtw_bind::
 
+	<addr>:<port> [<addr>:<port> ...]
 	addr default=0.0.0.0, port default=<auto_alloc>
 
 * igw_gobtw_balance::
@@ -188,21 +197,31 @@ Verify
 
 Test with this simple scaler service::
 
-	svcmgr create -s svcweb \
+	$ svcmgr create -s svcweb \
 		--config http://www.opensvc.com/init/static/templates/svcweb.conf \
 		--provision
 
-	svcmgr thaw
+	$ svcmgr -s svcweb unfreeze
 
-	wget -O- http://192.168.100.32:1024/
+	$ svcmgr scale -s ogwl4 --to 4
+
+This service is exposed through ogwl4 port 1024::
+
+	$ svcmgr -s svcweb print config
+	...
+	[env]
+	igw_gobtw_target_lb = yes
+	igw_gobtw_bind = 0.0.0.0:1024 0.0.0.0:1025
+
+	$ wget -O- http://192.168.100.32:1024/
 
 Verify the barrel of backends
 +++++++++++++++++++++++++++++
 
 ::
 
-	dig _http._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
-	dig _https._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
+	$ dig _http._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
+	$ dig _https._tcp.svcweb.default.svc.cluster7 SRV @192.168.100.29 -p 5300
 	
 Adapt the DNS ip address for your context.
 
@@ -212,7 +231,7 @@ Verify the logs
 
 ::
 
-	docker logs ogwl4.container.1 -f
+	$ docker logs ogwl4.container.1 -f
 
 
 Verify GoBetween configuration
@@ -220,8 +239,7 @@ Verify GoBetween configuration
 
 ::
 
-	python 
-	
+	$ python 
 	>>> import requests
 	>>> requests.get("http://192.168.100.32:8888/servers").json()
 	
