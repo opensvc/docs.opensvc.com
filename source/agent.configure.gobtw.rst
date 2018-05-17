@@ -67,10 +67,17 @@ General
 
 * igw_gobtw_bind::
 
-        required to configure lb servers.
+	required to configure lb servers.
 	<exposed_port>-<addr>:<port> [<exposed_port>-<addr>:<port> ...]
 	addr default=0.0.0.0, port default=*
-        * = allocated automatically from a predefined range (1024-65535)
+	* = allocated automatically from a predefined range (1024-65535)
+
+* igw_gobtw_target_lb::
+
+	[<hostname> ...]
+	optional (default : None)
+	If set to a list of ingress gateway hostnames, only those gateways handle the binded servers.
+	If not set, all gateways handle the binded servers.
 
 * igw_gobtw_balance::
 
