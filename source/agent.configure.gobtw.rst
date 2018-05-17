@@ -65,26 +65,22 @@ Service exposition through this ingress gateway is controlled through ``env`` se
 General
 *******
 
-* igw_gobtw_target_lb::
-
-	yes|no|<hostname>
-	default=no
-	If set to yes or the gobetween container hostname, lb servers are configured.
-
 * igw_gobtw_bind::
 
-	<addr>:<port> [<addr>:<port> ...]
-	addr default=0.0.0.0, port default=<auto_alloc>
+        required to configure lb servers.
+	<exposed_port>-<addr>:<port> [<exposed_port>-<addr>:<port> ...]
+	addr default=0.0.0.0, port default=*
+        * = allocated automatically from a predefined range (1024-65535)
 
 * igw_gobtw_balance::
 
-	The policy used by gobetween to select a backend slot to handle a new connection.
-	``weight`` is the default balance policy.
-	You can also configure to :
-		iphash : Target backend will be calculated using hash function of client ip address mod backends count.
+	the policy used by gobetween to select a backend slot to handle a new connection.
+	'weight' is the default balance policy.
+	you can also configure to :
+		iphash : target backend will be calculated using hash function of client ip address mod backends count.
 		leastconn : GoBetween will select backends with least connections to it. 
-		roundrobin : Each new connection will be proxies to next backend in the backends pool successively. 
-		leastbandwidth : Backends with least sum of rx/tx per second traffic will be selected for next request.
+		roundrobin : each new connection will be proxies to next backend in the backends pool successively. 
+		leastbandwidth : backends with least sum of rx/tx per second traffic will be selected for next request.
 
 * igw_gobtw_protocol::
 
@@ -133,7 +129,7 @@ The janitor forces GoBetween services backend discovery driver to SRV. The OpenS
 
 * igw_gobtw_discovery_kind::
 
-	default : SRV (This discovery method uses DNS lookup to build backends list)
+	default : SRV (this discovery method uses DNS lookup to build backends list)
 
 * igw_gobtw_discovery_srv_dns_protocol::
 
@@ -142,6 +138,7 @@ The janitor forces GoBetween services backend discovery driver to SRV. The OpenS
 * igw_gobtw_discovery_srv_lookup_server::
 
 	ip default=<from get_node_config> & port default=53
+        use the keyword 'dns_port' in the env section to change the default port.
 
 * igw_gobtw_discovery_srv_lookup_pattern::
 
@@ -232,8 +229,7 @@ This service is exposed through the ogwl4 load-balancer port 1024::
 	$ svcmgr -s svcweb print config
 	...
 	[env]
-	igw_gobtw_target_lb = yes
-	igw_gobtw_bind = 0.0.0.0:1024 0.0.0.0:1025
+	igw_gobtw_bind = 80/tcp-0.0.0.0:1024 443/tcp
 
 	$ wget -O- http://192.168.100.32:1024/
 
