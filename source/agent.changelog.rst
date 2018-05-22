@@ -2,6 +2,28 @@ Changelog
 =========
 
 
+| `1.9-1740 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42c95995220d3ea316405a49caeecbdf187e00ac>`_ Fix the deleted instances detection in the collector thread
+| `1.9-1739 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d25e42ed274efdeac8af099eed5443c7015d72a6>`_ Fix resource label cache never refreshed
+| `1.9-1738 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96963e1387a05fe6c4eb0acd33a16bb9d1dddfa0>`_ Add "svcmgr push resinfo --sync" support
+| `1.9-1737 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4eb0c910bbb82633ee6398b32f4f42ad20cf424>`_ Fix "systemctl start" agent ignored by sytemd
+| `1.9-1736 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3c16629b056a386007a529b04f8e2b75defccc19>`_ Fix wrong exception catched in the bogus rid in config case
+| `1.9-1735 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=62f497db10baaf4a6a399b14d1d5fe0113e136f6>`_ Fix a stack on logging in a xmlrpc error codepath
+| `1.9-1734 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ef1c175a32f18633ee92b3f93239e316d555559>`_ Catch disappearing instances when determining if a daemon_status should be sent
+| `1.9-1733 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=883b6e1540c1b9a15f6ac957876f604c2fbbf667>`_ Fix "push foo" action interpreted as "push"
+| `1.9-1732 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ecf18969be8f1cc2b81857f3b206f687436d92e2>`_ Add a missing resources init in the get_resourcesets() codepath
+| `1.9-1731 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0ba70d38bb560201ab194a3ae284ac46d42d5294>`_ Make sure action_rid is never set to [""]
+| `1.9-1730 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=edd2bedd8d4a00a5a636fc7906e296f7923d84c6>`_ Fix a unicode error in the lcall() codepath
+| `1.9-1729 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b22096cfa0d4367fa632b3241a1ce6628fcef90>`_ Add the cluster_id information to the daemon status data reported to the collector
+| `1.9-1728 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=196f6cb556c3740efddc6c52386f701f3e1fbdf2>`_ Use os.uname() instead of execv(uname) on Linux asset inventory methods
+| `1.9-1727 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d00432ceaf3bd264605136e2df1ebcf5e93a24c7>`_ Service build optimization
+| `1.9-1726 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea500bfa65be53f39b8a25821964e33036827612>`_ Raise NA instead of CompErr when ansible is not installed
+| `1.9-1725 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4bb09bd5c0af17f7e75dc08baf768bbae9b3144b>`_ Remove percent chars from the package changelog
+| `1.9-1724 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f3324bd12b68f241e5359abec02b2f5b5b7791b6>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1723 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1ebf7118219c76b8a957715be2e336766ab0aa0d>`_ Disable %install rpm helpers
+| `1.9-1722 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3990de030c77a370e64d8fd583ce3d8ec2b439b8>`_ Fix postinstall issues reported by pylint
+| `1.9-1721 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=619419580f877e6a13424f3ae143bf14b6d870fe>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-1720 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5b9a41323c21653d4e9fd20d15fce61384df7c52>`_ Add 'replace' mode to fileinc.py compliance object
+| `1.9-1719 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=34c472afcaba5dbe7070d4a282d9f1e293f4ded4>`_ Fix a lv snap cleanup stack
 | `1.9-1718 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cb826196c30ab8ebe0a843783a28e79843d64bf4>`_ Use ip(8) on Linux in ip resource start/stop when ifconfig is not installed
 | `1.9-1717 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c15de677b567958d7a8350e697387242800c207>`_ Fix a stack in the docker registry autologin logging codepath
 | `1.9-1716 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=941ab5258909045c753adc54eaa8e58bc47b07ca>`_ Add the "none" placement policy
