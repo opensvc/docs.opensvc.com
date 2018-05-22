@@ -2,6 +2,33 @@ Changelog
 =========
 
 
+| `1.9-1767 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27cbe00f18af8815a938ec3778c5016954a60be9>`_ Directory pool driver enhancements
+| `1.9-1766 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e05485fc946ce8ca9bcab0ac405067dd5131fc41>`_ Add the "status_log" app resource keyword
+| `1.9-1765 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=14193d847585abaa6bd2228a27dfd371c805187b>`_ Merge joinee pools on "nodemgr daemon join"
+| `1.9-1764 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4cbcbc5a94d09cbecdb56d0cc702407bfdc6f239>`_ Fix the "nodemgr pushasset" formatted command from the updatepkg codepath
+| `1.9-1763 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8d39e6f8d479d8bd372cf9e99e75166b925d3fa>`_ Remove clean_pyc() from the postinstall
+| `1.9-1762 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6f536f4e857d4298ef579daa076e30b048cfb6e9>`_ Move clean_pyc() before install_rc in the postinstall
+| `1.9-1761 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=80d5dee4b372159664eeccf261356c29779e295a>`_ Improve key format tolerance on custom app info
+| `1.9-1760 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fb5016ef81edb3efb369da166d4e74b151fd38bd>`_ Add the "directory" pool driver and use that as the default pool instead of loop
+| `1.9-1759 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b152fc9426ac97b005984511ad18ca838fc70894>`_ Add storage pool translators
+| `1.9-1758 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d57864d7b2a303fde82777ea845e53ef50a47bcc>`_ Don't display the "loop file does not exist" status log on unprovisioned resources
+| `1.9-1757 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5b715fcac13909296b6f4c58841b3e81c4a0d8b5>`_ Fix a keywords module potential stack
+| `1.9-1756 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=086d2c60dd2ea3a2e2fb43da5aa0cec8fce0f0f7>`_ Add the {rid} and {rindex} references
+| `1.9-1755 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f38ab83674c31987fdfe4c8b483f2669db13e68b>`_ Drop the scaler id from the slave upon scale
+| `1.9-1754 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=83ee26fe5b3437c7fc2adbf610a1fa1d547f95a0>`_ Thaw the service after create+provision
+| `1.9-1753 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9607d41a0f7ecf5bad9776ce543545ee9c654a1b>`_ Auto-generate a service uuid
+| `1.9-1752 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=64f897869be599ed85327880f87b557ef4d527ca>`_ Drop compat codepath with older collector from xmlrpc lib
+| `1.9-1751 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=33ebde101ade1b21fe54aa834d18664dd081f1bf>`_ Remove unused push_all() from xmlrpc lib
+| `1.9-1750 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b018bacd126a9e566333d2cf28f6cdaae1e49f2>`_ Flag the "push status" action
+| `1.9-1749 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=097f2184715011d59eb5d9a62d611710f9dfd686>`_ Add the "svcmgr push status" command
+| `1.9-1748 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=247bd10b7ff2bf7bc570ae624e15655a32094b7d>`_ fix warning on delete service instance
+| `1.9-1747 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f2e0354bf2c01c8ebc0308f162ed855c03bb4e1>`_ Fix the tasks last scheduled run timestamp not updated
+| `1.9-1746 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e0d0a5de6da1e6ed9b44be09f071d69caeff2bbf>`_ Fix a stack in push resinfo when a pushed key value is None
+| `1.9-1745 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=51921b9d4423b04d00cff69652c85f21a68e4f42>`_ Fix a case of corrupted listener responses
+| `1.9-1744 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=57ca05f36c2922e2cab31029dbb2c82b1d82c9ee>`_ Fix for the file compliance object
+| `1.9-1743 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c18c8eefebfa40a478bc6b1da201aee5e99b278c>`_ Always set --purge-collector from clusterwide async service delete
+| `1.9-1742 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=36aca82b93acb14c6d0eb39c5c10314fb70251c2>`_ Add the --purge-collector delete action option
+| `1.9-1741 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7de4e758528a7b65d05c12842222066919bf5fda>`_ Autoconvert Collector() options to a Storage object if opportune
 | `1.9-1740 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42c95995220d3ea316405a49caeecbdf187e00ac>`_ Fix the deleted instances detection in the collector thread
 | `1.9-1739 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d25e42ed274efdeac8af099eed5443c7015d72a6>`_ Fix resource label cache never refreshed
 | `1.9-1738 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96963e1387a05fe6c4eb0acd33a16bb9d1dddfa0>`_ Add "svcmgr push resinfo --sync" support
