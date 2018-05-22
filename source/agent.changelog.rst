@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-1768 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ccbaec18f6264337853a04d61cccf59caaeb8a69>`_ Fix a stack in bin/pkg/make_rst_examples when a resource has no type key
 | `1.9-1767 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27cbe00f18af8815a938ec3778c5016954a60be9>`_ Directory pool driver enhancements
 | `1.9-1766 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e05485fc946ce8ca9bcab0ac405067dd5131fc41>`_ Add the "status_log" app resource keyword
 | `1.9-1765 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=14193d847585abaa6bd2228a27dfd371c805187b>`_ Merge joinee pools on "nodemgr daemon join"
