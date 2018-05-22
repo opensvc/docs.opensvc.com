@@ -24,7 +24,22 @@ Reference         Description                                                   
 {short_nodename}  The running node base name (without domain)                    Yes                     Yes 
 {svcname}         The running service name                                       No                      Yes 
 {short_svcname}   The running service base name (without domain)                 No                      Yes
-{cluster_nodes}   The cluster nodes list. Usually set as the :kw:`DEFAULT.nodes` Yes                     Yes
+{id}              The service id                                                 No                      Yes
+{rid}             The name of the section the reference is under                 No                      Yes
+{rindex}          The part after the dash of the name of the section the         No                      Yes
+                  reference is under
+{safe://<id>}     Substitute the reference with the content of the safe file     Yes                     Yes
+                  identified by <id>. Usually passwords or private keys. The
+                  content is cached locally so the collector dependency is
+                  loose.
+[clustername}     The cluster.name node keyword value                            Yes                     Yes
+{clusternodes}    The cluster.nodes node keyword value                           Yes                     Yes
+{clusterdrpnodes} The cluster.drpnodes node keyword value                        Yes                     Yes
+{dns}             The cluster.dns node keyword value (ip adressses)              Yes                     Yes
+{dnsnodes}        The cluster.dns node keyword value (resolved names)            Yes                     Yes
+{dnsuxsock}       The path to the dns thread unix socket                         Yes                     Yes
+{dnsuxsockd}      The path to the directory hosting the dns thread unix socket   Yes                     Yes
+{collector_api}   The uri of the collector Rest API                              Yes                     Yes
 {svcmgr}          The full path the the svcmgr executable                        Yes                     Yes
 {nodemgr          The full path the the nodemgr executable}                      Yes                     Yes
 {etc}             The agent etc/ directory path: /etc/opensvc/ for agents        Yes                     Yes
