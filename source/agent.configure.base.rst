@@ -2,8 +2,8 @@
 
 .. _agent-configure:
 
-Agent Configuration
-*******************
+Agent Base Configuration
+************************
 
 Set System Defaults
 ===================

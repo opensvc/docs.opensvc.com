@@ -5,6 +5,7 @@ Configure
    :maxdepth: 2
 
    agent.configure.base
+   agent.configure.pool
    agent.configure.cluster
    agent.configure.cni
    agent.configure.dns
