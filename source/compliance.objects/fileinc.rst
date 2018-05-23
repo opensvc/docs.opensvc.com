@@ -4,10 +4,11 @@ fileinc
 Description
 ===========
 
-    * Verify file content.
+    * Verify or Change file content.
     * The collector provides the format with wildcards.
     * The module replace the wildcards with contextual values.
-    * The fmt must match the check pattern
+    * The fmt must match the check pattern ['check' statement]
+    * The fmt is used to substitute any string matching the replace pattern ['replace' statement]
     
     Wildcards:
     %%ENV:VARNAME%%		Any environment variable value
@@ -34,7 +35,7 @@ Form definition
 
     
     Desc: |
-      A fileinc rule, fed to the 'fileinc' compliance object to verify a line matching the 'check' regular expression is present in the specified file.
+      A fileinc rule, fed to the 'fileinc' compliance object to verify a line matching the 'check' regular expression is present in the specified file. Alternatively, the 'replace' statement can be used to substitute any matching expression by string provided by 'fmt' or 'ref' content.
     Css: comp48
     
     Outputs:
@@ -58,8 +59,16 @@ Form definition
         Label: Check regexp
         DisplayModeLabel: check
         LabelCss: action16
-        Mandatory: Yes
-        Help: A regular expression. Matching the regular expression is sufficent to grant compliancy.
+        Mandatory: No
+        Help: A regular expression. Matching the regular expression is sufficent to grant compliancy. It is required to use either 'check' or 'replace'.
+        Type: string
+      -
+        Id: replace
+        Label: Replace regexp
+        DisplayModeLabel: replace
+        LabelCss: action16
+        Mandatory: No
+        Help: A regular expression. Any pattern matched by the reguler expression will be replaced. It is required to use either 'check' or 'replace'.
         Type: string
       -
         Id: fmt
