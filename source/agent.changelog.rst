@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-1771 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1318258740742356ad2cef334005b65abc601a03>`_ Generate _<unresolved port>._<protocol>... SRV records
+| `1.9-1770 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f4a6a5ce6c335a5aebfb35eba3501a3959f6861e>`_ Fix push resinfo causing undue docker image pull tries
+| `1.9-1769 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ef228fe66879523e905e8a993c0e3164cad8769>`_ ignore references in the content of a {safe://...} reference
 | `1.9-1768 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ccbaec18f6264337853a04d61cccf59caaeb8a69>`_ Fix a stack in bin/pkg/make_rst_examples when a resource has no type key
 | `1.9-1767 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27cbe00f18af8815a938ec3778c5016954a60be9>`_ Directory pool driver enhancements
 | `1.9-1766 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e05485fc946ce8ca9bcab0ac405067dd5131fc41>`_ Add the "status_log" app resource keyword
