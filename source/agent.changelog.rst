@@ -2,6 +2,10 @@ Changelog
 =========
 
 
+| `1.9-1775 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=341986cec7af5de5716cf7bb6c52d92886df00e0>`_ Fix the async create+provision
+| `1.9-1774 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=79d068618a329052766b7959e04ceba5a94628f4>`_ Don't use "zpool list -p" in the zpool pool driver
+| `1.9-1773 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=802294b200f4b2f8fd755ed064998d7a8e11d59d>`_ Fix wrong fs dependency test before starting a private docker daemon
+| `1.9-1772 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9f56913d35fe46cf862bc2ceca709a11c9114bae>`_ Fix "svcmgr <action> --rid <group>"
 | `1.9-1771 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1318258740742356ad2cef334005b65abc601a03>`_ Generate _<unresolved port>._<protocol>... SRV records
 | `1.9-1770 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f4a6a5ce6c335a5aebfb35eba3501a3959f6861e>`_ Fix push resinfo causing undue docker image pull tries
 | `1.9-1769 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ef228fe66879523e905e8a993c0e3164cad8769>`_ ignore references in the content of a {safe://...} reference
