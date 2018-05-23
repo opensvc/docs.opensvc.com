@@ -119,6 +119,24 @@ Upload a new version of an existing file
 
 	$ sudo nodemgr collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf --id 59
 
+Oneliner to store a secret in the safe
+
+::
+
+	$ echo -n s3cr3t | nodemgr collector cli -- safe --upload --name mysecret --file /dev/stdin
+	{
+	    "data": {
+		"id": 56,
+		"md5": "cc414bfc9c00475b59c87595299ff31d",
+		"name": "mysecret",
+		"size": 5,
+		"uploaded_date": "2018-03-25 22:49:05",
+		"uploaded_from": "10.0.3.1",
+		"uploader": 1,
+		"uuid": "safe.uuid.aaab49ba4f926d2a.706970653a5b3135343430323733335d.txt"
+	    }
+	}
+
 Example download
 ++++++++++++++++
 
