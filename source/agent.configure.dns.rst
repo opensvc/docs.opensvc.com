@@ -101,6 +101,20 @@ Verify the DNS recursor
 
 	dig +short default.svc.cluster1. SOA @192.168.100.11
 
+Dump the zone contents asking DNS
++++++++++++++++++++++++++++++++++
+
+::
+
+	dig +noall +answer default.svc.cluster1. AXFR @192.168.100.11 -p 5300
+
+Dump the zone contents asking agent socket
+++++++++++++++++++++++++++++++++++++++++++
+
+::
+
+	echo '{"method": "list", "parameters": {"zonename": "svc.cluster1."}}' | sudo socat - unix://var/lib/opensvc/dns/pdns.sock | jq
+
 Administration
 --------------
 
