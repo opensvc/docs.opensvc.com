@@ -20,7 +20,7 @@ Implementation
 * A failover service. The active instance runs a GoBetween load balancer process and a janitoring daemon.
 * The GoBetween daemon is run as a docker container with an inital configuration enabling the Rest API.
 * The janitoring daemon, also run as a docker container, listens to cluster events on the opensvc daemon unix socket (bind-mounted in the container) and configures the load balancer servers through the GoBetween Rest API.
-* The janitorinf daemon docker instance runs "privileged" to have r/w access to the opensvc daemon unix socket. 
+* The janitoring daemon docker instance runs "privileged" to have r/w access to the opensvc daemon unix socket. 
 * The janitoring daemon depends on the Cluster DNS, as the servers backends are deduced from SRV records.
 
 Docker images
@@ -255,9 +255,7 @@ Verify GoBetween configuration
 
 ::
 
-	$ python 
-	>>> import requests
-	>>> requests.get("http://192.168.100.32:8888/servers").json()
+	$ python -c "import requests; print requests.get(\"http://192.168.100.32:8888/servers\").json()"
 	
 Adapt the GoBetween ip address and port for your context.
 
