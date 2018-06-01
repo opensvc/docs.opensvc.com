@@ -104,8 +104,8 @@ On each node ::
 If CNI was installed from package, the weave plugin needs to be referenced in the package plugin dir::
 
 	cd /usr/libexec/cni/
-	ln -s /opt/cni/bin/weave-plugin-2.3.0 weave-ipam
-	ln -s /opt/cni/bin/weave-plugin-2.3.0 weave-net
+	ln -s /opt/cni/bin/weave-ipam weave-ipam
+	ln -s /opt/cni/bin/weave-net weave-net
 
 
 Use in service configurations
@@ -116,8 +116,6 @@ Here is a typical ip resource configuration, using the "weave" CNI network confi
 ::
 
 	[ip#0]
-	ipname = {svcname}
-	ipdev = eth12
 	type = cni
 	network = weave
 	container_rid = container#0
