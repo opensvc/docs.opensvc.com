@@ -2,6 +2,67 @@ Changelog
 =========
 
 
+| `1.9-1836 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0a71b446cb08658955742be1f8b342d94121d630>`_ Fix pushasset erasing data in the collector, when it has no value set for
+| `1.9-1835 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c957c392bd5950ada2eddfd38b4566b8ff02f6a0>`_ Don't log a stack on xmlrpc timeout
+| `1.9-1834 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf16941a04db6d3cbbdb0b06bc49eb535d9c8109>`_ Don't retry connect() on socket errors other than "temporarilly unavail"
+| `1.9-1833 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7df90d2f728743035b343039ebea3f453599a338>`_ Kill more efficiently subprocesses when stopping threads
+| `1.9-1832 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f840da04d6aac51a88e857f1b1c6ab8faae9abc>`_ Start the scheduler thread after the monitor
+| `1.9-1831 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2db5986f6ea182a6ac667b026c6b580084081069>`_ Fix a use before set error in the comm module
+| `1.9-1830 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42ec418ea0d29e0d289d0f561505ca11690ecede>`_ Fix the agent/daemon connection refused
+| `1.9-1829 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=adfb1adecfd1f34d1baaf9e294bd68205e1e8a28>`_ Fix a stack in the cni driver
+| `1.9-1828 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba58a8a42f52483ff3679a47788a99c1c61a6e08>`_ Add the "nodemgr wait --filter ..." command.
+| `1.9-1827 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eac16508dc016217ac521ba707d0ad4a19721221>`_ Add missing doc templates
+| `1.9-1826 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1d1d874c09b6ebd1de7706ce918553298848ea69>`_ Fix the "nodemgr daemon status --filter ..." not filtering
+| `1.9-1825 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ffba78deaefd74a207392f634e884c457bc23756>`_ Add the nodemgr and svcmgr --filter option
+| `1.9-1824 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30120b134ec2928b341c7a2e5186640ff0b8c8ec>`_ Fix a container.zone error on zoneadm command executed from osvcd
+| `1.9-1823 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d97e2742745f264d09920245247b353184f0dbc>`_ Fix nodemgr pushpkg in sol11 zones
+| `1.9-1822 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a361f7827bfe53f5c026c9bba49e05c1a9fc390f>`_ Misc fixes in comm module and listener
+| `1.9-1821 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f6a1f2c0f879424638e2c6e0c79bb1665fee04ef>`_ Drop TMPDIR before running a pkgadd
+| `1.9-1820 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3f78b6a161a633322d1c7497caf89e2aab7f763b>`_ Now that we have a svc id, use that as the nspid in the ip.cni driver
+| `1.9-1819 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=04bff9ad31d58f4af78f664f38802e7baaad931e>`_ Make sure the created scaler slaves are thawed before provision
+| `1.9-1818 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2879e3d89621e3b128aacb352c482934b93a1c91>`_ Support expose=<port>/<protocol> keyword in ip.cni resources
+| `1.9-1817 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ed0887593f64c4c429fa043d0fb8844a4ddb1071>`_ Fix ip.cni status info not reported since ipname became optional
+| `1.9-1816 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f690d8090ca30e6a7c09b1e0c56bb3922ea63ff7>`_ Add the 'nodemgr rejoin' command
+| `1.9-1815 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0a00aaa9fec1ead5bd2c29ddd748553376a62124>`_ Flag the ip.cni resources as always provisioned
+| `1.9-1814 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d2caa25d7499cf256d208a552d609177446e26c6>`_ Teach the app drivers to switch to netns wrapping if an ip.cni resource is defined
+| `1.9-1813 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b85d92d00311a4ea0b6f46f03d01d7b26658997>`_ Set a dummy container id for cni when no container_rid is set
+| `1.9-1812 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d19abd3ea32bffe1eb45973cf745b954adb29df1>`_ Add json format support to svcmgr ls
+| `1.9-1811 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8cf72b036f27ad1d9720bf5744f06a5476016ceb>`_ Fix a typo in a log entry of the add.simple resource
+| `1.9-1810 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16c8a3f4a8f67e0c274788e459b34f43e9fa2b02>`_ Avoid a stack in svcmon watch mode when the daemon data is None
+| `1.9-1809 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d5d9c584a24f1ed75fed3e52d9bb34bf5560a578>`_ Add SunOS support for the app.simple resource driver
+| `1.9-1808 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f309e199fdc00036e893eb533940cdcae09aa2d5>`_ Add a app.simple resource driver to handle non-daemonizing programs
+| `1.9-1807 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c66aa0bc1519c81e8f96e34819f402e63d1a9399>`_ pylint fixes for the container.lxc driver
+| `1.9-1806 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ec9781561f789c66bd9af89df50d1290df5818a8>`_ Strip lxc3 storage driver prefix from the lxc.rootfs.path keyword value
+| `1.9-1805 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d8caa115b85ef86fd678522b6b13bc3b1bdc80f0>`_ Lxc 3.0 support
+| `1.9-1804 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4885fbb68f8e23effa2f35f981d40300cb99c6e5>`_ Make the ipname and ipdev parameters optional for the ip.cni driver
+| `1.9-1803 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e031fbec26c8a968d3783074411b4255614c8440>`_ Fix the error handling of the start/stop codepaths of the disk.zpool driver
+| `1.9-1802 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=70cb82fadfadb443ad049ab30ecf95c6d15874f3>`_ Avoid the svcmon -w blinking
+| `1.9-1801 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1b6e048333d48497d16ae60e489171d15337c4eb>`_ Silence the "limit %s = %s" app log when not in a start/stop action
+| `1.9-1800 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=67076313e89a1a3f3b16dd0ee13eb643b56b674e>`_ Fix the pr status on passive nodes with no devs keyword set
+| `1.9-1799 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=12dabfd66f7b2a2733e0683a075eaf5e82a99f27>`_ Set --cache with pvscan when waiting for the vg to appear
+| `1.9-1798 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=325ae16d461f8e3839262971b872d38c926a9d5e>`_ Fix the end rejoin grace period condition
+| `1.9-1797 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=606411cdc53f35348c5c84e11c60e5c01d2e040e>`_ Display the rejoin nmon status in the svcmon output
+| `1.9-1796 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8237c4ca3232de1f7d53d941f769575b3396caa3>`_ Sort the nodes in the "svcmgr print status" output
+| `1.9-1795 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0fa94dc90db0498bb64f9b79935ef8eb5d8e856f>`_ Sort more sync.rsync label and status log information
+| `1.9-1794 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b0f02ac3e19610ef69eaf457d8823b16464aa9ac>`_ Fix an utf8 error on logging in users comp object
+| `1.9-1793 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=30852ab6147112542fc19dfa93d81773c9bb66fd>`_ Make the duration converter return None when fed None
+| `1.9-1792 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=01f5305e22833a09222cdb597a92709f5e32c985>`_ Fix shlex converters fed with a list
+| `1.9-1791 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b6ab5df216a44b2e248b2c5bee0eb2d20119d6b3>`_ Fix keyword default values not being converted to their defined type
+| `1.9-1790 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b8f812b4d4befe1f0dd736e6ae6623f3d56fa197>`_ Fix keyword default value being altered because of reference-passing
+| `1.9-1789 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=556da0a955c6e00f5e9feae06b2cfb660c7207b8>`_ Fix daemon trusting the service pre-boot status cache upon startup
+| `1.9-1788 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d3bcb6269df91fb6ff98ac7bc7bbce354845c962>`_ Fix for conf_get() in py2 with utf-8 in svc config file
+| `1.9-1787 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=34eeac68e77b4174d02f4fee5d498bb2460984da>`_ Remove support for collectors not supporting node authentication
+| `1.9-1786 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5b4095cb0a81ef6759bf60fe8cf7e217e039106e>`_ Fix the updatepkg from nodemgr dequeue actions triggered by the listener
+| `1.9-1785 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a09ed4ed832474d1d495cad9ee325a3481708571>`_ Simplify the dns thread code, defining only one <clustername> zone
+| `1.9-1784 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c0ad670a46b220e7186aca410786bb92f53f75da>`_ Fix posting utf8 from file with py3-interpreted nodemgr collector cli
+| `1.9-1783 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e3c2d6c431b1edc0ea5b956031a5dbecc6956703>`_ Fix implementation of the dns thread lookup method with ANY qtype
+| `1.9-1782 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e392d126f1499a5de7addc6cf95de51e1bed6751>`_ Fix a KeyError in the dns thread cache
+| `1.9-1781 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=63048af8d4373ae6aec8a7e5b0de3ae26808dd7c>`_ Cache the zones in the dns thread
+| `1.9-1780 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2599c67ed9f3ce26945e145f5fa4c84f9c911370>`_ Fix an infinite recursion build issue with zoned fs
+| `1.9-1779 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6bff6ccca5d4cd1a928358adfed3fcedee74abe6>`_ Fix a stack in the quorum logging codepath
+| `1.9-1778 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a5e091d2d31dc34ffd4c88937af00fb60938b70b>`_ Add a small pause on collector thread exceptions in loop
+| `1.9-1777 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4671e5340dc7c34e7649535fb61fd9e3e58d4975>`_ avoid serving multiple SRV entries pointing to the same ip:port
+| `1.9-1776 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d41d6c29f12764dcad82668cb06c2579d1eb1fc2>`_ Ignore getservbyport() OSError
 | `1.9-1775 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=341986cec7af5de5716cf7bb6c52d92886df00e0>`_ Fix the async create+provision
 | `1.9-1774 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=79d068618a329052766b7959e04ceba5a94628f4>`_ Don't use "zpool list -p" in the zpool pool driver
 | `1.9-1773 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=802294b200f4b2f8fd755ed064998d7a8e11d59d>`_ Fix wrong fs dependency test before starting a private docker daemon
