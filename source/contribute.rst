@@ -161,6 +161,8 @@ Clone the documentation project:
 
     git clone https://git.opensvc.com/docs.opensvc.com/.git
 
+Or clone your own fork.
+
 Step into the cloned project directory:
 
 ::

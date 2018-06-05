@@ -84,17 +84,43 @@ Each resource provisioner may require or support additional parameters. The reso
         # keyword:          vg
         # keyword:          size
 
+A provisioner can update the service DEFAULT and resource configuration parameters. For example, the amazon ip provisioner can cascade the allocated ip address the ``docker_daemon_args`` as a ``--ip x.x.x.x`` argument, and cascade to a ip resource ``ipname`` parameter.
 
-A provisioner can update other service DEFAULT and resources configuration parameters. For example, the amazon ip provisioner can cascade the allocated ip address the ``docker_daemon_args`` as a ``--ip x.x.x.x`` argument, and cascade to a ip resource ``ipname`` parameter.
 
-The provisioners are run in the service start natural order. Each resource is left in the ``up`` state after provisioning, so that following provisioners can count on their availability to proceed. For example, a amazon allocated disk must be left attached for the btrfs provisioner to format it.
+Provisioning Workflow
+=====================
 
-As a consequence, when all provisioners have run, the service ``availstatus`` is ``up``.
+The provisioning can be either local (--local) or orchestrated.
+
+When orchestrated, the daemon starts provisioning the instance on the placement leader. When provisioned, this instance stays ``up`` and the daemons move on to provisioning all other instances in parallel. Those are rollbacked after provisioned, so the service is in optimal state at the end of the orchestration.
+
+The CRM command run on the leader node is::
+
+	$ sudo svcmgr -s <svcname> provision --local --disable-rollback
+
+The CRM command run on the non-leader nodes is::
+
+	$ sudo svcmgr -s <svcname> provision --local
+
+The provisioners are run in the service start natural order. Each resource is left in the ``up`` state after its provisioning, so that the following provisioners can count on their availability to proceed. For example, a amazon allocated disk must be left attached for a fs provisioner to format it.
+
+Shared Resources
+================
+
+Shared resources (like SAN disks visible on multiple nodes, filesystems hosted on these disks, failover ip addresses), if any, must only be provisioned on the leader and not reprovisioned on the other nodes. Implementing this behaviour requires the admin to explicitely flag such resources as shared using the generic ``shared = true`` resource keyword. The provisioned state of shared resources is synchronized automatically amongst the service nodes, whereas the provisioned state of local resources is node-affine.
+
+It is possible to provision all or part of the resources manually, before the service creation. In this case, those resources will be reported as unprovisioned (a ``P`` flag in the print status output). A successful resource start will mark the resource as provisioned (if it starts ok, it is sane to consider it provisioned). If starting the resource is not possible or desirable, the agent still provides a way to force the resource status as provisioned::
+
+	$ sudo svcmgr -s <svcname> set provisioned --rid <rid>,<rid>
+
+Or even all the local service instance resources using::
+
+	$ sudo svcmgr -s <svcname> set provisioned
 
 Provisioning Usage
 ==================
 
-The provisioners are activated by setting the ``--provision`` with the following actions:
+The provisioners are activated either by the ``provision`` action or by setting the ``--provision`` option with the following actions:
 
 Create
 ++++++
