@@ -132,6 +132,16 @@ A list structure. Each member is a dictionnary structure pointing to a metric de
 
   The metric `Id` as reported in the :menuselection:`Admin --> Metrics` view.
 
+* **metric_path**
+
+  Type: path with ``/`` as the dir separator
+
+  A metric whisper file path, rooted to the collector's ``stats/`` directory. A metric section can contain either ``metric_id`` or ``metric_path`` but not both. Using ``metric_path`` the report designer can chart any combination of metrics coming from:
+
+  * the services resources info: ``/nodes/<node_id>/services/<svc_id>/resources/<rid>/info/<metric>``. Example: ``/nodes/a3d3634b-51d1-4ce7-a844-6daa6cc49280/services/40a88ec5-cb9c-440a-bd65-54b7713ab108/resources/sync#i0/info/speed``.
+  * checkers: ``/nodes/<node_id>/checks/<svc_id>:fs_u:<uuencoded check instance>.wsp``. Example: ``/nodes/a3d3634b-51d1-4ce7-a844-6daa6cc49280/checks/40a88ec5-cb9c-440a-bd65-54b7713ab108:fs_u:L29wdC90ZXN0bWQvdGVzdGRzMQ==.wsp``
+  * the node performance metrics: ``/nodes/<node_id>/<performance group>/<metric>``. Example: ``/nodes/a3d3634b-51d1-4ce7-a844-6daa6cc49280/block/rbps``
+
 
 * **label**
 
