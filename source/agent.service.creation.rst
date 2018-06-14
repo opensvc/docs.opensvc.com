@@ -10,8 +10,8 @@ A service name must be unique in its application code namespace.
 
 A best practice is to allocate unique service names in the corporate namespace, even if it is not mandatory.
 
-Create the Service
-==================
+Service Creation Methods
+========================
 
 The following actions only modify files in ``<OSVCETC>``. No operating system configuration file is modified, so they are safe to experiment with.
 
@@ -61,22 +61,19 @@ Templates can be served by the collector, by a webserver or ftpserver, or can be
 Service Configuration Files
 ===========================
 
-Service configuration files are in ``<OSVCETC>``. They are created automatically by the above ``svcmgr`` commands. Each service must have these three files present to be fully functional. Services using the internet shared collector must be named using the domainname as a suffix to avoid naming conflicts:
+Service configuration files are in ``<OSVCETC>``. They are created automatically by the above ``svcmgr`` commands. A service is considered active if these two files exist:
 
 ::
 
 	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
 	<OSVCETC>/<svcname>.conf
-	<OSVCETC>/<svcname>.d -> /<svcname>/etc/init.d
 
-or:
+Optionally, administrators can create these additional files:
 
 ::
 
-	<OSVCETC>/<svcname> -> /usr/bin/svcmgr
-	<OSVCETC>/<svcname>.conf
-	<OSVCETC>/<svcname>.d -> <svcname>.dir
-	<OSVCETC>/<svcname>.dir
+	<OSVCETC>/<svcname>.d -> <svcname>.dir/
+	<OSVCETC>/<svcname>.dir/
 
 Configuration Files Role
 ========================
@@ -97,10 +94,10 @@ Configuration Files Role
 
     This optional directory can be used to store locally the startup scripts. As such, it can be linked from ``<OSVCETC>/<svcname>.d``. OpenSVC synchronize this directory to nodes and drpnodes as part of the sync#i0 internal sync resource. If you placed your startup script on a shared volume, this .dir is not needed but you will still have to create a sync resource to send them to the drpnodes.
 
-Customize the Service Conf File
-===============================
+Service Configuration Updates
+=============================
 
-At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available. The ``svcmgr create -s newsvc -i`` command prompts you about all possible configurations, explains the role of each keyword, proposes candidate values and defaults, and validate input sanity. This same command in non-interactive mode can be used to provision service. In this mode, the resources are passed as json-serialized keyword-value dictionaries.
+At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available.
 
 Interactive
 -----------
@@ -163,35 +160,6 @@ Service Deletion
 ::
 
 	sudo svcmgr -s <svcname> delete
-
-Best Practice
-=============
-
-Allocate Generic Account and Ip Addresses
------------------------------------------
-
-We recommend to allocate service-dedicated ip addresses, to permit service failover to secondary nodes.
-
-We recommend to allocate service-dedicated generic accounts (one is ok most of the time) for better control on privileges. All service files should be owned by these accounts. The application launchers are executed by the agent using impersonnification as the launcher file owner. The generic account home directory should be a link redirecting to a subdirectory of one of the service-dedicated filesystems (the one hosting data is a good candidate).
-
-Create a Filesystem Skeleton for the Service
---------------------------------------------
-
-Give each service dedicated filesystems. Ideally one for data, one for tools (mysql, apache, ...) and one for launchers and eventually the virtual operating system instance. We recommand the following layout:
-
-``/gieprdweb01``
-
-        App launchers in etc/init.d/
-
-``/gieprdweb01/tools``
-
-        Private installation of tools. Tools must listen only on the private address to avoid conflicts with same tool of other services running on the same node.
-
-        If the applications are not containerized, prefer per-service private tools installations to distribution packages installations. This choice provides better system/service insulation, more reliable relocation and safer operating system upgrades. This also makes the service installation harder.
-
-``/gieprdweb01/data``
-
-        Application data files
 
 
 
