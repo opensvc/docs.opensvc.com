@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+| `1.9-1876 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f741534b5cdecdc949e556293f52a50a8b300467>`_ Add the resource label to the resource orchestrator logs
+| `1.9-1875 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9840813e1eb3edadfb51f34708029b49e8baaf24>`_ Fix the 'started' local expect flag unduly being dropped
+| `1.9-1874 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6544a45b6518d3a72e9b3ab7ec010941e80a3f6e>`_ Fix resources id containing "pr" not honored by the service builder
+| `1.9-1873 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9d930f942d8732d5961dfd074c1c82b4f8f4478b>`_ Don't degrade the provisioned state for unprovisioned and disabled resources
+| `1.9-1872 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a29a0255d7d012bbac0ff160491d9b2a90464f84>`_ Log unmonitored resources state degradation when they happen
+| `1.9-1871 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e373e69ac41eb5a5999e5cf5c1004e9e970d0c77>`_ Mark resources initialized sooner
 | `1.9-1870 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d92af37e98c5d6ec6f5bea1a5a110ef55bcda28b>`_ Don't start all lv after vxdg import if the service has at least one of its vol
 | `1.9-1869 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b1da7652f1c04162f656ae0325fb3d6e7bc556de>`_ Change the disk.vxdg sub_devs() algo so it works with deported dgs
 | `1.9-1868 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eea6f82fa934a81f2596f67e0aa8144179f65320>`_ Support disk.scsireserv over vxdg and vxdmp
