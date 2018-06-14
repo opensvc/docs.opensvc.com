@@ -2,6 +2,40 @@ Changelog
 =========
 
 
+| `1.9-1870 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d92af37e98c5d6ec6f5bea1a5a110ef55bcda28b>`_ Don't start all lv after vxdg import if the service has at least one of its vol
+| `1.9-1869 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b1da7652f1c04162f656ae0325fb3d6e7bc556de>`_ Change the disk.vxdg sub_devs() algo so it works with deported dgs
+| `1.9-1868 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eea6f82fa934a81f2596f67e0aa8144179f65320>`_ Support disk.scsireserv over vxdg and vxdmp
+| `1.9-1867 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b1f1d792737ce72ddf631dfdd8f9b8afbc139dc7>`_ Support alloc={disk#0.sub_devs[0]},{disk#0.sub_devs[2]} in disk.vxvol create_options
+| `1.9-1866 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e72e7ef7f55584fbd1226a437eb2895a777ac441>`_ Fix lazy references not initializing service resources
+| `1.9-1865 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=24da3829005142fa0a327b9d5703722e7b491583>`_ Fix undue disk.vxdg error on down dg
+| `1.9-1864 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=53fe328b8976051d686689ae54d4de0b1a9e3d44>`_ Fix a stack on "print sub disks" in the disk.vxdg driver
+| `1.9-1863 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2465f7c21e073f98f1caecea4c5e26fdc07fd899>`_ Update resource templates in docs/
+| `1.9-1862 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=76a839ec4e38e24721a619f03a735de0e2cdb9c6>`_ Return the bdev pat instead of the rdev path as the disk.vxvol exposed devs
+| `1.9-1861 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9257e8cf85859073e12f0e9d4688c235897cbf67>`_ Flag the fs.size provisioning keyword as optional
+| `1.9-1860 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf112bb2b654f5a0ae54ef5d0038919a3fff753f>`_ Add vxdg degradation warnings in the resource status logs
+| `1.9-1859 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c21b0c56fcfb87e89924df968f549ff869547881>`_ Fix the fs.vxfs provisioner on Linux
+| `1.9-1858 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c3706e26914326377ebc9590e5a346c2940e6b9>`_ Don't err a provision action on pv already setup but not assigned to a vxdg
+| `1.9-1857 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5bc145749afd3cc11afe76bd4e4216842eedd63d>`_ Add the docs for the vxdg and vxvol resources
+| `1.9-1856 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=627775009eff8f2554aff4dda97136f019ab4c2e>`_ Add the disk.vxvol resource driver and provisioning driver
+| `1.9-1855 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6c795ddd5450aa49b7eef88f26c868f48c6a3b2e>`_ Fix the disk.vxdg driver name in the driver itself
+| `1.9-1854 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c5a102091b7dce642a9e59359ee3fca64a6dd80>`_ Rename the disk.veritas resource driver to disk.vxdg
+| `1.9-1853 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e98bf2a06ef8ad848cad08e639f850d71e10ffe>`_ Add the veritas vg provisioner
+| `1.9-1852 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=91577d25b952fb29df397f28408bba8a58ef1d3f>`_ Revert "Fix the shutdown/stop of encap services in container with nostatus"
+| `1.9-1851 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a5c5f40813b4b03cead0c0ab5cfc6ab55fc3f46d>`_ Fix the shutdown/stop of encap services in container with nostatus
+| `1.9-1850 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=068d431de4f2ce01874fda15b5ce78fa6c3fe80b>`_ Fix the resource monitor not toc'ing for resources with restart=0
+| `1.9-1849 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf51f07c8d249c702c6019840684cd5e509654b3>`_ Also log in the service log all resource orchestration information
+| `1.9-1848 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dbcc8abf502e82944119ed851094a579eab83247>`_ Don't freeze the encap service on stop
+| `1.9-1847 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=10a5fa412274894e748fd825e5cf732b6fc5ddde>`_ Wait for the multiuser zone state in the start code path
+| `1.9-1846 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f5a9c3f4f840a53060b73ae71a8d18ea46ea6bdc>`_ Add more cases for local_expect=started reset
+| `1.9-1845 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8f7259c3cf986e7ae576538685694c1bd7514e4b>`_ Fix a case of failover service not failing over
+| `1.9-1844 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3eb99c447b503110ca84138d012e53717c62ad52>`_ Add a jstat checker
+| `1.9-1843 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dae3cdb75e798e807127eb187e9e14ff89788d85>`_ Don't use snapshot-reparented alt_src for sync#i0
+| `1.9-1842 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f061f43957c859beef8d50bcc254e52bed79dc78>`_ Python3 compat fix for nodemgr pushsym
+| `1.9-1841 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=16b7740544014659d94e4ef2b95142a87f1b2e47>`_ Start using the six module now that it's merged
+| `1.9-1840 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c6fa4afa2aac6fae14a9872097336d1e3440bac6>`_ Add the six module, required by jsonpath_ng
+| `1.9-1839 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c23a2ee11a62a0dec2bebe7a2fee5d16b0c982bc>`_ More detailled error log on failed post remote action
+| `1.9-1838 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5704ef875e8415c720415061e2a94f4cc952397>`_ Fix wrong return code when catching Svc excError from Node::do_svcs_action()
+| `1.9-1837 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7b043cd3f10f9b21d786eaa5184851ec53e3e822>`_ Fix the delayed scheduled tasks executing too often
 | `1.9-1836 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0a71b446cb08658955742be1f8b342d94121d630>`_ Fix pushasset erasing data in the collector, when it has no value set for
 | `1.9-1835 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c957c392bd5950ada2eddfd38b4566b8ff02f6a0>`_ Don't log a stack on xmlrpc timeout
 | `1.9-1834 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf16941a04db6d3cbbdb0b06bc49eb535d9c8109>`_ Don't retry connect() on socket errors other than "temporarilly unavail"
