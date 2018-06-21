@@ -199,7 +199,7 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 	mnt = /srv/{svcname}/docker
 	dev = {disk#0.file}
 	mnt_opt = defaults,subvol=docker
-	always_on = nodes
+	standby = true
 
 	[fs#2]
 	type = btrfs

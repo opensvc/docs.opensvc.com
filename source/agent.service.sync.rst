@@ -35,7 +35,7 @@ The node on the secondary site sees a different set of disks. It receives data f
 
 * The data, configurations and logs are replicated through the brtfs sync driver.
 
-Both sync resource need the secondary site service instance to have its receiving fs resources mounted. This is acheived through the ``always_on = drpnode`` fs resource parameter.
+Both sync resource need the secondary site service instance to have its receiving fs resources mounted. This is acheived through the ``standby@drpnode = true`` fs resource parameter.
 
 .. image:: _static/agent.service.sync.failover.docker.png
    :scale: 50 %
@@ -72,13 +72,13 @@ Example configuration::
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/docker
   mnt_opt = defaults,subvol=docker
-  always_on = drpnodes
+  standby@drpnodes = true
 
   [fs#1]
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/data
   mnt_opt = defaults,subvol=data
-  always_on = drpnodes
+  standby@drpnodes = true
 
   [sync#0]
   type = docker
@@ -105,7 +105,8 @@ Example configuration::
   [DEFAULT]
   nodes = n1 n2 n3
   flex_primary = n2
-  autostart_node = n1 n2 n3
+  orchestrate = start
+  flex_min_nodes = 3
   docker_data_dir = /srv/svc1/docker
   
   [ip#0]
@@ -162,7 +163,7 @@ Example configuration::
   nodes = n1 n2
   drpnodes = n3
   flex_primary = n2
-  autostart_node = n1 n2
+  orchestrate = start
   docker_data_dir = /srv/svc1/docker
   
   [ip#0]
@@ -192,13 +193,13 @@ Example configuration::
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/docker
   mnt_opt = defaults,subvol=docker
-  always_on = drpnodes
+  standby@drpnodes = true
 
   [fs#1]
   dev@nodes = /dev/mapper/svc1.d0
   mnt = /srv/svc1/data
   mnt_opt = defaults,subvol=data
-  always_on = drpnodes
+  standby@drpnodes = true
 
   [sync#0]
   type = docker

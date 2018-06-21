@@ -212,7 +212,7 @@ A resource can be marked as monitored using the ``monitor`` keyword.
 	<span style="color: #aa5500">[disk#3]</span>
 	<span style="color: #767676">type </span>= vg
 	<span style="color: #767676">name </span>= vgtest
-	<span style="color: #767676">always_on </span>= nodes
+	<span style="color: #767676">standby </span>= true
 	<span style="color: #767676">monitor </span>= true
 	</pre>
 
@@ -274,7 +274,7 @@ Some resources must remain up, even when the service instance is stopped.
 
 For example, in a 2-nodes failover service with a fs resource and a sync.rsync resource replicating the fs, the fs resource must be up on the passive node receive the rsync'ed data. If not, the data gets written to the underlying filesystem.
 
-The ``always_on`` keyword can be set in these cases:
+The ``standby`` keyword can be set in these cases:
 
 .. raw:: html
 
@@ -282,15 +282,15 @@ The ``always_on`` keyword can be set in these cases:
 	<span style="color: #aa5500">[disk#3]</span>
 	<span style="color: #767676">type </span>= vg
 	<span style="color: #767676">name </span>= vgtest
-	<span style="color: #767676">always_on </span>= nodes
+	<span style="color: #767676">standby </span>= true
 	<span style="color: #767676">monitor </span>= true
 	</pre>
 
 Possible values are 'nodes', 'drpnodes' or 'nodes drpnodes', or a list of nodes.
 
-Resources tagged with ``always_on`` keyword are started on service ``boot`` and ``start`` actions, and stopped only on service ``shutdown`` action.
+Resources with ``standby = true`` are started on service ``boot`` and ``start`` actions, and stopped only on service ``shutdown`` action.
 
-``svcgr print status`` will display the ``stdby up`` status for up always_on resources, and ``stdby down`` status for down always_on resources.
+``svcgr print status`` will display the ``stdby up`` status for up standby resources, and ``stdby down`` status for down standby resources.
 
 .. raw:: html
 

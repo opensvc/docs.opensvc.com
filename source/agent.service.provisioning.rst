@@ -231,7 +231,7 @@ Template ``testec2docker.template``:
   type = btrfs
   mnt_opt = defaults,subvol=docker
   mnt = /srv/{svcname}/docker
-  always_on = drpnodes
+  standby = true
   dev = /var/lib/opensvc/{svcname}/dev/disk.0.0
   
   [fs#1]

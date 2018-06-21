@@ -971,7 +971,7 @@ Form configuration
             app = __APP__
             service_type = PRD
             nodes = __NODES__
-            autostart_node = __NODES__
+            orchestrate = start
             docker_data_dir = /__SVCNAME__/docker
             flex_primary = __PRINODE__
             topology = flex
@@ -985,7 +985,7 @@ Form configuration
             type = gce
             subset = gce
             size = 20g
-            always_on = nodes
+            standby = true
             __DISK0NAMES__
     
             [fs#00]
@@ -1015,7 +1015,7 @@ Form configuration
             type = gce
             names = __SVCNAME__-pod__POD__
             size = 17g
-            always_on = nodes
+            standby = true
             disable = true
             disable@__NODE__ = false
     

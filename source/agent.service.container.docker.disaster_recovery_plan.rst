@@ -21,7 +21,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
         root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate = start
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com
@@ -139,7 +139,7 @@ We can do this modification while service is running : we will add a ``drpnodes`
 
         root@deb1:/# busybox.opensvc.com.env print config | head -6
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate@nodes = start
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com
@@ -175,9 +175,9 @@ To workaround those problems, OpenSVC software use a concept named "scoping". Th
         [vg#1]
         vgname@deb1.opensvc.com = vglocaldeb1
         vgname@deb2.opensvc.com = vglocaldeb2
-        always_on = drpnodes
+        standby@drpnodes = true
 
-.. note:: "always_on = drpnodes" keyword specify that service must enable lvm volume group upon startup on drpnodes, because we always need the target logical volumes to be available for the replication to be fine
+.. note:: "standby@drpnodes = true" specifies that the service instances on drp nodes must enable the lvm volume group upon startup, because we always need the target logical volumes to be available for the replication to be fine
         
 **Declaring different logical volumes**::
 
@@ -231,7 +231,7 @@ The service configuration looks like::
 
         root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate@nodes = start
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com
@@ -252,7 +252,7 @@ The service configuration looks like::
         [vg#1]
         vgname@deb1.opensvc.com = vglocaldeb1
         vgname@deb2.opensvc.com = vglocaldeb2
-        always_on = drpnodes
+        standby@drpnodes = true
         
         [fs#1]
         mnt_opt = rw

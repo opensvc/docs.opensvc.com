@@ -70,7 +70,7 @@ Example configuration::
 
   [container#0]
   name = vm1
-  always_on = nodes drpnodes
+  standby = true
   
   [ip#0]
   ipname = ipname1

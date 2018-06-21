@@ -169,15 +169,14 @@ Create the service configuration file:
 	mode = lxc
 	service_type = PRD
 	nodes = node1.mydomain node2.mydomain
-	autostart_node = node1.mydomain
-	drpnode = 
+	orchestrate = start
 
 	[fs#1]
 	dev = /dev/mapper/vg0-service_name
 	mnt = /opt/opensvc_name
 	mnt_opt = defaults
 	type = ext4
-	always_on = nodes
+	standby = true
 
 	[ip#1]
 	ipdev = br0

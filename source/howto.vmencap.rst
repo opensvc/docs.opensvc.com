@@ -49,7 +49,7 @@ A typical VM service env file should look like:
 	comment = recette gen db #2
 	service_type = DEV
 	nodes =  node109 node110 node111 node112
-	autostart_node = node109
+	orchestrate = start
 
         [container#1]
         name = vm188
@@ -74,9 +74,9 @@ A typical VM service env file should look like:
 
   Set to the list of hypervisors able to run the virtual machine in a normal situation.
 
-**autostart_node**
+**orchestrate**
 
-  Set to the hypervisor where the virtual machine should run in a normal situation.
+  Set to ``start`` to start the instance on the placement leader on boot.
 
 **drpnode**
 

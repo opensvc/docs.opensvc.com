@@ -91,7 +91,7 @@ Copy/Paste the service configuration file in folder ``<OSVCETC>`` and name it li
 
         root@deb1:/etc/opensvc# cat docker.opensvc.com.env
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate = start
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com

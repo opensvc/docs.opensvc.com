@@ -91,7 +91,7 @@ Service configuration
   dev = /dev/xvdf
   mnt = /srv/testeip/docker
   mnt_opt = defaults,subvol=docker
-  always_on = drpnodes
+  standby@drpnodes = true
   
   [fs#1]
   dev = /dev/xvdf

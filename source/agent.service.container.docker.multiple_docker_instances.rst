@@ -36,35 +36,11 @@ We create 6 OpenSVC services, 2 applications named app1 and app2, each declined 
         > done
         > done
         --- creating opensvc service app1.dev ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
         --- creating opensvc service app1.int ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
         --- creating opensvc service app1.prd ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
         --- creating opensvc service app2.dev ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
         --- creating opensvc service app2.int ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
         --- creating opensvc service app2.prd ---
-        Implicitely add [DEFAULT] mode = hosted
-        Implicitely add [DEFAULT] service_type = DEV
-        Implicitely add [DEFAULT] nodes = deb1.opensvc.com
-        Implicitely add [DEFAULT] autostart_node = deb1.opensvc.com
 
 Service monitor command reports our 6 new services. We can see that services are tagged as "TST" by default::
 
@@ -144,7 +120,7 @@ This makes the ``app1.dev`` service config file look like ::
 
         [DEFAULT]
         service_type = DEV
-        autostart_node = deb1.opensvc.com
+        orchestrate = start
         nodes = deb1.opensvc.com
         mode = hosted
         docker_data_dir = /opt/app1.dev

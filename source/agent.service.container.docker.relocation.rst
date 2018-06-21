@@ -156,7 +156,7 @@ This makes the service config file looks like::
 
         root@deb1:/# busybox.opensvc.com.env print config
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate = ha
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com deb2.opensvc.com

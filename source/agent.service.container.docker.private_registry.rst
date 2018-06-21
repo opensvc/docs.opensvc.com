@@ -25,7 +25,7 @@ Service Creation
 
         cat > /etc/opensvc/registry.opensvc.com.env << EOF
         [DEFAULT]
-        autostart_node = deb1.opensvc.com
+        orchestrate = start
         app = OSVCLAB
         service_type = DEV
         nodes = deb1.opensvc.com

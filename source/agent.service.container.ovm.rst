@@ -89,7 +89,7 @@ Service configuration
         [DEFAULT]
         app = OSVC
         nodes = ovm1 ovm2
-        autostart_node = ovm1
+        orchestrate = start
         service_type = DEV
         mode = ovm
         
