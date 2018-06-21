@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+| `1.9-1883 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=01fe7efc49230616f00e6be84cd217f26facfc2b>`_ Fix the template generation for the resource supporting the None type (ip, sync)
+| `1.9-1882 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5bb9b4a8d511f603c512ac7c06ee8d7fa5d45b9a>`_ Remove the obsolete stonith doc templates
+| `1.9-1881 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a25b73c39aadaca18a27e3ba1b974fbd78ac05bc>`_ Add the user, group and cwd keywords to the app driver
+| `1.9-1880 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f3a6a0f1cbfdb2c1a15f708e57c0e1d9300dc4da>`_ Don't stack in the Vxvol driver when a holder device is not in the devtree
+| `1.9-1879 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=08c727f68109b9edfd7a3a868fe9f2432c081464>`_ Log a distinctive error when the 'package' comp obj can't get a 'dpkg -l'
+| `1.9-1878 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ad425a9b8ff84849d25e85d09b2c407fddbb27f>`_ Don't stack on missing rcg definition in the sync.hp3par driver
+| `1.9-1877 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c068b1dc2e556187819e55bb6c4deb7223733335>`_ Better handling of libvirt vm states other than shut off/running
 | `1.9-1876 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f741534b5cdecdc949e556293f52a50a8b300467>`_ Add the resource label to the resource orchestrator logs
 | `1.9-1875 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9840813e1eb3edadfb51f34708029b49e8baaf24>`_ Fix the 'started' local expect flag unduly being dropped
 | `1.9-1874 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6544a45b6518d3a72e9b3ab7ec010941e80a3f6e>`_ Fix resources id containing "pr" not honored by the service builder
