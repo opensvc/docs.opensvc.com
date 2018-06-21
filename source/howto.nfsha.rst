@@ -6,7 +6,7 @@ NFS is a tricky beast to setup for high availability. Without proper configurati
 OpenSVC HA setup
 ================
 
-Create a HA service, using the :ref:`howto.ha` howto.
+Create a HA service, using the :ref:`howto.getting.started` howto.
 
 Make sure the ``<OSVCETC>/nfssvc.d`` symlink points to a directory hosted on a shared filesystem, handled by the nfssvc OpenSVC service. This howto uses ``/nfssvc`` as the root service shared filesystem.
 
