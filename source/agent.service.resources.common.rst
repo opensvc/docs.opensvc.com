@@ -243,8 +243,7 @@ If the resource goes down, then the agent triggers the ``monitor_action``, which
 
 .. note::
 
-    * High Availability topic is described in :ref:`howto.ha`
-    * ``restart`` parameter can be combined with ``monitor`` setting, as explained below
+    ``restart`` parameter can be combined with ``monitor`` setting, as explained below
 
 
 Automatic Restart
