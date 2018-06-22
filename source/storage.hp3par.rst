@@ -257,14 +257,6 @@ As replication is asynchronous, we will ensure that same data image is present o
 ::
 
 	root@node1:~ # svc1.opensvc.com sync update
-	13:30:26 INFO    SVC1.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
-	13:30:27 INFO    SVC1.OPENSVC.COM.SYNC#1  skip sync: not in allowed period (['03:59', '05:59'])
-
-.. note:: outside of the authorized synchronisation period, we have to use the ``--force`` option
-	
-::
-
-	root@node1:~ # svc1.opensvc.com sync update --force
 	13:30:35 INFO    SVC1.OPENSVC.COM.SYNC#I0 won't sync this resource for a service not up
 	13:30:35 INFO    SVC1.OPENSVC.COM.SYNC#1  syncrcopy -w MYRCG
 	13:30:37 INFO    SVC1.OPENSVC.COM.SYNC#1  Completed synchronization for group MYRCG
