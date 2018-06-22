@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+| `1.9-1888 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1d46a8ab088183accf89fcb4c6db3cfb7851c39b>`_ Allow sync update on 'Periodic' rcg if not asked by the scheduler
+| `1.9-1887 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=862311d1539c1a4acfe60e9e4066dcac1e73509e>`_ Make sure the HOME envvar is set in the sync.hp3par driver cli codepath
+| `1.9-1886 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43dedbe3e641fe256457c30146c767f9d90208c2>`_ make_rst and make_doc tweaks
+| `1.9-1885 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=33e9232cb37514e8789d24ffd12298f6105701ab>`_ Drop one indent in the svc_type loop in bin/pkg/make_rst_examples
+| `1.9-1884 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f621daa4cfe1b5766fb3e121f2ace307d141e7d7>`_ Do not filter examples generation for DEFAULT, subset, app and task sections
 | `1.9-1883 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=01fe7efc49230616f00e6be84cd217f26facfc2b>`_ Fix the template generation for the resource supporting the None type (ip, sync)
 | `1.9-1882 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5bb9b4a8d511f603c512ac7c06ee8d7fa5d45b9a>`_ Remove the obsolete stonith doc templates
 | `1.9-1881 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a25b73c39aadaca18a27e3ba1b974fbd78ac05bc>`_ Add the user, group and cwd keywords to the app driver
