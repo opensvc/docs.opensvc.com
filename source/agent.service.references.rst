@@ -32,7 +32,8 @@ Reference         Description                                                   
                   identified by <id>. Usually passwords or private keys. The
                   content is cached locally so the collector dependency is
                   loose.
-[clustername}     The cluster.name node keyword value                            Yes                     Yes
+{clustername}     The cluster.name node keyword value                            Yes                     Yes
+{clusterid}       The cluster.id node keyword value                              Yes                     Yes
 {clusternodes}    The cluster.nodes node keyword value                           Yes                     Yes
 {clusterdrpnodes} The cluster.drpnodes node keyword value                        Yes                     Yes
 {dns}             The cluster.dns node keyword value (ip adressses)              Yes                     Yes
@@ -41,7 +42,7 @@ Reference         Description                                                   
 {dnsuxsockd}      The path to the directory hosting the dns thread unix socket   Yes                     Yes
 {collector_api}   The uri of the collector Rest API                              Yes                     Yes
 {svcmgr}          The full path the the svcmgr executable                        Yes                     Yes
-{nodemgr          The full path the the nodemgr executable}                      Yes                     Yes
+{nodemgr}         The full path the the nodemgr executable}                      Yes                     Yes
 {etc}             The agent etc/ directory path: /etc/opensvc/ for agents        Yes                     Yes
                   installed through the packages, /opt/opensvc/etc/ for an agent Yes                     Yes
                   installed via git pull in /opt
