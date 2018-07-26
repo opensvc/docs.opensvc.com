@@ -34,9 +34,9 @@ From upstream
 	wget https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz
 	sudo mkdir -p /opt/cni/bin
 	cd  /opt/cni/bin
-	tar xvf /tmp/cni-amd64-v0.6.0.tgz
-	tar xvf /tmp/cni-plugins-amd64-v0.6.0.tgz
-	mkdir -p /opt/cni/net.d
+	sudo tar xvf /tmp/cni-amd64-v0.6.0.tgz
+	sudo tar xvf /tmp/cni-plugins-amd64-v0.6.0.tgz
+	sudo mkdir -p /opt/cni/net.d
 
 Here the plugins and network configurations directories are aligned with the OpenSVC defaults.
 
@@ -75,8 +75,8 @@ Install the weave plugin
 
 ::
 
-	curl -L git.io/weave -o /usr/local/bin/weave
-	chmod a+x /usr/local/bin/weave
+	sudo curl -L git.io/weave -o /usr/local/bin/weave
+	sudo chmod a+x /usr/local/bin/weave
 
 The weave plugins runs daemons packaged as docker images. Before proceeding to the next weave installation step, make sure the docker daemon is started at boot and disable MountFlags.
 Also make sure the OpenSVC Cluster is configured and joined before the next step, for the ``cluster.nodes`` reference to be resolved.
@@ -85,15 +85,15 @@ In this example, the package install plugins and config directories are used. Pl
 
 On each node ::
 
-	sed -i s/^MountFlags=slave/#MountFlags=slave/ /lib/systemd/system/docker.service
-	systemctl enable docker
-	systemctl start docker
+	sudo sed -i s/^MountFlags=slave/#MountFlags=slave/ /lib/systemd/system/docker.service
+	sudo systemctl enable docker
+	sudo systemctl start docker
 
-	weave setup
-	weave launch $(nodemgr get --kw cluster.nodes)
+	sudo weave setup
+	sudo weave launch $(sudo nodemgr get --kw cluster.nodes)
 
-	mkdir -p /var/lib/opensvc/cni/net.d/
-	cat > /var/lib/opensvc/cni/net.d/weave.conf <<EOF
+	sudo mkdir -p /var/lib/opensvc/cni/net.d/
+	cat - <<EOF | sudo tee /var/lib/opensvc/cni/net.d/weave.conf
 	{
 	    "cniVersion": "0.2.0",
 	    "name": "weave",
@@ -104,8 +104,8 @@ On each node ::
 If CNI was installed from package, the weave plugin needs to be referenced in the package plugin dir::
 
 	cd /usr/libexec/cni/
-	ln -s /opt/cni/bin/weave-ipam weave-ipam
-	ln -s /opt/cni/bin/weave-net weave-net
+	sudo ln -s /opt/cni/bin/weave-ipam weave-ipam
+	sudo ln -s /opt/cni/bin/weave-net weave-net
 
 
 Use in service configurations
