@@ -3,6 +3,25 @@
 References
 ==========
 
+A reference is a marker in the value of a configuration keyword, replaced during evaluation.
+
+A reference is formatted as ``{<expression>}``.
+
+A reference can contain arithmetic evaluations.
+
+An arithmetic evaluation can contain references.
+
+References can be used to:
+
+* Abstract changing parts of a service, so a configuration file can be used as a template
+  Example: The service name, service id, the devices that hosts the service data
+
+* Factorize information, so changing it is easier and safer
+  Example: A projet name used to format the name of different resources (volume group, filesystem path, ...)
+
+* Contextualize part of a configuration with information known to the agent
+  Example: The cluster nodes, cluster dns ip addresses, ...
+
 Intra-Configuration References
 ------------------------------
 
@@ -11,8 +30,7 @@ The reference format is ``{[<section>.]<option>}``, where
 * ``<section>`` is a configuration file section name
 * ``<option>`` is the option name in the pointed section.
 
-If section is ommited, the ``DEFAULT`` section is implicitely used.
-A reference can also contain arithmetic evaluations.
+If section is ommited, the referencing keyword's section is implicitely used if the reference can be found locally, or the ``DEFAULT`` section is implicitely used.
 
 Intra-Section References
 ------------------------
@@ -67,5 +85,31 @@ Reference                   Description                                         
 {<rid>.exposed_devs[<n>]}   The <n>-th element of the list of devpaths exposed by <rid>    No                      Yes
 {<rid>.exposed_devs[#]}     The length of the list of devpaths exposed by <rid>            No                      Yes
 =========================== ============================================================== ======================= ==========================
+
+References and ``env`` Section
+------------------------------
+
+The ``env`` section can be used to store arbitrary factorized information to make available as references in other parts of the service configuration.
+
+Example:
+
+::
+
+	[disk#0]
+	name = {id}
+	pvs = {env.devs}
+
+	[env]
+	devs = /dev/vdb
+
+Using this facility, these values can be provided when creating a new service from this configuration file or template,
+
+* Interactively
+  ``svcmgr -s <svcname> create --config <template> --interactive``
+
+* In the commandline
+  ``svcmgr -s <svcname> create --config <template> --env devs=/dev/vdc``
+
+
 
 
