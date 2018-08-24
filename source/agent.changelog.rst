@@ -2,6 +2,8 @@ Changelog
 =========
 
 
+| `1.9-1991 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=19a5ee3f0fc3d9e29165cfa5642f72ad05f29798>`_ Add a action help preamble expliciting the fact the action is async
+| `1.9-1990 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43efe67be8629b79e6f25454626e5c88501d3ff7>`_ Don't block presync on disk.md resource if overall!=up, use avail!=up instead
 | `1.9-1989 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c08223d4b555e7c0b9ba59a4e4f631ddb02b7de>`_ Add intra-section references
 | `1.9-1988 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=20f95d765388a982f79724c9bc2f8a8c18003a24>`_ Add unit testing for service configuration references
 | `1.9-1987 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=36f888f7fb3178c90c521dd18449d4fe53206820>`_ Fix a stack on empty triggers
