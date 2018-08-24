@@ -44,6 +44,7 @@ Reference         Description                                                   
 {rindex}          The part after the dash of the name of the section the         No                      Yes
                   reference is under
 {<keyword>}       Reference to another keyword's value inside the same section   Yes                     Yes
+================= ============================================================== ======================= ==========================
 
 Hard Coded References
 ---------------------
