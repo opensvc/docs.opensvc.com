@@ -83,37 +83,37 @@ Verify the backend
 
 ::
 
-	echo '{"method": "lookup", "parameters": {"qname": "default.svc.cluster1.", "qtype": "SOA"}}' | socat - /var/lib/opensvc/dns/pdns.sock
+	echo '{"method": "lookup", "parameters": {"qname": "cluster1.", "qtype": "SOA"}}' | socat - /var/lib/opensvc/dns/pdns.sock
 
-	{"result": [{"ttl": 60, "qname": "default.svc.cluster1.", "qtype": "SOA", "domain_id": -1, "content": "dns.cluster1. contact@opensvc.com 1 7200 3600 432000 86400"}]}
+	{"result": [{"ttl": 60, "qname": "cluster1.", "qtype": "SOA", "domain_id": -1, "content": "dns.cluster1. contact@opensvc.com 1 7200 3600 432000 86400"}]}
 
 Verify the DNS authoritative server
 +++++++++++++++++++++++++++++++++++
 
 ::
 
-	dig +short default.svc.cluster1. SOA @192.168.100.11 -p 5300
+	dig +short cluster1. SOA @192.168.100.11 -p 5300
 
 Verify the DNS recursor
 +++++++++++++++++++++++
 
 ::
 
-	dig +short default.svc.cluster1. SOA @192.168.100.11
+	dig +short cluster1. SOA @192.168.100.11
 
 Dump the zone contents asking DNS
 +++++++++++++++++++++++++++++++++
 
 ::
 
-	dig +noall +answer default.svc.cluster1. AXFR @192.168.100.11 -p 5300
+	dig +noall +answer cluster1. AXFR @192.168.100.11 -p 5300
 
 Dump the zone contents asking agent socket
 ++++++++++++++++++++++++++++++++++++++++++
 
 ::
 
-	echo '{"method": "list", "parameters": {"zonename": "svc.cluster1."}}' | sudo socat - unix://var/lib/opensvc/dns/pdns.sock | jq
+	echo '{"method": "list", "parameters": {"zonename": "cluster1."}}' | sudo socat - unix://var/lib/opensvc/dns/pdns.sock | jq
 
 Administration
 --------------
