@@ -2,6 +2,176 @@ Changelog
 =========
 
 
+| `1.9-2161 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f9b67a28f983bec002c1ea73419bf330aa1bac3>`_ Add "purged/purged failed" to the async action abort cases
+| `1.9-2160 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8199d1812b58d520688ff4834fcc4586f789e71>`_ Allow the "purged" and "deleted" gexpect for scalers
+| `1.9-2159 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba44f3674961083a73ca58e5d364c4151cf22d9f>`_ Use re.search() instead of re.match() in the crontabentry comp object
+| `1.9-2158 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c360e38a42ed828d2aa7388d7be1b4a5d1425d8>`_ crontabentry enhancements
+| `1.9-2157 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=658e3a41e1e864cdff474388deebc5fb86351cef>`_ Track the crontabentry comp module
+| `1.9-2156 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2bb880770724500f499a832688ed8de7d8c56fad>`_ Add the "blacklist_add" event
+| `1.9-2155 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e28f3175495770776107bcddec46750524f6de43>`_ Also allow global_expect=unset for scalers
+| `1.9-2154 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7069d8846952211949a825b760165a4039f73f7d>`_ Allow some smon settings on scalers
+| `1.9-2153 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=554ef6581d202ca70fe7f9a78665676350e17bb3>`_ Set the agg avail status of a scaler with scale=0 to "n/a" instead of "unknown"
+| `1.9-2152 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2b7d5b27b0ade996db9432cfcc2c4951519db2b3>`_ Fix the overload alert on nodes with no swap
+| `1.9-2151 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2105f0a995f92796256cf1fd805dc6af990fdf21>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2150 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=88ad333d469bb4ec8f46b6ac1187b714f0e109a7>`_ Fix the promote_dev_rw() function
+| `1.9-2149 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=42d0eb198f5aa3394345e9abaf523b0d58bc006a>`_ Apply a truncation to the "ratio" column of "nodemgr print devs"
+| `1.9-2148 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b7f565cec581cb45460fa894c61987a045158184>`_ Add gentoo support for os_vendor/os_release in pushasset
+| `1.9-2147 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d9571811baccd5d95a7676e6694a660d16744e0>`_ Adapt the postinstall for gentoo
+| `1.9-2146 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c6a121128e093d7c9053eb377a1467068d4b509b>`_ Avoid stacking when a freenas "del iscsi zvol" is used on a file
+| `1.9-2145 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d904aa59c7184e5ffe29d75a594e32df8b443861>`_ Orchestration enhancements
+| `1.9-2144 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=58d7eb04ae4f5f56dd046a1b126550b1aaf8ffe4>`_ Add missing fragment of the wait --duration patch
+| `1.9-2143 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cc0a4d627be484ba39c1ad99a18fcc1c59597285>`_ Fix colorization of quoted and double quoted node and svc names in logs output
+| `1.9-2142 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=38028a156482de3e6c2503a6ca14603fede33b1c>`_ Colorize nodes and service names in logs action
+| `1.9-2141 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=428013dcc30ad7ebab6b9dfa7133d15c95bef2c6>`_ Add the --duration arg to the "nodemgr wait" action
+| `1.9-2140 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=517363aee1bd914ade71b5570ff485a30cd53f2b>`_ More protection against double start
+| `1.9-2139 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b9bc65a957d340151a4a5fc4bc5f5cb68247b400>`_ Disallow the clear action to clear ing monitor states
+| `1.9-2138 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=359409e551e12f3069efa1a0ad25de63dd16aa34>`_ Log the daemon version on startup
+| `1.9-2137 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bfc315e131aae70381a415b25b54bb94493b01e5>`_ Give an initial value to Svc::init_resources_errors
+| `1.9-2136 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=19fd9c0b9c3716c45e9acc7677bd574fb92a96da>`_ Fix validate config for scalers
+| `1.9-2135 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d3524185c7ef2944066f22f65b0abe975db3bfbd>`_ Fix stack in the task merging codepath of the scheduler
+| `1.9-2134 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4ba33174024b7b890464d873c07db34a2821ebd0>`_ Fix error message
+| `1.9-2133 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f7ce8ac6bca7bf480850c15739d2821a573d6dc8>`_ Support latin1 encoding in /etc/passwd
+| `1.9-2132 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=04c21f746d1e59a0bf6f075097ca06976adaece7>`_ Fix the jstat checker for py 2.6
+| `1.9-2131 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=abdfe0558b6193cbe3deb4ce5182e10c70b11cd7>`_ Fix the required keywords check on "validate config"
+| `1.9-2130 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ed3d4edf465fa5edc7a6c896b1cd3ed2d39dd876>`_ Sort the "svcmgr ls" output when a selector expression is set too
+| `1.9-2129 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=434c8270973eee88ef857caa9440532ae86eda0d>`_ Change the app.simple message on stop emited when the process is already stopped
+| `1.9-2128 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3e7a64ebebd844f8aa4fac89d386b79756eb7d03>`_ Handle cluster name change and retries in daemon_events()
+| `1.9-2127 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85c0a2de89da7daad3f37644d5265f9cb97efd3f>`_ Fix rcSystemd syntax for py2
+| `1.9-2126 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09a218e745751c6ca8757f7d0758e2479b782e08>`_ Bump the support dump upload retention from 1d to 7d
+| `1.9-2125 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b3157df49eaa2782590b1cc01c61860bf3f00b9d>`_ Fix "showmount -e" parsing, not handling heading whitespaces
+| `1.9-2124 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8bb8f75579aa24b1fc2f02083078a23efcdaf19b>`_ Add the "svcmgr support" command
+| `1.9-2123 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d16d1e626135052ddacddb4fff327a8ac02ffc8>`_ Support the unified cgroup2 systemd tree in create_pg=true mode
+| `1.9-2122 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bfec3b5fd04f6d37f885b5403bd08c74d7d963f8>`_ Update the placement service monitor property asap on clear
+| `1.9-2121 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b3c40d6ffd1e51c823e3adf2ac4c0f484eceb49d>`_ Allow giveback to try a start on an leader instance in warn avail status
+| `1.9-2120 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e4b83c9580d6d3156e49c4673e08c0b8e728c44>`_ Allow posting an async action on services with a failed mon status
+| `1.9-2119 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fe89fad0c729b5bb08459d7b79ad445ad216b338>`_ Better handling of unresolved references in the start/stop/... of app resources
+| `1.9-2118 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=469086ac3169a6bdb065d869feb2bce2193e6b80>`_ Giveback action fixes
+| `1.9-2117 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3f666026d1cc69a9a762ff48b26398bcd355f536>`_ Fix systemd unit path identification for debian based systems
+| `1.9-2116 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=aba460183bf3dbca9c3b9a9916f8954cb9350826>`_ Support ip.cni resources in lxc containers
+| `1.9-2115 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=29de13dfe1325ae89f38ed3c201faa11451c74fe>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2114 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=09840594f2d7b467a6005553eb9339cdf9240e86>`_ Join the opensvc-agent.service cgroup on user-triggred svc action
+| `1.9-2113 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=df775dac824b0648aae818bebe8f9935552c8cca>`_ Fix crt-c not exiting svcmon --watch immediately
+| `1.9-2112 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7b1fbe41bade777dcf197615386e2e1b6b49f2a4>`_ Flag the container_rid keyword optional in the ip.cni driver
+| `1.9-2111 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e1ffd8dcdd99307977754f0f6a96c585f33606ba>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2110 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b1442449cb326be94453e0efda0045faafb1923>`_ Add a setsid() in the app drivers Popen() preexec function
+| `1.9-2109 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1474ae2b4e93b240948b1f9a688a324256847749>`_ Remove unexpected systemd install path
+| `1.9-2108 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=306a231b7c78a2d6fe7e38a4f6521f12aef1f526>`_ Wait for a known drbd resource dstate after drbadadm up
+| `1.9-2107 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=468d5bdc041c21d8b72efb44a43d53a7a405cea5>`_ print_table() fix
+| `1.9-2106 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=000688a6758d0753b96582cafc3e0bc5a5317678>`_ Lower case the container dns search elements
+| `1.9-2105 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e0fcb550f968b34fc9cdf8f9152d5748afd11c2>`_ Fix a log message in the disk.vg linux provisioner
+| `1.9-2104 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf04d8891ef3810c0b668e946062d6398b00480a>`_ Fix py3 aes fallback
+| `1.9-2103 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dbc00624c15965df95cbf238ebd73bec5352d603>`_ More drbd9 support
+| `1.9-2102 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=61a642f7c29ef39e51ad4c8b30a042185fa9adeb>`_ More support for drbd9
+| `1.9-2101 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=769e0bfb1348ce74be3b1e9e1834588efe54cbd3>`_ Scheduler enhancements
+| `1.9-2100 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=67a9efbf7a889a783802e9ac71a88e6461852335>`_ Support /etc/os-release in the Asset class
+| `1.9-2099 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5371d385cacfd686e39106e81e74b0fd1256f6ea>`_ Support /etc/os-release in the postinstall
+| `1.9-2098 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9b20295e07f59c4050c82f660c892d847b0188e7>`_ Support the drbd9 "drbdadm role <res>" output format
+| `1.9-2097 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=112e6343671b56e84c5492d6d33bc8947342e0ad>`_ Support Cascaded Initiator Groups in the symmetrix array driver
+| `1.9-2096 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2f938c6e3ce0215deb49e4e950fe6067e9cb815e>`_ Use lazy props for container.zone zonepath, state and brand
+| `1.9-2095 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9f9bcfe4859bf0fad7badfb19ae1bea626df803b>`_ Avoid a which() call in justcall()
+| `1.9-2094 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=480d619478179986c5f7421ba3edacce5ba1eeec>`_ Avoid loading the devtree for disk.zfs status evaluation on SunOS
+| `1.9-2093 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=75ca40475d3adb302e665fdb8769809a773a8d25>`_ SunOS devtree optimizations
+| `1.9-2092 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f60ca896c3b6c2d6d2c9bcd5e2d085620c0ee94>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2091 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f893d81b501164736fcba7542aa5b4b24f898c18>`_ Fix the pure python aes fallback with py3
+| `1.9-2090 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ffe1ce5f06b5b707ca74b0b43fe162c8e4056710>`_ Use file cache for disk.zfs zpool health command
+| `1.9-2089 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d8b203ed90a93c2ffa938040b94701747426b6c5>`_ Allow the boot action on zoned and dockerized resources
+| `1.9-2088 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=27f994c9d668ae87653b50dec45a092272bbb6bf>`_ Support waiting on parent instances on start
+| `1.9-2087 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=44a4ef0a2f469b0a2f97d5f02b4a34238a7c4858>`_ Fix the push_encap_config action
+| `1.9-2086 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eed0d92e8f30811ce6ab9c5c7b8a3bb11ba9cc6e>`_ Flag the disk.zpool "name" keyword as required
+| `1.9-2085 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6e27f01cafdb5dbd6fb922947d57123e80443ff3>`_ Fix the RequiredOptNotFound propagation for kw with deprecated names
+| `1.9-2084 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=dacd3928c506b28ed55cd4f5f9c4345cec744013>`_ Protect the daemon againt get_resource() returning a None when getting nb_restart
+| `1.9-2083 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=77570ba176ddda727c789f99d09ea5df39990153>`_ Protect the daemon against svc.shared_resources exceptions
+| `1.9-2082 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1d5c95c75107b0b6fef0f113d15420fdf61e46f6>`_ Fix slaves sort in the daemon status codepath
+| `1.9-2081 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b24629cc6607a2428980337372d03cf3a2b6ac4a>`_ Fix the logging filter for py2
+| `1.9-2080 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e25b1e76c82b5c929b928d3325f3709ddf4c0af3>`_ Implement event-triggered svcmon instead of polling
+| `1.9-2079 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=39755e722cdc3ab2ff6587494959c6d6b2b72271>`_ Suppress empty log line after a sucessful async action request
+| `1.9-2078 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=12fce17663374b53dbc6c9586ad10402f315c303>`_ Add a logging stream handler filter to discard "do <action>" logs entries
+| `1.9-2077 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=878d99e2fdd8110ecf25debeae50d28bc52e3417>`_ Fix the app.simple driver on SunOS
+| `1.9-2076 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81e1c33190bf5edc6c965bf0f92097ef7d4bcd3b>`_ Don't trigger the cluster split handler when a node is lost because of a shutdown
+| `1.9-2075 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=46efd5a595b26d94e45110b10db718da72af0436>`_ Refuse to set service monitor targets for dummies, wrappers, scalers and slavers
+| `1.9-2074 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8d64e0623298d640590175e7e640fa21ea37fbce>`_ Fix a locking deadlock on shutdown
+| `1.9-2073 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eb772c14ebe4699909363f2e2a8379427ff18a1b>`_ Orchestrator enhancements and fixes
+| `1.9-2072 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ff40c0238291141c206a38599dd9bc49ea13f228>`_ Remove a duplicate event metadata
+| `1.9-2071 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0798e5abf85a97365b526b2b260d0f2257a98079>`_ Fix a stack on validate config when the config file is corrupt
+| `1.9-2070 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6099f78c89ff697cd64c106839d19534b1be65bb>`_ Lower the select() timeout from 60s to 1s in the recv_message() loop
+| `1.9-2069 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=147a7ab99fc15e41e911521b89b3fd4f2d856881>`_ Fix a syntax error in a disk.drbd errlog
+| `1.9-2068 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=24b4a2b52cb2075f7047606bd9b7dd52f677b5f5>`_ Fix the switch action dst node sanity check undue error
+| `1.9-2067 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c2752bc217fc71a9cb9f815d1540b1c9dfb3e75>`_ Fix latency in cluster data propagation
+| `1.9-2066 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cab523d261a7f7e48ae9c5200d49649a2c9aabff>`_ Fix the takeover action destination node sanity check unduly firing up
+| `1.9-2065 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eb806b01981aa6b22c928a733134dde732add6fc>`_ Add a missing cluster data lock acquire
+| `1.9-2064 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=481e0932bdc846e65c1fc0269ceb7f5f33c6bceb>`_ Kill running actions janitored by the mon thread upon shutdown
+| `1.9-2063 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2a451089d3aa8593f977275ce0bd36ca26b5273d>`_ Better handling of signals during // calls of Resource::abort_start()
+| `1.9-2062 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7461fca8ac31e5e342b760b502744608f6265009>`_ Don't log the full stack in node.log for the collector thread rpc errors
+| `1.9-2061 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5aa30a0e64bbccc750697166387c55f4a5496176>`_ Add the task#<n>.timeout keyword
+| `1.9-2060 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f9e9479d114a36090d22af1fe704fbcdc23caad4>`_ Allow service takeover of services as soon as they are shutdown
+| `1.9-2059 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ac5fc4564ea69bf7af3d76c9f08b9429e4147195>`_ Don't wait for container operational if the service has no encap resources
+| `1.9-2058 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2b18871538b6031ad7aac5d9a747100d27801e0>`_ Set the scale action as a config changing action
+| `1.9-2057 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=052aa76d3a533686fc94064439979cd1b4430d33>`_ Remove a debug statement in the async action submit code path
+| `1.9-2056 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b19e35de6f92322b164b13c49dad8e75697b3c57>`_ Fix a use before set in the app. driver locking error codepath
+| `1.9-2055 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1b6d85b49e42a82c2b0bd7e28d6affe6292b03b8>`_ Harden the compat docker socket choice
+| `1.9-2054 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d721280c7dff842090513b5c15c21ceeda0ca5be>`_ Avoid exec of "svcmgr -s <svcname> status --waitlock=0" in some situation
+| `1.9-2053 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=199de1e62e9b5ea60674535fff024c20708583ed>`_ Use a file cache for container.kvm state parsed from virsh dominfo
+| `1.9-2052 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c7e6dc653751960a688b945044026182797e6dd>`_ Add a file cache for the zpool status in zpool_devs()
+| `1.9-2051 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ce61b85dadb6dfdc4809c3b876bdc94c993130a>`_ Fix cluster dns responding the ip of <svcfqdn> for foo.<svcfqdn> lookup
+| `1.9-2050 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=579f57bad4d3e2870045dc20e0c2b860a5b4e837>`_ Stop the orchestration while shutting down
+| `1.9-2049 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=822fe9f49200319a16f4350c78367a286723874a>`_ Re-support the --daemon svcmgr option, but keep it hidden
+| `1.9-2048 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b8a7eb56d0df462c1ce0c5904f05feb9cbfee077>`_ Use losetup -J when available
+| `1.9-2047 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=18ef857267a29e8e3fd841490553b2434f2cdd3f>`_ Use a file cache for a zfs list snapshot command in sync.zfssnap
+| `1.9-2046 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cca7b59dd47533dac40a371fb1922f2419418af8>`_ Allow again the lsnr to respond a None
+| `1.9-2045 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f4b8fffda5061f0dd38d72a45dcd64008df1982d>`_ Fix the lock intent kwarg placed in the wrong function
+| `1.9-2044 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7de5a77c5ac3216ea7fcc16e72c35abcccf2e268>`_ Honor --waitlock in the svcmgr status locking
+| `1.9-2043 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2fd61e6850a68a75cb5107ab8a1f9cf9ee13448c>`_ Add a retry delay on daemon_send() result collection loop
+| `1.9-2042 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a2826f46f94f1bfbeccb22f5c64cca2338d8e732>`_ Exclude more resource drivers from group_status() calls from drivers
+| `1.9-2041 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d1c7595efd4c1663a249386932712b6fc0540cf>`_ Fix the get_boot_id on solaris zone
+| `1.9-2040 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7e4b4710098cbfead101a76de4f22ccc5121378e>`_ Fix the Asset::get_boot_id method on solaris zones
+| `1.9-2039 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2adb59c96ee0a1221e63e6a443306074e2f7d050>`_ Use file cache for prtvtoc in the SunOS devtree codepath
+| `1.9-2038 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0ce1a6face3202821619748875477851ace3c0be>`_ Use a file cache for zfs list and zfs list -t snapshot in the devtree codepath
+| `1.9-2037 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a02fd91162c503613d7dbfd35a9cc26c3d07f5c0>`_ Faster and resource-exhaustive Svc::purge_status_last() implementation
+| `1.9-2036 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7b1810655a364dfd9cfe924dcf1f6dad68b955e5>`_ Remove a debug statement from rcDocker socket fallback codepath
+| `1.9-2035 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=020aab2cd67842ccdf957d0bbe7302bf41f0cba0>`_ Remove the --daemon option
+| `1.9-2034 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=26f1436a3d13d72d5941973311bd6ed400a0ca04>`_ Fix the boot() method conflict with the container.zone driver
+| `1.9-2033 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=80099bd2f58d97eaa363ab349ead73e4e3ae2d30>`_ Fix a unicode issue on py2 in forest.py
+| `1.9-2032 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1c1136c29d53bac38acaee3747e732dd2655bc6a>`_ Fix nodemgr pushasset /etc/passwd parsing when LANG=C and utf8 in the file
+| `1.9-2031 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ccbb0aee8a314f0216b8ae13b24845c16e3b2760>`_ Fix the private docker socket test
+| `1.9-2030 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e91507bcd9056048e88899a14c8b30a0759bc0f0>`_ Fix a bad nodemgr/svcmgr action routing on "nodemgr dequeue actions"
+| `1.9-2029 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43f8a26598de44a07e1044ba27a1033a4d5ae4c0>`_ Fix the scsireserv and vg tags unduly up after a crash-boot
+| `1.9-2028 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3a3867b479986036958b7326603091c6152983f5>`_ Add the boot action to the resource status changers list
+| `1.9-2027 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=48c03dc5b13ce60d6d3f87c9ab309b523b978910>`_ Don't freeze the instance on svcmgr shutdown
+| `1.9-2026 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5bc8710eca0d52e2479c9b33685d5ac3913dcc96>`_ Don't use the WARN state in the disk.drbd driver
+| `1.9-2025 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=671bd45b0f1a0bf3e64e74e8493ee99997322838>`_ Don't try to wake the monitor thread in the boot action codepath
+| `1.9-2024 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=52634d25674c5eed5b434c1e6ed75fd0ad6dc4df>`_ Fix the boot action bypassed (by the _master_action() decorator)
+| `1.9-2023 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f304f53bd0df790d04eb1cb38de815fe5000edbf>`_ Fix stack on svcmgr move without the --to option set
+| `1.9-2022 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3e8906864f8f6f80906b325b0f4201f9fd49131b>`_ Fix a validate config stack on required kw absent due to invalid scoping
+| `1.9-2021 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9720606a9d292864bfabd6041c802bc815413143>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2020 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8aa88ae808538608f4c599c561d03170be13a794>`_ Detect more issues in the share.nfs linux driver
+| `1.9-2019 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4573897626ab8334093707abd390825d45d84961>`_ Remove systemd dependencies from opensvc-agent unit
+| `1.9-2018 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e3030655013c9bd7e6de449b300ca9ba84549f6b>`_ Add a missing cluster data lock acquire in the monitor thread init
+| `1.9-2017 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fabed2c51cd8893960c6c416c01b89e73eff1ca6>`_ Don't rollback on SIGINT if the start action is processing an app resource
+| `1.9-2016 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0d95f59c479a2da8d30c48f8858c27e1f771572d>`_ Fix a stack on py2 with app resources setting an exec command in start/stop/check
+| `1.9-2015 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fa0c5a92edfb41b949dbaec8cd8eeaf05f27b7f6>`_ Daemon shutdown enhancements
+| `1.9-2014 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c1a27b033277d32c1d98c9b7778852024a3d81fb>`_ Fix daemon_send() not waiting data for more than 60s even if timeout=0 or >60
+| `1.9-2013 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a2fefb427e2d5b81cd9fdc69f4475f96a9626407>`_ Acquire the cluster data lock in the hb prepare data codepath
+| `1.9-2012 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4869aadf01e6974ecd72125677f99dd3b4f05ce3>`_ Fix vg resource start just after underlying bdevs activation
+| `1.9-2011 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4da2fa91b1ab0230013143c0821a890796ca5b12>`_ Use the cross-service cache facility for virsh capabilities
+| `1.9-2010 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fb7f0e982a17050da3b97345702a530a691a4b09>`_ Implement the "svcmgr move --to <node>,<node>" async action
+| `1.9-2009 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9b7deaede11643ca7a809dc976680343f320a9cc>`_ Add a auto_assemble_disable() call to the disk.md postsync
+| `1.9-2008 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e8650b7274743491138a5cefa2aa49709c8b6d12>`_ Fix the submitted action logging
+| `1.9-2007 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=455702a8d5f352a5ee936c7a3406cbcaa3cb2440>`_ Remove a debug statement from svc.py
+| `1.9-2006 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4e892aa765fac620a81534ef9fc22339c72e32d2>`_ Use a different lock for status from cache and status refresh
+| `1.9-2005 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ef30df5c19701f3181198733712a9624c8ec06b6>`_ Activate fcache for the virsh capabilities command
+| `1.9-2004 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea59514378050b68b2089b1502f7994440d776de>`_ Add a log and event on arbitrator transitions to up and down
+| `1.9-2003 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fa98baced83f157bc054e4d9e8c9da6175a888e4>`_ Fix the daemon data not updated on add/remove arbitrators
+| `1.9-2002 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=864b0cfaf84e1dc5437ecfde626407bf4d331ca6>`_ Fix the ucast hb rx thread honoring the node.conf changes
+| `1.9-2001 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=90e31b1b04d2915220dd82eec637e696aaf2c3a4>`_ Fix async action with --dry-run being really submitted to the daemon
+| `1.9-2000 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=39d6baef3eb41de376d582011aedb23385161879>`_ Add a 2s delay between log and toc to give a little time for log flush
+| `1.9-1999 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c6953ed7a57a1e1a1d293417104c5f65bde10084>`_ Support the arbitrator#<n>.timeout keyword
+| `1.9-1998 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab8d72de6a21888a97a57d2eccaed3ccd693adfe>`_ Fix a stack on logging an error from the hb disk
+| `1.9-1997 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db9d4fe0d77ba98c87e6ff14f9808ee6cc9b773b>`_ Micro optimization for the test_svcmgr nose tests file
+| `1.9-1996 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=563c484abe44c49e32f8b9eb5b84a4b1564e956b>`_ Fix an potential stack on "daemon status" when the mcast hb is not yet initialized
+| `1.9-1995 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=243db8a80e3951df1787b93d79380663842dd70e>`_ Add the boot service action
+| `1.9-1994 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b21b53323bb539fdaefe42682a05391e6418c245>`_ Don't send the kvm containers config file if shared=false
+| `1.9-1993 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=585304ec9753c2a72e8287b61b9a594382831210>`_ Fix service config change not triggering a service status refresh
+| `1.9-1992 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=68535dde00e54a6075b2adc02a80ed538c1089c6>`_ Don't log the stack in app resources when the specified user does not exist
 | `1.9-1991 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=19a5ee3f0fc3d9e29165cfa5642f72ad05f29798>`_ Add a action help preamble expliciting the fact the action is async
 | `1.9-1990 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=43efe67be8629b79e6f25454626e5c88501d3ff7>`_ Don't block presync on disk.md resource if overall!=up, use avail!=up instead
 | `1.9-1989 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0c08223d4b555e7c0b9ba59a4e4f631ddb02b7de>`_ Add intra-section references
