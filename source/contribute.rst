@@ -38,7 +38,7 @@ Send patch with:
 
 ::
 
-    git format-patch --to opensvc-devel@lists.opensvc.com -o /tmp origin | \
+    git format-patch --to devel@opensvc.com -o /tmp origin | \
     while read f ;
         do cat $f|sendmail -t ;
     done
@@ -56,7 +56,7 @@ Send patches with:
 
 ::
 
-    git send-email --to="opensvc-devel@lists.opensvc.com" origin
+    git send-email --to="devel@opensvc.com" origin
 
 With msmtp, with git send-email
 -------------------------------
@@ -101,7 +101,7 @@ Send patches with:
 
 ::
 
-    git send-email --to opensvc-devel@lists.opensvc.com origin
+    git send-email --to devel@opensvc.com origin
 
 With msmtp, without git send-email
 ----------------------------------
@@ -139,7 +139,7 @@ Send patches with:
 
 ::
 
-    git format-patch --to opensvc-devel@lists.opensvc.com -o /tmp origin | \
+    git format-patch --to devel@opensvc.com -o /tmp origin | \
     while read f ;
         do cat $f | msmtp -t ;
     done
