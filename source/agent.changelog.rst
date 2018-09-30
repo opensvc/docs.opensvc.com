@@ -2,6 +2,47 @@ Changelog
 =========
 
 
+| `1.9-2202 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e2b36b4ff938ca7edf4f25eb6657a0db8c47977d>`_ Lossless disconnect/reconnect the events socket on daemon restart
+| `1.9-2201 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b9e3bb67c0339e3eb850eef865659c28b9bf37b5>`_ Dont exec the app script realpath'ed
+| `1.9-2200 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9114edde59b2c6ae0a971220cfe5b0981de77efe>`_ Fix the reversed logic in the previous patch bypassing the logging to collector
+| `1.9-2199 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9f53f3a86ae90f505cfa2976d36754dac39f2c8b>`_ Avoid begin_action, end_action via daemon when node.dbopensvc is not set
+| `1.9-2198 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a75ae87b35da9ca69ea2baf48c82c196f6c846ad>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2197 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81c307c4b19d035953b7da55b8b02747c6959885>`_ Add a sanity check to prevent service creation if the name is not ascii-encodable
+| `1.9-2196 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=44962ef099e5d6a1b7804fe9601cb71a7cb12a5f>`_ Update scripts to respect FreeBSD design rules
+| `1.9-2195 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=75f952f9b33fac1f7b388b20e55a1d6d3525c280>`_ Don't display the daemon response data on some nodemgr actions output
+| `1.9-2194 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b5a09bb637126dc7f1da24d470d44d173a9cb0eb>`_ Fix the unit convertion of the mem probe on xen hv with virsh installed
+| `1.9-2193 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=642f67c2cc425254ad4912ca436650cc5f0f0b40>`_ Use the same interpreter for the agent and the comp objects exec'ed as automodules
+| `1.9-2192 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d59f41ae6a52f2ca945076bf4af25c827f0c3cdc>`_ Execute the merge_frozen only once, on rejoin
+| `1.9-2191 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bf5534676ca677006fd230b78f29c756331f5c90>`_ Fix a regression in the get_conf() code path of deprecated keywords
+| `1.9-2190 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5ae7a61c2da583cace1eece50aca0136bd0cb3a6>`_ Fix the sync.rsync.exclude deprecation declaration
+| `1.9-2189 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b97abf28e356d063c7db747c556281f314e8aeb1>`_ Support multicast heartbeat live reconfiguration
+| `1.9-2188 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=324debf9c7f00f4aa8d56becc371a2162e14f7db>`_ Assume the .topology=flex service selector means topology=flex
+| `1.9-2187 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6e514acb8762f1dfb33722efb174f096e7676ef6>`_ Fix a stack on an unsupported service selector syntax
+| `1.9-2186 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4a3db2bbe291334acb0ce1519a9e432851bfc78a>`_ Validate the changes applied through the nodemgr and svcmgr set/unset actions
+| `1.9-2185 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=40b85cee921d9059c9fa530ba987ba2637e0fd9a>`_ Micro-optimization in the merge frozen flag method called during the rejoin period
+| `1.9-2184 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6c4139a8b19c2acc88a95f336e6aeafd91f08dc7>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2183 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3d9e28b19a6373b179e5394a9f70d82fffa22f16>`_ Add a FreeBSD specific Node child class
+| `1.9-2182 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4c73f30dd852175a76eceef899c7a0ce193530ec>`_ Update preuninstall script for FreeBSD
+| `1.9-2181 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d3d0a474273f0681c5b24e35c6a589928c78c0e0>`_ Fix FreeBSD package build script
+| `1.9-2180 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6fec430acc704998a9c1c67132838271ca5d68ec>`_ Add hb_beating and hb_stale events
+| `1.9-2179 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7df3a03beceb43c0545d32d09c2e1d07a6618399>`_ Honor the hostname container.docker keyword, setting it in run_args
+| `1.9-2178 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0dffeb5abb002b79e7c26ea4d03f000eabc1e637>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2177 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=acab9188855d36a14ef97660b860c3fb86627288>`_ Add support for ipvlan in the ip.docker driver and the "mode" keyword
+| `1.9-2176 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0f56dccd2f5b98e9c2b29730652c15bdcd176c4e>`_ Fallback to /dev mtime for boot id if /proc is not mounted on FreeBSD
+| `1.9-2175 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6015be3345ad2ae71d69b903ad87a5d175496f00>`_ Update FreeBSD init scripts
+| `1.9-2174 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fa97b0e693f9ed463840df4f643e3d4f356f8edf>`_ Python3 compat fix for FreeBSD
+| `1.9-2173 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c5b5147236df6bcad7e9bf91155f847373f627ec>`_ Fix make_rpm spec file broken by undeclared new file
+| `1.9-2172 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=bcb5fb5ad76fcdcbbd8789008a64f8724d7ce9be>`_ Add missing "\n" in the comment add by crontabentry compobj in new crontabs
+| `1.9-2171 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7dd83c29f5aa9fbfc9b71325f4666f3cef3f7604>`_ Fix a stack in postinstall on Linux systems with no /etc/os-release
+| `1.9-2170 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a5fac7f09407f861d91c94ed02869a75a1744801>`_ Add a comment in the crontab created by the crontabentry comp object
+| `1.9-2169 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6f9ad506f80bfd639627d636fa6cf077446c264c>`_ Sort the properties by name in pushasset displayed tree
+| `1.9-2168 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d99d0ba87349e087f11c43e28f109e9d7366755e>`_ Use /etc/redhat-release for the os_release on CentOS 7
+| `1.9-2167 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cc6d216b44baa477a314195218f313e0c51ba602>`_ Stop scsireserv resources first on unprovision
+| `1.9-2166 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2d17e7ca3672dddec471232a59a36b4e3080514e>`_ Rename openrc.init.opensvc to bin/init/opensvc.init.openrc
+| `1.9-2165 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7fa982be4dc6d50d18f70015cfdd5d09559b46c8>`_ Display a shorter digest on nodemgr/svcmgr commands without action
+| `1.9-2164 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=452dbe36d3441f1a3b35ae90f5fb24e445a65736>`_ Add openrc startup script and update postinstall accordingly
+| `1.9-2163 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7bb603d8a8dc82c913f1272f0cd54a1d3acc3fc0>`_ Add make_ebuild script for Gentoo ebuild
+| `1.9-2162 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f8d931e7239130e5f7f3fd5872c09f028e2c6a93>`_ Don't exit the pkg builders with a 1 retcode if the release script is not there
 | `1.9-2161 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f9b67a28f983bec002c1ea73419bf330aa1bac3>`_ Add "purged/purged failed" to the async action abort cases
 | `1.9-2160 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a8199d1812b58d520688ff4834fcc4586f789e71>`_ Allow the "purged" and "deleted" gexpect for scalers
 | `1.9-2159 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ba44f3674961083a73ca58e5d364c4151cf22d9f>`_ Use re.search() instead of re.match() in the crontabentry comp object
