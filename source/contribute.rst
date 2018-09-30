@@ -3,7 +3,7 @@
 Contribute
 **********
 
-OpenSVC projects are tracked with the git source tracker. The documentation is also managed as a github tracked project.
+OpenSVC projects are tracked with the git source tracker. The documentation and agent are hosted on Github tracked project.
 
 OpenSVC projects not hosted on github are published through a GitWeb interface available at https://git.opensvc.com.
 
@@ -21,15 +21,17 @@ Clone the appropriate git repository
 
 ::
 
-    git clone https://git.opensvc.com/docs.opensvc.com/.git
-    git clone https://git.opensvc.com/opensvc/.git
+    git clone https://github.com/opensvc/docs.opensvc.com.git
+    git clone https://github.com/opensvc/opensvc.git
 
-Or fork on github.
+Or fork on Github and clone from there.
 
 Send patches
 ============
 
-Submit a merge request through github for projects hosted there. For project hosted on git.opensvc.com, this section provides help to setup and use a mailer to send patches to OpenSVC maintainers.
+Submit a merge request through Github for projects hosted there.
+
+For project hosted on git.opensvc.com, this section provides help to setup and use a mailer to send patches to OpenSVC maintainers.
 
 Configured local MTA, without git send-email
 --------------------------------------------
