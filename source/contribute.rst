@@ -3,7 +3,7 @@
 Contribute
 **********
 
-OpenSVC projects are tracked with the git source tracker. The documentation and agent are hosted on Github tracked project.
+OpenSVC projects are tracked with the git source tracker. The documentation and agent projects are hosted on Github.
 
 OpenSVC projects not hosted on github are published through a GitWeb interface available at https://git.opensvc.com.
 
