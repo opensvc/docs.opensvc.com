@@ -2,6 +2,151 @@ Changelog
 =========
 
 
+| `1.9-2347 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab3d88f3c0519236a86694018186e066362a3e13>`_ Set the OPENSVC_SVC_ID the app resources exec env
+| `1.9-2346 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e7997a0abb4da0efa459e315b361ec4f24b06d59>`_ Reset the service id on create
+| `1.9-2345 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=78d9fe17f7767ad6c96226a14499a8baedd9f24d>`_ Fix the svcmon man page formatter
+| `1.9-2344 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d6bf90e4fc7147a26454e98891e74472ec123b9>`_ Really commit what is advertized in 2490a2f972c9eb0c2aa41c2291fcee67e60ede88
+| `1.9-2343 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f25f95dd396467fbb65b9f9bebbdde8da953f3b3>`_ Fix regression in term_width()
+| `1.9-2342 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9e6da149a9714c9d427906b9ff488ac470c0fd71>`_ Restore the OPENSVC_SVCNAME in the app resources commands environment
+| `1.9-2341 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d6683fb6df0b7af759772ce39e36ba448c70f8d7>`_ Fix the ip resources info returned value when no ipname is set
+| `1.9-2340 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2490a2f972c9eb0c2aa41c2291fcee67e60ede88>`_ Support a non-strict format mode in the fileinc comp object
+| `1.9-2339 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69914427c7bb6bc9c9daba761b26b7222d6f0868>`_ Fix syntax errors in the md5 module interpreted with py3
+| `1.9-2338 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5a540f3982fc3d7085f34379880e4b99d8d140ec>`_ Add a "keyval_with_fpath" symlink to the "keyval" comp obj
+| `1.9-2337 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7ee58e3eaf7704668a531b3e16957ef48c440865>`_ Allow fileinc to be satisfied with a line matching regex
+| `1.9-2336 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=85f390b26c13548c2b98a33324defa7b66f677b9>`_ Validate the import-all test for travis CI
+| `1.9-2335 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8b16d8d2d088778f9e73338eeb82ce0d045077ab>`_ Fix missing six import in the tabulate module
+| `1.9-2334 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a6058090d504bb1723722468e6105858db6f7ddc>`_ Ignore assignment-from-none pylint error on storing the reserv key in disk.scsireserv
+| `1.9-2333 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fe5a7faa71ff4daa7c837ff035167a9e2cd0fe33>`_ Fix a pylint error in tabulate module
+| `1.9-2332 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9efe1cc7daa99af575d58debf0bf41395b58de46>`_ Fix pylint errors in hds and xtremio array drivers
+| `1.9-2331 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=31ebcadd90669c733e76211aa16060b965d77381>`_ Fix a pylint error in the node module
+| `1.9-2330 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b8fee3c968741484b2664fa942cdee763dc53f4d>`_ Fix misnamed attribute call in fs.docker
+| `1.9-2329 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c1967eec9f122def30d02f9bfb70dfce8e4df20>`_ Use the pylint marker "disable-all" instead of "skip-file"
+| `1.9-2328 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b443fc5b3739b58de9e3a3c05f7ca8ac042af7f4>`_ Fix pylint errors in the osvcd modules
+| `1.9-2327 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=12ba4838be8db2b17b28a97f6080b512d9479a4a>`_ Fix pylint errors in the OSF1 diskinfo module
+| `1.9-2326 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4d6d17bb040da1737a5459c47579edd5c895cf64>`_ Fix pylint errors in array drivers
+| `1.9-2325 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8c7651c3fafd3b51cb06b77c163d9ca95ba8aa43>`_ Fix pylint errors in the xmlrpcClient and rcGlobalEnv modules
+| `1.9-2324 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a4fa95a77715fcaa755a31cbbfdbf0e6d34f291d>`_ Skip pylint checks on the wmi module
+| `1.9-2323 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0659415a5e30855e51add24ada339575bf3fc62e>`_ Fix pylint errors in tabulate
+| `1.9-2322 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b88f7aed6abed52b8262448e2e4ac1617a662d5c>`_ Ignore a pylint error in the svc module
+| `1.9-2321 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f2231b2aca7cf65b889b728166d1ad7d3465d75>`_ Fix svcmon --version on install from git
+| `1.9-2320 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0e8746acd959cbf12a01b99c9330e0cd1a2c22f3>`_ Ignore pylint errors in the six module
+| `1.9-2319 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0eee143c43c1bb67b33aa0facf02721a635cd6d1>`_ Fix pylint errors in the sync.zfs driver
+| `1.9-2318 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=86634a5c7e463042adc64c47145540b6aebc46a7>`_ Fix pylint errors in the sync.s3 driver
+| `1.9-2317 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1d7eb7721f14100a0aee95d29d9f170a49fc3b43>`_ Fix pylint errors in the sync.rsync driver
+| `1.9-2316 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=026d2812e49be127443ded2593af1c3b615316d6>`_ Fix pylint errors in the sync parent class
+| `1.9-2315 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=20808c983acf48a1e12c13d0e9bdd53c79772848>`_ Fix pylint errors in the sync.necismsnap driver
+| `1.9-2314 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f2ab7886b857d282aaa2978212abaef5456903ca>`_ Fix pylint errors in the sync.dcs parent class and sync.evasnap driver
+| `1.9-2313 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6640e2d932ffbe18f6c30686cfb89ad6af7b8177>`_ Fix pylint errors in the sync.dcsckpt driver
+| `1.9-2312 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eb27d396d096407f151e0703cae0cd32a1b3b1c9>`_ Fix pylint errors in the sync.btrfs driver
+| `1.9-2311 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=692e5128ed59e5290b3a96d9f6e3aaa7c2125804>`_ Fix pylint errors in the SunOS and HP-UX share.nfs driver
+| `1.9-2310 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eb2f8e628d8d76270eb5ff0b1ff51005845d41a6>`_ Fix pylint errors in the disk.scsireserv parent class
+| `1.9-2309 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=26c5c0cd16556f648372d186e88dadbe526d4bb3>`_ Fix pylint errors in the resource parent class
+| `1.9-2308 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4121741268bc33cdc4965124dca4030fd1794387>`_ Fix pylint errors in the ip.cni and ip.docker drivers
+| `1.9-2307 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c5b03e3bbf48ad138ca42990d2d7949185188b3>`_ Fix pylint errors in the windows fs driver
+| `1.9-2306 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fd572bd6eddb522415b22bba78f5874eb1b6889f>`_ Fix pylint errors in fs.dir, fs.docker and the fs parent class
+| `1.9-2305 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=15d9ba3ac67a95416a6513c19ab01465226de343>`_ Fix pylint errors in the disk.vxdg driver
+| `1.9-2304 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5c5d1e72c908433d1efb3ebbc0a9652efe953f16>`_ Fix pylint errors in the disk.advfs driver
+| `1.9-2303 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2201da182dc502507122612aeac81f7c1c5030a2>`_ Fix pylint errors in the disk.rados driver
+| `1.9-2302 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=2001fc1e756e3851280386392bfb6953c3e7edb9>`_ Fix pylint errors in the disk.gandi driver
+| `1.9-2301 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=307767754b11bcc75ad930b652bed687261a68b6>`_ Fix pylint errors in the disk.amazon driver
+| `1.9-2300 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3b80b81ba4daab944a8c6d52e83979c52c46e582>`_ Fix pylint errors in the container.vcloud driver
+| `1.9-2299 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=474e3921b1d8960ec9aa0fdca6042b835cbee666>`_ Fix pylint errors in the container.vbox driver
+| `1.9-2298 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ef629983e8d1ad5287f8ac081ec09989a9efb075>`_ Fix pylint errors in the container.openstack driver
+| `1.9-2297 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=25d2038ae7aad888329a4b1ca953d897c6fbb845>`_ Fix pylint error in the container.kvm driver
+| `1.9-2296 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=602c9e0d5da1accfc7aa8b9e590e142488b96e24>`_ Fix pylint errors in the container.jail driver
+| `1.9-2295 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e29f74674515d0ffd1adc7db0a992fecd35e41c1>`_ Fix pylint errors in the container.hpvm driver
+| `1.9-2294 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea74506ddb4f1274e675fc81e40280e0ef802e46>`_ Fix pylint errors in the container.srp driver
+| `1.9-2293 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=055b2180dfd9f50a01916f349ff8f8ea10e8606e>`_ Fix pylint errors in the container.docker driver and its container parent class
+| `1.9-2292 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5f1ebf7db813079ad08fb5d56ec259615bb1b7a8>`_ Fix pylint errors in the container.amazon driver
+| `1.9-2291 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db5538c04902b7d00d7526bd168e79749d13386f>`_ Remove unused module resAppVm
+| `1.9-2290 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d10c46c250f0214660a4d451b9db749335b8c7a6>`_ Fix pylint errors in the app.simple driver
+| `1.9-2289 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d9e17014aff29d00ffd8dcf7080cb604c520e5d3>`_ Fix pylint errors in the xtremio array driver
+| `1.9-2288 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fbdf8e99b674a47b1ba33af8d0ae74730e31a3dc>`_ Fix pylint errors in the Windows utilities module
+| `1.9-2287 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ef91f998ad1d32b2acd80fc1a617901d35aceda>`_ Fix pylint errors in the utilities module
+| `1.9-2286 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4f66bae6113c82d1bc3ce2a0e2e7ed574d2c157a>`_ Fix pylint errors in the symmetrix array driver
+| `1.9-2285 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab344936e9868fc57bfd11cf6ce360e75deacd0f>`_ Fix pylint errors in the SunOS stats collect module
+| `1.9-2284 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9a8757ae1c9476c8eede5576650a0a1dbc5bf7ca>`_ Fix pylint errors in the darwin stats collect module
+| `1.9-2283 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4a6d2026a25e07d60cb105a7a8000561bb5df9ff>`_ Remove testing code in the scheduler module
+| `1.9-2282 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=62c3843c749c935f5a7a784c78f8eaf947e22f85>`_ Fix pylint error in the Linux process group module
+| `1.9-2281 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=388600d79594ed99f0964dc61e62e1a38415782d>`_ Fix pylint errors in the ovm helper module
+| `1.9-2280 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=577763e75a1fc6de67be0db7ab7e41c4e41ccca7>`_ Fix pylint errors in the nsr inventory driver
+| `1.9-2279 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6979ae1c4b08caaca6a26f5d04c04d78f4bac2ce>`_ Fix pylint errors in the nexenta array driver
+| `1.9-2278 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=29c768f8d7dbfbbc7d127555f0c7806f13e8caa6>`_ Fix pylint errors in the necism array driver
+| `1.9-2277 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ad7f43f74f1a2093e8d17dcbece2441ab5a2a472>`_ Fix pylint errors in the mount parent class
+| `1.9-2276 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=237d3702c79e4481e015d27dcae840c1a5a67960>`_ Fix pylint errors in the darwin disk.loop resource driver
+| `1.9-2275 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ee6574420576da80054f04a272e99ab214fb3b1>`_ Skip the md5 module pylint checking
+| `1.9-2274 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fa1d6fa2c2ffd0e9894a723de65e32ff8b54967c>`_ Fix pylint errors in the ifconfig parent class
+| `1.9-2273 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f590ed70352ffa6bdf93672c2e6ac98c8762531f>`_ Fix decoding in the Linux ifconfig module
+| `1.9-2272 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7ea290848e53f8e84d059dd55a82cc0e59b38a58>`_ Fix pylint error in the AIX ifconfig module
+| `1.9-2271 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e2d232fc48952f2ddeabef0a724b4f8b03989cce>`_ Fix pylint errors in the hp3par array driver
+| `1.9-2270 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3f792b2a47d6379c81a3e084ce88dc28125d3c2d>`_ Fix pylint errors in the hds array driver
+| `1.9-2269 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ea3fe63e35b134e564df36e9f489721c36fc7658>`_ Fix pylint errors in the gce helper module
+| `1.9-2268 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=95f77e917f2ac3cce7aa29b22596c5108c0bddae>`_ Fix pylint errors in the freenas array driver
+| `1.9-2267 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e015a2179e4d62019088e9f7ae34852c05ff0a89>`_ Explicitely discard pylint import error on distutils.version
+| `1.9-2266 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b8354427ffa3d78f9bc44fbf7315effee55af83a>`_ Fix pylint errors in the Linux diskinfo module
+| `1.9-2265 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=de857da62d2975a16559f7966926d637dc18d2a0>`_ Fix pylint errors in the HP-UX diskinfo module
+| `1.9-2264 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab6af598f8e7f9c3075f9ede2e91153ccbc6ae97>`_ Fix pylint errors in the devtree parent classes
+| `1.9-2263 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3af639032315ac5a13f6541687a8ea7bb7c755be>`_ Fix pylint error on the Linux devtree module
+| `1.9-2262 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8fe50b7ea2f906f89c9fe94aa7e009a26f1dfdd1>`_ Fix pylint errors in the datacore helper module
+| `1.9-2261 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8af3714bb8a93033a2ab32432f9f047a9496de79>`_ Fix the config parser wrapper module pylint errors
+| `1.9-2260 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1fc0ee8c35faf380c40d9833346d20bd474fae42>`_ Fix pylint errors on nodemgr collector cli
+| `1.9-2259 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae5c62173a5838f334b2aaaf4d4dcbdc78983e35>`_ Fix pylint errors in the vcloud cloud helper module
+| `1.9-2258 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4879cef4d4c382bfbfb3d79733202f9b95ebaada>`_ Fix pylint error in the cloud helper module
+| `1.9-2257 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1c0e077739fe967d07863151f70994bfe40bb8d4>`_ Fix pylint errors in the gandi cloud helper module
+| `1.9-2256 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9c77e7129715a8fd8e7ef17b97b78a64fa591c35>`_ Fix pylint error in rcAssetWindows
+| `1.9-2255 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8674fd833e99c3155da11eb89772c37396feb56f>`_ Fix pylint error in rcAssetOSF1
+| `1.9-2254 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=53b0d1c8bb769ecaaf0566dbc25259e1b340e04d>`_ Fix a pylint error in the amazon mixin
+| `1.9-2253 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cddc64169826fc3d7124c661e38dbfe6428ecca3>`_ Fix pylint error in rcAssetLinux
+| `1.9-2252 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=148ec1d4edfab82c15ded12277d11032e47d5c6d>`_ Fix pylint error in rcAssetHP-UX
+| `1.9-2251 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=256abf3656e622b4fff07665fe063807c989f92f>`_ Fix pylint error in rcAssetDarwin
+| `1.9-2250 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=18e3f7bb40b27ef78c3f02531cf4d4f3adfa9ded>`_ Fix pylint error in rcAssetAIX
+| `1.9-2249 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a52f1042df73e76036ecba71f78e705b41ccefac>`_ Rename the Amazon class to explicit it is a mixin
+| `1.9-2248 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=90ece30e5930c570b600a9f92c7fc930137f6944>`_ Fix real errors in the advfs helper module, detected by pylint
+| `1.9-2247 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e70d47595ff7e2c7b63041f68edb4135ab6af02b>`_ Fix real errors in the container.lxc provisioner, detected by pylint
+| `1.9-2246 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b6398a80a9a9853faa48b32372482c171f45fc87>`_ Fix real errors in the ip.amazon provisioner, detected by pylint
+| `1.9-2245 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=378a60a4788981775d105ab35be69d61169fd088>`_ Fix a function placeholder not returning explicitely None
+| `1.9-2244 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f7e7c5e04135e0025c7d80c1e0c421ec6c6aed91>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2243 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=303b6d7a3291aaf5cf42cef8d7adcd0e3a9e2695>`_ Catch excAbortAction in the scheduler action decorator
+| `1.9-2242 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c387e00e9cfcbfb1c13d95c61ddc4dd4534ae546>`_ Don't trust "if exist: unlink", the file may disappear between the two instructions
+| `1.9-2241 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5e692b88c2b62675ef5e96441b0c5570f3f26175>`_ Make sync resource bypass the "paused" logic when the daemon is not serving status
+| `1.9-2240 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=87936c07b55ab9d3fffba8d527baee688986a74f>`_ Improve FreeBSD compliance
+| `1.9-2239 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=edabc68d1b54360e4dea3012425b5dfea808666a>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2238 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=81294a602adb6f46a5c304f1ebdef1a20512cc7e>`_ Allow setting the smon status to "scaling" on scalers
+| `1.9-2237 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e2960664177b903bbb08df0a592cdd05d036967c>`_ Fix svcmgr create ascii encodable test
+| `1.9-2236 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e9048f8fe528e102f622940e999833f8a4ed479c>`_ Fix pylint errors in rcAsset
+| `1.9-2235 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ff76fe65d452924bd2ce470a0a1c5848df3e589>`_ Remove osvcd monitor dependency to LooseVersion
+| `1.9-2234 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ae04e64bede336ce915254ec3716fc479cf506f6>`_ Remove default parameters installation from postinstall
+| `1.9-2233 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c92c1e7905af32b9935383e4069857fa81311fb5>`_ Fix pylint errors in the node module
+| `1.9-2232 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fe3a92c483e1b909a69d9319c20e4062307a4f3d>`_ Add missing import in the container.srp provisioner
+| `1.9-2231 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=f0f59a147c945ddb554a6a6ae4fc10889587a2df>`_ Silence pylint false positives in the fs provisioners parent class
+| `1.9-2230 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=92c697b01aa344675639f2de60cabc3d50236bfd>`_ Fix a wrong node attribute path in the vxdg provisioner
+| `1.9-2229 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c74ca21017fbd645470b86a02206540f77421c4a>`_ Remove unused import from the fs.docker provisioner
+| `1.9-2228 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4840d7fdd98a55a1b509e85ea7db26af9417ed26>`_ Silence pylint false-positive errors
+| `1.9-2227 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9fa3b5e5f64d05f0073800a1a7c8fef207613533>`_ Fix keywords module errors
+| `1.9-2226 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d0323ad5effc57b6ef773bf3cc3543f80b8e1fe2>`_ Add a pragma to prevent pylint from analysing this module
+| `1.9-2225 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b7fe4310f6329fa3c1166012e63938c3987da5f5>`_ Fix pylint errors in hb drivers
+| `1.9-2224 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9a866f57045062c0230fb1bf7a79dd69041ac671>`_ Explicitely mark the the ExtConfig class as a mixin, naming it ExtConfigMixin
+| `1.9-2223 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5b6010bcae6985f3455f8cb667541f37e35f8875>`_ Fix pylint error in the converters module
+| `1.9-2222 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=5d96819241b2a55031928a937c6e7db75bb5a750>`_ Fix pylint errors in the comm module
+| `1.9-2221 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3f33cb5f072f1dffbaa3e118b161e2041108c231>`_ Fix pylint errors in the osvcd_shared module
+| `1.9-2220 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=21fa3ad9ea880230ef458d03efdf5350c71d8ec8>`_ Fix pylint errors in the checks module
+| `1.9-2219 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=642e0fcd459f98f33e5567807a6803a1ca7e3a81>`_ Fix arp module pylint errors
+| `1.9-2218 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96f539f0787c66970430eedfee40f1990ecac66a>`_ Fix pylint errors in the windows fs_u checker
+| `1.9-2217 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8ed702ebdbddaa2a6d8818f5c1f8f1dc810360d4>`_ zfs fs_u check enhancements
+| `1.9-2216 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=89c0f53dcf9eb299f9840eec306324c7874526d2>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2215 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a984971ed13cfb66883dd02d7253cb6cfc883dc9>`_ Fix pylint errors
+| `1.9-2214 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4a0a03b7635856af8fd1fc0e73cd7b371fee0359>`_ Fix pylint errors
+| `1.9-2213 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d32ec704471fbdb6b6f62551a91ab97592fe5f13>`_ Ensure string is being decoded in Python 3
+| `1.9-2212 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9989997b31a92f06cae13463839b012f1dcb3cb1>`_ Fix "nodemgr compliance list moduleset" reporting error data as modulesets
+| `1.9-2211 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=145c723f81dedc242020342360b8e0bb1af04172>`_ Fix the listener thread pylint errors
+| `1.9-2210 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0aff8f30012bd38fc1c5ff5cf02580e26e79f808>`_ Fix an false error reported by pylint in the monitor thread code
+| `1.9-2209 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fee686442738271caec8b7d228c840b655204a5b>`_ Add a sanity check on the result of the service status eval before use
+| `1.9-2208 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=96d6af33f5e1bfedfb4ecfe01c63374a15229821>`_ Restrict astroid version with py 2.6
+| `1.9-2207 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=1284b2aa983f83acd8a14cab3acda658d933e7de>`_ Add importlib as py2.6 tests requirements
+| `1.9-2206 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=8d9a5f944563daa198141f951008bca6e4b52c9d>`_ Restrict pylint version to <1.4 in tests requirements
+| `1.9-2205 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7d157f2d8fceb7a77980f4ab2961d24090dfeff9>`_ Set strict version to some test requirements
+| `1.9-2204 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=d4e4bbca9b4323157a7feb414f1ea1567c8d695f>`_ Add a requirements text file for travis tests
+| `1.9-2203 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a34e51ed49f9aed1a74a0e8eef697a45b603a3a3>`_ Add a travis config file
 | `1.9-2202 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e2b36b4ff938ca7edf4f25eb6657a0db8c47977d>`_ Lossless disconnect/reconnect the events socket on daemon restart
 | `1.9-2201 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=b9e3bb67c0339e3eb850eef865659c28b9bf37b5>`_ Dont exec the app script realpath'ed
 | `1.9-2200 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9114edde59b2c6ae0a971220cfe5b0981de77efe>`_ Fix the reversed logic in the previous patch bypassing the logging to collector
