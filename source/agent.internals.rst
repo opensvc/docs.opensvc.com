@@ -8,3 +8,4 @@ Internals
    agent.daemon
    agent.architecture
    agent.scheduler
+   agent.events
