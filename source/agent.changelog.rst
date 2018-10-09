@@ -2,6 +2,26 @@ Changelog
 =========
 
 
+| `1.9-2367 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=525328c221200b09064208fd906131de0801eadc>`_ Add autodoc of daemon events in usr/share/doc/daemon.events
+| `1.9-2366 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eaa2ce193ca4dba3fb30b9f37d203b94d1d20ff5>`_ Move events log strings definition in its own file
+| `1.9-2365 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69972b0f43819844791ea3f97eb312051a40a687>`_ Support multi-package udp in the hb.mcast driver
+| `1.9-2364 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=3013e716bf366977806a52ad3266c1cc61928081>`_ Fix a py2.6 error in the agent version codepath
+| `1.9-2363 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e42c66cfe69090434f3939ca3e4a964d739cfdb4>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2362 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=622690803377bae82c7f3741959640456b2df51d>`_ Fix boot id / last boot id comparaison on py2/3 change
+| `1.9-2361 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cf2222615912b0b58866b707e95b15e00179bbd9>`_ Apply pep8 style to osvcd and osvcd_shared
+| `1.9-2360 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=373f923ce166e9cd8e8a269feaf24132f736f6bd>`_ Verify the kvm container has not died while waiting for it to ping and ssh
+| `1.9-2359 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=fc61ad01f0a3c7d16643e6c72bfafaaaaeb57b9f>`_ Verify the container has not died while waiting for it to ping and ssh
+| `1.9-2358 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=a3e5eb6461dde2d63261ad0cd75ae3d5880a1af5>`_ Fix the zfs fs_u check unit
+| `1.9-2357 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=9ae9d1e88a304811a6d8ea1f7d8e787e6a1d1d3c>`_ Fix a pushasset potential stack
+| `1.9-2356 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=db83f6b8fc0ca9c4b4a10378a0fba7d3553cfc90>`_ Fix nodemgr pushasset (os release) on recent python
+| `1.9-2355 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6d6715d3012a59bf56000284c3f1cf9b9ec8565a>`_ Use blockdev --getro/--setrw in the promote_dev_rw codepath
+| `1.9-2354 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=0fd22da14fe7696dc027d76ba2eaa48ddb08fcbc>`_ app.simple fixes
+| `1.9-2353 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=049ca44fade4ea1edf5a0350b14337dd913c9fdb>`_ Fix the sudo escalation on systems that have sudo resetting the PATH
+| `1.9-2352 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=cd597df26d611590c11395d3b56dd0b149ae1bec>`_ Don't load ddisk cache on hpux on rcDiskInfo init
+| `1.9-2351 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=7314dc8af19300e570665bc3cf9d614e8a775ebb>`_ Fix a potential hole in justcall() on Popen exception
+| `1.9-2350 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=6dda078425ba8c594f9731c975499f93d9012307>`_ Fix pylint errors
+| `1.9-2349 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=c736a59a5beb2f9a4b5308bcdf823ba92585395f>`_ Avoid the 'NoneType' object has no attribute 'cluster_nodes' message on svc create
+| `1.9-2348 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ff8c2c5b14e52a17a27ae575ac9717b8653c9650>`_ Use a different call for nosetests in the travis cf
 | `1.9-2347 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=ab3d88f3c0519236a86694018186e066362a3e13>`_ Set the OPENSVC_SVC_ID the app resources exec env
 | `1.9-2346 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=e7997a0abb4da0efa459e315b361ec4f24b06d59>`_ Reset the service id on create
 | `1.9-2345 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=78d9fe17f7767ad6c96226a14499a8baedd9f24d>`_ Fix the svcmon man page formatter
