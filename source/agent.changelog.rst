@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-2370 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=4b3c7b8f1d1c3201d0b99fd1ab497f76e4c06c6f>`_ Change title sizes in the daemon.events autodoc
+| `1.9-2369 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=334159963fb1d78805af7852b9aa43f5e3152640>`_ Fix the wait for shutdown in container drivers
+| `1.9-2368 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=568740c155c8b0f2845c03d7aee0b7110db62faf>`_ Use monospace for events id and reason in the autodoc
 | `1.9-2367 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=525328c221200b09064208fd906131de0801eadc>`_ Add autodoc of daemon events in usr/share/doc/daemon.events
 | `1.9-2366 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=eaa2ce193ca4dba3fb30b9f37d203b94d1d20ff5>`_ Move events log strings definition in its own file
 | `1.9-2365 <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=69972b0f43819844791ea3f97eb312051a40a687>`_ Support multi-package udp in the hb.mcast driver
