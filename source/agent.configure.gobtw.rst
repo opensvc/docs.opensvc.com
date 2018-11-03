@@ -14,6 +14,7 @@ The GoBetween ingress gateway is a L4 load-balancer configured by a OpenSVC-spec
 
 Several ingress gateways can be running on the same cluster, and services can choose which gateway they want to be exposed through.
 
+
 Implementation
 --------------
 
@@ -23,11 +24,13 @@ Implementation
 * The janitoring daemon docker instance runs "privileged" to have r/w access to the opensvc daemon unix socket. 
 * The janitoring daemon depends on the Cluster DNS, as the servers backends are deduced from SRV records.
 
+
 Docker images
 +++++++++++++
 
 * yyyar/gobetween
 * opensvc/igw_gobetween
+
 
 Configure
 ---------
@@ -35,7 +38,8 @@ Configure
 Preliminary steps
 +++++++++++++++++
 
-See :ref:`agent.dns`
+* :ref:`agent.dns`
+* :ref:`agent.cni`
 
 
 Deploy the GoBetween service
@@ -210,7 +214,7 @@ Test with this simple scaler service::
 
 	$ svcmgr -s svcweb unfreeze
 
-	$ svcmgr scale -s ogwl4 --to 4
+	$ svcmgr scale -s svcweb --to 4
 
 Verify the SRV record
 +++++++++++++++++++++

@@ -166,7 +166,7 @@ trans: pot po mo
 
 gitclone:
 	@test -d $(DOCDIR) || mkdir $(DOCDIR)
-	@cd $(DOCDIR) && git clone https://git.opensvc.com/opensvc/.git
+	@cd $(DOCDIR) && git clone https://github.com/opensvc/opensvc
 
 gitrepo:
 	@echo "Updating git repo"
@@ -195,7 +195,7 @@ compobjs: gitrepo
 
 changelog: gitrepo
 	@echo "Changelog\n=========\n\n" | tee source/agent.changelog.rst
-	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -v ^BRANCH=HEAD | sed -e 's/*//g' | awk '{printf("| `"$$1 " <https://git.opensvc.com/?p=opensvc/.git;a=commitdiff;h=" $$2 ">`_ ") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
+	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -v ^BRANCH=HEAD | sed -e 's/*//g' | awk '{printf("| `"$$1 " <https://github.com/opensvc/opensvc/commit/" $$2 ">`_ ") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
 	@cat $(DOCDIR)/opensvc/opensvc.changelog.rst | tee -a source/agent.changelog.rst
 	@rm -f $(DOCDIR)/opensvc/opensvc.changelog.rst
 	@is_modified=`git status -s source/agent.changelog.rst | grep ' M source/agent.changelog.rst'` ; \

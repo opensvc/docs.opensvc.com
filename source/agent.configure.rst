@@ -9,5 +9,6 @@ Configure
    agent.configure.cluster
    agent.configure.cni
    agent.configure.dns
+   agent.configure.envoy
    agent.configure.gobtw
  
