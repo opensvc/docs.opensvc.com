@@ -148,20 +148,17 @@ Finaly, scale to service to start a bunch of application listeners::
 
 	$ svcmgr scale -s svcweb --to 4
 
-For testing, make sure the svcweb.acme.org and alt-svcweb.acme.org point to the ingress gateway listener address on the testing device.
-
 
 Verify the load-balanced server
 +++++++++++++++++++++++++++++++
 
-This service is exposed through the envoy load-balancer port 1024::
+Before testing, make sure the svcweb.acme.org and alt-svcweb.acme.org point to the ingress gateway listener address from the testing device.
 
-	$ svcmgr -s svcweb print config
-	...
-	[env]
-	igw_gobtw_bind = 80/tcp-0.0.0.0:1024 443/tcp
+::
 
-	$ wget -O- http://192.168.100.32:1024/
+	$ wget -O- http://svcweb.acme.org:8080
+	$ wget -O- https://svcweb.acme.org
+	$ wget -O- https://alt-svcweb.acme.org
 
 
 Verify the logs
