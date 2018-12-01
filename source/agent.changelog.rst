@@ -2,6 +2,93 @@ Changelog
 =========
 
 
+| `1.9-2622 <https://github.com/opensvc/opensvc/commit/08039933477f353d441cf33011c3b47e080b69c2>`_ Add nosetest nocapture information
+| `1.9-2621 <https://github.com/opensvc/opensvc/commit/31a2498028e932d97e98ca9d77f138d44f20c367>`_ Fix nosetest:test_svcmgr.py tests ordering
+| `1.9-2620 <https://github.com/opensvc/opensvc/commit/6a78557a78cc46ea4ea7468fbbdbfc0ff2a19e16>`_ Make sync from a down instance unforceable
+| `1.9-2619 <https://github.com/opensvc/opensvc/commit/9d4d7829f9a43c778cd237760a11c0a9c4753452>`_ sync enhancements
+| `1.9-2618 <https://github.com/opensvc/opensvc/commit/210e369f9c8aae4bd5d7ed1c8cebc55e107c0555>`_ Do not accept n/a as a valid reference resources agg status for rsync
+| `1.9-2617 <https://github.com/opensvc/opensvc/commit/b469c4b35e6e3e12cf4925c5ea6a6cdd1cb59587>`_ Fix the "svcmgr -s '' print schedule" json format when a single service matches
+| `1.9-2616 <https://github.com/opensvc/opensvc/commit/fb123ad857d3a5e2d124f4e47a62f66a878da81d>`_ Don't accept a "placed" global expect that would be unset immediately
+| `1.9-2615 <https://github.com/opensvc/opensvc/commit/d89952221317ad9fd31cca410fa6f89ab1da5126>`_ Fix "nodemgr daemon shutdown" hang caused by children wait
+| `1.9-2614 <https://github.com/opensvc/opensvc/commit/fc1e86b87012a65a77a4e5ca475f8508bbcef403>`_ Stop spawning a "svcmgr status" for instances with no status.json
+| `1.9-2613 <https://github.com/opensvc/opensvc/commit/fc73a3e38787bafa81db3caa1acbb2391b3615b4>`_ Fix the "docker rm" already removed situation detection
+| `1.9-2612 <https://github.com/opensvc/opensvc/commit/f3c48bebe07eead802e6213cbaf92245dcfc1d56>`_ Add the "rm" container.docker keyword
+| `1.9-2611 <https://github.com/opensvc/opensvc/commit/8576c92d7e5d79bd4c058ea3b14c757fea5b32d2>`_ Fix the scheduler actions reported as "user actions" in the logs
+| `1.9-2610 <https://github.com/opensvc/opensvc/commit/37279633896ca4e614d2595c981e20239e77f275>`_ Don't publish the action log for foreign or volatile services
+| `1.9-2609 <https://github.com/opensvc/opensvc/commit/278171e6f96be89738228dda91b1fb0c000bcded>`_ Honor children relationship on "nodemgr daemon shutdown"
+| `1.9-2608 <https://github.com/opensvc/opensvc/commit/ce99c7b2a16de8970f6f3b6fb6f3ba8062c5233e>`_ Use the schedule definition to skip non-explicit zfs.snap on sync_all
+| `1.9-2607 <https://github.com/opensvc/opensvc/commit/b4896b107b31c41c2169b0605746637173ad199d>`_ Listener thread enhancements
+| `1.9-2606 <https://github.com/opensvc/opensvc/commit/924d138ff9a907ae9c82086d5f8644cc29000cf8>`_ Fix the reverted pausable sync resource check
+| `1.9-2605 <https://github.com/opensvc/opensvc/commit/294517513b912c34074466e485f17fc1d45cfe9e>`_ Allow disable on implicit sections (disk.scsireserv, sync#i0)
+| `1.9-2604 <https://github.com/opensvc/opensvc/commit/11225133ac5bd6cf0fbe1b4d959bdf05612f3cd2>`_ Add the "scaler_short_svcname" and "scaler_svcname" references
+| `1.9-2603 <https://github.com/opensvc/opensvc/commit/b6cedd0f0d1c0593837f5e024285c25f96721763>`_ py3.5 compat fix for the packages comp object
+| `1.9-2602 <https://github.com/opensvc/opensvc/commit/a60e52105d6dc9671d8b898c7aa3e79eb28d39ef>`_ Re-start the 3par rcopy group on a metrocluster service switch after reversal
+| `1.9-2601 <https://github.com/opensvc/opensvc/commit/3bb59b6e6066d08444329646771e6523c8c72a87>`_ Log the action origin, user or daemon
+| `1.9-2600 <https://github.com/opensvc/opensvc/commit/47b039801322aecc5103e888b9096ff26fa7371d>`_ Now that svcmgr accepts foreign service, return a more useful msg on print config
+| `1.9-2599 <https://github.com/opensvc/opensvc/commit/5bb39063afc06e95cd3f8b935afe6a799191a215>`_ Fix the drbd8 volumes status evaluation
+| `1.9-2598 <https://github.com/opensvc/opensvc/commit/fe9474293ad465e7654d1184a65b217b8f5f2783>`_ Add postinstall support for Suse CaaS Platform
+| `1.9-2597 <https://github.com/opensvc/opensvc/commit/a2f1f080e4618664103d89f5b91c1c382d652c77>`_ Add drbd volumes support
+| `1.9-2596 <https://github.com/opensvc/opensvc/commit/71450ed637abf528dbd23a5810cf7c68f3531758>`_ Send collector changes on smon updates
+| `1.9-2595 <https://github.com/opensvc/opensvc/commit/5fd2aad6fb498156d77830f5dd2657ea436b9827>`_ Fix svcmon ansi escaping on py3
+| `1.9-2594 <https://github.com/opensvc/opensvc/commit/08f642fd9808a1e020232b88b3bf64dfdbcb4695>`_ Factorize and extend the ANSI_ESCAPE regexp definition
+| `1.9-2593 <https://github.com/opensvc/opensvc/commit/3f3d2323e507d99e7a7f44365dad63e4d1cfeea1>`_ Upgrade from collector ping to a full resync if the collector asks for it
+| `1.9-2592 <https://github.com/opensvc/opensvc/commit/99f32d798e6dd00ce51f6581e17e966337da3475>`_ Honor --dry-run for pre_action and post_action
+| `1.9-2591 <https://github.com/opensvc/opensvc/commit/1dcbc0699f319cf637ecdb9dc111da24d7aff5f5>`_ Allow againt out-of-schedule non-cron sync_all on sync resources by default
+| `1.9-2590 <https://github.com/opensvc/opensvc/commit/93379f23d8643f8e8fada3f6b905ec1809d6b58f>`_ Fix too frequent sync.zfssnap, not honoring the schedule
+| `1.9-2589 <https://github.com/opensvc/opensvc/commit/dafe7f4309047e4f802e7707a8c91dc756ac3d54>`_ Rename the ip.docker driver to ip.netns
+| `1.9-2588 <https://github.com/opensvc/opensvc/commit/767881f11203f041453b1866360d6ec758964929>`_ Support lxc in the ip.docker driver
+| `1.9-2587 <https://github.com/opensvc/opensvc/commit/cf59b0963af713b263a48afb11f8ddf90f1a4857>`_ Remove the route_use_websocket keyword
+| `1.9-2586 <https://github.com/opensvc/opensvc/commit/29cbde5e935e19b6cc7ad273fc0b9ef02b7b0a8d>`_ Add mode=ovs to the ip.docker driver
+| `1.9-2585 <https://github.com/opensvc/opensvc/commit/5a80bce64251808075134a2788b8cbff6a0a84b1>`_ Detect node frozen changes in the collector thread, and send to the collector
+| `1.9-2584 <https://github.com/opensvc/opensvc/commit/5fc2a0a20d02dc39309f3205b95305b3a3a8b169>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2583 <https://github.com/opensvc/opensvc/commit/64f2f066d98e08640c3acae7050dcf6de8345eba>`_ Limit non-indexed svcmgr json output to unambiguous single-service commands
+| `1.9-2582 <https://github.com/opensvc/opensvc/commit/c9ea4a28e09f6a476d5284c441e2d65c2def82aa>`_ Fix start timeout query in resAppWinservice.py
+| `1.9-2581 <https://github.com/opensvc/opensvc/commit/e9cbc4d0f5dae04428610d3c5fb4064007699455>`_ Add the LC_NUMERIC setting to the fallback to LANG=C codepath
+| `1.9-2580 <https://github.com/opensvc/opensvc/commit/35600714c8488c7db9f4ba64f4a1dd21b946ea71>`_ Force LC_NUMERIC to C
+| `1.9-2579 <https://github.com/opensvc/opensvc/commit/a48b4782182c7cca5f1048c38b2bc4bbe453009f>`_ Fix the node stuck in "rejoin" after a monitor thread crash/restart
+| `1.9-2578 <https://github.com/opensvc/opensvc/commit/5e50a154f4a12ae070f7c3693a1745eb915b7c9c>`_ Fix the switch and giveback actions executed from a node with no instance
+| `1.9-2577 <https://github.com/opensvc/opensvc/commit/c1a606135db5d473170b52c59584d8b4ac55bf6e>`_ Remove the hb.disable keyword
+| `1.9-2576 <https://github.com/opensvc/opensvc/commit/35153b6f0137b3db232c4cad833803fba9aa0a25>`_ Add a "nodes" keyword to all heartbeats to allow the hb on a cluster segment
+| `1.9-2575 <https://github.com/opensvc/opensvc/commit/d83a42e14e40e2daea311df8d14c209a80331c37>`_ Display a "n/a" peer hb.disk status if no slot is allocated
+| `1.9-2574 <https://github.com/opensvc/opensvc/commit/6c8ef3e110a413747164954a9452bd2980dd0e00>`_ Support hb.disk driver "dev" keyword scoping
+| `1.9-2573 <https://github.com/opensvc/opensvc/commit/a4bedf7577522e4807dda11086786522804b31d1>`_ Add the "toc" action to the list of action mandating slave relaying
+| `1.9-2572 <https://github.com/opensvc/opensvc/commit/1eb3eb2b9d891644b96b9bded937f8f123bf1acc>`_ Compat fix for json_delta on py 2.6.4-
+| `1.9-2571 <https://github.com/opensvc/opensvc/commit/1cadbef71bf1323168e8377b40e589deb4c74b48>`_ Fix the shlex converter when fed unicode on py2
+| `1.9-2570 <https://github.com/opensvc/opensvc/commit/6d3a04cf3603cfbb4262aeb7d865d82ccb3e8528>`_ Adapt all sync resource to the max_delay internally expressed as seconds
+| `1.9-2569 <https://github.com/opensvc/opensvc/commit/f810419ce886226afb81897d4e3cda80fc0b11a0>`_ Fix the service config exchange algo
+| `1.9-2568 <https://github.com/opensvc/opensvc/commit/8afaffae75737b1da07eb0aca362a63ea47e4d3e>`_ nosetests test_ci_freezer : implement random service name
+| `1.9-2567 <https://github.com/opensvc/opensvc/commit/2b296e4b106de48d3bd76ee23f8e53f180a9bb0f>`_ nosetests test_resourceset : implement random service name
+| `1.9-2566 <https://github.com/opensvc/opensvc/commit/affc361aa3d4dc46ef54e7706c299315aae6c08e>`_ nosetests test_svc_fs : implement random service name
+| `1.9-2565 <https://github.com/opensvc/opensvc/commit/1f5403dc82807cbc6b023a17131ca97d1acd01f8>`_ nosetests test_references : implement random service name
+| `1.9-2564 <https://github.com/opensvc/opensvc/commit/970f38c521e7d2be52b84b19ee9a77aea190b0cb>`_ nosetests test_svcmgr : implement random service name
+| `1.9-2563 <https://github.com/opensvc/opensvc/commit/7e76dba2bccec7d48cd4a24938e9572305a9b27a>`_ nosetests test_provision : implement random service name
+| `1.9-2562 <https://github.com/opensvc/opensvc/commit/d56d4988def6194ac0339983d627d5e69d102908>`_ Fix python 2.4 stack in postinstall
+| `1.9-2561 <https://github.com/opensvc/opensvc/commit/b9688a7cd247426537cefec23fee9f2df873a74b>`_ Fix python 2.4 syntax error in postinstall
+| `1.9-2560 <https://github.com/opensvc/opensvc/commit/a203b56fff9016dee1427f2ea1f2699635f7b1fb>`_ Fix python 2.4 postinstall stack
+| `1.9-2559 <https://github.com/opensvc/opensvc/commit/78693f2acfa199c8297be702cbc114a081b4f587>`_ Misc monitor thread enhancements
+| `1.9-2558 <https://github.com/opensvc/opensvc/commit/6db49651c11d426a3422c211b98ceeb934c61181>`_ Specify OSVC_PYTHON as the comp objects interpreter
+| `1.9-2557 <https://github.com/opensvc/opensvc/commit/982499f2a90b39b8a7bc561dfabef0f855b64fce>`_ Add a "ts" timestamp attribute to events
+| `1.9-2556 <https://github.com/opensvc/opensvc/commit/f72c1ad774a5fe81dcbce278b5b8badd3e7ccd7f>`_ Add a scopable "disable" keyword in all hb sections of node.conf
+| `1.9-2555 <https://github.com/opensvc/opensvc/commit/285fe032136c5e94dfcb6b9acc9e1921dfff3472>`_ Force the same session uuid on detached actions
+| `1.9-2554 <https://github.com/opensvc/opensvc/commit/59f22673651908b4a346401cf545b0173a898ab1>`_ Add nosetests syntax examples
+| `1.9-2553 <https://github.com/opensvc/opensvc/commit/3ab4a05fe57a65c16118d62f7c7b82caf34d4c55>`_ Adapt nosetests to nodemgr and svcmgr frozen returning a timestamp when frozen
+| `1.9-2552 <https://github.com/opensvc/opensvc/commit/4ce97fc27b3a9f3145b4eb73c13cc723a66d4761>`_ Report n/a instead of up for scsireserv status if a dev is ro
+| `1.9-2551 <https://github.com/opensvc/opensvc/commit/2f721456ed2bd42ccb0432afa0cba920abbe8a3e>`_ Document "--config=-" and refresh man pages
+| `1.9-2550 <https://github.com/opensvc/opensvc/commit/c74b26677dc6345d3cc0961b55011d3c593758bd>`_ Make json config feeding through stdin explicit, via --config=<-|/dev/stdin>
+| `1.9-2549 <https://github.com/opensvc/opensvc/commit/ef3146f0a2b17be0c95bba8ca53d74adb8f3061e>`_ Display a resource restart info in the "svcmgr print status" output
+| `1.9-2548 <https://github.com/opensvc/opensvc/commit/96c6720db2b4ab7dee0f2a54e014cb7f8eb31727>`_ Fixes for the freezestop monitor action
+| `1.9-2547 <https://github.com/opensvc/opensvc/commit/cca0c6f341eb18fc7dc4cde1955a4ad835b64aa3>`_ Avoid orchestrate=start instance restart after a "stop --local"
+| `1.9-2546 <https://github.com/opensvc/opensvc/commit/e85b1fe87af8b039aa371bebd0fe59f4049328aa>`_ Add the route hash_policy data resource
+| `1.9-2545 <https://github.com/opensvc/opensvc/commit/1f037dbcf7a1129a48cede8affe8837339099e1c>`_ Fix the resource_monitor action not updating the status.json on changes
+| `1.9-2544 <https://github.com/opensvc/opensvc/commit/c2b908fc3d88e917f1910dc91fcebbf10ad3bbb0>`_ Enhancement for "nodemgr updatecomp"
+| `1.9-2543 <https://github.com/opensvc/opensvc/commit/be06556df1a439bbf644c8d40a661a935d4eb90e>`_ Remove the "notify done" log message
+| `1.9-2542 <https://github.com/opensvc/opensvc/commit/7e9075ae5373545ae24b6d41a0e79951818fcdee>`_ Don't repr() the user and group names
+| `1.9-2541 <https://github.com/opensvc/opensvc/commit/0f014beb26125c2010afbd94bde3c9d71dcea27b>`_ Fix pylint errors in the daemon relay status codepath
+| `1.9-2540 <https://github.com/opensvc/opensvc/commit/bbd69793180d4f1dafa394f9f795363ef9cd7d1c>`_ Merge branch 'master' of git+ssh://www.opensvc.com/home/opensvc/opensvc
+| `1.9-2539 <https://github.com/opensvc/opensvc/commit/895130e20509a1b93e8d1a69dea93b9d961b29e1>`_ Add the message size to the relay status information
+| `1.9-2538 <https://github.com/opensvc/opensvc/commit/b3072b5832f61c7576ddf0fe26a857744abba339>`_ Add the per-client ipaddr info to the relay status
+| `1.9-2537 <https://github.com/opensvc/opensvc/commit/9452655885767d9821c2ee0502980f69c9587b52>`_ Fix pylint reported error in the "nodemgr daemon relay status" codepath
+| `1.9-2536 <https://github.com/opensvc/opensvc/commit/bd069c17b90d0811327290e202ebd64e95ed8839>`_ Add the "nodemgr daemon relay status" command
 | `1.9-2535 <https://github.com/opensvc/opensvc/commit/d02fe2fe7795491fb542f65cb7224f7b0351b06e>`_ Fix stack in rcPkgLinux.py
 | `1.9-2534 <https://github.com/opensvc/opensvc/commit/9c5416d0be1bd42d615c4a5b252e786831166667>`_ Use a duration expression in the sync_max_delay default value
 | `1.9-2533 <https://github.com/opensvc/opensvc/commit/0a7e2239bc1863e97e860e6ee47810624a81b3c1>`_ Add the envoy ingress gateway definitions
