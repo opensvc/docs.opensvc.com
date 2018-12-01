@@ -82,7 +82,35 @@ A vhost section can reference route sections.
    agent.templates/template.service.expose.envoy
    agent.templates/template.service.vhost.envoy
    agent.templates/template.service.route.envoy
+   agent.templates/template.service.hash_policy.envoy
    agent.templates/template.service.certificate.tls
+
+Janitor arguments
++++++++++++++++++
+
+::
+
+	$ ./xds --help
+	Usage: xds [options]
+
+	Options:
+	  -h, --help            show this help message and exit
+	  -n GATEWAY_NAME, --name=GATEWAY_NAME
+				The name of this gateway, can be used by services to
+				specify one of multiple available gateways. default
+				envoy
+	  -p PORT, --port=PORT  The xds listener port. default 50051
+	  -P ENVOY_PORT, --envoy-port=ENVOY_PORT
+				The xds envoy client listener port. default 9901
+	  -r PORT_RANGE, --port-range=PORT_RANGE
+				The port range the xds allocates new ports from. Some
+				hosting providers may allow a restricted range.
+				default [1025, 65536]
+	  -S OSOCK, --socket=OSOCK
+				The OpenSVC daemon unix socket path. default
+				/var/lib/opensvc/lsnr/osvcd.sock
+	  -w MAX_WORKERS, --max-workers=MAX_WORKERS
+				The maximum number of workers. default 256
 
 Verify
 ------
