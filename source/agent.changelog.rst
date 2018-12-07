@@ -2,6 +2,25 @@ Changelog
 =========
 
 
+| `1.9-2641 <https://github.com/opensvc/opensvc/commit/bdcceaf32aa59bdb0ee8f493ad30ed955acc6c62>`_ container.docker driver enhancements
+| `1.9-2640 <https://github.com/opensvc/opensvc/commit/216d64dd4554948bb3f07cc5fbc1b37180acb75c>`_ Don't stack on pushasset on ARM platforms
+| `1.9-2639 <https://github.com/opensvc/opensvc/commit/92ffc756ab3d308009336ab4779c1ac1777ee0b5>`_ Fix ip regressions
+| `1.9-2638 <https://github.com/opensvc/opensvc/commit/4f7aae48552d6e5206b23b9842ea88f9923a2bd3>`_ No need to reset locale anymore before running EDITOR
+| `1.9-2637 <https://github.com/opensvc/opensvc/commit/4b7899df5df9789533ef86e6729c368e315591b1>`_ Fix "destroy of a destroyed zfs snap or dataset" unduly considered an error
+| `1.9-2636 <https://github.com/opensvc/opensvc/commit/a1e524972fc7dbb7743afc9c9511ac26799dd476>`_ Add a missing import in the hb.unicast driver
+| `1.9-2635 <https://github.com/opensvc/opensvc/commit/493c843d298e3906a56d32c4a7fb1d3bcf12a968>`_ Unicast heartbeat enhancements
+| `1.9-2634 <https://github.com/opensvc/opensvc/commit/3df697e7f2ccc0601eea6e6de40e155df93055d3>`_ Don't try to rm docker container if the docker daemon is not running
+| `1.9-2633 <https://github.com/opensvc/opensvc/commit/6ca8610a6f1b8f34e0cacbf943d667ef9331a0bb>`_ Switch action validation enhancements
+| `1.9-2632 <https://github.com/opensvc/opensvc/commit/2222358774ce9299eedc4b492bb668e6230566df>`_ Catch the "removal already in progress" situation in docker container_rm()
+| `1.9-2631 <https://github.com/opensvc/opensvc/commit/3fb5c03c985d98f291ec2d0adf98363810ab7dea>`_ Align comp obj filename to the class name
+| `1.9-2630 <https://github.com/opensvc/opensvc/commit/aead11906d45ecf8a923030a0fe04a587396b4d5>`_ Fix a fs status error on nodes where the fs zpool is deported
+| `1.9-2629 <https://github.com/opensvc/opensvc/commit/f9b5dd4ea61875af1d732c3572f3fa59267c55e2>`_ Fix an error detected by pylint
+| `1.9-2628 <https://github.com/opensvc/opensvc/commit/5e1c29d5708426e786dc6caec6c4578826e5fcab>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2627 <https://github.com/opensvc/opensvc/commit/9d6e7fc8d4991a3f94a9ea0f686c1d09c0f8de71>`_ Ip resources enhancements
+| `1.9-2626 <https://github.com/opensvc/opensvc/commit/d964c841257328cbd91fe714304c2c212179a244>`_ Align the tls certificate data ressource label to the <type> <desc> standard
+| `1.9-2625 <https://github.com/opensvc/opensvc/commit/93e4d4e586a8a26d3445c44e6a38e5c9ff86b70d>`_ Micro optimization in the mon thread
+| `1.9-2624 <https://github.com/opensvc/opensvc/commit/4daf06984d180b81b852657c8e5e4d846e1eebd5>`_ Avoid importing modules in codepaths (lsnr)
+| `1.9-2623 <https://github.com/opensvc/opensvc/commit/201258602d93ef11ddb42f76aa675b88572ec99d>`_ Avoid importing modules in codepaths (hb)
 | `1.9-2622 <https://github.com/opensvc/opensvc/commit/08039933477f353d441cf33011c3b47e080b69c2>`_ Add nosetest nocapture information
 | `1.9-2621 <https://github.com/opensvc/opensvc/commit/31a2498028e932d97e98ca9d77f138d44f20c367>`_ Fix nosetest:test_svcmgr.py tests ordering
 | `1.9-2620 <https://github.com/opensvc/opensvc/commit/6a78557a78cc46ea4ea7468fbbdbfc0ff2a19e16>`_ Make sync from a down instance unforceable
