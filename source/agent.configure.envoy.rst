@@ -46,7 +46,7 @@ Create the service using one the following template. Change the ``--env`` option
 Public ip on bridge::
 
 	$ svcmgr create -s envoy \
-		--config http://www.opensvc.com/init/static/templates/envoy-br.conf \
+		--config http://www.opensvc.com/init/static/templates/envoy-br-hostns.conf \
 		--provision \
 		--env public_interface=br-prd \
 		--env public_ipaddr=192.168.100.32 \
