@@ -2,6 +2,78 @@ Changelog
 =========
 
 
+| `1.9-2713 <https://github.com/opensvc/opensvc/commit/e8f8a41aac281bcafc6d2aed5f09ead46004a0e2>`_ Fix a svcmon stack on perf stats rendering during daemon restart
+| `1.9-2712 <https://github.com/opensvc/opensvc/commit/becee850f6a30d8dd360cdf3d9b2ba6aa8b74673>`_ Make the svcmon status fetch independant of stats fetch
+| `1.9-2711 <https://github.com/opensvc/opensvc/commit/cb8b04a0b574912172b6fd1f24e32885bf029572>`_ Remove a debug statement from the container.docker driver
+| `1.9-2710 <https://github.com/opensvc/opensvc/commit/e28d79d7f363ca2095ada793b0c844070d594a35>`_ Account forgotten guest_nice in /proc/cpu
+| `1.9-2709 <https://github.com/opensvc/opensvc/commit/ca3dc986b9a835a934d7236698a179f7bd9b74ac>`_ Support a simple svcmon --stats
+| `1.9-2708 <https://github.com/opensvc/opensvc/commit/7b5bd2285a2bafb1d82bcf7c3038165d5402863b>`_ cgroup enhancements
+| `1.9-2707 <https://github.com/opensvc/opensvc/commit/1c9d3d0836904722cc7b4bbb306900657b0843d3>`_ Fix get_mask() setting an empty list in ip resource mask in rare situations
+| `1.9-2706 <https://github.com/opensvc/opensvc/commit/0ae192fcc227b950c873f8b84e7eaa2e5db36f6d>`_ Fix the Linux Node::shutdown() command
+| `1.9-2705 <https://github.com/opensvc/opensvc/commit/87fe4e3f6917c44ed9d63327c29fe08375260539>`_ Fix a pylint error in the container.docker status codepath
+| `1.9-2704 <https://github.com/opensvc/opensvc/commit/869a3f519ebe030a3267159402fd62d6f19f114d>`_ Fix an overzealous container.docker status warning wrt netns
+| `1.9-2703 <https://github.com/opensvc/opensvc/commit/f638009c827c58a3f04d43959d91d2fc2adb7af1>`_ Support cgroup assignment on container.lxc if lxc version >= 2.1
+| `1.9-2702 <https://github.com/opensvc/opensvc/commit/2cb2709bc13bea554c0f2c1d95a5d749602a642d>`_ Add the "lxd" prefix to container.lxd resources label
+| `1.9-2701 <https://github.com/opensvc/opensvc/commit/2dc4470546aceec64f0461793b0253790a6632ce>`_ Add the r"" marker to two regex patterns
+| `1.9-2700 <https://github.com/opensvc/opensvc/commit/66c8afdd957cec7b6074bca008840a205dcde6a0>`_ Data printing fixes
+| `1.9-2699 <https://github.com/opensvc/opensvc/commit/2926c1ff47c8b2608aa8d3152c9f957e7cd0a0a3>`_ Freeze the node on boot if /proc/cmdline contains osvc.freeze
+| `1.9-2698 <https://github.com/opensvc/opensvc/commit/5a50be99331202a8801086a31184bd7d07c86feb>`_ Don't replace existing default route in the ip.netns driver
+| `1.9-2697 <https://github.com/opensvc/opensvc/commit/ff7ae1d7b266e5b9a3f222d74a678b0eeb24b32e>`_ Remove the ip_wait() logic from the ip.netns driver
+| `1.9-2696 <https://github.com/opensvc/opensvc/commit/ed3e85e865a55376b3ee6ca39cae65453e8ada3b>`_ Alert on unguessable netmask in the ip.crossbow driver
+| `1.9-2695 <https://github.com/opensvc/opensvc/commit/e09f44baeb3abc2aed814dec40670c109ec9fe48>`_ Don't stack in to_cidr() if the arg is None
+| `1.9-2694 <https://github.com/opensvc/opensvc/commit/269b040ed1e8d57c4975616a402dd37db0f9ba0f>`_ Remove debug statements for the "daemon stats" codepath
+| `1.9-2693 <https://github.com/opensvc/opensvc/commit/a56dc09f91c134be31c125d712abe58c9d8e6f25>`_ Fix the daemon pid after fork
+| `1.9-2692 <https://github.com/opensvc/opensvc/commit/0b49dec8491b569a7de46c325fe872fb71ef60ac>`_ Fix pylint errors
+| `1.9-2691 <https://github.com/opensvc/opensvc/commit/08eb0b30ba40f92ed2e472811ff97a9ff48db8b5>`_ Fortify the pg stats fetcher against unexepected situations
+| `1.9-2690 <https://github.com/opensvc/opensvc/commit/a1930df4693f57c188979d43b4e54537c5e810ac>`_ Don't create cgroups from the get_stats() codepath
+| `1.9-2689 <https://github.com/opensvc/opensvc/commit/aa53b57a0bc9e7c69938ae21dcf7d43f04d2c895>`_ Support linux kernel version with no total_shmem in memory.stat
+| `1.9-2688 <https://github.com/opensvc/opensvc/commit/b997369d8504696bc43a947a92b3351f2f4fdef3>`_ Add a get_tid() method placeholder in Node()
+| `1.9-2687 <https://github.com/opensvc/opensvc/commit/bb819e82dbb4ab8e221dbe9f0558bc7b1d420634>`_ Add svcmon -i2 -w --stats on Linux
+| `1.9-2686 <https://github.com/opensvc/opensvc/commit/5d52c4c857fdfe60d8b25b1e14ab29c317b7183e>`_ Alignment-friendy print_duration()
+| `1.9-2685 <https://github.com/opensvc/opensvc/commit/1cc329fd1ec9e1f92d4042047963d0866ea19125>`_ Fix regression in "push resinfo" for container.docker
+| `1.9-2684 <https://github.com/opensvc/opensvc/commit/65418a1540460eda6c7179991e734f583ebe5a56>`_ Remove a debug statement from container.docker
+| `1.9-2683 <https://github.com/opensvc/opensvc/commit/dc117d1dbd0e0da9569b681b776f330ce091bd9b>`_ Fix a stack when a ip.cni references a non existing container
+| `1.9-2682 <https://github.com/opensvc/opensvc/commit/21381546dbc4e6116cb87ac3ebd0d33fc2b8b7fe>`_ Stop mixing datetimes and timestamps
+| `1.9-2681 <https://github.com/opensvc/opensvc/commit/dc966866e97b303e2c3873c98d814f359e87d880>`_ Optimize docker container inspect validation and add hostname validator
+| `1.9-2680 <https://github.com/opensvc/opensvc/commit/8d01add57f757119eae013028a35a114c6f0fdbb>`_ Fix a pylint error
+| `1.9-2679 <https://github.com/opensvc/opensvc/commit/963161e385e318e65fdb670d6ce89236003b4c9f>`_ Fix arp announce in ip.netns resources
+| `1.9-2678 <https://github.com/opensvc/opensvc/commit/44094f95af576c84e0bc67404a7e34a77abe68ee>`_ Add a method to compute each daemon thread cpu usage
+| `1.9-2677 <https://github.com/opensvc/opensvc/commit/e2a2476dd16649dcf9296fda5edf55e800ae62a7>`_ Add a tid attribute to the daemon threads
+| `1.9-2676 <https://github.com/opensvc/opensvc/commit/132b84383a7332d0d2eda073ae43e560959c3fd5>`_ Fix a docstring in the extconfig module
+| `1.9-2675 <https://github.com/opensvc/opensvc/commit/3f039e680d1aad47a2001eb2ce9fd6da2710e292>`_ Honor svcmon -i <n> interval
+| `1.9-2674 <https://github.com/opensvc/opensvc/commit/aaef5b9737435b9955ca28eb3c626cbfa8b39b97>`_ Add container.docker validation of the entrypoint current vs target value
+| `1.9-2673 <https://github.com/opensvc/opensvc/commit/b014ee1a6937b5ad44f0041f4de3f3259e02e406>`_ Fix a potential stack in the dns thread
+| `1.9-2672 <https://github.com/opensvc/opensvc/commit/0b2234847eecea8f6a851252722c16c14bd6f2c3>`_ Add new container.docker keywords
+| `1.9-2671 <https://github.com/opensvc/opensvc/commit/0619d2d4a46f3997b1da96c0abc2b919dcc866ed>`_ Add the "tristate" and "expanded_shlex" converters
+| `1.9-2670 <https://github.com/opensvc/opensvc/commit/89e61976fb319a2a3c6486af33d8a305a1d1d881>`_ Fix a stack due to the flat_json support
+| `1.9-2669 <https://github.com/opensvc/opensvc/commit/25a30bdc423acecb2b65283862779f818df29f86>`_ Honor "--format flat_json" in nodemgr daemon status
+| `1.9-2668 <https://github.com/opensvc/opensvc/commit/b2b75ca720aca9dabd67f08f0c765485cb0f67b9>`_ Add infrastructure for cpu times/usage fetching and display to Node()
+| `1.9-2667 <https://github.com/opensvc/opensvc/commit/b71aeb7fd084bb3cca4b09ca579c584bdfdcf5e1>`_ Add the "flat_json" output format, compatible with jsonpath
+| `1.9-2666 <https://github.com/opensvc/opensvc/commit/59992106072cb84d50f552b4d7a6a55d6b99ae93>`_ Rename the "net" container.docker keyword to "netns"
+| `1.9-2665 <https://github.com/opensvc/opensvc/commit/4052ab6f15577479f8eaed2f0fdff7384d7ae840>`_ Rename the container_rid ip.cni and ip.netns keyword to "netns"
+| `1.9-2664 <https://github.com/opensvc/opensvc/commit/83558a49346b3dc512be922af1d0864473e133bd>`_ Remove docker container on start if rm=true
+| `1.9-2663 <https://github.com/opensvc/opensvc/commit/978d474bd4fe939abb284d581c244b0eb746964e>`_ Retry xmlrpc calls on timeout
+| `1.9-2662 <https://github.com/opensvc/opensvc/commit/56982bbe853e5749dd0e46ccb8d6cd5fe4ff3595>`_ Remove the set_tid() calls from hb_mcast
+| `1.9-2661 <https://github.com/opensvc/opensvc/commit/2847c99ecc6a59b4420df9eaf8845c4b509600df>`_ Multicast heartbeat enhancements
+| `1.9-2660 <https://github.com/opensvc/opensvc/commit/99657bd15cf81653ddc7f7c9732ace4809d30a90>`_ Fix daemon falling down if an empty hook section is added to node.conf
+| `1.9-2659 <https://github.com/opensvc/opensvc/commit/a0c242d2e8846ddb3c8b104f62d1afa71d4b8955>`_ Detect net intf no-carrier state and degrade the resource status accordingly
+| `1.9-2658 <https://github.com/opensvc/opensvc/commit/1638dd4c756d69ecbf2c0851469c6796dccea4ee>`_ Set --cgroup-parent arg on "docker run" if advertized cgroupdriver=cgroupfs
+| `1.9-2657 <https://github.com/opensvc/opensvc/commit/373d22e6a79566a0a6ea47316f3742e8e372f127>`_ Flag the "type" keywords with inheritance=leaf
+| `1.9-2656 <https://github.com/opensvc/opensvc/commit/d887f6e9ea2d0db6020991f9a40f933a847b07fe>`_ Don't honor --parallel if a single service is selected for action
+| `1.9-2655 <https://github.com/opensvc/opensvc/commit/5143a94a81728380ff81e30a47971188cf6d737e>`_ Try ip to validate alternate names when the primary name is not a cluster node
+| `1.9-2654 <https://github.com/opensvc/opensvc/commit/5a09f27db28941267ea4dc9fcee3294478160c1c>`_ Fix container_rm() called after private docker daemon shutdown on stop
+| `1.9-2653 <https://github.com/opensvc/opensvc/commit/bd96643192ab79538c6b5e969aea2ce74d141e9e>`_ Show the gateway listener in the expose.envoy resources label
+| `1.9-2652 <https://github.com/opensvc/opensvc/commit/ff1d803cc8b0d59f0b08b5ea2fa2c148d2f96696>`_ Document the resource restart flag in the print status command help
+| `1.9-2651 <https://github.com/opensvc/opensvc/commit/8c87e20e0edeb88882bed2107190e0eb663bdf67>`_ Install opensvc unit files in /etc/systemd/system if /usr/lib and /lib are RO
+| `1.9-2650 <https://github.com/opensvc/opensvc/commit/5c6a50f64b54b3880ceb12d0d06b79c3f6723682>`_ Add to pkg_format=tar node configuration keyword
+| `1.9-2649 <https://github.com/opensvc/opensvc/commit/457538bc8107542d408379b278aa5aa967fd1d50>`_ Return n/a as an automodule status if it has no rules
+| `1.9-2648 <https://github.com/opensvc/opensvc/commit/6c263b0c10b489f48422d395d9c8803b15923de5>`_ Clarify the dg disk info role
+| `1.9-2647 <https://github.com/opensvc/opensvc/commit/c8aa12f61e01143af4fcd9845873d2aa08deaaa7>`_ Add --now to the systemctl commands submitted by systemd_unit_state
+| `1.9-2646 <https://github.com/opensvc/opensvc/commit/ead47e7da2a1d684a5ded9290b82eedcbe807fa3>`_ Return n/a from the systemd_unit_state comp obj when systemctl is not installed
+| `1.9-2645 <https://github.com/opensvc/opensvc/commit/ec7e45ed397445c124a117be6eb7896cbe454eea>`_ Better merging of rules status into the automodule status
+| `1.9-2644 <https://github.com/opensvc/opensvc/commit/b38a96e00544f4d690892f8acfb95f9618a9c207>`_ Add a systemd_unit_state compliance object
+| `1.9-2643 <https://github.com/opensvc/opensvc/commit/8662f9f020b41f105b79d1a6d89f8775c1d94052>`_ Fix a restart issue with container.docker and rm=true
+| `1.9-2642 <https://github.com/opensvc/opensvc/commit/a8170b3d3bc623fb98bb66617085fd2931b48cd2>`_ Add support for submitting a nodemgr to all nodes, using --cluster
 | `1.9-2641 <https://github.com/opensvc/opensvc/commit/bdcceaf32aa59bdb0ee8f493ad30ed955acc6c62>`_ container.docker driver enhancements
 | `1.9-2640 <https://github.com/opensvc/opensvc/commit/216d64dd4554948bb3f07cc5fbc1b37180acb75c>`_ Don't stack on pushasset on ARM platforms
 | `1.9-2639 <https://github.com/opensvc/opensvc/commit/92ffc756ab3d308009336ab4779c1ac1777ee0b5>`_ Fix ip regressions
