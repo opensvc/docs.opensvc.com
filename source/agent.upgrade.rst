@@ -65,7 +65,7 @@ Example:
 
 ::
 
-	sudo nodemgr set --param node.repopkg --value http://my.repo.opensvc.corp:8080/packages/
+	sudo nodemgr set --kw node.repopkg=https://repo.opensvc.com
 
 Upgrade Agents
 ==============
