@@ -2,6 +2,7 @@ Changelog
 =========
 
 
+| `1.9-2734 <https://github.com/opensvc/opensvc/commit/ad94c812d81697d312beaec565cffed3e8844743>`_ update docs, man and bash completion
 | `1.9-2733 <https://github.com/opensvc/opensvc/commit/bb0081bea0405c882c077caeab9c9a1f7c88112e>`_ Enter the long monitor loop if a monitor thread has terminated
 | `1.9-2732 <https://github.com/opensvc/opensvc/commit/7ee7ba33bab070ec3c0fb8551aabfd19c0307d9c>`_ Allow user to set the sections he wants display in svcmon
 | `1.9-2731 <https://github.com/opensvc/opensvc/commit/af5b36c2835babe83d76afc43a891413fbf1c1d7>`_ Allow "nodemgr daemon relay status" to fetch data from a remote relay
