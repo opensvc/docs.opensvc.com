@@ -1,19 +1,23 @@
 Docker Multi Containers
 =======================
 
+This tutorial highlights the netns sharing and ip.netns driver.
+
+The service created will have a shared netns held by the google/pause container, where the ip.netns driver will plumb an ipvlan-l2 ip address.
+
 Pre-requisites
 --------------
 
-* A basic OpenSVC/docker setup, as described in the `parent topic <agent.service.container.docker.html>`_
-
-Let's use the following stack as an example:
-
-* busybox 
-* shipyard/shipyard
-* dhrp/sshd
+* A OpenSVC/docker setup, as described in the `parent topic <agent.service.container.docker.html>`_
 
 Provision
 ---------
+
+Let's use the following stack as an example:
+
+* google/pause 
+* nginx
+* redis
 
 ::
 
@@ -217,38 +221,39 @@ And restart::
 Complex Orchestration
 ---------------------
 
-When implementing applications as Docker containers, you may be constrained to organize container startup in a specific order, because it's the way your application works. Another kind of problem is that you may need to start multiple containers in parrallel instead of sequentially. OpenSVC agent is developped to support those specific constraints. 
+When implementing applications as Docker containers, you may need to organize the containers startup in a specific order or benefit from starting multiple containers in parrallel. 
 
-The following example is a dummy application made of :
+The following example describes:
 
 * 1 database server : this container have to be started first, and stopped at the very end.
 * 4 application servers : those containers have to be started in parrallel, and just after the database server.
 * 2 webservers : last to be launched, just after the appservers.
 
-Considering that it is an example, all containers will depend on image id b073e328878e, which corresponds to docker public image ``opensvc/busybox:date``
+To get straight to the point, all containers will use the ``opensvc/busybox`` image.
 
-.. note:: if one of the container meet start failure issue, the overall service rollback and stop
+.. note:: If one of the container startup fails, the action is rolled back.
 
 OpenSVC Syntax
 ^^^^^^^^^^^^^^
 
-The method to implement such a modelization rely on 2 configuration tricks:
+This service will highligth two configuration mecanisms:
 
-* tag container resource in container subsets::
+* Assigning a resource to a subset::
 
+	[container#<n>]
 	subset = 01appservers
 
-* optionaly declare a parallel start on a per subset basis::
+* Optionaly, configuring a subset for starting its resources in parallel::
 
 	[subset#container.docker:01appservers]
 	parallel = true
 
-Subsets are processed in alphanumerical order. We recommend prefixing the subset name with a 2-digits number, to improve configuration readability.
+Subsets are processed in alphanumerical order.
 
 Example
 ^^^^^^^
 
-Let's have a look at our dummy application service configuration file
+Example service configuration file
 
 ::
 
