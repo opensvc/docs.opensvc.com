@@ -2,6 +2,27 @@ Changelog
 =========
 
 
+| `1.9-2734 <https://github.com/opensvc/opensvc/commit/ad94c812d81697d312beaec565cffed3e8844743>`_ update docs, man and bash completion
+| `1.9-2733 <https://github.com/opensvc/opensvc/commit/bb0081bea0405c882c077caeab9c9a1f7c88112e>`_ Enter the long monitor loop if a monitor thread has terminated
+| `1.9-2732 <https://github.com/opensvc/opensvc/commit/7ee7ba33bab070ec3c0fb8551aabfd19c0307d9c>`_ Allow user to set the sections he wants display in svcmon
+| `1.9-2731 <https://github.com/opensvc/opensvc/commit/af5b36c2835babe83d76afc43a891413fbf1c1d7>`_ Allow "nodemgr daemon relay status" to fetch data from a remote relay
+| `1.9-2730 <https://github.com/opensvc/opensvc/commit/dda3b8460427772c3f7ad9e05b0a65a8410c1b39>`_ Remove all inline calls to print_status_data() from the monitor thread
+| `1.9-2729 <https://github.com/opensvc/opensvc/commit/96bcb0af4e2cee126b406bb49ea8a500d2e65dc2>`_ Fix the giveback action on double start situation
+| `1.9-2728 <https://github.com/opensvc/opensvc/commit/aca8cdbecb099fd98b649a5c49f4e577abc21f65>`_ Fix the "nodemgr wait" hanging on timeout instead of exiting with recode=1
+| `1.9-2727 <https://github.com/opensvc/opensvc/commit/58606ba7b2a5d7101aa69313ac2a034dffcca827>`_ Fix random node freeze during parallel upgrade of opensvc agents
+| `1.9-2726 <https://github.com/opensvc/opensvc/commit/f3cae5dd4b5b8ece21aec878aaf5d8e435be1913>`_ Allow "nodemgr wait" to wait for a match on local events (kind=event) data
+| `1.9-2725 <https://github.com/opensvc/opensvc/commit/3d7788d677b74273a9146a3c656888b80176588e>`_ Add collect and rendering of more cgroup metrics
+| `1.9-2724 <https://github.com/opensvc/opensvc/commit/229283b027735955ed75d866e6572151638b691b>`_ Add threads and procs counts the per-thread stats metrics
+| `1.9-2723 <https://github.com/opensvc/opensvc/commit/f9d210038c816c9a84b221759b143fb3afa8349b>`_ Don't add service empty stats dict to the "daemon stats" result
+| `1.9-2722 <https://github.com/opensvc/opensvc/commit/f64efbd5569b0c2e9b596e893526902607d632b8>`_ Avoid printing a None on svcmon output when the daemon did not provide data
+| `1.9-2721 <https://github.com/opensvc/opensvc/commit/ccbd3a07894e53eac456d22b7456e10c99df26b2>`_ Fix the zombies left by the hb-origin events
+| `1.9-2720 <https://github.com/opensvc/opensvc/commit/36892c76202f5e2178dc859ea05d73e6758a4616>`_ Fix default volatile value in the service build() function
+| `1.9-2719 <https://github.com/opensvc/opensvc/commit/8cb86098f8f6a4e74f9881b6859b082f7c65aaa5>`_ Fix pylint error in the pushasset codepath
+| `1.9-2718 <https://github.com/opensvc/opensvc/commit/d8ccca4c1a8046e107d536361d7fb63bbe251c42>`_ Avoid infinite recursion on svc.id => _validate_config()
+| `1.9-2717 <https://github.com/opensvc/opensvc/commit/9dd2abda062347a2c4da3ae50787064ce6e5518f>`_ Fix a last user of the "updated" status.json key in the daemon monitor codepath
+| `1.9-2716 <https://github.com/opensvc/opensvc/commit/a8385aa8b07f3f4675fa4b270b17ed44cfde1a25>`_ Avoid stacking when a container resource is defined on a node with no docker
+| `1.9-2715 <https://github.com/opensvc/opensvc/commit/3923da976c0ac15af52e563c408ac19607ad0677>`_ Fix a potential stack in the docker_data_dir lookup in docker info data
+| `1.9-2714 <https://github.com/opensvc/opensvc/commit/3b46b8bb228bd74895bb5b2e4fbe5c0adf36cf2b>`_ Fix a pushasset stack on virtualbox virtual machines
 | `1.9-2713 <https://github.com/opensvc/opensvc/commit/e8f8a41aac281bcafc6d2aed5f09ead46004a0e2>`_ Fix a svcmon stack on perf stats rendering during daemon restart
 | `1.9-2712 <https://github.com/opensvc/opensvc/commit/becee850f6a30d8dd360cdf3d9b2ba6aa8b74673>`_ Make the svcmon status fetch independant of stats fetch
 | `1.9-2711 <https://github.com/opensvc/opensvc/commit/cb8b04a0b574912172b6fd1f24e32885bf029572>`_ Remove a debug statement from the container.docker driver
