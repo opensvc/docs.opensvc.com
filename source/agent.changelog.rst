@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+| `1.9-2742 <https://github.com/opensvc/opensvc/commit/b4b8816921718ea0e98541d8f56ab74c219dba6e>`_ Better ip and ip.netns resource log and label
+| `1.9-2741 <https://github.com/opensvc/opensvc/commit/030b714c96971240617caba2e8d0175da994a044>`_ Fix a misnamed exception in a container.docker error path
+| `1.9-2740 <https://github.com/opensvc/opensvc/commit/53060802edf3593f548b98804c132fb9c216e921>`_ Cancel the detach=false alarm when the container exits
+| `1.9-2739 <https://github.com/opensvc/opensvc/commit/0b3a92b2349e282ea277a9cca61ede68345bc5b6>`_ Add the detach keyword to container.docker resources
+| `1.9-2738 <https://github.com/opensvc/opensvc/commit/55b766f1803aeadb97fbe3a5882b0d96bdff82b3>`_ Don't display the "all resources activated but..." msg when the retcode is not 0
+| `1.9-2737 <https://github.com/opensvc/opensvc/commit/1abf66adf5b18f1c8fcbfd00ab1a56b0463343b7>`_ Condition the container.kvm resource/partition to create_pg=true
+| `1.9-2736 <https://github.com/opensvc/opensvc/commit/0e8cfa2c1c0c62f60d46b3fa1f7215de946d112e>`_ Catch drivers reporting no error, but instance not evaluating as "up" after start
+| `1.9-2735 <https://github.com/opensvc/opensvc/commit/5e3350f42b532ef1a5b09ea2df1f8aa8b0104ba0>`_ Detect app.simple process crashing less than 200ms after launch
 | `1.9-2734 <https://github.com/opensvc/opensvc/commit/ad94c812d81697d312beaec565cffed3e8844743>`_ update docs, man and bash completion
 | `1.9-2733 <https://github.com/opensvc/opensvc/commit/bb0081bea0405c882c077caeab9c9a1f7c88112e>`_ Enter the long monitor loop if a monitor thread has terminated
 | `1.9-2732 <https://github.com/opensvc/opensvc/commit/7ee7ba33bab070ec3c0fb8551aabfd19c0307d9c>`_ Allow user to set the sections he wants display in svcmon
