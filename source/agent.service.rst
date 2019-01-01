@@ -5,6 +5,7 @@ Services
    :maxdepth: 2
 
    agent.service.creation
+   agent.service.namespaces
    agent.service.references
    agent.service.provisioning
    agent.service.management

@@ -70,8 +70,9 @@ Reference                   Description                                         
 {dnsuxsock}                 The path to the dns thread unix socket                         Yes                     Yes
 {dnsuxsockd}                The path to the directory hosting the dns thread unix socket   Yes                     Yes
 {collector_api}             The uri of the collector Rest API                              Yes                     Yes
-{svcmgr}                    The full path the the svcmgr executable                        Yes                     Yes
 {nodemgr}                   The full path the the nodemgr executable}                      Yes                     Yes
+{namespace}                 The namespace name the service is in                           No                      Yes
+{svcmgr}                    The full path the the svcmgr executable                        Yes                     Yes
 {etc}                       The agent etc/ directory path: /etc/opensvc/ for agents        Yes                     Yes
                             installed through the packages, /opt/opensvc/etc/ for an agent Yes                     Yes
                             installed via git pull in /opt
