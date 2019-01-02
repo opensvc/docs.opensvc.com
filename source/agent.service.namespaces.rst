@@ -9,6 +9,8 @@ The svcmgr and svcmon service selector (--service option) accept the svcpath not
 
 Service in an explicit namespace have their config stored in /etc/opensvc/namespaces/<namespace>/. They also have the namespace name inserted in their docker container names on Linux.
 
+This feature is available in agent versions up from 1.9-2748.
+
 Operations with namespaces
 ==========================
 
