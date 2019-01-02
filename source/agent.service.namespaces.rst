@@ -50,23 +50,10 @@ Exporting OSVC_NAMESPACE=test thus applies all svcmgr and svcmon actions in the 
 	test/svc1
 	test/svc2
 
-Service executable symlinks
-===========================
-
-Operating services through their svcmgr symlink is not supported for services in namespaces, to avoid relying on the PATH env var paths ordering. Operating via svcmgr is thus mandatory for these services.
-
 References
 ==========
 
-A new {namespace} reference is now available.
-
-
-The "root" pseudo namespace
-===========================
-
-Service created before this patch and services created without an explicit namespace are considered in a pseudo namespace named "root". Their config are stored as usual in /etc/opensvc/.
-
-The root pseudo namespace name is used in the cluster dns names (<svcname>.root.svc.<clustername>) and dns search paths.
+A new {namespace} reference is now available for service configuration.
 
 Cgroups
 =======
@@ -77,14 +64,45 @@ Service in an explicit namespace have the namespace name inserted in their cgrou
 
 	opensvc.slice/<namespace>.slice/<svcname>.slice
 
+The "root" pseudo namespace
+===========================
+
+Service created before namespaces support and services created without an explicit namespace are assigned to a pseudo namespace named "root". Their config are stored in ``/etc/opensvc/``.
+
+The root pseudo namespace name is used in the cluster dns names (<svcname>.root.svc.<clustername>) and dns search paths, but is not embedded in docker container names nor cgroup paths.
+
+The ``{namespace}`` reference is evaluated to ``root``.
+
+Select services in the root namespace
+-------------------------------------
+
+::
+
+	$ svcmgr -s 'root/*' ls
+	$ svcmgr ls -s '*' --namespace=root
+	$ OSVC_NAMESPACE=root svcmgr ls -s '*'
+
+Create services in the root namespace
+-------------------------------------
+
+::
+
+	$ unset OSVC_NAMESPACE
+	$ svcmgr -s svc1 create
+
+Service executable symlinks
+===========================
+
+Operating services through their svcmgr symlink is not supported for services in namespaces, to avoid relying on the PATH environment variable paths ordering. Operating via ``svcmgr`` is thus mandatory for these services.
+
 
 Services relationships
 ======================
 
-Children and parents relationship can now use svcpath.
+Children and parents relationship can now use svcpaths in addition to svcnames.
 
-* If a svcname is declared in these lists, the same namespace is implied.
-* To declare a relation to a service in another namespace, users have to use svcpath.
+* If a svcname is declared in the parents, slaves or children lists, the related services are searched in the same namespace.
+* To declare a relation to a service in another namespace, its svcpath reference must be used instead of its svcname.
 
 Relations to services in the root pseudo namespace have to be defined as ``root/<svcname>`` to avoid ambiguity.
 
