@@ -2,6 +2,34 @@ Changelog
 =========
 
 
+| `1.9-2770 <https://github.com/opensvc/opensvc/commit/22fffde71a5b97a65d3973fb40b86cecd761d9e6>`_ Adapt is_service() unit test to its new return values
+| `1.9-2769 <https://github.com/opensvc/opensvc/commit/aba00fe1aa7f666af7578e86a742bb54b63bba5f>`_ Fix pylint-reported errors in a xmlrpc client error path
+| `1.9-2768 <https://github.com/opensvc/opensvc/commit/8048c91db0481505ce76e7919b3e619fa04d7f5e>`_ Fix pylint-reported errors in the service create codepath
+| `1.9-2767 <https://github.com/opensvc/opensvc/commit/0e3106b2e8d43d2737ce4fbdc5e7e1da03705546>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `1.9-2766 <https://github.com/opensvc/opensvc/commit/29f66d7544fb8410fbea0a5d4258fd8ae4072868>`_ Relay heartbeat enhancements
+| `1.9-2765 <https://github.com/opensvc/opensvc/commit/c7d14349ad009ea77009b41a40df3912bbdf822c>`_ Don't stack on "svcmgr edit config" on a foreign service
+| `1.9-2764 <https://github.com/opensvc/opensvc/commit/7fc56b2141d76e6cce7326b795673550f41ccc45>`_ Fix namespaced services log file location, logger path and push to the collector
+| `1.9-2763 <https://github.com/opensvc/opensvc/commit/d0117796f2ab1ffaa7bf77aad6eb44839d1ade5d>`_ Fix svcmon stack when osvcd is not running
+| `1.9-2762 <https://github.com/opensvc/opensvc/commit/acfeed589bea22f0b28225be578d1befe25e4530>`_ Compat mode for the listener actions: re-accept svcname in place of svcpath
+| `1.9-2761 <https://github.com/opensvc/opensvc/commit/e9278de2d0c00282705c7d8c585dc2ce75cb3264>`_ Fix json format print actions indexed by svcpath when called from svclink
+| `1.9-2760 <https://github.com/opensvc/opensvc/commit/c548bcf87cfc5a1502d85479feca92fee8c5df7b>`_ Fix svcmon stacking in non-watch mode
+| `1.9-2759 <https://github.com/opensvc/opensvc/commit/304f7e1685b6108445f174e6e71af4ebad80092b>`_ Support scalers in namespaces
+| `1.9-2758 <https://github.com/opensvc/opensvc/commit/44a1113c4d412fe543533271f557eab9beeba63c>`_ Fix svcmon not updating the service selector on status_data changes
+| `1.9-2757 <https://github.com/opensvc/opensvc/commit/1c86e7b747eef376c7346f23c9093146c14a6602>`_ Move the do_svc_create method to the Node class, out of svcmgr
+| `1.9-2756 <https://github.com/opensvc/opensvc/commit/a2d567f31052e2f248cd0fd088e78629db242471>`_ Fix scalers in namespaces
+| `1.9-2755 <https://github.com/opensvc/opensvc/commit/db0d8542730552f4d10b0ce0610c831ab6bd0e72>`_ Promote xmlrpc errors to excError and beautify the error message
+| `1.9-2754 <https://github.com/opensvc/opensvc/commit/e2ef4f17dc179586c364325bd327c1502af849c4>`_ Use svcpaths instead of svcname in json-formatted print actions
+| `1.9-2753 <https://github.com/opensvc/opensvc/commit/9c3b915897c2a620e7a3fc3fa72370c61920a2ba>`_ Fix json format print config indexed even when a service is explicitely selected
+| `1.9-2752 <https://github.com/opensvc/opensvc/commit/a3c652adfbc3fd6b613848c6777366ff3bd01146>`_ Add the "eval" nodemgr and svcmgr action and honor --impersonate with get/eval
+| `1.9-2751 <https://github.com/opensvc/opensvc/commit/9439692d2a33046f63a7248004279b822ed8538c>`_ Fix is_service() discarding service in the root namespace
+| `1.9-2750 <https://github.com/opensvc/opensvc/commit/3bb9e9a1d8c808fc110761ce0c9c4fc7ba662037>`_ Support the 'root/' selector and svcmgr ls -s '' --namespace=root
+| `1.9-2749 <https://github.com/opensvc/opensvc/commit/e9dc39d5c2ac723212117a0cfea2ba8e370ed39a>`_ Disallow creation of service in a namespace whose name contains a slash
+| `1.9-2748 <https://github.com/opensvc/opensvc/commit/a8ae2c74cdbdee89489b411038a31d5116b29c21>`_ Add support for services namespaces
+| `1.9-2747 <https://github.com/opensvc/opensvc/commit/363b1fc6a4249c721810c2646c6c96c4b094b81c>`_ Add Alpine and Gentoo support to command shell wrapper
+| `1.9-2746 <https://github.com/opensvc/opensvc/commit/fdfc321c89f06640f8619710337112e79432872f>`_ Adapt the postinstall for Alpine
+| `1.9-2745 <https://github.com/opensvc/opensvc/commit/395f8e1e1b2d9658de459fab51ce6f3cc32d9976>`_ Avoid ssh-keygen in postinstall if command is not available
+| `1.9-2744 <https://github.com/opensvc/opensvc/commit/5699199429352122124d7fbb0e01f8c56d51ea59>`_ Remove all empty files_to_sync() declaration from drivers
+| `1.9-2743 <https://github.com/opensvc/opensvc/commit/daed18233da548d20eedc13807b3eab47147d6b8>`_ Fix pylint errors in ip.netns set_label() codepath
 | `1.9-2742 <https://github.com/opensvc/opensvc/commit/b4b8816921718ea0e98541d8f56ab74c219dba6e>`_ Better ip and ip.netns resource log and label
 | `1.9-2741 <https://github.com/opensvc/opensvc/commit/030b714c96971240617caba2e8d0175da994a044>`_ Fix a misnamed exception in a container.docker error path
 | `1.9-2740 <https://github.com/opensvc/opensvc/commit/53060802edf3593f548b98804c132fb9c216e921>`_ Cancel the detach=false alarm when the container exits
