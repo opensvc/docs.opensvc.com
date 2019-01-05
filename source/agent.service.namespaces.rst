@@ -5,9 +5,9 @@ Namespaces allow users to create services with the same name in different naming
 
 The ``<namespace>/<svcname>`` is called a svcpath.
 
-The svcmgr and svcmon service selector (--service option) accept the svcpath notation.
+The svcmgr and svcmon service selector (``--service`` option) accepts the svcpath notation.
 
-Service in an explicit namespace have their config stored in /etc/opensvc/namespaces/<namespace>/. They also have the namespace name inserted in their docker container names on Linux.
+Services in an explicit namespace have their config stored in ``/etc/opensvc/namespaces/<namespace>/``. They also have the namespace name inserted in their docker container names on Linux.
 
 This feature is available in agent versions up from 1.9-2748.
 
@@ -34,9 +34,10 @@ OSVC_NAMESPACE environment variable
 -----------------------------------
 
 ::
+
 	OSVC_NAMESPACE=test svcmgr -s svc1
 
-Exporting OSVC_NAMESPACE=test thus applies all svcmgr and svcmon actions in the context of the test namespace.
+Then all svcmgr and svcmon actions are applied in the context of the ``test`` namespace.
 
 ::
 
@@ -55,12 +56,12 @@ Exporting OSVC_NAMESPACE=test thus applies all svcmgr and svcmon actions in the 
 References
 ==========
 
-A new {namespace} reference is now available for service configuration.
+A new ``{namespace}`` reference is now available for service configuration.
 
 Cgroups
 =======
 
-Service in an explicit namespace have the namespace name inserted in their cgroup path
+Services in an explicit namespace have the namespace name inserted in their cgroup path
 
 ::
 
@@ -69,7 +70,7 @@ Service in an explicit namespace have the namespace name inserted in their cgrou
 The "root" pseudo namespace
 ===========================
 
-Service created before namespaces support and services created without an explicit namespace are assigned to a pseudo namespace named "root". Their config are stored in ``/etc/opensvc/``.
+Services created before namespaces support and services created without an explicit namespace are assigned to a pseudo namespace named ``root``. Their config are stored in ``/etc/opensvc/``.
 
 The root pseudo namespace name is used in the cluster dns names (<svcname>.root.svc.<clustername>) and dns search paths, but is not embedded in docker container names nor cgroup paths.
 
