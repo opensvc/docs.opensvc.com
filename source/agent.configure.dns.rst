@@ -83,6 +83,10 @@ Verify the backend
 
 ::
 
+	nodemgr dns dump
+
+::
+
 	echo '{"method": "lookup", "parameters": {"qname": "cluster1.", "qtype": "SOA"}}' | socat - /var/lib/opensvc/dns/pdns.sock
 
 	{"result": [{"ttl": 60, "qname": "cluster1.", "qtype": "SOA", "domain_id": -1, "content": "dns.cluster1. contact@opensvc.com 1 7200 3600 432000 86400"}]}
@@ -110,6 +114,8 @@ Dump the zone contents asking DNS
 
 Dump the zone contents asking agent socket
 ++++++++++++++++++++++++++++++++++++++++++
+
+Same as ``nodemgr dns dump``
 
 ::
 
