@@ -55,6 +55,7 @@ Reference                   Description                                         
 {nodename}                  The running node fqdn                                          Yes                     Yes
 {short_nodename}            The running node base name (without domain)                    Yes                     Yes 
 {svcname}                   The running service name                                       No                      Yes 
+{svcpath}                   The running service path, ie <namespace>/<svcname>             No                      Yes 
 {short_svcname}             The running service base name (without domain)                 No                      Yes
 {id}                        The service id                                                 No                      Yes
 {safe://<id>}               Substitute the reference with the content of the safe file     Yes                     Yes
