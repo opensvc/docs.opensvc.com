@@ -1,349 +1,216 @@
 Docker Relocation
 =================
 
-Why would I need to relocate my Docker infrastructure ? It works fine ! Actually, there are many reasons that can lead you to a service relocation :
+All services are not chaos compliant. For some services it is also preferable not to involve storage and network virtualization nor ingress gateways, to beneficit from the best performance and reliability. For those services a failover OpenSVC service, with or without automatic failover (orchestrate=ha), is a valid solution.
 
-* hardware failure involving downtime.
-* planned downtime (hardware tech refresh, firmware updates, os upgrades, ...)
+With such services, the running instance can be easily relocated, proactively or in reaction to:
 
-If you only have 2 or 3 docker users, you may give a phone call and agree on a timeframe where the downtime does not bother anyone.
-But what happen if you are hosting multiple docker environments (prod, preprod, user acceptance tests, development, ...), each used by tens of people  ? It will be quite impossible to agree everyone on a timeframe to deliver your operation. The situation is worse when the downtime is unplanned (Remember when you were busy trying to fix your latest unplanned issue while your phone does not stop ringing, being called by impacted users)
+* A hardware or software failure involving downtime.
+* A planned downtime (hardware tech refresh, firmware updates, os upgrades, ...)
 
-That's why it is a best practise to be ready to quickly relocate the IT service you provide. 
+This relocation capability is more important the higher the number of services.
 
-This tutorial will show up how you can setup such a configuration with OpenSVC.
+This tutorial explains how to setup a relocatable dockerized postgresql service, with no network virtualization and a dedicated SAN disk.
 
 Pre-requisites
 --------------
 
-* OpenSVC service managing docker container(s) (Lets use a simple container example as described in `Docker main page <agent.service.container.docker.html#service-configuration>`_ )
-* 2 physical servers both having :
+Two nodes with:
 
-  * network attachments on the same IP subnet
-  * shared storage : same block device seen from operating system
-  * OpenSVC agent installed
-  * Docker installed
+* network attachments on the same ip subnet, with free ip addresses
+* shared storage : same block device seen from operating system
+* OpenSVC agent installed
+* Docker installed
 
-Initial State
--------------
+Service details
+---------------
 
-At the beginning we start with container ``opensvc/busybox:date`` running in OpenSVC service ``busybox.opensvc.com``, located on a single physical host named ``deb1.opensvc.com`` :
+* The service data will be stored in a xfs formatted single logical volume of a volume group build on the shared disk.
+* The service ip address will be plumbed using ipvlan l2 on a veth given to a google/pause container holding a service-wide netns. This veth will be linked to a node's bonding interface.
+* The postgresql database will run in a second container sharing the google/pause container netns.
+
+Create the service
+------------------
 
 ::
 
-        root@deb1:/# busybox.opensvc.com docker images
-        REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-        
-        root@deb1:/# busybox.opensvc.com docker pull opensvc/busybox:date
-        Pulling repository opensvc/busybox
-        b073e328878e: Download complete
-        511136ea3c5a: Download complete
-        b6c0d171b362: Download complete
-        9798716626f6: Download complete
-        98b9fdab1cb6: Download complete
-        e2dda52210a3: Download complete
-        
-        root@deb1:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   warn
-        |- avail                  warn
-        |  |- container#1    .... down     opensvc/busybox:date
-        |  |  |                            # can not find container id
-        |  |- vg#1           .... up       vgbusybox
-        |  |- fs#1           .... up       /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... up       /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... up       busybox.opensvc.com@eth0
-        |- sync                   n/a
-        '- hb                     n/a
-        
-        root@deb1:/# busybox.opensvc.com startcontainer
-        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
-        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
-        b82cf3232b7982706b2889f11be0af15f33dc2872939cdbdd9ca39f8cbf56b03
-        
-        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
-        17:06:04 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
-        
-        root@deb1:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   up
-        |- avail                  up
-        |  |- container#1    .... up       b82cf3232b79@opensvc/busybox:date
-        |  |- vg#1           .... up       vgbusybox
-        |  |- fs#1           .... up       /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... up       /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... up       busybox.opensvc.com@eth0
-        |- sync                   n/a
-        '- hb                     n/a
-        
-        root@deb1:/# busybox.opensvc.com docker attach b82cf3232b79
-        Thu Jun  5 15:06:19 UTC 2014
-        Thu Jun  5 15:06:20 UTC 2014
-        Thu Jun  5 15:06:21 UTC 2014
+	$ cat - << EOF | svcmgr -s db1 create --config=- --provision
+	{
+	    "DEFAULT": {
+		"nodes": "{clusternodes}"
+	    },
+	    "disk#0": {
+		"name": "{svcname}",
+		"pvs": "{env.dev}",
+		"shared": "true",
+		"type": "vg"
+	    },
+	    "disk#1": {
+		"name": "data",
+		"shared": "true",
+		"size": "100%FREE",
+		"type": "lv",
+		"vg": "{svcname}"
+	    },
+	    "fs#1": {
+		"dev": "/dev/{svcname}/data",
+		"mnt": "/srv/{svcname}/data",
+		"shared": "true",
+		"type": "xfs"
+	    },
+	    "ip#0": {
+		"gateway": "{env.gateway}",
+		"ipdev": "{env.intf}",
+		"ipname": "{env.ipaddr}",
+		"netmask": "{env.netmask}",
+		"netns": "container#0",
+		"mode": "ipvlan-l2",
+		"type": "netns"
+	    },
+	    "container#0": {
+		"image": "google/pause",
+		"rm": "true",
+		"type": "docker"
+	    },
+	    "container#1": {
+		"image": "postgres",
+		"netns": "container#0",
+		"rm": "true",
+		"run_args": "-v /srv/{svcname}/data/postgresql:/var/lib/postgresql:rw --user={env.uid}:{env.gid}",
+		"type": "docker"
+	    },
+	    "env": {
+		"dev": "/dev/mapper/36589cfc000000e969988ca11344cabb0",
+		"gateway": "192.168.100.1",
+		"gid": "999",
+		"intf": "bond0",
+		"ipaddr": "192.168.100.14",
+		"netmask": "24",
+		"uid": "999"
+	    }
+	}
+	EOF
+
+.. note:: You can change the value of the keywords in the ``env`` section using svcmgr ``--env <kw>=<value>`` options.
+
+After a few seconds, the service will be up and running on the cluster first node.
+
+::
+
+	$ svcmon -s db1 --sections services
+	Services               node-1-1 node-1-2
+	 db1     up failover | O^       X
+
+
+Details on node-1-1
+
+::
+
+	$ db1 print status
+	db1
+	`- instances
+	   |- node-1-2                   down       idle
+	   `- node-1-1                   up         idle, started
+	      |- ip#0           ........ up         netns bridge 192.168.100.14/24 br-prd@container#0
+	      |- disk#0         ........ up         vg db1
+	      |- disk#1         ........ up         lv db1/data
+	      |- fs#1           ........ up         xfs /dev/db1/data@/srv/db1/data
+	      |- container#0    ........ up         docker container db1.container.0@google/pause
+	      |- container#1    ........ up         docker container db1.container.1@postgres
+	      `- sync#i0        ...O./.. up         rsync svc config to nodes
+
 
 Relocate Service
 ----------------
 
-We plan to be able to relocate service on physical node named ``deb2.opensvc.com``
+::
 
-Check Network Prerequisites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	$ svcmgr -s db1 switch
+	node-1-1.db1             service db1 target state set to placed@node-1-2
 
-**Network interface on deb1.opensvc.com**::
+You can follow the progress of this asynchronous action with ``svcmon -w -s db1``.
 
-        root@deb1:/# ifconfig eth0 | grep "inet adr"
-                 inet adr:37.59.71.6  Bcast:37.59.71.31  Masque:255.255.255.224
+After a few seconds, the service is switched
 
+::
 
-**Network interface on deb2.opensvc.com**::
+	$ svcmon -s db1 --sections services
+	Services                node-1-1 node-1-2
+	 db1     up^ failover | X^       O       
 
-        root@deb2:/# ifconfig eth0 | grep "inet adr"
-                 inet adr:37.59.71.7  Bcast:37.59.71.31  Masque:255.255.255.224
+Switch logs
+-----------
 
-Check Storage Prerequisites
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For reference and timings, here are the logs of this action
 
-**On deb1.opensvc.com**::
+::
 
-        root@deb1:/# pvs | grep busy
-          /dev/mapper/disk.docker vgbusybox lvm2 a--   5,00g  3,00g
-        root@deb1:/# sg_inq -i /dev/mapper/disk.docker | grep specific
-              vendor specific: 9NOL1o-3Abi-4vlT
-        
-**On deb2.opensvc.com**::
+	$ svcmgr -s db1 logs
 
-        root@deb2:~# pvs | grep busy
-          /dev/mapper/disk.docker vgbusybox lvm2 a--   5,00g 3,00g
-        root@deb2:~# sg_inq -i /dev/mapper/disk.docker | grep specific
-              vendor specific: 9NOL1o-3Abi-4vlT
+	# orchestrator logs
+	20:35:50,004 node-1-1.db1             INFO    service db1 target state set to placed@node-1-2
+	20:35:50,175 node-1-1.db1             INFO    stop failover up instance to satisfy the placed@node-1-2 target
 
-It's the same storage device, with serial 9NOL1o-3Abi-4vlT
+	# on the source node, stop instance
+	20:35:50,434 node-1-1.db1             INFO    do stop --local (daemon origin)
+	20:35:50,522 node-1-1.db1.container#1 INFO    docker stop b196b8204a5add752680de49f8c9a306888c41db489063455924ada4febb6905
+	20:35:50,630 node-1-1.db1.container#1 INFO    output:
+	20:35:50,631 node-1-1.db1.container#1 INFO    b196b8204a5add752680de49f8c9a306888c41db489063455924ada4febb6905
+	20:35:50,663 node-1-1.db1.container#1 INFO    docker rm db1.container.1
+	20:35:50,664 node-1-1.db1.container#1 INFO    wait for down status
+	20:35:51,001 node-1-1.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/21c851c4646b ip addr del 192.168.100.14/24 dev eth0
+	20:35:51,008 node-1-1.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/21c851c4646b ip link del dev eth0
+	20:35:51,023 node-1-1.db1.ip#0        INFO    checking 192.168.100.14 availability
+	20:35:52,210 node-1-1.db1.container#0 INFO    docker stop 0363bb5834f23b394065b9a1e31b911e8d848bf01c8e697b55afa926e7849570
+	20:35:52,305 node-1-1.db1.container#0 INFO    output:
+	20:35:52,307 node-1-1.db1.container#0 INFO    0363bb5834f23b394065b9a1e31b911e8d848bf01c8e697b55afa926e7849570
+	20:35:52,363 node-1-1.db1.container#0 INFO    docker rm db1.container.0
+	20:35:52,363 node-1-1.db1.container#0 INFO    wait for down status
+	20:35:52,986 node-1-1.db1.fs#1        INFO    umount /srv/db1/data
+	20:35:53,249 node-1-1.db1.disk#1      INFO    lvchange -a n db1/data
+	20:35:53,391 node-1-1.db1.disk#0      INFO    vg db1 is already down
 
-.. warning:: If you plan to use such a setup in production, you are strongly encouraged to enable scsi reservation on devices. Add ``scsireserv = true`` to ``[vg#1]`` config section in file ``<OSVCETC>/busybox.opensvc.com.env``. OpenSVC will avoid data corruption risk by putting scsi reservation on devices belonging to your volume group. Storage equipment have to support this feature.
+	# on the destination node, start instance
+	20:35:53,880 node-1-2.db1             INFO    start failover down instance to satisfy the placed@node-1-2 target
+	20:35:54,076 node-1-2.db1             INFO    do start --local (daemon origin)
+	20:35:54,252 node-1-2.db1.ip#0        INFO    checking 192.168.100.14 availability
+	20:35:59,323 node-1-2.db1.disk#0      INFO    vgchange --deltag @node-1-1 db1
+	20:35:59,370 node-1-2.db1.disk#0      INFO    Volume group "db1" successfully changed
+	20:35:59,370 node-1-2.db1.disk#0      INFO    output:
+	20:35:59,372 node-1-2.db1.disk#0      INFO    vgchange --addtag @node-1-2 db1
+	20:35:59,426 node-1-2.db1.disk#0      INFO    output:
+	20:35:59,427 node-1-2.db1.disk#0      INFO    Volume group "db1" successfully changed
+	20:35:59,539 node-1-2.db1.disk#0      INFO    vgchange -a y db1
+	20:35:59,616 node-1-2.db1.disk#0      INFO    1 logical volume(s) in volume group "db1" now active
+	20:35:59,616 node-1-2.db1.disk#0      INFO    output:
+	20:35:59,766 node-1-2.db1.disk#1      INFO    lv db1/data is already up
+	20:35:59,861 node-1-2.db1.fs#1        INFO    mount -t xfs /dev/db1/data /srv/db1/data
+	20:36:00,160 node-1-2.db1.container#0 INFO    docker run --name=db1.container.0 --detach --net=none google/pause
+	20:36:00,436 node-1-2.db1.container#0 INFO    output:
+	20:36:00,437 node-1-2.db1.container#0 INFO    8d4947414095d12186ea250b966cb8666d8734b5b8d481739ab1722e79927114
+	20:36:00,462 node-1-2.db1.container#0 INFO    wait for up status
+	20:36:00,506 node-1-2.db1.container#0 INFO    wait for container operational
+	20:36:00,671 node-1-2.db1.ip#0        INFO    bridge mode
+	20:36:00,773 node-1-2.db1.ip#0        INFO    /sbin/ip link add name veth0pl25524 mtu 1500 type veth peer name veth0pg25524 mtu 1500
+	20:36:00,798 node-1-2.db1.ip#0        INFO    /sbin/ip link set veth0pl25524 master br-prd
+	20:36:00,812 node-1-2.db1.ip#0        INFO    /sbin/ip link set veth0pl25524 up
+	20:36:00,824 node-1-2.db1.ip#0        INFO    /sbin/ip link set veth0pg25524 netns 25524
+	20:36:00,835 node-1-2.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/2bbcf661b019 ip link set veth0pg25524 name eth0
+	20:36:00,843 node-1-2.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/2bbcf661b019 ip addr add 192.168.100.14/24 dev eth0
+	20:36:00,850 node-1-2.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/2bbcf661b019 ip link set eth0 up
+	20:36:00,867 node-1-2.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/2bbcf661b019 ip route replace default via 192.168.100.1
+	20:36:00,874 node-1-2.db1.ip#0        INFO    /usr/bin/nsenter --net=/var/run/docker/netns/2bbcf661b019 /usr/bin/python /usr/share/opensvc/lib/arp.py eth0 192.168.100.14
+	20:36:01,267 node-1-2.db1.container#1 INFO    docker run --name=db1.container.1 -v /srv/db1/data/postgresql:/var/lib/postgresql:rw --user=999:999 --detach --net=container:db1.container.0 postgres
+	20:36:01,480 node-1-2.db1.container#1 INFO    output:
+	20:36:01,481 node-1-2.db1.container#1 INFO    ee21ce46ffd922582228cb86d2cabc098e7d02141b87b65b210ec4c40f382d43
+	20:36:01,536 node-1-2.db1.container#1 INFO    wait for up status
+	20:36:01,624 node-1-2.db1.container#1 INFO    wait for container operational
 
-Check mutual ssh trust
-^^^^^^^^^^^^^^^^^^^^^^
+Activate Automatic Failover
+---------------------------
 
-**On deb1.opensvc.com**::
+::
 
-        root@deb1:/# ssh deb2 hostname
-        deb2.opensvc.com
-
-**On deb2.opensvc.com**::
-
-        root@deb2:/# ssh deb1 hostname
-        deb1.opensvc.com
-
-.. note:: it is also possible to use an unpriviledged user with sudo rights delegation (2 commands only)
-
-Check OpenSVC agent
-^^^^^^^^^^^^^^^^^^^
-
-**On deb2.opensvc.com**::
-
-        root@deb2:~# dpkg -l | grep opensvc
-        ii  opensvc                                    1.5-10445                     all          tools to drive OpenSVC services
-
-Change Service Config
-^^^^^^^^^^^^^^^^^^^^^
-
-We need to change **one** parameter in the OpenSVC service config file
-
-* **Before** => nodes = deb1.opensvc.com
-* **After**  => nodes = deb1.opensvc.com deb2.opensvc.com
-
-This makes the service config file looks like::
-
-        root@deb1:/# busybox.opensvc.com.env print config
-        [DEFAULT]
-        orchestrate = ha
-        app = OSVCLAB
-        service_type = DEV
-        nodes = deb1.opensvc.com deb2.opensvc.com
-        docker_data_dir = /opt/busybox.opensvc.com/appdata
-        docker_daemon_args = --ip 37.59.71.25
-        
-        [container#1]
-        type = docker
-        run_image = b073e328878e
-        
-        [ip#1]
-        ipdev = eth0
-        ipname = busybox.opensvc.com
-        
-        [vg#1]
-        vgname = vgbusybox
-        scsireserv = false
-        
-        [fs#1]
-        mnt_opt = rw
-        mnt = /opt/busybox.opensvc.com
-        dev = /dev/mapper/vgbusybox-lvbusyboxroot
-        type = ext4
-        
-        [fs#2]
-        mnt_opt = rw
-        mnt = /opt/busybox.opensvc.com/appdata
-        dev = /dev/mapper/vgbusybox-lvbusyboxdata
-        type = ext4
-
-Let's check the status::
-
-        root@deb1:/# busybox.opensvc.com print status
-        send /etc/opensvc/busybox.opensvc.com.env to collector ... OK
-        update /etc/opensvc/busybox.opensvc.com.push timestamp ... OK
-        busybox.opensvc.com
-        overall                   warn
-        |- avail                  up
-        |  |- container#1    .... up       b82cf3232b79@opensvc/busybox:date
-        |  |- vg#1           .... up       vgbusybox
-        |  |- fs#1           .... up       /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... up       /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... up       busybox.opensvc.com@eth0
-        |- sync                   down
-        |  '- sync#i0        .... down     rsync svc config to drpnodes, nodes
-        |                                  # deb2.opensvc.com need update
-        '- hb                     n/a
-
-.. note:: overall state is "warn" due to "sync" section being in "down" state. This means that the OpenSVC agent is aware that a second node is capable of starting the service, but the problem is that this second node is not aware of that. We have to push the configuration on the second node.
-
-Pushing the configuration (always **from** the node owning the service)::
-
-        root@deb1:/# busybox.opensvc.com syncnodes
-        18:02:35 INFO    BUSYBOX.OPENSVC.COM.SYNC#I0 skip sync: not in allowed period (['03:59', '05:59'])
-        
-        root@deb1:/# busybox.opensvc.com syncnodes --force
-        18:02:40 INFO    BUSYBOX.OPENSVC.COM         exec '/usr/bin/svcmgr -s busybox.opensvc.com --waitlock 3600 postsync' on node deb2.opensvc.com
-        
-        root@deb1:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   up
-        |- avail                  up
-        |  |- container#1    .... up       b82cf3232b79@opensvc/busybox:date
-        |  |- vg#1           .... up       vgbusybox
-        |  |- fs#1           .... up       /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... up       /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... up       busybox.opensvc.com@eth0
-        |- sync                   up
-        |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
-        '- hb                     n/a
+	$ svcmgr -s db1 set --kw orchestrate=ha
 
 
-.. note:: --force flag is required outside of the authorized configuration push timewindow. Just after the push, overall status come back to "up".
-
-Checking the service status on the passive node::
-
-        root@deb2:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   down
-        |- avail                  down
-        |  |- container#1    .... down     b073e328878e
-        |  |  |                            # docker daemon is not running
-        |  |- vg#1           .... down     vgbusybox
-        |  |- fs#1           .... down     /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... down     /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... down     busybox.opensvc.com@eth0
-        |- sync                   up
-        |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
-        '- hb                     n/a
-
-.. note:: service is in the expected "down" state, and sync state is "up" from the configuration point of view, this means nodes runs same service configuration.
-
-Execute Service Relocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Our environment is now ready to be relocated on node deb2.opensvc.com. Once you are authorized to stop the service, you can proceed with the following :
-
-**On deb1.opensvc.com**::
-
-        root@deb1:/# busybox.opensvc.com stop
-        18:13:15 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock stop b82cf3232b79
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
-        b82cf3232b79
-        
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container down status
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 no more container handled by docker daemon. shut it down
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.FS#2    umount /opt/busybox.opensvc.com/appdata
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.FS#1    umount /opt/busybox.opensvc.com
-        18:13:25 INFO    BUSYBOX.OPENSVC.COM.VG#1    vgchange --deltag @deb1.opensvc.com vgbusybox
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.VG#1    output:
-          Volume group "vgbusybox" successfully changed
-        
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.VG#1    kpartx -d /dev/vgbusybox/lvbusyboxdata
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.VG#1    kpartx -d /dev/vgbusybox/lvbusyboxroot
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.VG#1    vgchange -a n vgbusybox
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.VG#1    output:
-          0 logical volume(s) in volume group "vgbusybox" now active
-        
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 down
-        18:13:26 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
-        
-        root@deb1:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   down
-        |- avail                  down
-        |  |- container#1    .... down     b073e328878e
-        |  |  |                            # docker daemon is not running
-        |  |- vg#1           .... down     vgbusybox
-        |  |- fs#1           .... down     /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... down     /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... down     busybox.opensvc.com@eth0
-        |- sync                   up
-        |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
-        '- hb                     n/a
-        
-**On deb2.opensvc.com**::
-
-        root@deb2:/# busybox.opensvc.com start
-        18:13:33 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
-        18:13:36 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 37.59.71.25 netmask 255.255.255.224 up
-        18:13:36 INFO    BUSYBOX.OPENSVC.COM.IP#1    arping -U -c 1 -I eth0 -s 37.59.71.25 37.59.71.25
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.VG#1    vgchange --addtag @deb2.opensvc.com vgbusybox
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.VG#1    output:
-          Volume group "vgbusybox" successfully changed
-        
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.VG#1    vgchange -a y vgbusybox
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.VG#1    output:
-          2 logical volume(s) in volume group "vgbusybox" now active
-        
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#1    create missing mountpoint /opt/busybox.opensvc.com
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#1    e2fsck -p /dev/mapper/vgbusybox-lvbusyboxroot
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#1    output:
-        /dev/mapper/vgbusybox-lvbusyboxroot: clean, 13/65536 files, 12637/262144 blocks
-        
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#1    mount -t ext4 -o rw /dev/mapper/vgbusybox-lvbusyboxroot /opt/busybox.opensvc.com
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#2    e2fsck -p /dev/mapper/vgbusybox-lvbusyboxdata
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#2    output:
-        /dev/mapper/vgbusybox-lvbusyboxdata: clean, 487/65536 files, 17664/262144 blocks
-        
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.FS#2    mount -t ext4 /dev/mapper/vgbusybox-lvbusyboxdata /opt/busybox.opensvc.com/appdata
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 starting docker daemon
-        18:13:37 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock -r=false -d -g /opt/busybox.opensvc.com/appdata -p /var/lib/opensvc/busybox.opensvc.com/docker.pid --ip 37.59.71.25
-        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock start b82cf3232b79
-        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
-        b82cf3232b79
-        
-        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
-        18:13:39 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
-
-        root@deb2:/# busybox.opensvc.com print status
-        busybox.opensvc.com
-        overall                   up
-        |- avail                  up
-        |  |- container#1    .... up       b82cf3232b79@opensvc/busybox:date
-        |  |- vg#1           .... up       vgbusybox
-        |  |- fs#1           .... up       /dev/mapper/vgbusybox-lvbusyboxroot@/opt/busybox.opensvc.com
-        |  |- fs#2           .... up       /dev/mapper/vgbusybox-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
-        |  '- ip#1           .... up       busybox.opensvc.com@eth0
-        |- sync                   up
-        |  '- sync#i0        .... up       rsync svc config to drpnodes, nodes
-        '- hb                     n/a
-        root@deb2:/# busybox.opensvc.com docker attach b82cf3232b79
-        Thu Jun  5 16:13:48 UTC 2014
-        Thu Jun  5 16:13:49 UTC 2014
-        Thu Jun  5 16:13:50 UTC 2014
-
-Service stops at 18:13:15 on node deb1, and is up & running on node deb2 at 18:13:39, which make **less than 30 seconds to relocate a service**.
-Considering that, it is the time needed to stop/start the applications that will be the most representative in the downtime seen from users.
-
-Basically, we have made a 2-nodes Docker **manual** failover cluster. Easy, isn't it ?

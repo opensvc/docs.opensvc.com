@@ -50,7 +50,7 @@ All ressources are down when the service is just created.
 Docker Commands via OpenSVC
 ===========================
 
-The service eases the docker commands on its containers.
+The service eases the docker commands on its containers. The following commands work wether the service uses a private docker daemon or the system's (shared) docker daemon.
 
 **querying the docker images**::
 
@@ -137,7 +137,6 @@ Next Topics
    agent.templates/template.service.container.docker
    agent.service.container.docker.multi_containers
    agent.service.container.docker.relocation
-   agent.service.container.docker.high_availability
    agent.service.container.docker.multiple_docker_instances
    agent.service.container.docker.disaster_recovery_plan
    agent.service.container.docker.chargeback
