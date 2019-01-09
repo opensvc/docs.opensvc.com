@@ -2,6 +2,36 @@ Changelog
 =========
 
 
+| `1.9-2800 <https://github.com/opensvc/opensvc/commit/6025c131d5cecb5664642fbf24d2f1490fe6b08a>`_ Expose svcname, svcpath and namespace in the compliance modules env
+| `1.9-2799 <https://github.com/opensvc/opensvc/commit/b9fef4d61fcd6d062e4df2fefc03e24586d32829>`_ App resource enhancements
+| `1.9-2798 <https://github.com/opensvc/opensvc/commit/8f13cc85c49af1bf43aa759fafc1b879c3a00e00>`_ Fix set "provisioned" global expect switching to "started" too early
+| `1.9-2797 <https://github.com/opensvc/opensvc/commit/58c3d6a62ebed9364777c4f081c7f9cc755ee332>`_ Quote the svcpath in the flat_json outputs
+| `1.9-2796 <https://github.com/opensvc/opensvc/commit/be52a8434ca42c4d2c3c5c6fffc583f5f5e4ac2b>`_ Fix the svcmon formatter on single node cluster with node hb setup
+| `1.9-2795 <https://github.com/opensvc/opensvc/commit/a54a8d97ab9cf6f4c08679e0992322742b1802a3>`_ Push encap config fixes
+| `1.9-2794 <https://github.com/opensvc/opensvc/commit/addc2d2628a2b7bc8fd7c552be3c488ac256fb91>`_ Fix namespaced "svcmgr create --config=<path>" for new namespaces
+| `1.9-2793 <https://github.com/opensvc/opensvc/commit/79870a07e4222197e77c40a6d416376bf7181814>`_ Fix a stack in docker get_image_id() in the start codepath
+| `1.9-2792 <https://github.com/opensvc/opensvc/commit/6199fc228df82741ed8825f57527506110877f4c>`_ Catch a TypeError in the status.json load test of the mon thread
+| `1.9-2791 <https://github.com/opensvc/opensvc/commit/6fcb9f195d1221e1a779801b93f8a14864859d2c>`_ Add the task resource "log" boolean keyword
+| `1.9-2790 <https://github.com/opensvc/opensvc/commit/f4e3a0bf8d23712ad7b86ac701376b1bec6dae4e>`_ Fix a dds stack on full sync
+| `1.9-2789 <https://github.com/opensvc/opensvc/commit/0cfdf88d067ff2544afed93692aad24d1c1bfe37>`_ Add the svcpath reference
+| `1.9-2788 <https://github.com/opensvc/opensvc/commit/0c73275dc66f2291b12a6a0df3d8f56f93edfb58>`_ Add a "nodemgr dns dump" action
+| `1.9-2787 <https://github.com/opensvc/opensvc/commit/a018800ea0d1a8d805839de887a4310f8ad883a5>`_ Limit the docker_exec socket path length to <104 chars
+| `1.9-2786 <https://github.com/opensvc/opensvc/commit/915dc6f17415ee034078213ac9e7790cec78bf7d>`_ File comp object enhancement
+| `1.9-2785 <https://github.com/opensvc/opensvc/commit/095965edfcbfab1a0aebd92788715571b2fb83a7>`_ Fix python archaism in the cron comp object
+| `1.9-2784 <https://github.com/opensvc/opensvc/commit/9a8eea7dbde798e92d198f95edbba63de5244b8a>`_ Sort the daemon relay status output
+| `1.9-2783 <https://github.com/opensvc/opensvc/commit/bcedaf00f1a7021bf84a72b1e032e86cef1cf8b9>`_ Enforce RFC 952 on svcname and namespace names on svcmgr create
+| `1.9-2782 <https://github.com/opensvc/opensvc/commit/2666631e9d006711c592ac4f55f120a6c3ecb06b>`_ Fix a stack on nodemgr daemon relay status --node ...
+| `1.9-2781 <https://github.com/opensvc/opensvc/commit/9c91026192ae840217d55028b72cc1f63806191b>`_ Fix the relay hb rx codepath
+| `1.9-2780 <https://github.com/opensvc/opensvc/commit/1018e14dd1f05c2e90fe4d3de396cf3031521f69>`_ Fix namespaced svcmgr create --template ...
+| `1.9-2779 <https://github.com/opensvc/opensvc/commit/a5a0dadf2070725a7257b122cc75a0f4dcfdb70c>`_ Add CPU freq, Model, Serial for raspbian
+| `1.9-2778 <https://github.com/opensvc/opensvc/commit/c278619ae9237cb1586d9578d6906ff4048233ff>`_ Use svcpath instead of svcname in more xmlrpc calls
+| `1.9-2777 <https://github.com/opensvc/opensvc/commit/042027a0533c3bd7dd11d991d9f8c1aacfa9c72f>`_ Allow svcpath==None in the service_command()
+| `1.9-2776 <https://github.com/opensvc/opensvc/commit/211e0ef44148b968d88ef4906d56b96f86e681df>`_ Add the "create" listener action
+| `1.9-2775 <https://github.com/opensvc/opensvc/commit/7b9e0c6e99613d52a449dbe58e84a7d33cbef3fb>`_ Fix a py2 utf-8 error in the create from stdin codepath
+| `1.9-2774 <https://github.com/opensvc/opensvc/commit/6488db7e4d852a8dc195146d8acee94d91cce429>`_ Use svcpath in the compliance subsystem comms with the collector
+| `1.9-2773 <https://github.com/opensvc/opensvc/commit/6d381d84b1dd8fcce59038f6c634910d9107ad7a>`_ Fix svcmon not reporting all nodes when the first hb is segmented
+| `1.9-2772 <https://github.com/opensvc/opensvc/commit/e55886723ae303b811a8a51703660468631605af>`_ Remove a debug statement from the listener codepath
+| `1.9-2771 <https://github.com/opensvc/opensvc/commit/27eb6787d9eeccf931b92a02918f74e496ea8c3d>`_ Support creation of multiple services creation from data fed to stdin
 | `1.9-2770 <https://github.com/opensvc/opensvc/commit/22fffde71a5b97a65d3973fb40b86cecd761d9e6>`_ Adapt is_service() unit test to its new return values
 | `1.9-2769 <https://github.com/opensvc/opensvc/commit/aba00fe1aa7f666af7578e86a742bb54b63bba5f>`_ Fix pylint-reported errors in a xmlrpc client error path
 | `1.9-2768 <https://github.com/opensvc/opensvc/commit/8048c91db0481505ce76e7919b3e619fa04d7f5e>`_ Fix pylint-reported errors in the service create codepath
