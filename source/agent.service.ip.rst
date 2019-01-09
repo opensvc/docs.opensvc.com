@@ -93,24 +93,20 @@ Example configuration::
   docker_data_dir = /srv/svc1/docker_data_dir
   
   [ip#0]
-  type = docker
+  type = netns
   ipdev = eth0
   ipname = 10.0.3.3
   netmask = 255.255.255.0
   gateway = 10.0.3.1
-  container_rid = container#0
+  netns = container#0
   
   [container#0]
   type = docker
-  run_image = ubuntu:14.10
-  run_args = --net=none
-             -v /etc/localtime:/etc/localtime:ro
-  run_command = /bin/bash
+  image = google/pause
+  rm = true
   
   [container#1]
   type = docker
-  run_image = opensvc/nginx:build5
-  run_args = -v /etc/localtime:/etc/localtime:ro
-             --net=container:svc1.container.0
-  
+  image = opensvc/nginx:build5
+  netns = container#0
 

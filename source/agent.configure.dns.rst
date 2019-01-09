@@ -12,9 +12,11 @@ This feature is not enabled by default.
 Records
 -------
 
-* One A record ``<hostname>.<svcname>.<app>.svc.<clustername>`` for each resource embedding an ip address and a hostname in its "info".
-* One round-robin A record for ``<svcname>.<app>.svc.<clustername>``. Each resource embedding an ip address in its "info" gets a slot in the RR.
-* One SRV record for ``_<service>._<protocol>.<svcname>.<app>.svc.<clustername>``. Each resource with an expose keyword matching ``<service>`` and ``<port>`` gets a slot in the RR.
+* One A record ``<hostname>.<svcname>.<namespace>.svc.<clustername>`` for each resource embedding an ip address and a hostname in its "info".
+* One round-robin A record for ``<svcname>.<namespace>.svc.<clustername>``. Each resource embedding an ip address in its "info" gets a slot in the RR.
+* One SRV record for ``_<service>._<protocol>.<svcname>.<namespace>.svc.<clustername>``. Each resource with an expose keyword matching ``<service>`` and ``<port>`` gets a slot in the RR.
+
+.. note:: A service created in no specific namespace gets a "root" namespace value.
 
 Implementation
 --------------
@@ -133,8 +135,12 @@ Example for the default weave network 10.32.0.0/12::
 
 	[container#1]
 	type = docker
-	run_image = opensvc/pdns_recursor:latest
-	run_args = --net=host -i -t --privileged --userns=host --rm -v {var}/services/{svcname}/run:/var/run:rw
+	image = opensvc/pdns_recursor:latest
+	netns = host
+	userns = host
+	privileged = true
+	rm = true
+	run_args = -v {var}/services/{svcname}/run:/var/run:rw
 	run_command = --daemon=no --disable-syslog=yes --loglevel=9 --disable-packetcache=yes --max-cache-ttl=60 --max-negative-ttl=60 --local-port=53 --udp-truncation-threshold=4096 --local-address={dns[0]},{dns[1]} --non-local-bind --forward-zones={clustername}={env.dns_set},{env.rev_forward}
 
 	[env]

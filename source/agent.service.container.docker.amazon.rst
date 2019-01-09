@@ -76,14 +76,14 @@ Service configuration
   
   [container#0]
   type = docker
-  run_image = ubuntu:14.10
+  image = ubuntu:14.10
   run_args = --net=bridge -p 80:80
              -v /etc/localtime:/etc/localtime:ro
   run_command = /bin/bash
   
   [container#1]
   type = docker
-  run_image = nginx:latest
+  image = nginx:latest
   run_args = -v /etc/localtime:/etc/localtime:ro
              --net=container:testeip.container.0
   

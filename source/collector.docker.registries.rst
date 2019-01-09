@@ -182,11 +182,12 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 	docker_daemon_args = --log-opt max-size=1m
 
 	[ip#0]
+	type = netns
 	ipdev = {env.bridge}
 	ipname = {env.ipaddr}
 	netmask = {env.netmask}
 	gateway = {env.gateway}
-	container_rid = container#0
+	netns = container#0
 	tags = docker
 
 	[disk#0]
@@ -210,18 +211,15 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 
 	[container#0]
 	type = docker
-	run_image = busybox:latest
-	run_args = -i -t
-		--net=none
-		-v /etc/localtime:/etc/localtime:ro
-	run_command = /bin/sh
+	image = google/pause
+	rm = true
 
 	[container#1]
 	type = docker
-	run_image = distribution/registry:master
-	run_args = --net=container:{svcname}.container.0
-		-v /etc/localtime:/etc/localtime:ro
-		-v /srv/{svcname}/data/registry/data:/var/lib/registry
+	image = distribution/registry:master
+	netns = container#0
+	rm = true
+	run_args = -v /srv/{svcname}/data/registry/data:/var/lib/registry
 		-v /srv/{svcname}/data/registry/ssl:/ssl
 		-v /srv/{svcname}/data/registry/conf/config.yml:/etc/docker/registry/config.yml
 		-e REGISTRY_HTTP_ADDR=localhost:5000
@@ -236,10 +234,10 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 
 	[container#2]
 	type = docker
-	run_image = nginx:latest
-	run_args = --net=container:{svcname}.container.0
-		-v /etc/localtime:/etc/localtime:ro
-		-v /srv/{svcname}/data/nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
+	image = nginx:latest
+	netns = container#0
+	rm = true
+	run_args = -v /srv/{svcname}/data/nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
 		-v /srv/{svcname}/data/nginx/conf/ssl:/etc/nginx/ssl
 
 	[env]

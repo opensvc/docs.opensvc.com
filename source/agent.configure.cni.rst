@@ -120,11 +120,11 @@ Here is a typical ip resource configuration, using the "weave" CNI network confi
 	[ip#0]
 	type = cni
 	network = weave
-	container_rid = container#0
+	netns = container#0
 	expose = 80/tcp
 
-The container pointed by ``container_rid`` can be a docker or lxc container. ``container_rid`` can also be left empty, causing the weave ip address to be assigned to the service cgroup.
+The container pointed by ``netns`` can be a docker or lxc container. ``netns`` can also be left empty, causing the weave ip address to be assigned to the service cgroup.
 
-The ``expose`` keyword is optional. If set, a SRV record is served by the cluster DNS (in this example _http._tcp.<svcname>.<app>.svc.<clustername>). If mapped port is also defined, for example ``80:8001/tcp``, the portmap CNI plugin is used to configure the portmapping and expose the 80/tcp backend server on the 8001 port of the node public ip addresses.
+The ``expose`` keyword is optional. If set, a SRV record is served by the cluster DNS (in this example _http._tcp.<svcname>.<namespace>.svc.<clustername>). If mapped port is also defined, for example ``80:8001/tcp``, the portmap CNI plugin is used to configure the portmapping and expose the 80/tcp backend server on the 8001 port of the node public ip addresses.
 
 

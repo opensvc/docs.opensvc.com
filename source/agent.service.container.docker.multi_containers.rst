@@ -267,27 +267,27 @@ Example service configuration file
 	
 	[container#1]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 00database
 	
 	[container#2]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 01appservers
 	
 	[container#3]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 01appservers
 	
 	[container#4]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 01appservers
 	
 	[container#5]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 01appservers
 	
 	[subset#container.docker:01appservers]
@@ -295,12 +295,12 @@ Example service configuration file
 	
 	[container#6]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 02webservers
 	
 	[container#7]
 	type = docker
-	run_image = b073e328878e
+	image = b073e328878e
 	subset = 02webservers
 	
 	[subset#container.docker:02webservers]

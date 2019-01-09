@@ -241,18 +241,15 @@ Template ``testec2docker.template``:
   dev = /var/lib/opensvc/{svcname}/dev/disk.0.0
   
   [container#0]
-  run_image = ubuntu:14.10
+  image = ubuntu:14.10
   type = docker
   run_args = --net=bridge -p 80:80
-  	-v /etc/localtime:/etc/localtime:ro
   run_command = /bin/bash
   
   [container#1]
-  run_image = nginx:latest
+  image = nginx:latest
   type = docker
-  run_args = -v /etc/localtime:/etc/localtime:ro
-  	--net=container:{svcname}.container.0
-  
+  netns = container#0
   
   [sync#0]
   type = docker
@@ -458,15 +455,14 @@ Template:
    
   [container#0]
   type = docker
-  run_image = ubuntu:latest
-  run_args = --net=none --hostname={svcname}
-  run_command = /bin/bash
+  image = google/pause
+  rm = true
    
   [container#1]
   type = docker
-  run_image = ubuntu:latest
-  run_args = --net=container:{svcname}.container.0
-       --volume /srv/{svcname}/data:/data:rw
+  image = ubuntu:latest
+  netns = container#0
+  run_args = -v /srv/{svcname}/data:/data:rw
   run_command = /bin/bash
 
 Docker Service on Amazon, Btrfs on Md Raid
@@ -514,9 +510,8 @@ Template:
    
   [container#0]
   type = docker
-  run_image = ubuntu:latest
-  run_args = --net=none --hostname={svcname}
-  run_command = /bin/bash
+  image = google/pause
+  rm = true
 
 
 Cluster-Ready HAProxy Service on Amazon
@@ -533,7 +528,7 @@ Single command provisioning:
     --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
-    --resource '{"rtype": "container", "type": "docker", "run_image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "run_command": "haproxy -db -f /data/etc/haproxy.cfg"}'
+    --resource '{"rtype": "container", "type": "docker", "image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "run_command": "haproxy -db -f /data/etc/haproxy.cfg"}'
 
 Example haproxy.cfg file in ``/srv/haproxy1.nsx.lab.net/data/etc/haproxy.cfg``:
 

@@ -138,9 +138,10 @@ A resource can be marked as disabled using the ``disable`` keyword.
 	<pre class='output'>
 	<span style="color: #aa5500">[container#1]</span>
 	<span style="color: #767676">type </span>= docker
-	<span style="color: #767676">run_image </span>= ubuntu:14.04
-	<span style="color: #767676">run_command </span>= /bin/bash
-	<span style="color: #767676">run_args </span>= -i -t
+	<span style="color: #767676">image </span>= ubuntu:14.04
+	<span style="color: #767676">interactive </span>= true
+	<span style="color: #767676">tty </span>= true
+	<span style="color: #767676">entrypoint </span>= /bin/bash
 	<span style="color: #767676">disable </span>= true
 	</pre>
 
