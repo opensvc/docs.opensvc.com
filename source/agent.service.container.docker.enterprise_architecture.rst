@@ -23,7 +23,7 @@ This architecture is composed of 3 stages:
 
 Each stage has:
 
-* a dedicated pool of physical nodes to host `OpenSVC services running Docker <agent.service.container.docker.multiple_docker_instances.html>`_
+* a dedicated pool of physical nodes to host `OpenSVC services running Docker <agent.service.container.docker.hosting.html>`_
 * a dedicated `docker private registry hub <agent.service.container.docker.private_registry.html>`_, storing the accurate docker images
 * a set of OpenSVC services, embedding `one or more docker containers <agent.service.container.docker.multi_containers.html>`_, rendering mass docker container management very powerful
 

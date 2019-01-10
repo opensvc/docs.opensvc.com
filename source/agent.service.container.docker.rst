@@ -137,7 +137,7 @@ Next Topics
    agent.templates/template.service.container.docker
    agent.service.container.docker.multi_containers
    agent.service.container.docker.relocation
-   agent.service.container.docker.multiple_docker_instances
+   agent.service.container.docker.hosting
    agent.service.container.docker.disaster_recovery_plan
    agent.service.container.docker.chargeback
    agent.service.container.docker.private_registry
