@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `1.9-2803 <https://github.com/opensvc/opensvc/commit/7a27b33d535a4d95106c195b73bb8f44537200f8>`_ Allow jsonpath expression in the service selector to work on cluster-wide data
+| `1.9-2802 <https://github.com/opensvc/opensvc/commit/1fa01f1a8402afc28ec5b81bcf309cda4c799ce6>`_ Fix the 'P' flag explanation in svcmgr print status --help
+| `1.9-2801 <https://github.com/opensvc/opensvc/commit/f861baf589751207943326617767ddf77a0c03fc>`_ Fix the pdns remote backend getDomainMetadata default return value
 | `1.9-2800 <https://github.com/opensvc/opensvc/commit/6025c131d5cecb5664642fbf24d2f1490fe6b08a>`_ Expose svcname, svcpath and namespace in the compliance modules env
 | `1.9-2799 <https://github.com/opensvc/opensvc/commit/b9fef4d61fcd6d062e4df2fefc03e24586d32829>`_ App resource enhancements
 | `1.9-2798 <https://github.com/opensvc/opensvc/commit/8f13cc85c49af1bf43aa759fafc1b879c3a00e00>`_ Fix set "provisioned" global expect switching to "started" too early
