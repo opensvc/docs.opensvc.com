@@ -62,11 +62,7 @@ score
 
 Rank by descending node score. The highest scoring node is the leader. The score is a composite metric obtained by a weighted average of 100/load, %avail memory and %avail swap. The weights favor 1/ avail swap 2/ avail mem 3/ lower load average.
 
-.. note:: 
-
-A frozen node is excluded from the node candidates list.
-If the placement leader is frozen, then a new leader is elected, according to the placement policy.
-If all cluster nodes are frozen, service placement warning messages are disabled.
+.. note:: A frozen node is excluded from the node candidates list.  If the placement leader is frozen, then a new leader is elected, according to the placement policy.  If all cluster nodes are frozen, service placement warning messages are disabled.
 
 .. _agent.service.orchestration.constraints:
 
