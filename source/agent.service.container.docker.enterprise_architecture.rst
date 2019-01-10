@@ -1,10 +1,10 @@
 Docker Enterprise Architecture
 ==============================
 
-If you are engaged in Docker at an enterprise scale level, you are certainly facing to architecture considerations like:
+If you are engaged in Docker at an enterprise scale level, you are certainly facing challenges like:
 
 * how to build a robust and secure docker infrastructure ?
-* how to deal with docker container lifecycle ?
+* how to deal with docker containers lifecycle ?
 * how to implement segregated environments (production, development, integration, user acceptance tests, ...) ?
 
 OpenSVC propose a ready to use model to integrate docker in your company, as described in the picture below
@@ -15,66 +15,67 @@ OpenSVC propose a ready to use model to integrate docker in your company, as des
 Description
 -----------
 
-This architecture is made of 3 main docker vertical lines :
+This architecture is composed of 3 stages:
 
 * Production on the left
 * User Acceptance Tests in the middle
 * Development on the right
 
-Each line has :
+Each stage has:
 
 * a dedicated pool of physical nodes to host `OpenSVC services running Docker <agent.service.container.docker.multiple_docker_instances.html>`_
 * a dedicated `docker private registry hub <agent.service.container.docker.private_registry.html>`_, storing the accurate docker images
 * a set of OpenSVC services, embedding `one or more docker containers <agent.service.container.docker.multi_containers.html>`_, rendering mass docker container management very powerful
 
-Stage 1
-^^^^^^^
+Step 1
+^^^^^^
 
-* First user in the docker infrastructure is the technical people involved in building new environments
-* They have their own docker environment on their laptop, pull images from public docker hub registry, modify them to achieve their aims, and push them on the Dev private docker hub, which is an OpenSVC service named ``dckhub.dev``
+* First users in the docker infrastructure is the technical people involved in building new environments
+* They have their own docker setup on their laptop, pull images from public docker hub registry, modify them, and push them on the Dev private docker hub, which is an OpenSVC service named ``dev/dckhub``
 
-Stage 2
-^^^^^^^
+Step 2
+^^^^^^
 
 * Development teams are responsible of deploying docker containers, exactly like they are executed on production infrastructure.
-* An exact copy of production OpenSVC service is used, except its name which explicitly points to development environment (``app1.dev``, ``app2.dev``, ...). Of course, development services are not obliged to execute the same Docker images & containers as in production (we want to be like in production, but still be able to deal with applications and containers version upgrade)
+* They work with clones of the production OpenSVC services. The service names or namespaces differ (``dev/app1`` vs ``prd/app1``).
 * They can push/pull from/to the ``dckhub.dev`` private hub, and adjust their development/integration to meet application expectations.
 
-Stage 3
-^^^^^^^
+Step 3
+^^^^^^
 
-* An application responsible called ``Release Manager`` decide when an application is ready, and eligible to user acceptance tests.
-* It pulls the accurate docker images from the ``dckhub.dev`` private Dev hub, and push it on the ``dckhub.tst`` test hub.
+* Application responsibles (called ``Release Manager``) decide when an application is ready for user acceptance tests.
+* They pull the docker images from the ``dev/dckhub`` private Dev hub, and push them to the ``tst/dckhub`` test hub.
 
-Stage 4
-^^^^^^^
+Step 4
+^^^^^^
 
-* Teams charged of running test plans are told to start tests on new application just published by ``Release Manager``
-* They only pull images in OpenSVC services ``app1.tst``, ``app2.tst``, start them, and just have to execute the test plans.
-* Either tests are OK, and application can go to production, or tests are not, and Delopment teams have to rework so as to achieve the expected state.
+* Teams in charge of running test plans start testing on the new application just published by the ``Release Manager``
+* They change the image tags in OpenSVC services ``tst/app*`` and restart the services (or re-deploy), then execute the test plans.
+* If tests pass, images can go to production. If not, back to step 1.
 
-Stage 5
-^^^^^^^
+Step 5
+^^^^^^
 
-* An application responsible called ``Production Release Manager`` decide when an application can go to production.
-* It pulls the accurate docker images from the ``dckhub.tst`` private test hub, and push it on the ``dckhub.prd`` production hub.
+* Application responsibles (called ``Production Release Manager``) decide when an application can go to production.
+* They pull the docker images from the ``tst/dckhub`` private test hub, and push them to the ``prd/dckhub`` production hub.
 
-Stage 6
-^^^^^^^
+Step 6
+^^^^^^
 
-* Operation/Production teams are responsible of running applications in the production context
-* They align OpenSVC services (``app1.prd``, ``app2.prd``) configuration to point to the accurate docker images, plan downtime, update containers and restart service.
+* Operation/Production teams are responsible of running applications in production.
+* They configure OpenSVC services (``prs/app1``, ``prd/app2``) to use the new docker image tags, plan downtime, and restart services.
 
-Stage 7
-^^^^^^^
+OpenSVC collector useful sysbsystems
+------------------------------------
 
-* OpenSVC collector (optional in the architecture) can complete the picture by providing :
+The OpenSVC collector (optional in the architecture) can provide:
 
-  * Service configuration compliance
+* Service configuration compliance
 
-    * basically, compliance rules are declared in the collector, and pushed to every OpenSVC agent
-    * on a recurrent basis (once a week, once a day, ...), OpenSVC agent checks the rules and report if they are respected or not
-    * as an example, you could describe the contextual ruleset below :
+    * compliance rules are declared in the collector, and served to every OpenSVC agent
+    * on schedule (once a week, once a day, ...), OpenSVC agents check the rules and report
+
+ For example, you could setup this contextual ruleset:
 
     ::
 
@@ -96,36 +97,25 @@ Stage 7
             `- container#2.image_id = 6666655555 
 
 
-  This way, you can very easily ensure that no change happen on your infrastructure: your docker containers stacked together, and managed through OpenSVC services will remain predictive, in 2 weeks, in 2 months, as soon as compliance jobs are not reporting errors, you are sure of the quality of your production delivery.
+  With this ruleset, you can very easily ensure that no change happen on your infrastructure: your docker containers stacked together, and managed through OpenSVC services will remain predictive, in 2 weeks, in 2 months, as long as compliance jobs are not reporting errors, you are sure the services are still setup the way they were deployed.
 
-  * Up to date OpenSVC services and docker images inventory per application, making infrastructure billing on a per application/project basis very easy. It's also very simple if you have to build an exhaustive list of Docker images used in Production.
+* Up-to-date inventory of in-use docker images, indexed by service, environment, node, application. This capabilty enables infrastructure billing and security risk assessment very easy.
 
-  * Web based OpenSVC services management
+* Web based OpenSVC services management
 
-    * can be segregated to allow dev people to access dev services only, etc
-    * on compliance defaults, remediation campains can be scheduled and triggered from the web interface
+  * can be segregated to allow dev people to access dev services only, etc
+  * in compliance subsystem, remediation campains can be scheduled and triggered from the web interface
 
-.. note:: you can run compliance rules against a lot of parameters, at the service or node level, this example is just focusing on Docker context
-
-Considerations
+Related topics
 --------------
-
-Storage
-^^^^^^^
-
-* You may complain about registry hubs storage space waste because their datas are duplicated once per line
-
-  * Keep in mind that this data is very static and does not need high performance storage devices (SATA/NL-SAS technology is a good affordable candidate)
-
-  * You can also decrease physical storage occupancy by hosting your docker datas on a storage array equipped with data deduplication features
 
 High Availability
 ^^^^^^^^^^^^^^^^^
 
-If you consider that some parts of the architecture have to be redundant and highly available, you should have a look at the `Docker high availability tutorial <agent.service.container.docker.high_availability.html>`_
+If you need highly availability for the docker registries, please refer to `Docker high availability tutorial <agent.service.container.docker.high_availability.html>`_
 
 Disaster Recovery
 ^^^^^^^^^^^^^^^^^
 
-If you are concerned about disaster recovery plan, you should have a look at the `Docker Disaster Recovery Plan Tutorial <agent.service.container.docker.disaster_recovery_plan.html>`_
-It can be easily enabled with simple replication tools like rsync, or even with proprietary solutions like block device replication (EMC SRDF, NetApp SnapMirror, HP 3Par Remote Replication, ...)
+If you need a disaster recovery plan for the docker registries, please refer to `Docker Disaster Recovery Plan Tutorial <agent.service.container.docker.disaster_recovery_plan.html>`_
+
