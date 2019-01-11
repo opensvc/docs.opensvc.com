@@ -3,12 +3,18 @@
 Creation
 ********
 
-Choose a Service Name
-=====================
+Service Naming
+==============
 
-A service name must be unique in its application code namespace.
+A service is created in a cluster namespace. A fully qualified service name is formatted as ``<namespace>/<svcname>``.
 
-A best practice is to allocate unique service names in the corporate namespace, even if it is not mandatory.
+Names must conform to RFC952:
+
+* only alphanum characters or dash
+* start with an alpha
+* end with an alphanum
+
+A service name must be unique in its namespace.
 
 Service Creation Methods
 ========================
@@ -24,21 +30,47 @@ Create a service with minimal configuration. No resources are described.
 
 	sudo svcmgr -s <svcname> create
 
-From Scratch, Interactive
--------------------------
+Resources and default keywords can be set right from the service create command, using ``--kw <keyword>=<value>`` options
 
 ::
 
-	sudo svcmgr -s <svcname> create -i
+	sudo svcmgr -s <svcname> create [--interactive] [--provision]
+		--kw container#0.type=docker \
+		--kw container#0.image=google/pause \
+		--kw orchestrate=ha \
+		--kw nodes={clusternodes}
+
+From a JSON formatted config
+----------------------------
+
+This method is useful to clone services
+
+::
+
+	sudo svcmgr -s ns1/svc1 print config --format json | \
+		sudo svcmgr -s ns2/svc1 create --config=- [--interactive] [--provision]
 
 From an Existing Local Configuration File
 -----------------------------------------
 
 Experienced users may find it easier to start from a copy of the conf file of an existing similar service. The following information describes the steps needed to create a service manually.
 
+The configuration file can be remote, referenced by URI.
+
 ::
 
-	sudo svcmgr -s <svcname> create --config <path to config file>
+	sudo svcmgr -s <svcname> create --config <path to config file> [--interactive] [--provision]
+
+From a Template
+---------------
+
+Templates can be served by the collector.
+
+::
+
+	sudo svcmgr -s <svcname> create --template <id|name> [--interactive] [--provision]
+
+.. seealso:: :ref:`agent-service-provisioning`
 
 From a Collector's Service
 --------------------------
@@ -46,17 +78,6 @@ From a Collector's Service
 ::
 
 	sudo svcmgr -s <svcname> pull
-
-From a Template
----------------
-
-Templates can be served by the collector, by a webserver or ftpserver, or can be accessed on the local filesystem.
-
-::
-
-	sudo svcmgr -s <svcname> create --template <id|uri> [--interactive] [--provision]
-
-.. seealso:: :ref:`agent-service-provisioning`
 
 Service Configuration Files
 ===========================
@@ -74,6 +95,12 @@ Optionally, administrators can create these additional files:
 
 	<OSVCETC>/<svcname>.d -> <svcname>.dir/
 	<OSVCETC>/<svcname>.dir/
+
+Services in a namespace have their configuration files stored deeper in ``<OSVCETC>``
+
+::
+
+	<OSVCETC>/namespaces/<namespace>/<svcname>.conf
 
 Configuration Files Role
 ========================
