@@ -29,7 +29,7 @@ We'll format the namespace name as <app>-<env>, and all services name will be sv
 
 ::
 
-	$ for appli in app1 app2 ; do for env in dev int prd ; do svcmgr create -s $env-$appli/svc1 ; done ; done
+	$ for appli in app1 app2 ; do for env in dev int prd ; do svcmgr create -s $appli-$env/svc1 ; done ; done
 
 	$ svcmon -s 'app[12]-*/*' --sections services
 	Services                      aubergine nuc-cva
