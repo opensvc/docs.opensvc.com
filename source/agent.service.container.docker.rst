@@ -139,7 +139,6 @@ Next Topics
    agent.service.container.docker.relocation
    agent.service.container.docker.hosting
    agent.service.container.docker.disaster_recovery_plan
-   agent.service.container.docker.chargeback
    agent.service.container.docker.private_registry
    agent.service.container.docker.enterprise_architecture
    agent.service.container.docker.amazon
