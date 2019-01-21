@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+| `1.9-2808 <https://github.com/opensvc/opensvc/commit/c05852faceb56e51715aba5b967ffa5c4655c91f>`_ Fix orchestration deadlocks on nodemgr shutdown and svcmgr -s '' delete
+| `1.9-2807 <https://github.com/opensvc/opensvc/commit/e2c7b624cfd9b5075587eddeabf0c5406abfbae8>`_ Fix slaver root/ slaves status reported as undef in print status
+| `1.9-2806 <https://github.com/opensvc/opensvc/commit/6f93c2c8fdb37cad78d34b4bf0d20b01f2f5e898>`_ Fix the service selector disregarding namespaces for foreign services
+| `1.9-2805 <https://github.com/opensvc/opensvc/commit/aa6f55a6579288b25e0647bd549ab3de81ea6f75>`_ Fix the freezer when fed a root/svcname
+| `1.9-2804 <https://github.com/opensvc/opensvc/commit/4526ba77de64da6e1ade6a4afb4128e4fe2c01c6>`_ Adapt checkers to namespaces
 | `1.9-2803 <https://github.com/opensvc/opensvc/commit/7a27b33d535a4d95106c195b73bb8f44537200f8>`_ Allow jsonpath expression in the service selector to work on cluster-wide data
 | `1.9-2802 <https://github.com/opensvc/opensvc/commit/1fa01f1a8402afc28ec5b81bcf309cda4c799ce6>`_ Fix the 'P' flag explanation in svcmgr print status --help
 | `1.9-2801 <https://github.com/opensvc/opensvc/commit/f861baf589751207943326617767ddf77a0c03fc>`_ Fix the pdns remote backend getDomainMetadata default return value
