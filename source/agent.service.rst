@@ -8,6 +8,7 @@ Services
    agent.service.namespaces
    agent.service.references
    agent.service.provisioning
+   agent.node.selector
    agent.service.management
    agent.service.encapsulation
    agent.service.orchestration
