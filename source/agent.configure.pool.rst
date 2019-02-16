@@ -1,57 +1,51 @@
 Storage Pools Configuration
 ***************************
 
-Service templates can use "volume" resources to abstract the disks and filesystems layout. In this case the translation from volumes to disks and filesystems is delegated to the storage pool drivers.
+Service templates can use ``volume`` resources to:
 
-Pools can be defined in the node configuration. Each pool is identified by its name (the section suffix). For example, a ``pool#tank`` section defines a pool named ``tank``.
+* Abstract the disks and filesystems layout, which are hosting specificities, from the application service deployment. A development cluster can for example define pools on a ceph cluster, while a production cluster can define pools on fc arrays.
 
-The ``default`` pool always exist, even if not defined in the node configuration. If not explicitely changed, the ``default`` pool driver is directory.
+* Enable application service redeployment while retaining the data.
+
+In this case the translation from volumes to disks and filesystems is delegated to the storage pool drivers.
+
+Pools are defined in the node configuration. Each pool is identified by its name (the section suffix). For example, a ``pool#tank`` section defines a pool named ``tank``.
+
+The ``default`` pool always exist, even if not defined in the node configuration. If not explicitely changed, the ``default`` pool driver is ``directory``.
 
 Volumes
 =======
 
-A volume transient resource accept the following keywords:
+* A volume resource drives a volume service, automatically created upon consumer service provisioning.
 
-size
-----
+* The volume is hosted in the same namespace than its users.
 
-A size expression. The size to allocate from the pool.
+* If not explicitely set, the volume service name is ``<consumer svcname>-vol-<volume resource index>``. For example, a ``svc1`` service with a ``volume#1`` resource will create a ``svc1-vol-1`` volume service.
 
-This keyword is honored by the loop and vg pool drivers.
+* A volume service can be referenced by multiple services in the same namespace.
 
-pool
-----
+* Each consumer service adds itself as a child of its volume services upon provision, so stopping a volume service is delayed until all its consumers are stopped.
 
-The name of the pool to allocate from.
+* A consumer service unprovision removes itself from its volume services children.
 
-format
-------
+* A consumer service instance stop also stops its node-affine volume services instances if the consumer service is the only child of the volume service. 
 
-A boolean. Whether a filesystem should be created on the allocated device.
+* A consumer service instance start always try to start its node-affine volume services instances.
 
-This keyword is honored by the loop and vg pool drivers.
+Volume Resources Keywords
+-------------------------
 
-mnt
----
+.. toctree::
+   :maxdepth: 2
 
-The path where to expose the filesystem.
+   agent.templates/template.service.volume
 
-If not set, the path defaults to ``/srv/{id}/{rindex}``.
+Pool Selector
+=============
 
-fs_type
--------
+A volume resource requires a size and capabilities from the pool, via its ``size``, ``access``, ``shared`` and ``format`` keywords.
 
-If a filesystem is added by the translator, this keyword defines the fs type.
-
-mkfs_opt
---------
-
-If a filesystem is added by the translator, this keyword defines the mkfs options added to the format command.
-
-create_opt
-----------
-
-If a logical volume or lv-backed fs is added by the translator, this keyword defines the lvcreate options.
+If ``pool`` is not set explicitely to a pool name, the pool selector will return the available pool matching those criteria with the most free space.
 
 Pool Drivers
 ============
@@ -59,44 +53,225 @@ Pool Drivers
 directory
 ---------
 
-A volume referencing a directory pool is translated to:
+Capabilities
+++++++++++++
 
-* a fs.directory resource, with path set to ``<pool path>/{id}_<volume index>``.
-* a fs.bind resource, binding the directory to the expected mounntpoint.
+rox, rwx, roo, rwo
+
+Layout
+++++++
+
+A volume service from this type of pool contains:
+
+* a fs.directory resource, with ``path`` set to ``<pool head>/<volume fqdn>``.
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.directory
+
+freenas
+-------
+
+Capabilities
+++++++++++++
+
+roo, rwo, shared, blk, iscsi
+
+Layout
+++++++
+
+A volume service from this type of pool contains:
+
+* a disk.disk resource named, with ``name`` set to ``<volume fqdn>``
+
+If the consumer has ``format=true`` (default), the volume service also contains:
+
+* a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.freenas
 
 loop
 ----
 
-A volume with ``format=true`` (default) referencing a loop pool is translated to:
+Capabilities
+++++++++++++
 
-* a disk.loop resource.
-* a fs.<pool fs_type> resource.
+rox, rwx, roo, rwo, blk
 
-A volume with ``format=false`` referencing a loop pool is translated to:
+Layout
+++++++
 
-* a disk.loop resource.
+A volume service from this type of pool contains:
+
+* a disk.loop resource, with ``file`` set to ``<pool head>/<volume fqdn>.img``
+
+If the consumer has ``format=true`` (default), the volume service also contains:
+
+* a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.loop
+
+symmetrix
+---------
+
+Capabilities
+++++++++++++
+
+roo, rwo, shared, blk, fc
+
+Layout
+++++++
+
+A volume service from this type of pool contains:
+
+* a disk.disk resource named, with ``name`` set to ``<volume fqdn>``
+
+If the consumer has ``format=true`` (default), the volume service also contains:
+
+* a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.symmetrix
 
 vg
 --
 
-A volume with ``format=true`` (default) referencing a vg pool is translated to:
+Capabilities
+++++++++++++
 
-* a fs.<pool fs_type> resource, with lv provisioning keywords set
+rox, rwx, roo, rwo, blk, snap
 
-A volume with ``format=false`` referencing a vg pool is translated to:
+Layout
+++++++
 
-* a disk.lv resource
+A volume service from this type of pool contains:
 
-Specific parameters: create_opt
+* a disk.lv resource, with ``name`` set to ``<volume fqdn>``
 
-The logical volume name is set to ``{id}_<volume index>``.
+If the consumer has ``format=true`` (default), the volume service also contains:
+
+* a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.vg
+
+share
+-----
+
+Capabilities
+++++++++++++
+
+rox, rwx, roo, rwo, shared
+
+Layout
+++++++
+
+A volume service from this type of pool contains:
+
+* a fs.directory resource, with ``path`` set to ``<pool head>/<volume fqdn>``.
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.share
 
 zfs
 ---
 
-A volume referencing a zfs pool is translated to a fs.zfs resource.
+Capabilities
+++++++++++++
 
-The dataset name is set to ``{id}_<volume index>``.
+rox, rwx, roo, rwo, blk, snap
+
+Layout
+++++++
+
+A volume service from this type of pool contains:
+
+* a fs.zfs resource, with ``name`` set to ``<pool>/<volume fqdn>`` and ``mnt`` set to ``/srv/<volume fqdn>``.
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.zfs
+
+Virtual Pool Driver
+===================
+
+A virtual pool allow administrators to create complex layouts based on volumes from other pools.
+
+A typical use-case in a virtual pool allocating volumes mirrored over two other volumes allocated from arrays on two different sites.
+
+A virtual pool volume is created from a template volume service the administrator can design at wish to meet its specific needs.
+
+Capabilities
+++++++++++++
+
+Capabilities are user defined.
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.virtual
+
+Pool Commands
+=============
+
+Pool list
+---------
+
+::
+
+	# nodemgr pool ls
+	default
+	freenas
+	mpool
+
+Pool Status
+-----------
+
+::
+
+	# nodemgr pool status
+	name        type       caps                      head                             vols  size   used   free   
+	|- default  directory  rox,rwx,roo,rwo           /opt/opensvc/var/pool/directory  0     29.0g  3.57g  24.0g  
+	|- freenas  freenas    roo,rwo,shared,blk,iscsi  array://freenas/osvcdata         6     195g   9.37g  185g   
+	`- mpool    virtual    roo,rox,rwo,rwx,shared    templates/mpool                  1     -      -      -      
 
 Examples
 ========
@@ -104,7 +279,7 @@ Examples
 loop pool
 ---------
 
-With a pool definition
+Pool definition
 
 ::
 
@@ -114,90 +289,26 @@ With a pool definition
 	mkfs_opt = -n ftype=1
 	fs_type = xfs
 
-The volume transient resource
+The volume resource in the application service
 
 ::
 
 	[volume#1]
-	size = 1g
+	size = 100m
 	pool = loop
-	mnt = /srv/{svcname}
 
-is translated to:
+Configuration of the volume service
 
 ::
 
 	[disk#1]
+	size = 104857600
 	type = loop
-	file = /bigfs/{id}/1.img
-	size = 1g
+	file = /bigfs/<fqdn>.img
 
 	[fs#1]
 	type = xfs
-	dev = /bigfs/{id}/1.img
-	mnt = /srv/{svcname}
-
-vg
---
-
-With a pool definition
-
-::
-
-	[pool#sysvg]
-	type = vg
-	name = ubuntu-vg
-	create_opt = -m 2
-
-The same volume transient resource
-
-::
-
-	[volume#1]
-	size = 1g
-	pool = sysvg
-	mnt = /srv/{svcname}
-
-is translated to:
-
-::
-
-	[fs#1]
-	type = xfs
-	dev = /dev/ubuntu-vg/{id}_1
-	mnt = /srv/{svcname}
-	create_opt = -m 2
-	vg = ubuntu-vg
-	size = 1g
-
-zfs
----
-
-With a pool definition
-
-::
-
-	[pool#tank]
-	type = zpool
-	name = testmd
-	mkfs_opt = -o mountpoint=legacy -o dedup=on -o compression=on
-
-The same volume transient resource
-
-::
-
-	[volume#1]
-	size = 1g
-	pool = tank
-	mnt = /srv/{svcname}
-
-is translated to:
-
-::
-
-	[fs#1]
-	type = zfs
-	dev = testmd/{id}_1
-	mkfs_opt = -o mountpoint=legacy -o dedup=on -o compression=on
-	mnt = /srv/{svcname}
+	dev = {disk#1.exposed_devs[0]}
+	mnt = /srv/<fqdn>
+	mkfs_opt = -n ftype=1
 
