@@ -147,9 +147,8 @@ Provision a registry service
 
 ::
 
-	sudo svcmgr -s <svcname> create \
+	sudo svcmgr -s <svcname> deploy \
 		--template docker.registry \
-		--provision \
 		--env bridge=<front-facing bridge device> \
 		--env ipaddr=<service listen ip address> \
 		--env netmask=<netmask in cidr or octal notation> \
@@ -165,7 +164,7 @@ Unprovision a registry service
 
 ::
 
-	sudo svcmgr -s <svcname> delete --unprovision
+	sudo svcmgr -s <svcname> purge
 
 Provisioning details
 --------------------

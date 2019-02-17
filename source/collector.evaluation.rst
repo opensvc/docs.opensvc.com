@@ -74,22 +74,20 @@ Installation
 
 Interactive method::
 
-	# sudo svcmgr -s collector_eval create \
+	# sudo svcmgr -s collector_eval deploy \
 		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
-		--provision \
 		--interactive
 
 Or non-interactive method::
 
-	# sudo svcmgr -s collector_eval create \
+	# sudo svcmgr -s collector_eval deploy \
 		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
 		--env accept_license=yes \
 		--env ipaddr=<ipaddr> \
 		--env netmask=<netmask> \
 		--env gateway=<gateway> \
 		--env bridge=<bridge interface> \
-		--env datafile_dir=/srv \
-		--provision
+		--env datafile_dir=/srv
 
 The database still bootstraps for a few minutes after this command exits. An error page can be displayed in the browser while this bootstrap runs.
 

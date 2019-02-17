@@ -60,15 +60,13 @@ Deploy the DNS service
 
 On the default port (5300)::
 
-	svcmgr create -s odns \
-		--config http://www.opensvc.com/init/static/templates/odns.conf \
-		--provision
+	svcmgr deploy -s odns \
+		--config http://www.opensvc.com/init/static/templates/odns.conf
 
 Or on a custom port (1216)::
 
-	svcmgr create -s odns \
+	svcmgr deploy -s odns \
 		--config http://www.opensvc.com/init/static/templates/odns.conf \
-		--provision \
 		--env port=1216
 
 Unfreeze the service::

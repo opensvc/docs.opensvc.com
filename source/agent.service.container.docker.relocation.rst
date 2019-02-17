@@ -34,7 +34,7 @@ Create the service
 
 ::
 
-	$ cat - << EOF | svcmgr -s db1 create --config=- --provision
+	$ cat - << EOF | svcmgr -s db1 deploy --config=-
 	{
 	    "DEFAULT": {
 		"nodes": "{clusternodes}"

@@ -45,18 +45,16 @@ Create the service using one the following template. Change the ``--env`` option
 
 Public ip on bridge::
 
-	$ svcmgr create -s envoy \
+	$ svcmgr deploy -s envoy \
 		--config http://www.opensvc.com/init/static/templates/envoy-br-hostns.conf \
-		--provision \
 		--env public_interface=br-prd \
 		--env public_ipaddr=192.168.100.32 \
 		--env public_netmask=24
 
 Ipvlan public ip::
 
-	$ svcmgr create -s envoy \
+	$ svcmgr deploy -s envoy \
 		--config http://www.opensvc.com/init/static/templates/envoy-ipvlan.conf \
-		--provision \
 		--env public_interface=eth0 \
 		--env public_ipaddr=192.168.100.32 \
 		--env public_netmask=24
@@ -120,9 +118,8 @@ Create a load-balanced service
 
 Test with this simple scaler service::
 
-	$ svcmgr create -s svcweb \
-		--config http://www.opensvc.com/init/static/templates/svcweb.conf \
-		--provision
+	$ svcmgr deploy -s svcweb \
+		--config http://www.opensvc.com/init/static/templates/svcweb.conf
 
 	$ svcmgr -s svcweb unfreeze
 
