@@ -40,6 +40,31 @@ Volume Resources Keywords
 
    agent.templates/template.service.volume
 
+Access Modes
+------------
+
+* ``roo`` Read Only Once
+
+* ``rwo`` Read Write Once (default)
+
+* ``rox`` Read Only from multiple instances
+
+* ``rwx`` Read Write from multiple instances
+
+Access Mode to Volume Topology
+------------------------------
+
+* ``..x`` access modes imply the volume is configured in a flex topology (active on all service nodes).
+
+* ``..o`` access modes imply the volume is configured in a failover topology (active on only one service node).
+
+Volume Resource Parameter Requirements
+--------------------------------------
+
+* ``..x + shared=true format=false`` requires a shared block storage (SAN array, a rados blockdev gateway, ...)
+
+* ``..x + shared=true format=true`` requires either a shared block storage (SAN array, a rados blockdev gateway, ...) plus a cluster filesystem (gfs2, ocfs, ...), or a distributed cluster filesystem (CephFS, GlusterFS, NAS, ...)
+
 Pool Selector
 =============
 
