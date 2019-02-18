@@ -10,28 +10,22 @@ Prerequisites
 System
 ++++++
 
-The provisioning template targets a Linux deployment on a server meeting the following requirements:
+The provisioning template targets a Linux deployment on a server/cluster meeting the following requirements:
 
-* Linux kernel >= 3.8.
-* 12 GB available in a single mounted writeable filesystem.
-* sudo rules to execute opensvc agent commands as root.
-* A configured bridge, either backend or frontend depending on the desired evaluation collector visibility.
-* A free ip address useable on the bridge, either routable or non-routable depending on the desired evaluation collector visibility.
-* git
-* btrfs tools and kernel module
-* ext4 tools and kernel module
-* docker >= 1.8, preferably installed from the upstream packaging
+* Linux kernel >= 3.8
+* 12 GB available in a storage pool
+* sudo rules to execute opensvc agent commands as root
+* docker >= 1.8
 
-OpenSVC agent
-+++++++++++++
+Cluster
++++++++
 
-The OpenSVC must be installed, as the provisioning method exposed here creates a OpenSVC service.
-This agent does not need registering on the collector.opensvc.com collector.
+The OpenSVC agent must be installed, as the provisioning method exposed here creates a OpenSVC service.
+This agent does not need to be registered on the ``collector.opensvc.com`` collector.
 
 The agent installation instructions are accessible at https://docs.opensvc.com/agent.install.html.
-Agent packages are available at https://repo.opensvc.com.
 
-Note docker 1.13 support requires an OpenSVC agent version >= 1.8-829.
+Exposing the collector service needs either a dedicated ip address, or a cluster gateway.
 
 Proxies and firewalls
 +++++++++++++++++++++
@@ -72,22 +66,11 @@ Installation
 ************
 
 
-Interactive method::
+::
 
 	# sudo svcmgr -s collector_eval deploy \
-		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
-		--interactive
+		--config https://www.opensvc.com/init/static/templates/collector.template
 
-Or non-interactive method::
-
-	# sudo svcmgr -s collector_eval deploy \
-		--template https://www.opensvc.com/init/static/eval/opensvc.collector.template \
-		--env accept_license=yes \
-		--env ipaddr=<ipaddr> \
-		--env netmask=<netmask> \
-		--env gateway=<gateway> \
-		--env bridge=<bridge interface> \
-		--env datafile_dir=/srv
 
 The database still bootstraps for a few minutes after this command exits. An error page can be displayed in the browser while this bootstrap runs.
 
@@ -117,6 +100,5 @@ Clean up the service and all data using the command
 
 ::
 
-	# sudo svcmgr -s collector_eval delete \
-		--unprovision
+	# sudo svcmgr -s collector_eval,collector_eval-data purge
 
