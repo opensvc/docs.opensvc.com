@@ -308,6 +308,14 @@ Pool configuration
 
 ::
 
+	nodemgr set \
+		--kw pool#loop.type=loop \
+		--kw pool#loop.path=/bigfs \
+		--kw "pool#loop.mkfs_opt=-n ftype=1" \
+		--kw pool#loop.fs_type=xfs
+
+::
+
 	[pool#loop]
 	type = loop
 	path = /bigfs
@@ -344,6 +352,13 @@ Pool configuration
 
 ::
 
+	nodemgr set \
+		--kw pool#tank.type=zpool \
+		--kw pool#tank.name=tank \
+		--kw "pool#tank.mkfs_opt=-o mountpoint=legacy -o dedup=on -o compression=on"
+
+::
+
 	[pool#tank]
 	type = zpool
 	name = tank
@@ -371,6 +386,21 @@ virtual pool, mirrored zpool over 2 SAN disks
 ---------------------------------------------
 
 Pools configuration
+
+::
+
+	nodemgr set \
+		--kw pool#freenas1.type=array \
+		--kw pool#freenas1.array=freenas1 \
+		--kw pool#freenas1.sparse=true \
+		--kw pool#freenas1.diskgroup=cluster1 \
+		--kw pool#freenas2.type=array \
+		--kw pool#freenas2.array=freenas2 \
+		--kw pool#freenas2.sparse=true \
+		--kw pool#freenas2.diskgroup=cluster1 \
+		--kw pool#mpool.type=virtual \
+		--kw pool#mpool.template=templates/mpool \
+		--kw "pool#mpool.capabilities=rox rwx roo rwo shared"
 
 ::
 
@@ -442,6 +472,21 @@ virtual pool, mirrored lv over 2 SAN disks
 ------------------------------------------
 
 Pools configuration
+
+::
+
+	nodemgr set \
+		--kw pool#freenas1.type=array \
+		--kw pool#freenas1.array=freenas1 \
+		--kw pool#freenas1.sparse=true \
+		--kw pool#freenas1.diskgroup=cluster1 \
+		--kw pool#freenas2.type=array \
+		--kw pool#freenas2.array=freenas2 \
+		--kw pool#freenas2.sparse=true \
+		--kw pool#freenas2.diskgroup=cluster1 \
+		--kw pool#mvg.type=virtual \
+		--kw pool#mvg.template=templates/mvg \
+		--kw "pool#mvg.capabilities=rox rwx roo rwo shared"
 
 ::
 
@@ -522,6 +567,21 @@ virtual pool, mirrored md over 2 SAN disks
 ------------------------------------------
 
 Pools configuration
+
+::
+
+	nodemgr set \
+		--kw pool#freenas1.type=array \
+		--kw pool#freenas1.array=freenas1 \
+		--kw pool#freenas1.sparse=true \
+		--kw pool#freenas1.diskgroup=cluster1 \
+		--kw pool#freenas2.type=array \
+		--kw pool#freenas2.array=freenas2 \
+		--kw pool#freenas2.sparse=true \
+		--kw pool#freenas2.diskgroup=cluster1 \
+		--kw pool#md.type=virtual \
+		--kw pool#md.template=templates/md \
+		--kw "pool#md.capabilities=rox rwx roo rwo shared"
 
 ::
 
