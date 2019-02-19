@@ -468,7 +468,6 @@ The volume service template referenced by the vpool
 
 	[DEFAULT]
 	kind = vol
-	id = f42d9fed-7fb3-40db-aa0b-efff3090ceb3
 	nodes = *
 	disable = true
 
@@ -551,7 +550,6 @@ The volume service template referenced by the vpool
 	kind = vol
 	disable = true
 	nodes = *
-	id = 45680bca-ec5f-4820-922a-26d983a0b1ec
 
 	[disk#1]
 	shared = true
