@@ -253,7 +253,7 @@ Keywords
    agent.templates/template.node.pool.zfs
 
 Virtual Pool Driver
-===================
+-------------------
 
 A virtual pool allow administrators to create complex layouts based on volumes from other pools.
 
@@ -304,7 +304,7 @@ Examples
 loop pool
 ---------
 
-Pool definition
+Pool configuration
 
 ::
 
@@ -336,4 +336,270 @@ Configuration of the volume service
 	dev = {disk#1.exposed_devs[0]}
 	mnt = /srv/<fqdn>
 	mkfs_opt = -n ftype=1
+
+zfs pool
+--------
+
+Pool configuration
+
+::
+
+	[pool#tank]
+	type = zpool
+	name = tank
+	mkfs_opt = -o mountpoint=legacy -o dedup=on -o compression=on
+
+The volume resource in the application service
+
+::
+
+	[volume#1]
+	size = 100m
+	pool = tank
+
+Configuration of the volume service
+
+::
+
+        [fs#1]
+        type = zfs
+        dev = tank/<fqdn>
+        mnt = /srv/<fqdn>
+        mkfs_opt = -o mountpoint=legacy -o dedup=on -o compression=on
+
+virtual pool, mirrored zpool over 2 SAN disks
+---------------------------------------------
+
+Pools configuration
+
+::
+
+	[pool#freenas1]
+	type = array
+	array = freenas1
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#freenas2]
+	type = array
+	array = freenas2
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#mpool]
+	type = virtual
+	template = templates/mpool
+	capabilities = rox rwx roo rwo shared
+
+The volume service template referenced by the vpool
+
+::
+
+	[DEFAULT]
+	kind = vol
+	nodes = *
+	disable = true
+
+	[disk#1]
+	name = {namespace}-{svcname}
+	type = zpool
+	vdev = mirror {volume#1.exposed_devs[0]} {volume#2.exposed_devs[0]}
+	shared = true
+
+	[fs#1]
+	dev = {disk#1.name}
+	mnt = /srv/{namespace}/{svcname}
+	type = zfs
+	shared = true
+
+	[fs#2]
+	dev = {disk#1.name}/data
+	mnt = {fs#1.mnt}/data
+	type = zfs
+	shared = true
+
+	[fs#3]
+	dev = {disk#1.name}/log
+	mnt = {fs#1.mnt}/log
+	type = zfs
+	shared = true
+
+	[volume#1]
+	format = false
+	name = {svcname}-1
+	pool = freenas1
+	size = {env.size}
+	shared = true
+
+	[volume#2]
+	format = false
+	name = {svcname}-2
+	pool = freenas2
+	size = {env.size}
+	shared = true
+
+virtual pool, mirrored lv over 2 SAN disks
+------------------------------------------
+
+Pools configuration
+
+::
+
+	[pool#freenas1]
+	type = array
+	array = freenas1
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#freenas2]
+	type = array
+	array = freenas2
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#mvg]
+	type = virtual
+	template = templates/mvg
+	capabilities = rox rwx roo rwo shared
+
+The volume service template referenced by the vpool
+
+::
+
+	[DEFAULT]
+	kind = vol
+	id = f42d9fed-7fb3-40db-aa0b-efff3090ceb3
+	nodes = *
+	disable = true
+
+	[volume#1]
+	shared = true
+	size = {env.size}
+	name = {svcname}-1
+	pool = freenas
+	format = false
+
+	[volume#2]
+	shared = true
+	size = {env.size}
+	name = {svcname}-2
+	pool = freenas
+	format = false
+
+	[disk#1]
+	shared = true
+	type = vg
+	name = {namespace}-{svcname}
+	pvs = {volume#1.exposed_devs[0]} {volume#2.exposed_devs[0]}
+
+	[fs#1]
+	shared = true
+	mnt = /srv/{namespace}/{svcname}
+	dev = /dev/{disk#1.name}/root
+	type = ext4
+	size = 10m
+	create_options = -m 1
+	vg = {namespace}-{svcname}
+
+	[fs#2]
+	shared = true
+	mnt = {fs#1.mnt}/data
+	dev = /dev/{disk#1.name}/data
+	type = ext4
+	size = 60%FREE
+	create_options = -m 1
+	vg = {namespace}-{svcname}
+
+	[fs#3]
+	shared = true
+	mnt = {fs#1.mnt}/log
+	dev = /dev/{disk#1.name}/log
+	type = ext4
+	size = 40%FREE
+	create_options = -m 1
+	vg = {namespace}-{svcname}
+
+virtual pool, mirrored md over 2 SAN disks
+------------------------------------------
+
+Pools configuration
+
+::
+
+	[pool#freenas1]
+	type = array
+	array = freenas1
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#freenas2]
+	type = array
+	array = freenas2
+	diskgroup = cluster1
+	sparse = true
+
+	[pool#md]
+	type = virtual
+	template = templates/md
+	capabilities = rox rwx roo rwo shared
+
+The volume service template referenced by the vpool
+
+::
+
+	[DEFAULT]
+	kind = vol
+	disable = true
+	nodes = *
+	id = 45680bca-ec5f-4820-922a-26d983a0b1ec
+
+	[disk#1]
+	shared = true
+	devs = {volume#1.exposed_devs[0]} {volume#2.exposed_devs[0]}
+	type = md
+	level = raid1
+
+	[disk#2]
+	shared = true
+	pvs = {disk#1.exposed_devs[0]}
+	type = vg
+	name = {namespace}-{svcname}
+
+	[fs#1]
+	vg = {namespace}-{svcname}
+	mnt = /srv/{namespace}/{svcname}
+	dev = /dev/{disk#1.name}/root
+	shared = true
+	type = ext4
+	size = 10m
+
+	[fs#2]
+	vg = {namespace}-{svcname}
+	mnt = {fs#1.mnt}/data
+	dev = /dev/{disk#1.name}/data
+	shared = true
+	type = ext4
+	size = 60%FREE
+
+	[fs#3]
+	vg = {namespace}-{svcname}
+	mnt = {fs#1.mnt}/log
+	dev = /dev/{disk#1.name}/log
+	shared = true
+	type = ext4
+	size = 40%FREE
+
+	[volume#2]
+	shared = true
+	size = {env.size}
+	name = {svcname}-2
+	pool = freenas
+	format = false
+
+	[volume#1]
+	shared = true
+	size = {env.size}
+	name = {svcname}-1
+	pool = freenas
+	format = false
 
