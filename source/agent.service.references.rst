@@ -53,9 +53,11 @@ Hard Coded References
 Reference                   Description                                                    Node Configuration File Service Configuration File
 =========================== ============================================================== ======================= ==========================
 {nodename}                  The running node fqdn                                          Yes                     Yes
-{short_nodename}            The running node base name (without domain)                    Yes                     Yes 
+{short_nodename}            The running node base name (without domain)                    Yes                     Yes
+{namespace}                 The namespace name the service is in                           No                      Yes
+{kind}                      The running service kind, ie "svc", "vol", "ccfg"              No                      Yes
 {svcname}                   The running service name                                       No                      Yes 
-{svcpath}                   The running service path, ie <namespace>/<svcname>             No                      Yes 
+{svcpath}                   The running service path, ie <namespace>/<kind>/<svcname>      No                      Yes
 {short_svcname}             The running service base name (without domain)                 No                      Yes
 {id}                        The service id                                                 No                      Yes
 {safe://<id>}               Substitute the reference with the content of the safe file     Yes                     Yes
@@ -72,7 +74,6 @@ Reference                   Description                                         
 {dnsuxsockd}                The path to the directory hosting the dns thread unix socket   Yes                     Yes
 {collector_api}             The uri of the collector Rest API                              Yes                     Yes
 {nodemgr}                   The full path the the nodemgr executable}                      Yes                     Yes
-{namespace}                 The namespace name the service is in                           No                      Yes
 {svcmgr}                    The full path the the svcmgr executable                        Yes                     Yes
 {etc}                       The agent etc/ directory path: /etc/opensvc/ for agents        Yes                     Yes
                             installed through the packages, /opt/opensvc/etc/ for an agent Yes                     Yes
