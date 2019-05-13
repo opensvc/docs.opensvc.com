@@ -22,10 +22,10 @@ Implementation
 --------------
 
 * A farmed (flex) service.
-* Each instance runs an authoritative PowerDNS server, a PowerDNS recursor and a recursor cache janitoring daemon.
+* Each instance runs a authoritative PowerDNS server, a PowerDNS recursor and a recursor cache janitoring daemon.
 * Each component runs as a privileged docker instance to have r/w access to shared unix domain sockets.
 * The DNS server and recursor share the node network namespace.
-* The PowerDNS server uses the dns thread of the OpenSVC daemon as a remote backend. Communications go through the ``<var>/dns/pdns.sock`` unix domain socket.
+* The PowerDNS server uses the dns thread of the OpenSVC daemon as a remote backend. Communications go through the ``<OSVCVAR>/dns/pdns.sock`` unix domain socket.
 
 Docker images
 +++++++++++++
@@ -40,7 +40,7 @@ Configure
 Preliminary steps
 +++++++++++++++++
 
-* Make sure the node configuration :kw:`cluster.name` is set to a meaningful, unique site-wide, value. It can be a fqdn like ``cluster1.my.org``, or just a basename like ``cluster1``.
+* Make sure the cluster configuration :kw:`cluster.name` is set to a meaningful, unique site-wide, value. It can be a fqdn like ``cluster1.my.org``, or just a basename like ``cluster1``.
 * Choose at least 2 cluster nodes that will act as DNS backends.
 * Choose a free port for the DNS to listen on (default is ``5300``).
 * Identify the ip addresses you want the DNS to listen on (public or private). In the following examples, ``192.168.100.11`` and ``192.168.100.14``.
@@ -51,29 +51,25 @@ Preliminary steps
 Declare DNS backends
 ++++++++++++++++++++
 
-On every cluster node::
+::
 
-	nodemgr set --kw cluster.dns+=192.168.100.11 --kw cluster.dns+=192.168.100.14
+	om cluster set --kw cluster.dns+=192.168.100.11 --kw cluster.dns+=192.168.100.14
 
 Deploy the DNS service
 ++++++++++++++++++++++
 
 On the default port (5300)::
 
-	svcmgr deploy -s odns \
+	om system/svc/dns deploy \
 		--config http://www.opensvc.com/init/static/templates/odns.conf
 
 Or on a custom port (1216)::
 
-	svcmgr deploy -s odns \
+	om system/svc/dns deploy \
 		--config http://www.opensvc.com/init/static/templates/odns.conf \
 		--env port=1216
 
-Unfreeze the service::
-
-	svcmgr unfreeze -s odns
-
-.. note:: Set ``--allow-from=<cidr>,<cidr>`` to the recursor run_args to allow subnets not trusted by default (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
+.. note:: Set ``--allow-from=<cidr>,<cidr>`` to the recursor container command to allow requests from subnets not trusted by default (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
 
 Verify
 ------
@@ -83,7 +79,7 @@ Verify the backend
 
 ::
 
-	nodemgr dns dump
+	om dns dump
 
 ::
 
@@ -115,7 +111,7 @@ Dump the zone contents asking DNS
 Dump the zone contents asking agent socket
 ++++++++++++++++++++++++++++++++++++++++++
 
-Same as ``nodemgr dns dump``
+Same as ``om dns dump``
 
 ::
 
@@ -129,7 +125,7 @@ Add forwarding for the reverse zones
 
 Either switch to ``--forward-zones-file`` or add new elements to ``forward-zones``. In the later case, a ``env`` section key can help keeping the container resource definition reusable.
 
-Example for the default weave network 10.32.0.0/12::
+Example for a backend network 10.32.0.0/12::
 
 	[container#1]
 	type = docker
