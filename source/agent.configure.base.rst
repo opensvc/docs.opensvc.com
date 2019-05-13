@@ -8,7 +8,7 @@ Agent Base Configuration
 Set System Defaults
 ===================
 
-On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/opensvc`` that supports defaults injection.
+On Unix, the entrypoint for the agent commands is a shell script ``<OSVCBIN>/om`` that supports defaults injection.
 
 In most situations, this configuration file does not need modification.
 
@@ -47,7 +47,7 @@ Set Node Environment
 
 ::
 
-	sudo nodemgr set --param node.env --value PRD
+	om cluster set --param node.env --value PRD
 
 The :kw:`node.env` setting is used to enforce the following policies:
 
@@ -73,7 +73,7 @@ PRJ        not PRD     Project
 STG        not PRD     Staging
 ========== =========== ====================
 
-The setting is stored in ``<OSVCETC>/node.conf``.
+The setting is stored in ``<OSVCETC>/cluster.conf``.
 
 Set Schedules
 =============
@@ -84,7 +84,7 @@ A schedule configuration can be applied using
 
 ::
 
-	sudo nodemgr set --param brocade.schedule --value "02:00-04:00@120 sat,sun"
+	om node set --param brocade.schedule --value "02:00-04:00@120 sat,sun"
 
 Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command would produce this section:
 
@@ -100,7 +100,7 @@ The live scheduler configuration and states can be extracted with
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo nodemgr print schedule
+	$ om node print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter         </span>  <span style="font-weight: bold">Schedule Definition                               </span>  
 	|- <span style="color: #767676">auto_reboot        </span>  2017-09-30 16:59:19  reboot.schedule            16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr  
 	|- <span style="color: #767676">auto_rotate_root_pw</span>  -                    rotate_root_pw.schedule    -                                                   
@@ -147,7 +147,7 @@ To enable communications with a collector, the :kw:`node.dbopensvc` node configu
 
 ::
 
-	sudo nodemgr set --param node.dbopensvc --value collector.opensvc.com
+	om cluster set --param node.dbopensvc --value collector.opensvc.com
 
 Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
 
@@ -160,14 +160,14 @@ The following expressions are also supported:
 
 ::
 
-	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com
-	sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
+	om cluster set --param node.dbopensvc --value https://collector.opensvc.com
+	om cluster set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
 
 The compliance framework uses a separate xmlrpc entrypoint. The :kw:`node.dbcompliance` can be set to override the default, which is deduced from the :kw:`node.dbopensvc` value.
 
 ::
 
-	sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
+	om cluster set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
 
 Register the Node
 -----------------
@@ -176,11 +176,11 @@ The collector requires the nodes to provide an authentication token (shared secr
 
 ::
 
-	sudo nodemgr register
+	om node register
 
 Collectors in SaaS mode, like https://collector.opensvc.com, require that you prove your identity. The command is thus::
 
-	sudo nodemgr register --user my.self@my.com [--app MYAPP]
+	om node register --user my.self@my.com [--app MYAPP]
 
 If ``--app`` is not specified the collector automatically chooses one the user is responsible of.
 
@@ -188,19 +188,26 @@ A successful register is followed by a node discovery, so the collector has deta
 
 ::
 
-	sudo nodemgr pushasset
-	sudo nodemgr pushpkg
-	sudo nodemgr pushpatch
-	sudo nodemgr pushstats
-	sudo nodemgr checks
+	om node pushasset
+	om node pushpkg
+	om node pushpatch
+	om node pushstats
+	om node checks
 
 
 To disable collector communications, use:
 
 ::
 
-	sudo nodemgr unset --param node.dbopensvc
-	sudo nodemgr unset --param node.dbcompliance
+	om cluster unset --param node.dbopensvc
+	om cluster unset --param node.dbcompliance
+
+Or if the settings were added to node.conf
+
+::
+
+	om node unset --param node.dbopensvc
+	om node unset --param node.dbcompliance
 
 .. rst-class:: lvl1
 
