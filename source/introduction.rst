@@ -4,14 +4,15 @@ Introduction
 What is OpenSVC
 ===============
 
-OpenSVC is a software product and the name of the commercial entity developping, supporting and marketing it. The product will be referenced as "OpenSVC" and the company "OpenSVC co". This book covers extensively the OpenSVC goals, design and usage.
+OpenSVC is a Open Source software product and the name of the commercial entity developping and supporting it. The product will be referenced as "OpenSVC" and the company "OpenSVC co". This book covers extensively the OpenSVC goals, design and usage.
+
+This software is used in large scale and critical production since 2009.
 
 OpenSVC is composed of two software components:
 
 * the agent
 
-  The OpenSVC agent is basically a Cluster Resource Manager with extended reporting and configuration management capabilities.
-  Coupled by a heartbeat software, the agent completes a full cluster stack.
+  The OpenSVC agent is a supervisor, clusterware, container orchestrator and configuration manager.
   It is licensed under the GNU General Public License v2. 
 
 * the collector
@@ -19,7 +20,7 @@ OpenSVC is composed of two software components:
   The collector aggregates the agents-reported data and the data fetched from the sites infrastructure (network, SAN, storage arrays, backup servers and asset managers).
   It also serves the configuration management targets.
   The collector is a commercially-licenced web 2.0 application.
-  The Resource Management features of the agent are fully functional in the absence of a collector.
+  The clustering and container orchestration features of the OpenSVC agent don't require a collector.
 
 These two components together address a wide range of modern IT concerns, including:
 
@@ -79,16 +80,11 @@ Subsystems requirements
 ========================================================== ====== =========
 Subsystem                                                  Agent  Collector
 ========================================================== ====== =========
-Service mobility, clustering                               O
+Service mobility, clustering, container orchestration      O
 Configuration management                                   O      O
 Inventoring                                                O      O
 Orchestration and interoperability                         O      O
 Continuous infrastructure, systems, and services auditing  O      O
 Boost the IT productivity                                  O      O
 ========================================================== ====== =========
-
-History
-=======
-
-The OpenSVC project was born in November 2009.
 
