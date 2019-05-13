@@ -19,7 +19,7 @@ Implementation
 
 * A failover service. The active instance runs a Envoy load balancer process and a janitoring daemon.
 * The Envoy daemon is run as a docker container with an inital configuration enabling its GRPC API on 127.0.0.1:9901 (default) and pointing the janitoring daemon as a xDS.
-* The janitoring daemon, also run as a docker container, listens to cluster events on the opensvc daemon unix socket (bind-mounted in the container) and serves the Listeners, Routes and Endpoints configurations to Envoy through the GRPC API on 127.0.0.1:50051 (default).
+* The janitoring daemon, also run as a docker container, listens to cluster events on the opensvc daemon unix socket (bind-mounted in the container) and serves the Clusters, Listeners, Routes, Endpoints and Secrets (certs) configurations to Envoy through the GRPC API on 127.0.0.1:50051 (default).
 * The janitoring daemon docker instance runs "privileged" to have r/w access to the opensvc daemon unix socket. 
 
 Docker images
@@ -103,6 +103,9 @@ Janitor arguments
 	  -S OSOCK, --socket=OSOCK
 				The OpenSVC daemon unix socket path. default
 				/var/lib/opensvc/lsnr/osvcd.sock
+	  --janitor-socket=JSOCK
+				The janitor gRPC unix socket path. default
+				unix:///var/run/xds/xds.sock
 	  -w MAX_WORKERS, --max-workers=MAX_WORKERS
 				The maximum number of workers. default 256
 
