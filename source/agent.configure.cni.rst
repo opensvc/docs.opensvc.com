@@ -142,4 +142,34 @@ The container pointed by ``netns`` can be a docker or lxc container. ``netns`` c
 
 The ``expose`` keyword is optional. If set, a SRV record is served by the cluster DNS (in this example _http._tcp.<svcname>.<namespace>.svc.<clustername>). If ``expose`` is set to portmapping expression, for example ``80:8001/tcp``, the portmap CNI plugin is will configure the portmapping and expose the 80/tcp backend server on the 8001 port of the node public ip addresses.
 
+Useful commands
+===============
+
+List networks::
+
+	# om net ls
+	default
+	lo
+	backend2
+	backend
+
+Show networks status::
+
+	# om net status
+	name         type           network       size   used  free   pct    
+	|- backend   routed_bridge  10.40.0.0/16  65536  4     65532  0.01%  
+	|- backend2  routed_bridge  10.41.0.0/16  65536  1     65535  0.00%  
+	|- default   bridge         10.22.0.0/16  65536  0     65536  0.00%  
+	`- lo        loopback       127.0.0.1/32  1      0     1      0.00%  
+
+Show a network detailled status::
+
+	# om net status --verbose --name backend
+	name                 type           network             size      used  free   pct    
+	`- backend           routed_bridge  10.40.0.0/16        65536     4     65532  0.01%  
+	   `- ip             node           service             resource  
+	      |- 10.40.0.10  c1n1           testbackend/svc/s1  ip#0      
+	      |- 10.40.12.7  c2n2           testbackend/svc/s4  ip#0      
+	      |- 10.40.4.9   c1n2           testbackend/svc/s2  ip#0      
+	      `- 10.40.8.7   c2n1           testbackend/svc/s3  ip#0      
 
