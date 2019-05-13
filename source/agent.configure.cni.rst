@@ -3,9 +3,9 @@
 Cluster Backend Networks
 ************************
 
-These networks are only required for services private ip auto-allocation. If configured, the cluster DNS helps expose the allocated ip addresses through predictible names, and the cluster Ingress Gateways help expose the services to clients outside the cluster.
+These networks are only required for services private ip auto-allocation. If configured, the cluster DNS exposes the allocated ip addresses as predictible names, and the cluster Ingress Gateways or portmapping can expose the services to clients outside the cluster.
 
-OpenSVC relies on CNI for this subsytem. Any CNI plugin can be used. Plugins can have depdendencies, like etcd or consul, which OpenSVC does not use nor package. The weave plugin, having no such dependencies, is used in this documentation.
+OpenSVC relies on CNI for this subsystem. Any CNI plugin can be used but some plugins can have dependencies like etcd or consul, which OpenSVC does not require for himself. The bridge and weave plugin, having no such dependencies, are simpler to setup.
 
 Install CNI
 ===========
@@ -13,7 +13,7 @@ Install CNI
 From package
 ------------
 
-Some distributions already ship CNI packages.
+Some distributions ship CNI packages.
 
 On Red Hat or CentOS 7, for example, CNI is served by the EPEL repositories ::
 
@@ -24,7 +24,7 @@ On Red Hat or CentOS 7, for example, CNI is served by the EPEL repositories ::
 
 Then tell OpenSVC where to find the CNI plugins and network configurations ::
 
-	nodemgr set --kw cni.plugins=/usr/libexec/cni --kw cni.config=/var/lib/opensvc/cni/net.d
+	om cluster set --kw cni.plugins=/usr/libexec/cni --kw cni.config=/var/lib/opensvc/cni/net.d
 
 From upstream
 -------------
@@ -43,39 +43,60 @@ From upstream
 Here the plugins and network configurations directories are aligned with the OpenSVC defaults.
 
 
-Plugins
-=======
+Configure networks
+==================
 
-Example Local Bridge CNI configuration
---------------------------------------
+Networks are declared in the OpenSVC node or cluster configuration.
 
-Just for reference. Creating such a network is usually not necessary.
+The agent create the CNI configuration files as needed.
 
-::
+Local Bridge
+------------
 
-	cat > /opt/cni/net.d/cbr0.conf <<EOF
-	{
-	    "cniVersion": "0.2.0",
-	    "name": "cbr0",
-	    "type": "bridge",
-	    "bridge": "cbr0",
-	    "isGateway": true,
-	    "ipMasq": true,
-	    "ipam": {
-		"type": "host-local",
-		"subnet": "10.15.20.0/24",
-		"routes": [
-		    { "dst": "0.0.0.0/0" },
-		    { "dst": "1.1.1.1/32", "gw":"10.15.20.1"}
-		]
-	    }
-	}
-	EOF
+A local bridge network is always present and named ``default``.
 
-Install the weave plugin
-------------------------
+To create another network of this type, named ``local1``, available on every cluster node ::
 
-::
+	$ om cluster set --kw network#local1.type=bridge --kw network#local1.network=10.10.10.0/24
+
+To create another network of this type, named ``local1``, available on the current cluster node only::
+
+	$ om node set --kw network#local1.type=bridge --kw network#local1.network=10.10.10.0/24
+
+Routed Bridge
+-------------
+
+This network type split the subnet into per-node segments. Trafic is routed from node-to-node via static routes to each segment, and ipip tunnels are created if necessary.
+
+The simple bridge CNI plugin is used for IPAM and plumbing in network namespaces, and OpenSVC is responsible for node-to-node routing and tunneling.
+
+To create a network of this type, named ``backend1``, spanned on every cluster node ::
+
+	$ om cluster set --kw network#backend1.type=routed_bridge \
+	                 --kw network#backend1.network=10.11.0.0/16 \
+	                 --kw network#backend1.ips_per_node=1024
+
+In this example, the network is split like:
+
+* node 1 : 10.11.0.0/22
+* node 2 : 10.11.4.0/22
+* node 3 : 10.11.8.0/22
+* ...
+
+Tunnel endpoints addresses are guessed using a lookup of the nodenames. Different addresses can be setup if necessary, using::
+
+	$ om cluster set --kw network#backend1.addr@node1=1.2.3.4 \
+	                 --kw network#backend1.addr@node2=1.2.3.5 \
+	                 --kw network#backend1.addr@node3=1.2.4.4
+
+Some hosting providers, like OVH, don't support static network routes from node to node, even if they have an ip address in a common subnet. For this situation, you can force OpenSVC to always use tunnels for this backend network::
+
+	$ om cluster set --kw network#backend1.tunnel=always
+
+Weave
+-----
+
+On each node::
 
 	sudo curl -L git.io/weave -o /usr/local/bin/weave
 	sudo chmod a+x /usr/local/bin/weave
@@ -85,7 +106,7 @@ Also make sure the OpenSVC Cluster is configured and joined before the next step
 
 In this example, the package install plugins and config directories are used. Please adapt those paths as required.
 
-On each node ::
+On each node::
 
 	sudo sed -i s/^MountFlags=slave/#MountFlags=slave/ /lib/systemd/system/docker.service
 	sudo systemctl enable docker
@@ -94,21 +115,15 @@ On each node ::
 	sudo weave setup
 	sudo weave launch $(sudo nodemgr get --kw cluster.nodes)
 
-	sudo mkdir -p /var/lib/opensvc/cni/net.d/
-	cat - <<EOF | sudo tee /var/lib/opensvc/cni/net.d/weave.conf
-	{
-	    "cniVersion": "0.2.0",
-	    "name": "weave",
-	    "type": "weave-net"
-	}
-	EOF
-
 If CNI was installed from package, the weave plugin needs to be referenced in the package plugin dir::
 
 	cd /usr/libexec/cni/
 	sudo ln -s /opt/cni/bin/weave-ipam weave-ipam
 	sudo ln -s /opt/cni/bin/weave-net weave-net
 
+Finally declare the network::
+
+	$ om cluster set --kw network#weave1.type=weave --kw network#weave1.network=10.32.0.0/12
 
 Use in service configurations
 =============================
@@ -119,12 +134,12 @@ Here is a typical ip resource configuration, using the "weave" CNI network confi
 
 	[ip#0]
 	type = cni
-	network = weave
+	network = weave1
 	netns = container#0
 	expose = 80/tcp
 
 The container pointed by ``netns`` can be a docker or lxc container. ``netns`` can also be left empty, causing the weave ip address to be assigned to the service cgroup.
 
-The ``expose`` keyword is optional. If set, a SRV record is served by the cluster DNS (in this example _http._tcp.<svcname>.<namespace>.svc.<clustername>). If mapped port is also defined, for example ``80:8001/tcp``, the portmap CNI plugin is used to configure the portmapping and expose the 80/tcp backend server on the 8001 port of the node public ip addresses.
+The ``expose`` keyword is optional. If set, a SRV record is served by the cluster DNS (in this example _http._tcp.<svcname>.<namespace>.svc.<clustername>). If ``expose`` is set to portmapping expression, for example ``80:8001/tcp``, the portmap CNI plugin is will configure the portmapping and expose the 80/tcp backend server on the 8001 port of the node public ip addresses.
 
 
