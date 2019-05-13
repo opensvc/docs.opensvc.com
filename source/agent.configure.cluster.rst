@@ -4,7 +4,7 @@ Cluster Configuration
 *********************
 
 Upon agent installation, the node is considered part of its own 1-node cluster.
-The following configuration is merged in ``<OSVCETC>/node.conf``:
+The following configuration is merged in ``<OSVCETC>/cluster.conf``:
 
 	:kw:`cluster.secret` is auto-generated, if not already defined.
 
@@ -24,13 +24,13 @@ For example, the simplest heartbeat configuration would be
 
 ::
 
-        sudo nodemgr set --param hb#1.type --value unicast
+        om cluster set --param hb#1.type --value unicast
 
 Display the result
 
 ::
 
-        sudo svcmon
+        om mon
 
 .. seealso:: :ref:`agent.daemon.heartbeats`
 
@@ -45,7 +45,7 @@ For example, a dummy stonith configuration would be
 
 ::
 
-        sudo nodemgr set --param stonith#node2.cmd --value /bin/true
+        om cluster set --param stonith#node2.cmd --value /bin/true
 
 This configuration will execute :cmd:`/bin/true` on the node taking over a service which was previously running on the now stalled :c-node:`node2`.
 
@@ -60,8 +60,8 @@ On a new cluster, the arbitrator configurations can be applied on the first node
 
 ::
 
-        sudo nodemgr set --param arbitrator#1.name --value relay1
-        sudo nodemgr set --param arbitrator#1.secret --value 1023102310230123123
+        om cluster set --param arbitrator#1.name --value relay1
+        om cluster set --param arbitrator#1.secret --value 1023102310230123123
 
 This configuration will ask for the agent on node :c-node:`relay1` for its vote in a quorum race, if needed to get a majority.
 
@@ -78,13 +78,13 @@ On the joined node :c-node:`node1`
 
 ::
 
-        sudo nodemgr get --param cluster.secret
+        om cluster get --param cluster.secret
 
 On the joining node :c-node:`node2`
 
 ::
 
-        sudo nodemgr daemon join --secret <secret> --node node1
+        om daemon join --secret <secret> --node node1
 
 .. note::
 
@@ -96,7 +96,7 @@ Leave a Cluster
 
 ::
 
-        sudo nodemgr daemon leave
+        om daemon leave
 
 
 
