@@ -1,11 +1,11 @@
 Storage Pools Configuration
 ***************************
 
-Service templates can use ``volume`` resources to:
+Services can use ``volume`` resources to:
 
-* Abstract the disks and filesystems layout, which are hosting specificities, from the application service deployment. A development cluster can for example define pools on a ceph cluster, while a production cluster can define pools on fc arrays.
+* Abstract the disks and filesystems layout, which are hosting specificities, from the service deployment. A development cluster can for example define pools on a ceph cluster, while a production cluster can define pools on fc arrays.
 
-* Enable application service redeployment while retaining the data.
+* Enable service redeployment while retaining the data.
 
 In this case the translation from volumes to disks and filesystems is delegated to the storage pool drivers.
 
@@ -16,21 +16,21 @@ The ``default`` pool always exist, even if not defined in the node configuration
 Volumes
 =======
 
-* A volume resource drives a volume service, automatically created upon consumer service provisioning.
+* A volume resource drives a volume object, automatically created upon service provisioning if not already existing.
 
 * The volume is hosted in the same namespace than its users.
 
-* If not explicitely set, the volume service name is ``<consumer svcname>-vol-<volume resource index>``. For example, a ``svc1`` service with a ``volume#1`` resource will create a ``svc1-vol-1`` volume service.
+* If not explicitely set, the volume object name is ``<consumer name>-vol-<volume resource index>``. For example, a ``svc1`` service with a ``volume#1`` resource will create a ``svc1-vol-1`` volume object.
 
-* A volume service can be referenced by multiple services in the same namespace.
+* A volume object can be referenced by multiple services in the same namespace.
 
-* Each consumer service adds itself as a child of its volume services upon provision, so stopping a volume service is delayed until all its consumers are stopped.
+* On provision, a service adds itself as a child of the volume objects mapped via volume resources. Due to this parent/child relation, stopping a volume object is delayed until all its consumers are stopped.
 
-* A consumer service unprovision removes itself from its volume services children.
+* On unprovision, a service removes itself from the children list of the volume objects mapped via volume resources.
 
-* A consumer service instance stop also stops its node-affine volume services instances if the consumer service is the only child of the volume service. 
+* A consumer service instance stop also stops its node-affine volume object instances if the consumer service is the only child of the volume service. 
 
-* A consumer service instance start always try to start its node-affine volume services instances.
+* A consumer service instance start always tries to start its node-affine volume object instances.
 
 Volume Resources Keywords
 -------------------------
@@ -86,7 +86,7 @@ rox, rwx, roo, rwo
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a fs.directory resource, with ``path`` set to ``<pool head>/<volume fqdn>``.
 
@@ -109,11 +109,11 @@ roo, rwo, shared, blk, iscsi
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a disk.disk resource named, with ``name`` set to ``<volume fqdn>``
 
-If the consumer has ``format=true`` (default), the volume service also contains:
+If the consumer has ``format=true`` (default), the volume object also contains:
 
 * a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
 
@@ -136,11 +136,11 @@ rox, rwx, roo, rwo, blk
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a disk.loop resource, with ``file`` set to ``<pool head>/<volume fqdn>.img``
 
-If the consumer has ``format=true`` (default), the volume service also contains:
+If the consumer has ``format=true`` (default), the volume object also contains:
 
 * a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
 
@@ -163,11 +163,11 @@ roo, rwo, shared, blk, fc
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a disk.disk resource named, with ``name`` set to ``<volume fqdn>``
 
-If the consumer has ``format=true`` (default), the volume service also contains:
+If the consumer has ``format=true`` (default), the volume object also contains:
 
 * a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
 
@@ -190,11 +190,11 @@ rox, rwx, roo, rwo, blk, snap
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a disk.lv resource, with ``name`` set to ``<volume fqdn>``
 
-If the consumer has ``format=true`` (default), the volume service also contains:
+If the consumer has ``format=true`` (default), the volume object also contains:
 
 * a fs.<pool fs_type> resource, with ``mnt`` set to ``/srv/<volume fqdn>``
 
@@ -217,7 +217,7 @@ rox, rwx, roo, rwo, shared
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a fs.directory resource, with ``path`` set to ``<pool head>/<volume fqdn>``.
 
@@ -240,7 +240,7 @@ rox, rwx, roo, rwo, blk, snap
 Layout
 ++++++
 
-A volume service from this type of pool contains:
+A volume object from this type of pool contains:
 
 * a fs.zfs resource, with ``name`` set to ``<pool>/<volume fqdn>`` and ``mnt`` set to ``/srv/<volume fqdn>``.
 
@@ -259,7 +259,7 @@ A virtual pool allow administrators to create complex layouts based on volumes f
 
 A typical use-case in a virtual pool allocating volumes mirrored over two other volumes allocated from arrays on two different sites.
 
-A virtual pool volume is created from a template volume service the administrator can design at wish to meet its specific needs.
+A virtual pool volume is created from a template volume object the administrator can design at wish to meet its specific needs.
 
 Capabilities
 ++++++++++++
@@ -282,7 +282,7 @@ Pool list
 
 ::
 
-	# nodemgr pool ls
+	# om pool ls
 	default
 	freenas
 	mpool
@@ -292,7 +292,7 @@ Pool Status
 
 ::
 
-	# nodemgr pool status
+	# om pool status
 	name        type       caps                      head                             vols  size   used   free   
 	|- default  directory  rox,rwx,roo,rwo           /opt/opensvc/var/pool/directory  0     29.0g  3.57g  24.0g  
 	|- freenas  freenas    roo,rwo,shared,blk,iscsi  array://freenas/osvcdata         6     195g   9.37g  185g   
@@ -308,7 +308,7 @@ Pool configuration
 
 ::
 
-	nodemgr set \
+	om cluster set \
 		--kw pool#loop.type=loop \
 		--kw pool#loop.path=/bigfs \
 		--kw "pool#loop.mkfs_opt=-n ftype=1" \
@@ -322,7 +322,7 @@ Pool configuration
 	mkfs_opt = -n ftype=1
 	fs_type = xfs
 
-The volume resource in the application service
+The volume resource in the service
 
 ::
 
@@ -330,7 +330,7 @@ The volume resource in the application service
 	size = 100m
 	pool = loop
 
-Configuration of the volume service
+Resulting configuration of the volume object
 
 ::
 
@@ -352,7 +352,7 @@ Pool configuration
 
 ::
 
-	nodemgr set \
+	om cluster set \
 		--kw pool#tank.type=zpool \
 		--kw pool#tank.name=tank \
 		--kw "pool#tank.mkfs_opt=-o mountpoint=legacy -o dedup=on -o compression=on"
@@ -364,7 +364,7 @@ Pool configuration
 	name = tank
 	mkfs_opt = -o mountpoint=legacy -o dedup=on -o compression=on
 
-The volume resource in the application service
+The volume resource in the service
 
 ::
 
@@ -372,7 +372,7 @@ The volume resource in the application service
 	size = 100m
 	pool = tank
 
-Configuration of the volume service
+Resulting configuration of the volume object
 
 ::
 
@@ -389,7 +389,7 @@ Pools configuration
 
 ::
 
-	nodemgr set \
+	om cluster set \
 		--kw pool#freenas1.type=array \
 		--kw pool#freenas1.array=freenas1 \
 		--kw pool#freenas1.sparse=true \
@@ -421,7 +421,7 @@ Pools configuration
 	template = templates/mpool
 	capabilities = rox rwx roo rwo shared
 
-The volume service template referenced by the vpool
+The volume object template referenced by the vpool
 
 ::
 
@@ -475,7 +475,7 @@ Pools configuration
 
 ::
 
-	nodemgr set \
+	om cluster set \
 		--kw pool#freenas1.type=array \
 		--kw pool#freenas1.array=freenas1 \
 		--kw pool#freenas1.sparse=true \
@@ -507,7 +507,7 @@ Pools configuration
 	template = templates/mvg
 	capabilities = rox rwx roo rwo shared
 
-The volume service template referenced by the vpool
+The volume object template referenced by the vpool
 
 ::
 
@@ -570,7 +570,7 @@ Pools configuration
 
 ::
 
-	nodemgr set \
+	om cluster set \
 		--kw pool#freenas1.type=array \
 		--kw pool#freenas1.array=freenas1 \
 		--kw pool#freenas1.sparse=true \
@@ -602,7 +602,7 @@ Pools configuration
 	template = templates/md
 	capabilities = rox rwx roo rwo shared
 
-The volume service template referenced by the vpool
+The volume object template referenced by the vpool
 
 ::
 
