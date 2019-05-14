@@ -7,12 +7,12 @@ The node selector also eases the management of geo-cluster and heterogeneous clu
 
 Labels are <key>=<value> pairs in the node configuration file::
 
-	$ nodemgr get --kw labels.zone
+	$ om node get --kw labels.zone
 	sofa
 
 Labels are embedded in the cluster data::
 
-	$ nodemgr daemon status --format flat_json | grep labels
+	$ om daemon status --format flat_json | grep labels
 	.monitor.nodes.nuc-cva.labels.region = eu1
 	.monitor.nodes.nuc-cva.labels.zone = tv
 	.monitor.nodes.aubergine.labels.region = eu1
@@ -26,7 +26,7 @@ fnmatch
 
 ::
 
-	$ nodemgr ls --node aub*
+	$ om node ls --node aub*
 	aubergine
 
 Label Existance
@@ -34,7 +34,7 @@ Label Existance
 
 ::
 
-	$ nodemgr ls --node zone:
+	$ om node ls --node zone:
 	aubergine
 	nuc-cva
 
@@ -43,7 +43,7 @@ Exact Label
 
 ::
 
-	$ nodemgr ls --node zone=sofa
+	$ om node ls --node zone=sofa
 	aubergine
 
 Negation
@@ -51,7 +51,7 @@ Negation
 
 ::
 
-	$ nodemgr ls --node '!zone=sofa'
+	$ om node ls --node '!zone=sofa'
 	nuc-cva
 
 Or-ed selectors
@@ -59,7 +59,7 @@ Or-ed selectors
 
 ::
 
-	$ nodemgr ls --node zone=sofa,zone=tv
+	$ om node ls --node zone=sofa,zone=tv
 	aubergine
 	nuc-cva
 
@@ -68,7 +68,7 @@ And-ed selectors
 
 ::
 
-	$ nodemgr ls --node zone=sofa+region=eu1
+	$ om node ls --node zone=sofa+region=eu1
 	aubergine
 
 wildcard
@@ -76,21 +76,21 @@ wildcard
 
 ::
 
-	$ nodemgr ls --node '*'
+	$ om node ls --node '*'
 	aubergine
 	nuc-cva
 
-Node Selector for Service Configuration
+Node Selector in Service Configurations
 =======================================
 
-Labels can be used in the service configuration :kw:`nodes` keyword::
+Labels can be used in service configurations :kw:`nodes` keyword::
 
-	$ svcmgr -s test/registry get --kw nodes
+	$ om test/registry get --kw nodes
 	region=eu1
 
 ::
 
-	$ nodemgr daemon status --format flat_json | grep "'test/registry'" | grep scope
+	$ om daemon status --format flat_json | grep "'test/registry'" | grep scope
 	.monitor.nodes.nuc-cva.services.config.'test/registry'.scope[0] = aubergine
 	.monitor.nodes.nuc-cva.services.config.'test/registry'.scope[1] = nuc-cva
 	.monitor.nodes.aubergine.services.config.'test/registry'.scope[0] = aubergine
@@ -98,10 +98,10 @@ Labels can be used in the service configuration :kw:`nodes` keyword::
 
 ::
 
-	$ svcmgr -s test/registry set --kw nodes=zone=sofa
+	$ om test/registry set --kw nodes=zone=sofa
 
 ::
 
-	$ nodemgr daemon status --format flat_json | grep "'test/registry'" | grep scope
+	$ om daemon status --format flat_json | grep "'test/registry'" | grep scope
 	.monitor.nodes.aubergine.services.config.'test/registry'.scope[0] = aubergine
 
