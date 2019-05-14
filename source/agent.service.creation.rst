@@ -1,19 +1,19 @@
 .. _agent.service.creation:
 
-Creation
-********
+Create, Update, Delete
+**********************
 
-Service Naming
-==============
+Naming
+======
 
-A service is created in a cluster namespace. A fully qualified service name is formatted as ``<namespace>/<kind>/<name>``.
+A fully qualified object name is formatted as ``<namespace>/<kind>/<name>``.
 
-Where kind is one of:
+Where ``<kind>`` is one of:
 
 * ``svc``
   A service, with a mix of ip, app, container, volume, disk, fs and task resources.
 * ``vol``
-  A volume from a pool, with a mix of volume, disk and fs resources.
+  A data volume from a pool, with a mix of volume, disk and fs resources.
 * ``cfg``
   A configuration map, storing unencrypted key/value pairs for use by other kinded objects.
 * ``sec``
@@ -29,50 +29,67 @@ Names must conform to RFC952:
 
 A name must be unique in its namespace and kind.
 
-Service Creation Methods
-========================
+Create
+======
 
 The following actions only modify files in ``<OSVCETC>``. No operating system configuration file is modified, so they are safe to experiment with.
+
+The agent support object creation via two commands:
+
+* ``create``
+  The object is created but not provisioned nor started.
+
+* ``deploy``
+  The object is created, provisioned and started.
+
+Both actions support the same arguments. The following examples use only create commands.
 
 From Scratch, non Interactive
 -----------------------------
 
-Create a service with minimal configuration. No resources are described.
+Create a new object with minimal configuration. No resources are described.
 
 ::
 
 	om <path> create
 
-Resources and default keywords can be set right from the service create command, using ``--kw <keyword>=<value>`` options
+Resources and default keywords can be set right from the create command, using ``--kw <keyword>=<value>`` options
 
 ::
 
-	om <path> create [--interactive] [--provision]
+	om <path> create
 		--kw container#0.type=docker \
 		--kw container#0.image=google/pause \
 		--kw orchestrate=ha \
 		--kw nodes={clusternodes}
 
-From a JSON formatted config
-----------------------------
-
-This method is useful to clone services
+From Another Object
+-------------------
 
 ::
 
-	om ns1/svc/svc1 print config --format json | \
-		om ns2/svc/svc1 create --config=- [--interactive] [--provision]
+	om <dst path> create --config=<src path>
+
+From a JSON formatted config
+----------------------------
+
+This method can also be used to clone objects
+
+::
+
+	om <src path> print config --format json | \
+		om <dst path> create --config=- [--interactive] [--provision]
 
 From an Existing Local Configuration File
 -----------------------------------------
 
-Experienced users may find it easier to start from a copy of the conf file of an existing similar service. The following information describes the steps needed to create a service manually.
-
-The configuration file can be remote, referenced by URI.
+Experienced users may find it easier to start from a copy of the conf file of an existing similar object.
 
 ::
 
 	om <path> create --config <path to config file> [--interactive] [--provision]
+
+The configuration file can be remote, referenced by URI.
 
 From a Template
 ---------------
@@ -92,25 +109,24 @@ From a Collector's Service
 
 	om <path> pull
 
-Service Configuration Files
-===========================
+Update
+======
 
-Service configuration files are in ``<OSVCETC>``. They are created automatically by the above ``om`` commands. A service is considered active if these two files exist:
+The ``<OSVCDOC>`` templates describe all configurations available for each resource driver.
+
+Configuration files are in ``<OSVCETC>``. They are created automatically by the above ``om`` commands.
+
+Root objects configuration file:
 
 ::
 
 	<OSVCETC>/<name>.conf
 
-Services in a namespace have their configuration files stored deeper in ``<OSVCETC>``
+Namespaced objects configuration file:
 
 ::
 
 	<OSVCETC>/namespaces/<namespace>/<kind>/<name>.conf
-
-Service Configuration Updates
-=============================
-
-At that point you should describe your service's ip addresses, filesystems, disk groups, file synchronizations, app launchers, ... The ``<OSVCDOC>`` templates present you with all possible configurations available.
 
 Interactive
 -----------
@@ -119,7 +135,7 @@ Interactive
 
 	om <path> edit config
 
-The configuration file syntax is checked upon editor exit. The new configuration is installed if the syntax is found correct, or save in a temporary location if not. In this later case, two options are possible:
+The configuration file syntax is checked upon editor exit. The new configuration is installed if the syntax is found correct, or saved in a temporary location if not. Two options are then possible:
 
 * Discard the erroneous configuration::
 
@@ -155,10 +171,24 @@ Non-Interactive Resource Deletion
 
 	om <path> delete --rid fs#1
 
+This command does not stop the resource before removing its definition. If desired, this can be done with
+
+::
+
+	om <path> stop --rid fs#1
+
+Delete
+======
+
+::
+
+	om <path> delete
+
+
 Test
 ====
 
-You should now be able to run succesfully:
+On a created object, you should be able to run succesfully:
 
 ::
 
@@ -166,13 +196,5 @@ You should now be able to run succesfully:
 	om <path> print status
 	om <path> start
 	om <path> stop
-
-Service Deletion
-================
-
-::
-
-	om <path> delete
-
 
 
