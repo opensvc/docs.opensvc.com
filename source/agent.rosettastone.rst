@@ -7,39 +7,39 @@ Clusterwares
 +------------------------------------+------------------------------+-------------------------------+
 | OpenSVC                            | Veritas Cluster Server (VCS) | PowerHA (HACMP)               |
 +====================================+==============================+===============================+
-| nodemgr daemon start               | hastart                      | clstart                       |
+| om daemon start                    | hastart                      | clstart                       |
 +------------------------------------+------------------------------+-------------------------------+
-| nodemgr daemon stop                | hastop                       | clstop                        |
+| om daemon stop                     | hastop                       | clstop                        |
 +------------------------------------+------------------------------+-------------------------------+
-| svcmon                             | hastatus                     | clstat                        |
+| om mon                             | hastatus                     | clstat                        |
 +------------------------------------+------------------------------+-------------------------------+
-| nodemgr daemon join                | hasys -add                   |                               |
+| om daemon join                     | hasys -add                   |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| nodemgr daemon leave               | hasys -delete                |                               |
+| om daemon leave                    | hasys -delete                |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| nodemgr freeze                     | hasys -freeze                |                               |
+| om node freeze                     | hasys -freeze                |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| nodemgr thaw                       | hasys -unfreeze              |                               |
+| om node thaw                       | hasys -unfreeze              |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| svcmgr -s <svcname> create         | hagrp -add                   |                               |
+| om <path> create                   | hagrp -add                   |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| svcmgr -s <svcname> delete         | hagrp -delete                |                               |
+| om <path> delete                   | hagrp -delete                |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| svcmgr ls                          | hagrp -list                  | cllsgrp                       |
+| om '*' ls                          | hagrp -list                  | cllsgrp                       |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> start                    | hagrp -online <group>        | clRGmove -g <RG> -n <node> -u |
+| om <path> start                    | hagrp -online <group>        | clRGmove -g <RG> -n <node> -u |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> stop                     | hagrp -offline <group>       | clRGmove -g <RG> -n <node> -d |
+| om <path> stop                     | hagrp -offline <group>       | clRGmove -g <RG> -n <node> -d |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> switch --to <node>       | hagrp -switch <group> <sys>  | clRGmove -s <RG> -n <node> -m |
+| om <path> switch --to <node>       | hagrp -switch <group> <sys>  | clRGmove -s <RG> -n <node> -m |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> freeze                   | hagrp -freeze <group>        |                               |
+| om <path> freeze                   | hagrp -freeze <group>        |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> thaw                     | hagrp -unfreeze <group>      |                               |
+| om <path> thaw                     | hagrp -unfreeze <group>      |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> start --rid <res>        | hares -online <res>          |                               |
+| om <path> start --rid <res>        | hares -online <res>          |                               |
 +------------------------------------+------------------------------+-------------------------------+
-| <svcname> stop --rid <res>         | hares -offline <res>         |                               |
+| om <path> stop --rid <res>         | hares -offline <res>         |                               |
 +------------------------------------+------------------------------+-------------------------------+
 
 Orchestators
@@ -53,77 +53,76 @@ Creating Objects
 +======================================================+===================================================+
 | **Creating Objects**                                                                                     |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> create --config <cf>                 | kubectl create -f ./my-manifest.yaml              |
+| om create --config ./my-manifest.json                | kubectl create -f ./my-manifest.yaml              |
 +------------------------------------------------------+---------------------------------------------------+
-| cat <cf> | svcmgr -s <svc> create                    | cat <cf> | kubectl create -f -                    |
+| cat <cf> | om create                                 | cat <cf> | kubectl create -f -                    |
 +------------------------------------------------------+---------------------------------------------------+
-| nodemgr collector cli -- safe --upload --file <f>    | kubectl create -f secret.yml                      |
-| --name mysecret                                      |                                                   |
+| om create --config secret.json                       | kubectl create -f secret.yml                      |
+| om ns1/sec/mysec                                     |                                                   |
 +------------------------------------------------------+---------------------------------------------------+
 | **Viewing and Finding**                                                                                  |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr ls                                            | kubectl get services                              |
+| om '*' ls                                            | kubectl get services                              |
+|                                                      | kubectl get pods                                  |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr ls -s container.type=docker                   | kubectl get pods -o jsonpath=...                  |
+| om container.type=docker ls                          | kubectl get pods -o jsonpath=...                  |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> print config --format json           | kubectl describe svc <svc>                        |
+| om <path> print config --format json                 | kubectl describe svc <svc>                        |
 +------------------------------------------------------+---------------------------------------------------+
 | **Updating**                                                                                             |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> set --kw ip#0.expose=80:8080/tcp     | kubectl expose rc nginx --port=80                 |
+| om <path> set --kw ip#0.expose=80:8080/tcp           | kubectl expose rc nginx --port=80                 |
 |                                                      | --target-port=8000                                |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> set --kw                             | kubectl annotate pods my-pod                      |
+| om <svc> set --kw                                    | kubectl annotate pods my-pod                      |
 | env.icon_url=http://goo.gl/XXBTWq                    | icon-url=http://goo.gl/XXBTWq                     |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> get container#0.run_image |          | kubectl get pod mypod -o yaml                     | 
+| om <svc> get container#0.run_image |                 | kubectl get pod mypod -o yaml                     | 
 | sed 's/\(.*\):.*$/\1:v4/' |                          | sed 's/\(image: myimage\):.*$/\1:v4/'             |
-| xargs svcmgr -s <svc> set --kw container#0.run_image | kubectl replace -f -                              |
+| xargs om <svc> set --kw container#0.run_image        | kubectl replace -f -                              |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s <svc> edit config                          | kubectl edit svc/docker-registry                  |
+| om <svc> edit                                        | kubectl edit svc/docker-registry                  |
 +------------------------------------------------------+---------------------------------------------------+
 | **Scaling**                                                                                              |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo scale --to 3                           | kubectl scale --replicas=3 rs/foo                 |
+| om foo scale --to 3                                  | kubectl scale --replicas=3 rs/foo                 |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo,bar scale --to 3                       | kubectl scale --replicas=3 rs/foo rs/bar          |
+| om foo,bar scale --to 3                              | kubectl scale --replicas=3 rs/foo rs/bar          |
 +------------------------------------------------------+---------------------------------------------------+
 | **Deleting**                                                                                             |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo,baz delete --unprovision               | kubectl delete pod,service baz foo --all          |
-| # set unprovision=false to resources that should     |                                                   |
-| # persist (example: data)                            |                                                   |
+| om foo,baz purge                                     | kubectl delete pod,service baz foo --all          |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s env.name=myLabel delete --unprovision      | kubectl delete pods,services -l name=myLabel      |
+| om env.name=myLabel delete --unprovision             | kubectl delete pods,services -l name=myLabel      |
 +------------------------------------------------------+---------------------------------------------------+
 | **Interacting with Resources**                                                                           |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo logs                                   | kubectl logs my-pod                               |
-| svcmgr -s foo logs --local                           |                                                   |
+| om foo logs                                          | kubectl logs my-pod                               |
+| om foo logs --local                                  |                                                   |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo -f logs                                | kubectl logs -f my-pod                            |
+| om foo -f logs                                       | kubectl logs -f my-pod                            |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo docker run -it busybox sh              | kubectl run -i --tty busybox --image=busybox --   |
+| om foo docker run -it busybox sh                     | kubectl run -i --tty busybox --image=busybox --   |
 |                                                      | sh                                                |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo docker attach -i {container#1}         | kubectl attach my-pod -i                          |
+| om foo docker attach -i {container#1}                | kubectl attach my-pod -i                          |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s foo docker exec {container#1} ls /         | kubectl exec my-pod -c my-container -- ls /       |
+| om foo docker exec {container#1} ls /                | kubectl exec my-pod -c my-container -- ls /       |
 +------------------------------------------------------+---------------------------------------------------+
 | **Interacting with Nodes and Cluster**                                                                   |
 +------------------------------------------------------+---------------------------------------------------+
-| nodemgr freeze --local                               | kubectl cordon my-node                            |
-| nodemgr freeze --node my-node                        |                                                   |
+| om node freeze --local                               | kubectl cordon my-node                            |
+| om node freeze --node my-node                        |                                                   |
 +------------------------------------------------------+---------------------------------------------------+
-| svcmgr -s '*' stop                                   | kubectl drain my-node                             |
+| om '**' stop                                         | kubectl drain my-node                             |
 +------------------------------------------------------+---------------------------------------------------+
-| nodemgr thaw --local                                 | kubectl uncordon my-node                          |
-| nodemgr thaw --node my-node                          |                                                   |
+| om node thaw --local                                 | kubectl uncordon my-node                          |
+| om node thaw --node my-node                          |                                                   |
 +------------------------------------------------------+---------------------------------------------------+
-| nodemgr daemon status --format json                  | kubectl cluster-info dump                         |
+| om daemon status --format json                       | kubectl cluster-info dump                         |
 +------------------------------------------------------+---------------------------------------------------+
-| nodemgr set --kw env.dedicated=special_user          | kubectl taint nodes foo                           |
-| # plus constraints in services                       | dedicated=special-user:NoSchedule                 |
+| om node set --kw env.dedicated=special_user          | kubectl taint nodes foo                           |
+| # plus constraints or node selector in services      | dedicated=special-user:NoSchedule                 |
 +------------------------------------------------------+---------------------------------------------------+
 
 
