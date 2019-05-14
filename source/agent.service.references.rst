@@ -13,8 +13,8 @@ An arithmetic evaluation can contain references.
 
 References can be used to:
 
-* Abstract changing parts of a service, so a configuration file can be used as a template
-  Example: The service name, service id, the devices that hosts the service data
+* Abstract changing parts of a configuration, so this configuration can be used as a template
+  Example: The object name, object id, the devices that hosts the data
 
 * Factorize information, so changing it is easier and safer
   Example: A projet name used to format the name of different resources (volume group, filesystem path, ...)
@@ -54,12 +54,12 @@ Reference                   Description                                         
 =========================== ============================================================== ======================= ==========================
 {nodename}                  The running node fqdn                                          Yes                     Yes
 {short_nodename}            The running node base name (without domain)                    Yes                     Yes
-{namespace}                 The namespace name the service is in                           No                      Yes
-{kind}                      The running service kind, ie "svc", "vol", "ccfg"              No                      Yes
-{svcname}                   The running service name                                       No                      Yes 
-{svcpath}                   The running service path, ie <namespace>/<kind>/<svcname>      No                      Yes
-{short_svcname}             The running service base name (without domain)                 No                      Yes
-{id}                        The service id                                                 No                      Yes
+{namespace}                 The name of the hosting namespace                              No                      Yes
+{kind}                      The object kind, ie "svc", "vol", "ccfg"                       No                      Yes
+{svcname}                   The object name                                                No                      Yes 
+{svcpath}                   The object path, ie <namespace>/<kind>/<name>                  No                      Yes
+{short_svcname}             The object base name (name with domain suffix stripped)        No                      Yes
+{id}                        The object id                                                  No                      Yes
 {safe://<id>}               Substitute the reference with the content of the safe file     Yes                     Yes
                             identified by <id>. Usually passwords or private keys. The
                             content is cached locally so the collector dependency is
@@ -81,10 +81,7 @@ Reference                   Description                                         
 {var}                       The agent var/ directory path /var/lib/opensvc/ for agents     Yes                     Yes
                             installed through the packages, /opt/opensvc/var/ for an agent
                             installed via git pull in /opt
-{initd}                     The service init directory path, /etc/opensvc/etc/<svcname>.d/ Yes                     Yes
-                            for agents installed through the packages,
-                            /opt/opensvc/etc/<svcname>.d/ for an agent installed via git
-                            pull in /opt
+{initd}                     The object init directory path. ex: /etc/opensvc/etc/<name>.d/ Yes                     Yes
 {<rid>.exposed_devs}        The whitespace-separated list of devpaths exposed by <rid>     No                      Yes
 {<rid>.exposed_devs[<n>]}   The <n>-th element of the list of devpaths exposed by <rid>    No                      Yes
 {<rid>.exposed_devs[#]}     The length of the list of devpaths exposed by <rid>            No                      Yes
@@ -93,7 +90,7 @@ Reference                   Description                                         
 References and ``env`` Section
 ------------------------------
 
-The ``env`` section can be used to store arbitrary factorized information to make available as references in other parts of the service configuration.
+The ``env`` section can be used to store arbitrary factorized information to make available as references in other parts of the configuration.
 
 Example:
 
@@ -106,14 +103,11 @@ Example:
 	[env]
 	devs = /dev/vdb
 
-Using this facility, these values can be provided when creating a new service from this configuration file or template,
+These values can be overridden when creating a new object from this configuration file or template,
 
 * Interactively
   ``svcmgr -s <svcname> create --config <template> --interactive``
 
 * In the commandline
   ``svcmgr -s <svcname> create --config <template> --env devs=/dev/vdc``
-
-
-
 
