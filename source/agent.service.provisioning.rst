@@ -6,7 +6,7 @@ Provisioning
 Introduction
 ============
 
-A service handle resources activation and desactivation: disk, volumes groups, filesystems for example. Upon creation of a service, the resources may or may not already exist. In the later case, the service can provision them, in other words the service can allocate disks and ip address, create volume groups and logical volume, format filesystems, create containers, pull docker images.
+Services and volumes objecs handle resources activation and desactivation: disk, volumes groups, filesystems for example. Upon creation, the resources may or may not already exist. In the later case, the object can provision them, in other words the object can allocate disks and ip address, create volume groups and logical volume, format filesystems, create containers, pull docker images.
 
 This section describes:
 
@@ -17,65 +17,40 @@ This section describes:
 Provisioners
 ============
 
-Each resource driver can implement a provisioner, but not all resources actually do. The list of resources supporting provisioning keywords::
+Each resource driver can implement a provisioner, but not all resources actually do. The list of drivers with provisioning keywords::
 
-        $ egrep -l "provisioning:\s*True" <OSVCDOC>/template.*conf \
-            | sed -e "s@<OSVCDOC>/template.@@" -e "s@.conf@@"
-        container.esx
-        container.kvm
-        container.lxc
-        container.ovm
-        container.srp
-        container.vz
-        container.xen
-        container.zone
-        disk.disk
-        disk.gce
-        disk.loop
-        disk.lvm
-        disk.md
-        disk.rados
-        disk.vg
-        disk.zpool
-        fs.bfs
-        fs.btrfs
-        fs
-        fs.ext2
-        fs.ext3
-        fs.ext4
-        fs.ext
-        fs.f2fs
-        fs.gfs2
-        fs.gfs
-        fs.gpfs
-        fs.hfs
-        fs.hfsplus
-        fs.hpfs
-        fs.jffs2
-        fs.jffs
-        fs.jfs2
-        fs.jfs
-        fs.logfs
-        fs.minix
-        fs.msdos
-        fs.nilfs
-        fs.ntfs
-        fs.ocfs2
-        fs.ocfs
-        fs.qnx4
-        fs.reiserfs4
-        fs.reiserfs
-        fs.tux3
-        fs.ufs2
-        fs.ufs
-        fs.umsdos
-        fs.vfat
-        fs.vxfs
-        fs.xfs
-        fs.xia
-        fs.zfs
-        ip.amazon
-        ip
+	$ egrep -l "provisioning:\s*True" <OSVCDOC>/template.*conf | sed -e "s@<OSVCDOC>/template.service.@@" -e "s@.conf@@" | grep -v "fs\."
+	container.esx
+	container.kvm
+	container.lxc
+	container.lxd
+	container.ovm
+	container.srp
+	container.vz
+	container.xen
+	container.zone
+	disk.disk
+	disk.gce
+	disk.loop
+	disk.lv
+	disk.lvm
+	disk.md
+	disk.pool
+	disk.rados
+	disk.veritas
+	disk.vg
+	disk.vxdg
+	disk.vxvol
+	disk.zpool
+	disk.zvol
+	fs
+	ip.amazon
+	ip
+	ip.crossbow
+	ip.docker
+	ip.gce
+	ip.netns
+	volume
 
 Each resource provisioner may require or support additional parameters. The resource configuration templates in ``<OSVCDOC>`` highlight these particular parameters with ``provisioning = True``. The list of provisioning keywords of the ``fs.xfs`` driver can thus be extracted using::
 
@@ -84,7 +59,7 @@ Each resource provisioner may require or support additional parameters. The reso
         # keyword:          vg
         # keyword:          size
 
-A provisioner can update the service DEFAULT and resource configuration parameters. For example, the amazon ip provisioner can cascade the allocated ip address the ``docker_daemon_args`` as a ``--ip x.x.x.x`` argument, and cascade to a ip resource ``ipname`` parameter.
+A provisioner can update the DEFAULT and resource configuration parameters. For example, most ip provisioners set the resource ``ipname`` parameter.
 
 
 Provisioning Workflow
@@ -92,48 +67,48 @@ Provisioning Workflow
 
 The provisioning can be either local (--local) or orchestrated.
 
-When orchestrated, the daemon starts provisioning the instance on the placement leader. When provisioned, this instance stays ``up`` and the daemons move on to provisioning all other instances in parallel. Those are rollbacked after provisioned, so the service is in optimal state at the end of the orchestration.
+When orchestrated, the daemon starts provisioning the instance on the placement leaders. When provisioned, these instances stays ``up`` and the daemons move on to provisioning all other instances in parallel. Those are rollbacked after provisioned, so the service is in optimal state at the end of the orchestration.
 
 The CRM command run on the leader node is::
 
-	$ sudo svcmgr -s <svcname> provision --local --disable-rollback
+	$ om <path> provision --local --disable-rollback --leader
 
 The CRM command run on the non-leader nodes is::
 
-	$ sudo svcmgr -s <svcname> provision --local
+	$ om <path> provision --local
 
-The provisioners are run in the service start natural order. Each resource is left in the ``up`` state after its provisioning, so that the following provisioners can count on their availability to proceed. For example, a amazon allocated disk must be left attached for a fs provisioner to format it.
+The provisioners are run in the start natural order. Each resource is left in the ``up`` state after its provisioning, so that the following provisioners can count on their availability to proceed. For example, a amazon allocated disk must be left attached for a fs provisioner to format it.
 
 Shared Resources
 ================
 
-Shared resources (like SAN disks visible on multiple nodes, filesystems hosted on these disks, failover ip addresses), if any, must only be provisioned on the leader and not reprovisioned on the other nodes. Implementing this behaviour requires the admin to explicitely flag such resources as shared using the generic ``shared = true`` resource keyword. The provisioned state of shared resources is synchronized automatically amongst the service nodes, whereas the provisioned state of local resources is node-affine.
+Shared resources (like SAN disks visible on multiple nodes, filesystems hosted on these disks, failover ip addresses), if any, must only be provisioned on the leader and not reprovisioned on the other nodes. Implementing this behaviour requires the admin to explicitely flag such resources as shared using the generic ``shared = true`` resource keyword. The provisioned state of shared resources is synchronized automatically amongst the service or volume nodes, whereas the provisioned state of local resources is node-affine.
 
 It is possible to provision all or part of the resources manually, before the service creation. In this case, those resources will be reported as unprovisioned (a ``P`` flag in the print status output). A successful resource start will mark the resource as provisioned (if it starts ok, it is sane to consider it provisioned). If starting the resource is not possible or desirable, the agent still provides a way to force the resource status as provisioned::
 
-	$ sudo svcmgr -s <svcname> set provisioned --rid <rid>,<rid>
+	$ om <path> set provisioned --rid <rid>,<rid>
 
-Or even all the local service instance resources using::
+Or even all the local instance resources using::
 
-	$ sudo svcmgr -s <svcname> set provisioned
+	$ om <path> set provisioned
 
 Provisioning Usage
 ==================
 
-The provisioners are activated either by the ``provision`` action or by setting the ``--provision`` option with the following actions:
+The provisioners are activated either by the ``provision`` and ``deploy`` action or by setting the ``--provision`` option with the following actions.
 
 Create
 ++++++
 
-* ``create --template <uri>|<template>``
+* ``om <path> create --template <uri>|<template>``
 
   Creates a service using a configuration file pointed by ``--template``. ``<uri>`` being a local or remote path. ``<template>`` being a collector served template id or template name. Served templates can be searched with ``nodemgr collector search --like prov:<substring>``
 
-* ``create --config <uri>``
+* ``om <path> create --config <uri>``
 
   Creates a service using a configuration file pointed by ``--config <uri>``. ``<uri>`` being a local or remote path.
 
-* ``create --resource <json definition> ...``
+* ``om <path> create --resource <json definition> ...``
 
   Creates a service using definitions passed as ``--resource`` arguments.
 
@@ -150,7 +125,7 @@ The ``create`` service action will take care of the ``etc/mysvc*`` directories a
 
 Example::
 
-  $ sudo svcmgr -s mysvc --config /etc/opensvc/mysvc.conf --provision create
+  $ om mysvc create --config /etc/opensvc/mysvc.conf --provision
 
 Update
 ++++++
@@ -167,7 +142,7 @@ Service Templates
 
 A template is a normal service configuration file with parts you can replace with references and/or arithmetic evaluations. Templates can be stored in the local fs, served through ftp, http, https, or served by the collector with publications ACL.
 
-A template is instanciated by copying its content as a service configuration file (``<OSVCETC>/<svcname>.conf``).
+A template is instanciated by copying its content as a service configuration file (``<OSVCETC>/<svcname>.conf`` or ``<OSVCETC>/<namespace>/<kind>/<name>.conf``).
 
 Arithmetic Expressions
 ++++++++++++++++++++++
@@ -186,11 +161,11 @@ Env section
 
 References to the ``env`` section are special:
 
-* Options in the ``env`` are not submitted the synthaxic checks (``svcmgr validate config`` for example).
+* Options in the ``env`` are not submitted the synthaxic checks run by ``om <path> validate config`` and ``om <path> edit``.
 
-* ``svcmgr create`` ``--interactive`` prompts for each env key value, suggesting the value set in the template as default.
+* ``om <path> create --interactive`` prompts for each env key value, suggesting the value set in the template as default.
 
-* ``svcmgr create`` ``--env <option>=<value>`` overrides the env options default values.
+* ``om <path> create --env <option>=<value>`` overrides the env options default values.
 
 * System's uppercased environment variables override the env options default values and values specified with ``--env``.
 
@@ -206,10 +181,9 @@ Template ``testec2docker.template``:
 ::
 
   [DEFAULT]
-  service_type = TST
+  env = TST
   nodes = node12.nsx.lab.net
   docker_data_dir = /srv/{svcname}/docker
-  docker_daemon_args = 
   
   [ip#0]
   ipname = <allocate>
@@ -244,7 +218,7 @@ Template ``testec2docker.template``:
   image = ubuntu:14.10
   type = docker
   run_args = --net=bridge -p 80:80
-  run_command = /bin/bash
+  command = /bin/bash
   
   [container#1]
   image = nginx:latest
@@ -265,7 +239,7 @@ Provision:
 
 ::
 
-  $ sudo svcmgr -s testec2docker4.nsx.lab.net --config testec2docker.template --provision create
+  $ om testec2docker4.nsx.lab.net --config testec2docker.template --provision create --leader --disable-rollback
   INFO    testec2docker4.nsx.lab.net                  svcmgr -s testec2docker4.nsx.lab.net --config /etc/opensvc/testec2docker4.nsx.lab.net.conf --provision create
   INFO    testec2docker4.nsx.lab.net.ip#0             aws --output=json ec2 assign-private-ip-addresses --network-interface-id eni-033adc4b --secondary-private-ip-address-count 1
   INFO    testec2docker4.nsx.lab.net.ip#0             public ip already provisioned
@@ -419,7 +393,7 @@ Template:
 ::
 
   [DEFAULT]
-  service_type = TST
+  env = TST
   docker_data_dir = /srv/{svcname}/docker
   docker_daemon_args = --storage-driver=btrfs
   app = NSX
@@ -463,7 +437,7 @@ Template:
   image = ubuntu:latest
   netns = container#0
   run_args = -v /srv/{svcname}/data:/data:rw
-  run_command = /bin/bash
+  command = /bin/bash
 
 Docker Service on Amazon, Btrfs on Md Raid
 ++++++++++++++++++++++++++++++++++++++++++
@@ -473,7 +447,7 @@ Template:
 ::
 
   [DEFAULT]
-  service_type = TST
+  env = TST
   docker_data_dir = /srv/{svcname}/docker
   docker_daemon_args = --storage-driver=btrfs
   app = NSX
@@ -521,14 +495,14 @@ Single command provisioning:
 
 ::
 
-  sudo svcmgr -s haproxy1.nsx.lab.net create --provision \
-    --resource '{"rtype": "DEFAULT", "nodes": "node12.nsx.lab.net", "docker_data_dir": "/srv/haproxy1.nsx.lab.net/docker", "service_type": "TST"}' \
+  om haproxy1.nsx.lab.net create --provision --leader --disable-rollback \
+    --resource '{"rtype": "DEFAULT", "nodes": "node12.nsx.lab.net", "docker_data_dir": "/srv/haproxy1.nsx.lab.net/docker", "env": "TST"}' \
     --resource '{"rtype": "ip", "type": "amazon", "ipname": "<allocate>", "ipdev": "eth0", "docker_daemon_ip": true, "cascade_allocation": "ip#1.ipname"}' \
     --resource '{"rtype": "ip", "ipdev": "eth0", "ipname": ""}' \
     --resource '{"rtype": "disk", "type": "amazon", "volumes": "<size=5>"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=docker", "mnt": "/srv/haproxy1.nsx.lab.net/docker", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
     --resource '{"rtype": "fs", "type": "btrfs", "mnt_opt": "defaults,subvol=data", "mnt": "/srv/haproxy1.nsx.lab.net/data", "dev": "/var/lib/opensvc/haproxy1.nsx.lab.net/dev/disk.0.0"}' \
-    --resource '{"rtype": "container", "type": "docker", "image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "run_command": "haproxy -db -f /data/etc/haproxy.cfg"}'
+    --resource '{"rtype": "container", "type": "docker", "image": "haproxy", "run_args": "-v /etc/localtime:/etc/localtime:ro -v /srv/haproxy1.nsx.lab.net/data:/data -p 80:80 -p 443:443 --net=bridge", "command": "haproxy -db -f /data/etc/haproxy.cfg"}'
 
 Example haproxy.cfg file in ``/srv/haproxy1.nsx.lab.net/data/etc/haproxy.cfg``:
 
