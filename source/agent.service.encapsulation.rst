@@ -164,12 +164,12 @@ The same service, seen at the container level::
 
 * The detailled encapsulated service status is folded under each container resource.
 * Resources tagged with ``encap`` have the ``E`` flag displayed
-* The master hypervisor fetches the encapsulated service status through ``svcmgr -s <svcname> json status``
+* The master hypervisor fetches the encapsulated service status through ``om <path> json status``
 
 Commands
 ========
 
-Services with encapsulted resources can be started and stopped with the simple ``svcmgr -s <svcname> start`` and ``svcmgr -s <svcname> stop`` commands. Those commands chain the service action at the hypervisor level and at the encapsulated level.
+Services with encapsulted resources can be started and stopped with the simple ``om <path> start`` and ``om <path> stop`` commands. Those commands chain the service action at the hypervisor level and at the encapsulated level.
 
 Actions limited to a subset of resources, like ``startfs`` or ``startip`` require the administrator to specify at which level they should occur using the ``--master``, ``--slave <slave>`` or ``--slaves`` parameters.
 
