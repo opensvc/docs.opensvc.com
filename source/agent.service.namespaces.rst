@@ -5,7 +5,7 @@ Namespaces allow users to create objects with the same name in different naming 
 
 The ``<namespace>/<kind>/<name>`` is called a path.
 
-The service selector (``--service`` option for svcmgr and svcmon, first argument for om) accepts the path notation.
+The object selector (``--service`` option for svcmgr and svcmon, first argument for om) accepts the path notation.
 
 Namespaced objects have their config stored in ``/etc/opensvc/namespaces/<namespace>/<kind>/``.
 
@@ -93,13 +93,12 @@ Create objects in the root namespace
 	$ unset OSVC_NAMESPACE
 	$ om svc1 create
 
-Services relationships
-======================
+Relations
+=========
 
-Children and parents relationship can now use object paths in addition to object names.
+Children and parents relations use object paths or object names.
 
 * If a name is declared in the parents, slaves or children lists, the related objects are searched in the same namespace.
 * A relation to an object in another namespace must be declared using its path instead of its name.
-
-Relations to objects in the root pseudo namespace must be defined as ``root/<kind>/<name>`` to avoid ambiguity.
+* Relations to objects in the root pseudo namespace must be defined as ``root/<kind>/<name>`` to avoid ambiguity.
 
