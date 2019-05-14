@@ -1,44 +1,51 @@
 Management
 **********
 
-Selecting Services
-==================
+Selecting Objects
+=================
+
+All
++++
+
+::
+
+	om '**' ls
 
 All Services
 ++++++++++++
 
 ::
 
-	sudo svcmgr ls
+	om '*' ls
 
 Single Service
 ++++++++++++++
 
 ::
 
-	sudo svcmgr ls -s <svcname>
-        # or
-	sudo <svcname> ls
+	om <path> ls
+	om ns1/svc/web1 ls
 
-List All Services
-+++++++++++++++++
+Object list
++++++++++++
 
 ::
 
-	sudo svcmgr ls -s svc1,svc2
+	om <path1>,<path2> ls
+	om ns1/svc/web1,ns1/vol/wev1 ls
 
 Services by State
 +++++++++++++++++
 
 ::
 
-	sudo svcmgr ls --status down
+	om '*' ls --status down
 
 List all services in 'down' state.
 
 ::
 
-	sudo svcmgr ls --status up,warn
+	om '*' ls --status up,warn
 
 List all services in 'up' and 'warn' state.
 
@@ -47,12 +54,12 @@ Service Selector Expressions
 
 ::
 
-        svcmgr ls -s <expr>[+<expr>...]
+        om <expr> ls
 
 Where ``<expr>`` is:
 
 * ``<svcname glob pattern>``
-* ``<param><op><value>``
+* ``[!]<param><op><value>``
 
 Where ``<param>`` is:
 
@@ -62,11 +69,15 @@ Where ``<param>`` is:
 
 Where ``<op>`` is:
 
-* ``+`` as the AND expression separator
 * ``<`` ``>`` ``<=`` ``>=`` ``=`` operators
 * ``:`` as a existance test operator (empty value)
-* ``!`` as a negation operator
 * ``~`` as a regexp operator
+
+And:
+
+* ``!`` as a negation operator
+* ``+`` as the AND expression separator
+* ``,`` as the OR expression separator
 
 The matching is case-sensitive except for booleans.
 
@@ -75,7 +86,7 @@ Examples:
 services with name ending with dns or starting with ha and with
 an app resource with a timeout set superior to 1::
 
-	$ sudo svcmgr -s '*dns,ha*+app.timeout>1' ls
+	$ om '*dns,ha*+app.timeout>1' ls
 	ha1
 	ha2
 	ha3
@@ -83,7 +94,7 @@ an app resource with a timeout set superior to 1::
 
 Services with at least one ip resource and one task resource::
 
-	$ sudo svcmgr -s 'ip:+task:' ls
+	$ om 'ip:+task:' ls
 	ha1
 	ha2
 	ha3
@@ -91,7 +102,7 @@ Services with at least one ip resource and one task resource::
 
 Services with at least one monitored resource and monitor_schedule not set::
 
-	$ svcmgr ls -s '!monitor_schedule+.monitor=true'
+	$ om '!monitor_schedule+.monitor=true' ls
 	ha1
 	ha4
 
@@ -106,7 +117,7 @@ Human Readable
 
 ::
 
-        sudo svcmon
+        om mon
 
 This command fetches the information from the daemon listener. Hence,
 
@@ -171,20 +182,27 @@ Marker   On service instance                On Service                         O
 ``P``    not fully provisioned instance
 ======== ================================== ================================== ===============
 
-JSON
-----
+Machine readable
+----------------
 
 ::
 
-        sudo svcmon --format json
+        om daemon status --format json
+        om daemon status --format flat_json
 
 Watch
 -----
 
 ::
 
-	watch -c sudo svcmon --color yes
+	om mon --watch
 
+Stats
+-----
+
+::
+
+	om mon --stats
 
 Detailled Instance Status
 +++++++++++++++++++++++++
@@ -194,21 +212,22 @@ Human Readable
 
 ::
 
-        sudo svcmgr -s <svcname> print status
+        om <svcname> print status
 
-JSON
-----
+Machine Readable
+----------------
 
 ::
 
-        sudo svcmgr -s <svcname> print status --format json
+        om <svcname> print status --format json
+        om <svcname> print status --format flat_json
 
 Forced evaluation of status
 ---------------------------
 
 ::
 
-        sudo svcmgr -s <svcname> print status --refresh
+        om <svcname> print status --refresh
 
 
 Actions
@@ -222,43 +241,43 @@ Start
 
 ::
 
-        sudo svcmgr -s <svcname> start --local
+        om <svcname> start --local
 
 Start the local service instance, shortcutting the orchestrator.
 Resources start order is ip, disk, fs, share, container, app.
 
 ::
 
-        sudo svcmgr -s <svcname> start [--wait] [--time <duration expr>]
+        om <svcname> start [--wait] [--time <duration expr>] [--watch]
 
 Tell the orchestrator to start the service on the nodes the placement policy and constraints choose.
 
-By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, svcmgr will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
+By default, the command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, the command will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
 
 Stop
 ----
 
 ::
 
-        sudo svcmgr -s <svcname> stop --local
+        om <svcname> stop --local
 
 Stop the local service instance, shortcutting the orchestrator.
 Resources stop order is app, container, share, fs, disk, ip.
 
 ::
 
-        sudo svcmgr -s <svcname> stop [--wait] [--time <duration expr>]
+        om <svcname> stop [--wait] [--time <duration expr>] [--watch]
 
 Tell the orchestrator to stop the service wherever it runs and freeze it so it is not restarted.
 
-By default, the svcmgr command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, svcmgr will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
+By default, the command returns as soon has to daemon has acknowedged the order. With :opt:`--wait`, the command will wait for the action completion before returning. :opt:`--time` set a maximum wait time.
 
 Relocation
 ----------
 
 ::
 
-        sudo svcmgr -s <svcname> switch --node <nodename>
+        om <svcname> switch --node <nodename> [--wait] [--time <duration expr>] [--watch]
 
 Stop the service on <nodename> peers and start it on <nodename>.
 
@@ -266,7 +285,7 @@ All service instances are thawed at the end of this ended, whatever their initia
 
 ::
 
-        sudo svcmgr -s <svcname> takeover
+        om <svcname> takeover [--wait] [--time <duration expr>] [--watch]
 
 Stop the service instances on peers and start it on the local node.
 
@@ -274,7 +293,7 @@ All service instances are thawed at the end of this ended, whatever their initia
 
 ::
 
-        sudo svcmgr -s <svcname> giveback
+        om <svcname> giveback [--wait] [--time <duration expr>] [--watch]
 
 Thaw the nodes and service instances, stop the service instances running on non-leader nodes, and let the orchestrator start the instances on the leaders.
 
@@ -283,36 +302,36 @@ All service instances are thawed at the end of this ended, whatever their initia
 Handling Failures
 -----------------
 
-When an action is submitted to the agent daemons, they orchestrate the execution plan to make the service reach the desired state. If a step of this plan fails, the orchestrator is blocked, the failure reported in :cmd:`svcmon` and :cmd:`svcmgr print status`, and the target state is still set.
+When an action is submitted to the agent daemons, they orchestrate the execution plan to make the service reach the desired state. If a step of this plan fails, the orchestrator is blocked, the failure reported in :cmd:`om mon` and :cmd:`om <path> print status`, and the target state is still set.
 
 For example, the :c-svc:`svc1` failover service is requested to start. The :c-node:`n1` node is the leader and its instance started, but the action fails. This instance service monitor status transitioned to ``start failed``, and the orchestration is blocked.
 
 To let the daemon retry the execution plan, the failure can be **cleared**, using::
 
-	sudo svcmgr -s <svcname> clear
+	om <svcname> clear
 
 To abort the action, use::
 
-	sudo svcmgr -s <svcname> abort
+	om <svcname> abort
 
 Sync
 ----
 
 ::
 
-        sudo svcmgr -s <svcname> sync all
+        om <svcname> sync all
 
 Run the sync resources replication to all targets, either prd or drp.
 
 ::
 
-        sudo svcmgr -s <svcname> sync nodes
+        om <svcname> sync nodes
 
 Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
 ::
 
-        sudo svcmgr -s <svcname> sync drp
+        om <svcname> sync drp
 
 Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
@@ -323,7 +342,7 @@ Run
 
 ::
 
-        sudo svcmgr -s <svcname> run
+        om <svcname> run
 
 Run tasks.
 
@@ -334,13 +353,13 @@ Resource Filtering
 
 ::
 
-        sudo svcmgr -s <svcname> --rid <rid>[,<rid>,...] <action>
+        om <svcname> --rid <rid>[,<rid>,...] <action>
 
 Execute ``<action>`` on :c-svc:`<svcname>` resources specified by :opt:`--rid`.
 
 ::
 
-        sudo svcmgr -s <svcname> --rid <drvgrp>[,<drvgrp>,...] <action>
+        om <svcname> --rid <drvgrp>[,<drvgrp>,...] <action>
 
 Execute ``<action>`` on :c-svc:`<svcname>` resources of driver groups specified by by :opt:`--rid`.
 The supported driver groups are:
@@ -358,19 +377,19 @@ Resource identifiers and driver groups can be mixed in a :opt:`--rid` expression
 
 ::
 
-        sudo svcmgr -s <svcname> --tags tag1,tag2 <action>
+        om <svcname> --tags tag1,tag2 <action>
 
 Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with either tag1 or tag2.
 
 ::
 
-        sudo svcmgr -s <svcname> --tags tag1+tag2,tag3 <action>
+        om <svcname> --tags tag1+tag2,tag3 <action>
 
 Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with both tag1 or tag2 or with tag3.
 
 ::
 
-        sudo svcmgr -s <svcname> --subsets s1,s2 <action>
+        om <svcname> --subsets s1,s2 <action>
 
 Execute ``<action>`` on :c-svc:`<svcname>` resources in subset s1 or s2
 
@@ -385,9 +404,6 @@ All action logs are multiplexed to:
 *   ``<OSVCLOG>/<svcname>.log``
     Daily rotation on these files, and size limit rotation
 
-*   ``<OSVCLOG>/<svcname>.debug.log``
-    Including debug logs
-
 *   collector database
     Optional, through asynchronous xmlrpc calls.
 
@@ -401,7 +417,7 @@ Print resource status of a service:
 
 ::
 
-        $ sudo svcmgr -s osvprdcollector.opensvc.com print status
+        $ om osvprdcollector.opensvc.com print status
         osvprdcollector.opensvc.com
         overall                   up         
         |- avail                  up         
