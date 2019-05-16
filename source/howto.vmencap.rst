@@ -35,7 +35,7 @@ Follow the :ref:`agent.install` guide.
 Service creation
 ================
 
-Follow the :ref:`agent.service.creation` guide.
+Follow the :ref:`agent.apps.create` guide.
 
 Customize the service env file
 ==============================

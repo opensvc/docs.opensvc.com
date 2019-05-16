@@ -1,3 +1,5 @@
+.. _howto.getting.started:
+
 Getting Started
 ***************
 
