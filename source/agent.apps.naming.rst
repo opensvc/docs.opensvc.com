@@ -1,4 +1,4 @@
-.. _agent.apps.create:
+.. _agent.apps.naming:
 
 Naming
 ******
