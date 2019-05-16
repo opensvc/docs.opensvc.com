@@ -3,8 +3,8 @@
 Agent Daemon Scheduler
 **********************
 
-* This agent daemon thread executes the :cmd:`nodemgr schedulers` every minute.
-* It makes sure no more than two executions run in parallel, skipping executions.
+* This agent daemon thread executes node and objects tasks according to their schedule definition.
+* It makes sure no more than two executions run in parallel, skipping executions if necessary.
 
 .. seealso: :ref:`agent-scheduler`
 
