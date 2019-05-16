@@ -6,12 +6,13 @@ Agent
 
    agent.install
    agent.configure
-   agent.service
    agent.upgrade
+   agent.apps.deploy
+   agent.apps.operate
+   agent.apps.design
    agent.internals
-   agent.features
-   agent.releasenotes
-   agent.changelog
    agent.commands
    agent.template.conf
    agent.rosettastone
+   agent.releasenotes
+   agent.changelog
