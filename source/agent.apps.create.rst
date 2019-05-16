@@ -93,12 +93,12 @@ Templates can be served by the collector.
 
 	om <path> create --template <id|name> [--interactive] [--provision]
 
-.. seealso:: :ref:`agent-service-provisioning`
-
 From Collector Service
 ----------------------
 
 ::
 
 	om <path> pull
+
+.. seealso:: :ref:`agent-service-provisioning`
 
