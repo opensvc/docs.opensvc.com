@@ -8,8 +8,6 @@ The OpenSVC agent embeds a scheduler. The node and each service has a private sc
 Scheduler Behaviour
 ===================
 
-The agent postinstall configures a system's scheduler job at a 1 minute period executing the :cmd:`nodemgr schedulers` command. This action runs the OpenSVC agent scheduler for the node and each service.
-
 For each task, the scheduler determines if the current time meets the task's schedule definition constraints. If all constraints are met, the task action is run in a subprocess and the last run timestamp is updated.
 
 The schedule definition constraints are expressed as allowed timeranges and minimum period. Example: In ``00:00-02:00@121``, the timerange is from midnight to 2am, the period is 121 minutes. Multiple ``<timerange>@<period>`` can be defined with the syntax ``["00:00-02:00@121", "12:00-14:00@121"]``
@@ -29,7 +27,7 @@ Node Schedule
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo nodemgr print schedule
+	$ om node print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter         </span>  <span style="font-weight: bold">Schedule Definition                               </span>  
 	|- <span style="color: #767676">auto_reboot        </span>  2017-09-30 16:59:19  reboot.schedule            16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr  
 	|- <span style="color: #767676">auto_rotate_root_pw</span>  -                    rotate_root_pw.schedule    -                                                   
@@ -67,13 +65,13 @@ The scheduled tasks can be configured in ``<OSVCETC>/node.conf`` with a configle
 	[<section>]
 	<parameter> = <definition>
 
-The ``config parameter`` column in the :cmd:`nodemgr print schedule`  output is formatted as::
+The ``config parameter`` column in the :cmd:`om node print schedule`  output is formatted as::
 
 	<section>.<parameter>
 
 And the current definition, explicit or implicit is visible in the ``schedule definition`` column. A dash character means never scheduled.
 
-The :cmd:`nodemgr` command executed when the schedule constraints are met is displayed in the ``action`` column.
+The :cmd:`om node` command action executed when the schedule constraints are met is displayed in the ``action`` column.
 
 The supported schedules are:
 
@@ -85,7 +83,7 @@ The supported schedules are:
 * Health checking task : ``checks``
 * Scheduled node reboot task : ``auto_reboot``
 * Scheduled root password rotation task : ``auto_rotate_root_pw``
-* Execution of nodemgr actions queued by the collector : ``dequeue_actions``
+* Execution of node actions queued by the collector : ``dequeue_actions``
 * SAN switches inventoring tasks : ``pushbrocade``
 * Storage arrays inventoring tasks : ``pushcentera`` ``pushdcs`` ``pushemcvnx`` ``pusheva`` ``pushfreenas`` ``pushhds`` ``pushhp3par`` ``pushibmds`` ``pushibmsvc`` ``pushnecism`` ``pushnetapp`` ``pushsym`` ``pushvioserver``
 * Backup servers saves index inventoring tasks : ``pushnsr``
@@ -97,7 +95,7 @@ Service Schedule
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo svcmgr -s testmd print schedule
+	$ om testmd print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter        </span>  <span style="font-weight: bold">Schedule Definition</span>  
 	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:09:01  DEFAULT.comp_schedule     00:00-06:00@361      
 	|- <span style="color: #767676">push_config        </span>  2017-10-01 00:01:02  DEFAULT.push_schedule     00:00-06:00@361      
@@ -113,13 +111,13 @@ The scheduled tasks can be configured in ``<OSVCETC>/<svcname>.conf`` with a con
 	[<section>]
 	<parameter> = <definition>
 
-The ``config parameter`` column in the :cmd:`svcmgr -s <svcname> print schedule`  output is formatted as::
+The ``config parameter`` column in the :cmd:`om <path> print schedule`  output is formatted as::
 
 	<section>.<parameter>
 
 And the current definition, explicit or implicit is visible in the ``schedule definition`` column. A dash character means never scheduled.
 
-The :cmd:`svcmgr -s <svcname>` command executed when the schedule constraints are met is displayed in the ``action`` column.
+The :cmd:`om <path>` command executed when the schedule constraints are met is displayed in the ``action`` column.
 
 The supported schedules are:
 
