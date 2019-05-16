@@ -55,10 +55,14 @@ Reference                   Description                                         
 {nodename}                  The running node fqdn                                          Yes                     Yes
 {short_nodename}            The running node base name (without domain)                    Yes                     Yes
 {namespace}                 The name of the hosting namespace                              No                      Yes
-{kind}                      The object kind, ie "svc", "vol", "ccfg"                       No                      Yes
-{svcname}                   The object name                                                No                      Yes 
-{svcpath}                   The object path, ie <namespace>/<kind>/<name>                  No                      Yes
-{short_svcname}             The object base name (name with domain suffix stripped)        No                      Yes
+{kind}                      The object kind, ie "svc", "vol", "sec", "cfg", "ccfg"         No                      Yes
+{name}                      The object name                                                No                      Yes 
+{path}                      The object path, ie <namespace>/<kind>/<name>                  No                      Yes
+{short_name}                The object base name (name with domain suffix stripped)        No                      Yes
+{fqdn}                      The object fully qualified name, as registered in the cluster  No                      Yes
+                            DNS, ie <name>.<namespace>.<kind>.<clustername>
+{scaler_name}               The scaler name (because {name} resolves to the slice name)    No                      Yes
+{scaler_short_name}         The scaler base name (name with domain suffix stripped)        No                      Yes
 {id}                        The object id                                                  No                      Yes
 {safe://<id>}               Substitute the reference with the content of the safe file     Yes                     Yes
                             identified by <id>. Usually passwords or private keys. The
@@ -82,9 +86,20 @@ Reference                   Description                                         
                             installed through the packages, /opt/opensvc/var/ for an agent
                             installed via git pull in /opt
 {initd}                     The object init directory path. ex: /etc/opensvc/etc/<name>.d/ Yes                     Yes
+{private_var}               The object private directory under {var}                       Yes                     Yes
 {<rid>.exposed_devs}        The whitespace-separated list of devpaths exposed by <rid>     No                      Yes
 {<rid>.exposed_devs[<n>]}   The <n>-th element of the list of devpaths exposed by <rid>    No                      Yes
 {<rid>.exposed_devs[#]}     The length of the list of devpaths exposed by <rid>            No                      Yes
+=========================== ============================================================== ======================= ==========================
+
+Deprecated references:
+
+=========================== ============================================================== ======================= ==========================
+Reference                   Description                                                    Node Configuration File Service Configuration File
+=========================== ============================================================== ======================= ==========================
+{svcname}                   Deprecated by {name}                                           No                      Yes 
+{svcpath}                   Deprecated by {path}                                           No                      Yes
+{short_svcname}             Deprecated by {short_name}                                     No                      Yes
 =========================== ============================================================== ======================= ==========================
 
 References and ``env`` Section
@@ -106,8 +121,8 @@ Example:
 These values can be overridden when creating a new object from this configuration file or template,
 
 * Interactively
-  ``svcmgr -s <svcname> create --config <template> --interactive``
+  ``om <path> create --config <template> --interactive``
 
 * In the commandline
-  ``svcmgr -s <svcname> create --config <template> --env devs=/dev/vdc``
+  ``om <path> create --config <template> --env devs=/dev/vdc``
 
