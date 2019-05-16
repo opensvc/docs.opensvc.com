@@ -68,8 +68,7 @@ Installation
 
 ::
 
-	# sudo svcmgr -s collector_eval deploy \
-		--config https://www.opensvc.com/init/static/templates/collector.conf
+	# om eval/svc/collector deploy --config https://www.opensvc.com/init/static/templates/collector.conf
 
 
 The database still bootstraps for a few minutes after this command exits. An error page can be displayed in the browser while this bootstrap runs.
@@ -96,9 +95,9 @@ Contact sales@opensvc.com for meetings, support, training, production licenses.
 End of evaluation
 *****************
 
-Clean up the service and all data using the command
+Clean up the service and data volume using the command
 
 ::
 
-	# sudo svcmgr -s collector_eval,collector_eval-data purge
+	# om 'eval/*/collector' purge
 
