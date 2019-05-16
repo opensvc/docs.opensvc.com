@@ -58,7 +58,7 @@ Service Selector Expressions
 
 Where ``<expr>`` is:
 
-* ``<svcname glob pattern>``
+* ``<path glob pattern>``
 * ``[!]<param><op><value>``
 
 Where ``<param>`` is:
@@ -212,22 +212,22 @@ Human Readable
 
 ::
 
-        om <svcname> print status
+        om <path> print status
 
 Machine Readable
 ----------------
 
 ::
 
-        om <svcname> print status --format json
-        om <svcname> print status --format flat_json
+        om <path> print status --format json
+        om <path> print status --format flat_json
 
 Forced evaluation of status
 ---------------------------
 
 ::
 
-        om <svcname> print status --refresh
+        om <path> print status --refresh
 
 
 Actions
@@ -241,14 +241,14 @@ Start
 
 ::
 
-        om <svcname> start --local
+        om <path> start --local
 
 Start the local service instance, shortcutting the orchestrator.
 Resources start order is ip, disk, fs, share, container, app.
 
 ::
 
-        om <svcname> start [--wait] [--time <duration expr>] [--watch]
+        om <path> start [--wait] [--time <duration expr>] [--watch]
 
 Tell the orchestrator to start the service on the nodes the placement policy and constraints choose.
 
@@ -259,14 +259,14 @@ Stop
 
 ::
 
-        om <svcname> stop --local
+        om <path> stop --local
 
 Stop the local service instance, shortcutting the orchestrator.
 Resources stop order is app, container, share, fs, disk, ip.
 
 ::
 
-        om <svcname> stop [--wait] [--time <duration expr>] [--watch]
+        om <path> stop [--wait] [--time <duration expr>] [--watch]
 
 Tell the orchestrator to stop the service wherever it runs and freeze it so it is not restarted.
 
@@ -277,7 +277,7 @@ Relocation
 
 ::
 
-        om <svcname> switch --node <nodename> [--wait] [--time <duration expr>] [--watch]
+        om <path> switch --node <nodename> [--wait] [--time <duration expr>] [--watch]
 
 Stop the service on <nodename> peers and start it on <nodename>.
 
@@ -285,7 +285,7 @@ All service instances are thawed at the end of this ended, whatever their initia
 
 ::
 
-        om <svcname> takeover [--wait] [--time <duration expr>] [--watch]
+        om <path> takeover [--wait] [--time <duration expr>] [--watch]
 
 Stop the service instances on peers and start it on the local node.
 
@@ -293,7 +293,7 @@ All service instances are thawed at the end of this ended, whatever their initia
 
 ::
 
-        om <svcname> giveback [--wait] [--time <duration expr>] [--watch]
+        om <path> giveback [--wait] [--time <duration expr>] [--watch]
 
 Thaw the nodes and service instances, stop the service instances running on non-leader nodes, and let the orchestrator start the instances on the leaders.
 
@@ -308,30 +308,30 @@ For example, the :c-svc:`svc1` failover service is requested to start. The :c-no
 
 To let the daemon retry the execution plan, the failure can be **cleared**, using::
 
-	om <svcname> clear
+	om <path> clear
 
 To abort the action, use::
 
-	om <svcname> abort
+	om <path> abort
 
 Sync
 ----
 
 ::
 
-        om <svcname> sync all
+        om <path> sync all
 
 Run the sync resources replication to all targets, either prd or drp.
 
 ::
 
-        om <svcname> sync nodes
+        om <path> sync nodes
 
 Trigger hard-coded and user-defined file synchronization to secondary nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
 ::
 
-        om <svcname> sync drp
+        om <path> sync drp
 
 Trigger hard-coded and user-defined file synchronization to disaster recovery nodes. Optionally creates snapshots to send a coherent file set. No-op if run from a node not running the service.
 
@@ -342,7 +342,7 @@ Run
 
 ::
 
-        om <svcname> run
+        om <path> run
 
 Run tasks.
 
@@ -353,15 +353,15 @@ Resource Filtering
 
 ::
 
-        om <svcname> --rid <rid>[,<rid>,...] <action>
+        om <path> --rid <rid>[,<rid>,...] <action>
 
-Execute ``<action>`` on :c-svc:`<svcname>` resources specified by :opt:`--rid`.
+Execute ``<action>`` on :c-svc:`<path>` resources specified by :opt:`--rid`.
 
 ::
 
-        om <svcname> --rid <drvgrp>[,<drvgrp>,...] <action>
+        om <path> --rid <drvgrp>[,<drvgrp>,...] <action>
 
-Execute ``<action>`` on :c-svc:`<svcname>` resources of driver groups specified by by :opt:`--rid`.
+Execute ``<action>`` on :c-svc:`<path>` resources of driver groups specified by by :opt:`--rid`.
 The supported driver groups are:
 
 * ip
@@ -377,21 +377,21 @@ Resource identifiers and driver groups can be mixed in a :opt:`--rid` expression
 
 ::
 
-        om <svcname> --tags tag1,tag2 <action>
+        om <path> --tags tag1,tag2 <action>
 
-Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with either tag1 or tag2.
-
-::
-
-        om <svcname> --tags tag1+tag2,tag3 <action>
-
-Execute ``<action>`` on :c-svc:`<svcname>` resources tagged with both tag1 or tag2 or with tag3.
+Execute ``<action>`` on :c-svc:`<path>` resources tagged with either tag1 or tag2.
 
 ::
 
-        om <svcname> --subsets s1,s2 <action>
+        om <path> --tags tag1+tag2,tag3 <action>
 
-Execute ``<action>`` on :c-svc:`<svcname>` resources in subset s1 or s2
+Execute ``<action>`` on :c-svc:`<path>` resources tagged with both tag1 or tag2 or with tag3.
+
+::
+
+        om <path> --subsets s1,s2 <action>
+
+Execute ``<action>`` on :c-svc:`<path>` resources in subset s1 or s2
 
 
 Logging
@@ -401,7 +401,9 @@ All action logs are multiplexed to:
 
 *   stdout/stderr
 
-*   ``<OSVCLOG>/<svcname>.log``
+*   ``<OSVCLOG>/<name>.log`` for svc kind in root namespace.
+    ``<OSVCLOG>/<kind>/<name>.log`` for non-svc kind in root namespace.
+    ``<OSVCLOG>/namespaces/<namespace>/<kind>/<name>.log`` for namespaced objects.
     Daily rotation on these files, and size limit rotation
 
 *   collector database
