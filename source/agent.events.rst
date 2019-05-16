@@ -127,11 +127,11 @@ Watching Events
 
 In human readable format::
 
-        nodemgr events
+        om node events
 
 In machine readable format::
 
-        nodemgr events --format json
+        om node events --format json
 
 Waiting for data change events
 ==============================
@@ -139,17 +139,17 @@ Waiting for data change events
 ::
 
         # test the filter
-        $ nodemgr daemon status --filter "monitor.nodes.nuc-cva.frozen"
-        False
+        $ om daemon status --filter "monitor.nodes.nuc-cva.frozen"
+        0
 
         # already on target => return immediately
-        $ nodemgr wait --filter "nuc-cva.frozen=false" --duration 1s
+        $ om node wait --filter "monitor.nuc-cva.frozen=0" --duration 1s
 
         $ echo $?
         0
 
         # not going on target => timeout
-        $ nodemgr wait --filter "nuc-cva.frozen=true" --duration 1s
+        $ om node wait --filter "monitor.nuc-cva.frozen" --duration 1s
         timeout
 
         $ echo $?
