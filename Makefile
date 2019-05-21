@@ -183,7 +183,6 @@ templates: gitrepo
 	@test -d source/agent.templates || mkdir source/agent.templates
 	@$(DOCDIR)/opensvc/bin/pkg/make_rst
 	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst/* source/agent.templates/
-	cp $(DOCDIR)/opensvc/usr/share/doc/auth.conf source/_static/auth.conf
 
 compobjs: gitrepo
 	@for t in `egrep -l "^data = {" $(DOCDIR)/opensvc/var/compliance/com.opensvc/*.py` ; do \
