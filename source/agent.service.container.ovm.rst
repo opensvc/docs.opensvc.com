@@ -19,7 +19,7 @@ The OpenSVC driver for OVM supports:
 OVM server configuration
 ========================
 
-The OVM servers need to be able to communicate with their manager for OpenSVC to handle service HA flag. This communication uses the ovmcli tool provided by Oracle.
+The OVM servers may want to communicate with their manager, for example to change vms HA flag. This communication uses the ovmcli tool provided by Oracle.
 
 Install ovmcli
 --------------
@@ -69,17 +69,6 @@ You have to run the :cmd:`ovm config` command one time. You will then be prompte
         
         Configuration complete.
         Please rerun the Oracle VM Manager Command Line Interface.
-
-OpenSVC node configuration
---------------------------
-
-Add the authentication information to ``<OSVCETC>/auth.conf`` (this file is not world-readable)
-
-::
-
-        [ovm]
-        username = admin
-        password = xxxxxxx
 
 Service configuration
 =====================

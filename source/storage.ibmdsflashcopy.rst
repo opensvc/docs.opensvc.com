@@ -38,13 +38,13 @@ Pre-requisites
 
 The dscli commands must be installed in the standard location on the nodes running this service resource type.
 
-An ``<OSVCETC>/auth.conf`` must exist and contain credentials to access the manager for each array. The agent enforce this file permissions is 600 and is owned by root.
+The array managers credentials must be defined in the node or cluster configuration.
 
-Example auth.conf:
+Example:
 
 ::
 
-	[IBM.XXXX-XXXXXXX]
+	[array#IBM.XXXX-XXXXXXX]
 	type = ibmds
 	hmc1 = 10.10.10.10
 	hmc2 =

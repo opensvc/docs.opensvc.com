@@ -43,16 +43,17 @@ Service configuration
 Pre-requisites
 --------------
 
-The sssu binary must be installed on the node and symlinked as ``<OSVCBIN>/sssu``. An ``<OSVCETC>/auth.conf`` must exist and contain credentials to access the Command View manager for each array. This ``auth.conf`` file permissions should be 600 and owned by root. OpenSVC takes care of obfuscating the password in the output, local logs, and logs sent to the collector.
+The sssu binary must be installed on the node. If not in the PATH, the ``bin`` array keyword must be set. A ``array#<name>`` section must be declared in the node or cluster configuration and contain credentials to access the Command View manager for each array. OpenSVC takes care of obfuscating the password in the output, local logs, and logs sent to the collector.
 
-Example sssu.conf:
+Example:
 
 ::
 
-	[EVA11]
+	[array#EVA11]
+	bin = /opt/sssu/bin/sssu
 	manager = manager.opensvc.com
 	username = hpadmin
-	password = xxxxxxxx
+	password = system/sec/array-eva11
 
 You can setup as many sync resources as needed to ensure a consistent replication scenario.
 
@@ -62,6 +63,7 @@ Keywords
 .. toctree::
    :maxdepth: 2
 
+   agent.templates/template.node.array.eva
    agent.templates/template.service.sync.evasnap
 
 EVA snapshots configuration

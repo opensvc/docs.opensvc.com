@@ -47,8 +47,8 @@ At this point, you have to be able to connect both arrays, from both nodes, as o
 Agent configuration file
 ------------------------
 
-First of all, we need to teach OpenSVC agents how to connect HP 3Par array. The ``<OSVCETC>/auth.conf`` file is used to specify the connection method to each array.
-Configuration below describes our 2 arrays:
+First of all, we need to tell OpenSVC agents how to connect HP 3Par array. The node or cluster configuration file can describe the connection method to each array.
+The following configuration describes our 2 arrays:
 
 * Name between square brackets [] is the array alias used by OpenSVC. It have to be unique on a per agent basis. It also the array name, reported in the ``Target`` column while issuing ``showrcopy groups`` command
 * ``type`` specify OpenSVC that the declared ressource is a HP 3Par array
@@ -60,14 +60,16 @@ Configuration below describes our 2 arrays:
 ::
 
 	#
-	root@node1:~ # cat /etc/opensvc/auth.conf
-	[hp3par1.opensvc.com]
+	root@node1:~ # om cluster print config
+	...
+
+	[array#hp3par1.opensvc.com]
 	type = hp3par
 	username = opensvc
 	manager = hp3par1.opensvc.com
 	key = /home/opensvc/.ssh/id_dsa
 
-	[hp3par2.opensvc.com]
+	[array#hp3par2.opensvc.com]
 	type = hp3par
 	username = opensvc
 	manager = 192.168.100.199

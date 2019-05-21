@@ -29,7 +29,7 @@ Items Role
 =================== ===========================================================
 Path                Description
 =================== ===========================================================
-``<OSVCETC>``       Hosts service configurations
+``<OSVCETC>``       Hosts service, node and cluster configurations
 
 ``<OSVCTMP>``       Temporary, discardable files
 
@@ -38,11 +38,6 @@ Path                Description
 ``<OSVCBIN>/pkg``   Executables to create package and optional, site-specific,
                     release scripts (none shipped in the opensvc-provided
                     packages)
-
-``<OSVCVAR>/sync``  Where the production nodes of a cluster back up their
-                    configuration. These backups are used in case of disaster
-                    recovery activation to restore some specific configurations
-                    of the production nodes.
 
 ``<OSVCVAR>/lock``  Where executables create the lock-files used to ensure two
                     actions can not run simultaneously on the same service.
@@ -93,26 +88,4 @@ Template
 
    </pre></div></div>
 
-<PATHETC>/auth.conf
--------------------
-
-This configuration file contains authentication options and tokens for tiers infrastructure components. This information is used by the inventoring and provisioning drivers.
-
-The agent ensures this file is not world-writable nor world-readable.
-
-.. rst-class:: lvl1
-
-Template
-++++++++
-
-.. raw:: html
-
-   <div class='highlight-none'><div class='highlight'><pre>
-
-.. raw:: html
-   :file: _static/auth.conf
-
-.. raw:: html
-
-   </pre></div></div>
 
