@@ -167,7 +167,7 @@ Create the service configuration file:
 	app = MYAPP
 	vm_name = service_name
 	mode = lxc
-	service_type = PRD
+	env = PRD
 	nodes = node1.mydomain node2.mydomain
 	orchestrate = start
 

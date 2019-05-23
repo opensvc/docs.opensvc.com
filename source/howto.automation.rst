@@ -915,7 +915,7 @@ Node installation
     sudo nodemgr set --param node.repocomp --value https://repo.opensvc.com/compliance/
     sudo nodemgr set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
     sudo nodemgr set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
-    sudo nodemgr set --param node.host_mode --value PRD
+    sudo nodemgr set --param node.env --value PRD
     sudo nodemgr updatecomp
     sudo nodemgr register
     sudo nodemgr pushasset
@@ -969,7 +969,7 @@ Form configuration
             	var fmt_header = String.raw`
             [DEFAULT]
             app = __APP__
-            service_type = PRD
+            env = PRD
             nodes = __NODES__
             orchestrate = start
             docker_data_dir = /__SVCNAME__/docker

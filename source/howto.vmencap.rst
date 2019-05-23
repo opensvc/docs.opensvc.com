@@ -47,7 +47,7 @@ A typical VM service env file should look like:
 	[default]
 	app = ERP
 	comment = recette gen db #2
-	service_type = DEV
+	env = DEV
 	nodes =  node109 node110 node111 node112
 	orchestrate = start
 

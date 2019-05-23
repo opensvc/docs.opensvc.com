@@ -62,7 +62,7 @@ Service configuration
 ::
 
   [DEFAULT]
-  service_type = TST
+  env = TST
   nodes = node12.nsx.lab.net
   drpnodes = node11.nsx.lab.net
   docker_data_dir = /srv/testeip/docker

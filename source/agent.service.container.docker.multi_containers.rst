@@ -260,7 +260,7 @@ Example service configuration file
 	[DEFAULT]
 	autostart_node = deb1.opensvc.com
 	app = OSVCLAB
-	service_type = DEV
+	env = DEV
 	nodes = deb1.opensvc.com
 	docker_data_dir = /opt/busybox.opensvc.com/appdata
 	docker_daemon_args = --ip 37.59.71.25

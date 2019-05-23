@@ -74,7 +74,7 @@ Extract of a typical btrfs sync env file
 	[DEFAULT]
 	nodes = deb1.opensvc.com deb2.opensvc.com
 	app = OSVCLAB
-	service_type = DEV
+	env = DEV
 	
 	[fs#1]
 	type = btrfs

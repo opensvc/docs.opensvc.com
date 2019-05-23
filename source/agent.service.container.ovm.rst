@@ -79,7 +79,7 @@ Service configuration
         app = OSVC
         nodes = ovm1 ovm2
         orchestrate = start
-        service_type = DEV
+        env = DEV
         mode = ovm
         
         [ip#1]

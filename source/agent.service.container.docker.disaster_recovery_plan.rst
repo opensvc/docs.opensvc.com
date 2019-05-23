@@ -23,7 +23,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         [DEFAULT]
         orchestrate = start
         app = OSVCLAB
-        service_type = DEV
+        env = DEV
         nodes = deb1.opensvc.com
         docker_data_dir = /opt/busybox.opensvc.com/appdata
         docker_daemon_args = --ip 37.59.71.25
@@ -141,7 +141,7 @@ We can do this modification while service is running : we will add a ``drpnodes`
         [DEFAULT]
         orchestrate@nodes = start
         app = OSVCLAB
-        service_type = DEV
+        env = DEV
         nodes = deb1.opensvc.com
         drpnodes = deb2.opensvc.com
 
@@ -233,7 +233,7 @@ The service configuration looks like::
         [DEFAULT]
         orchestrate@nodes = start
         app = OSVCLAB
-        service_type = DEV
+        env = DEV
         nodes = deb1.opensvc.com
         drpnodes = deb2.opensvc.com
         docker_data_dir = /opt/busybox.opensvc.com/appdata
