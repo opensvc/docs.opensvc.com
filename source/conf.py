@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenSVC'
-copyright = u'2018, OpenSVC SARL'
+copyright = u'2019, OpenSVC SAS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -184,7 +184,7 @@ htmlhelp_basename = 'OpenSVCdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'OpenSVC.tex', u'OpenSVC Documentation',
-   u'OpenSVC SARL', 'manual'),
+   u'OpenSVC SAS', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -218,14 +218,14 @@ latex_documents = [
 """
 man_pages = [
     ('index', 'opensvc', u'OpenSVC Documentation',
-     [u'OpenSVC SARL'], 1)
+     [u'OpenSVC SAS'], 1)
 ]
 """
 man_pages = [
     ('man.nodemgr', 'nodemgr', u'nodemgr manual',
-     [u'OpenSVC SARL'], 8),
+     [u'OpenSVC SAS'], 8),
     ('man.svcmgr', 'svcmgr', u'svcmgr manual',
-     [u'OpenSVC SARL'], 8)
+     [u'OpenSVC SAS'], 8)
 ]
 
 # -- Options for Epub output ---------------------------------------------------
@@ -234,7 +234,7 @@ man_pages = [
 epub_title = u'OpenSVC reference book'
 epub_author = u'Christophe Varoqui'
 epub_publisher = u'Christophe Varoqui'
-epub_copyright = u'2018, OpenSVC SARL'
+epub_copyright = u'2019, OpenSVC SAS'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
