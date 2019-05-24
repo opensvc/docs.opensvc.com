@@ -11,7 +11,7 @@ This section describe the guidelines to be assisted by our support team.
 Support Ticket Opening
 ======================
 
-To open a service request, you can use one of the three following methods :
+To open a service request, you can use one of the four following methods :
 
 Slack
 -----
@@ -47,6 +47,24 @@ Email
 
 Send us your request to support@opensvc.com
 
+
+Phone [Premium Support]
+-----------------------
+
+Dial the oncall phone number written in your support contract.
+
+
+Support Open Hours
+==================
+
+Depending on your support subscription, you can call use according to the table below :
+
+===================== ========================================
+Support Service Level Open Hours                                                                            
+===================== ========================================
+Standard              Monday to Friday 9am to 6pm (Paris time)
+Premium               24x7
+===================== ========================================
 
 Support File Exchange
 =====================
