@@ -4,23 +4,23 @@ Introduction
 What is OpenSVC
 ===============
 
-OpenSVC is a Open Source software product and the name of the commercial entity developping and supporting it. The product will be referenced as "OpenSVC" and the company "OpenSVC co". This book covers extensively the OpenSVC goals, design and usage.
+OpenSVC is a Open Source software product and the name of the commercial entity developping and supporting it. The product will be referenced as "OpenSVC" and the company "OpenSVC co".
 
 This software is used in large scale and critical production since 2009.
 
 OpenSVC is composed of two software components:
 
-* the agent
+**Agent**
 
-  The OpenSVC agent is a supervisor, clusterware, container orchestrator and configuration manager.
-  It is licensed under the GNU General Public License v2. 
+	The OpenSVC agent is a supervisor, clusterware, container orchestrator and configuration manager.
+	It is licensed under the GNU General Public License v2. 
 
-* the collector
+**Collector**
 
-  The collector aggregates the agents-reported data and the data fetched from the sites infrastructure (network, SAN, storage arrays, backup servers and asset managers).
-  It also serves the configuration management targets.
-  The collector is a commercially-licenced web 2.0 application.
-  The clustering and container orchestration features of the OpenSVC agent don't require a collector.
+	The collector aggregates the agents-reported data and the data fetched from the sites infrastructure (network, SAN, storage arrays, backup servers and asset managers).
+	It also serves the configuration management targets.
+	The collector is a commercially-licenced web 2.0 application.
+	The clustering and container orchestration features of the OpenSVC agent don't require a collector.
 
 These two components together address a wide range of modern IT concerns, including:
 
@@ -28,7 +28,8 @@ These two components together address a wide range of modern IT concerns, includ
 
   * business continuity
   * high availability clustering
-  * providing reliable and abstracted method to stop, start and move a service or a group of services
+  * scalable replicating services
+  * providing reliable and abstracted method to deploy, purge, stop, start and move a service or a group of services
 
 * Configuration management
 
