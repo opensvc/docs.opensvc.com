@@ -11,4 +11,6 @@ Configure
    agent.configure.dns
    agent.configure.envoy
    agent.configure.gobtw
+   agent.configure.users
+   agent.configure.client
  

@@ -1,5 +1,5 @@
-Storage Pools Configuration
-***************************
+Cluster Storage Pools
+*********************
 
 Services can use ``volume`` resources to:
 

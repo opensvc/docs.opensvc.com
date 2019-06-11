@@ -9,3 +9,4 @@ Internals
    agent.architecture
    agent.scheduler
    agent.events
+   agent.rbac
