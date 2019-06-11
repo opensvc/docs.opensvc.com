@@ -47,7 +47,7 @@ Set Node Environment
 
 ::
 
-	om cluster set --param node.env --value PRD
+	om cluster set --kw node.env=PRD
 
 The :kw:`node.env` setting is used to enforce the following policies:
 
@@ -84,7 +84,7 @@ A schedule configuration can be applied using
 
 ::
 
-	om node set --param brocade.schedule --value "02:00-04:00@120 sat,sun"
+	om node set --kw "brocade.schedule=02:00-04:00@120 sat,sun"
 
 Node schedules are defined in ``<OSVCETC>/node.conf``, where the above command would produce this section:
 
@@ -147,7 +147,7 @@ To enable communications with a collector, the :kw:`node.dbopensvc` node configu
 
 ::
 
-	om cluster set --param node.dbopensvc --value collector.opensvc.com
+	om cluster set --kw node.dbopensvc=collector.opensvc.com
 
 Here the protocol and path are omitted. In this case, the ``https`` protocol is selected, and the path set to a value matching the standard collector integration.
 
@@ -160,14 +160,14 @@ The following expressions are also supported:
 
 ::
 
-	om cluster set --param node.dbopensvc --value https://collector.opensvc.com
-	om cluster set --param node.dbopensvc --value https://collector.opensvc.com/feed/default/call/xmlrpc
+	om cluster set --kw node.dbopensvc=https://collector.opensvc.com
+	om cluster set --kw node.dbopensvc=https://collector.opensvc.com/feed/default/call/xmlrpc
 
 The compliance framework uses a separate xmlrpc entrypoint. The :kw:`node.dbcompliance` can be set to override the default, which is deduced from the :kw:`node.dbopensvc` value.
 
 ::
 
-	om cluster set --param node.dbcompliance --value https://collector.opensvc.com/init/compliance/call/xmlrpc
+	om cluster set --kw node.dbcompliance=https://collector.opensvc.com/init/compliance/call/xmlrpc
 
 Register the Node
 -----------------
@@ -199,15 +199,15 @@ To disable collector communications, use:
 
 ::
 
-	om cluster unset --param node.dbopensvc
-	om cluster unset --param node.dbcompliance
+	om cluster unset --kw node.dbopensvc
+	om cluster unset --kw node.dbcompliance
 
 Or if the settings were added to node.conf
 
 ::
 
-	om node unset --param node.dbopensvc
-	om node unset --param node.dbcompliance
+	om node unset --kw node.dbopensvc
+	om node unset --kw node.dbcompliance
 
 .. rst-class:: lvl1
 

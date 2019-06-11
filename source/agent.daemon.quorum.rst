@@ -9,16 +9,16 @@ OpenSVC makes it very hard to reach the split-brain situation, using multiple in
 
 Users prefering anyway to let a cluster segment commit suicide in this situation can set :kw:`cluster.quorum` to true::
 
-	nodemgr set --param cluster.quorum --value true
+	om cluster set --kw cluster.quorum=true
 
 The default is to ignore, and let the split nodes takeover services and have those services started on both isolated segments.
 Return to default with::
 
-	nodemgr unset --param cluster.quorum
+	om cluster unset --kw cluster.quorum
 
 See the current configured quorum value with::
 
-	nodemgr get --param cluster.quorum
+	om cluster get --kw cluster.quorum
 
 If the cluster is configured for quorum, and a split-brain situation arises, a node will commit suicide if its reachable nodes+arbitrators count (including itself) is less than half the total cluster+arbitrators nodes count.
 
@@ -33,19 +33,19 @@ A frozen node does not execute the quorum race.
 
 To configure an arbitrator, use::
 
-	nodemgr set --param arbitrator#1.name --value relay1
-	nodemgr set --param arbitrator#1.secret --value 1023102310230123123
+	om cluster set --kw arbitrator#1.name=relay1 \
+	               --kw arbitrator#1.secret=1023102310230123123
 
 Testing Arbitrators
 ===================
 
 ::
 
-	nodemgr ping --node relay1
+	om node ping --node relay1
 
 ::
 
-	$ svcmon
+	$ om mon
 	...
 	Arbitrators                                           aubergine  nuc-cva    
 	 deb1.opensvc.com         warn                      | X          X          

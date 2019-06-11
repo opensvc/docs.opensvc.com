@@ -11,11 +11,11 @@ Hearbeats serve the following purposes:
 
 OpenSVC supports multiple parallel running heartbeats. Exercizing different code paths and infrastructure data paths (network and storage switchs and site interconnects) helps limiting split-brain situation occurences.
 
-Heartbeats are declared in ``<OSVCETC>/node.conf``, each in a dedicated section named :kw:`[hb#<n>]`. A heartbeat definition should work on all nodes, using scoped keywords if necessary, as the definition are served by the joined node to the joining nodes.
+Heartbeats are declared in ``<OSVCETC>/node.conf`` or ``<OSVCETC>/cluster.conf``, each in a dedicated section named :kw:`[hb#<n>]`. A heartbeat definition should work on all nodes, using scoped keywords if necessary, as the definition are served by the joined node to the joining nodes.
 
 Each heartbeat runs two threads janitored by the agent daemon: **tx** and **rx**.
 
-The :cmd:`sudo nodemgr daemon status` and :cmd:`sudo svcmon` commands display the heartbeats status, statistics and each peer state
+The :cmd:`om daemon status` and :cmd:`om mon` commands display the heartbeats status, statistics and each peer state
 
 .. raw:: html
 
@@ -39,31 +39,45 @@ Maintenance
 
 The heartbeat threads are restarted by the agent daemon if they exit uncleanly.
 
-::
-
-        sudo nodemgr daemon stop --thread-id hb#1.tx
-
-Stop the ``hb#1`` tx thread. The thread state transitions from ``running`` to ``stopped``.
-
-::
-
-        sudo nodemgr daemon start --thread-id hb#1.tx
-
-Start the ``hb#1`` tx thread. The thread state transitions from ``stopped`` to ``running``.
-
-::
-
-        sudo nodemgr set --param hb#1.timeout --value 20
-        sudo nodemgr unset --param hb#1
-        sudo nodemgr edit config
-
 .. container:: lvl1
 
-	Any command causing a timestamp change on ``<OSVCETC>/node.conf`` triggers heartbeats reconfiguration:
+	Any command causing a timestamp change on ``<OSVCETC>/node.conf`` or ``<OSVCETC>/cluster.conf`` triggers heartbeats reconfiguration:
 
 	* Modified parameters are applied
 	* Heartbeats removed in the configuration are stopped
 	* Heartbeats added in the configuration are started
+
+Stop a heartbeat thread
++++++++++++++++++++++++
+
+::
+
+        om daemon stop --thread-id hb#1.tx
+
+Stop the ``hb#1`` tx thread. The thread state transitions from ``running`` to ``stopped``.
+
+Start a heartbeat thread
+++++++++++++++++++++++++
+
+::
+
+        om daemon start --thread-id hb#1.tx
+
+Start the ``hb#1`` tx thread. The thread state transitions from ``stopped`` to ``running``.
+
+Set a heartbeat timeout
++++++++++++++++++++++++
+
+::
+
+        om cluster set --kw hb#1.timeout=20
+
+Drop a heartbeat
+++++++++++++++++
+
+::
+
+        om cluster delete --rid hb#1
 
 .. rst-class:: lvl1
 

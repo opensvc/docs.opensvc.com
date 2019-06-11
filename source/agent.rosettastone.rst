@@ -54,8 +54,7 @@ Orchestators
 +------------------------------------------------------+---------------------------------------------------+
 | cat <cf> | om create                                 | cat <cf> | kubectl create -f -                    |
 +------------------------------------------------------+---------------------------------------------------+
-| om create --config secret.json                       | kubectl create -f secret.yml                      |
-| om ns1/sec/mysec                                     |                                                   |
+| om ns1/sec/mysec create --from /etc/group            | kubectl create -f secret.yml                      |
 +------------------------------------------------------+---------------------------------------------------+
 | **Viewing and Finding**                                                                                  |
 +------------------------------------------------------+---------------------------------------------------+
@@ -111,10 +110,9 @@ Orchestators
 | om node freeze --local                               | kubectl cordon my-node                            |
 | om node freeze --node my-node                        |                                                   |
 +------------------------------------------------------+---------------------------------------------------+
-| om '**' stop                                         | kubectl drain my-node                             |
+| om '**' stop --node my-node                          | kubectl drain my-node                             |
 +------------------------------------------------------+---------------------------------------------------+
-| om node thaw --local                                 | kubectl uncordon my-node                          |
-| om node thaw --node my-node                          |                                                   |
+| om '**' thaw --node my-node                          | kubectl uncordon my-node                          |
 +------------------------------------------------------+---------------------------------------------------+
 | om daemon status --format json                       | kubectl cluster-info dump                         |
 +------------------------------------------------------+---------------------------------------------------+

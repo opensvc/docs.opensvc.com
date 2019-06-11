@@ -24,7 +24,7 @@ For example, the simplest heartbeat configuration would be
 
 ::
 
-        om cluster set --param hb#1.type --value unicast
+        om cluster set --kw hb#1.type=unicast
 
 Display the result
 
@@ -45,7 +45,7 @@ For example, a dummy stonith configuration would be
 
 ::
 
-        om cluster set --param stonith#node2.cmd --value /bin/true
+        om cluster set --kw stonith#node2.cmd=/bin/true
 
 This configuration will execute :cmd:`/bin/true` on the node taking over a service which was previously running on the now stalled :c-node:`node2`.
 
@@ -60,8 +60,8 @@ On a new cluster, the arbitrator configurations can be applied on the first node
 
 ::
 
-        om cluster set --param arbitrator#1.name --value relay1
-        om cluster set --param arbitrator#1.secret --value 1023102310230123123
+        om cluster set --kw arbitrator#1.name=relay1 \
+                       --kw arbitrator#1.secret=1023102310230123123
 
 This configuration will ask for the agent on node :c-node:`relay1` for its vote in a quorum race, if needed to get a majority.
 
@@ -78,7 +78,7 @@ On the joined node :c-node:`node1`
 
 ::
 
-        om cluster get --param cluster.secret
+        om cluster get --kw cluster.secret
 
 On the joining node :c-node:`node2`
 
