@@ -12,7 +12,8 @@ A cluster can be accessed remotely via any daemon secure socket. The cluster acc
 Accessing a cluster via the secure socket requires:
 
 * the client to present a trusted x509 certificate.
-* the user object to exist on the cluster
+* the user object to exist on the cluster.
+* the certificate CN must match the usr object name (cn=usr1, obj path=system/usr/usr1).
 
 The cluster can generate the certificates, or an external PKI can be trusted by the cluster.
 
