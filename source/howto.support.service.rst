@@ -90,4 +90,17 @@ In case you need to share files with support team, you can use either email atta
 ``# export https_proxy=http://my.preferred.proxy:8080/``
 ``# curl -k -F 'file=@FILE_TO_UPLOAD.TAR.GZ;type=application/octet-stream' https://user:support@sfx.opensvc.com/+upload -X POST``
 
+Premium Support Instructions
+============================
+
+Nodes under Premium support contract must be tagged into the associated collector to ensure proper node identification and accurate billing
+
+========== ==================================================
+Tag Action Command
+========== ==================================================
+Set        ``nodemgr collector tag --tag PREMIUM_SUPPORT``
+Unset      ``nodemgr collector untag --tag PREMIUM_SUPPORT``
+Check      ``nodemgr collector show tags``
+========== ==================================================
+
 Please get in touch with us for any question you may have.
