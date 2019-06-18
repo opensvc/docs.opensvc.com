@@ -103,4 +103,8 @@ Unset      ``nodemgr collector untag --tag PREMIUM_SUPPORT``
 Check      ``nodemgr collector show tags``
 ========== ==================================================
 
+.. note::
+    
+    Services running on a Premium supported node are implicitly included in the Premium support scope and billing.
+
 Please get in touch with us for any question you may have.
