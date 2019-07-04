@@ -35,7 +35,7 @@ On a cluster node, or from a already configured client with root privileges:
 
 ::
 
-	om system/usr/ca-clu1 decode --key certificate_chain
+	om system/sec/ca-clu1 decode --key certificate_chain
 
 On the client, paste the previous command output in a ``~/.opensvc/clu1-ca.pem`` file.
 
