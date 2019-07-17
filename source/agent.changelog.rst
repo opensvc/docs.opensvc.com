@@ -2,7 +2,6 @@ Changelog
 =========
 
 
-| `COMMITS=2.0..HEAD <https://github.com/opensvc/opensvc/commit/>`_ COMMITS=2.0..HEAD
 | `2.0-74-ge89a9f9e <https://github.com/opensvc/opensvc/commit/Fix>`_ changelog to ensure current repository is used
 | `2.0-73-g728288ae <https://github.com/opensvc/opensvc/commit/Fix>`_ a typo in a catched exception name
 | `2.0-72-g1924a640 <https://github.com/opensvc/opensvc/commit/Log>`_ exceptions in the monitor thread pre-loop codepath
