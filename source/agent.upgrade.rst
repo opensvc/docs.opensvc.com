@@ -21,6 +21,8 @@ A mirror can be set up using:
 
 	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' \
 	     -A '*.pkg' -A '*.tbz' -A '*.depot' \
+             -A 'bundle' -A 'current' -A '*.txz' \
+             -A '*.p5p' \
 	     https://repo.opensvc.com
 
 The resulting file tree must organized as:
