@@ -2,6 +2,37 @@ Changelog
 =========
 
 
+| `2.0-107-ge9f504ff <https://github.com/opensvc/opensvc/commit/e9f504fffde23ef56cc388413f9b4d2bbecb9fae>`_ Add "delete" to the service_action admin actions list
+| `2.0-106-g3d17f539 <https://github.com/opensvc/opensvc/commit/3d17f539a586012d3504ff52e30f91f4b30ae95a>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-103-g8cb3261b <https://github.com/opensvc/opensvc/commit/8cb3261bd825f48adf6e3c3f3a054d6a63f47498>`_ Add missing properties in the keywords dump
+| `2.0-102-g631ecf63 <https://github.com/opensvc/opensvc/commit/631ecf63a0f2b3e2157dd0ec65d0a017044a6004>`_ Fix the get_keywords handler for kind!="ccfg"
+| `2.0-101-g97efdf85 <https://github.com/opensvc/opensvc/commit/97efdf8532385a538ad61d54039ee36117a4764b>`_ Remove unused network[routed_bridge].subnet keyword
+| `2.0-100-g2f881db6 <https://github.com/opensvc/opensvc/commit/2f881db6cc5910f9e87a6742485b5213e83c4e96>`_ Add 'om node updateclumgr' command
+| `2.0-99-gbe886479 <https://github.com/opensvc/opensvc/commit/be886479e768abbcaff30a9f3011e4f3a880e1cc>`_ Include cluster manager to packaging scripts
+| `2.0-98-g4f02bf3f <https://github.com/opensvc/opensvc/commit/4f02bf3fa397b4d0cd62c0a429e5efc2ef5668dc>`_ Change to keywords dump format to avoid collision between rtypes
+| `2.0-97-gc1b67f76 <https://github.com/opensvc/opensvc/commit/c1b67f76e3c5c0497107b97d3d4dfb411c11bd99>`_ Add the keyword types to the keywords dump served by get_keywords
+| `2.0-96-g9c558931 <https://github.com/opensvc/opensvc/commit/9c558931141f9ea0bc6fbbb9bc7cbb6efdd87cee>`_ Add api version
+| `2.0-95-g33ea9c2f <https://github.com/opensvc/opensvc/commit/33ea9c2f84e812c6025b08c05feff0d57a4998d5>`_ Add the get_keywords listener handler
+| `2.0-94-gc874693d <https://github.com/opensvc/opensvc/commit/c874693d56c2058dc27c195ebcde94bc0b596071>`_ Don't run boot on object kinds other than svc and vol
+| `2.0-94-g3deefcbb <https://github.com/opensvc/opensvc/commit/3deefcbb00edb01b24f6044736d237f556fd590b>`_ Unset Node object cd and private_cd after register
+| `2.0-93-g03eb23d5 <https://github.com/opensvc/opensvc/commit/03eb23d5e29772d1f462f3daa49dbdd5382895ff>`_ Lowercase the keyword in the set/unset codepaths
+| `2.0-93-g1b316002 <https://github.com/opensvc/opensvc/commit/1b316002fae426b11905d268f3ecb38685bdb934>`_ Exit Linux fs resource realdev() early if self.device is None
+| `2.0-92-g1cc1aee3 <https://github.com/opensvc/opensvc/commit/1cc1aee32264d6a85b567d399f3798d88d76c557>`_ Move the elapsed computation and print from _wait() to wait()
+| `2.0-91-g201090a2 <https://github.com/opensvc/opensvc/commit/201090a247c9f121cc6cbe80bf338ccaccbedab1>`_ Fix a cert janitor stack in the scheduler thread
+| `2.0-90-g8fb3ba99 <https://github.com/opensvc/opensvc/commit/8fb3ba993b656692d9f5b32b4d20154c16ca6a1f>`_ Remove task.task.command duplicate entries in svcdict.py
+| `2.0-89-gfc780667 <https://github.com/opensvc/opensvc/commit/fc780667b67aca7cf8b00d4268aea19b2c1eb550>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-84-g063d9d3f <https://github.com/opensvc/opensvc/commit/063d9d3fc4dfa25b874fc72d6fd788dcfbd34684>`_ Add dedicated class for host tasks
+| `2.0-83-g4ec51419 <https://github.com/opensvc/opensvc/commit/4ec514196c09338369e15e57f18431067df71e02>`_ Remove duplicate disk.disk.size entry from svcdict.py
+| `2.0-82-g28932eae <https://github.com/opensvc/opensvc/commit/28932eaef07c53ba01cff8747f64df117781509a>`_ Fix reST indentation issues
+| `2.0-81-g28c60037 <https://github.com/opensvc/opensvc/commit/28c60037a0ecd83a4d2fbd09311f86b814ec143b>`_ Fix duplicate rst container name
+| `2.0-80-g859eccf8 <https://github.com/opensvc/opensvc/commit/859eccf8ada49c56493d7ccffec3e91f1c2d8920>`_ Optimize the number of _daemon_status() calls
+| `2.0-80-g614f5ccf <https://github.com/opensvc/opensvc/commit/614f5ccfb6a8ae83791b9ba62bca596d4ce7f09b>`_ Merge duplicate node.connect_to
+| `2.0-79-g417c6329 <https://github.com/opensvc/opensvc/commit/417c6329f243ce985f869a9d3aa9a6b90cfd8e88>`_ Remove duplicate brocade password key
+| `2.0-79-g258ea2ac <https://github.com/opensvc/opensvc/commit/258ea2ac808859c32b46f73196ca3720451ecdad>`_ Avoid downgrading from OrderedDict to dict on print_config_data()
+| `2.0-78-g238f0fc7 <https://github.com/opensvc/opensvc/commit/238f0fc7dbf799d5fb55e20cb94a8684825e9629>`_ Fix rst duplicate target names
+| `2.0-78-g00a548a0 <https://github.com/opensvc/opensvc/commit/00a548a0e8f6c4586b3f915b0335b8e1e888107d>`_ Avoid sorting json output for ordered dict
+| `2.0-77-gf56a2e6f <https://github.com/opensvc/opensvc/commit/f56a2e6ff9a808d88e77930478c8c253a1c35840>`_ Classify EPIPE as retyable in the comm module
+| `2.0-77-g70e3303e <https://github.com/opensvc/opensvc/commit/70e3303e691d4103529ad5c3606648d2f227948e>`_ Fix cluster rst files pointing to service rst examples
 | `2.0-76-gdcb12e17 <https://github.com/opensvc/opensvc/commit/dcb12e17d9dc5f8a138e16cfae87a32e6d13e269>`_ Use appropriate command line options
 | `2.0-75-g794bd2c2 <https://github.com/opensvc/opensvc/commit/794bd2c29d7589a93910214c518414f9dd8e38dc>`_ Add option to display long commit id
 | `2.0-74-ge89a9f9e <https://github.com/opensvc/opensvc/commit/e89a9f9e6dbec330137cc5715d0993e2dda3a15e>`_ Fix changelog to ensure current repository is used
