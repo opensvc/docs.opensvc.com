@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+| `2.0-114-g02fa5811 <https://github.com/opensvc/opensvc/commit/02fa581134c775ef03b891f298c2a0708d311a27>`_ Add sphinx roles to nodedict
+| `2.0-113-gb8084b95 <https://github.com/opensvc/opensvc/commit/b8084b95b4dbc4bd635e0d0d2bd960c3fb0fa30b>`_ Add sphinx roles to secdict
+| `2.0-112-g14390a2b <https://github.com/opensvc/opensvc/commit/14390a2b4b9cf4d70cd5666ebdee8ed8baad2bac>`_ Add sphinx roles to clusterdict
+| `2.0-111-g57ec0629 <https://github.com/opensvc/opensvc/commit/57ec062989838662e315b28177e055606777fba0>`_ Add sphinx roles to cfgdict
+| `2.0-110-g3cdefd6c <https://github.com/opensvc/opensvc/commit/3cdefd6c742a9263c8a1b6dffdde97ca0717a75f>`_ Add sphinx roles to svcdict
+| `2.0-109-g1eb1c845 <https://github.com/opensvc/opensvc/commit/1eb1c845b935b9982e6d6867a1f7eab48b8a95b1>`_ Add usrdict to rst dump script
+| `2.0-108-g2c57e1cb <https://github.com/opensvc/opensvc/commit/2c57e1cb80b7869b980fc6f4157e3a114ded4c5f>`_ Add sphinx roles to usrdict
 | `2.0-107-ge9f504ff <https://github.com/opensvc/opensvc/commit/e9f504fffde23ef56cc388413f9b4d2bbecb9fae>`_ Add "delete" to the service_action admin actions list
 | `2.0-106-g3d17f539 <https://github.com/opensvc/opensvc/commit/3d17f539a586012d3504ff52e30f91f4b30ae95a>`_ Merge branch 'master' of github.com:opensvc/opensvc
 | `2.0-103-g8cb3261b <https://github.com/opensvc/opensvc/commit/8cb3261bd825f48adf6e3c3f3a054d6a63f47498>`_ Add missing properties in the keywords dump
