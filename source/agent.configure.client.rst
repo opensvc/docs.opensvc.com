@@ -51,7 +51,7 @@ Declare the cluster
 
 ::
 
-	om ctx cluster create --name clu1 --server=tls://vip.clu1.mycorp:1215 --certificate-authority=~/.opensvc/clu1-ca.pem
+	om ctx cluster create --name clu1 --server=tls://vip.clu1.mycorp:1215 --certificate-authority ~/.opensvc/clu1-ca.pem
 
 Declare the context
 ===================
