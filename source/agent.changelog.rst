@@ -2,6 +2,16 @@ Changelog
 =========
 
 
+| `2.0-124-gfa77b96f <https://github.com/opensvc/opensvc/commit/fa77b96fdbf154517e10d66b342fb91c07a10e4d>`_ Add advanced routing configuration option to routed_bridge
+| `2.0-123-gff148863 <https://github.com/opensvc/opensvc/commit/ff14886382f11c1f0033f1483ca9acce6438f800>`_ Fix the resources logger name
+| `2.0-122-gd0a7d57c <https://github.com/opensvc/opensvc/commit/d0a7d57c6cd2901ce834b4aa102ed4f538747a45>`_ Add cluster manager directory in rpm specfile
+| `2.0-121-gb538b858 <https://github.com/opensvc/opensvc/commit/b538b858a8b248c474c3c7c25fab2a3b3343131c>`_ Add macaddr keyword in netns resource driver
+| `2.0-120-ga0351b4b <https://github.com/opensvc/opensvc/commit/a0351b4bdc2df9c012a61fb03fd35a44455a4bcc>`_ Fix cluster manager download url
+| `2.0-119-g27b8f13b <https://github.com/opensvc/opensvc/commit/27b8f13b2d9ed742128678b4268540067b8a1559>`_ Fortify the ccfg class against 'name' kwarg passed
+| `2.0-118-gf5f27058 <https://github.com/opensvc/opensvc/commit/f5f270584efb3bd1225630e65b28d9ac11708d64>`_ Factorize rest markup removal code
+| `2.0-117-g1f133d6b <https://github.com/opensvc/opensvc/commit/1f133d6b775b864e9d111b43989b2932fee6d07c>`_ Update man pages with rest markup removal
+| `2.0-116-ga8513835 <https://github.com/opensvc/opensvc/commit/a8513835bfb2db8e652accfbc1efbfc50626166b>`_ Update ManPageFormatter to remove rest markup from man pages
+| `2.0-115-g37bdba60 <https://github.com/opensvc/opensvc/commit/37bdba6060798eb3ee957c62742899728dbc6fa5>`_ Update rest markup
 | `2.0-114-g02fa5811 <https://github.com/opensvc/opensvc/commit/02fa581134c775ef03b891f298c2a0708d311a27>`_ Add sphinx roles to nodedict
 | `2.0-113-gb8084b95 <https://github.com/opensvc/opensvc/commit/b8084b95b4dbc4bd635e0d0d2bd960c3fb0fa30b>`_ Add sphinx roles to secdict
 | `2.0-112-g14390a2b <https://github.com/opensvc/opensvc/commit/14390a2b4b9cf4d70cd5666ebdee8ed8baad2bac>`_ Add sphinx roles to clusterdict
