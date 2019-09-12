@@ -98,9 +98,9 @@ Nodes under Premium support contract must be tagged into the associated collecto
 ========== ==================================================
 Tag Action Command
 ========== ==================================================
-Set        ``nodemgr collector tag --tag PREMIUM_SUPPORT``
-Unset      ``nodemgr collector untag --tag PREMIUM_SUPPORT``
-Check      ``nodemgr collector show tags``
+Set        ``om node collector tag --tag PREMIUM_SUPPORT``
+Unset      ``om node collector untag --tag PREMIUM_SUPPORT``
+Check      ``om node collector show tags``
 ========== ==================================================
 
 .. note::
