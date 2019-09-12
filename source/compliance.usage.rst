@@ -22,19 +22,19 @@ A compliance check of all attached modulesets on a node can be triggered by:
 
 ::
 
-    sudo nodemgr compliance check
+    om node compliance check
 
 A compliance check of all attached modulesets on a service can be triggered by:
 
 ::
 
-    sudo svcmgr -s <svcname> compliance check
+    om <svcname> compliance check
 
 A specific module compliance check:
 
 ::
 
-    sudo svcmgr -s svcname> compliance check --module <modname>
+    om <svcname> compliance check --module <modname>
 
 Managing moduleset attachments
 ==============================
@@ -43,25 +43,25 @@ Attach a moduleset to the node:
 
 ::
 
-    sudo nodemgr compliance attach --moduleset <modname>
+    om node compliance attach --moduleset <modname>
 
 Attach a moduleset to a service:
 
 ::
 
-    sudo svcmgr -s <svcname> compliance attach --moduleset <modname>
+    om <svcname> compliance attach --moduleset <modname>
 
 Detach a moduleset from the node:
 
 ::
 
-    sudo nodemgr compliance detach --moduleset <modname>
+    om node compliance detach --moduleset <modname>
 
 Detach a moduleset from a service:
 
 ::
 
-    sudo svcmgr -s <svcname> compliance detach --moduleset <modname>
+    om <svcname> compliance detach --moduleset <modname>
 
 Managing ruleset attachments
 ============================
@@ -70,25 +70,25 @@ Attach a ruleset to the node:
 
 ::
 
-    sudo nodemgr compliance attach --ruleset <rsetname>
+    om node compliance attach --ruleset <rsetname>
 
 Attach a moduleset to a service:
 
 ::
 
-    sudo svcmgr -s <svcname> compliance attach --ruleset <rsetname>
+    om <svcname> compliance attach --ruleset <rsetname>
 
 Detach a moduleset from the node:
 
 ::
 
-    sudo nodemgr compliance detach --ruleset <rsetname>
+    om node compliance detach --ruleset <rsetname>
 
 Detach a moduleset from a service:
 
 ::
 
-    sudo svcmgr -s <svcname> compliance detach --ruleset <rsetname>
+    om <svcname> compliance detach --ruleset <rsetname>
 
 Querying the framework
 ======================
@@ -97,41 +97,41 @@ List the installed modules:
 
 ::
 
-    sudo nodemgr compliance list module
+    om node compliance list module
 
 List the available modulesets:
 
 ::
 
-    sudo nodemgr compliance list moduleset
+    om node compliance list moduleset
 
 List the available explicit rulesets:
 
 ::
 
-    sudo nodemgr compliance list ruleset
+    om node compliance list ruleset
 
 Show the currently attached modulesets:
 
 ::
 
-    sudo nodemgr compliance show moduleset
+    om node compliance show moduleset
 
 Show the currently presented rulesets:
 
 ::
 
-    sudo nodemgr compliance show ruleset
+    om node compliance show ruleset
 
 Show the status of the modules last run, as known by the collector:
 
 ::
 
-    sudo nodemgr compliance show status
+    om node compliance show status
 
 Show the status of modules, specified by pattern, last run, as known by the collector:
 
 ::
 
-    sudo nodemgr compliance show status --module "%init%"
+    om node compliance show status --module "%init%"
 
