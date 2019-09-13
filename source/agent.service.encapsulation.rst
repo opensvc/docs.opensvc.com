@@ -88,17 +88,14 @@ A scoping target, ``encapnodes``, is dedicated to this usage::
 
 	[DEFAULT]
 	encapnodes = vm1
-	nodes@encapnodes = vm1
 	nodes = hv1 hv2
 
-This simple service header is read at the hypervisor level as::
+This simple service header is evaluated at the hypervisor level as::
  
-	[DEFAULT]
 	nodes = hv1 hv2
 
 And at the encapsulated level as::
 
-	[DEFAULT]
 	nodes = vm1
 
 .. seealso:: :ref:`agent-service-scoping`
@@ -107,17 +104,17 @@ And at the encapsulated level as::
 Resources
 ---------
 
-Each resource can be tagged with the ``encap`` keyword to be ignored at the hypervisor level, and to be considered at the encapsulated level.
+Each resource can be flagged as encapsulated with the ``encap=true`` keyword value to be ignored at the hypervisor level, and to be considered at the encapsulated level.
 Container resources are obviously **not** tagged as ``encap``.
 
 Example::
 
 	[fs#1]
+	type = ext4
 	dev = /dev/mapper/vgdata-tools
 	mnt = /srv/svctest/tools
-	type = ext4
 	mnt_opt = rw,relatime
-	tags = encap
+	encap = true
 
 This filesystem is driven by the agent in vm1.
 
@@ -163,8 +160,8 @@ The same service, seen at the container level::
 
 
 * The detailled encapsulated service status is folded under each container resource.
-* Resources tagged with ``encap`` have the ``E`` flag displayed
-* The master hypervisor fetches the encapsulated service status through ``om <path> json status``
+* Encapsulated resources have the ``E`` flag displayed
+* The master hypervisor fetches the encapsulated service status through ``om <path> print status --format json``
 
 Commands
 ========
