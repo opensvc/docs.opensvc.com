@@ -45,6 +45,18 @@ Example:
 
 	om daemon blacklist clear --node '*'
 
+heartbeat
+---------
+
+A user granted the heartbeat role can use the relay_status, relay_tx and relay_rx api handlers.
+A relay-type heartbeat of a cluster can authenticate on a foreign OpenSVC daemon with a user granted this role.
+
+Example:
+
+::
+
+	om daemon relay status --node relay.opensvc.com
+
 Namespace Roles
 ===============
 
