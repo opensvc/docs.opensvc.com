@@ -35,7 +35,7 @@ On a cluster node, or from a already configured client with root privileges:
 
 ::
 
-	om system/usr/ca-clu1 decode --key certificate_chain
+	om system/sec/ca-clu1 decode --key certificate_chain
 
 On the client, paste the previous command output in a ``~/.opensvc/clu1-ca.pem`` file.
 
@@ -51,7 +51,7 @@ Declare the cluster
 
 ::
 
-	om ctx cluster create --name clu1 --server=tls://vip.clu1.mycorp:1215 --certificate-authority=~/.opensvc/clu1-ca.pem
+	om ctx cluster create --name clu1 --server=tls://vip.clu1.mycorp:1215 --certificate-authority ~/.opensvc/clu1-ca.pem
 
 Declare the context
 ===================

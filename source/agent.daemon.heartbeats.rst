@@ -85,13 +85,13 @@ Threads
 -------
 
 Tx
-==
+++
 
 * Transmit data prepared by the monitor thread, regularly or as soon as possible after a data change
 * The data is pre-encrypted by the monitor thread
 
 Rx
-==
+++
 
 * Receive data regularly (disk) or in response to a send (unicast and multicast)
 * Update the received peer data in the cluster data
@@ -114,7 +114,7 @@ Heartbeat Drivers
 -----------------
 
 Unicast
-=======
++++++++
 
 This driver sends and receives using TCP unicast packets.
 
@@ -144,7 +144,7 @@ A most precise definition would be
 
 
 Multicast
-=========
++++++++++
 
 This driver sends and receive using UDP multicast packets.
 
@@ -173,7 +173,7 @@ A most precise definition would be
 Addr and port are not scopable.
 
 Disk
-====
+++++
 
 This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC on a block device on Linux. Other operating systems must use raw char device.
 
@@ -206,7 +206,7 @@ This driver reads and writes on a dedicated disk, using O_DIRECT|O_SYNC|O_DSYNC 
 	If a the local nodename is not found in any slot, the thread allocates one.
 
 Relay
-=====
++++++
 
 This driver reads and writes on a remote opensvc agent memory.
 

@@ -119,7 +119,7 @@ Can execute any action in the namespace, notably: deploy and purge.
 
 Volumes deployment by configuration injection is not allowed. Use volume resources in services to express the volume requirements, so the service provision can provision the volumes if necessary.
 
-Unautorized in deployed configurations:
+Unauthorized in deployed configurations:
 
 * non-containerized resources
 

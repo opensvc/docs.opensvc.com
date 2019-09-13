@@ -20,7 +20,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /services_instances \
+        $ om node collector cli --format json -- get /services_instances \
                 --stats yes \
                 --props nodes.node_id \
                 --fset-id 16
@@ -75,7 +75,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /services_instances \
+        $ om node collector cli --format json -- get /services_instances \
                 --stats yes \
                 --props nodes.node_id \
                 --filters 'nodes.hv !empty' \
@@ -124,7 +124,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /services \
+        $ om node collector cli --format json -- get /services \
                 --stats yes \
                 --props svc_id \
                 --fset-id 16
@@ -169,7 +169,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /services \
+        $ om node collector cli --format json -- get /services \
                 --stats yes \
                 --props svc_id \
                 --filters "svc_topology failover" \
@@ -215,7 +215,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /services_instances \
+        $ om node collector cli --format json -- get /services_instances \
                 --stats yes \
                 --props nodes.node_id,nodes.os_name \
                 --groupby nodes.node_id,nodes.os_name \
@@ -260,7 +260,7 @@ Now that we have the ``opensvc cluster nodes`` filterset (id 63), we can also si
 
 ::
 
-        $ nodemgr collector cli --format json -- get /nodes \
+        $ om node collector cli --format json -- get /nodes \
                  --stats yes \
                  --props nodes.os_name \
                  --fset-id 63
@@ -301,7 +301,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /nodes \
+        $ om node collector cli --format json -- get /nodes \
                 --stats yes \
                 --props nodes.os_vendor \
                 --filters "os_name linux" \
@@ -347,7 +347,7 @@ API
 
 ::
 
-        $ nodemgr collector cli --format json -- get /tags/nodes \
+        $ om node collector cli --format json -- get /tags/nodes \
                 --props nodes.nodename,nodes.node_id,tags.tag_name \
                 --filters "tags.tag_name a" \
                 --meta no

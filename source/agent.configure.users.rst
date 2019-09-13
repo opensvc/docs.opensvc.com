@@ -50,7 +50,7 @@ Make the external CA sign this certificate and load the resulting certificate ke
 ::
 
 	om system/sec/cert-$CLUSTERNAME create --kw cn=vip.$CLUSTERNAME.mycorp
-	om system/sec/cert-clu decode --key certificate_signing_request >~/$CLUSTERNAME.csr
+	om system/sec/cert-$CLUSTERNAME decode --key certificate_signing_request >~/$CLUSTERNAME.csr
 
 	#### signing procedure ####
 
@@ -82,7 +82,7 @@ Create the CA certificate.
 	    --kw o=mycorp \
 	    --kw c=fr \
 	    --kw email=admin@mycorp
-	om system/sec/ca-<clustername> gen cert
+	om system/sec/ca-$CLUSTERNAME gen cert
 
 Create the Certificate for the TLS listener as a secret.
 

@@ -21,6 +21,8 @@ A mirror can be set up using:
 
 	wget -m -A '*.deb' -A '*.rpm' -A '*.exe' \
 	     -A '*.pkg' -A '*.tbz' -A '*.depot' \
+             -A 'bundle' -A 'current' -A '*.txz' \
+             -A '*.p5p' \
 	     https://repo.opensvc.com
 
 The resulting file tree must organized as:
@@ -28,17 +30,18 @@ The resulting file tree must organized as:
 ::
 
 	repo.opensvc.com/
+	|- cluster-manager/
 	|- deb/
 	|- depot/
 	|- exe/
 	|- sunos-pkg/
 	|- rpms/
-	|  |- current -> 1.9/current
-	|  `- 1.9
-	|     |- current -> opensvc-1.9-50.rpm
-	|     |- opensvc-1.9-48.rpm
-	|     |- opensvc-1.9-49.rpm
-	|     `- opensvc-1.9-50.rpm
+	|  |- current -> 2.0/current
+	|  `- 2.0
+	|     |- current -> opensvc-2.0-50.rpm
+	|     |- opensvc-2.0-48.rpm
+	|     |- opensvc-2.0-49.rpm
+	|     `- opensvc-2.0-50.rpm
 	`- tbz/
 
 Set Up Published Versions

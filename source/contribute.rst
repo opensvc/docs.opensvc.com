@@ -138,7 +138,7 @@ After building html documentation, the result looks like:
 Decorating with sphinx roles
 ----------------------------
 
-It is recommended to use the sphinx roles below to improve documentaiton rendering.
+It is recommended to use the sphinx roles below to improve documentation rendering.
 
 As an example for a service, use the syntax::
 
