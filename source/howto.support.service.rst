@@ -1,3 +1,5 @@
+.. _howto.support.service:
+
 Support Service Procedures
 **************************
 
@@ -48,11 +50,47 @@ Email
 Send us your request to support@opensvc.com
 
 
-Phone [Premium Support]
------------------------
+Phone 
+-----
 
-Dial the oncall phone number written in your support contract.
+Premium support enabled accounts are presented a ``Call Me Back`` button in the web portal support section.
 
+* open a browser to https://www.opensvc.com
+* login with your email address & password
+* click on ``Support`` icon, and then red ``Call Me Back`` button
+* fill in the form with your international phone number, and submit
+* wait for a support representative to call you back
+
+.. warning:: please consider using the callback service for urgent purposes requiring immediate answers
+
+Support Data Collection
+=======================
+
+To ease resolution, you will be asked to provide informations, config and log files related to the encountered issue 
+
+* issue description
+
+  * what is the ticket purpose ? (unexpected behaviour, error message, technical question, ...)
+  * what is the context ? (any known cause or event related)
+  * when did the problem start ?
+  * what is the impact on service ?
+
+* node & cluster configuration
+
+  * ``/etc/opensvc/node.conf``
+  * ``/etc/opensvc/cluster.conf``
+
+* node agent log ``/var/log/opensvc/node.log``
+* objects log 
+
+  * ``/var/log/opensvc/<service>.log``
+  * or
+  * ``/var/log/opensvc/namespaces/<namespace>/<kind>/<service>.log``
+
+All informations can be sent through email at ``support@opensvc.com`` or uploaded using our :ref:`howto.support.file.exchange`
+
+.. note:: 
+        see :ref:`agent.apps.naming` for object paths description
 
 Support Open Hours
 ==================
@@ -65,6 +103,8 @@ Support Service Level Open Hours
 Standard              Monday to Friday 9am to 6pm (Paris time)
 Premium               24x7
 ===================== ========================================
+
+.. _howto.support.file.exchange:
 
 Support File Exchange
 =====================
