@@ -2,6 +2,117 @@ Changelog
 =========
 
 
+| `2.0-235-gfe0bf586 <https://github.com/opensvc/opensvc/commit/fe0bf5863e2d60f2b0a79e68b9266c3e81191b58>`_ Inform api client that the submited node selection is empty
+| `2.0-234-g6b3ab0a6 <https://github.com/opensvc/opensvc/commit/6b3ab0a634376d80309d7810d08bbf089f138ec5>`_ Fix error on "om node sysreport" with new CMD
+| `2.0-233-g110e05c8 <https://github.com/opensvc/opensvc/commit/110e05c8e74aa994af806f74c74f1cfd8461c6b7>`_ Persist routed_bridge subnets assignments
+| `2.0-232-gdc07659f <https://github.com/opensvc/opensvc/commit/dc07659f7572cb8bbf5ecb36a1a9151e7549d792>`_ Add ExtConfig::oget_scopes()
+| `2.0-231-ga34a1135 <https://github.com/opensvc/opensvc/commit/a34a1135b8e10ead778e025383e10407ba7ebd38>`_ Fix "'Listener' object has no attribute 'get_namespaces'"
+| `2.0-230-gff364bf3 <https://github.com/opensvc/opensvc/commit/ff364bf33cce18f7ec66a4a5c0fbb71de0c5eb49>`_ Add locking aroung disk.zpool sub_devs cache read and write
+| `2.0-229-g7b79cd69 <https://github.com/opensvc/opensvc/commit/7b79cd6994607c1defc85ce189b05647a7fb8a1e>`_ Return info from service_action and node_action api handlers
+| `2.0-228-g0f951860 <https://github.com/opensvc/opensvc/commit/0f9518607c2b8f85da2c00b8c1e6c0b511b6b463>`_ Fix multiplex storm on logs --follow
+| `2.0-227-gd0074af7 <https://github.com/opensvc/opensvc/commit/d0074af7865db0304876b2c0ea83b973d65ebc5d>`_ Don't exec tasks that require a collector when dbopensvc is not set
+| `2.0-226-g2d13b528 <https://github.com/opensvc/opensvc/commit/2d13b528d9b5df118175c55398d8fde44dc6696d>`_ Serve the webapp index.html whatever the req path if accept:text/html
+| `2.0-225-g71392634 <https://github.com/opensvc/opensvc/commit/71392634be4e8851a0319f948ef06dae0391e47a>`_ Merge branch 'master' of https://github.com/opensvc/opensvc
+| `2.0-223-gb1c586ad <https://github.com/opensvc/opensvc/commit/b1c586adbb430fc80005da3daf4f7dba474d8799>`_ Shortcut the ssl context init when talking http/2 over uxsock
+| `2.0-222-gfa14defe <https://github.com/opensvc/opensvc/commit/fa14defe91d7046cd9289e347c7f2bdbba94cfe2>`_ Fix a use-before-set in the mgr codepath
+| `2.0-222-g5fdd5f42 <https://github.com/opensvc/opensvc/commit/5fdd5f4262ac36fa7445cb936f2d4a6475e752bc>`_ Fix hb "beating" attr staying True when the thread is stopped
+| `2.0-221-g7971c708 <https://github.com/opensvc/opensvc/commit/7971c70849900cbf80871607557a39b64acd0707>`_ Service logs fixes
+| `2.0-220-g60b66c27 <https://github.com/opensvc/opensvc/commit/60b66c27bcdf49d70fdc17818cabcfd7a51d34ee>`_ Fix the alt_names not embedded in the certificate signed by cluster CA issue
+| `2.0-219-g08f7144f <https://github.com/opensvc/opensvc/commit/08f7144fe071a39c0aa564bcdc21b7a23fc3f17c>`_ Add a check=last_run keyword to task drivers
+| `2.0-218-ge2e67fca <https://github.com/opensvc/opensvc/commit/e2e67fca9d1d4e36e45e14c6133a91e0250498b0>`_ Don't tag the non-detached container.{podman,docker} "nostatus"
+| `2.0-217-g868ad7cc <https://github.com/opensvc/opensvc/commit/868ad7cc382521a29310ff2c5ea9cb95dff7af3d>`_ Fix type=host tasks run_requires not honored
+| `2.0-216-g59c29a24 <https://github.com/opensvc/opensvc/commit/59c29a2491a1b0778661ee362571834e14817054>`_ Restore http/2 over uxsock as the preferred protocol with the local daemon
+| `2.0-215-g96097cf8 <https://github.com/opensvc/opensvc/commit/96097cf8276bb125d614546dfea0de059f6939b7>`_ Simplify a too convoluted method of the Scheduler class
+| `2.0-214-g47db759d <https://github.com/opensvc/opensvc/commit/47db759d0cc317e4738a1755b123efafb4591c9c>`_ Remove two more useless CLUSTER_DATA lock acquires
+| `2.0-213-g550b5265 <https://github.com/opensvc/opensvc/commit/550b5265d43f4918045767984c18bd4736126baa>`_ Enhance the scheduler precision
+| `2.0-212-gd9bf2659 <https://github.com/opensvc/opensvc/commit/d9bf26593ef862e47af5a08c3b3bd27090192789>`_ Fix a CLUSTER_DATA global access error in the monitor thread reconfigure codepath
+| `2.0-211-g11341b23 <https://github.com/opensvc/opensvc/commit/11341b2317239022bc7820689cc8fe3721d5c781>`_ Fix a NODE global access error in the monitor thread reconfigure codepath
+| `2.0-210-gbf70177e <https://github.com/opensvc/opensvc/commit/bf70177e0f58ca40c4c85f7d79f170c695cbacb5>`_ Inhibit the scheduler runs random delay for more schedule definitions
+| `2.0-209-g86342b32 <https://github.com/opensvc/opensvc/commit/86342b329ecad07cad9fd16bafe83e25c461318c>`_ Avoid +1min effect over the defined scheduler task interval
+| `2.0-208-g843844e5 <https://github.com/opensvc/opensvc/commit/843844e557d48ded9a582f8c8ac076586a7024d5>`_ Fix potential stack on nodes_info.json update
+| `2.0-207-ge822b1ef <https://github.com/opensvc/opensvc/commit/e822b1ef99855c038a79fb8eca4594736244e39c>`_ Fix "undef" status of parents, children and slaves in print status
+| `2.0-206-g413e0632 <https://github.com/opensvc/opensvc/commit/413e06324be7f402b626dadb9fffa7d7ffd36431>`_ Set perms on the <var>/certs directory and private_key
+| `2.0-205-g791993e4 <https://github.com/opensvc/opensvc/commit/791993e45601ed5baa0e741906d7d1a47734fdba>`_ Use get_solaris_version() instead of get_os_ver() in the zone driver
+| `2.0-204-g2f9e7f2b <https://github.com/opensvc/opensvc/commit/2f9e7f2b19734cabe9a31debcbe3a43aa839a549>`_ Don't refresh nodes_info.targets upon full data rx
+| `2.0-203-g43367eac <https://github.com/opensvc/opensvc/commit/43367eac9ded49ecd5da75b8fd8fff08909ae76a>`_ Add a sanity check on the slot attr presence in the hb.disk peer dataset
+| `2.0-202-g428b18f4 <https://github.com/opensvc/opensvc/commit/428b18f42542c7fc03ecf0994c56bdb05e2107b8>`_ Prefer the raw socket protocol to talk on the unix socket
+| `2.0-201-gc617ec89 <https://github.com/opensvc/opensvc/commit/c617ec89d5dad2c897498806eab629d579939f12>`_ Fix a potential stack in get_all_ns()
+| `2.0-200-gd44cefce <https://github.com/opensvc/opensvc/commit/d44cefce913efaa6d74ed2738ab03e66de83018a>`_ Fix a bug in lsnr get_namespaces() codepath
+| `2.0-199-g0d063bda <https://github.com/opensvc/opensvc/commit/0d063bda48938cc9ee30bb1bb452b80dd9d701a5>`_ Merge branch 'master' of https://github.com/opensvc/opensvc
+| `2.0-197-g8ba92bc2 <https://github.com/opensvc/opensvc/commit/8ba92bc25f93e818325ee8853555444ccceeb020>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-196-g69b8dd65 <https://github.com/opensvc/opensvc/commit/69b8dd65e59d62ef312b58d5e79f89926b556041>`_ Performation optimizations
+| `2.0-195-g10ca4494 <https://github.com/opensvc/opensvc/commit/10ca44948efb50ecc48f95d6893869ec373fac00>`_ Prevent the "shutdown failed => shutdown" loop
+| `2.0-194-ga09b088d <https://github.com/opensvc/opensvc/commit/a09b088d4b3e7985698c287a08967e550cf6427d>`_ Performance optimizations
+| `2.0-193-g1557ec56 <https://github.com/opensvc/opensvc/commit/1557ec568c3641fdc51939c34248d845696454f4>`_ Fix is_service() for objects ending with "-conf"
+| `2.0-193-g1ec9c557 <https://github.com/opensvc/opensvc/commit/1ec9c557de32df1581031c1cdb5245b02bc3130c>`_ Save one call to Node::svcs_selector() in multi-object actions
+| `2.0-192-g12188c99 <https://github.com/opensvc/opensvc/commit/12188c991f9108c3eaaf7b03ffb8dce6f312601f>`_ Add the "om <cfg|usr|sec> append --key <key> --value|--from" action
+| `2.0-191-g69520caf <https://github.com/opensvc/opensvc/commit/69520caf06ce214497afb69840418ac54ec6ed82>`_ Update nodemgr man page
+| `2.0-190-g5def9fc2 <https://github.com/opensvc/opensvc/commit/5def9fc247be893cda698eb8f85a1615c12e5273>`_ Support "pkcs --password" with usrmgr too
+| `2.0-189-gfc0278b8 <https://github.com/opensvc/opensvc/commit/fc0278b83f67204cf5ae77616aa4454eb129b80b>`_ Add "om <sec> pkcs --password" argument
+| `2.0-188-ge4cd43cd <https://github.com/opensvc/opensvc/commit/e4cd43cd8837c8c2c623ca8fa86dd02747d51908>`_ Prevent thread reconfigure while objects transition
+| `2.0-187-g37fed083 <https://github.com/opensvc/opensvc/commit/37fed083d4a33fbbd534cf172ccef4f45006cc42>`_ Merge branch 'master' of https://github.com/opensvc/opensvc
+| `2.0-185-g22b78cde <https://github.com/opensvc/opensvc/commit/22b78cde76e1d9d3bec9902b3438d4774fdc2e80>`_ Merge branch 'master' of https://github.com/opensvc/opensvc
+| `2.0-184-g2bc880ac <https://github.com/opensvc/opensvc/commit/2bc880aca46eb7481943d3a10ed58084dc3086c0>`_ Fix "gen cert" action on py3
+| `2.0-183-g62fc77f5 <https://github.com/opensvc/opensvc/commit/62fc77f5549e86ad048aa58a807b910b8a55cea3>`_ Fix non-shared volume resources not rolled-back after prov on non-leader
+| `2.0-183-g06cdf33f <https://github.com/opensvc/opensvc/commit/06cdf33fac54e4c3752553de9810d5039a333c90>`_ Remove unused BaseSvc method
+| `2.0-182-g9746191a <https://github.com/opensvc/opensvc/commit/9746191abf2cd3cac91756d9fe4ac5a0a88c4bc8>`_ Fix undue rollback of volumes
+| `2.0-181-gc839decf <https://github.com/opensvc/opensvc/commit/c839decff5ea4bd67d580ff47ed948868b33c44f>`_ Use Node::_wait() to wait for orchestrated actions
+| `2.0-180-g207558ba <https://github.com/opensvc/opensvc/commit/207558ba1a795ee014c32028dd9fda10d3547280>`_ Fix the previous patch logic with --wait
+| `2.0-179-g34bb138f <https://github.com/opensvc/opensvc/commit/34bb138f5d58f5c66ecc791f9a31dc68dab8fcda>`_ Fix --wait on cluster nodes orchestrated actions
+| `2.0-178-g9e5b8a8e <https://github.com/opensvc/opensvc/commit/9e5b8a8ef6aa7319bc1a22df0c3ca5cf09079f29>`_ Merge branch 'master' of https://github.com/opensvc/opensvc
+| `2.0-176-g4277cea5 <https://github.com/opensvc/opensvc/commit/4277cea595969d35ef6745679a69cd0a1729fdf3>`_ Refresh templates for the new wait_dns keyword
+| `2.0-176-g1c0f0ef8 <https://github.com/opensvc/opensvc/commit/1c0f0ef8eafd699456b71b1760eeb9103948ba35>`_ Fix object async action --wait
+| `2.0-175-gb9ee3bb1 <https://github.com/opensvc/opensvc/commit/b9ee3bb1f85ce8e94744ae664e36022da9c82d5c>`_ Add the wait_dns keyword to ip resources
+| `2.0-174-g929171df <https://github.com/opensvc/opensvc/commit/929171dfa814f03436af1605076afd6243b2f7c0>`_ Fix purge/unprovision orchestration of objects with child relations
+| `2.0-173-gd0c430a9 <https://github.com/opensvc/opensvc/commit/d0c430a99597eccaa030d47e029eff0328de8b2c>`_ Fix py2/py3 issues with add/decode keys
+| `2.0-172-g68029632 <https://github.com/opensvc/opensvc/commit/680296327dd44cab5daba5eb6651ddc351d740fe>`_ Avoid multiple PTR per svc instance when a single hostname is set
+| `2.0-171-g7e36c81a <https://github.com/opensvc/opensvc/commit/7e36c81a591caebd04fa467d49d77b45aeef5925>`_ Fix the multiplexer for specific service
+| `2.0-170-g46a35139 <https://github.com/opensvc/opensvc/commit/46a351397a7b7300c7b0802c1febb4e4750dad81>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-168-g87643342 <https://github.com/opensvc/opensvc/commit/8764334277b8b0942bb047d2c103345075b22b92>`_ Add a missing lock in transition_count()
+| `2.0-168-g4649b11b <https://github.com/opensvc/opensvc/commit/4649b11b72e594806541877145fc2b7b98f59211>`_ Support the 'in' operator in 'om node wait'
+| `2.0-167-ge274e14f <https://github.com/opensvc/opensvc/commit/e274e14fc985d993fa07b4fbed8efb0103fa8fe3>`_ Use "om <kind>" instead of "<kind>mgr" in the rst docs
+| `2.0-166-ge3319eb5 <https://github.com/opensvc/opensvc/commit/e3319eb52a48bcc17c18b81d6c1216c37f6e17f0>`_ Add a lock debugging RLock class
+| `2.0-165-g05adcf79 <https://github.com/opensvc/opensvc/commit/05adcf794b12c2a55f65a0b6373c59a81764a3b1>`_ Better logging of node async action requests
+| `2.0-164-g8d33a7af <https://github.com/opensvc/opensvc/commit/8d33a7af5db19cb72f51f86aa29de978caca8eaf>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-162-gc74ec6df <https://github.com/opensvc/opensvc/commit/c74ec6dfc1cc945fd453d445ecce06b947f30c04>`_ Fix the pool and access kw setting in the DEFAULT section of vols
+| `2.0-162-g477db7f6 <https://github.com/opensvc/opensvc/commit/477db7f66f9bda5fdaeb0fd54ba352bfa0d0dce7>`_ Output version on stdout instead of stderr and exit 0 instead of 1
+| `2.0-161-gb8a0545b <https://github.com/opensvc/opensvc/commit/b8a0545bbe41081971ea0b8c13b886c3723884ad>`_ Update usr/share/doc/ templates
+| `2.0-160-g7312e75f <https://github.com/opensvc/opensvc/commit/7312e75f60c0477d9281d1456e9f0938e8adcf86>`_ Support --sections in "om <selector> mon" action
+| `2.0-159-gdf34bc17 <https://github.com/opensvc/opensvc/commit/df34bc17e8c3cb144f87f24c6d06e44cebcfee91>`_ Avoid looping on instance "stop=>stop failed" upon purge
+| `2.0-158-g494ef2df <https://github.com/opensvc/opensvc/commit/494ef2df5f38332fb406aee323d8431a42d8a924>`_ Threading locks optimizations
+| `2.0-157-g41a6f335 <https://github.com/opensvc/opensvc/commit/41a6f335d4e6a465c4051895417ae3db3a22c0a3>`_ Fix is_service() not honoring OSVC_NAMESPACE
+| `2.0-156-gc0d27afb <https://github.com/opensvc/opensvc/commit/c0d27afbe0beeef97df8e5edf2dedf8d43951340>`_ Drop a useless SERVICES_LOCK acquire in get_service()
+| `2.0-155-g41c7cc35 <https://github.com/opensvc/opensvc/commit/41c7cc3539c9971d2f1bb6dd1eb2e81501ccdeae>`_ Drop "wait " svc mon state on "abort" action
+| `2.0-154-g0c059d6d <https://github.com/opensvc/opensvc/commit/0c059d6dac3c69c4170eea04690be412fedaec4c>`_ Optimize the number of unlink(), fstat() and fopen() in app res lock acquire/release
+| `2.0-153-g1e3c53fd <https://github.com/opensvc/opensvc/commit/1e3c53fdde5047f7f27daaff8d3771d0a8d09e5b>`_ Don't use jsonpath_ng in the monitor loop
+| `2.0-152-g05885837 <https://github.com/opensvc/opensvc/commit/058858370cac86e0689b4e7ec777f429e77ab873>`_ Factorize the node frozen file fstat() calls in the monitor loop
+| `2.0-151-g32b26346 <https://github.com/opensvc/opensvc/commit/32b26346a0f0d2bc22d0f99d3e2084c186dbbadb>`_ Don't try to decode cert from buff if buff is None
+| `2.0-150-g5a733635 <https://github.com/opensvc/opensvc/commit/5a733635b81e7bed5ab604493b16fb656e678706>`_ Set task.schedule kw default to None, instead of @0
+| `2.0-149-g9085fc40 <https://github.com/opensvc/opensvc/commit/9085fc406e343820e7fc6c1114b3656838e6d7d8>`_ Fix DEFAULT.monitor_schedule not honored
+| `2.0-148-g47636021 <https://github.com/opensvc/opensvc/commit/4763602169b36d406b906dedc86beb06a20121d9>`_ Apply the new alt_names logic to the csr too
+| `2.0-147-gf062eb1e <https://github.com/opensvc/opensvc/commit/f062eb1e53c5108e96dd3bdcc05e864bb03eb06e>`_ Fix the alt_names sec handling
+| `2.0-146-g046d3fc3 <https://github.com/opensvc/opensvc/commit/046d3fc3d5a4a18e296d8c8443292340e0a705ce>`_ Don't run gen_cert on usr create if the ca sec does not have a privkey
+| `2.0-145-g946c47c8 <https://github.com/opensvc/opensvc/commit/946c47c87805a62ca46d768c444d08aff3286663>`_ Fix a stack in the "om <path> docker login {as_service} <reg>" codepath
+| `2.0-144-gda31d695 <https://github.com/opensvc/opensvc/commit/da31d695fa7c1285cf6b5fde30e7470b7c800f24>`_ Fix a stack on "om net status" just after a daemon restart
+| `2.0-143-g356ba4f1 <https://github.com/opensvc/opensvc/commit/356ba4f10c1c068086ae8e902b18e60b812b1456>`_ Fix a stack on lsnr status() when called before lsnr init
+| `2.0-142-g5eca5fc1 <https://github.com/opensvc/opensvc/commit/5eca5fc1b3748e4a7f5941b4b0563c9b3d1b6020>`_ Reload grants of lsnr-connected users on usr cksum change
+| `2.0-141-g4558d0d7 <https://github.com/opensvc/opensvc/commit/4558d0d74b52421bc2c3f4ee8b8243c09fc32339>`_ Accept generating a csr on "gen cert" if the cluster ca has no private_key key
+| `2.0-140-ge18f6097 <https://github.com/opensvc/opensvc/commit/e18f60976b28e3ddfd8a207e1fcd5beb133c392f>`_ Support context's cluster without 'certificate_authority' key
+| `2.0-139-g3c6dd835 <https://github.com/opensvc/opensvc/commit/3c6dd83547367197b1bd8e4068b598ffb342bb1c>`_ Fix the cluster CA detection in the usr create codepath
+| `2.0-138-g394f2831 <https://github.com/opensvc/opensvc/commit/394f2831949becc21b77e6be891fe7038ce11b7b>`_ Skip usr 'gen cert' if cluster.ca is not set or does not exist
+| `2.0-137-g21312c90 <https://github.com/opensvc/opensvc/commit/21312c902cf09cb11aad056d14c680297204632a>`_ Detect the presence of ssl.HAS_ALPN to activate h2
+| `2.0-136-g429cf0db <https://github.com/opensvc/opensvc/commit/429cf0db4f588cbdbf24588cc6e819f6f54f2638>`_ Add one more shortcut codepath in nodes_selector
+| `2.0-135-g663e5e94 <https://github.com/opensvc/opensvc/commit/663e5e94e445033c43654796948bab3f268889b2>`_ Don't use shlex.split() on node the selector pattern
+| `2.0-134-g5f45c4c0 <https://github.com/opensvc/opensvc/commit/5f45c4c08f9a3728fdfedb463953a4be9047f281>`_ Fix BaseSvc nodes default value in encap when nodes@encapnodes is not defined
+| `2.0-133-gfc6f6788 <https://github.com/opensvc/opensvc/commit/fc6f6788c3517819b38ac9da285035480cdfb46a>`_ Fix creation of objs in a new 'test2' ns when admin:test is granted
+| `2.0-132-gb74a5e09 <https://github.com/opensvc/opensvc/commit/b74a5e09a8e5f1185dcd8d67adc7997a2b829f19>`_ Fix the 'om <pattern> ls' listing all objects when pattern has no match
+| `2.0-131-g3494ac46 <https://github.com/opensvc/opensvc/commit/3494ac46093b9eaa356fea9596c77c3b70bf6c53>`_ Support the sec and usr pkcs12 command on py3
+| `2.0-130-g0edcca7e <https://github.com/opensvc/opensvc/commit/0edcca7e496fa9c56b64ea5a24ed407c42248834>`_ Handle empty string trigger gracefully
+| `2.0-129-ga012a125 <https://github.com/opensvc/opensvc/commit/a012a12556ce7b3d9250fcff97ef071d22336317>`_ Honor configs_environment in docker containers
+| `2.0-128-gad767bf7 <https://github.com/opensvc/opensvc/commit/ad767bf74469a34564e913d6ed6ceca5772baab4>`_ Change for a more generic error message
+| `2.0-127-g6fcb3e5e <https://github.com/opensvc/opensvc/commit/6fcb3e5e7ee710fa908aa975ab0174ebe142879e>`_ Add kind type to error message
+| `2.0-126-gb566a7a4 <https://github.com/opensvc/opensvc/commit/b566a7a47a303229bdac48c9e1867dbc2b6abbc2>`_ Fix erroneous lowercase of DEFAULT section during keyword parsing
+| `2.0-125-g0ecfa36e <https://github.com/opensvc/opensvc/commit/0ecfa36e94f6dc7399db9679213904eda3a4f1e6>`_ Ensure CLUMGR_DIR is created before returning from function
 | `2.0-124-gfa77b96f <https://github.com/opensvc/opensvc/commit/fa77b96fdbf154517e10d66b342fb91c07a10e4d>`_ Add advanced routing configuration option to routed_bridge
 | `2.0-123-gff148863 <https://github.com/opensvc/opensvc/commit/ff14886382f11c1f0033f1483ca9acce6438f800>`_ Fix the resources logger name
 | `2.0-122-gd0a7d57c <https://github.com/opensvc/opensvc/commit/d0a7d57c6cd2901ce834b4aa102ed4f538747a45>`_ Add cluster manager directory in rpm specfile
