@@ -11,20 +11,15 @@ Id ``hb_stale``
 
 node {nodename} hb status beating => stale
 
-Id ``max_stdby_resource_restart``
----------------------------------
-
-max restart ({restart}) reached for standby resource {rid} ({resource.label})
-
 Id ``resource_degraded``
 ------------------------
 
 resource {rid} ({resource.label}) degraded to {resource.status} {resource.log}
 
-Id ``resource_restart``
------------------------
+Id ``max_stdby_resource_restart``
+---------------------------------
 
-restart resource {rid} ({resource.label}) {resource.status} {resource.log}, try {try}/{restart}
+max restart ({restart}) reached for standby resource {rid} ({resource.label})
 
 Id ``arbitrator_up``
 --------------------
@@ -36,6 +31,11 @@ Id ``monitor_started``
 
 monitor started
 
+Id ``service_config_installed``
+-------------------------------
+
+config fetched from node {from} is now installed
+
 Id ``scale_up``
 ---------------
 
@@ -45,11 +45,6 @@ Id ``scale_down``
 -----------------
 
 exceeds {delta} instance to reach scale target {instance.scale}
-
-Id ``service_config_installed``
--------------------------------
-
-config fetched from node {from} is now installed
 
 Id ``stdby_resource_restart``
 -----------------------------
@@ -65,6 +60,11 @@ Id ``max_resource_restart``
 ---------------------------
 
 max restart ({restart}) reached for resource {rid} ({resource.label})
+
+Id ``resource_restart``
+-----------------------
+
+restart resource {rid} ({resource.label}) {resource.status} {resource.log}, try {try}/{restart}
 
 Id ``node_thaw``
 ----------------
