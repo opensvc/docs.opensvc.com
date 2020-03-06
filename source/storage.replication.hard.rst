@@ -9,3 +9,4 @@ Contents:
    storage.netapp
    storage.hp3par
    storage.srdf
+   storage.huaweidorado
