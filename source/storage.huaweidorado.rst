@@ -164,12 +164,16 @@ The following describes a simple lun creation, provisioned from a local, non-rep
 
 ``2GiB`` lun named ``tstpool1`` is created using storagepool ``dorado`` ::
 
-	root@ubuntu1:~# om pool create vol --pool dorado --name tstpool1 --size 2g
+	root@ubuntu1:~# om pool create vol --pool dorado --name tstpool1 --size 2g --blk
 	@ n:ubuntu1
 	  create volume vol/tstpool1 (pool name: dorado, pool type: dorado, access: rwo, size: 2g, format: False, nodes: , shared: False)
 	@ n:ubuntu1 o:vol/tstpool1
 	  allocated rid disk#1
 	  vol/tstpool1 target state set to provisioned
+
+.. note::
+
+       The ``--blk`` option disable the disk formatting, and filesystem mount. This option should be used for applications which disk access requirement is raw, like Oracle ASM, SAP Sybase IQ, GlusterFS, ...
 
 
 A new ``vol/tstpool1`` volume object is configured ::
@@ -225,7 +229,7 @@ The ``vol/tstpool1`` object configuration is as below ::
 	
 2 x ``5GiB`` luns named ``tstavn1`` are created using storagepool ``dorado``. Present lun 1 to ubuntu1, present lun 2 to ubuntu2 ::
 
-	root@ubuntu1:~# om pool create vol --pool dorado --name tstavn1 --size 5g --nodes '*'
+	root@ubuntu1:~# om pool create vol --pool dorado --name tstavn1 --size 5g --nodes '*' --blk
 	@ n:ubuntu1
 	  create volume vol/tstavn1 (pool name: dorado, pool type: dorado, access: rwo, size: 5g, format: False, nodes: *, shared: False)
 	@ n:ubuntu1 o:vol/tstavn1
@@ -266,7 +270,7 @@ Same ``vol/tstavn1`` object name accross opensvc cluster, but different lun wwn 
 
 ``10GiB`` lun named ``tstavn2`` is created using storagepool ``dorado``. Present lun to ubuntu1 and ubuntu2 ::
 
-	root@ubuntu1:~# om pool create vol --pool dorado --name tstavn2 --size 10g --nodes '*' --shared
+	root@ubuntu1:~# om pool create vol --pool dorado --name tstavn2 --size 10g --nodes '*' --shared --blk
 	@ n:ubuntu1
 	  create volume vol/tstavn2 (pool name: dorado, pool type: dorado, access: rwo, size: 10g, format: False, nodes: *, shared: True)
 	@ n:ubuntu1 o:vol/tstavn2
@@ -303,7 +307,7 @@ Replicated Pool
 
 ``1GiB`` lun named ``rep1`` is created using storagepool ``replicated`` ::
 
-	root@ubuntu1:~# om pool create vol --pool replicated --name rep1 --size 1g
+	root@ubuntu1:~# om pool create vol --pool replicated --name rep1 --size 1g --blk
 	@ n:ubuntu1
 	  create volume vol/rep1 (pool name: replicated, pool type: dorado, access: rwo, size: 1g, format: False, nodes: , shared: False)
 	@ n:ubuntu1 o:vol/rep1
@@ -363,7 +367,7 @@ The ``vol/rep1`` object configuration is as below ::
 
 ``1GiB`` lun named ``rep2`` is created using storagepool ``replicated`` and marked as shared ::
 
-	root@ubuntu1:~# om pool create vol --pool replicated --name rep2 --size 1g --shared
+	root@ubuntu1:~# om pool create vol --pool replicated --name rep2 --size 1g --shared --blk
 	@ n:ubuntu1
 	  create volume vol/rep2 (pool name: replicated, pool type: dorado, access: rwo, size: 1g, format: False, nodes: , shared: True)
 	@ n:ubuntu1 o:vol/rep2
@@ -414,7 +418,7 @@ The lun is presented through all array frontends known by server ``ubuntu1``. 4 
 
 ``1GiB`` lun named ``rep4`` is created using storagepool ``replicated``, marked as shared, and presented to all cluster nodes ::
 
-	root@ubuntu1:~# om pool create vol --pool replicated --name rep4 --size 1g --shared --nodes '*'
+	root@ubuntu1:~# om pool create vol --pool replicated --name rep4 --size 1g --shared --nodes '*' --blk
 	@ n:ubuntu1
 	  create volume vol/rep4 (pool name: replicated, pool type: dorado, access: rwo, size: 1g, format: False, nodes: *, shared: True)
 	@ n:ubuntu1 o:vol/rep4
