@@ -2,8 +2,23 @@ Changelog
 =========
 
 
+| `2.0-627-g3e50e5aa <https://github.com/opensvc/opensvc/commit/3e50e5aaac852dd334b06d9f01b21f563863e629>`_ Merge pull request #81 from cvaroqui/master
+| `2.0-626-gc37b0ca3 <https://github.com/opensvc/opensvc/commit/c37b0ca388b166411502abdb844fc0e04514cf71>`_ Fix a listener thread method call arguments
+| `2.0-625-g3a5afe36 <https://github.com/opensvc/opensvc/commit/3a5afe36f171a8ca57aa960647999fd212262f25>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-623-gec80108d <https://github.com/opensvc/opensvc/commit/ec80108dcda0b2084edfff86a44ad5472378a304>`_ Don't log an exception on ConnectionAbortedError in the listener main loop
+| `2.0-622-gbf707287 <https://github.com/opensvc/opensvc/commit/bf70728778471eea53d80fb7c1dbd4960cca4480>`_ Don't hang the client browser accessing the webapp when not installed
+| `2.0-622-g61c63f92 <https://github.com/opensvc/opensvc/commit/61c63f92e19a4afef49988eedd2608a14802c9dc>`_ Merge pull request #79 from cvaroqui/master
+| `2.0-621-g65dc77a4 <https://github.com/opensvc/opensvc/commit/65dc77a49bf8d5782a31a5c6f6977f7f3a8ddf5c>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-618-g1bc441c9 <https://github.com/opensvc/opensvc/commit/1bc441c913eac737f6ec5a70494b837cf07f9c30>`_ Make sec and cfg key install in volume behave more like cp
+| `2.0-617-gdfdfc71d <https://github.com/opensvc/opensvc/commit/dfdfc71d344b9d3a042835c9622bac163836a853>`_ Fix a duplicate declaration of the om executable in the rpm spec file
+| `2.0-616-g2d0530c2 <https://github.com/opensvc/opensvc/commit/2d0530c24fc25bfd18f752847a1102a0dd716868>`_ Optimize redundant calls to Data::resolve_keys() from Volume::_install_data()
+| `2.0-615-gcca2804c <https://github.com/opensvc/opensvc/commit/cca2804c67232df89463e7de05048a8150e16abc>`_ Move the is_glob() implementation from rcCollectorCli to rcUtilities
+| `2.0-614-gb068a364 <https://github.com/opensvc/opensvc/commit/b068a364850b7676eb1943149d512aa85582c5d3>`_ Remove a duplicate call to all_keys() in the volume _install_data() codepath
+| `2.0-613-g2a6e7a5a <https://github.com/opensvc/opensvc/commit/2a6e7a5a98a9de77b55149990f625163eb35987b>`_ Add more fnmatch pattern hints to the volume resource _install_data() method
 | `2.0-612-gc08fbe46 <https://github.com/opensvc/opensvc/commit/c08fbe4650e5dd9108482acd860f8b72a22a7d42>`_ Merge pull request #77 from cgalibern/master
+| `2.0-612-g7b68993a <https://github.com/opensvc/opensvc/commit/7b68993a45e11e98f88d2633fb4c4f6a70f5a823>`_ Display the key name in addition to the cfg and sec key install destination
 | `2.0-611-g8600ec16 <https://github.com/opensvc/opensvc/commit/8600ec16ececd89c44d58362e42138a717e3f61a>`_ Small optimisation on osvcd_shared.py
+| `2.0-611-g5cd82a08 <https://github.com/opensvc/opensvc/commit/5cd82a08b8bd5102b3d325c0279988b9a66488c5>`_ Don't always add a trailing newline to a key value upon sec and cfg key edit
 | `2.0-610-gdda7677a <https://github.com/opensvc/opensvc/commit/dda7677acf99c279e10f659d3fe822829d5c087f>`_ Merge pull request #78 from cvaroqui/master
 | `2.0-609-g2842f01e <https://github.com/opensvc/opensvc/commit/2842f01e6d3f3eb2fb26ad676a09e42f3ea96770>`_ Add mpathpersist support
 | `2.0-608-gfdfd78d3 <https://github.com/opensvc/opensvc/commit/fdfd78d37d24ac8ffca5be6b75d71a5d4816bff7>`_ Merge pull request #74 from cvaroqui/master
