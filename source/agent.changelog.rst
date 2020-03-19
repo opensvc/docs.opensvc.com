@@ -2,6 +2,55 @@ Changelog
 =========
 
 
+| `2.0-676-g75baeb19 <https://github.com/opensvc/opensvc/commit/75baeb19e0d26d5e150e770aef4d615c2327f32e>`_ Merge pull request #99 from arnaudveron/master
+| `2.0-675-g0164027a <https://github.com/opensvc/opensvc/commit/0164027a03c5bd5e116e23d04eeef35e71a68c45>`_ Fix duplicate documentation entries
+| `2.0-674-gf89125b9 <https://github.com/opensvc/opensvc/commit/f89125b900bd17f66258af610ceb1a966631ddb9>`_ Merge pull request #93 from cgalibern/master
+| `2.0-673-gf432dd60 <https://github.com/opensvc/opensvc/commit/f432dd60613ea9b9060eeb58743cc6b6638dcc3f>`_ Add tests for 'om cfg/name add --from'
+| `2.0-672-g7a8ce65e <https://github.com/opensvc/opensvc/commit/7a8ce65eabf4ebe3e3fc5613514e1b5ed6d32059>`_ Prevent volume provision stack on freshly created volume
+| `2.0-671-gba04cb45 <https://github.com/opensvc/opensvc/commit/ba04cb4549b46c7cb0680c98483472bb65046ad9>`_ Prevent set_smon() from wake up monitor if nothing change (fix monitor loop)
+| `2.0-670-g9dfa3dee <https://github.com/opensvc/opensvc/commit/9dfa3deee0fea66a0c8b15a289b5d5f813f17794>`_ Merge pull request #97 from cvaroqui/master
+| `2.0-669-g177c19a2 <https://github.com/opensvc/opensvc/commit/177c19a2b18b044055fc2b3f559a9614096b3865>`_ Don't return down as a fs resource status when we can't read mounts
+| `2.0-668-gbe3b542f <https://github.com/opensvc/opensvc/commit/be3b542f73de18d11113c5ebdee8dbc802ede4c0>`_ Don't parse "mount -p" on solaris fs resource add, from resource class init
+| `2.0-667-g4b70ec36 <https://github.com/opensvc/opensvc/commit/4b70ec361672a4c1787f1746bffaeacc11b8e824>`_ Merge pull request #95 from cvaroqui/master
+| `2.0-666-g495c0d8b <https://github.com/opensvc/opensvc/commit/495c0d8ba5f8916b41ca8069b4fff99ace129eed>`_ Fix rbac too restrictive for handlers using namespace from path and obj in root ns
+| `2.0-665-g64cca2d1 <https://github.com/opensvc/opensvc/commit/64cca2d1fcb93f438c8075639c9a2200c3894f0a>`_ Merge pull request #94 from cvaroqui/master
+| `2.0-664-g298e256c <https://github.com/opensvc/opensvc/commit/298e256c16cb36f076f0a02e54b2eee65d694d89>`_ Add the "sc" metadata to objects log lines
+| `2.0-663-gb20c929a <https://github.com/opensvc/opensvc/commit/b20c929ae4abb186083a58d12b3a98e88f88c30f>`_ Merge pull request #92 from cvaroqui/master
+| `2.0-662-g3aba4e62 <https://github.com/opensvc/opensvc/commit/3aba4e62c43f46fc2838206592a99dcb5b691deb>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-660-g7b4a8042 <https://github.com/opensvc/opensvc/commit/7b4a80427043904380798553917b88a31a0990d2>`_ Merge pull request #90 from cgalibern/master
+| `2.0-659-g42b368b1 <https://github.com/opensvc/opensvc/commit/42b368b16b724b9e09838e72b31c1a217330232f>`_ Ensure edited key temp files are not readable by group or other
+| `2.0-658-g7381536f <https://github.com/opensvc/opensvc/commit/7381536fbdb939545abd4ae7252137e39098a43e>`_ Remove unused function edit_cf() from node.py
+| `2.0-657-g6ce74dbe <https://github.com/opensvc/opensvc/commit/6ce74dbe8d16c8b988b5ef4bca3d672620fb4d92>`_ Always use same method to detect editor
+| `2.0-656-g9fe0a425 <https://github.com/opensvc/opensvc/commit/9fe0a425fe52c6f3b71b2fae839fbb37f61306fa>`_ Lint data.py
+| `2.0-655-ge95fae44 <https://github.com/opensvc/opensvc/commit/e95fae44828149cd5766931fffe67415268c424a>`_ Reformat data.py
+| `2.0-654-g51564c82 <https://github.com/opensvc/opensvc/commit/51564c82e57f55c6fe00fa1b96af20e8b92c45fe>`_ Remove unused import from data.py
+| `2.0-653-gfefab51b <https://github.com/opensvc/opensvc/commit/fefab51b493029ba2c01f301c48dfa05da2c067f>`_ Merge pull request #91 from cvaroqui/master
+| `2.0-653-g9b9925f6 <https://github.com/opensvc/opensvc/commit/9b9925f6c15595d5082410cb441d2de315ab3ce4>`_ Fix stack in rbac for objects in the root namespace
+| `2.0-652-g9692f79b <https://github.com/opensvc/opensvc/commit/9692f79b36c4c62ec1ba221331506f6ba60c9303>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-650-gd2360124 <https://github.com/opensvc/opensvc/commit/d236012490edb530303b3e0d199739f4469fd738>`_ Merge pull request #89 from cvaroqui/master
+| `2.0-650-gab243c2f <https://github.com/opensvc/opensvc/commit/ab243c2f44d15f76488144d13c556266229a6ddf>`_ Fix GET /key stack json-dumping bytes
+| `2.0-649-g6cf4caed <https://github.com/opensvc/opensvc/commit/6cf4caed5f4408c5dee9c3228847a34e3920b45f>`_ Update AUTHORS file
+| `2.0-648-g6396a2d9 <https://github.com/opensvc/opensvc/commit/6396a2d9ddcfd45b4e537e356614dedb156030e9>`_ Obfuscate the logged value of sec and usr key on add action
+| `2.0-647-g996d3abf <https://github.com/opensvc/opensvc/commit/996d3abfdb1b3081ffba2f211ec8d166a5b3036e>`_ Fix rbac of the object_action with the "set" action
+| `2.0-646-gf296d4bb <https://github.com/opensvc/opensvc/commit/f296d4bb28b69036020beaa694a331f3bc08d3ee>`_ Merge pull request #88 from cgalibern/master
+| `2.0-645-g9e793197 <https://github.com/opensvc/opensvc/commit/9e793197ac1f0aa74a73c533eaa25a50127f6be3>`_ [Test] Refacto to test_mgr, to avoid use of mock_argv
+| `2.0-644-ga804e2e7 <https://github.com/opensvc/opensvc/commit/a804e2e712668646cc837a2df98c4e3950409d73>`_ [Test] Verify empty keys from '--value ""' or '--from /dev/null'
+| `2.0-643-g88f761c5 <https://github.com/opensvc/opensvc/commit/88f761c5ed35ac6af573fc766b6dbadb849d5fd7>`_ Merge pull request #86 from cvaroqui/master
+| `2.0-642-g5e25a55b <https://github.com/opensvc/opensvc/commit/5e25a55ba0271b019b33c7d4947b572b45aa8b14>`_ Merge branch 'master' of github.com:opensvc/opensvc
+| `2.0-639-gcbfc874c <https://github.com/opensvc/opensvc/commit/cbfc874cdc26bfa32eb303dbf2638e59f18d63a6>`_ Merge pull request #85 from cgalibern/master
+| `2.0-638-g4b9746e5 <https://github.com/opensvc/opensvc/commit/4b9746e5effeeba7263ac93389ad31e626b43f9f>`_ [Test] node has an pool with known type
+| `2.0-637-g50220ed1 <https://github.com/opensvc/opensvc/commit/50220ed1fb0952d5b8655c3dee11ac13a784518f>`_ Fix provision errors when some pools have errors
+| `2.0-636-ge44155e8 <https://github.com/opensvc/opensvc/commit/e44155e8d82eb0a9462258b2b850af44d66dd126>`_ Fix infinite loop when service volume configs use a cfg object with leading '/' keys
+| `2.0-635-gc7504902 <https://github.com/opensvc/opensvc/commit/c75049024857b9523908392e3c8f006beb9e319e>`_ Use errno variables instead of number in the osvcd listener
+| `2.0-635-gbf9158de <https://github.com/opensvc/opensvc/commit/bf9158de707a0bd3fcb95ac039e1845644ca63c6>`_ Tests service 'provision' install volume configs files
+| `2.0-634-g31f2dbf2 <https://github.com/opensvc/opensvc/commit/31f2dbf279e69915e20cd402bfef346565308c54>`_ Update Build status url for travis-ci.com
+| `2.0-634-g2c369dcc <https://github.com/opensvc/opensvc/commit/2c369dcc52ae4bba60fe68e1629207b023782b68>`_ Close listener connection on ConnectionAbortedError
+| `2.0-633-ge1911544 <https://github.com/opensvc/opensvc/commit/e1911544f43280c05212ea25cbb72a93c2cb6f46>`_ Merge pull request #84 from cvaroqui/master
+| `2.0-632-gb4f96dc1 <https://github.com/opensvc/opensvc/commit/b4f96dc15974f9058ab1c18be09b0fed01b990fc>`_ Allow empty sec and cfg keys value
+| `2.0-631-g55b16f27 <https://github.com/opensvc/opensvc/commit/55b16f27690589aca309deb4af5bdabe8b7d9c46>`_ Merge pull request #83 from cvaroqui/master
+| `2.0-630-gdedb4932 <https://github.com/opensvc/opensvc/commit/dedb4932fd1aabe940813f68de2c9e920586b3e4>`_ Add the --blk option to "om pool create volume"
+| `2.0-629-g431369f5 <https://github.com/opensvc/opensvc/commit/431369f508cdd249d71c88d395690bfb70b2b4f3>`_ Fix a stack on "install" action when a src key starts with /
+| `2.0-628-gbf076072 <https://github.com/opensvc/opensvc/commit/bf07607266af02b9cfb7d12035117628e499aa37>`_ Allow the "logs" action on usr, cfg and sec objects
 | `2.0-627-g3e50e5aa <https://github.com/opensvc/opensvc/commit/3e50e5aaac852dd334b06d9f01b21f563863e629>`_ Merge pull request #81 from cvaroqui/master
 | `2.0-626-gc37b0ca3 <https://github.com/opensvc/opensvc/commit/c37b0ca388b166411502abdb844fc0e04514cf71>`_ Fix a listener thread method call arguments
 | `2.0-625-g3a5afe36 <https://github.com/opensvc/opensvc/commit/3a5afe36f171a8ca57aa960647999fd212262f25>`_ Merge branch 'master' of github.com:opensvc/opensvc
