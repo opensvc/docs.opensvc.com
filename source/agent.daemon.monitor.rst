@@ -27,11 +27,11 @@ If set, try to reach the ``local_expect``.
 Value            Actions
 ================ ============================================================
 ``thawed``       * set ``status`` to ``thawing``
-                 * execute ``nodemgr thaw``
+                 * execute ``om node thaw``
                  * set ``status`` to ``idle``
 
 ``frozen``       * set ``status`` to ``frezing``
-                 * execute ``nodemgr freeze``
+                 * execute ``om node freeze``
                  * set ``status`` to ``idle``
 ================ ============================================================
 

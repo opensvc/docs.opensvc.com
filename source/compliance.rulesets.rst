@@ -77,7 +77,7 @@ The variables thus exported can be used,
 **osvc_node**
 
 This ruleset is exported to nodes and services.
-It contains information about the node where the ``nodemgr compliance ...`` command or the ``svcmgr -s <svcname> compliance ...`` command is executed.
+It contains information about the node where the ``om node compliance ...`` command or the ``svcmgr -s <svcname> compliance ...`` command is executed.
 
 Example content:
 
@@ -216,7 +216,7 @@ Explicit rulesets
 
 Explicit ruleset variables are exported only to nodes or services explicitely attached to the ruleset. This attachment can be configured either through the collector interface (Described below), or through the agent command line tools::
 
-        # nodemgr compliance attach --ruleset rset1
+        # om node compliance attach --ruleset rset1
 
 or::
 

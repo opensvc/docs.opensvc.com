@@ -222,7 +222,7 @@ man_pages = [
 ]
 """
 man_pages = [
-    ('man.nodemgr', 'nodemgr', u'nodemgr manual',
+    ('man.nodemgr', 'nodemgr', u'om node manual',
      [u'OpenSVC SAS'], 8),
     ('man.svcmgr', 'svcmgr', u'svcmgr manual',
      [u'OpenSVC SAS'], 8)

@@ -122,13 +122,13 @@ msgstr "Paramétrage des versions publiées"
 msgid ""
 "The OpenSVC agent downloads the file pointed by the link named ``current`` "
 "under the package category supported by the operating system running the "
-"agent. For example a Solaris host executing 'nodemgr updatepkg' would try to "
+"agent. For example a Solaris host executing 'om node updatepkg' would try to "
 "download pkg/current."
 msgstr ""
 "L'agent OpenSVC télécharge le fichier pointé par le lien nommé ``current`` "
 "dans le répertoire portant le nom du système de paquetage supporté par le "
 "système d'exploitation exécutant l'agent. Par exemple, un serveur Solaris "
-"exécutant la commande 'nodemgr updatepkg' téléchargerait pkg/current."
+"exécutant la commande 'om node updatepkg' téléchargerait pkg/current."
 
 # 4245db92a0e84c86acc758d9b3dcc00b
 #: ../../agent.update.rst:52

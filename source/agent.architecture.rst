@@ -6,7 +6,7 @@ The Scheduler Entry-Point
 
 The OpenSVC daemon runs the node scheduler every minute, which in turn runs each service schedulers in separate threads.
 
-Each task of the node scheduler can be executed directly through the nodemgr command, and each task of the service scheduler can be executed directly through the svcmgr command.
+Each task of the node scheduler can be executed directly through the om node command, and each task of the service scheduler can be executed directly through the svcmgr command.
 
 Most tasks produce data sent to the collector for site-level aggregation.
 
@@ -75,7 +75,7 @@ Here, the ``push_appinfo`` and ``syncall`` tasks are mapped over respectivelly a
 The Listener Entry-Point
 ========================
 
-The listener port is defined in ``<OSVCETC>/node.conf`` through the :kw:`node.listener` parameter. When the daemon listener receives an empty packet, it executes the :cmd:`nodemgr dequeue actions` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
+The listener port is defined in ``<OSVCETC>/node.conf`` through the :kw:`node.listener` parameter. When the daemon listener receives an empty packet, it executes the :cmd:`om node dequeue actions` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
 
 Alternaltively, the node can be configured to allow direct actions from the collector through :cmd:`ssh` and :cmd:`sudo`. This is the ``push`` mode.
 

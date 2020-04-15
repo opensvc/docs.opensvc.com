@@ -23,7 +23,7 @@ Using the collector web interface
 The safe can be searched either using the safe view column filters, or using the header's search tool.
 Using the latter method, the "safe:<pattern>" syntax can be used to search the safe only.
 
-Using nodemgr collector cli
+Using om node collector cli
 +++++++++++++++++++++++++++
 
 ::
@@ -48,7 +48,7 @@ Using nodemgr collector cli
 	|safe.uuid.aaeb1e59c21d4da8.7265736f6c762e636f6e66.conf|2015-10-15 10:41:50|/etc/resolv.conf ref5|
 	|safe.uuid.9e0382beb8ea43b3.7265736f6c762e636f6e66.conf|2015-10-15 10:51:49|/etc/resolv.conf ref5|
 
-Using nodemgr collector search
+Using om node collector search
 ++++++++++++++++++++++++++++++
 
 ::
@@ -123,7 +123,7 @@ Oneliner to store a secret in the safe
 
 ::
 
-	$ echo -n s3cr3t | nodemgr collector cli -- safe --upload --name mysecret --file /dev/stdin
+	$ echo -n s3cr3t | om node collector cli -- safe --upload --name mysecret --file /dev/stdin
 	{
 	    "data": {
 		"id": 56,

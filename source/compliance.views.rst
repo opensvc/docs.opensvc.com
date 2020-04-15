@@ -328,9 +328,9 @@ Modules
 
 The modulesets view allow compliance administrators to group modules into modulesets.
 Only the designer view can render the moduleset encapsulations though.
-The modulesets can then be attached to nodes through the nodemgr command line::
+The modulesets can then be attached to nodes through the om node command line::
 
-	# nodemgr compliance attach --moduleset modset1
+	# om node compliance attach --moduleset modset1
 
 Only attached modulesets' modules are scheduled for a compliance action by the OpenSVC agents.
 

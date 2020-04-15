@@ -4,7 +4,7 @@ Agent Daemon Listener
 *********************
 
 * Listen on the address specified by :kw:`listener.addr` and port specified by :kw:`listener.port`.
-* Executes :cmd:`nodemgr dequeue actions` when receiving empty packets
+* Executes :cmd:`om node dequeue actions` when receiving empty packets
 * Execute valid requests
 
 .. rst-class:: lvl2

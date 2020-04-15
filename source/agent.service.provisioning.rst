@@ -102,7 +102,7 @@ Create
 
 * ``om <path> create --template <uri>|<template>``
 
-  Creates a service using a configuration file pointed by ``--template``. ``<uri>`` being a local or remote path. ``<template>`` being a collector served template id or template name. Served templates can be searched with ``nodemgr collector search --like prov:<substring>``
+  Creates a service using a configuration file pointed by ``--template``. ``<uri>`` being a local or remote path. ``<template>`` being a collector served template id or template name. Served templates can be searched with ``om node collector search --like prov:<substring>``
 
 * ``om <path> create --config <uri>``
 

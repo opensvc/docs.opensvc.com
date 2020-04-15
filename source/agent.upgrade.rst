@@ -47,7 +47,7 @@ The resulting file tree must organized as:
 Set Up Published Versions
 =========================
 
-The OpenSVC agent downloads the file pointed by the link named ``current`` under the package category supported by the operating system running the agent. For example a Solaris host executing ``nodemgr updatepkg`` would try to download ``sunos-pkg/current``.
+The OpenSVC agent downloads the file pointed by the link named ``current`` under the package category supported by the operating system running the agent. For example a Solaris host executing ``om node updatepkg`` would try to download ``sunos-pkg/current``.
 
 After the mirror initialization, you have to update the current links according to your own policies. Beware, the mirroring step may have installed current links pointing to the lastest available agent packages.
 
