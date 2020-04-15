@@ -6,19 +6,19 @@ The Scheduler Entry-Point
 
 The OpenSVC daemon runs the node scheduler every minute, which in turn runs each service schedulers in separate threads.
 
-Each task of the node scheduler can be executed directly through the nodemgr command, and each task of the service scheduler can be executed directly through the svcmgr command.
+Each task of the node scheduler can be executed directly through the om node command, and each task of the service scheduler can be executed directly through the svcmgr command.
 
 Most tasks produce data sent to the collector for site-level aggregation.
 
 Node Scheduler Tasks
 ++++++++++++++++++++
 
-The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the :kw:`schedule` parameter. The section name is visible in :cmd:`sudo nodemgr print schedule` output in the ``config parameter`` column.
+The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each task has its own section supporting the :kw:`schedule` parameter. The section name is visible in :cmd:`om node print schedule` output in the ``config parameter`` column.
 
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo nodemgr print schedule
+	$ om node print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter         </span>  <span style="font-weight: bold">Schedule Definition                               </span>  
 	|- <span style="color: #767676">auto_reboot        </span>  2017-09-30 16:59:19  reboot.schedule            16:00-17:00@1 sat:last,tue-mon:last * %2+1,feb-apr  
 	|- <span style="color: #767676">auto_rotate_root_pw</span>  -                    rotate_root_pw.schedule    -                                                   
@@ -54,12 +54,12 @@ The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each 
 Service Scheduler Tasks
 +++++++++++++++++++++++
 
-A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in :cmd:`sudo svcmgr -s <svcname> print schedule` output in the ``config parameter`` column.
+A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.conf``. The section and parameter names are visible in :cmd:`om <svcname> print schedule` output in the ``config parameter`` column.
 
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo svcmgr -s testmd print schedule
+	$ om testmd print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter        </span>  <span style="font-weight: bold">Schedule Definition</span>  
 	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:09:01  DEFAULT.comp_schedule     00:00-06:00@361      
 	|- <span style="color: #767676">push_config        </span>  2017-10-01 00:01:02  DEFAULT.push_schedule     00:00-06:00@361      
@@ -75,7 +75,7 @@ Here, the ``push_appinfo`` and ``syncall`` tasks are mapped over respectivelly a
 The Listener Entry-Point
 ========================
 
-The listener port is defined in ``<OSVCETC>/node.conf`` through the :kw:`node.listener` parameter. When the daemon listener receives an empty packet, it executes the :cmd:`nodemgr dequeue actions` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
+The listener port is defined in ``<OSVCETC>/node.conf`` through the :kw:`node.listener` parameter. When the daemon listener receives an empty packet, it executes the :cmd:`om node dequeue actions` command in a new thread. This command fetches from the collector the list of actions to execute, executes them, and send results to the collector. This behaviour is referred as the ``pull`` mode.
 
 Alternaltively, the node can be configured to allow direct actions from the collector through :cmd:`ssh` and :cmd:`sudo`. This is the ``push`` mode.
 

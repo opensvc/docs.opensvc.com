@@ -83,16 +83,16 @@ Resync a started service snapshots
 
 ::
 
-	# svcmgr -s iiststibmds stop && \
-          svcmgr -s iiststibmds sync resync && \
-          svcmgr -s iiststibmds start
+	# om iiststibmds stop && \
+          om iiststibmds sync resync && \
+          om iiststibmds start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# svcmgr -s iiststibmds sync resync
+	# om iiststibmds sync resync
 	2014-09-18 23:04:02,189 - IISTSTIBMDS.SYNC#1 - INFO - resyncflash - dev IBM.XXXX-XXXXXXX -persist -record -cp 0001:0002 0101:0102 0003:0004 | /opt/ibm/dscli/dscli -hmc1 10.10.10.10 -user opensvc -pwfile /var/lib/opensvc/IBM.XXXX-XXXXXXX.pwfile
 	2014-09-18 23:04:05,621 - IISTSTIBMDS.SYNC#1 - INFO - Date/Time: September 18, 2014 11:04:04 PM CEST IBM DSCLI Version: 7.7.10.317 DS: IBM.XXXX-XXXXXXX
 	

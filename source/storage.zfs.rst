@@ -59,7 +59,7 @@ Full synchronization
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com sync full
+	cgaliber@osol1.opensvc.com # pfexec om z3.opensvc.com sync full
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R osol1_z3_root@tosend | /usr/bin/ssh osol2.opensvc.com \
 					   /usr/sbin/zfs receive -dF osol2_z3_root
@@ -74,7 +74,7 @@ Incremental synchronization
 
 ::
 
-	cgaliber@osol1.opensvc.com # pfexec svcmgr -s z3.opensvc.com sync update
+	cgaliber@osol1.opensvc.com # pfexec om z3.opensvc.com sync update
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - zfs snapshot -r osol1_z3_root/data@tosend
 	* Z3.OPENSVC.COM.SYNC#1 - INFO - /usr/sbin/zfs send -R -i osol1_z3_root/data@sent osol1_z3_root/data@tosend | \
 					   /usr/bin/ssh osol2.opensvc.com /usr/sbin/zfs receive -dF osol2_z3_root

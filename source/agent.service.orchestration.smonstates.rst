@@ -48,16 +48,16 @@ The instance is stopping.
 Deleting
 --------
 
-A deleted target state has been set. A :cmd:`svcmgr -s <svcname> delete` is in progress.
+A deleted target state has been set. A :cmd:`om <svcname> delete` is in progress.
 
 Purging
 -------
 
-A purged target state has been set. A :cmd:`svcmgr -s <svcname> unprovision` and :cmd:`svcmgr -s <svcname> delete` sequence is in progress.
+A purged target state has been set. A :cmd:`om <svcname> unprovision` and :cmd:`om <svcname> delete` sequence is in progress.
 
 Provisioning
 ------------
 
-A provisioned target state has been set. A :cmd:`svcmgr -s <svcname> provision` is in progress.
+A provisioned target state has been set. A :cmd:`om <svcname> provision` is in progress.
 
 

@@ -6,7 +6,7 @@ The agent reports to the collector the base disks list and and size. For each di
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo nodemgr pushdisks
+        $ om node pushdisks
 	<span style="font-weight: bold">aubergine                </span>  <span style="font-weight: bold">Size.Used</span>  <span style="font-weight: bold">Vendor</span>  <span style="font-weight: bold">Model                     </span>  
 	`- <span style="color: #aa5500">disks                 </span>  
 	   |- <span style="color: #767676">002538b471bb6f3c   </span>  953g               SAMSUNG MZSLW1T0HMLH-000L1  
@@ -67,7 +67,7 @@ Or top-bottom:
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo nodemgr print devs --reverse
+        $ om node print devs --reverse
 	<span style="font-weight: bold">aubergine                          </span>  <span style="font-weight: bold">Type  </span>  <span style="font-weight: bold">Parent Use</span>  <span style="font-weight: bold">Size</span>  <span style="font-weight: bold">Ratio</span>  
 	|- <span style="color: #aa5500">drbd1                           </span>          -           0     -      
 	|  `- <span style="color: #aa5500">loop0                        </span>  linear  0           3g    -      
@@ -128,7 +128,7 @@ The ``--verbose`` flag adds the known device paths information:
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo nodemgr print devs --reverse --verbose
+        $ om node print devs --reverse --verbose
 	<span style="font-weight: bold">aubergine                                       </span>  <span style="font-weight: bold">Type  </span>  <span style="font-weight: bold">Parent Use</span>  <span style="font-weight: bold">Size</span>  <span style="font-weight: bold">Ratio</span>  
 	|- <span style="color: #aa5500">drbd1                                        </span>          -           0     -                                      
 	|  `- <span style="color: #aa5500">loop0                                     </span>  linear  0           3g    -      /dev/disk/by-label/pridns.fs.1  
@@ -170,7 +170,7 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo svcmgr -s pridns print devs
+        $ om pridns print devs
 	<span style="font-weight: bold">pridns                     </span>  
 	|- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	|  |- <span style="color: #767676">base                 </span>  
@@ -188,13 +188,13 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 	   `- <span style="color: #767676">sub                  </span>  
 	      `- /dev/loop0          
 
-        $ sudo svcmgr -s pridns print exposed devs
+        $ om pridns print exposed devs
 	<span style="font-weight: bold">pridns                     </span>  
 	`- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	   `- <span style="color: #767676">exposed              </span>  
 	      `- /dev/loop0          
 
-        $ sudo svcmgr -s pridns print sub devs
+        $ om pridns print sub devs
 	<span style="font-weight: bold">pridns             </span>  
 	|- <span style="color: #aa5500">fs#1 (fs)       </span>  
 	|  `- <span style="color: #767676">sub          </span>  
@@ -203,7 +203,7 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 	   `- <span style="color: #767676">sub          </span>  
 	      `- /dev/loop0  
 
-        $ sudo svcmgr -s pridns print base devs
+        $ om pridns print base devs
 	<span style="font-weight: bold">pridns                     </span>  
 	|- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	|  `- <span style="color: #767676">base                 </span>  

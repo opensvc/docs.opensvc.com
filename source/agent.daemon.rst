@@ -9,7 +9,7 @@ Roles
 The agent daemon spawns threads to handle its different roles:
 
 * Listener
-  Listens for peer daemon, collector, nodemgr and svcmgr requests.
+  Listens for peer daemon, collector, om node and svcmgr requests.
 * Monitor
   Handle cluster-wide service start and failover decisions and actions.
 * Scheduler
@@ -32,18 +32,18 @@ Start
 
 ::
 
-	$ sudo nodemgr daemon start
+	$ om node daemon start
 
 .. rst-class:: lvl1
 
-	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`nodemgr daemon start`.
+	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om node daemon start`.
 
 Stop
 ++++
 
 ::
 
-	$ sudo nodemgr daemon stop
+	$ om node daemon stop
 
 The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`node.maintenance_grace_period` expires.
 
@@ -52,13 +52,13 @@ Restart
 
 ::
 
-	$ sudo nodemgr daemon restart
+	$ om node daemon restart
 
 .. rst-class:: lvl1
 
 	The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`maintenance_grace_period` expires.
 
-	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`nodemgr daemon stop` followed by a :cmd:`nodemgr daemon start`.
+	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om node daemon stop` followed by a :cmd:`om node daemon start`.
 
 .. rst-class:: lvl2
 

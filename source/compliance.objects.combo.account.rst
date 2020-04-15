@@ -78,7 +78,7 @@ As used by the module
 
 .. code-block:: sh
 
-	# nodemgr compliance show ruleset | grep _TEST_
+	# om node compliance show ruleset | grep _TEST_
 	  OSVC_COMP_TEST_AUTHKEY_1='{"action": "add", "authfile": "authorized_keys2", "user": "testusr", "key": "ssh-dss AAAAB3NzaC1kc3MAAACBAOFv1n8yT033rRh6VhRrgIfxFTcGMsFxiCsCzcZyq2d7/OIUFq49jZp84B8rBIuK4vSggYPahZ2e/UbMcdveNUQXNdwAmnb/OKYzPGKagTyTT1q/HOdcGvjqwAodrtFi77uuG5tTiRS65EKnd70Fc3wGBuFGWeb6o4Nj/xN1TGRBAAAAFQDiC+sDhZEWM2Zw+dLRX2VFa8UxVwAAAIBoF+zJ7DRL8Yt0E+EPYhMzkJPjoAz+Ce1C08jAxWIL+JZMMgMKNlrW+QzazHN7Xh3xNGu7R/ueTeVmtAaPRD5x9VVHqtA9I1YGk7mC3RJFQktB8DN+/PyaK7230dVWxqHklrTS9HhKrNcmp1fmVKT64lMO56O1gb+Kc6t2fypaSQAAAIAtyg+TyvaKc1zNUNZLPOSQd32EiDYBIjDFMGTcBDJf52fXcLLJV9Az0rZcw+yAjnGtyYuYN8A/NZQklVCs/twhLmtARc9NS2y3ukGw0PGyk1kz6Y3THPbyV0bn+L6As/pwtBwD/q6V1FRffdkRzinlh8+6fepcAltTSAeAt4Vrpw== testusr"}'
 	  OSVC_COMP_TEST_FILE_1='{"path": "/etc/sudoers.d/testusr", "fmt": "testusr\\tALL=(ALL:ALL) /bin/su - testusr2", "gid": "root", "mode": 600, "uid": "root"}'
 	  OSVC_COMP_TEST_GROUP_1='{"testgrp2": {"gid": 1008}, "testgrp": {"gid": 1007, "members": ["testusr2"]}}'

@@ -147,7 +147,7 @@ Provision a registry service
 
 ::
 
-	sudo svcmgr -s <svcname> deploy \
+	om <svcname> deploy \
 		--template docker.registry \
 		--env bridge=<front-facing bridge device> \
 		--env ipaddr=<service listen ip address> \
@@ -164,7 +164,7 @@ Unprovision a registry service
 
 ::
 
-	sudo svcmgr -s <svcname> purge
+	om <svcname> purge
 
 Provisioning details
 --------------------
@@ -206,7 +206,7 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 	mnt = /srv/{svcname}/data
 	dev = {fs#1.dev}
 	mnt_opt = defaults,subvol=data
-	post_provision = svcmgr -s {svcname} compliance fix --moduleset com.opensvc.svc.docker.registry --attach
+	post_provision = om {svcname} compliance fix --moduleset com.opensvc.svc.docker.registry --attach
 
 	[container#0]
 	type = docker

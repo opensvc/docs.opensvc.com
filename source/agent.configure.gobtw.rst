@@ -212,7 +212,7 @@ Test with this simple scaler service::
 		--config http://www.opensvc.com/init/static/templates/svcweb.conf \
 		--provision
 
-	$ svcmgr -s svcweb unfreeze
+	$ om svcweb unfreeze
 
 	$ svcmgr scale -s svcweb --to 4
 
@@ -223,7 +223,7 @@ This service exposes 80/tcp to DNS through the following directive
 
 ::
 
-	$ svcmgr -s svcweb print config
+	$ om svcweb print config
 	...
 	[ip#1]
 	expose = 80/tcp
@@ -237,7 +237,7 @@ Verify the load-balanced server
 
 This service is exposed through the ogwl4 load-balancer port 1024::
 
-	$ svcmgr -s svcweb print config
+	$ om svcweb print config
 	...
 	[env]
 	igw_gobtw_bind = 80/tcp-0.0.0.0:1024 443/tcp

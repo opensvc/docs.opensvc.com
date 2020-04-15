@@ -424,12 +424,12 @@ msgstr "Actions de service"
 # 0bd4ca8cb51547beaed54aa98c6de58d
 #: ../../man.nodemgr.rst:17
 msgid ""
-"The nodemgr command controls all OpenSVC concepts relative to the node. "
+"The om node command controls all OpenSVC concepts relative to the node. "
 "Collector querying and alteration of data concerning the node, compliance "
 "management, OpenSVC node-specific configuration management, node-relative "
 "data push to the collector, node-wide service management."
 msgstr ""
-"La commande nodemgr contrôle tous les concepts OpenSVC relatifs au noeud. "
+"La commande om node contrôle tous les concepts OpenSVC relatifs au noeud. "
 "Interrogation du collecteur, changement des données concernant le noeud, "
 "gestion de la conformité, gestion des configurations de noeud de l'agent, "
 "envoi de données du noeud au collecteur, gestion en groupe des services du "
@@ -632,8 +632,8 @@ msgstr "nodemgr"
 
 # 97b7f048795f4c08932d2eb6d740c1fe
 #: ../../man.nodemgr.rst:12
-msgid "nodemgr [options]... command"
-msgstr "nodemgr [options]... commande"
+msgid "om node [options]... command"
+msgstr "om node [options]... commande"
 
 # 3c82661e0e734723b6613b8468cf3b91
 #: ../../man.nodemgr.rst:121

@@ -71,7 +71,7 @@ Start
 
 ::
 
-        root@deb1:/# svcmgr -s drbdsvc.opensvc.com start
+        root@deb1:/# om drbdsvc.opensvc.com start
         DRBD#0  INFO    drbd resource data is already up
         DRBD#0  INFO    drbdadm primary data
         FS#1    INFO    e2fsck -p /dev/drbd0

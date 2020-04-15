@@ -231,7 +231,7 @@ A typical use case is to modelize services dependency:
 
 To set up this setting::
 
-    $ sudo svcmgr -s svc2 set --kw parents+=svc1
+    $ om svc2 set --kw parents+=svc1
 
 .. note::
 
@@ -253,7 +253,7 @@ A typical use case is to modelize services dependency:
 
 To set up this setting::
 
-    $ sudo svcmgr -s svc1 set --kw children+=svc2
+    $ om svc1 set --kw children+=svc2
 
 .. note::
 

@@ -105,8 +105,8 @@ Application can be started and stopped without touching the other service resour
 
 ::
 
-	sudo svcmgr -s myservice stop --rid app
-	sudo svcmgr -s myservice start --rid app
+	om myservice stop --rid app
+	om myservice start --rid app
 
 The ``OPENSVC_SVCNAME`` variable is set by OpenSVC to the service name, so that integrators can write reusable launcher scripts. Examples of this variable usage below.
 

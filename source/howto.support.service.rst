@@ -118,7 +118,7 @@ In case you need to share files with support team, you can use either email atta
 
 .. note::
 
-    If allowed by network security policy, you can use the ``om <svcname> support`` or ``svcmgr -s <svcname> support`` command to automatically
+    If allowed by network security policy, you can use the ``om <svcname> support`` or ``om <svcname> support`` command to automatically
 
     - build a tar.gz with all <svcname> needed logs
     - upload it to https://sfx.opensvc.com

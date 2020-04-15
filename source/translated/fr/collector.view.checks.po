@@ -165,10 +165,10 @@ msgstr "Configuration des seuils"
 # 0dab4b3e3f044357805bde7d8a4f1dd5
 #: ../../collector.view.checks.rst:7
 msgid ""
-"The OpenSVC agent schedule and ``nodemgr checks`` push checkers values from "
+"The OpenSVC agent schedule and ``om node checks`` push checkers values from "
 "the nodes to the collector. Current implemented checks are:"
 msgstr ""
-"Les tâches planifiées de l'agent OpenSVC et la commande ``nodemgr checks`` "
+"Les tâches planifiées de l'agent OpenSVC et la commande ``om node checks`` "
 "envoient au collecteur les valeurs des sondes des noeuds. Les sondes "
 "implémentées à ce jour sont :"
 

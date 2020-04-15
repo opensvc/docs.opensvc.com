@@ -23,12 +23,12 @@ Using the collector web interface
 The safe can be searched either using the safe view column filters, or using the header's search tool.
 Using the latter method, the "safe:<pattern>" syntax can be used to search the safe only.
 
-Using nodemgr collector cli
+Using om node collector cli
 +++++++++++++++++++++++++++
 
 ::
 
-	$ sudo nodemgr collector cli -- get /safe --props uuid,name,uploaded_date --filter name~%resolv% --filter "uploaded_date>2015-10-15"
+	$ om node collector cli -- get /safe --props uuid,name,uploaded_date --filter name~%resolv% --filter "uploaded_date>2015-10-15"
 	 uuid                                                   uploaded_date       name
 	|safe.uuid.9a575b137e43ddde.7265736f6c762e636f6e66.conf|2015-10-15 10:04:33|/etc/resolv.conf ref5|
 	|safe.uuid.98310537fa921428.7265736f6c762e636f6e66.conf|2015-10-15 10:12:19|/etc/resolv.conf ref5|
@@ -48,12 +48,12 @@ Using nodemgr collector cli
 	|safe.uuid.aaeb1e59c21d4da8.7265736f6c762e636f6e66.conf|2015-10-15 10:41:50|/etc/resolv.conf ref5|
 	|safe.uuid.9e0382beb8ea43b3.7265736f6c762e636f6e66.conf|2015-10-15 10:51:49|/etc/resolv.conf ref5|
 
-Using nodemgr collector search
+Using om node collector search
 ++++++++++++++++++++++++++++++
 
 ::
 
-	$ sudo nodemgr collector search --like safe:resolv
+	$ om node collector search --like safe:resolv
 	safe_files (10/167)
 	 safe.uuid.800c5b83f25d089a.7265736f6c762e636f6e66.conf: /etc/resolv.conf ref5
 	 safe.uuid.8d9012b0056bd4ce.7265736f6c762e636f6e66.conf: /etc/resolv.conf ref5
@@ -86,7 +86,7 @@ The safe cli command Syntax
 
 ::
 
-	$ sudo nodemgr collector cli -- safe --help
+	$ om node collector cli -- safe --help
 	Usage: nodemgr.py [options]
 
 	Upload, download and manage files in the collector safe. The safe is a file
@@ -111,19 +111,19 @@ Create a new file
 
 ::
 
-	$ sudo nodemgr collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf
+	$ om node collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf
 
 Upload a new version of an existing file
 
 ::
 
-	$ sudo nodemgr collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf --id 59
+	$ om node collector cli -- safe --upload --file /etc/resolv.conf --name resolv.conf --id 59
 
 Oneliner to store a secret in the safe
 
 ::
 
-	$ echo -n s3cr3t | nodemgr collector cli -- safe --upload --name mysecret --file /dev/stdin
+	$ echo -n s3cr3t | om node collector cli -- safe --upload --name mysecret --file /dev/stdin
 	{
 	    "data": {
 		"id": 56,
@@ -144,7 +144,7 @@ By content uuid
 
 ::
 
-	$ sudo nodemgr collector cli -- safe --download --file safe.uuid.a44b45aa173dfe3c.7265736f6c762e636f6e66.conf --to /tmp/foo                      
+	$ om node collector cli -- safe --download --file safe.uuid.a44b45aa173dfe3c.7265736f6c762e636f6e66.conf --to /tmp/foo                      
 	.
 	downloaded
 
@@ -155,7 +155,7 @@ By id (last content version)
 
 ::
 
-	$ sudo nodemgr collector cli -- safe --download --file 59 --to /tmp/foo                      
+	$ om node collector cli -- safe --download --file 59 --to /tmp/foo                      
 	.
 	downloaded
 

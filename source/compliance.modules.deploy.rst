@@ -51,7 +51,7 @@ Example:
 
 ::
 
-        sudo nodemgr set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
+        om node set --param node.repocomp --value http://my.repo.opensvc.corp:8080/compliance/
 
 Updating the modules
 ====================
@@ -60,7 +60,7 @@ The update command is:
 
 ::
 
-	sudo nodemgr updatecomp
+	om node updatecomp
 
 This command is operating system agnostic.
 

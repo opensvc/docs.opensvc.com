@@ -21,7 +21,7 @@ Let's use the following stack as an example:
 
 ::
 
-	cat - <<EOF | svcmgr -s svc2 create --config=- --provision --local
+	cat - <<EOF | om svc2 create --config=- --provision --local
 	{
 		"DEFAULT": {
 			"id": "fd1196ad-fbf1-49bb-ab52-12ed2a1fbf0e"
@@ -58,7 +58,7 @@ Service Configuration File
 
 ::
 
-	root@deb1:/# svcmgr -s svc2 print config
+	root@deb1:/# om svc2 print config
 	[container#1]
 	type = docker
 	image = google/pause
@@ -88,7 +88,7 @@ Service Startup
 
 **docker images** ::
 
-	root@deb1:/# svcmgr -s svc2 docker images
+	root@deb1:/# om svc2 docker images
 	REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
 	redis                  latest              ce25c7293564        10 days ago         95MB
 	nginx                  latest              f895b3fb9e30        12 months ago       108MB
@@ -180,7 +180,7 @@ Like any other OpenSVC resource in the service configuration file, it is possibl
 
 ::
 
-	root@deb1:/# svcmgr -s svc2 restart --rid container#3
+	root@deb1:/# om svc2 restart --rid container#3
 	deb1.opensvc.com.svc2.container#3   docker stop 1bf08bf890635aa334d22a0a040e03861def0fbcc9635e39cf352a517b7045ac
 	deb1.opensvc.com.svc2.container#3   output:
 	deb1.opensvc.com.svc2.container#3   1bf08bf890635aa334d22a0a040e03861def0fbcc9635e39cf352a517b7045ac

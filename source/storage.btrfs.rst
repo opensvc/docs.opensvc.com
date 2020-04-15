@@ -100,7 +100,7 @@ Full synchronization
 
 ::
 
-	root@deb1.opensvc.com # svcmgr -s btrfssvc syncnodes
+	root@deb1.opensvc.com # om btrfssvc syncnodes
 	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc /var/lib/opensvc/btrfs/data/btrfssvc@tosend
 	* BTRFSSVC.SYNC#1 - INFO - output:
 	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc' in '/var/lib/opensvc/btrfs/data/btrfssvc@tosend'
@@ -132,14 +132,14 @@ Full synchronization
 	* BTRFSSVC.SYNC#2 - INFO - mv /var/lib/opensvc/btrfs/data/btrfssvc_child@tosend /var/lib/opensvc/btrfs/data/btrfssvc_child@sent
 	* BTRFSSVC.SYNC#2 - INFO - update state file with snap uuid 204
 	* BTRFSSVC.SYNC#2 - INFO - /usr/bin/scp -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/btrfssvc_sync#2_btrfs_state deb2.opensvc.com:/var/lib/opensvc/btrfssvc_sync\#2_btrfs_state
-	* BTRFSSVC - INFO - exec 'svcmgr -s btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
+	* BTRFSSVC - INFO - exec 'om btrfssvc --waitlock 3600 postsync' on node deb2.opensvc.com
 
 Incremental synchronization
 ---------------------------
 
 ::
 
-	root@deb1.opensvc.com # svcmgr -s btrfssvc syncnodes
+	root@deb1.opensvc.com # om btrfssvc syncnodes
 	* BTRFSSVC.SYNC#1 - INFO - btrfs subvolume snapshot -r /var/lib/opensvc/btrfs/data/btrfssvc /var/lib/opensvc/btrfs/data/btrfssvc@tosend
 	* BTRFSSVC.SYNC#1 - INFO - output:
 	Create a readonly snapshot of '/var/lib/opensvc/btrfs/data/btrfssvc' in '/var/lib/opensvc/btrfs/data/btrfssvc@tosend'

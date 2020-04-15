@@ -78,7 +78,7 @@ First generate raw html code from cli:
 
 ::
 
-    $ sudo nodemgr print devs --color=yes | ansi2html -i
+    $ om node print devs --color=yes | ansi2html -i
 
 Edit the .rst document and copy/paste the previous output in a ``.. raw:: html`` block, enclosed between ``<pre class=output>`` and ``</pre>`` :
 

@@ -18,9 +18,9 @@ New Features
 * The node is freezeable. A thawed service instance on a frozen node is not orchestrated.
 * Service are created in frozen state by :cmd:`svcmgr create`.
 * svcmon output is now cluster-wide and displays daemon information
-* Most commands have adopted a "forest" representation for their human-friendly output: :cmd:`nodemgr pushasset`, :cmd:`nodemgr checks`, :cmd:`nodemgr pushdisks`, :cmd:`svcmgr print schedule`, :cmd:`nodemgr print schedule`, ...
-* Support JSON output in :cmd:`nodemgr pushdisks`, :cmd:`nodemgr checks`, :cmd:`nodemgr pushasset`.
-* :cmd:`nodemgr unset --param <section>`
+* Most commands have adopted a "forest" representation for their human-friendly output: :cmd:`om node pushasset`, :cmd:`om node checks`, :cmd:`om node pushdisks`, :cmd:`svcmgr print schedule`, :cmd:`om node print schedule`, ...
+* Support JSON output in :cmd:`om node pushdisks`, :cmd:`om node checks`, :cmd:`om node pushasset`.
+* :cmd:`om node unset --param <section>`
 * :cmd:`svcmgr enable` and :cmd:`svcmgr disable` no longer reorder the service configuration file.
 * Near-synchronous service configuration file swapping amongst cluster nodes.
 * Cluster-wide service logs, and follow mode
@@ -38,7 +38,7 @@ New Features
 * Scaler services
 * PowerDNS remote backend
 
-.. warning:: :cmd:`nodemgr thaw`, :cmd:`nodemgr freeze`, :cmd:`svcmgr start`, :cmd:`svcmgr stop`, :cmd:`svcmgr freeze`, :cmd:`svcmgr thaw`, :cmd:`svcmgr provision` and :cmd:`svcmgr unprovision` commands operate cluster wide. :cmd:`svcmgr unprovision` would thus delete all services and their data on all cluster nodes.
+.. warning:: :cmd:`om node thaw`, :cmd:`om node freeze`, :cmd:`svcmgr start`, :cmd:`svcmgr stop`, :cmd:`svcmgr freeze`, :cmd:`svcmgr thaw`, :cmd:`svcmgr provision` and :cmd:`svcmgr unprovision` commands operate cluster wide. :cmd:`svcmgr unprovision` would thus delete all services and their data on all cluster nodes.
 
 New Drivers
 ===========
@@ -68,23 +68,23 @@ New Commands
 | :cmd:`svcmgr print base devs`
 | :cmd:`svcmgr snooze`
 | :cmd:`svcmgr unsnooze`
-| :cmd:`nodemgr freeze`
-| :cmd:`nodemgr thaw`
-| :cmd:`nodemgr print devs`
-| :cmd:`nodemgr daemon status`
-| :cmd:`nodemgr daemon blacklist`
-| :cmd:`nodemgr daemon join`
-| :cmd:`nodemgr daemon leave`
-| :cmd:`nodemgr daemon running`
-| :cmd:`nodemgr daemon shutdown`
-| :cmd:`nodemgr daemon start`
-| :cmd:`nodemgr daemon stop`
-| :cmd:`nodemgr daemon restart`
-| :cmd:`nodemgr set --param <param> --add <member>`
-| :cmd:`nodemgr set --param <param> --remove <member>`
-| :cmd:`nodemgr ping --node <nodename>`
-| :cmd:`nodemgr snooze`
-| :cmd:`nodemgr unsnooze`
+| :cmd:`om node freeze`
+| :cmd:`om node thaw`
+| :cmd:`om node print devs`
+| :cmd:`om node daemon status`
+| :cmd:`om node daemon blacklist`
+| :cmd:`om node daemon join`
+| :cmd:`om node daemon leave`
+| :cmd:`om node daemon running`
+| :cmd:`om node daemon shutdown`
+| :cmd:`om node daemon start`
+| :cmd:`om node daemon stop`
+| :cmd:`om node daemon restart`
+| :cmd:`om node set --param <param> --add <member>`
+| :cmd:`om node set --param <param> --remove <member>`
+| :cmd:`om node ping --node <nodename>`
+| :cmd:`om node snooze`
+| :cmd:`om node unsnooze`
 |
 
 New References
@@ -148,10 +148,10 @@ Deprecated
 * :cmd:`svcmgr compliance detach moduleset`
 * :cmd:`svcmgr compliance attach ruleset`
 * :cmd:`svcmgr compliance detach ruleset`
-* :cmd:`nodemgr compliance attach moduleset`
-* :cmd:`nodemgr compliance detach moduleset`
-* :cmd:`nodemgr compliance attach ruleset`
-* :cmd:`nodemgr compliance detach ruleset`
+* :cmd:`om node compliance attach moduleset`
+* :cmd:`om node compliance detach moduleset`
+* :cmd:`om node compliance attach ruleset`
+* :cmd:`om node compliance detach ruleset`
 
 
 Agent Migration

@@ -47,21 +47,21 @@ We now have 6 **empty** services.
 
 Although it is not mandatory, we tag services with their environment (DEV/INT/PRD)::
 
-	$ svcmgr -s 'app[12]-dev/*' set --kw env=DEV
-	$ svcmgr -s 'app[12]-int/*' set --kw env=INT
-	$ svcmgr -s 'app[12]-prd/*' set --kw env=PRD
+	$ om 'app[12]-dev/*' set --kw env=DEV
+	$ om 'app[12]-int/*' set --kw env=INT
+	$ om 'app[12]-prd/*' set --kw env=PRD
 
 And with their application code::
 
-	$ svcmgr -s 'app1-*/*' set --kw app=APP1
-	$ svcmgr -s 'app2-*/*' set --kw app=APP2
+	$ om 'app1-*/*' set --kw app=APP1
+	$ om 'app2-*/*' set --kw app=APP2
 
 As we want to highlight to maximum segragation, we will setup the services to start their own private docker daemon.
 This configuration is achieved by specifying an alternate docker's data folder with the ``DEFAULT.docker_data_dir`` keyword.
 
 ::
 
-	$ svcmgr -s 'app*-*/*' set --kw docker_data_dir=/srv/{svcpath}/docker
+	$ om 'app*-*/*' set --kw docker_data_dir=/srv/{svcpath}/docker
         
 .. note:: Be sure to use a different ``docker_data_dir`` for each service. Here {svcpath} for service svc1 of app1 in prd environment is evaluated as ``app1-prd/svc1``, so the docker data directory for this service is ``/srv/app1-prd/svc1/docker``.
 
@@ -69,7 +69,7 @@ Then, we can add a simple container
 
 ::
 
-	$ svcmgr -s 'app*-*/*' set --kw container#0.type=docker --kw container#0.image=google/pause
+	$ om 'app*-*/*' set --kw container#0.type=docker --kw container#0.image=google/pause
 
 
 .. note:: Naturally, you can setup more useful services, like multiple docker containers in the same service (`Docker Multi Containers <https://docs.opensvc.com/agent.service.container.docker.multi_containers.html>`_), or even combining resources types in a service (like a service modelized with 1 docker container, 2 lxc containers, 3 kvm containers, 4 lvm volumes groups, 5 filesystems, hosted on a netapp filer with snapmirror data replication)
@@ -78,7 +78,7 @@ At this point the ``app1-prd/svc1`` service configuration looks like
 
 ::
 
-	$ svcmgr -s 'app1-prd/svc1' print config
+	$ om 'app1-prd/svc1' print config
 	[DEFAULT]
 	id = 1ed0b4b5-d576-4e4d-8e46-1e714b5cded5
 	env = PRD
@@ -116,7 +116,7 @@ Start the services
 
 ::
 
-	$ svcmgr -s 'app*-*/*' start
+	$ om 'app*-*/*' start
 	aubergine.svc1             service app1-dev/svc1 target state set to started
 	aubergine.svc1             service app1-int/svc1 target state set to started
 	aubergine.svc1             service app1-prd/svc1 target state set to started
@@ -141,7 +141,7 @@ The google/pause image is installed in all private docker data directories
 
 ::
 
-	$ svcmgr -s 'app*-*/*' docker images
+	$ om 'app*-*/*' docker images
 	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 	google/pause        latest              f9d5de079539        4 years ago         240kB
 	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -162,7 +162,7 @@ Service Instance Status
 
 ::
 
-	$ svcmgr -s 'app1-prd/svc1' print status
+	$ om 'app1-prd/svc1' print status
 	svc1                             up                                                                  
 	`- instances            
 	   `- aubergine                  up         idle, started        
@@ -173,7 +173,7 @@ Service Instance Stop
 
 ::
 
-	$ svcmgr -s 'app1-prd/svc1' stop --local
+	$ om 'app1-prd/svc1' stop --local
 	aubergine.svc1.container#0   docker -H unix:///opt/opensvc/var/namespaces/app1-prd/services/svc1/docker.sock stop e427aacd0c7571a5e37248b2e40ae90a601fad61f0a71ea9ff0da16bc3b1a6f0
 	aubergine.svc1.container#0   output:
 	aubergine.svc1.container#0   e427aacd0c7571a5e37248b2e40ae90a601fad61f0a71ea9ff0da16bc3b1a6f0
@@ -187,7 +187,7 @@ Service Instance Start
 
 ::
 
-	$ svcmgr -s 'app1-prd/svc1' start --local
+	$ om 'app1-prd/svc1' start --local
 	aubergine.svc1               starting docker daemon
 	aubergine.svc1               dockerd -H unix:///opt/opensvc/var/namespaces/app1-prd/services/svc1/docker.sock --data-root /srv/app1-prd/svc1/docker -p /opt/opensvc/var/namespaces/app1-prd/services/svc1/docker.pid --exec-root /opt/opensvc/var/dockerx/1ed0b4b5-d576-4e4d-8e46-1e714b5cded5 --exec-opt native.cgroupdriver=cgroupfs
 	aubergine.svc1.container#0   docker -H unix:///opt/opensvc/var/namespaces/app1-prd/services/svc1/docker.sock start e427aacd0c7571a5e37248b2e40ae90a601fad61f0a71ea9ff0da16bc3b1a6f0
@@ -198,7 +198,7 @@ Service Instance Start
 
 ::
 
-	$ svcmgr -s 'app1-prd/svc1' docker ps
+	$ om 'app1-prd/svc1' docker ps
 	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 	e427aacd0c75        google/pause        "/pause"            9 minutes ago       Up 45 seconds                           app1-prd..svc1.container.0
 

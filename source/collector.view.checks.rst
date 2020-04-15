@@ -4,7 +4,7 @@ Checks view
 Usage
 =====
 
-The OpenSVC agent schedule and ``nodemgr checks`` push checkers values from the nodes to the collector. Current implemented checks are:
+The OpenSVC agent schedule and ``om node checks`` push checkers values from the nodes to the collector. Current implemented checks are:
 
 **fs_u**
   Filesystems usage percent.

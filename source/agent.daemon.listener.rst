@@ -4,7 +4,7 @@ Agent Daemon Listener
 *********************
 
 * Listen on the address specified by :kw:`listener.addr` and port specified by :kw:`listener.port`.
-* Executes :cmd:`nodemgr dequeue actions` when receiving empty packets
+* Executes :cmd:`om node dequeue actions` when receiving empty packets
 * Execute valid requests
 
 .. rst-class:: lvl2
@@ -29,7 +29,7 @@ Clear the whole blacklist.
 
 ::
 
-        $ sudo nodemgr daemon blacklist clear
+        $ om node daemon blacklist clear
 
 
 Blacklist Status
@@ -39,7 +39,7 @@ Return the blacklist contents.
 
 ::
 
-        $ sudo nodemgr daemon blacklist status
+        $ om node daemon blacklist status
         {
             "data": {
                 "node1": 1,
@@ -55,7 +55,7 @@ Return the cluster data.
 
 ::
 
-        $ sudo nodemgr daemon status [--format json]
+        $ om node daemon status [--format json]
 
 .. seealso:: :ref:`agent.cluster.data`
 
@@ -68,7 +68,7 @@ Stopping the whole daemon advertizes to its peers its going into maintenance. Th
 
 ::
 
-        $ sudo nodemgr daemon stop [--thread-id <id>]
+        $ om node daemon stop [--thread-id <id>]
 
 Daemon Start
 ============
@@ -77,7 +77,7 @@ Start the daemon or a single thread.
 
 ::
 
-        $ sudo nodemgr daemon start [--thread-id <id>]
+        $ om node daemon start [--thread-id <id>]
 
 Daemon Shutdown
 ===============
@@ -86,7 +86,7 @@ Stop service instances, advertize maintenance to peers and stop the daemon.
 
 ::
 
-        $ sudo nodemgr daemon shutdown
+        $ om node daemon shutdown
 
 Get Service Config
 ==================
@@ -113,7 +113,7 @@ Clear the resource restart count, so the service monitor will retry :kw:`<rid>.r
 
 ::
 
-        $ sudo svcmgr -s <svcname> clear
+        $ om <svcname> clear
 
 
 Set Node Monitor
@@ -194,7 +194,7 @@ Return the cluster and heartbeats configuration sections the joiner must merge.
 
 ::
 
-        $ sudo nodemgr daemon join --secret <secret> --node <nodename>
+        $ om node daemon join --secret <secret> --node <nodename>
 
 Leave
 =====
@@ -228,7 +228,7 @@ Return or stream the local service instance logs.
 
 ::
 
-        $ sudo svcmgr -s <svcname> logs [--follow] [--backlog <n>]
+        $ om <svcname> logs [--follow] [--backlog <n>]
 
 Request logs from all service nodes daemons and aggregate the results.
 
@@ -239,20 +239,20 @@ The listener thread is restarted by the agent daemon if it exits uncleanly.
 
 ::
 
-        sudo nodemgr daemon stop --thread-id listener
+        om node daemon stop --thread-id listener
 
 Stop the listener thread. The thread state transitions from ``running`` to ``stopped``.
 
 ::
 
-        sudo nodemgr daemon start --thread-id listener
+        om node daemon start --thread-id listener
 
 Start the listener tx thread. The thread state transitions from ``stopped`` to ``running``.
 
 ::
 
-        sudo nodemgr set --param listener.port --value 1215
-        sudo nodemgr edit config
+        om node set --param listener.port --value 1215
+        om node edit config
 
 .. container:: lvl1
 
