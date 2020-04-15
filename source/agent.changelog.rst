@@ -2,6 +2,10 @@ Changelog
 =========
 
 
+| `2.0-680-g73e89e8c <https://github.com/opensvc/opensvc/commit/73e89e8ceeb6be586a55a614d029baea86d0335f>`_ Merge pull request #101 from cvaroqui/master
+| `2.0-679-g1c164ce0 <https://github.com/opensvc/opensvc/commit/1c164ce06a2bbb615bfe06b9093216e927eec425>`_ Fix a py 3.8 warning
+| `2.0-678-g41b56f59 <https://github.com/opensvc/opensvc/commit/41b56f594a9827f9e5b3f825abed66076e9a776c>`_ Merge pull request #100 from cgalibern/master
+| `2.0-677-ga4a7f3a5 <https://github.com/opensvc/opensvc/commit/a4a7f3a5a321d02e2d9f66fd9d8c2b57e8a09743>`_ Fix http2 api create object error (wrong function call)
 | `2.0-676-g75baeb19 <https://github.com/opensvc/opensvc/commit/75baeb19e0d26d5e150e770aef4d615c2327f32e>`_ Merge pull request #99 from arnaudveron/master
 | `2.0-675-g0164027a <https://github.com/opensvc/opensvc/commit/0164027a03c5bd5e116e23d04eeef35e71a68c45>`_ Fix duplicate documentation entries
 | `2.0-674-gf89125b9 <https://github.com/opensvc/opensvc/commit/f89125b900bd17f66258af610ceb1a966631ddb9>`_ Merge pull request #93 from cgalibern/master
