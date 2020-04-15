@@ -7,7 +7,7 @@ Example Cluster Data
 
 ::
 
-        $ sudo nodemgr daemon status --format json 
+        $ om node daemon status --format json 
         {
             "hb#1.rx": {
                 "config": {

@@ -113,7 +113,7 @@ On each node::
 	sudo systemctl start docker
 
 	sudo weave setup
-	sudo weave launch $(sudo nodemgr get --kw cluster.nodes)
+	sudo weave launch $(om node get --kw cluster.nodes)
 
 If CNI was installed from package, the weave plugin needs to be referenced in the package plugin dir::
 

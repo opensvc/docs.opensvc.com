@@ -68,7 +68,7 @@ Example:
 
 ::
 
-	sudo nodemgr set --kw node.repopkg=https://repo.opensvc.com
+	om node set --kw node.repopkg=https://repo.opensvc.com
 
 Upgrade Agents
 ==============
@@ -77,7 +77,7 @@ The upgrade command is:
 
 ::
 
-	sudo nodemgr updatepkg
+	om node updatepkg
 
 This command is operating system agnostic.
 

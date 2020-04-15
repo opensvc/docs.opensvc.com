@@ -32,7 +32,7 @@ Start
 
 ::
 
-	$ sudo nodemgr daemon start
+	$ om node daemon start
 
 .. rst-class:: lvl1
 
@@ -43,7 +43,7 @@ Stop
 
 ::
 
-	$ sudo nodemgr daemon stop
+	$ om node daemon stop
 
 The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`node.maintenance_grace_period` expires.
 
@@ -52,7 +52,7 @@ Restart
 
 ::
 
-	$ sudo nodemgr daemon restart
+	$ om node daemon restart
 
 .. rst-class:: lvl1
 

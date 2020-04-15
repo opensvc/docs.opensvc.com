@@ -53,9 +53,9 @@ Test on a representative server set
 
 On a set of servers exercising all possible ruleset contextualizations, test the module using the commands::
 
-  $ sudo nodemgr updatecomp
+  $ om node updatecomp
 
-  $ sudo nodemgr compliance fix --module it.sys.linux.repo
+  $ om node compliance fix --module it.sys.linux.repo
 
 Check the logs in the :menuselection:`Compliance --> Logs` view or in the output of the fix command, verify that the package manager behaves as expected.
 
