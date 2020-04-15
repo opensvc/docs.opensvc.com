@@ -104,12 +104,12 @@ As our first setup consist in a dual node cluster, we have to follow the steps d
 
 **On node1**::
 
-    $ sudo nodemgr set --param hb#1.type --value unicast
+    $ om cluster set --param hb#1.type --value unicast
 
 .. raw:: html
 
     <pre class=output>
-      $ sudo svcmon
+      $ om mon
 
       Threads                            <span style="font-weight: bold">node1</span>
        <span style="font-weight: bold">hb#1.rx</span>   <span style="color: #00aa00">running</span> 0.0.0.0:10000 | <span style="color: #767676">/</span>
@@ -131,9 +131,8 @@ Service Creation
 
 The OpenSVC service can be created using one of the following two methods:
 
-* wizard : ``svcmgr create`` with interactive option (-i)
-* manual : build config file from templates (located in ``<OSVCDOC>``)
 * provisioning
+* manual : build config file from templates (located in ``<OSVCDOC>``)
 
 We will describe the second, manual option, for a better understanding of what happens. 
 
@@ -142,23 +141,24 @@ Step 1 : Service creation
 
 A simple command is needed to create an empty service named ``svc1``::
 
-    $ sudo svcmgr -s svc1 create
+    $ om svc1 create
 
 
 
 
 The expected file name is ``svc1.conf`` located in ``<OSVCETC>``
-At this time, the configuration file should be empty. You have to edit it in order to define your service.
+At this time, the configuration file should be empty, except its unique id. You have to edit it in order to define your service.
 
 We are going to define a service running on the primary node node ``node1``, failing-over to node ``node2``, using one IP address named ``svc1.opensvc.com`` (name to ip resolution is done by the OpenSVC agent), one LVM volume group ``vgsvc1`` and two filesystems hosted in logical volumes ``/dev/mapper/vgsvc1-lvappsvc1`` and ``/dev/mapper/vgsvc1-lvdatasvc1``.
 
 **On node1 node**::
 
-        $ sudo svcmgr -s svc1 edit config
+        $ om svc1 edit config
 
         [DEFAULT]
         app = MyApp
         nodes = node1 node2
+        id = c450ecfa-2c02-4d4b-95a3-c543d4389ec0
 
         [ip#0]
         ipname = svc1.opensvc.com
@@ -185,45 +185,17 @@ The DEFAULT section in the service file describes the service itself: human read
 Every other section defines a ressource managed by the service.
 
 
-Step 2 : Service startup scripts directory
-++++++++++++++++++++++++++++++++++++++++++
-
-As services are used to manage application, we need to specify a directory where all applications startup scripts can be grouped.
-
-As an example, if we want to build a LAMP service, we would use 2 scripts: one for the mysql database, and another for the apache webserver. Those scripts have to be located in the service startup scripts directory : ``/etc/opensvc/svc1.dir``
-
-We will see later in this tutorial that ``/etc/opensvc/svc1.dir`` may not be the best place for hosting the launchers. Anyway, the symlink ``svc1.d`` is the only place where OpenSVC actually search for application launchers defined as basenames.
-
-
-Step 3 : Service management facility
-++++++++++++++++++++++++++++++++++++
-
-To make service management easy, OpenSVC creates a symlink to OpenSVC core service management command : ``/etc/opensvc/svc1``
-Without this symlink, we have to use the ``svcmgr`` command with arguments to manage our service ::
-
-        node1:/ # svcmgr -s svc1 print status
-
-With this symlink, we can directly use ::
-
-        node1:/ # svc1 print status
-
 Step 4 : Service configuration check
 ++++++++++++++++++++++++++++++++++++
 
 As a final check, we can list all entries that match our ``svc1`` service ::
 
         node1:/etc/opensvc # ls -lart | grep svc1
-        drwxr-xr-x.  2 root root    6 janv.  2 14:36 svc1.dir
-        lrwxrwxrwx.  1 root root    8 janv.  2 14:36 svc1.d -> svc1.dir
-        lrwxrwxrwx.  1 root root   15 janv.  2 14:36 svc1 -> /usr/bin/svcmgr
         -rw-r--r--.  1 root root  287 janv.  2 15:15 svc1.conf
 
 You should be able to see:
 
 - the service configuration file (svc1.conf)
-- the directory where are stored the applications launchers (svc1.dir)
-- a symlink to the ``svc1.dir`` (svc1.d)
-- a symlink to the ``/usr/bin/svcmgr`` command (svc1)
 
 At this point, we have configured a single service with no application launcher on node node1.
 
@@ -237,7 +209,7 @@ Our first service is now ready to use. We can query its status.
 
 **On node1**::
 
-        $ sudo svcmgr -s svc1 print status
+        $ om svc1 print status
         svc1                           down
         `- instances
            |- node2                    undef      daemon down
@@ -263,7 +235,7 @@ Once the service is described on a node, you just need one command to start the 
 
 Let's start the service on the local node::
 
-        node1:/ # svc1 start --local
+        node1:/ # om svc1 start --local
         node1.svc1.ip#0        checking 192.168.121.42 availability
         node1.svc1.ip#0        ifconfig eth0:1 192.168.121.42 netmask 255.255.255.0 up
         node1.svc1.ip#0        arping -U -c 1 -I eth0 -s 192.168.121.42 192.168.121.42
@@ -309,7 +281,7 @@ Manual ip address plumbing check on eth0 (svc1.opensvc.com is 192.168.121.42)::
 
 We can confirm everything is OK with the service's ``print status`` command::
 
-        node1:/ # svc1 print status
+        node1:/ # om svc1 print status
         svc1                           up
         `- instances
            |- node2                    undef      daemon down
@@ -331,30 +303,6 @@ Application Integration
 We have gone through the setup of a single service, but it does not start applications yet. Let's add an application to our service now.
 
 We will use a very simple example : a tiny webserver with a single index.html file to serve
-
-Applications launcher directory
-+++++++++++++++++++++++++++++++
-
-The OpenSVC service integration enables service relocation amongst nodes. The per-service launchers hosting directory layout is a consequence of this relocation feature. The service has an implicit synchronisation resource to replicate the ``<OSVCETC>/<service>*`` files using rsync.
-
-As a refinement, for services with dedicated shared disks, we can relocate the application launchers directory to a filesystem resource hosted in one such disk. The original location was ``<OSVCETC>/svc1.dir``. Let's move it to ``/svc1/app/init.d``::
-
-        node1:/etc/opensvc # ls -lart | grep svc1
-        drwxr-xr-x.  2 root root    6 janv.  2 14:36 svc1.dir
-        lrwxrwxrwx.  1 root root    8 janv.  2 14:36 svc1.d -> svc1.dir
-        lrwxrwxrwx.  1 root root   15 janv.  2 14:36 svc1 -> /usr/bin/svcmgr
-        -rw-r--r--.  1 root root  287 janv.  2 15:15 svc1.conf
-
-        node1:/etc/opensvc # rm -f svc1.d
-        node1:/etc/opensvc # rmdir svc1.dir
-
-        node1:/etc/opensvc # mkdir /svc1/app/init.d
-        node1:/etc/opensvc # ln -s /svc1/app/init.d svc1.d
-
-        node1:/etc/opensvc # ls -lart | grep svc1
-        lrwxrwxrwx.  1 root root   15 janv.  2 14:36 svc1 -> /usr/bin/svcmgr
-        -rw-r--r--.  1 root root  287 janv.  2 15:15 svc1.conf
-        lrwxrwxrwx.  1 root root   16 janv.  2 15:52 svc1.d -> /svc1/app/init.d
 
 Application Binary
 ++++++++++++++++++
@@ -457,7 +405,7 @@ Make sure the script is working fine outside of the OpenSVC context::
 
 Now we need to instruct OpenSVC to handle this script for service application management ::
 
-        # svc1 edit config
+        # om svc1 edit config
 
         (...)
         [app#web]
@@ -475,7 +423,7 @@ This configuration tells OpenSVC to call the ``weblauncher`` script with :
 
 Now we can give a try to our launcher script, using OpenSVC commands::
 
-        node1:~ # svc1 start --local
+        node1:~ # om svc1 start --local
         node1.svc1.ip#0        192.168.121.42 is already up on eth0
         node1.svc1.disk#0      vg vgsvc1 is already up
         node1.svc1.fs#app      ext4 /dev/mapper/vgsvc1-lvappsvc1@/svc1/app is already mounted
@@ -487,7 +435,7 @@ We can see that OpenSVC is now calling our startup script after mounting filesys
         
 Querying the service status, the ``app`` ressource is now reporting ``up``::
 
-        node1:~ # svc1 print status
+        node1:~ # om svc1 print status
         svc1                           up
         `- instances
            |- node2                    undef      daemon down
@@ -512,7 +460,7 @@ Let's check if that is really the case::
 
 Now we can stop our service::
 
-        node1:/ # svc1 stop --local
+        node1:/ # om svc1 stop --local
         node1.svc1.app#web     exec /svc1/app/init.d/weblauncher stop as user root
         node1.svc1.app#web     stop done in 0:00:00.010940 ret 0
         node1.svc1.fs#data     umount /svc1/data
@@ -537,7 +485,7 @@ Once again, a single command:
 
 The overall status is now reported as being down ::
 
-        node1:/ # svc1 print status
+        node1:/ # om svc1 print status
         svc1                           down       warn
         `- instances
            |- node2                    undef      daemon down
@@ -552,7 +500,7 @@ The overall status is now reported as being down ::
 
 Let's restart the service to continue this tutorial::
 
-        node1:/ # svc1 start --local
+        node1:/ # om svc1 start --local
 
 At this point, we have a running service on node node1, with a webserver application embedded.
 
@@ -567,19 +515,19 @@ First, we are going to add ``node2`` in the same cluster than ``node1``
 
 On node1::
 
-        $ sudo nodemgr get --param cluster.secret
+        $ om cluster get --kw cluster.secret
         7e801abaefc611e780a2525400a6c3d7
         
 
 On node2::
 
-        $ sudo nodemgr daemon join --secret 7e801abaefc611e780a2525400a6c3d7 --node node1
+        $ om daemon join --secret 7e801abaefc611e780a2525400a6c3d7 --node node1
         node2        freeze local node
         node2        add heartbeat hb#1
         node2        join node node1
         node2        thaw local node
 
-        $ sudo svcmon
+        $ om mon
 
         Threads                            node1 node2
          hb#1.rx   running 0.0.0.0:10000 | O     /
@@ -599,7 +547,7 @@ On node2::
 OpenSVC will synchronize configuration files for your service since this one should be able to run on node1 or node2.
 In order to force it now, run on ``node1`` ::
 
-        # svc1 sync nodes
+        # om svc1 sync nodes
 
 The configuration replication will be possible if the following conditions are met:
 
@@ -613,17 +561,17 @@ The configuration replication will be possible if the following conditions are m
 
 We can now try to start the service on ``node2``, after stopping it on ``node1``::
 
-        node1:/ # svcmgr -s svc1  stop
+        node1:/ # om svc1  stop
         
 **On node2**::
 
-        node2:~ # svc1 start --local
+        node2:~ # om svc1 start --local
 
 Service svc1 is now running on node ``node2``. Service relocation operational is easy as that.
 
 Now, what happens if I try to start my service on ``node1`` while already running on ``node2`` ? ::
 
-        node1:/ # svc1 start --local
+        node1:/ # om svc1 start --local
         node1.svc1.ip#0        checking 192.168.121.42 availability
         node1.svc1           E start aborted due to resource ip#0 conflict
         node1.svc1             skip rollback start: no resource activated
@@ -643,7 +591,7 @@ You only have to change the orchestration mode to ``ha``. For more information a
 
 On the node currently running your service, add ``orchestrate = ha`` in the ``DEFAULT`` section::
 
-        # svc1 edit config
+        # om svc1 edit config
         
         [DEFAULT]
         app = MyApp
@@ -657,7 +605,7 @@ The last needed step is to define some resources that will trigger relocation. T
 
 For example::
 
-        # svc1 edit config
+        # om svc1 edit config
         (...)
         [app#web]
         monitor = True
@@ -668,6 +616,6 @@ For example::
 
 Unfreeze your service to allow the daemon to orchestrate your service::
 
-        # svc1 thaw
+        # om svc1 thaw
 
 Now, if your webserver resource failed, OpenSVC will relocate the service on the other node without any human intervention.
