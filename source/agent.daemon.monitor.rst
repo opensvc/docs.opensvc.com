@@ -50,21 +50,21 @@ If set, try to reach the ``local_expect``.
 Value            Actions
 ================ ============================================================
 ``thawed``       * set ``status`` to ``thawing``
-                 * execute ``svcmgr -s <svcname> thaw``
+                 * execute ``om <svcname> thaw``
                  * set ``status`` to ``idle``
 
 ``frozen``       * set ``status`` to ``frezing``
-                 * execute ``svcmgr -s <svcname> freeze``
+                 * execute ``om <svcname> freeze``
                  * set ``status`` to ``idle``
 
 ``started``      * set ``status`` to ``starting``
-                 * execute ``svcmgr -s <svcname> start``
+                 * execute ``om <svcname> start``
                  * set ``status`` to ``idle`` or ``start failed``
-                 * execute ``svcmgr -s <svcname> toc`` if start failed and
+                 * execute ``om <svcname> toc`` if start failed and
                    a monitor action is defined
 
 ``stopped``      * set ``status`` to ``stopping``
-                 * execute ``svcmgr -s <svcname> stop``
+                 * execute ``om <svcname> stop``
                  * set ``status`` to ``idle`` or ``stop failed``
 ================ ============================================================
 

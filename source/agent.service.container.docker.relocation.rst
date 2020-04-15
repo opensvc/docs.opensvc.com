@@ -34,7 +34,7 @@ Create the service
 
 ::
 
-	$ cat - << EOF | svcmgr -s db1 deploy --config=-
+	$ cat - << EOF | om db1 deploy --config=-
 	{
 	    "DEFAULT": {
 		"nodes": "{clusternodes}"
@@ -125,7 +125,7 @@ Relocate Service
 
 ::
 
-	$ svcmgr -s db1 switch
+	$ om db1 switch
 	node-1-1.db1             service db1 target state set to placed@node-1-2
 
 You can follow the progress of this asynchronous action with ``svcmon -w -s db1``.
@@ -145,7 +145,7 @@ For reference and timings, here are the logs of this action
 
 ::
 
-	$ svcmgr -s db1 logs
+	$ om db1 logs
 
 	# orchestrator logs
 	20:35:50,004 node-1-1.db1             INFO    service db1 target state set to placed@node-1-2
@@ -211,6 +211,6 @@ Activate Automatic Failover
 
 ::
 
-	$ svcmgr -s db1 set --kw orchestrate=ha
+	$ om db1 set --kw orchestrate=ha
 
 

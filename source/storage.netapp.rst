@@ -206,7 +206,7 @@ Quiesce a replication
 
 ::
 
-	# svcmgr -s unxprdencap sync quiesce
+	# om unxprdencap sync quiesce
 	2010-02-09 16:51:22,419 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 
 Resume a replication
@@ -214,7 +214,7 @@ Resume a replication
 
 ::
 
-	# svcmgr -s unxprdencap sync resume
+	# om unxprdencap sync resume
 	2010-02-09 16:49:29,059 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resume nasdrp:vol1
 
 Split a replication
@@ -222,7 +222,7 @@ Split a replication
 
 ::
 
-	# svcmgr -s unxprdencap sync break
+	# om unxprdencap sync break
 	2010-02-09 16:41:15,359 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1
 
 Resync a replication
@@ -230,7 +230,7 @@ Resync a replication
 
 ::
 
-	# svcmgr -s unxprdencap sync resync
+	# om unxprdencap sync resync
 	2010-02-09 16:54:59,290 - SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror resync -f nasdrp:vol1
 
 Diskstart in disaster recovery (split) mode
@@ -238,7 +238,7 @@ Diskstart in disaster recovery (split) mode
 
 ::
 
-	# svcmgr -s unxprdencap start --rid disk
+	# om unxprdencap start --rid disk
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror quiesce nasdrp:vol1
 	* SYNC.NETAPP - INFO - start waiting quiesce to finish (max 300 seconds)
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasdrp snapmirror break nasdrp:vol1
@@ -249,7 +249,7 @@ Diskstart in multi-site cluster (swap) mode
 
 ::
 
-	# svcmgr -s unxprdencap startdisk
+	# om unxprdencap startdisk
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasprd snapmirror quiesce nasprd:vol1
 	* SYNC.NETAPP - INFO - start waiting quiesce to finish (max 60 seconds)
 	* SYNC.NETAPP - INFO - /usr/bin/ssh opensvc@nasprd snapmirror break nasprd:vol1

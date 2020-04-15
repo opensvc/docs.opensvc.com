@@ -129,7 +129,7 @@ Migrate a OVM service
 ::
 
         [root@ovm2 opensvc]# svcmgr --cluster --service ovmguest1 migrate --to ovm1
-        12:25:14 INFO    OVMGUEST1         exec '/usr/bin:svcmgr -s ovmguest1 --cluster --waitlock 60 mount' on node ovm1
+        12:25:14 INFO    OVMGUEST1         exec '/usr/bin:om ovmguest1 --cluster --waitlock 60 mount' on node ovm1
         12:25:19 INFO    OVMGUEST1.OVM     xm migrate -l ovmguest1 ovm1
-        12:26:59 INFO    OVMGUEST1         exec '/usr/bin/svcmgr -s ovmguest1 --cluster --waitlock 60 prstart' on node ovm1
+        12:26:59 INFO    OVMGUEST1         exec '/usr/bin/om ovmguest1 --cluster --waitlock 60 prstart' on node ovm1
 

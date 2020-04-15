@@ -79,14 +79,14 @@ Resync a started service snapshots
 
 ::
 
-	# svcmgr -s iiststeva02 stop && svcmgr -s iiststeva02 sync resync && svcmgr -s iiststeva02 start
+	# om iiststeva02 stop && om iiststeva02 sync resync && om iiststeva02 start
 
 Resync a stopped service snapshots
 ----------------------------------
 
 ::
 
-	# svcmgr -s iiststeva02 sync resync
+	# om iiststeva02 sync resync
 	IISTSTEVA02.SYNC#1 - INFO - sssu "select manager manager.opensvc.com username=hpadmin password=xxxxx" "select system EVA11" "delete lun \"\Hosts\n1\101\"" "delete lun \"\Hosts\n2\106\"" "delete vdisk \"\Virtual Disks\n1\n1-01\n1-01_iiststeva02\" wait_for_completion" "delete lun \"\Hosts\n1\102\"" "delete vdisk \"\Virtual Disks\n1\n1-02\n1-02_iiststeva02\" wait_for_completion"
 	IISTSTEVA02.SYNC#1 - INFO - 
 

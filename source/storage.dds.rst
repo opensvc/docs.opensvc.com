@@ -63,7 +63,7 @@ Full synchronization
 
 ::
 
-	# svcmgr -s unxtstsvc01 sync full
+	# om unxtstsvc01 sync full
 	* UNXTSTSVC01.SYNC#3 - INFO - lvcreate -s -n data_osvc_snap1 -L 4M /dev/unxtstsvc02/data
 	* UNXTSTSVC01.SYNC#3 - INFO - update state file with snap uuid HcJj5t-lPHf-2Jw6-6iLt-MUdf-UKby-LkVYJm
 	* UNXTSTSVC01.SYNC#3 - INFO - dd if=/dev/unxtstsvc02/data_osvc_snap1 bs=1M | /usr/bin/ssh vm5 dd bs=1M of=/tmp/dds.img

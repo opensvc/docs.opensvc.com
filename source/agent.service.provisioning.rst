@@ -240,7 +240,7 @@ Provision:
 ::
 
   $ om testec2docker4.nsx.lab.net --config testec2docker.template --provision create --leader --disable-rollback
-  INFO    testec2docker4.nsx.lab.net                  svcmgr -s testec2docker4.nsx.lab.net --config /etc/opensvc/testec2docker4.nsx.lab.net.conf --provision create
+  INFO    testec2docker4.nsx.lab.net                  om testec2docker4.nsx.lab.net --config /etc/opensvc/testec2docker4.nsx.lab.net.conf --provision create
   INFO    testec2docker4.nsx.lab.net.ip#0             aws --output=json ec2 assign-private-ip-addresses --network-interface-id eni-033adc4b --secondary-private-ip-address-count 1
   INFO    testec2docker4.nsx.lab.net.ip#0             public ip already provisioned
   INFO    testec2docker4.nsx.lab.net.ip#0             cascade 10.0.0.221 to ip#1.ipname

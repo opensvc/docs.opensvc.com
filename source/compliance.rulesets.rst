@@ -77,7 +77,7 @@ The variables thus exported can be used,
 **osvc_node**
 
 This ruleset is exported to nodes and services.
-It contains information about the node where the ``om node compliance ...`` command or the ``svcmgr -s <svcname> compliance ...`` command is executed.
+It contains information about the node where the ``om node compliance ...`` command or the ``om <svcname> compliance ...`` command is executed.
 
 Example content:
 
@@ -146,7 +146,7 @@ Example content:
 **osvc_service**
 
 This ruleset is exported to services only.
-It contains information about the service the ``svcmgr -s <svcname> compliance ...`` command is executed on.
+It contains information about the service the ``om <svcname> compliance ...`` command is executed on.
 
 Example content:
 
@@ -180,7 +180,7 @@ Example content:
 ** osvc_svcmon**
 
 This ruleset is exported to services only.
-It contains information about the status of the service the ``svcmgr -s <svcname> compliance ...`` command is executed on.
+It contains information about the status of the service the ``om <svcname> compliance ...`` command is executed on.
 
 Example content:
 
@@ -220,7 +220,7 @@ Explicit ruleset variables are exported only to nodes or services explicitely at
 
 or::
 
-        # svcmgr -s <svcname> compliance attach --ruleset rset1
+        # om <svcname> compliance attach --ruleset rset1
 
 Contextual rulesets
 +++++++++++++++++++

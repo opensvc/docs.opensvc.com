@@ -92,7 +92,7 @@ Resync service clones
 
 ::
 
-	# svcmgr -s aastmphpux sync resync                                                                                           
+	# om aastmphpux sync resync                                                                                           
 	* IISTMPHPUX.SYNC#2 - INFO - /usr/symcli/bin/symclone -g DGCVI -noprompt recreate -precopy -i 20 -c 30 DEV001 sym ld CLONE001
 	* IISTMPHPUX.SYNC#2 - WARNING - command succesful but stderr
 
@@ -108,7 +108,7 @@ Start a service using clones
 
 ::
 
-	# svcmgr -s aastmphpux start                                                                                                
+	# om aastmphpux start                                                                                                
 	* IISTMPHPUX.IP#1 - INFO - ifconfig lan900:1 192.168.32.41 netmask 255.255.252.0 up
 	* IISTMPHPUX.IP#1 - WARNING - arp annouce skipped. install 'arping'
 	* IISTMPHPUX.SYNC#2 - INFO - /usr/symcli/bin/symclone -g DGCVI -noprompt activate -i 20 -c 30 DEV001 sym ld CLONE001

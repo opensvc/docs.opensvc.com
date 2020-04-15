@@ -54,7 +54,7 @@ After a few seconds
 
 ::
 
-	$ svcmgr -s test/registry print status
+	$ om test/registry print status
 	registry                         up                                                                  
 	`- instances            
 	   |- nuc-cva                    down       idle                                   

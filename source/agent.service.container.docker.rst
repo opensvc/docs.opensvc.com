@@ -27,7 +27,7 @@ One single-node service with one container.
 
 Which installs the following configuration::
 
-	root@deb1:/etc/opensvc# svcmgr -s svc1 print config
+	root@deb1:/etc/opensvc# om svc1 print config
 	[DEFAULT]
 	id = fab0bc71-0434-42a4-9fcd-daac32efda91
 
@@ -85,13 +85,13 @@ Service Stop
 
 Local, synchronous, service instance stop::
 
-	root@deb1:/etc/opensvc# svcmgr -s svc1 stop --local
+	root@deb1:/etc/opensvc# om svc1 stop --local
 	deb1.opensvc.com.svc1.container#1   docker stop 3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8
 	deb1.opensvc.com.svc1.container#1   output:
 	deb1.opensvc.com.svc1.container#1   3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8
 	deb1.opensvc.com.svc1.container#1   wait for down status
 
-	root@deb1:/etc/opensvc# svcmgr -s svc1 print status
+	root@deb1:/etc/opensvc# om svc1 print status
 	svc1                               down                                               
 	`- instances              
 	   `- deb1.opensvc.com             down       idle                  
