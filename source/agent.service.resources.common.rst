@@ -36,13 +36,13 @@ app#nginx2    websrv
 ::
 
         # stop resources tagged 'websrv'
-        $ sudo svcmgr -s <svcname> --tag websrv stop
+        $ om <svcname> --tag websrv stop
 
         # stop resources tagged 'websrv' or 'appsrv'
-        $ sudo svcmgr -s <svcname> --tag websrv,appsrv stop
+        $ om <svcname> --tag websrv,appsrv stop
 
         # stop resources tagged 'websrv' and 'base'
-        $ sudo svcmgr -s <svcname> --tag websrv+base stop
+        $ om <svcname> --tag websrv+base stop
 
 
 Special Tags
@@ -69,7 +69,7 @@ This tag assigns the resource to the encapsulated/slave service. The agent on th
 .. raw:: html
 
 	<pre class=output>
-        $ sudo svcmgr -s testzone print status
+        $ om testzone print status
 	<span style="font-weight: bold">testzone                    </span>       <span style="color: #00aa00">up        </span>                              
 	`- <span style="font-weight: bold">sol3.opensvc.com         </span>       <span style="color: #00aa00">up        </span> <span style="color: #767676"></span><span style="color: #0000aa">frozen</span>,          
 	   |                                          <span style="color: #767676"></span><span style="color: #767676">idle</span>,      
@@ -152,7 +152,7 @@ This will make the agent ignore any action upon this resource.
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo svcmgr -s app1.dev print status --refresh
+        $ om app1.dev print status --refresh
 	<span style="font-weight: bold">app1.dev              </span>       <span style="color: #00aa00">up        </span>                                                    
 	`- <span style="font-weight: bold">deb1.opensvc.com   </span>       <span style="color: #00aa00">up        </span> <span style="color: #767676"></span><span style="color: #767676">idle</span>, <span style="color: #767676">started</span>  
 	   |- ip#0             ..... <span style="color: #00aa00">up        </span> 192.168.1.1@lo                                     
@@ -184,7 +184,7 @@ Service actions won't stop on error reported by optional resources.
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo svcmgr -s redis.acme.com print status
+        $ om redis.acme.com print status
 	<span style="font-weight: bold">mysvc1.opensvc.com         </span>       <span style="color: #00aa00">up        </span>                                                   
 	`- <span style="font-weight: bold">deb1.opensvc.com        </span>       <span style="color: #00aa00">up        </span> <span style="color: #767676"></span><span style="color: #767676">idle</span>, <span style="color: #767676">started</span> 
 	   |- ip#1                  ..... <span style="color: #00aa00">up        </span> 128.0.1.124@lo                                    
@@ -226,7 +226,7 @@ If the resource goes down, then the agent triggers the ``monitor_action``, which
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo svcmgr -s redis.acme.com print status
+        $ om redis.acme.com print status
 	<span style="font-weight: bold">mysvc1.opensvc.com         </span>       <span style="color: #00aa00">up        </span>                                                   
 	`- <span style="font-weight: bold">deb1.opensvc.com        </span>       <span style="color: #00aa00">up        </span> <span style="color: #767676"></span><span style="color: #767676">idle</span>, <span style="color: #767676">started</span> 
 	   |- ip#1                  ..... <span style="color: #00aa00">up        </span> 128.0.1.124@lo                                    
@@ -297,7 +297,7 @@ Resources with ``standby = true`` are started on service ``boot`` and ``start`` 
 
 	<pre class='output'>
         # Primary Node
-        $ sudo svcmgr -s mysvc.acme.com print status
+        $ om mysvc.acme.com print status
 	<span style="font-weight: bold">mysvc1.opensvc.com         </span>       <span style="color: #00aa00">up        </span>                                                   
 	`- <span style="font-weight: bold">deb1.opensvc.com        </span>       <span style="color: #00aa00">up        </span> <span style="color: #767676"></span><span style="color: #767676">idle</span>, <span style="color: #767676">started</span> 
 	   |- ip#1                  ..... <span style="color: #00aa00">up        </span> 128.0.1.124@lo                                    

@@ -42,7 +42,7 @@ Print a Service Tasks and their Scheduling Status
 
 ::
 
-	$ sudo svcmgr -s testmd print schedule
+	$ om testmd print schedule
 	action                 last run               config parameter          schedule definition
 	------                 --------               ----------------          -------------------
         ...
@@ -56,19 +56,19 @@ All service tasks
 
 ::
 
-	$ sudo svcmgr -s testmd run
+	$ om testmd run
 
 One specific task
 
 ::
 
-	$ sudo svcmgr -s testmd run --rid task#0
+	$ om testmd run --rid task#0
 
 All tasks with the backup tag
 
 ::
 
-	$ sudo svcmgr -s testmd run --rid task --tags backup
+	$ om testmd run --rid task --tags backup
 
 Configuration
 *************
@@ -96,7 +96,7 @@ A ``no`` response to the confirmation prompt aborts the run with a ``1`` returnc
 
 ::
 
-        $ sudo svcmgr -s testmd run --rid task#0
+        $ om testmd run --rid task#0
         This task run requires confirmation.
         Please make sure you fully understand its role and effects before confirming the run.
         Do you really want to run task#0 (yes/no) > no

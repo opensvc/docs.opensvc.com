@@ -113,7 +113,7 @@ Clear the resource restart count, so the service monitor will retry :kw:`<rid>.r
 
 ::
 
-        $ sudo svcmgr -s <svcname> clear
+        $ om <svcname> clear
 
 
 Set Node Monitor
@@ -228,7 +228,7 @@ Return or stream the local service instance logs.
 
 ::
 
-        $ sudo svcmgr -s <svcname> logs [--follow] [--backlog <n>]
+        $ om <svcname> logs [--follow] [--backlog <n>]
 
 Request logs from all service nodes daemons and aggregate the results.
 

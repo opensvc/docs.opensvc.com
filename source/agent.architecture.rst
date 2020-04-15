@@ -54,12 +54,12 @@ The node scheduler tasks schedules are defined in ``<OSVCETC>/node.conf``. Each 
 Service Scheduler Tasks
 +++++++++++++++++++++++
 
-A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.env``. The section and parameter names are visible in :cmd:`sudo svcmgr -s <svcname> print schedule` output in the ``config parameter`` column.
+A service scheduler tasks schedules are defined in ``<OSVCETC>/<svcname>.conf``. The section and parameter names are visible in :cmd:`om <svcname> print schedule` output in the ``config parameter`` column.
 
 .. raw:: html
 
 	<pre class='output'>
-	$ sudo svcmgr -s testmd print schedule
+	$ om testmd print schedule
 	<span style="font-weight: bold">Action                </span>  <span style="font-weight: bold">Last Run           </span>  <span style="font-weight: bold">Config Parameter        </span>  <span style="font-weight: bold">Schedule Definition</span>  
 	|- <span style="color: #767676">compliance_auto    </span>  2017-10-01 00:09:01  DEFAULT.comp_schedule     00:00-06:00@361      
 	|- <span style="color: #767676">push_config        </span>  2017-10-01 00:01:02  DEFAULT.push_schedule     00:00-06:00@361      

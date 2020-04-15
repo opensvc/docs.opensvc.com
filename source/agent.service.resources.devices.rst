@@ -170,7 +170,7 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 .. raw:: html
 
 	<pre class='output'>
-        $ sudo svcmgr -s pridns print devs
+        $ om pridns print devs
 	<span style="font-weight: bold">pridns                     </span>  
 	|- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	|  |- <span style="color: #767676">base                 </span>  
@@ -188,13 +188,13 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 	   `- <span style="color: #767676">sub                  </span>  
 	      `- /dev/loop0          
 
-        $ sudo svcmgr -s pridns print exposed devs
+        $ om pridns print exposed devs
 	<span style="font-weight: bold">pridns                     </span>  
 	`- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	   `- <span style="color: #767676">exposed              </span>  
 	      `- /dev/loop0          
 
-        $ sudo svcmgr -s pridns print sub devs
+        $ om pridns print sub devs
 	<span style="font-weight: bold">pridns             </span>  
 	|- <span style="color: #aa5500">fs#1 (fs)       </span>  
 	|  `- <span style="color: #767676">sub          </span>  
@@ -203,7 +203,7 @@ Each resource driver can implement a method to claim devices as "exposed" and "s
 	   `- <span style="color: #767676">sub          </span>  
 	      `- /dev/loop0  
 
-        $ sudo svcmgr -s pridns print base devs
+        $ om pridns print base devs
 	<span style="font-weight: bold">pridns                     </span>  
 	|- <span style="color: #aa5500">disk#0 (disk.loop)      </span>  
 	|  `- <span style="color: #767676">base                 </span>  

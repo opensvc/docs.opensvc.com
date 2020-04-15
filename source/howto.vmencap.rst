@@ -138,10 +138,10 @@ You should now be able to run succesfully:
 
 ::
 
-	sudo svcmgr -s yoursvc print status
-	sudo svcmgr -s yoursvc push
-	sudo svcmgr -s yoursvc diskupdate
-	sudo svcmgr -s yoursvc stop
-	sudo svcmgr -s yoursvc start
+	om yoursvc print status
+	om yoursvc push
+	om yoursvc diskupdate
+	om yoursvc stop
+	om yoursvc start
 
 
