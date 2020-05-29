@@ -78,6 +78,14 @@ Form definition
         Help: The line installed if the check pattern is not found in the file.
         Type: string
       -
+        Id: strict_fmt
+        Label: Strict Format
+        DisplayModeLabel: strict fmt
+        LabelCss: action16
+        Help: Consider a line matching the check regexp invalid if the line is not strictly the same as fmt.
+        Type: boolean
+        Default: True
+      -
         Id: ref
         Label: URL to format
         DisplayModeLabel: ref
