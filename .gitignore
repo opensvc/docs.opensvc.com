@@ -1,6 +1,7 @@
 *.swp
 *.mo
 *~
+source/agent.daemon.events.rst
 source/translated/pot/
 update_docs.bash
 build/

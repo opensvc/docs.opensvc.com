@@ -136,7 +136,7 @@ doctest:
 html_fr:
 	$(SPHINXBUILD) -b html -Dlanguage=fr $(ALLSPHINXOPTS) $(BUILDDIR)/html/fr
 
-osvc: changelog events templates commands compobjs html html_fr
+osvc: changelog templates commands compobjs html html_fr
 
 pot:
 	$(SPHINXBUILD) -b gettext source $(POT_D)
@@ -178,14 +178,12 @@ commands: gitrepo
 	@$(DOCDIR)/opensvc/bin/pkg/make_man_rst
 	@rm -rf source/agent.commands && mv $(DOCDIR)/opensvc/tmp/agent.commands source/
 
-events: gitrepo
-	@python $(DOCDIR)/opensvc/lib/osvcd_events.py | tee source/agent.daemon.events.rst
-
 templates: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
 	@test -d source/agent.templates || mkdir source/agent.templates
 	@$(DOCDIR)/opensvc/bin/pkg/make_rst
 	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst/* source/agent.templates/
+	@cp $(DOCDIR)/usr/share/doc/daemon.events source/agent.daemon.events.rst || python $(DOCDIR)/opensvc/lib/osvcd_events.py | tee source/agent.daemon.events.rst
 
 compobjs: gitrepo
 	@for t in `egrep -l "^data = {" $(DOCDIR)/opensvc/var/compliance/com.opensvc/*.py` ; do \
