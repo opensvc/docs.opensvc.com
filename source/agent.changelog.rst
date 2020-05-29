@@ -2,6 +2,9 @@ Changelog
 =========
 
 
+| `2.1dev-563-g2419eec3b <https://github.com/opensvc/opensvc/commit/2419eec3b1c8c47c5052c483c245fe2590fc4e1e>`_ Merge pull request #146 from cvaroqui/b2.1
+| `2.1dev-562-gb80465312 <https://github.com/opensvc/opensvc/commit/b804653127993a8de2cb2de6e019fa954ce82d65>`_ Fix bin/pkg/make_doc_rst error in command submodules names
+| `2.1dev-561-gb46e1ffcd <https://github.com/opensvc/opensvc/commit/b46e1ffcd0f0bcad2778b1de963e570c9b815a9b>`_ Rename make.lib into makelib.sh to stop confusing syntax highlighters
 | `2.1dev-560-g836bf2f2c <https://github.com/opensvc/opensvc/commit/836bf2f2c19870df0d57df74ff83e6bb2f811fac>`_ Merge pull request #145 from cgalibern/prepare-b2.1
 | `2.1dev-559-g5a9e142bc <https://github.com/opensvc/opensvc/commit/5a9e142bcc4df6cdee93a48fbf11110ff5b9342d>`_ Prepare b2.1 merge to master
 | `2.1dev-558-gb96d79008 <https://github.com/opensvc/opensvc/commit/b96d79008403e5b298d978cff00e6844a9ef1da1>`_ [drivers.resource.ip.host] Fix regression in netmask value for Solaris
