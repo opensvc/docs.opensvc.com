@@ -171,7 +171,7 @@ gitclone:
 gitrepo:
 	@echo "Updating git repo"
 	@test -d $(DOCDIR)/opensvc/.git || $(MAKE) gitclone
-	@branch=`git rev-parse --abbrev-ref HEAD` && cd $(DOCDIR)/opensvc && git checkout $$branch && git pull --all && git reset --hard
+	@branch=`git rev-parse --abbrev-ref HEAD` && cd $(DOCDIR)/opensvc && git reset --hard && git pull && git checkout $$branch
 
 commands: gitrepo
 	@test -d $(DOCDIR)/opensvc/tmp || mkdir $(DOCDIR)/opensvc/tmp
