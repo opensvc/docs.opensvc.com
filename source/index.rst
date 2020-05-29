@@ -6,6 +6,7 @@ Previous Versions
 
 * ``1.8`` https://docs.opensvc.com/1.8/
 * ``1.9`` https://docs.opensvc.com/1.9/
+* ``2.0`` https://docs.opensvc.com/2.0/
 
 Translations
 ------------
