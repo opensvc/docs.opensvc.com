@@ -183,7 +183,7 @@ templates: gitrepo
 	@test -d source/agent.templates || mkdir source/agent.templates
 	@$(DOCDIR)/opensvc/bin/pkg/make_rst
 	@rm -rf source/agent.templates/* && mv $(DOCDIR)/opensvc/tmp/rst/* source/agent.templates/
-	@cp $(DOCDIR)/usr/share/doc/daemon.events source/agent.daemon.events.rst || python $(DOCDIR)/opensvc/lib/osvcd_events.py | tee source/agent.daemon.events.rst
+	@cp $(DOCDIR)/opensvc/usr/share/doc/daemon.events source/agent.daemon.events.rst || python $(DOCDIR)/opensvc/lib/osvcd_events.py | tee source/agent.daemon.events.rst
 
 compobjs: gitrepo
 	@for t in `egrep -l "^data = {" $(DOCDIR)/opensvc/var/compliance/com.opensvc/*.py` ; do \
