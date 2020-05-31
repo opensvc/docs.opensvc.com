@@ -60,18 +60,6 @@ New Commands
 | :cmd:`om node drain`
 |
 
-New Keywords
-============
-
-.. toctree::
-   :maxdepth: 3
-
-   agent.keywords.19
-
-Deprecated
-==========
-
-
 Agent Migration
 ===============
 
