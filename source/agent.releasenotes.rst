@@ -47,7 +47,7 @@ New Features
 * Display the daemon init progress in ``om mon``.
 * Support ubuntu 20.04 CNI location.
 * Dump daemon threads stack on SIGUSR1.
-* Support piping binaey data to ``om <sec> add --key <key> --from -```. 
+* Support piping binary data to ``om <sec> add --key <key> --from -```. 
 
 New Drivers
 ===========
