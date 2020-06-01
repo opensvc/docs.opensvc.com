@@ -19,7 +19,7 @@ Finally, the configurations can be deployed on test, up to production clusters o
    :maxdepth: 2
 
    agent.service.namespaces
-   agent.service.secrets
+   agent.secrets
    agent.service.references
    agent.service.provisioning
    agent.node.selector
