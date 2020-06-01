@@ -98,6 +98,47 @@ Keywords
 
    agent.templates/template.node.pool.directory
 
+drbd
+----
+
+Capabilities
+++++++++++++
+
+rox, rwx, shared, blk, roo, rwo
+
+Layout
+++++++
+
+A volume object from this type of pool contains:
+
+If a vg is defined in the pool configuration,
+
+* a fs resource, with ``dev`` set to the drbd device path
+* a drbd resource, layered over a logical volume of the pool vg
+* a lv resource
+
+If a zpool is defined in the pool configuration,
+
+* a fs resource, with ``dev`` set to the drbd device path
+* a drbd resource, layered over a zvol of the pool zpool
+* a zvol resource
+
+If the pool configuration has neither vg nor zpool set,
+
+* a fs resource, with ``dev`` set to the drbd device path
+* a drbd resource, layered over a logical volume
+* a lv resource
+* a vg resource
+* a loop resource, with image file hosted in the pool defined ``path`` or in ``<PATHVAR>/pool/<poolname>/``
+
+Keywords
+++++++++
+
+.. toctree::
+   :maxdepth: 2
+
+   agent.templates/template.node.pool.drbd
+
 freenas
 -------
 
@@ -660,4 +701,49 @@ The volume object template referenced by the vpool
 	name = {svcname}-1
 	pool = freenas
 	format = false
+
+drbd pool
+---------
+
+Pool configuration
+
+::
+
+   om cluster set \
+      --kw pool#drbdloop.type=drbd
+
+   om cluster set \
+      --kw pool#drbdvg.type=drbd \
+      --kw pool#drbdvg.vg=centos
+
+::
+
+   [pool#drbdloop]
+   type = drbd
+
+   [pool#drbdvg]
+   type = drbd
+   vg = centos
+
+
+Example postgres service using a volume from a pool.
+
+::
+
+   [DEFAULT]
+   nodes = *
+   orchestrate = ha
+
+   [volume#1]
+   shared = true
+   size = 200m
+   name = {name}
+
+   [container#1]
+   type = oci
+   image = postgres
+   volume_mounts = {name}/data:/var/lib/postgresql/data
+   secrets_environment = POSTGRES_PASSWORD=pg/password
+   rm = true
+   shared = true
 
