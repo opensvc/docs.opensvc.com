@@ -184,39 +184,6 @@ The complete and up-to-date schedule syntax reference is available in ``<OSVCDOC
 	      <shift>
 	        type: integer
 
-Schedule Testing
-================
-
-Executing the scheduler code file triggers a test routine.
-
-::
-
-	$ python <OSVCLIB>/rcScheduler.py
-	passed : test '2015-02-27 10:00' in schedule ''       expected False => result False (no schedule)
-	passed : test '2015-02-27 10:00' in schedule '@0'     expected False => result False (interval set to 0)
-	passed : test '2015-02-27 10:00' in schedule '*@0'    expected False => result False (interval set to 0)
-	passed : test '2015-02-27 10:00' in schedule '*'      expected True => result True 
-	passed : test '2015-02-27 10:00' in schedule '*@61'   expected True => result True 
-	...
-
-You can add your own test in the ``tests`` structure at the end of this file.
-
-::
-
-	tests = [
-	  ("", "2015-02-27 10:00", False),
-	  ("@0", "2015-02-27 10:00", False),
-	  ("*@0", "2015-02-27 10:00", False),
-	  ("*", "2015-02-27 10:00", True),
-          ...
-        ]
-
-List entries fields:
-
-* ``0``: A schedule definition to test
-* ``1``: The simulated current time
-* ``2``: The expected result
-
 Examples
 ========
 
