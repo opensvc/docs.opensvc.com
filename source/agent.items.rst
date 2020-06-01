@@ -10,18 +10,18 @@ The agent file organization follows the Filesystem Hierarchy Standard guidelines
 
 The package installs the following directory tree:
 
-================================== ============================ ==================
-Git Workspace or Windows Package   Unix Packages                Reference in docs
-================================== ============================ ==================
-``<OSVCROOT>/``                                                 ``<OSVCROOT>``
-``<OSVCROOT>/etc``                 ``/etc/opensvc``             ``<OSVCETC>``
-``<OSVCROOT>/tmp``                 ``/var/tmp/opensvc``         ``<OSVCTMP>``
-``<OSVCROOT>/bin``                 ``/usr/share/opensvc/bin``   ``<OSVCBIN>``
-``<OSVCROOT>/var``                 ``/var/lib/opensvc``         ``<OSVCVAR>``
-``<OSVCROOT>/usr/share/doc``       ``/usr/share/doc/opensvc``   ``<OSVCDOC>``
-``<OSVCROOT>/lib``                 ``/usr/share/opensvc/lib``   ``<OSVCLIB>``
-``<OSVCROOT>/log``                 ``/var/log/opensvc``         ``<OSVCLOG>``
-================================== ============================ ==================
+================================== =============================== ==================
+Git Workspace or Windows Package   Unix Packages                   Reference in docs
+================================== =============================== ==================
+``<OSVCROOT>/``                                                    ``<OSVCROOT>``
+``<OSVCROOT>/etc``                 ``/etc/opensvc``                ``<OSVCETC>``
+``<OSVCROOT>/tmp``                 ``/var/tmp/opensvc``            ``<OSVCTMP>``
+``<OSVCROOT>/bin``                 ``/usr/share/opensvc/bin``      ``<OSVCBIN>``
+``<OSVCROOT>/var``                 ``/var/lib/opensvc``            ``<OSVCVAR>``
+``<OSVCROOT>/usr/share/doc``       ``/usr/share/doc/opensvc``      ``<OSVCDOC>``
+``<OSVCROOT>/opensvc``             ``/usr/share/opensvc/opensvc``  ``<OSVCLIB>``
+``<OSVCROOT>/log``                 ``/var/log/opensvc``            ``<OSVCLOG>``
+================================== =============================== ==================
 
 Items Role
 ==========
@@ -46,7 +46,7 @@ Path                Description
                     resources and node configuration reference files,
                     documenting all possible parameters.
 
-``<OSVCLIB>``       Python source code for the core and resource drivers.
+``<OSVCLIB>``       Python package for the core, daemon and resource drivers.
 
 ``<OSVCLOG>``       Per-service, local, size-rotated, delay-rotated log files.
                     All logs are also multiplexed to stdout and to the 
