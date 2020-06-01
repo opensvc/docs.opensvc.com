@@ -16,6 +16,8 @@ The agent daemon spawns threads to handle its different roles:
   Periodically run node and services schedulers.
 * Heartbeat threads
   Check if peers are alive and exchange node and service information. Run the quorum race on split-brain.
+* DNS
+  powerdns remote backend, serving names for services backend ip addresses.
 * Collector
   Send cluster information to the collector. Only one node in the
   cluster sends. This role fails over transparently.
@@ -67,10 +69,10 @@ Debugging
 
 Run the daemon in foreground::
 
-	$ sudo python <OSVCLIB>/osvcd.py -f
+	$ om daemon start --foreground
 
-Threads
--------
+Subsystems
+----------
 
 .. toctree::
 	:maxdepth: 2
