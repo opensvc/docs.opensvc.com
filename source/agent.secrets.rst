@@ -63,6 +63,8 @@ The head can be named:
 
 Or left as-is:
 
+::
+
 	om test/sec/sec1 add --from /tmp/head
 	...
 	  secret key 'head/b/bob' added (166)
