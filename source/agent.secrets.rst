@@ -3,8 +3,9 @@
 Secrets
 *******
 
-Secrets are key/value storage, replicated on all cluster nodes, and with values encrypted.
+Secrets are key/value stores, replicated on all cluster nodes, and with values encrypted.
 
+* The secrets object kind is ``sec``
 * A secret belongs to a namespace.
 * Only services in the same namespace can use the secret keys.
 * A secret can be used by multiple services
@@ -69,6 +70,12 @@ Or left as-is:
 	...
 	  secret key 'head/b/bob' added (166)
 	  secret key 'head/a/alex' added (166)
+
+From a Remote Location
+----------------------
+
+::
+        om test/sec/sec1 add --key logo --from https://www.opensvc.com/init/static/images/opensvc-logo-2018.svg
 
 Listing Keys
 ============
