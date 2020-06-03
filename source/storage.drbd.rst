@@ -77,3 +77,7 @@ Keywords
 
    agent.templates/template.service.disk.drbd
 
+.. seealso::
+
+    | :ref:`Pools <storage.configure.pool>`
+
