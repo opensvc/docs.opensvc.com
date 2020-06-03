@@ -1,3 +1,5 @@
+.. _agent.configure.pool:
+
 Cluster Storage Pools
 *********************
 
