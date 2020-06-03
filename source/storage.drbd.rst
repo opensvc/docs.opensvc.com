@@ -79,5 +79,5 @@ Keywords
 
 .. seealso::
 
-    | :ref:`Pools <storage.configure.pool>`
+    | :ref:`Pools <agent.configure.pool>`
 
