@@ -1,9 +1,52 @@
-Docker Private Registry
-=======================
+Docker Private Registries
+*************************
 
-Docker depends on registry component, which is a repository where docker images are stored, and served from to allow pull/push by docker daemons. Although Docker (https://www.docker.io/) offers private registries SaaS, you may prefer to avoid exposing your docker containers outside of your private IT infrastructure, provide a close-to-consumer registries mesh, dedicate registries to consumer populations.
+Docker fetches container images from registries. The Docker hub registry serves either public or private repositories, and you may also have a private registries to pull from.
 
-This tutorial describes how you can install and run your own Docker registry.
+Authenticate on private registries
+==================================
+
+Node Level
+----------
+
+Beware, registries authenticated this way are available to all services.
+
+::
+
+	$ sudo docker login some.private.registry
+
+Service Level
+-------------
+
+Registries authenticated this way are only available to services of a namespace.
+
+On a client computer (not a cluster node where you don't want to share your registry access with all services)
+
+::
+
+	$ docker login some.private.registry
+
+This command has created a $HOME/.docker/config.json containing your credentials.
+
+On a target cluster node, create a secret in the namespace you want to use the registry access and load the config.json content in the config.json secret key.
+
+For example
+
+::
+
+	$ om myns/sec/creds-some-private-registry create
+	$ om myns/sec/creds-some-private-registry edit --key config.json
+	# paste, save and exit
+
+At this point, you can use the following setting in the DEFAULT or container sections of any service in the namespace
+
+::
+
+	registry_creds = creds-some-private-registry
+
+
+Install a Docker registry
+=========================
 
 Pre-requisites
 --------------
@@ -68,7 +111,7 @@ After a few seconds
 
 The registry is up and running.
 
-.. warning:: The docker registry does not deal with access control. As soon as the docker container is up, everyone is allowed to push/pull images to/from the registry. You can add authentification via the OpenSVC collector or a tiers solution, or simply bind the registry to the loopback ip address for a development laptop.
+.. warning:: The docker registry does not deal with access control. As soon as the docker container is up, everyone is allowed to push/pull images to/from the registry. You can add authentification via the OpenSVC collector or a tier solution, or simply bind the registry to the loopback ip address for a development laptop.
 
 Testing the registry
 --------------------
