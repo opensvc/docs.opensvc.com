@@ -2,6 +2,10 @@ Changelog
 =========
 
 
+| `2.1-96-g11e38d4eb <https://github.com/opensvc/opensvc/commit/11e38d4eba615390b66f245e12a7440bafa62ac9>`_ Merge pull request #209 from cvaroqui/b2.1
+| `2.1-95-g39630a739 <https://github.com/opensvc/opensvc/commit/39630a739cf4674910bb67c0f4eef28a84764f60>`_ Don't set registry creds option on docker/podman start commands
+| `2.1-94-gaf5602676 <https://github.com/opensvc/opensvc/commit/af5602676ea6b18667e361cc4abbf0c8c8657e39>`_ Merge pull request #207 from cvaroqui/b2.1
+| `2.1-93-gd302ad253 <https://github.com/opensvc/opensvc/commit/d302ad253e872b7d2567e0fcab297c9f6c489cfa>`_ Fix missing templates in usr/share/doc
 | `2.1-92-gee106b253 <https://github.com/opensvc/opensvc/commit/ee106b2533572080fdfb1527abd46f955674f1a2>`_ Merge pull request #205 from cvaroqui/b2.1
 | `2.1-90-g6abc54e6f <https://github.com/opensvc/opensvc/commit/6abc54e6ff4b0be1d61d8019b3ce58148a0ac91d>`_ Fix provision orchestration issue with parents=foo@node1
 | `2.1-90-g3b5084876 <https://github.com/opensvc/opensvc/commit/3b5084876b077532ded0769ed11ecb7b0dcaa24a>`_ Merge pull request #204 from cvaroqui/b2.1
