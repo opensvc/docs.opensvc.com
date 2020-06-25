@@ -4,9 +4,9 @@ Commands Reference
 .. toctree::
    :maxdepth: 2
 
-   agent.commands/svcmgr
-   agent.commands/volmgr
-   agent.commands/secmgr
-   agent.commands/cfgmgr
-   agent.commands/nodemgr
+   agent.commands/svc
+   agent.commands/vol
+   agent.commands/sec
+   agent.commands/cfg
+   agent.commands/node
 
