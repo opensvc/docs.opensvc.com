@@ -56,14 +56,17 @@ Add Arbitrators
 
 Arbitrators are optional. Skip to the next section if not concerned.
 
-On a new cluster, the arbitrator configurations can be applied on the first node. The joining nodes will fetch this configuration from this joined node.
+The arbitrator configuration can be applied on any node of the cluster.
+
 
 ::
 
         om cluster set --kw arbitrator#1.name=relay1 \
-                       --kw arbitrator#1.secret=1023102310230123123
+                       --kw arbitrator#1.secret=10231023102310231023102310231023
 
 This configuration will ask for the agent on node :c-node:`relay1` for its vote in a quorum race, if needed to get a majority.
+
+The :kw:`arbitrator#1.secret` value comes from the :kw:`cluster.secret` value on the arbitrator `relay1`.
 
 .. seealso::
 
