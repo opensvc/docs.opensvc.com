@@ -54,10 +54,10 @@ Install
 	sudo dpkg -i /tmp/opensvc.latest
 
 	# Solaris pkg
-	sudo pkgadd -d /tmp/opensvc.latest opensvc
+	sudo pkgadd -G -d /tmp/opensvc.latest opensvc
 
 	# Solaris ips
-	sudo pkg install –g /tmp/opensvc.p5p opensvc
+	sudo pkg install -G –g /tmp/opensvc.p5p opensvc
 
 	# Mac OS X
         installer -pkg /tmp/opensvc.latest  -target /
