@@ -85,7 +85,7 @@ Reference                   Description                                         
 {var}                       The agent var/ directory path /var/lib/opensvc/ for agents     Yes                     Yes
                             installed through the packages, /opt/opensvc/var/ for an agent
                             installed via git pull in /opt
-{initd}                     The object init directory path. ex: /etc/opensvc/etc/<name>.d/ Yes                     Yes
+{initd}                     The object init directory path. ex: /etc/opensvc/etc/<name>.d  Yes                     Yes
 {private_var}               The object private directory under {var}                       Yes                     Yes
 {<rid>.exposed_devs}        The whitespace-separated list of devpaths exposed by <rid>     No                      Yes
 {<rid>.exposed_devs[<n>]}   The <n>-th element of the list of devpaths exposed by <rid>    No                      Yes
