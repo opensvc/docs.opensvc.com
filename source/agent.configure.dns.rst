@@ -79,7 +79,7 @@ Verify the backend
 
 ::
 
-	om dns dump
+	om daemon dns dump
 
 ::
 
@@ -111,7 +111,7 @@ Dump the zone contents asking DNS
 Dump the zone contents asking agent socket
 ++++++++++++++++++++++++++++++++++++++++++
 
-Same as ``om dns dump``
+Same as ``om daemon dns dump``
 
 ::
 
