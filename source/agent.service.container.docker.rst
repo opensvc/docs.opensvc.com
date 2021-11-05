@@ -21,7 +21,7 @@ One single-node service with one container.
 
 ::
 
-	root@deb1:/etc/opensvc# echo '{"container#1": {"type": "docker", "image": "nginx"}}' | svcmgr create -s svc1 --config=- --provision
+	root@deb1:/etc/opensvc# echo '{"container#1": {"type": "docker", "image": "nginx"}}' | om svc1 deploy --config=-
 	deb1.opensvc.com.svc1             service svc1 target state set to provisioned
 
 
@@ -39,7 +39,7 @@ Which installs the following configuration::
 
 The provisioning is asynchronously handled by the OpenSVC daemon. After a few seconds, the service status is::
 
-	root@deb1:/etc/opensvc# svc1 print status 
+	root@deb1:/etc/opensvc# om svc1 print status 
 	svc1                               up                                                           
 	`- instances              
 	   `- deb1.opensvc.com             up         idle, started 
@@ -54,19 +54,19 @@ The service eases the docker commands on its containers. The following commands 
 
 **querying the docker images**::
 
-	root@deb1:/etc/opensvc# svc1 docker images
+	root@deb1:/etc/opensvc# om svc1 docker images
 	REPOSITORY             TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 	nginx                  latest              f895b3fb9e30        12 months ago       108MB
 
 **querying the docker instances**::
 
-	root@deb1:/etc/opensvc# svc1 docker ps
+	root@deb1:/etc/opensvc# om svc1 docker ps
 	CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS               NAMES
 	3c9bc5d7a09a        nginx                    "nginx -g 'daemon of…"   8 minutes ago       Up 8 minutes                            svc1.container.1
 
 **inspecting a docker instance**::
 
-	root@deb1:/etc/opensvc# svc1 docker inspect {container#1} | head
+	root@deb1:/etc/opensvc# om svc1 docker inspect {container#1} | head
 	[
 	    {
 		"Id": "3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8",
@@ -102,7 +102,7 @@ Service Start
 
 Local, synchronous, service instance start::
 
-	root@deb1:/etc/opensvc# svc1 start --local
+	root@deb1:/etc/opensvc# om svc1 start --local
 	deb1.opensvc.com.svc1.container#1   docker start 3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8
 	deb1.opensvc.com.svc1.container#1   output:
 	deb1.opensvc.com.svc1.container#1   3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8
@@ -113,8 +113,8 @@ The instance was not removed on stop nor start. OpenSVC started the same instanc
 
 ::
 
-	root@deb1:/etc/opensvc# svc1 set --kw container#1.rm=true
-	root@deb1:/etc/opensvc# svc1 restart
+	root@deb1:/etc/opensvc# om svc1 set --kw container#1.rm=true
+	root@deb1:/etc/opensvc# om svc1 restart
 	deb1.opensvc.com.svc1.container#1   docker stop 3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8
 	deb1.opensvc.com.svc1.container#1   output:
 	deb1.opensvc.com.svc1.container#1   3c9bc5d7a09ac1b4a80123929166e1242b9aefb6d2842a5fc85d066b88fb8db8

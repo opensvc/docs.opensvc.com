@@ -19,7 +19,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
 **Initial Service Configuration**::
 
-        root@deb1:/# busybox.opensvc.com.env print config
+        root@deb1:/# om busybox.opensvc.com print config
         [DEFAULT]
         orchestrate = start
         app = OSVCLAB
@@ -30,14 +30,14 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         
         [container#1]
         type = docker
-        run_image = b073e328878e
+        image = b073e328878e
         
         [ip#1]
         ipdev = eth0
         ipname = busybox.opensvc.com
         
         [vg#1]
-        vgname = vglocaldeb1
+        name = vglocaldeb1
         
         [fs#1]
         mnt_opt = rw
@@ -53,10 +53,10 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
 
 ::
 
-        root@deb1:/# busybox.opensvc.com docker images
+        root@deb1:/# om busybox.opensvc.com docker images
         REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -69,7 +69,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
 
-        root@deb1:/# busybox.opensvc.com docker pull opensvc/busybox:date
+        root@deb1:/# om busybox.opensvc.com docker pull opensvc/busybox:date
         Pulling repository opensvc/busybox
         b073e328878e: Download complete
         511136ea3c5a: Download complete
@@ -78,7 +78,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         98b9fdab1cb6: Download complete
         e2dda52210a3: Download complete
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  warn
@@ -91,7 +91,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
 
-        root@deb1:/# busybox.opensvc.com startcontainer
+        root@deb1:/# om busybox.opensvc.com startcontainer
         17:07:20 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock run -t -i -d --name=busybox.opensvc.com.container.1 b073e328878e
         17:07:22 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         ce6204fcec5a1e449a52d232c87d724fb0349cf9d932abfd8dfc9e976c10ab8b
@@ -99,7 +99,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         17:07:22 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
         17:07:22 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -111,7 +111,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
 
-        root@deb1:/# busybox.opensvc.com docker attach ce6204fcec5a
+        root@deb1:/# om busybox.opensvc.com docker attach ce6204fcec5a
         Fri Jun  6 15:08:25 UTC 2014
         Fri Jun  6 15:08:26 UTC 2014
         Fri Jun  6 15:08:27 UTC 2014
@@ -137,7 +137,7 @@ We can do this modification while service is running : we will add a ``drpnodes`
 
 **Once it's done on deb1.opensvc.com**::
 
-        root@deb1:/# busybox.opensvc.com.env print config | head -6
+        root@deb1:/# om busybox.opensvc.com print config | head -6
         [DEFAULT]
         orchestrate@nodes = start
         app = OSVCLAB
@@ -229,7 +229,7 @@ Config Summary
 
 The service configuration looks like::
 
-        root@deb1:/# busybox.opensvc.com.env print config
+        root@deb1:/# om busybox.opensvc.com print config
         [DEFAULT]
         orchestrate@nodes = start
         app = OSVCLAB
@@ -288,7 +288,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
 
 ::
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
@@ -310,7 +310,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
 
 We trigger an initial full data synchronization::
 
-        root@deb1:/# busybox.opensvc.com sync full
+        root@deb1:/# om busybox.opensvc.com sync full
         18:11:10 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap1 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:11:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -340,7 +340,7 @@ We trigger an initial full data synchronization::
         1073741824 octets (1,1 GB) copiés, 33,7645 s, 31,8 MB/s
         18:12:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
@@ -362,7 +362,7 @@ We trigger an initial full data synchronization::
 
 We trigger OpenSVC service configuration sync to drpnodes, which also initiate an incremental update of data synchronization::
 
-        root@deb1:/# busybox.opensvc.com sync drp --force
+        root@deb1:/# om busybox.opensvc.com sync drp --force
         18:13:16 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         18:13:25 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -421,7 +421,7 @@ We trigger OpenSVC service configuration sync to drpnodes, which also initiate a
         18:14:23 INFO    BUSYBOX.OPENSVC.COM.SYNC#1  /usr/bin/scp -q -o StrictHostKeyChecking=no -o ForwardX11=no -o BatchMode=yes -o ConnectTimeout=10 /var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state deb2.opensvc.com:/var/lib/opensvc/busybox.opensvc.com_sync#1_dds_state
         18:14:23 INFO    BUSYBOX.OPENSVC.COM         exec '/opt/opensvc/etc/busybox.opensvc.com --waitlock 3600 postsync' on node deb2.opensvc.com
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -449,7 +449,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
 
 ::
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -469,7 +469,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
 
 Trigerring incremental data replication::
         
-        root@deb1:/# busybox.opensvc.com sync update --force
+        root@deb1:/# om busybox.opensvc.com sync update --force
         19:08:41 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  lvcreate -s -n lvbusyboxdata_osvc_snap2 -L 102.0M /dev/vglocaldeb1/lvbusyboxdata
         19:08:48 INFO    BUSYBOX.OPENSVC.COM.SYNC#2  output:
           Rounding up size to full physical extent 104.00 MiB
@@ -529,7 +529,7 @@ Trigerring incremental data replication::
 
 Stopping service on **production** side::
 
-        root@deb1:/# busybox.opensvc.com stop
+        root@deb1:/# om busybox.opensvc.com stop
         19:09:08 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 docker -H unix:///var/lib/opensvc/busybox.opensvc.com/docker.sock stop ce6204fcec5a
         19:09:20 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 output:
         ce6204fcec5a
@@ -553,7 +553,7 @@ Stopping service on **production** side::
         19:09:28 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 down
         19:09:28 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.25 availability
 
-        root@deb1:/# busybox.opensvc.com print status
+        root@deb1:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   down
         |- avail                  down
@@ -574,7 +574,7 @@ Stopping service on **production** side::
         
 Starting service on **DRP** side::
 
-        root@deb2:/# busybox.opensvc.com print status
+        root@deb2:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   stdby up
         |- avail                  stdby up
@@ -592,7 +592,7 @@ Starting service on **DRP** side::
         |                                  # no destination nodes
         '- hb                     n/a
 
-        root@deb2:/# busybox.opensvc.com start
+        root@deb2:/# om busybox.opensvc.com start
         19:09:40 INFO    BUSYBOX.OPENSVC.COM.IP#1    checking 37.59.71.24 availability
         19:09:44 INFO    BUSYBOX.OPENSVC.COM.IP#1    ifconfig eth0:1 37.59.71.24 netmask 255.255.255.224 up
         19:09:44 INFO    BUSYBOX.OPENSVC.COM.IP#1    arping -U -c 1 -I eth0 -s 37.59.71.24 37.59.71.24
@@ -616,7 +616,7 @@ Starting service on **DRP** side::
         19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container up status
         19:09:47 INFO    BUSYBOX.OPENSVC.COM.CONTAINER#1 wait for container operational
 
-        root@deb2:/# busybox.opensvc.com print status
+        root@deb2:/# om busybox.opensvc.com print status
         busybox.opensvc.com
         overall                   up
         |- avail                  up
@@ -633,14 +633,14 @@ Starting service on **DRP** side::
         |  '- sync#i1        .... n/a      rsync system files to drpnodes
         |                                  # no destination nodes
         '- hb                     n/a
-        root@deb2:/# busybox.opensvc.com docker attach ce6204fcec5a
+        root@deb2:/# om busybox.opensvc.com docker attach ce6204fcec5a
         Fri Jun  6 17:10:09 UTC 2014
         Fri Jun  6 17:10:10 UTC 2014
         Fri Jun  6 17:10:11 UTC 2014
         Fri Jun  6 17:10:12 UTC 2014
         Fri Jun  6 17:10:13 UTC 2014
         
-        root@deb2:/# busybox.opensvc.com docker ps
+        root@deb2:/# om busybox.opensvc.com docker ps
         CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS              PORTS               NAMES
         ce6204fcec5a        opensvc/busybox:date   /bin/sh -c 'while tr   2 hours ago         Up About a minute                       busybox.opensvc.com.container.1
 
