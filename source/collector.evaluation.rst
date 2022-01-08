@@ -21,6 +21,7 @@ Cluster
 +++++++
 
 The OpenSVC agent must be installed, as the provisioning method exposed here creates a OpenSVC service.
+
 This agent does not need to be registered on the ``collector.opensvc.com`` collector.
 
 The agent installation instructions are accessible at https://docs.opensvc.com/agent.install.html.
@@ -35,43 +36,13 @@ HTTPS access should be allowed for:
 * collector.opensvc.com (registry JWT auth)
 * www.opensvc.com (evaluation license agreement download, provisioning template)
 
-Docker registry access
-++++++++++++++++++++++
-
-The installation procedure requires a collector.opensvc.com account, which is free to create, to pull the collector docker images from registry.opensvc.com because this registry delegates the authentication to collector.opensvc.com.
-
-The register form is at https://collector.opensvc.com/init/default/user/register.
-
-Login to the OpenSVC registry
-
-::
-
-	# sudo docker login registry.opensvc.com
-	Username: <your collector login>
-	Password: <your collector password>
-
-Verify
-
-::
-
-	# sudo docker search registry.opensvc.com/opensvc
-	INDEX         NAME                                            DESCRIPTION   STARS     OFFICIAL   AUTOMATED
-	opensvc.com   registry.opensvc.com/opensvc/collector_db                     0                    
-	opensvc.com   registry.opensvc.com/opensvc/collector_nginx                  0                    
-	opensvc.com   registry.opensvc.com/opensvc/collector_redis                  0                    
-	opensvc.com   registry.opensvc.com/opensvc/collector_web2py                 0                    
-	...
 
 Installation
 ************
 
+The collector installation is described at https://github.com/opensvc/opensvc_templates/tree/main/collector.
 
-::
-
-	# om eval/svc/collector deploy --config https://www.opensvc.com/init/static/templates/collector.conf
-
-
-The database still bootstraps for a few minutes after this command exits. An error page can be displayed in the browser while this bootstrap runs.
+The database still bootstraps for a few seconds after this command exits. An error page can be displayed in the browser while this bootstrap runs.
 
 First steps
 ***********
@@ -80,7 +51,7 @@ The default administrator account is root@localhost.localdomain with the opensvc
 
 You can now:
 
-* register the agent on this collector, using instructions at https://docs.opensvc.com/agent.install.html.
+* register the agent on this collector, using instructions at https://docs.opensvc.com/latest/agent.install.html.
 * changes default passwords.
 * add new users, remove the default admin user
 * import compliance designs
