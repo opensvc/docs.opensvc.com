@@ -348,6 +348,9 @@ The files content is contextualized for the provisionned service.
 		location /v1/search {
 			proxy_pass https://collector.opensvc.com/init/registry/call/json/search;
 		}
+		location /v2/search {
+			proxy_pass https://collector.opensvc.com/init/registry/call/json/search;
+		}
 	}
 
 
