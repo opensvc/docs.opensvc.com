@@ -1,5 +1,5 @@
-Collector evaluation
-====================
+Collector Installation
+======================
 
 Prerequisites
 *************
