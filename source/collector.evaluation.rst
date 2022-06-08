@@ -1,9 +1,6 @@
 Collector evaluation
 ====================
 
-The evaluation license is accessible at https://www.opensvc.com/init/static/eval/evaluation_agreement.txt.
-
-
 Prerequisites
 *************
 
