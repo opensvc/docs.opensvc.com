@@ -11,3 +11,4 @@ Contents:
    howto.nfsha
    howto.vmencap
    howto.support.service
+   howto.encryption

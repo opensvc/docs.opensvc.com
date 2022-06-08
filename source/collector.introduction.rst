@@ -10,7 +10,7 @@ The collector centralizes the agents data and extends the agent feature set with
 Licensing
 =========
 
-The collector is commercially licensed web application available either in SaaS mode or in client-hosted mode. Contact sales@opensvc.com for licensing information.
+The collector is a web application available either in SaaS mode or in client-hosted mode. It is licensed under the Apache 2.0 license (https://www.apache.org/licenses/LICENSE-2.0).
 
 .. index:: register
 

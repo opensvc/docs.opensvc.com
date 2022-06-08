@@ -94,7 +94,6 @@ Changelog
 | `2.1-7-gf5fb36f06 <https://github.com/opensvc/opensvc/commit/f5fb36f065b7124a1017c265c1e6934218764151>`_ Merge pull request #157 from arnaudveron/backport-fix-drbd-regexp
 | `2.1-6-gea05a04d8 <https://github.com/opensvc/opensvc/commit/ea05a04d8b34a3de894c7cc972de45e706fd1b45>`_ Fix regexp declaration in drbd driver
 | `2.1-5-gf80718235 <https://github.com/opensvc/opensvc/commit/f80718235294116044dcc7fc481f89e17897fa14>`_ Merge pull request #154 from cvaroqui/b2.1
-| `2.1-3-gef594d291 <https://github.com/opensvc/opensvc/commit/ef594d291a4645026fa6e787542d84174d3e2f70>`_ Merge pull request #149 from cvaroqui/b2.1
 | `2.1-3-g62daabe87 <https://github.com/opensvc/opensvc/commit/62daabe877974bd26cdf4378d49762feddf05867>`_ Fix a stack on provision in disk.drbd when the listener reports unsupported handler
 | `2.1-2-gcfb8d53df <https://github.com/opensvc/opensvc/commit/cfb8d53dfe55c61a1cb50fa25fab027d75cc72a6>`_ Avoid using version for release when the git head commit is tagged
 | `2.1-1-g10a6e8ca3 <https://github.com/opensvc/opensvc/commit/10a6e8ca3704c1df966f41d4cfe3099c1e3fef77>`_ Fix a stack in utilies.version

@@ -3,5 +3,6 @@
 *~
 source/agent.daemon.events.rst
 source/translated/pot/
+source/compliance.objects/
 update_docs.bash
 build/

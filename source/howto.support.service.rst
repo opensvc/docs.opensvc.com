@@ -81,6 +81,7 @@ To ease resolution, you will be asked to provide informations, config and log fi
   * ``/etc/opensvc/cluster.conf``
 
 * node agent log ``/var/log/opensvc/node.log``
+* scheduler agent log ``/var/log/opensvc/scheduler.log``
 * objects log 
 
   * ``/var/log/opensvc/<service>.log``
