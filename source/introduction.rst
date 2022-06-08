@@ -19,7 +19,7 @@ OpenSVC is composed of two software components:
 
 	The collector aggregates the agents-reported data and the data fetched from the sites infrastructure (network, SAN, storage arrays, backup servers and asset managers).
 	It also serves the configuration management targets.
-	The collector is a commercially-licenced web 2.0 application.
+	The collector is a web 2.0 application (Apache 2.0 license).
 	The clustering and container orchestration features of the OpenSVC agent don't require a collector.
 
 These two components together address a wide range of modern IT concerns, including:
