@@ -1,5 +1,5 @@
-Collector Installation
-======================
+Install
+=======
 
 Prerequisites
 *************
@@ -31,8 +31,8 @@ HTTPS access should be allowed for:
 * hub.docker.com (docker images registry)
 * www.opensvc.com (provisioning template download)
 
-Installation
-************
+Deploy the service
+******************
 
 Follow the instructions at https://github.com/opensvc/opensvc_templates/tree/main/collector.
 
