@@ -23,10 +23,25 @@ The agent installation instructions are accessible at :ref:`agent.install`.
 
 Exposing the collector service needs either a dedicated ip address, or a cluster gateway.
 
+Network
++++++++
+
++------------------+------------------+----------+------------------------------------------------+
+| From             | To               | Port     | Comments                                       |
++==================+==================+==========+================================================+
+| Agent            | Collector        | TCP/443  | Push node and service informations and states  |
++------------------+------------------+----------+------------------------------------------------+
+| Collector        | Agent            | TCP/1214 | Notify agent for action dequeue                |
++------------------+------------------+----------+------------------------------------------------+
+| Web Browser      | Collector        | TCP/443  | Access to collector web interface              |
++------------------+------------------+----------+------------------------------------------------+
+| Command Line     | Collector API    | TCP/443  | Access to collector Rest/API                   |
++------------------+------------------+----------+------------------------------------------------+
+
 Proxies and firewalls
 +++++++++++++++++++++
 
-HTTPS access should be allowed for:
+Internet HTTPS access should be allowed for:
 
 * hub.docker.com (docker images registry)
 * www.opensvc.com (provisioning template download)
