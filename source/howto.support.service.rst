@@ -91,7 +91,35 @@ To ease resolution, you will be asked to provide informations, config and log fi
 All informations can be sent through email at ``support@opensvc.com`` or uploaded using our :ref:`howto.support.file.exchange`
 
 .. note:: 
+        To save time in data collection, consider using :ref:`howto.support.sos.report` sos report tool for data collection
+
+.. seealso:: 
         see :ref:`agent.apps.naming` for object paths description
+
+
+.. _howto.support.sos.report:
+
+SOS Report Data Collection Tool
+===============================
+
+Sos (formerly known as sosreport) is an extensible, portable, support data collection tool primarily aimed at Linux distributions and other UNIX-like operating systems.
+
+It is available on major distributions (RHEL, Ubuntu, Debian, Fedora, ...), and support OpenSVC environments
+
+::
+
+    # check for opensvc plugin existence
+    user@node:~$ sudo sos report --list-plugins | grep opensvc
+    
+    opensvc              OpenSVC cluster and services (config and state collection)
+
+    # launch data collection **on both OpenSVC cluster nodes**
+    user@node:~$ sudo sos report
+
+
+.. seealso:: 
+        see `Sos website <https://sos.readthedocs.io/>`_
+
 
 Support Open Hours
 ==================
@@ -104,6 +132,7 @@ Support Service Level Open Hours
 Standard              Monday to Friday 9am to 6pm (Paris time)
 Premium               24x7
 ===================== ========================================
+
 
 .. _howto.support.file.exchange:
 
@@ -128,8 +157,10 @@ In case you need to share files with support team, you can use either email atta
     
     You can also directly upload any file with ``curl`` command. In the example below, we use an internal web proxy named ``my.preferred.proxy``, and the file to be sent is named ``FILE_TO_UPLOAD.TAR.GZ``
 
-``# export https_proxy=http://my.preferred.proxy:8080/``
-``# curl -k -F 'file=@FILE_TO_UPLOAD.TAR.GZ;type=application/octet-stream' https://user:support@sfx.opensvc.com/+upload -X POST``
+::
+
+    # export https_proxy=http://my.preferred.proxy:8080/
+    # curl -k -F 'file=@FILE_TO_UPLOAD.TAR.GZ;type=application/octet-stream' https://user:support@sfx.opensvc.com/+upload -X POST
 
 Premium Support Instructions
 ============================
