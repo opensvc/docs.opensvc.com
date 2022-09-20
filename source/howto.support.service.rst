@@ -104,7 +104,7 @@ SOS Report Data Collection Tool
 
 Sos (formerly known as sosreport) is an extensible, portable, support data collection tool primarily aimed at Linux distributions and other UNIX-like operating systems.
 
-It is available on major distributions (RHEL, Ubuntu, Debian, Fedora, ...), and support OpenSVC environments
+It is available on major distributions (RHEL, Ubuntu, Debian, Fedora, ...), and support OpenSVC environments (**sos version >= 4.2**)
 
 ::
 
