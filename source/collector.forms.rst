@@ -550,6 +550,10 @@ Keywords
 
   With the checklist type, setting CheckOnLoad to "all" tells the renderer to check all checkboxes on load.
 
+* **ResubmitDelay**
+
+  To disable the submit button for a specified delay. This prevents users submitting the form multiple times on double clicks.
+
 Examples
 ++++++++
 
