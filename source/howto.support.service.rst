@@ -114,7 +114,7 @@ It is available on major distributions (RHEL, Ubuntu, Debian, Fedora, ...), and 
     opensvc              OpenSVC cluster and services (config and state collection)
 
     # launch data collection **on both OpenSVC cluster nodes**
-    user@node:~$ sudo sos report
+    user@node:~$ sudo sos report --all-logs
 
 
 .. seealso:: 
