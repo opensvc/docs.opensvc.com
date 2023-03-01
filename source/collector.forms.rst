@@ -73,7 +73,7 @@ References
 
 A reference is a ``#<key>`` or ``#<key>.<key>`` word replaced by the value referenced.
 
-References can be used in **Function**, **Args** and **Condition** input keywords. In those cases, ``<key>`` is the value of the **Key** input keyword, or the value of the **Id** input keyword if **Key** is not set, or the value of a key mapped through the **Keys** input keyword.
+References can be used in **Function**, **Args**, **DefaultFunction**, **DefaultArgs** and **Condition** input keywords. In those cases, ``<key>`` is the value of the **Key** input keyword, or the value of the **Id** input keyword if **Key** is not set, or the value of a key mapped through the **Keys** input keyword.
 
 References can also be used in **Format**, **Value** and **Keys** input keywords. In those cases, ``<key>`` is the value of a key of a candidate dict. If candidates are in "dict of dict" format, the reference can be spelled as ``#<key>.<key>``.
 
@@ -421,13 +421,17 @@ Keywords
 
   * ``No``
 
+* **Placeholder**
+
+  The text to display as example values in simple inputs or selects.
+
 * **DisableAutoDefault**
 
   For inputs with candidates and no default value specified, disable the picking of the first candidate as the default value.
 
 * **Default**
 
-  A value used to pre-fill the input element or choose a select option on form load. The default value accept some predefined keywords:
+  A string, numeric or list value used to pre-fill the input element or choose a select option on form load. The default value also accept some predefined keywords:
 
   * ``__user_name__``
 
@@ -493,6 +497,8 @@ Keywords
 
   * jsonrpc
 
+    Deprecated.
+
     A function exported by the OpenSVC collector as a JSON-RPC, called to determine the input value. This keyword can be coupled to the **Args** keyword to select which form inputs provide the JSON-RPC arguments.
 
     Available functions:
@@ -525,6 +531,8 @@ Keywords
 
   * jsonrpc
 
+    Depreacated.
+
     A list of form input identifiers, specified as ``#some_input_id``, whose value to pass as argument to the JSON-RPC pointed by **Function**. The order of the list elements is the order of the arguments to submit to the **Function**.
 
   * Rest API
@@ -541,6 +549,15 @@ Keywords
 
   References can be used in **Args**. For example, ``query = "loc_city = #loc_city"`` can filter the node list returned by the ``/nodes`` handler using the city selected in the input with ``Id: loc_city`` or the input setting the ``loc_city`` key through its ``Keys`` list. ``"filters = loc_city #loc_city"`` has the same effect.
 
+* **DefaultFunction**
+
+  Same as **Function**, but the request provides default values of the input instead of candidates.
+
+* **DefaultArgs**
+
+  Same as **Args**, but the request provides default values of the input instead of candidates.
+ 
+  If **DefaultFunction** is set and **DefaultArgs** is not set, **Args** is used as **DefaultFunction** arguments.
 
 * **DisplayModeTrim**
 
