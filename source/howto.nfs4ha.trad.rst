@@ -188,8 +188,8 @@ After a few minutes (DRBD synchronisation time), you should end up in this situa
               |- fs#1           ........ <span style="color: #00aa00">up        </span> ext4 /dev/drbd0@/srv/nfsv4.test.svc.cluster1         
               |- app#1          ..D../.. <span style="color: #767676">n/a       </span> simple: nfsdcld                                     
               |- app#2          ..D../.. <span style="color: #767676">n/a       </span> simple: rpc.idmapd                                  
-              |- app#3          ..D../.. <span style="color: #767676">n/a       </span> simple: rpc.mountd                                  
-              |- app#4          ..D../.. <span style="color: #767676">n/a       </span> forking: rpc.nfsd                                   
+              |- app#3          ..D../.. <span style="color: #767676">n/a       </span> forking: rpc.nfsd                                   
+              |- app#4          ..D../.. <span style="color: #767676">n/a       </span> simple: rpc.mountd                                  
               `- sync#i0        ..DO./.. <span style="color: #767676">n/a       </span> rsync svc config to nodes                           
         
         [root@node1 ~]# df -h /srv/nfsv4.test.svc.cluster1
@@ -344,12 +344,12 @@ Enable & start OpenSVC app resources
         @ n:node1 o:test/svc/nfsv4 r:app#2 sc:n
         exec '/usr/sbin/rpc.idmapd -f' as user root
         @ n:node1 o:test/svc/nfsv4 r:app#3 sc:n
-        exec '/usr/sbin/rpc.mountd --foreground' as user root
-        @ n:node1 o:test/svc/nfsv4 r:app#4 sc:n
         pre_start: /usr/sbin/exportfs -r
         exec /usr/sbin/rpc.nfsd 8 as user root
         start done in 0:00:00.403523 - ret 0
         post_start: /bin/sh -c 'if systemctl -q is-active gssproxy; then systemctl reload gssproxy ; fi'
+        @ n:node1 o:test/svc/nfsv4 r:app#4 sc:n
+        exec '/usr/sbin/rpc.mountd --foreground' as user root
         
         [root@node1 ~]# om test/svc/nfsv4 print status -r
         <span style="font-weight: bold">test/svc/nfsv4         </span>          <span style="color: #00aa00">up        </span>                                                     
@@ -363,8 +363,8 @@ Enable & start OpenSVC app resources
               |- fs#1           ........ <span style="color: #00aa00">up        </span> ext4 /dev/drbd0@/srv/nfsv4.test.svc.cluster1         
               |- app#1          ...../.. <span style="color: #00aa00">up        </span> simple: nfsdcld                                     
               |- app#2          ...../.. <span style="color: #00aa00">up        </span> simple: rpc.idmapd                                  
-              |- app#3          ...../.. <span style="color: #00aa00">up        </span> simple: rpc.mountd                                  
-              |- app#4          ...../.. <span style="color: #00aa00">up        </span> forking: rpc.nfsd                                   
+              |- app#3          ...../.. <span style="color: #00aa00">up        </span> forking: rpc.nfsd                                   
+              |- app#4          ...../.. <span style="color: #00aa00">up        </span> simple: rpc.mountd                                  
               `- sync#i0        ..DO./.. <span style="color: #767676">n/a       </span> rsync svc config to nodes                           
         </pre>
 
