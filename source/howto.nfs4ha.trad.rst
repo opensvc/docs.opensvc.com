@@ -267,7 +267,7 @@ We can use either ``switch`` action, or ``giveback`` to move the service to its 
 Enable NFS4
 -----------
 
-We have to make sure systemd won't manage NFS4 services, only OpenSVC must to be in charge of this servers.
+We have to make sure systemd won't manage NFS4 services, only OpenSVC must be in charge of this servers.
 
 Disable NFS4 related systemd unit files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
