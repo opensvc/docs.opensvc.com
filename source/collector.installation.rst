@@ -44,7 +44,8 @@ Proxies and firewalls
 Internet HTTPS access should be allowed for:
 
 * hub.docker.com (docker images registry)
-* www.opensvc.com (provisioning template download)
+* github.com/opensvc (application code download)
+* raw.githubusercontent.com/opensvc/opensvc_templates (provisioning template download)
 
 Deploy the service
 ******************
