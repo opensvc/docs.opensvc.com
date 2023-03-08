@@ -20,6 +20,8 @@ Contributors should read the following doc sections:
 `cd /data ; make html`
 
 ## open your favorite browser to http://ip.of.container:8000/build/html/
+CONTAINER_IP=$(docker container inspect -f '{{ .NetworkSettings.IPAddress }}' osvcsphinx)
+xdg-open http://$CONTAINER_IP:8000/build/html
 
 ## stop and remove container
 `docker rm -f osvcsphinx`
