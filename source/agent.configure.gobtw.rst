@@ -29,7 +29,7 @@ Docker images
 +++++++++++++
 
 * yyyar/gobetween
-* opensvc/igw_gobetween
+* ghcr.io/opensvc/igw_gobetween
 
 
 Configure

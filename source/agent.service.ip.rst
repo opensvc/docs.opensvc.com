@@ -107,6 +107,6 @@ Example configuration::
   
   [container#1]
   type = docker
-  image = opensvc/nginx:build5
+  image = nginx
   netns = container#0
 

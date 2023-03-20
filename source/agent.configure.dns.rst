@@ -30,9 +30,9 @@ Implementation
 Docker images
 +++++++++++++
 
-* opensvc/pdns_server
-* opensvc/pdns_recursor
-* opensvc/pdns_janitor
+* ghcr.io/opensvc/pdns_server
+* ghcr.io/opensvc/pdns_recursor
+* ghcr.io/opensvc/pdns_janitor
 
 Configure
 ---------
@@ -129,7 +129,7 @@ Example for a backend network 10.32.0.0/12::
 
 	[container#1]
 	type = docker
-	image = opensvc/pdns_recursor:latest
+	image = ghcr.io/opensvc/pdns_recursor:latest
 	netns = host
 	userns = host
 	privileged = true

@@ -15,7 +15,7 @@ Pre-requisites
 Initial State
 -------------
 
-At the beginning we start with container ``opensvc/busybox:date`` running in OpenSVC service ``busybox.opensvc.com``, located on a single physical host named ``deb1.opensvc.com`` :
+At the beginning we start with container ``busybox`` running in OpenSVC service ``busybox.opensvc.com``, located on a single physical host named ``deb1.opensvc.com`` :
 
 **Initial Service Configuration**::
 
@@ -69,7 +69,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         |- sync                   n/a
         '- hb                     n/a
 
-        root@deb1:/# om busybox.opensvc.com docker pull opensvc/busybox:date
+        root@deb1:/# om busybox.opensvc.com docker pull busybox
         Pulling repository opensvc/busybox
         b073e328878e: Download complete
         511136ea3c5a: Download complete
@@ -82,7 +82,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         busybox.opensvc.com
         overall                   warn
         |- avail                  warn
-        |  |- container#1    .... down     opensvc/busybox:date
+        |  |- container#1    .... down     busybox
         |  |  |                            # can not find container id
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
@@ -103,7 +103,7 @@ At the beginning we start with container ``opensvc/busybox:date`` running in Ope
         busybox.opensvc.com
         overall                   up
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb1-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -292,7 +292,7 @@ Status complains about lvm logical volumes have never been replicated, and confi
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb1-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -344,7 +344,7 @@ We trigger an initial full data synchronization::
         busybox.opensvc.com
         overall                   warn
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb1-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -425,7 +425,7 @@ We trigger OpenSVC service configuration sync to drpnodes, which also initiate a
         busybox.opensvc.com
         overall                   up
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb1-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -453,7 +453,7 @@ Before testing DRP, you have to be aware of your data consistency between Produc
         busybox.opensvc.com
         overall                   up
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... up       vglocaldeb1
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb1-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb1-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -620,7 +620,7 @@ Starting service on **DRP** side::
         busybox.opensvc.com
         overall                   up
         |- avail                  up
-        |  |- container#1    .... up       ce6204fcec5a@opensvc/busybox:date
+        |  |- container#1    .... up       busybox
         |  |- vg#1           .... stdby up vglocaldeb2
         |  |- fs#1           .... up       /dev/mapper/vglocaldeb2-lvbusyboxroot@/opt/busybox.opensvc.com
         |  |- fs#2           .... up       /dev/mapper/vglocaldeb2-lvbusyboxdata@/opt/busybox.opensvc.com/appdata
@@ -642,7 +642,7 @@ Starting service on **DRP** side::
         
         root@deb2:/# om busybox.opensvc.com docker ps
         CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS              PORTS               NAMES
-        ce6204fcec5a        opensvc/busybox:date   /bin/sh -c 'while tr   2 hours ago         Up About a minute                       busybox.opensvc.com.container.1
+        ce6204fcec5a        busybox                /bin/sh -c 'while tr   2 hours ago         Up About a minute                       busybox.opensvc.com.container.1
 
 The service is now up and running on the DRP side. You just need a few minutes to enable your DRP with this solution. Incremental data replication is the main key factor when estimating how long it will last to go from production to DRP.
 

@@ -26,7 +26,7 @@ Docker images
 +++++++++++++
 
 * envoyproxy/envoy-alpine
-* opensvc/igw_envoy
+* ghcr.io/opensvc/igw_envoy
 
 Configure
 ---------
