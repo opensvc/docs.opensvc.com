@@ -15,10 +15,10 @@ Support Ticket Opening
 
 To open a service request, you can use one of the four following methods :
 
-Slack
------
+Mattermost
+----------
 
-OpenSVC slack channels are available at https://opensvc.slack.com
+OpenSVC mattermost channels are available at https://meet.opensvc.com
 
 Please request your access (support@opensvc.com) if no invitation has been received in your mailbox.
 
