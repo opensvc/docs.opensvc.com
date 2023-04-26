@@ -265,6 +265,27 @@ A workflow head form output, sending the submitted form to the next assignee wit
         - reject
         - ask_info
 
+Pushing data from outputs
++++++++++++++++++++++++++
+
+Outputs receive a dataset containing all previous outputs results, logs, and ``results_id`` and ``output_id`` information.
+
+The output code (script, webhook, ... under user responsibility) can use this information to push progress information using a dedicated collector api handler:
+
+        PUT /form_output_results/<results_id>
+        Body json data structure:
+        {
+            "result": {
+                "log": [
+                    [0, "i am %(who)s", {"who": "groot"}],
+                    [0, "we are %(who)s", {"who": "groot"}]
+                ],
+                <other free-form keys>
+            },
+            "output_id": 10
+        }
+
+Logs are dynamically displayed in the web client that submitted the form, so the user can follow the progress of long-running outputs.
 
 
 Inputs
