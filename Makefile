@@ -194,7 +194,7 @@ compobjs: gitrepo
 	done
 
 changelog: gitrepo
-	@echo "Changelog\n=========\n\n" | tee source/agent.changelog.rst
+	@echo -e "Changelog\n=========\n\n" | tee source/agent.changelog.rst
 	@cd $(DOCDIR)/opensvc/bin/pkg && bash ./changelog | grep -Ev "^BRANCH=HEAD|^COMMITS=" | sed -e 's/*//g' | awk '{printf("| `"$$1 " <https://github.com/opensvc/opensvc/commit/" $$2 ">`_ ") ; for (i = 3; i < NF; i++) {printf("%s ", $$i);} ; printf("%s", $$NF);printf("\n")}' > $(DOCDIR)/opensvc/opensvc.changelog.rst
 	@cat $(DOCDIR)/opensvc/opensvc.changelog.rst | tee -a source/agent.changelog.rst
 	@rm -f $(DOCDIR)/opensvc/opensvc.changelog.rst
