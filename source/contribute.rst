@@ -43,11 +43,11 @@ For example, on a debian-based system:
 
     sudo apt-get install python-sphinx python-sphinx-rtd-theme
 
-Install ansi2html:
+Install aha:
 
 ::
 
-    sudo pip install ansi2html
+    sudo apt -y install aha
 
 Clone the documentation project:
 
@@ -78,7 +78,7 @@ First generate raw html code from cli:
 
 ::
 
-    $ om node print devs --color=yes | ansi2html -i
+    $ om node print devs --color=yes | aha -n
 
 Edit the .rst document and copy/paste the previous output in a ``.. raw:: html`` block, enclosed between ``<pre class=output>`` and ``</pre>`` :
 
