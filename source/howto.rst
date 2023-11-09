@@ -14,3 +14,4 @@ Contents:
    howto.vmencap
    howto.support.service
    howto.encryption
+   howto.slapos.comp1
