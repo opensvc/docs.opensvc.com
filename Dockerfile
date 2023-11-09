@@ -5,13 +5,9 @@ RUN apt-get update && apt-get install -y \
   markdown \
   procps \
   python3-pip \
+  python3-sphinx \
+  python3-sphinx-rtd-theme \
   nginx \
-  && rm -rf /var/lib/apt/lists/*
-
-ADD requirements.txt /tmp
-
-RUN pip install -r /tmp/requirements.txt
-
-RUN mkdir /data
+  && mkdir /data && rm -rf /var/lib/apt/lists/*
 
 CMD cd /data && python3 -m http.server 8000
