@@ -6,3 +6,4 @@ source/translated/pot/
 source/compliance.objects/
 update_docs.bash
 build/
+.vscode/
