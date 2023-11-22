@@ -34,18 +34,18 @@ Start
 
 ::
 
-	$ om node daemon start
+	$ om daemon start
 
 .. rst-class:: lvl1
 
-	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om node daemon start`.
+	On systems using systemd, the start is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om daemon start`.
 
 Stop
 ++++
 
 ::
 
-	$ om node daemon stop
+	$ om daemon stop
 
 The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`node.maintenance_grace_period` expires.
 
@@ -54,13 +54,13 @@ Restart
 
 ::
 
-	$ om node daemon restart
+	$ om daemon restart
 
 .. rst-class:: lvl1
 
 	The node advertizes its entering maintenance mode, so peer nodes will preserve the node's last known data until the :kw:`maintenance_grace_period` expires.
 
-	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om node daemon stop` followed by a :cmd:`om node daemon start`.
+	On systems using systemd, the restart is delegated to the systemd ``opensvc-agent`` unit, which triggers a :cmd:`om daemon stop` followed by a :cmd:`om daemon start`.
 
 .. rst-class:: lvl2
 

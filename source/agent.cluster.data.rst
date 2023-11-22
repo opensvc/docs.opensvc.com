@@ -7,7 +7,7 @@ Example Cluster Data
 
 ::
 
-        $ om node daemon status --format json 
+        $ om daemon status --format json 
         {
             "hb#1.rx": {
                 "config": {

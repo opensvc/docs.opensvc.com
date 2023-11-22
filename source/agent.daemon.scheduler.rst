@@ -15,13 +15,13 @@ The scheduler thread is restarted by the agent daemon if it exits uncleanly.
 
 ::
 
-        om node daemon stop --thread-id scheduler
+        om daemon stop --thread-id scheduler
 
 Stop the scheduler thread. The thread state transitions from ``running`` to ``stopped``.
 
 ::
 
-        om node daemon start --thread-id scheduler
+        om daemon start --thread-id scheduler
 
 Start the scheduler tx thread. The thread state transitions from ``stopped`` to ``running``.
 

@@ -159,7 +159,7 @@ Auto-generated.
 :kw:`cluster.nodes`
 -------------------
 
-Janitored by the join and leave om node daemon actions.
+Janitored by the join and leave om daemon actions.
 
 :kw:`cluster.name`
 ------------------
