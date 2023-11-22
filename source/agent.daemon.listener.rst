@@ -29,7 +29,7 @@ Clear the whole blacklist.
 
 ::
 
-        $ om node daemon blacklist clear
+        $ om daemon blacklist clear
 
 
 Blacklist Status
@@ -39,7 +39,7 @@ Return the blacklist contents.
 
 ::
 
-        $ om node daemon blacklist status
+        $ om daemon blacklist status
         {
             "data": {
                 "node1": 1,
@@ -55,7 +55,7 @@ Return the cluster data.
 
 ::
 
-        $ om node daemon status [--format json]
+        $ om daemon status [--format json]
 
 .. seealso:: :ref:`agent.cluster.data`
 
@@ -68,7 +68,7 @@ Stopping the whole daemon advertizes to its peers its going into maintenance. Th
 
 ::
 
-        $ om node daemon stop [--thread-id <id>]
+        $ om daemon stop [--thread-id <id>]
 
 Daemon Start
 ============
@@ -77,7 +77,7 @@ Start the daemon or a single thread.
 
 ::
 
-        $ om node daemon start [--thread-id <id>]
+        $ om daemon start [--thread-id <id>]
 
 Daemon Shutdown
 ===============
@@ -86,7 +86,7 @@ Stop service instances, advertize maintenance to peers and stop the daemon.
 
 ::
 
-        $ om node daemon shutdown
+        $ om daemon shutdown
 
 Get Service Config
 ==================
@@ -194,7 +194,7 @@ Return the cluster and heartbeats configuration sections the joiner must merge.
 
 ::
 
-        $ om node daemon join --secret <secret> --node <nodename>
+        $ om daemon join --secret <secret> --node <nodename>
 
 Leave
 =====
@@ -239,13 +239,13 @@ The listener thread is restarted by the agent daemon if it exits uncleanly.
 
 ::
 
-        om node daemon stop --thread-id listener
+        om daemon stop --thread-id listener
 
 Stop the listener thread. The thread state transitions from ``running`` to ``stopped``.
 
 ::
 
-        om node daemon start --thread-id listener
+        om daemon start --thread-id listener
 
 Start the listener tx thread. The thread state transitions from ``stopped`` to ``running``.
 
