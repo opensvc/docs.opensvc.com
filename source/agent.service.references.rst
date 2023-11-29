@@ -54,6 +54,7 @@ Reference                   Description                                         
 =========================== ============================================================== ======================= ==========================
 {nodename}                  The running node fqdn                                          Yes                     Yes
 {short_nodename}            The running node base name (without domain)                    Yes                     Yes
+{#nodes}                    Number of nodes                                                No                      Yes
 {namespace}                 The name of the hosting namespace                              No                      Yes
 {kind}                      The object kind, ie "svc", "vol", "sec", "cfg", "ccfg"         No                      Yes
 {name}                      The object name                                                No                      Yes 
