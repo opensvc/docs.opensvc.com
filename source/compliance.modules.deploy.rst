@@ -34,6 +34,33 @@ The OpenSVC agent downloads the file pointed by the link named ``current``.
 
 After the mirror initialization, you have to update the current link according to your own policies.
 
+Tarball content
+===============
+
+The tarball file contents must be organized as described below:
+
+::
+
+    compliance
+    +- 010-comp.module.a
+    +- 020-comp.module.b
+    +- com.acme
+       +- comp.object.x.py
+       +- comp.object.y.py
+
+The command below can be used to create the tarball file:
+
+::
+
+    tar czvf compliance.tar.gz compliance --exclude compliance/com.opensvc
+
+
+.. note::
+
+   The ``<OSVCVAR>/compliance/com.opensvc`` folder is maintained in the os package. It will be erased each time you update opensvc. You must not embbeds it into your tarball archive. If needed, you can just copy its content into another folder like `com.acme`
+
+
+
 Set up the agents
 =================
 
