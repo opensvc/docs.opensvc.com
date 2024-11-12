@@ -26,8 +26,8 @@ Service details
 ---------------
 
 * The service data will be stored in a xfs formatted single logical volume of a volume group build on the shared disk.
-* The service ip address will be plumbed using ipvlan l2 on a veth given to a google/pause container holding a service-wide netns. This veth will be linked to a node's bonding interface.
-* The postgresql database will run in a second container sharing the google/pause container netns.
+* The service ip address will be plumbed using ipvlan l2 on a veth given to a "pause" container holding a service-wide netns. This veth will be linked to a node's bonding interface.
+* The postgresql database will run in a second container sharing the pause container netns.
 
 Create the service
 ------------------
@@ -68,7 +68,7 @@ Create the service
 		"type": "netns"
 	    },
 	    "container#0": {
-		"image": "google/pause",
+		"image": "ghcr.io/opensvc/pause",
 		"rm": "true",
 		"type": "docker"
 	    },
@@ -115,7 +115,7 @@ Details on node-1-1
 	      |- disk#0         ........ up         vg db1
 	      |- disk#1         ........ up         lv db1/data
 	      |- fs#1           ........ up         xfs /dev/db1/data@/srv/db1/data
-	      |- container#0    ........ up         docker container db1.container.0@google/pause
+	      |- container#0    ........ up         docker container db1.container.0@ghcr.io/opensvc/pause
 	      |- container#1    ........ up         docker container db1.container.1@postgres
 	      `- sync#i0        ...O./.. up         rsync svc config to nodes
 
@@ -185,7 +185,7 @@ For reference and timings, here are the logs of this action
 	20:35:59,616 node-1-2.db1.disk#0      INFO    output:
 	20:35:59,766 node-1-2.db1.disk#1      INFO    lv db1/data is already up
 	20:35:59,861 node-1-2.db1.fs#1        INFO    mount -t xfs /dev/db1/data /srv/db1/data
-	20:36:00,160 node-1-2.db1.container#0 INFO    docker run --name=db1.container.0 --detach --net=none google/pause
+	20:36:00,160 node-1-2.db1.container#0 INFO    docker run --name=db1.container.0 --detach --net=none ghcr.io/opensvc/pause
 	20:36:00,436 node-1-2.db1.container#0 INFO    output:
 	20:36:00,437 node-1-2.db1.container#0 INFO    8d4947414095d12186ea250b966cb8666d8734b5b8d481739ab1722e79927114
 	20:36:00,462 node-1-2.db1.container#0 INFO    wait for up status

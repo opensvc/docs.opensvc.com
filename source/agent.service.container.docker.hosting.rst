@@ -69,7 +69,7 @@ Then, we can add a simple container
 
 ::
 
-	$ om 'app*-*/*' set --kw container#0.type=docker --kw container#0.image=google/pause
+	$ om 'app*-*/*' set --kw container#0.type=docker --kw container#0.image=ghcr.io/opensvc/pause
 
 
 .. note:: Naturally, you can setup more useful services, like multiple docker containers in the same service (`Docker Multi Containers <https://docs.opensvc.com/agent.service.container.docker.multi_containers.html>`_), or even combining resources types in a service (like a service modelized with 1 docker container, 2 lxc containers, 3 kvm containers, 4 lvm volumes groups, 5 filesystems, hosted on a netapp filer with snapmirror data replication)
@@ -87,7 +87,7 @@ At this point the ``app1-prd/svc1`` service configuration looks like
 
 	[container#0]
 	type = docker
-	image = google/pause
+	image = ghcr.io/opensvc/pause
 
 And the services now have a frozen-stopped status
 
@@ -137,23 +137,23 @@ A few seconds later, the services are up and running
 	 app2-int/svc1 up failover | O^               
 	 app2-prd/svc1 up failover | O^
 
-The google/pause image is installed in all private docker data directories
+The ghcr.io/opensvc/pause image is installed in all private docker data directories
 
 ::
 
 	$ om 'app*-*/*' docker images
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
-	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-	google/pause        latest              f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
+	REPOSITORY               TAG               IMAGE ID            CREATED             SIZE
+	ghcr.io/opensvc/pause    latest            f9d5de079539        4 years ago         240kB
 
 6 docker environments are running on the same system, with docker data repositories fully segregated.
 
@@ -166,7 +166,7 @@ Service Instance Status
 	svc1                             up                                                                  
 	`- instances            
 	   `- aubergine                  up         idle, started        
-	      `- container#0    ........ up         docker container app1-prd..svc1.container.0@google/pause
+	      `- container#0    ........ up         docker container app1-prd..svc1.container.0@ghcr.io/opensvc/pause
 
 Service Instance Stop
 ^^^^^^^^^^^^^^^^^^^^^
@@ -199,8 +199,8 @@ Service Instance Start
 ::
 
 	$ om 'app1-prd/svc1' docker ps
-	CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-	e427aacd0c75        google/pause        "/pause"            9 minutes ago       Up 45 seconds                           app1-prd..svc1.container.0
+	CONTAINER ID        IMAGE                        COMMAND             CREATED             STATUS              PORTS               NAMES
+	e427aacd0c75        ghcr.io/opensvc/pause        "/pause"            9 minutes ago       Up 45 seconds                           app1-prd..svc1.container.0
 
 .. note:: OpenSVC explicitely tag the container with "<namespace>..<svcname>.container.<resource index>", So even in a shared docker daemon, the container names would not clash.
 

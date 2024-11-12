@@ -210,7 +210,7 @@ Here is the template OpenSVC service configuration served by the public OpenSVC 
 
 	[container#0]
 	type = docker
-	image = google/pause
+	image = ghcr.io/opensvc/pause
 	rm = true
 
 	[container#1]

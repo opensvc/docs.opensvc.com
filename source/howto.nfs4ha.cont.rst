@@ -269,7 +269,7 @@ Service object test/svc/nfsv4 status
           |- ip#1            ........ <span style="color: #00aa00">up        </span> netns macvlan nfsv4.opensvc.com/27 eth0@container#0 
           |- volume#cfg      ........ <span style="color: #00aa00">up        </span> nfsv4-cfg                                           
           |- volume#data     ........ <span style="color: #00aa00">up        </span> nfsv4-data                                          
-          |- container#0     ...../.. <span style="color: #00aa00">up        </span> podman docker.io/google/pause                       
+          |- container#0     ...../.. <span style="color: #00aa00">up        </span> podman ghcr.io/opensvc/pause                       
           |- container#debug ...O./.. <span style="color: #00aa00">up        </span> podman docker.io/opensvc/container_toolbox:latest   
           |- container#nfs   ..D../.. <span style="color: #767676">n/a       </span> podman docker.io/joebiellik/nfs4                    
           |- sync#i0         ..DO./.. <span style="color: #767676">n/a       </span> rsync svc config to nodes                           
@@ -422,7 +422,7 @@ Enable & start NFS container resource
          |- ip#1            ........ <span style="color: #00aa00">up        </span> netns macvlan nfsv4.opensvc.com/27 eth0@container#0 
          |- volume#cfg      ........ <span style="color: #00aa00">up        </span> nfsv4-cfg                                           
          |- volume#data     ........ <span style="color: #00aa00">up        </span> nfsv4-data                                          
-         |- container#0     ...../.. <span style="color: #00aa00">up        </span> podman docker.io/google/pause                       
+         |- container#0     ...../.. <span style="color: #00aa00">up        </span> podman ghcr.io/opensvc/pause                       
          |- container#debug ...O./.. <span style="color: #00aa00">up        </span> podman docker.io/opensvc/container_toolbox:latest   
          |- container#nfs   ...../.. <span style="color: #00aa00">up        </span> podman docker.io/joebiellik/nfs4                    
          |- sync#i0         ..DO./.. <span style="color: #767676">n/a       </span> rsync svc config to nodes                           

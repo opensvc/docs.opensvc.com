@@ -30,7 +30,7 @@ Resources and default keywords can be set right from the create command, using `
 
 	om <path> create
 		--kw container#0.type=docker \
-		--kw container#0.image=google/pause \
+		--kw container#0.image=ghcr.io/opensvc/pause \
 		--kw orchestrate=ha \
 		--kw nodes={clusternodes}
 

@@ -71,7 +71,7 @@ Service Creation
 
 	[container#0]
 	type = docker
-	image = google/pause
+	image = ghcr.io/opensvc/pause
 
 	[container#1]
 	type = docker
@@ -104,7 +104,7 @@ After a few seconds
 	   `- aubergine                  up         idle, started        
 	      |- ip#1           ........ up         cni default 10.22.0.122/16 eth12                         
 	      |- volume#1       ........ up         registry-data                                            
-	      |- container#0    ........ up         docker container test..registry.container.0@google/pause 
+	      |- container#0    ........ up         docker container test..registry.container.0@ghcr.io/opensvc/pause 
 	      |- container#1    ........ up         docker container test..registry.container.1@registry     
 	      `- sync#i0        ...O./.. up         rsync svc config to nodes                                
 
@@ -120,7 +120,7 @@ On the demonstration setup, the cluster name is "homepool2", so the created regi
 
 **Tag an image to push to the private registry** ::
 
-	$ sudo docker tag google/pause:latest registry.test.svc.homepool2:5000/google/pause:latest
+	$ sudo docker tag ghcr.io/opensvc/pause:latest registry.test.svc.homepool2:5000/google/pause:latest
 
 **Push the tagged image to the private registry** ::
 

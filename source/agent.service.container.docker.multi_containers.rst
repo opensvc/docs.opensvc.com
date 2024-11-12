@@ -3,7 +3,7 @@ Docker Multi Containers
 
 This tutorial highlights the netns sharing and ip.netns driver.
 
-The service created will have a shared netns held by the google/pause container, where the ip.netns driver will plumb an ipvlan-l2 ip address.
+The service created will have a shared netns held by the ghcr.io/opensvc/pause container, where the ip.netns driver will plumb an ipvlan-l2 ip address.
 
 Pre-requisites
 --------------
@@ -15,7 +15,7 @@ Provision
 
 Let's use the following stack as an example:
 
-* google/pause 
+* ghcr.io/opensvc/pause 
 * nginx
 * redis
 
@@ -27,7 +27,7 @@ Let's use the following stack as an example:
 			"id": "fd1196ad-fbf1-49bb-ab52-12ed2a1fbf0e"
 		},
 		"container#1": {
-			"image": "google/pause",
+			"image": "ghcr.io/opensvc/pause",
 			"run_command": "/bin/sh",
 			"type": "docker"
 		},
@@ -61,7 +61,7 @@ Service Configuration File
 	root@deb1:/# om svc2 print config
 	[container#1]
 	type = docker
-	image = google/pause
+	image = ghcr.io/opensvc/pause
 	run_command = /bin/sh
 	
 	[container#2]
@@ -92,7 +92,7 @@ Service Startup
 	REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
 	redis                  latest              ce25c7293564        10 days ago         95MB
 	nginx                  latest              f895b3fb9e30        12 months ago       108MB
-	google/pause           latest              f9d5de079539        4 years ago         240kB
+	ghcr.io/opensvc/pause  latest              350b164e7ae1        10 years ago        240kB
 	
 **docker instances** ::
 
@@ -100,7 +100,7 @@ Service Startup
 	CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS               NAMES
 	1bf08bf89063        redis                    "docker-entrypoint.s…"   4 minutes ago       Up 4 minutes                            svc2.container.3
 	acccaedca18a        nginx                    "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes                            svc2.container.2
-	c6d7e098fed0        google/pause             "/pause /bin/sh"         4 minutes ago       Up 4 minutes                            svc2.container.1
+	c6d7e098fed0        ghcr.io/opensvc/pause    "/pause /bin/sh"         4 minutes ago       Up 4 minutes                            svc2.container.1
 
 **OpenSVC print status** ::
 
@@ -109,7 +109,7 @@ Service Startup
 	`- instances              
 	   `- deb1.opensvc.com             up         frozen, idle, started 
 	      |- ip#1             ........ up         netns ipvlan-l2 5.196.34.151/27 eth0@container#1                      
-	      |- container#1      ........ up         docker container svc2.container.1@google/pause                        
+	      |- container#1      ........ up         docker container svc2.container.1@ghcr.io/opensvc/pause                        
 	      |- container#2      ........ up         docker container svc2.container.2@nginx                               
 	      `- container#3      ........ up         docker container svc2.container.3@redis                               
 

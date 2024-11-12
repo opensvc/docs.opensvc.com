@@ -429,7 +429,7 @@ Template:
    
   [container#0]
   type = docker
-  image = google/pause
+  image = ghcr.io/opensvc/pause
   rm = true
    
   [container#1]
@@ -484,7 +484,7 @@ Template:
    
   [container#0]
   type = docker
-  image = google/pause
+  image = ghcr.io/opensvc/pause
   rm = true
 
 

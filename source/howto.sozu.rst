@@ -132,7 +132,7 @@ Service status can be checked with command ``om igw/svc/sozu print status``
         |- volume#cfg     ........ <span style="color:green;">up        </span> sozu-cfg                                                         
         |- volume#scripts ........ <span style="color:green;">up        </span> sozu-scripts                                                     
         |- fs#flag        ........ <span style="color:green;">up        </span> fs.flag                                                          
-        |- container#0    ...../.. <span style="color:green;">up        </span> docker google/pause                                              
+        |- container#0    ...../.. <span style="color:green;">up        </span> docker ghcr.io/opensvc/pause                                              
         |- container#1    ...../.3 <span style="color:green;">up        </span> docker clevercloud/sozu:d7b23c9fe877394cc3f2130d2fe5e76274dbf6c0 
         |- app#watch      ...../.. <span style="color:green;">up        </span> forking: watch_directory.sh                                      
         |- sync#i0        ..DO./.. <span style="color:#757575;">n/a       </span> rsync svc config to nodes                                        
